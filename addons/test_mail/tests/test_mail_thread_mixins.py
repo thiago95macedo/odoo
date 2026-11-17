@@ -2,12 +2,12 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime, timedelta
-from odoo import exceptions, fields, tools
-from odoo.addons.mail.tests.common import MailCommon
-from odoo.addons.mail.tests.common_tracking import MailTrackingDurationMixinCase
-from odoo.addons.test_mail.tests.common import TestRecipients
-from odoo.tests.common import tagged, users
-from odoo.tools import mute_logger
+from weth import exceptions, fields, tools
+from weth.addons.mail.tests.common import MailCommon
+from weth.addons.mail.tests.common_tracking import MailTrackingDurationMixinCase
+from weth.addons.test_mail.tests.common import TestRecipients
+from weth.tests.common import tagged, users
+from weth.tools import mute_logger
 
 
 @tagged('mail_thread', 'mail_track', 'mail_duration_mixin')
@@ -210,7 +210,7 @@ class TestMailThreadRottingMixin(MailTrackingDurationMixinCase):
 @tagged('mail_thread', 'mail_blacklist')
 class TestMailThread(MailCommon, TestRecipients):
 
-    @mute_logger('odoo.models.unlink')
+    @mute_logger('weth.models.unlink')
     def test_blacklist_mixin_email_normalized(self):
         """ Test email_normalized and is_blacklisted fields behavior, notably
         when dealing with encapsulated email fields and multi-email input. """

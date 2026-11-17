@@ -3,8 +3,8 @@
 
 from ast import literal_eval
 
-from odoo import api, fields, models, _
-from odoo.exceptions import ValidationError, UserError
+from weth import api, fields, models, _
+from weth.exceptions import ValidationError, UserError
 
 
 class MailingFilter(models.Model):

@@ -1,7 +1,7 @@
 import { useService } from "@web/core/utils/hooks";
 import { usePos } from "@point_of_sale/app/hooks/pos_hook";
 import { MoneyDetailsPopup } from "@point_of_sale/app/components/popups/money_details_popup/money_details_popup";
-import { Component, proxy, onMounted, useProps, t } from "@odoo/owl";
+import { Component, proxy, onMounted, useProps, t } from "@weth/owl";
 import { _t } from "@web/core/l10n/translation";
 import { Dialog } from "@web/core/dialog/dialog";
 import { ConnectionLostError } from "@web/core/network/rpc";
@@ -10,7 +10,7 @@ import { useTrackedAsync } from "@point_of_sale/app/hooks/hooks";
 import { AlertDialog } from "@web/core/confirmation_dialog/confirmation_dialog";
 
 class CustomDialog extends Dialog {
-    onEscape() {}
+    onEscape() { }
 }
 
 export class OpeningControlPopup extends Component {
@@ -36,11 +36,11 @@ export class OpeningControlPopup extends Component {
         this.ui = useService("ui");
         this.getOrderCountByPreset = useTrackedAsync(
             async () =>
-                (this.state.ordersByPreset = await this.pos.data.call(
-                    "pos.session",
-                    "get_order_count_by_preset",
-                    [this.pos.session.id]
-                ))
+            (this.state.ordersByPreset = await this.pos.data.call(
+                "pos.session",
+                "get_order_count_by_preset",
+                [this.pos.session.id]
+            ))
         );
 
         onMounted(() => {

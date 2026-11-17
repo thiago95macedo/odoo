@@ -1,4 +1,4 @@
-/** @odoo-module */
+/** @weth-module */
 
 /**
  * @typedef {import("./core/runner").Runner} Runner

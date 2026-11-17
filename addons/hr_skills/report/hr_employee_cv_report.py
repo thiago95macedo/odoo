@@ -2,7 +2,7 @@
 
 from collections import defaultdict
 
-from odoo import _, models
+from weth import _, models
 
 
 class ReportHr_SkillsReport_Employee_Cv(models.AbstractModel):

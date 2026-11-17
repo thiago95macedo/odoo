@@ -1,10 +1,10 @@
-from odoo import Command, fields
+from weth import Command, fields
 from lxml import etree
-from odoo.addons.account_edi_ubl_cii.tests.common import TestUblBis3Common, TestUblCiiBECommon
-from odoo.addons.base.tests.files import DOCX_RAW, XLSX_RAW
+from weth.addons.account_edi_ubl_cii.tests.common import TestUblBis3Common, TestUblCiiBECommon
+from weth.addons.base.tests.files import DOCX_RAW, XLSX_RAW
 
-from odoo.exceptions import ValidationError
-from odoo.tests import tagged
+from weth.exceptions import ValidationError
+from weth.tests import tagged
 
 
 @tagged('post_install_l10n', 'post_install', '-at_install', *TestUblBis3Common.extra_tags)

@@ -1,4 +1,4 @@
-import { Component, useProps, types as t } from "@odoo/owl";
+import { Component, useProps, types as t } from "@weth/owl";
 
 export class MessagingMenuEmpty extends Component {
     static template = "mail.MessagingMenuEmpty";

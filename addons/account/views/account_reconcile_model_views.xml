@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
     <data>
 
         <record id="view_account_reconcile_model_tree" model="ir.ui.view">
@@ -183,4 +183,4 @@
         </record>
 
     </data>
-</odoo>
+</weth>

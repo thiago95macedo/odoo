@@ -7,7 +7,7 @@ import {
 } from "@html_editor/utils/dom_info";
 import { closestElement } from "@html_editor/utils/dom_traversal";
 import { getRowIndex } from "@html_editor/utils/table";
-import { Component, onMounted, onWillUnmount, useProps, signal, t, useListener } from "@odoo/owl";
+import { Component, onMounted, onWillUnmount, useProps, signal, t, useListener } from "@weth/owl";
 import { Dropdown } from "@web/core/dropdown/dropdown";
 import { DropdownItem } from "@web/core/dropdown/dropdown_item";
 import { _t } from "@web/core/l10n/translation";
@@ -275,42 +275,42 @@ export class TableMenu extends Component {
                 action: this.props.removeColumn.bind(this),
             },
             this.props.resetColumnWidth &&
-                this.hasCustomColumnWidth && {
-                    name: "reset_column_size",
-                    icon: "table_chart",
-                    text: _t("Reset column size"),
-                    action: (target) => {
-                        const cell = closestElement(target, isTableCell);
-                        const table = closestElement(cell, "table");
-                        const colgroup = getTableColgroup(table);
-                        if (!colgroup) {
-                            return;
-                        }
-                        const colIndex = this.tableGrid[0].indexOf(cell);
-                        const targetCols = [...colgroup.children].slice(
-                            colIndex,
-                            colIndex + cell.colSpan
-                        );
-                        const layoutContainer = closestElement(cell, "table");
-                        targetCols.forEach((col) => {
-                            this.props.resetColumnWidth(col, {
-                                layoutContainer,
-                                hasProxyElements: true,
-                            });
+            this.hasCustomColumnWidth && {
+                name: "reset_column_size",
+                icon: "table_chart",
+                text: _t("Reset column size"),
+                action: (target) => {
+                    const cell = closestElement(target, isTableCell);
+                    const table = closestElement(cell, "table");
+                    const colgroup = getTableColgroup(table);
+                    if (!colgroup) {
+                        return;
+                    }
+                    const colIndex = this.tableGrid[0].indexOf(cell);
+                    const targetCols = [...colgroup.children].slice(
+                        colIndex,
+                        colIndex + cell.colSpan
+                    );
+                    const layoutContainer = closestElement(cell, "table");
+                    targetCols.forEach((col) => {
+                        this.props.resetColumnWidth(col, {
+                            layoutContainer,
+                            hasProxyElements: true,
                         });
-                    },
+                    });
                 },
+            },
             this.props.resetSize &&
-                this.hasCustomTableSize && {
-                    name: "reset_table_size",
-                    icon: "table_chart",
-                    text: _t("Reset table size"),
-                    action: (target) =>
-                        this.props.resetSize(closestElement(target, "table"), {
-                            proxyElementSelector: "colgroup",
-                            heightElementsSelector: "tr",
-                        }),
-                },
+            this.hasCustomTableSize && {
+                name: "reset_table_size",
+                icon: "table_chart",
+                text: _t("Reset table size"),
+                action: (target) =>
+                    this.props.resetSize(closestElement(target, "table"), {
+                        proxyElementSelector: "colgroup",
+                        heightElementsSelector: "tr",
+                    }),
+            },
             this.hasContent && {
                 name: "clear_content",
                 icon: "cancel",
@@ -326,19 +326,19 @@ export class TableMenu extends Component {
         const hasAlternatingRowClass = table.classList.contains("o_alternating_rows");
         return [
             this.isFirst &&
-                !this.isTableHeader && {
-                    name: "make_header",
-                    icon: "view_module",
-                    text: _t("Turn into header"),
-                    action: (target) => this.props.turnIntoHeader(target.parentElement),
-                },
+            !this.isTableHeader && {
+                name: "make_header",
+                icon: "view_module",
+                text: _t("Turn into header"),
+                action: (target) => this.props.turnIntoHeader(target.parentElement),
+            },
             this.isFirst &&
-                this.isTableHeader && {
-                    name: "remove_header",
-                    icon: "table_chart",
-                    text: _t("Turn into row"),
-                    action: (target) => this.props.turnIntoRow(target.parentElement),
-                },
+            this.isTableHeader && {
+                name: "remove_header",
+                icon: "table_chart",
+                text: _t("Turn into row"),
+                action: (target) => this.props.turnIntoRow(target.parentElement),
+            },
             !this.isFirst && {
                 name: "move_up",
                 icon: "expand_less",
@@ -385,27 +385,27 @@ export class TableMenu extends Component {
                 action: (target) => this.props.removeRow(target.parentElement),
             },
             this.props.resetRowHeight &&
-                this.hasCustomRowHeight && {
-                    name: "reset_row_size",
-                    icon: "table_chart",
-                    text: _t("Reset row size"),
-                    action: (target) =>
-                        this.props.resetRowHeight(closestElement(target, "tr"), {
-                            layoutContainer: closestElement(target, "table"),
-                            elementsSelector: "tr",
-                        }),
-                },
+            this.hasCustomRowHeight && {
+                name: "reset_row_size",
+                icon: "table_chart",
+                text: _t("Reset row size"),
+                action: (target) =>
+                    this.props.resetRowHeight(closestElement(target, "tr"), {
+                        layoutContainer: closestElement(target, "table"),
+                        elementsSelector: "tr",
+                    }),
+            },
             this.props.resetSize &&
-                this.hasCustomTableSize && {
-                    name: "reset_table_size",
-                    icon: "table_chart",
-                    text: _t("Reset table size"),
-                    action: (target) =>
-                        this.props.resetSize(closestElement(target, "table"), {
-                            proxyElementSelector: "colgroup",
-                            heightElementsSelector: "tr",
-                        }),
-                },
+            this.hasCustomTableSize && {
+                name: "reset_table_size",
+                icon: "table_chart",
+                text: _t("Reset table size"),
+                action: (target) =>
+                    this.props.resetSize(closestElement(target, "table"), {
+                        proxyElementSelector: "colgroup",
+                        heightElementsSelector: "tr",
+                    }),
+            },
             this.hasContent && {
                 name: "clear_content",
                 icon: "cancel",

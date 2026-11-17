@@ -4,10 +4,10 @@ import importlib.util
 import io
 import zipfile
 
-import odoo.http as http
-from odoo.exceptions import UserError
-from odoo.http import request
-from odoo.http.stream import content_disposition
+import weth.http as http
+from weth.exceptions import UserError
+from weth.http import request
+from weth.http.stream import content_disposition
 
 
 class Partner(http.Controller):

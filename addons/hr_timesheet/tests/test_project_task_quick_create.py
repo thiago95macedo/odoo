@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.hr_timesheet.tests.test_timesheet import TestCommonTimesheet
-from odoo.tests import Form, tagged
+from weth.addons.hr_timesheet.tests.test_timesheet import TestCommonTimesheet
+from weth.tests import Form, tagged
 
 @tagged('-at_install', 'post_install')
 class TestProjectTaskQuickCreate(TestCommonTimesheet):

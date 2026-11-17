@@ -1,6 +1,6 @@
-import { describe, expect, test } from "@odoo/hoot";
-import { press, queryAllTexts } from "@odoo/hoot-dom";
-import { animationFrame, runAllTimers } from "@odoo/hoot-mock";
+import { describe, expect, test } from "@weth/hoot";
+import { press, queryAllTexts } from "@weth/hoot-dom";
+import { animationFrame, runAllTimers } from "@weth/hoot-mock";
 import { getOrigin } from "@web/core/utils/urls";
 
 import {

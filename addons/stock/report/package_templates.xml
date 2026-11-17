@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<odoo>
+<weth>
     <data>
         <template id="package_zpl_label">
             <t t-if="label['is_sscc']">
@@ -52,4 +52,4 @@
             </td>
         </template>
     </data>
-</odoo>
+</weth>

@@ -1,4 +1,4 @@
-import { Component, useProps, t, xml } from "@odoo/owl";
+import { Component, useProps, t, xml } from "@weth/owl";
 import { useService } from "@web/core/utils/hooks";
 
 export class Alert extends Component {

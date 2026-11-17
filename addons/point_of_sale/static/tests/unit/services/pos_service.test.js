@@ -1,4 +1,4 @@
-import { test, expect, describe } from "@odoo/hoot";
+import { test, expect, describe } from "@weth/hoot";
 import { getFilledOrder, setupPosEnv, createPaymentLine } from "../utils";
 import { definePosModels } from "../data/generate_model_definitions";
 import { ConnectionLostError } from "@web/core/network/rpc";
@@ -128,7 +128,7 @@ describe("pos_store.js", () => {
             async generateIframe(template, ticket) {
                 return ticket;
             },
-            setIframeSizeFromPrinter() {},
+            setIframeSizeFromPrinter() { },
             async generateImage(ticket) {
                 return ticket;
             },
@@ -859,7 +859,7 @@ describe("pos_store.js", () => {
         expect(store.qrCode).toBeEmpty();
 
         // close qrCode
-        store.qrCode = { paymentline, closer: () => {} };
+        store.qrCode = { paymentline, closer: () => { } };
         store.closeQrCode();
         expect(store.qrCode).toBeEmpty();
     });
@@ -1124,7 +1124,7 @@ describe("pos_store.js", () => {
                 },
             });
 
-            await store.reloadData().catch(() => {});
+            await store.reloadData().catch(() => { });
             expect.verifySteps(["Reload Data"]);
             expect(store.models["pos.order"].get(order.id)).toBe(order);
             expect(order.isSynced).toBe(false);

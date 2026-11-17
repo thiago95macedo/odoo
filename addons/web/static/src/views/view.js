@@ -23,7 +23,7 @@ import {
     toRaw,
     t,
     applyDefaults,
-} from "@odoo/owl";
+} from "@weth/owl";
 import { session } from "@web/session";
 
 /**
@@ -124,7 +124,7 @@ export function getDefaultConfig() {
         ]),
         disableSearchBarAutofocus: false,
         getDisplayName: () => displayName,
-        historyBack: () => {},
+        historyBack: () => { },
         pagerProps: {},
         setDisplayName: (newDisplayName) => {
             displayName = newDisplayName;
@@ -138,7 +138,7 @@ export function getDefaultConfig() {
     return config;
 }
 
-export class ViewNotFoundError extends Error {}
+export class ViewNotFoundError extends Error { }
 
 const CALLBACK_RECORDER_NAMES = [
     "__beforeLeave__",
@@ -204,7 +204,7 @@ export const viewProps = {
 const viewPropsType = t.object(viewProps);
 
 export class View extends Component {
-    static _download = async function () {};
+    static _download = async function () { };
     static template = "web.View";
     static components = { WithSearch };
     static searchMenuTypes = ["filter", "groupBy", "favorite"];

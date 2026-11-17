@@ -4,12 +4,12 @@ from datetime import timedelta
 
 from freezegun import freeze_time
 
-from odoo import fields
-from odoo.fields import Command
-from odoo.tests import Form, tagged
+from weth import fields
+from weth.fields import Command
+from weth.tests import Form, tagged
 
-from odoo.addons.sale.tests.common import TestSaleCommon
-from odoo.addons.stock_account.tests.test_anglo_saxon_valuation_reconciliation_common import ValuationReconciliationTestCommon
+from weth.addons.sale.tests.common import TestSaleCommon
+from weth.addons.stock_account.tests.test_anglo_saxon_valuation_reconciliation_common import ValuationReconciliationTestCommon
 
 
 @tagged('post_install', '-at_install')

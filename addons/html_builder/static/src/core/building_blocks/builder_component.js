@@ -1,4 +1,4 @@
-import { Component, xml, useProps, t } from "@odoo/owl";
+import { Component, xml, useProps, t } from "@weth/owl";
 import { useDomState } from "../utils";
 
 export class BuilderComponent extends Component {

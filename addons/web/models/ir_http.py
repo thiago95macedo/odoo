@@ -1,11 +1,11 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, fields, models, release
-from odoo.http import request
-from odoo.http.requestlib import DEFAULT_MAX_CONTENT_LENGTH
-from odoo.tools import config
-from odoo.tools.func import deprecated
-from odoo.tools.misc import hmac, str2bool
+from weth import api, fields, models, release
+from weth.http import request
+from weth.http.requestlib import DEFAULT_MAX_CONTENT_LENGTH
+from weth.tools import config
+from weth.tools.func import deprecated
+from weth.tools.misc import hmac, str2bool
 
 
 class IrHttp(models.AbstractModel):

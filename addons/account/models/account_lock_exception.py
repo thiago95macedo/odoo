@@ -1,9 +1,9 @@
-from odoo import _, api, fields, models
-from odoo.fields import Domain
-from odoo.tools.misc import format_datetime
-from odoo.exceptions import UserError, ValidationError
+from weth import _, api, fields, models
+from weth.fields import Domain
+from weth.tools.misc import format_datetime
+from weth.exceptions import UserError, ValidationError
 
-from odoo.addons.account.models.company import SOFT_LOCK_DATE_FIELDS
+from weth.addons.account.models.company import SOFT_LOCK_DATE_FIELDS
 
 from datetime import date
 

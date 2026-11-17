@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
     <data>
         <template id="report_invoice_document">
             <t t-set="layout_document_title">
@@ -657,4 +657,4 @@
             </t>
         </template>
     </data>
-</odoo>
+</weth>

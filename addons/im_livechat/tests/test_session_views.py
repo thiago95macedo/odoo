@@ -1,9 +1,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import Command, fields
-from odoo.tests import new_test_user
-from odoo.addons.im_livechat.tests.common import TestImLivechatCommon
-from odoo.tests.common import users
+from weth import Command, fields
+from weth.tests import new_test_user
+from weth.addons.im_livechat.tests.common import TestImLivechatCommon
+from weth.tests.common import users
 
 from datetime import timedelta
 
@@ -29,7 +29,7 @@ class TestImLivechatSessionViews(TestImLivechatCommon):
             self._reset_bus()
         action = self.env.ref("im_livechat.discuss_channel_action_from_livechat_channel")
         self.start_tour(
-            f"/odoo/livechat/{self.livechat_channel.id}/action-{action.id}",
+            f"/weth/livechat/{self.livechat_channel.id}/action-{action.id}",
             "im_livechat_history_back_and_forth_tour",
             login="operator",
         )
@@ -68,7 +68,7 @@ class TestImLivechatSessionViews(TestImLivechatCommon):
             )
         action = self.env.ref("im_livechat.discuss_channel_action_from_livechat_channel")
         self.start_tour(
-            f"/odoo/livechat/{self.livechat_channel.id}/action-{action.id}",
+            f"/weth/livechat/{self.livechat_channel.id}/action-{action.id}",
             "im_livechat_session_history_open",
             login="operator",
         )
@@ -130,7 +130,7 @@ class TestImLivechatLookingForHelpViews(TestImLivechatSessionViews):
         sales_chat.description = "Delivery delayed for PO0099"
         self._reset_bus()
         self.start_tour(
-            "/odoo/discuss",
+            "/weth/discuss",
             "im_livechat.looking_for_help_discuss_category_tour",
             login="agent",
         )

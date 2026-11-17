@@ -1,4 +1,4 @@
-<odoo>
+<weth>
     <data noupdate="1">
         <record id="product_delivery_template" model="product.template">
             <field name="name">Delivery Fee (Self-order)</field>
@@ -24,4 +24,4 @@
             <field name="image_512" type="bytes" file="pos_self_order/static/img/delivery.jpg"/>
         </record>
     </data>
-</odoo>
+</weth>

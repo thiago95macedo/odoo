@@ -1,5 +1,5 @@
-from odoo.addons.mail.tests.common_controllers import MailControllerUpdateCommon
-from odoo.tests import tagged
+from weth.addons.mail.tests.common_controllers import MailControllerUpdateCommon
+from weth.tests import tagged
 
 
 @tagged("-at_install", "post_install", "mail_controller")

@@ -1,4 +1,4 @@
-import { onMounted, useProps, t } from "@odoo/owl";
+import { onMounted, useProps, t } from "@weth/owl";
 import {
     ConfirmationDialog,
     confirmationDialogProps,

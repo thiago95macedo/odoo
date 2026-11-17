@@ -2,10 +2,10 @@
 
 import json
 
-from odoo.tests.common import HttpCase
+from weth.tests.common import HttpCase
 
-from odoo.addons.bus.tests.common import WebsocketCase
-from odoo.addons.mail.tests.common import MailCommon
+from weth.addons.bus.tests.common import WebsocketCase
+from weth.addons.mail.tests.common import MailCommon
 
 
 class TestGuestFeature(MailCommon, HttpCase):

@@ -1,7 +1,7 @@
 import { delay } from "@web/core/utils/concurrency";
 import { useBus, useService } from "@web/core/utils/hooks";
 import { clamp } from "@web/core/utils/numbers";
-import { Component, EventBus, proxy, useEffect, useProps, t } from "@odoo/owl";
+import { Component, EventBus, proxy, useEffect, useProps, t } from "@weth/owl";
 
 export class WebsiteLoader extends Component {
     props = useProps({

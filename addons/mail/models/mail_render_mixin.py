@@ -11,12 +11,12 @@ from lxml import html
 from functools import reduce
 from markupsafe import Markup, escape
 
-from odoo import _, api, fields, models, tools
-from odoo.addons.base.models.ir_qweb import QWebError
-from odoo.exceptions import UserError, AccessError
-from odoo.tools import urls
-from odoo.tools.mail import is_html_empty, prepend_html_content, html_normalize
-from odoo.tools.rendering_tools import convert_inline_template_to_qweb, parse_inline_template, render_inline_template, template_env_globals
+from weth import _, api, fields, models, tools
+from weth.addons.base.models.ir_qweb import QWebError
+from weth.exceptions import UserError, AccessError
+from weth.tools import urls
+from weth.tools.mail import is_html_empty, prepend_html_content, html_normalize
+from weth.tools.rendering_tools import convert_inline_template_to_qweb, parse_inline_template, render_inline_template, template_env_globals
 
 _logger = logging.getLogger(__name__)
 

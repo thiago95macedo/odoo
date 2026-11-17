@@ -3,7 +3,7 @@
 import { LoadingDataError } from "@spreadsheet/o_spreadsheet/errors";
 import { RPCError } from "@web/core/network/rpc";
 import { KeepLast } from "@web/core/utils/concurrency";
-import { CellErrorType, EvaluationError } from "@odoo/o-spreadsheet";
+import { CellErrorType, EvaluationError } from "@weth/o-spreadsheet";
 import { _t } from "@web/core/l10n/translation";
 
 /**
@@ -145,12 +145,12 @@ export class LoadableDataSource {
      * @abstract
      * @protected
      */
-    async _load() {}
+    async _load() { }
 }
 
 export const LOADING_ERROR = new LoadingDataError();
 
-export class ModelNotFoundError extends Error {}
+export class ModelNotFoundError extends Error { }
 
 /**
  * Return the fields of a given model.

@@ -2,8 +2,8 @@
 
 from collections import defaultdict
 
-from odoo import models
-from odoo.tools import float_round
+from weth import models
+from weth.tools import float_round
 
 
 class StockMove(models.Model):

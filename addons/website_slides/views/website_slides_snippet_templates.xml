@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
     <template id="dynamic_filter_template_slide_channel_card" name="Card Layout" data-extra-classes="g-3"
         data-column-classes="col-12 col-sm-6 col-lg-4 col-xxl-3">
         <div t-foreach="records" t-as="data" class="w-100 h-100">
@@ -17,4 +17,4 @@
             </a>
         </div>
     </template>
-</odoo>
+</weth>

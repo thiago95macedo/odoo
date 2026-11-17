@@ -1,4 +1,4 @@
-from odoo.tools.intervals import Intervals
+from weth.tools.intervals import Intervals
 
 
 def interval_from_events(event_ids):

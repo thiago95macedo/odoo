@@ -1,6 +1,6 @@
 /* global Carousel */
 
-import { onMounted, onWillUnmount, usePlugin } from "@odoo/owl";
+import { onMounted, onWillUnmount, usePlugin } from "@weth/owl";
 import { session } from "@web/session";
 import { BootstrapInstance } from "@web/core/utils/bootstrap_plugin";
 

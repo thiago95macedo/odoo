@@ -1,4 +1,4 @@
-import { t, useProps } from "@odoo/owl";
+import { t, useProps } from "@weth/owl";
 import { KanbanRecord, kanbanRecordProps } from "@web/views/kanban/kanban_record";
 
 export class SurveyKanbanRecord extends KanbanRecord {

@@ -3,15 +3,15 @@
 import base64
 import json
 
-import odoo.tests
-from odoo.tests.common import HttpCase, new_test_user
-from odoo.tools.json import scriptsafe as json_safe
+import weth.tests
+from weth.tests.common import HttpCase, new_test_user
+from weth.tools.json import scriptsafe as json_safe
 from unittest.mock import patch
-from odoo.addons.base.tests.files import GIF_B64
-from odoo.addons.mail.tools import link_preview
+from weth.addons.base.tests.files import GIF_B64
+from weth.addons.mail.tools import link_preview
 
 
-@odoo.tests.tagged('-at_install', 'post_install')
+@weth.tests.tagged('-at_install', 'post_install')
 class TestController(HttpCase):
 
     @classmethod
@@ -165,7 +165,7 @@ class TestController(HttpCase):
             '/html_editor/link_preview_internal',
             data=json_safe.dumps({
                 "params": {
-                    "preview_url": _get_full_url(f"/odoo/users/{self.portal_user.id}"),
+                    "preview_url": _get_full_url(f"/weth/users/{self.portal_user.id}"),
                 }
             }),
             headers=self.headers
@@ -178,7 +178,7 @@ class TestController(HttpCase):
             '/html_editor/link_preview_internal',
             data=json_safe.dumps({
                 "params": {
-                    "preview_url": _get_full_url("/odoo/actionInvalid/1"),
+                    "preview_url": _get_full_url("/weth/actionInvalid/1"),
                 }
             }),
             headers=self.headers
@@ -191,7 +191,7 @@ class TestController(HttpCase):
             '/html_editor/link_preview_internal',
             data=json_safe.dumps({
                 "params": {
-                    "preview_url": _get_full_url("/odoo/users/9999"),
+                    "preview_url": _get_full_url("/weth/users/9999"),
                 }
             }),
             headers=self.headers
@@ -260,7 +260,7 @@ class TestController(HttpCase):
             '/html_editor/link_preview_internal',
             data=json_safe.dumps({
                 "params": {
-                    "preview_url": _get_full_url(f"/odoo/res.users/{self.portal_user.id}"),
+                    "preview_url": _get_full_url(f"/weth/res.users/{self.portal_user.id}"),
                 }
             }),
             headers=self.headers
@@ -274,7 +274,7 @@ class TestController(HttpCase):
             '/html_editor/link_preview_internal',
             data=json_safe.dumps({
                 "params": {
-                    "preview_url": _get_full_url("/odoo/mail.thread/1"),
+                    "preview_url": _get_full_url("/weth/mail.thread/1"),
                 }
             }),
             headers=self.headers

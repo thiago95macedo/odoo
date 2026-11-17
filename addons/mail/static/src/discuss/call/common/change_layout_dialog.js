@@ -1,6 +1,6 @@
 import { CALL_GRID_LAYOUT } from "@mail/discuss/call/common/call_layout";
 
-import { Component, t, useEffect, useProps } from "@odoo/owl";
+import { Component, t, useEffect, useProps } from "@weth/owl";
 
 import { Dialog } from "@web/core/dialog/dialog";
 import { _t } from "@web/core/l10n/translation";

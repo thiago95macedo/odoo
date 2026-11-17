@@ -1,6 +1,6 @@
 import { ImageField, imageField } from "@web/views/fields/image/image_field";
 import { registry } from "@web/core/registry";
-import { computed } from "@odoo/owl";
+import { computed } from "@weth/owl";
 
 export class ResourceAvatarField extends ImageField {
     static template = "resource.ResourceAvatarField";

@@ -1,5 +1,5 @@
-import { expect, test } from "@odoo/hoot";
-import { runAllTimers } from "@odoo/hoot-mock";
+import { expect, test } from "@weth/hoot";
+import { runAllTimers } from "@weth/hoot-mock";
 import {
     clickFieldDropdown,
     contains,

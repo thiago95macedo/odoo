@@ -2,11 +2,11 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 import logging
 
-from odoo.exceptions import AccessError, UserError
-from odoo.tests import tagged
-from odoo.tools import mute_logger
+from weth.exceptions import AccessError, UserError
+from weth.tests import tagged
+from weth.tools import mute_logger
 
-from odoo.addons.project.tests.test_project_base import TestProjectCommon
+from weth.addons.project.tests.test_project_base import TestProjectCommon
 
 _logger = logging.getLogger(__name__)
 
@@ -91,7 +91,7 @@ class TestProjectTaskType(TestProjectCommon):
 @tagged("at_install", "-post_install")
 class TestProjectTaskTypeSecurity(TestProjectCommon):
     @classmethod
-    @mute_logger("odoo.models.unlink")
+    @mute_logger("weth.models.unlink")
     def setUpClass(cls):
         super().setUpClass()
         (cls.stage_project, cls.stage_manager, cls.stage_user, cls.stage_employee, cls.stage_portal) = cls.env[
@@ -258,7 +258,7 @@ class TestProjectTaskTypeSecurity(TestProjectCommon):
         self.stage_manager.with_user(self.user_projectmanager).write({"name": "foo"})
         self.stage_manager.with_user(self.user_projectmanager).unlink()
 
-    @mute_logger("odoo.addons.base.models.ir_access", "odoo.models.unlink")
+    @mute_logger("weth.addons.base.models.ir_access", "weth.models.unlink")
     def test_security(self):
         self._assert_access_portal()
         self._assert_access_employee()

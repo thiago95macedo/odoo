@@ -1,4 +1,4 @@
-import { Component, computed, proxy, signal, t, useListener, useProps } from "@odoo/owl";
+import { Component, computed, proxy, signal, t, useListener, useProps } from "@weth/owl";
 import { localeCompare } from "@web/core/l10n/utils";
 
 export const TABLE_TYPES = {
@@ -125,9 +125,8 @@ export class DocTable extends Component {
         if (subData) {
             this.state.subTable = subData;
             const rect = event.target.getBoundingClientRect();
-            this.state.subTableStyle = `top: ${rect.bottom + 3}px; left: ${
-                rect.left
-            }px; z-index: 50;`;
+            this.state.subTableStyle = `top: ${rect.bottom + 3}px; left: ${rect.left
+                }px; z-index: 50;`;
         }
     }
 

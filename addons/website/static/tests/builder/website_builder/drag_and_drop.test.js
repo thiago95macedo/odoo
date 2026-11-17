@@ -1,4 +1,4 @@
-import { animationFrame, expect, test } from "@odoo/hoot";
+import { animationFrame, expect, test } from "@weth/hoot";
 import { contains } from "@web/../tests/web_test_helpers";
 import {
     defineWebsiteModels,

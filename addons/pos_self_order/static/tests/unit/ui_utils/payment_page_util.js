@@ -1,4 +1,4 @@
-import { waitFor } from "@odoo/hoot-dom";
+import { waitFor } from "@weth/hoot-dom";
 
 export async function checkPaymentPage() {
     await waitFor(".payment-page");

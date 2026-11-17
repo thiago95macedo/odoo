@@ -1,5 +1,5 @@
-from odoo.fields import Command
-from odoo.tests import common, Form
+from weth.fields import Command
+from weth.tests import common, Form
 
 
 class TestConsumptionWarning(common.TransactionCase):

@@ -1,5 +1,5 @@
-import { test, expect } from "@odoo/hoot";
-import { animationFrame } from "@odoo/hoot-dom";
+import { test, expect } from "@weth/hoot";
+import { animationFrame } from "@weth/hoot-dom";
 import { setupPosEnv } from "@point_of_sale/../tests/unit/utils";
 import { ProductInfoPopup } from "@point_of_sale/app/components/popups/product_info_popup/product_info_popup";
 import { mountWithCleanup } from "@web/../tests/web_test_helpers";
@@ -18,7 +18,7 @@ test("allowProductEdition", async () => {
         props: {
             productTemplate: product,
             info,
-            close: () => {},
+            close: () => { },
         },
     });
     expect(store.accessRight.allowProductEdition).toBe(true);
@@ -36,7 +36,7 @@ test("financials for all employee", async () => {
         props: {
             productTemplate: product,
             info,
-            close: () => {},
+            close: () => { },
         },
     });
 

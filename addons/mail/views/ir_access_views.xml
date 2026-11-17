@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<odoo>
+<weth>
     <data>
         <record id="ir_access_form_view_inherit_mail" model="ir.ui.view">
             <field name="name">ir.access.view.form.inherit.mail</field>
@@ -12,4 +12,4 @@
             </field>
         </record>
     </data>
-</odoo>
+</weth>

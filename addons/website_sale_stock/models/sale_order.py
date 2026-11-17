@@ -2,7 +2,7 @@
 
 import json
 
-from odoo import fields, models
+from weth import fields, models
 
 
 class SaleOrder(models.Model):

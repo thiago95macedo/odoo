@@ -1,5 +1,5 @@
-import { describe, expect, test } from "@odoo/hoot";
-import { mockDate } from "@odoo/hoot-mock";
+import { describe, expect, test } from "@weth/hoot";
+import { mockDate } from "@weth/hoot-mock";
 import { defineModels, fields, getService, models, mountWebClient, onRpc } from "@web/../tests/web_test_helpers";
 import { defineHrHolidaysModels } from "./hr_holidays_test_helpers";
 
@@ -31,7 +31,7 @@ class HrLeave extends models.Model {
     date_from = fields.Datetime();
     date_to = fields.Datetime();
     department_id = fields.Many2one({ relation: "hr.department" });
-    employee_id =  fields.Many2one({ relation: "hr.employee" });
+    employee_id = fields.Many2one({ relation: "hr.employee" });
     work_entry_type_id = fields.Many2one({ relation: "hr.work.entry.type" });
     holiday_type = fields.Char();
     name = fields.Char();
@@ -48,7 +48,7 @@ defineHrHolidaysModels();
 defineModels([HrLeave, HrWorkEntryType]);
 
 onRpc("hr.employee", "get_time_off_dashboard_data", () => (
-    {has_accrual_allocation: true, allocation_data: {}, allocations_number: ""}
+    { has_accrual_allocation: true, allocation_data: {}, allocations_number: "" }
 ));
 onRpc("hr.employee", "get_mandatory_days", () => ({}));
 onRpc("hr.employee", "get_special_days_data", () => ({ mandatoryDays: [], bankHolidays: [] }));

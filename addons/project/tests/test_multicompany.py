@@ -6,8 +6,8 @@ from datetime import datetime
 from freezegun import freeze_time
 from lxml import etree
 
-from odoo.tests import Command, Form, TransactionCase
-from odoo.exceptions import AccessError, UserError
+from weth.tests import Command, Form, TransactionCase
+from weth.exceptions import AccessError, UserError
 
 class TestMultiCompanyCommon(TransactionCase):
 

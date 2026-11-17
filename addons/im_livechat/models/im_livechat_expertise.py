@@ -2,7 +2,7 @@
 
 from collections import defaultdict
 
-from odoo import Command, fields, models
+from weth import Command, fields, models
 
 
 class Im_LivechatExpertise(models.Model):

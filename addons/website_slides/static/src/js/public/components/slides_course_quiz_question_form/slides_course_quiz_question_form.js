@@ -1,4 +1,4 @@
-import { Component, proxy, props, signal, t, useListener } from "@odoo/owl";
+import { Component, proxy, props, signal, t, useListener } from "@weth/owl";
 import { useAutofocus, useService } from "@web/core/utils/hooks";
 import { rpc } from "@web/core/network/rpc";
 import { _t } from "@web/core/l10n/translation";

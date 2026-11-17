@@ -1,8 +1,8 @@
-from odoo import Command
-from odoo.exceptions import AccessError
-from odoo.tests import tagged
-from odoo.tools import SQL
-from odoo.addons.auth_passkey.tests.test_passkey_demo import PasskeyTest
+from weth import Command
+from weth.exceptions import AccessError
+from weth.tests import tagged
+from weth.tools import SQL
+from weth.addons.auth_passkey.tests.test_passkey_demo import PasskeyTest
 
 
 @tagged('post_install', '-at_install')

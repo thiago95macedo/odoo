@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, models
-from odoo.exceptions import ValidationError
+from weth import api, models
+from weth.exceptions import ValidationError
 
 
 class ProductTemplate(models.Model):

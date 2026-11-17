@@ -1,9 +1,9 @@
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@weth/hoot";
 import { deleteBackward, insertLineBreak, insertText, undo } from "../_helpers/user_actions";
 import { setupEditor, testEditor } from "../_helpers/editor";
-import { animationFrame } from "@odoo/hoot-mock";
+import { animationFrame } from "@weth/hoot-mock";
 
-import { click, press, waitFor, queryOne, queryAll, waitForNone } from "@odoo/hoot-dom";
+import { click, press, waitFor, queryOne, queryAll, waitForNone } from "@weth/hoot-dom";
 import { contains } from "@web/../tests/web_test_helpers";
 import { cleanLinkArtifacts } from "../_helpers/format";
 import { getContent, setSelection } from "../_helpers/selection";

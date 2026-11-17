@@ -1,7 +1,7 @@
 from unittest.mock import patch
-from odoo.addons.point_of_sale.tests.test_frontend import TestPointOfSaleHttpCommon
-from odoo.tests import Command
-from odoo.tests.common import tagged
+from weth.addons.point_of_sale.tests.test_frontend import TestPointOfSaleHttpCommon
+from weth.tests import Command
+from weth.tests.common import tagged
 
 
 @tagged('post_install', '-at_install')
@@ -29,5 +29,5 @@ class TestQFPayPoS(TestPointOfSaleHttpCommon):
         })
 
     def test_tour_qfpay_order_and_refund(self):
-        with patch('odoo.addons.pos_qfpay.controllers.main.consteq', lambda a, b: True):
+        with patch('weth.addons.pos_qfpay.controllers.main.consteq', lambda a, b: True):
             self.start_pos_tour('qfpay_order_and_refund')

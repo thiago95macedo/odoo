@@ -1,5 +1,5 @@
 declare module "registries" {
-    import { Component } from "@odoo/owl";
+    import { Component } from "@weth/owl";
     import { OdooEnv } from "@web/env";
 
     interface AccessRights {

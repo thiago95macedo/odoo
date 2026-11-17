@@ -2,7 +2,7 @@ import { Message } from "@mail/core/common/message";
 
 import { propComputed } from "@mail/utils/common/hooks";
 
-import { Component, t, useProps } from "@odoo/owl";
+import { Component, t, useProps } from "@weth/owl";
 
 import { Dialog } from "@web/core/dialog/dialog";
 import { _t } from "@web/core/l10n/translation";

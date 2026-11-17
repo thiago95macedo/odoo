@@ -4,10 +4,10 @@ from unittest.mock import patch
 from datetime import timedelta
 from freezegun import freeze_time
 
-from odoo.addons.sms.models.mail_thread import MailThread
-from odoo.addons.sms.tests.common import SMSCommon, SMSCase
-from odoo.fields import Datetime
-from odoo.tests import tagged
+from weth.addons.sms.models.mail_thread import MailThread
+from weth.addons.sms.tests.common import SMSCommon, SMSCase
+from weth.fields import Datetime
+from weth.tests import tagged
 
 
 @tagged('at_install', '-post_install')

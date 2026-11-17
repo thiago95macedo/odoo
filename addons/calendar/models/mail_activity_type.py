@@ -1,6 +1,6 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import models, fields
+from weth import models, fields
 
 
 class MailActivityType(models.Model):

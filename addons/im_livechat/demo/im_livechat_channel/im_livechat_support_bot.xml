@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<odoo>
+<weth>
     <data>
         <record id="support_bot_operator_partner_demo" model="res.partner">
             <field name="name">Support Bot</field>
@@ -114,4 +114,4 @@
             <field name="operator_expertise_ids" eval="[(4, ref('chatbot_script_expertise_discuss_demo')), (4, ref('chatbot_script_expertise_livechat_demo'))]"/>
         </record>
     </data>
-</odoo>
+</weth>

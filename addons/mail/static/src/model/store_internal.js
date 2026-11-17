@@ -6,7 +6,7 @@ import { isCommandList, isMany, normalizeManyCommands, untrackFunctions } from "
 import { RecordInternal } from "@mail/model/record_internal";
 import { incrementFn } from "@mail/utils/common/signal";
 
-import { computed, htmlEscape, markup, signal } from "@odoo/owl";
+import { computed, htmlEscape, markup, signal } from "@weth/owl";
 
 import { deserializeDate, deserializeDateTime } from "@web/core/l10n/dates";
 
@@ -29,7 +29,7 @@ export class StoreInternal extends RecordInternal {
      * The owl app this store belongs to, needed by the scope of each of its
      * records.
      *
-     * @type {import("@odoo/owl").App}
+     * @type {import("@weth/owl").App}
      */
     app;
     /**
@@ -183,8 +183,8 @@ export class StoreInternal extends RecordInternal {
                         ? markup(value[1])
                         : ""
                     : value
-                    ? htmlEscape(value)
-                    : "";
+                        ? htmlEscape(value)
+                        : "";
             shouldChange =
                 current?.toString() !== newValue?.toString() ||
                 current instanceof Markup != newValue instanceof Markup;
@@ -217,12 +217,12 @@ export class StoreInternal extends RecordInternal {
             // field otherwise.
             const revision = this.currentInsertVersion
                 ? {
-                      snapshot: this.currentInsertVersion.snapshot,
-                      isWrite:
-                          this.currentInsertVersion.written_fields_by_record?.[
-                              record.Model.getName()
-                          ]?.[record.id]?.includes(fieldName),
-                  }
+                    snapshot: this.currentInsertVersion.snapshot,
+                    isWrite:
+                        this.currentInsertVersion.written_fields_by_record?.[
+                            record.Model.getName()
+                        ]?.[record.id]?.includes(fieldName),
+                }
                 : version.lastRevision;
             const normalized = isMany(record.Model, fieldName)
                 ? normalizeManyCommands(value)

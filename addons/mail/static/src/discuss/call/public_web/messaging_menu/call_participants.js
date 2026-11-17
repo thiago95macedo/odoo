@@ -3,7 +3,7 @@ import { TalkingAudioBars } from "@mail/discuss/call/common/talking_audio_bars";
 import { AvatarStack } from "@mail/discuss/core/common/avatar_stack";
 import { toggleFn } from "@mail/utils/common/signal";
 
-import { Component, computed, signal, t, useOnChange, useProps } from "@odoo/owl";
+import { Component, computed, signal, t, useOnChange, useProps } from "@weth/owl";
 
 import { localeCompare } from "@web/core/l10n/utils/collation";
 import { _t } from "@web/core/l10n/translation";
@@ -65,7 +65,7 @@ export class MessagingMenuCallParticipants extends Component {
      * @param {MouseEvent} ev
      * @param {import("models").RtcSession} session
      */
-    onClickParticipant(ev, session) {}
+    onClickParticipant(ev, session) { }
 
     /** @param {import("models").RtcSession} session */
     participantClass(session) {

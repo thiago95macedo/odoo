@@ -1,4 +1,4 @@
-import { proxy, usePlugin } from "@odoo/owl";
+import { proxy, usePlugin } from "@weth/owl";
 import { Mutex } from "@web/core/utils/concurrency";
 import { registry } from "@web/core/registry";
 import { AlertDialog, ConfirmationDialog } from "@web/core/confirmation_dialog/confirmation_dialog";
@@ -408,7 +408,7 @@ export class PosStore extends WithLazyGetterTrap {
     }
 
     get firstPage() {
-        if (odoo.from_backend) {
+        if (weth.from_backend) {
             // Remove from_backend params in the URL but keep the rest
             const url = new URL(window.location.href);
             url.searchParams.delete("from_backend");
@@ -452,9 +452,8 @@ export class PosStore extends WithLazyGetterTrap {
     }
 
     get customerDisplayUrl() {
-        return `${this.config._base_url}/pos_customer_display/${this.config.id}/${
-            this.device.identifier
-        }?access_token=${this.config.access_token}&theme=${getColorScheme()}`;
+        return `${this.config._base_url}/pos_customer_display/${this.config.id}/${this.device.identifier
+            }?access_token=${this.config.access_token}&theme=${getColorScheme()}`;
     }
 
     async reloadData(showWarning = false) {
@@ -487,14 +486,14 @@ export class PosStore extends WithLazyGetterTrap {
                 title: _t("Reload Data?"),
                 body: _t(
                     "All data will be downloaded again from the server. On databases with " +
-                        "many records (products, pricelists, pricelist rules, …), this can take several minutes."
+                    "many records (products, pricelists, pricelist rules, …), this can take several minutes."
                 ),
                 confirmLabel: _t("Reload"),
                 confirm: async () => {
                     await reloadData();
                 },
                 cancelLabel: _t("Cancel"),
-                cancel: () => {},
+                cancel: () => { },
             });
             return;
         }
@@ -521,9 +520,9 @@ export class PosStore extends WithLazyGetterTrap {
             this.router.currentScreen() === "LoginScreen"
                 ? this.firstPage
                 : {
-                      page: this.router.currentScreen(),
-                      params: this.router.currentScreenParams(),
-                  };
+                    page: this.router.currentScreen(),
+                    params: this.router.currentScreenParams(),
+                };
         this.navigate(page.page, page.params);
         return process;
     }
@@ -596,11 +595,11 @@ export class PosStore extends WithLazyGetterTrap {
     }
 
     get session() {
-        return this.data.models["pos.session"].get(odoo.pos_session_id);
+        return this.data.models["pos.session"].get(weth.pos_session_id);
     }
 
     get config() {
-        return this.data.models["pos.config"].get(odoo.pos_config_id);
+        return this.data.models["pos.config"].get(weth.pos_config_id);
     }
 
     get company() {
@@ -1128,7 +1127,7 @@ export class PosStore extends WithLazyGetterTrap {
         return null;
     }
 
-    cleanAutoCourseAllocation(result, allocation) {}
+    cleanAutoCourseAllocation(result, allocation) { }
 
     // This method should be called every time a product is added to an order.
     // The configure parameter is available if the orderline already contains all
@@ -1357,9 +1356,9 @@ export class PosStore extends WithLazyGetterTrap {
                 values?.payload && Object.keys(values?.payload).length
                     ? values.payload
                     : await makeAwaitable(this.dialog, ComboConfiguratorPopup, {
-                          productTemplate: values.product_tmpl_id,
-                          line: opts.line,
-                      });
+                        productTemplate: values.product_tmpl_id,
+                        line: opts.line,
+                    });
 
             if (!payload) {
                 return false;
@@ -1391,9 +1390,9 @@ export class PosStore extends WithLazyGetterTrap {
                 values?.payload && Object.keys(values?.payload).length
                     ? values.payload
                     : await this.openConfigurator(productTemplate, {
-                          ...opts,
-                          product: values?.product_id,
-                      });
+                        ...opts,
+                        product: values?.product_id,
+                    });
             if (payload) {
                 // Find candidate based on instantly created variants.
                 const attributeValues = this.models["product.template.attribute.value"]
@@ -1745,7 +1744,7 @@ export class PosStore extends WithLazyGetterTrap {
         return orders;
     }
 
-    async postSyncAllOrders(orders) {}
+    async postSyncAllOrders(orders) { }
     async syncAllOrders(options = {}) {
         if (this.data.network.offline) {
             if (options.throw) {
@@ -2000,19 +1999,19 @@ export class PosStore extends WithLazyGetterTrap {
             );
             const reason = this.failed
                 ? _t(
-                      "Some orders could not be submitted to " +
-                          "the server due to configuration errors. " +
-                          "You can exit the Point of Sale, but do " +
-                          "not close the session before the issue " +
-                          "has been resolved."
-                  )
+                    "Some orders could not be submitted to " +
+                    "the server due to configuration errors. " +
+                    "You can exit the Point of Sale, but do " +
+                    "not close the session before the issue " +
+                    "has been resolved."
+                )
                 : _t(
-                      "Some orders could not be submitted to " +
-                          "the server due to internet connection issues. " +
-                          "You can exit the Point of Sale, but do " +
-                          "not close the session before the issue " +
-                          "has been resolved."
-                  );
+                    "Some orders could not be submitted to " +
+                    "the server due to internet connection issues. " +
+                    "You can exit the Point of Sale, but do " +
+                    "not close the session before the issue " +
+                    "has been resolved."
+                );
             await ask(this.dialog, {
                 title: _t("Offline Orders"),
                 body: reason,
@@ -2369,11 +2368,11 @@ export class PosStore extends WithLazyGetterTrap {
                 selectionList.length === 2 && !presetSelection
                     ? selectionList.find((preset) => !preset.isSelected).item
                     : await makeAwaitable(this.dialog, SelectionPopup, {
-                          title: _t("Select preset"),
-                          list: selectionList,
-                          size: "md",
-                          bodyClass: "pb-4",
-                      });
+                        title: _t("Select preset"),
+                        list: selectionList,
+                        size: "md",
+                        bodyClass: "pb-4",
+                    });
             // Keep the existing preset if the user cancels the selection popup.
             if (!preset && order.preset_id) {
                 return;
@@ -2593,7 +2592,7 @@ export class PosStore extends WithLazyGetterTrap {
         this.closeQrCode();
         const closer = this.dialog.add(QRPopup, {
             ...paymentline.getQrPopupProps(),
-            close: () => {},
+            close: () => { },
             cancelLabel: _t("Close"),
         });
 
@@ -2608,7 +2607,7 @@ export class PosStore extends WithLazyGetterTrap {
     }
 
     redirectToBackend() {
-        window.location = "/odoo/action-point_of_sale.action_client_pos_menu";
+        window.location = "/weth/action-point_of_sale.action_client_pos_menu";
     }
 
     getExcludedProductIds() {
@@ -2634,13 +2633,13 @@ export class PosStore extends WithLazyGetterTrap {
         return isSearchByWord
             ? products.sort((a, b) => b.is_favorite - a.is_favorite)
             : products.sort((a, b) => {
-                  if (b.is_favorite !== a.is_favorite) {
-                      return b.is_favorite - a.is_favorite;
-                  } else if (a.pos_sequence !== b.pos_sequence) {
-                      return a.pos_sequence - b.pos_sequence;
-                  }
-                  return localeCompare(a.name, b.name);
-              });
+                if (b.is_favorite !== a.is_favorite) {
+                    return b.is_favorite - a.is_favorite;
+                } else if (a.pos_sequence !== b.pos_sequence) {
+                    return a.pos_sequence - b.pos_sequence;
+                }
+                return localeCompare(a.name, b.name);
+            });
     }
 
     get productsToDisplay() {
@@ -2840,7 +2839,7 @@ export class PosStore extends WithLazyGetterTrap {
     async reloadIfSessionDeleted(error) {
         if (
             error instanceof RPCError &&
-            error.data.name === "odoo.exceptions.MissingError" &&
+            error.data.name === "weth.exceptions.MissingError" &&
             (await this.isSessionDeleted())
         ) {
             return location.reload();
@@ -2970,7 +2969,7 @@ export class PosStore extends WithLazyGetterTrap {
         return Boolean(this.getOrder()?.getSelectedOrderline()?.isPartOfCombo());
     }
 
-    async onPrepLinesSynced(prepLinePairs) {}
+    async onPrepLinesSynced(prepLinePairs) { }
 
     async createComboFromLines(productTmpl, combinations) {
         const order = this.getOrder();
@@ -3245,11 +3244,11 @@ export class PosStore extends WithLazyGetterTrap {
     ) {
         this._customerDisplayQrData = qrCode
             ? {
-                  title,
-                  ...(payment ? payment.getQrPopupProps() : {}),
-                  ...extra,
-                  qrCode,
-              }
+                title,
+                ...(payment ? payment.getQrPopupProps() : {}),
+                ...extra,
+                qrCode,
+            }
             : null;
         this.debounceUpdateCustomerDisplay();
     }
@@ -3312,7 +3311,7 @@ export class PosStore extends WithLazyGetterTrap {
                 await onUnsnooze?.();
             },
             cancelLabel: _t("Cancel"),
-            cancel: () => {},
+            cancel: () => { },
         });
     }
 

@@ -1,6 +1,6 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, models, _
+from weth import api, models, _
 
 
 class DiscussChannel(models.Model):

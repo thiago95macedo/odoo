@@ -1,4 +1,4 @@
-import { Component, t, useOnChange, useProps } from "@odoo/owl";
+import { Component, t, useOnChange, useProps } from "@weth/owl";
 import { ActionPanel } from "@mail/discuss/core/common/action_panel";
 import { _t } from "@web/core/l10n/translation";
 import { useService } from "@web/core/utils/hooks";

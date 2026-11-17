@@ -1,8 +1,8 @@
 from unittest.mock import patch
 
-from odoo.exceptions import ValidationError
-from odoo.tests import Form, tagged
-from odoo.addons.account.tests.common import AccountTestInvoicingCommon
+from weth.exceptions import ValidationError
+from weth.tests import Form, tagged
+from weth.addons.account.tests.common import AccountTestInvoicingCommon
 
 
 @tagged('post_install', '-at_install')

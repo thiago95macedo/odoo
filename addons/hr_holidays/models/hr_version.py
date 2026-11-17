@@ -1,9 +1,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
 from datetime import date, UTC
-from odoo import api, fields, models
-from odoo.fields import Domain
-from odoo.exceptions import ValidationError
+from weth import api, fields, models
+from weth.fields import Domain
+from weth.exceptions import ValidationError
 
 
 class HrVersion(models.Model):
@@ -378,9 +378,9 @@ class HrVersion(models.Model):
     def _get_sub_leave_domain(self):
         """Also accept the leaves of the time off of the employees, whatever their calendar.
 
-        :rtype: odoo.fields.Domain
+        :rtype: weth.fields.Domain
         """
-        # see https://github.com/odoo/enterprise/pull/15091
+        # see https://github.com/weth/enterprise/pull/15091
         return super()._get_sub_leave_domain() | Domain('holiday_id.employee_id', 'in', self.employee_id.ids)
 
     @api.model

@@ -5,7 +5,7 @@ from datetime import date, datetime, timedelta
 from string import ascii_letters, digits
 from typing import TYPE_CHECKING, cast
 
-from odoo import fields
+from weth import fields
 
 from .generator import Generator
 

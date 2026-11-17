@@ -8,7 +8,7 @@ import { BadgeTag } from "@web/core/tags_list/badge_tag";
 import { standardFieldProps } from "@web/views/fields/standard_field_props";
 import { useTagNavigation } from "@web/core/record_selectors/tag_navigation_hook";
 
-import { Component, signal, t, useProps } from "@odoo/owl";
+import { Component, signal, t, useProps } from "@weth/owl";
 import { range } from "@web/core/utils/numbers";
 
 class PropertyTagsColorListPopover extends Component {
@@ -145,7 +145,7 @@ export class PropertyTags extends Component {
                             (!request ||
                                 !request.length ||
                                 tag[1].toLocaleLowerCase().indexOf(request.toLocaleLowerCase()) >=
-                                    0)
+                                0)
                     );
                     if (!tagsFiltered || !tagsFiltered.length) {
                         // no result, ask the user if he want to create a new tag

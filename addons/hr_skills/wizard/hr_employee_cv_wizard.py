@@ -3,7 +3,7 @@
 
 from werkzeug.urls import url_encode
 
-from odoo import _, api, fields, models
+from weth import _, api, fields, models
 
 
 class HrEmployeeCvWizard(models.TransientModel):

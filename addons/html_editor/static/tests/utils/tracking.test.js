@@ -1,4 +1,4 @@
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@weth/hoot";
 import { trackOccurrences, trackOccurrencesPair } from "@html_editor/utils/tracking";
 
 describe("trackOccurrences", () => {

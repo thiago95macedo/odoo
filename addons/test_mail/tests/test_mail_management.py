@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.bus.tests.common import BusResult
-from odoo.addons.mail.tests.common import MailCommon
-from odoo.addons.mail.tools.discuss import Store
-from odoo.addons.test_mail.tests.common import TestRecipients
-from odoo.tests import tagged
+from weth.addons.bus.tests.common import BusResult
+from weth.addons.mail.tests.common import MailCommon
+from weth.addons.mail.tools.discuss import Store
+from weth.addons.test_mail.tests.common import TestRecipients
+from weth.tests import tagged
 
 
 @tagged('mail_management')

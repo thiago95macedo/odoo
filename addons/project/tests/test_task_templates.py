@@ -1,7 +1,7 @@
-from odoo import Command
-from odoo.addons.mail.tests.common import MailCase
-from odoo.addons.project.tests.test_project_base import TestProjectCommon
-from odoo.tests import tagged
+from weth import Command
+from weth.addons.mail.tests.common import MailCase
+from weth.addons.project.tests.test_project_base import TestProjectCommon
+from weth.tests import tagged
 
 
 @tagged('at_install', '-post_install')  # LEGACY at_install, fails post install

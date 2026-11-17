@@ -2,7 +2,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
 from markupsafe import Markup
-from odoo import _, api, fields, models, tools
+from weth import _, api, fields, models, tools
 
 
 class MailGatewayAllowed(models.Model):

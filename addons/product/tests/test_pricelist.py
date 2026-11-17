@@ -3,11 +3,11 @@
 from itertools import pairwise
 from unittest.mock import patch
 
-from odoo.exceptions import UserError, ValidationError
-from odoo.fields import Command, Domain
-from odoo.tests import Form, tagged
+from weth.exceptions import UserError, ValidationError
+from weth.fields import Command, Domain
+from weth.tests import Form, tagged
 
-from odoo.addons.product.tests.common import ProductVariantsCommon
+from weth.addons.product.tests.common import ProductVariantsCommon
 
 
 @tagged('post_install', '-at_install')

@@ -2,13 +2,13 @@
 
 import json
 
-import odoo
-from odoo.addons.bus.models.bus import json_dump
-from odoo.addons.mail.tests.common_controllers import MailControllerAttachmentCommon
-from odoo.tools.misc import file_open
+import weth
+from weth.addons.bus.models.bus import json_dump
+from weth.addons.mail.tests.common_controllers import MailControllerAttachmentCommon
+from weth.tools.misc import file_open
 
 
-@odoo.tests.tagged("mail_controller")
+@weth.tests.tagged("mail_controller")
 class TestDiscussAttachmentController(MailControllerAttachmentCommon):
     def test_attachment_allowed_upload_public_channel(self):
         """Test access to upload an attachment on an allowed upload public channel"""

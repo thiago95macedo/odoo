@@ -2,8 +2,8 @@
 
 from datetime import datetime
 
-from odoo.http import Controller, request, route
-from odoo.tools import groupby
+from weth.http import Controller, request, route
+from weth.tools import groupby
 
 
 class SaleComboConfiguratorController(Controller):

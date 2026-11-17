@@ -1,9 +1,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime, date
-from odoo.exceptions import ValidationError
-from odoo.tests import Form, freeze_time, tagged
-from odoo.addons.hr_holidays.tests.common import TestHolidayContract
+from weth.exceptions import ValidationError
+from weth.tests import Form, freeze_time, tagged
+from weth.addons.hr_holidays.tests.common import TestHolidayContract
 
 
 @tagged('multi_contract')

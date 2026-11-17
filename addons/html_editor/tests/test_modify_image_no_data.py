@@ -2,12 +2,12 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
 import base64
-import odoo.tests
-from odoo.tests.common import HttpCase
-from odoo.tools.json import scriptsafe as json_safe
+import weth.tests
+from weth.tests.common import HttpCase
+from weth.tools.json import scriptsafe as json_safe
 
 
-@odoo.tests.tagged('-at_install', 'post_install')
+@weth.tests.tagged('-at_install', 'post_install')
 class TestModifyImageNoData(HttpCase):
 
     def setUp(self):

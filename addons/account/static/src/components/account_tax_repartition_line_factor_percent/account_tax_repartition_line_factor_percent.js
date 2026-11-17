@@ -1,7 +1,7 @@
 import { FloatField, floatField, floatFieldProps } from "@web/views/fields/float/float_field";
 import { roundPrecision } from "@web/core/utils/numbers";
-import {registry} from "@web/core/registry";
-import { useProps, t } from "@odoo/owl";
+import { registry } from "@web/core/registry";
+import { useProps, t } from "@weth/owl";
 
 export class AccountTaxRepartitionLineFactorPercent extends FloatField {
     props = useProps({

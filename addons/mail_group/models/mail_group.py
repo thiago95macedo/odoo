@@ -11,12 +11,12 @@ from dateutil import relativedelta
 from markupsafe import Markup
 from werkzeug import urls
 
-from odoo import _, api, fields, models, tools
-from odoo.addons.mail.tools.alias_error import AliasError
-from odoo.exceptions import ValidationError, UserError
-from odoo.fields import Domain
-from odoo.tools import hmac
-from odoo.tools.mail import email_normalize, generate_tracking_message_id, append_content_to_html
+from weth import _, api, fields, models, tools
+from weth.addons.mail.tools.alias_error import AliasError
+from weth.exceptions import ValidationError, UserError
+from weth.fields import Domain
+from weth.tools import hmac
+from weth.tools.mail import email_normalize, generate_tracking_message_id, append_content_to_html
 
 _logger = logging.getLogger(__name__)
 

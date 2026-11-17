@@ -1,6 +1,6 @@
-from odoo import http
-from odoo.http import request
-from odoo.tools import verify_hash_signed
+from weth import http
+from weth.http import request
+from weth.tools import verify_hash_signed
 import logging
 
 _logger = logging.getLogger(__name__)

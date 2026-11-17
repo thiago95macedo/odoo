@@ -2,7 +2,7 @@ import { useSubEnv } from "@web/owl2/utils";
 import { registry } from "@web/core/registry";
 import { formView } from "@web/views/form/form_view";
 import { formControllerProps } from "@web/views/form/form_controller";
-import { EventBus, useProps, t } from "@odoo/owl";
+import { EventBus, useProps, t } from "@weth/owl";
 
 const defaultFullComposerBus = new EventBus();
 

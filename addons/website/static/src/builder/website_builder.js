@@ -2,7 +2,7 @@ import { Builder } from "@html_builder/builder";
 import { CORE_PLUGINS, MAIN_PLUGINS } from "@html_builder/core/core_plugins";
 import { removePlugins } from "@html_builder/utils/utils";
 import { closestElement } from "@html_editor/utils/dom_traversal";
-import { Component, onMounted, onWillStart, onWillUnmount, useProps, t } from "@odoo/owl";
+import { Component, onMounted, onWillStart, onWillUnmount, useProps, t } from "@weth/owl";
 import { ConfirmationDialog } from "@web/core/confirmation_dialog/confirmation_dialog";
 import { _t } from "@web/core/l10n/translation";
 import { registry } from "@web/core/registry";
@@ -98,7 +98,7 @@ export class WebsiteBuilder extends Component {
                 confirmLabel: _t("Discard changes"),
                 cancelLabel: _t("Keep editing"),
                 confirm: () => this.props.builderProps.closeEditor(),
-                cancel: () => {},
+                cancel: () => { },
             });
         } else {
             if (history.state?.skipRouteChange) {
@@ -199,14 +199,14 @@ export class WebsiteBuilder extends Component {
         const builderProps = Object.assign({}, this.props.builderProps);
         const websitePlugins = this.props.translation
             ? [
-                  FakeClonePlugin,
-                  FakeRemovePlugin,
-                  ...registry.category("translation-plugins").getAll(),
-              ]
+                FakeClonePlugin,
+                FakeRemovePlugin,
+                ...registry.category("translation-plugins").getAll(),
+            ]
             : [
-                  ...registry.category("builder-plugins").getAll(),
-                  ...registry.category("website-plugins").getAll(),
-              ];
+                ...registry.category("builder-plugins").getAll(),
+                ...registry.category("website-plugins").getAll(),
+            ];
         const builderPluginsToRemove = [
             // Currently empty.
         ];

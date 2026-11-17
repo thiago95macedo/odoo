@@ -3,7 +3,7 @@ import { services } from "@web/core/services";
 import { location } from "@web/core/browser/browser";
 import { escapeRegExp } from "@web/core/utils/strings";
 import { zip } from "@web/core/utils/arrays";
-import { signal, Plugin, computed } from "@odoo/owl";
+import { signal, Plugin, computed } from "@weth/owl";
 
 const parseParams = (matches, paramSpecs) =>
     Object.fromEntries(
@@ -78,7 +78,7 @@ export class PosRouterPlugin extends Plugin {
     back() {
         if (!this.historyPage() || !this.historyPage().length) {
             this.navigate("LoginScreen", {
-                configId: odoo.pos_config_id,
+                configId: weth.pos_config_id,
             });
             return;
         }
@@ -87,7 +87,7 @@ export class PosRouterPlugin extends Plugin {
     }
 
     close() {
-        window.location.href = `/pos/ui/${odoo.pos_config_id}`;
+        window.location.href = `/pos/ui/${weth.pos_config_id}`;
     }
 
     matchURL(props = {}) {

@@ -1,5 +1,5 @@
 import { SnippetViewer } from "@html_builder/snippets/snippet_viewer";
-import { onMounted, onPatched, onWillPatch, onWillUnmount } from "@odoo/owl";
+import { onMounted, onPatched, onWillPatch, onWillUnmount } from "@weth/owl";
 import { isDarkColorPalette } from "@website/components/dialog/dark_palette_utils";
 import { useService } from "@web/core/utils/hooks";
 import { patch } from "@web/core/utils/patch";

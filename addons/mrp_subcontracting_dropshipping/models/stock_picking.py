@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import models
-from odoo.tools import float_compare
+from weth import models
+from weth.tools import float_compare
 
 
 class StockPicking(models.Model):

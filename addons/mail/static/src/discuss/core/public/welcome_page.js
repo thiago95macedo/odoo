@@ -1,4 +1,4 @@
-import { Component, proxy, signal, types, useProps } from "@odoo/owl";
+import { Component, proxy, signal, types, useProps } from "@weth/owl";
 
 import { CallPreview } from "@mail/discuss/call/common/call_preview";
 import { AvatarStack } from "@mail/discuss/core/common/avatar_stack";

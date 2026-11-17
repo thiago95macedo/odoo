@@ -1,5 +1,5 @@
-import { describe, test } from "@odoo/hoot";
-import { mockTimeZone } from "@odoo/hoot-mock";
+import { describe, test } from "@weth/hoot";
+import { mockTimeZone } from "@weth/hoot-mock";
 import { Command, serverState } from "@web/../tests/web_test_helpers";
 import { startServer, start, openDiscuss, contains } from "@mail/../tests/mail_test_helpers";
 import { defineHrHolidaysModels } from "@hr_holidays/../tests/hr_holidays_test_helpers";

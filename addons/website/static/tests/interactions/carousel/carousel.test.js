@@ -1,7 +1,7 @@
 import { startInteractions, setupInteractionWhiteList } from "@web/../tests/public/helpers";
-import { describe, expect, test } from "@odoo/hoot";
-import { hover, leave, queryOne } from "@odoo/hoot-dom";
-import { animationFrame, advanceTime } from "@odoo/hoot-mock";
+import { describe, expect, test } from "@weth/hoot";
+import { hover, leave, queryOne } from "@weth/hoot-dom";
+import { animationFrame, advanceTime } from "@weth/hoot-mock";
 import { defaultCarouselStyleSnippet, imageGalleryCarouselStyleSnippet } from "./carousel_helpers";
 
 setupInteractionWhiteList("website.carousel_bootstrap_upgrade_fix");

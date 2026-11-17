@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
 
 <template id="s_bento_grid_avatars" name="Bento Avatars">
     <section class="s_bento_grid_avatars pt64 pb64">
@@ -61,4 +61,4 @@
     <path>website/static/src/snippets/s_bento_grid_avatars/000.scss</path>
 </asset>
 
-</odoo>
+</weth>

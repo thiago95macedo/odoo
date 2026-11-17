@@ -2,8 +2,8 @@
 
 from datetime import datetime, timedelta
 
-from odoo.addons.mail.tests.common import MailCommon
-from odoo.tests import tagged, users
+from weth.addons.mail.tests.common import MailCommon
+from weth.tests import tagged, users
 
 
 @tagged('-at_install', 'post_install', 'mail_tools', 'res_users')

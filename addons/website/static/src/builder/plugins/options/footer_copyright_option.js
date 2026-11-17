@@ -1,6 +1,6 @@
 import { BaseOptionComponent } from "@html_builder/core/base_option_component";
 import { registry } from "@web/core/registry";
-import { onWillStart } from "@odoo/owl";
+import { onWillStart } from "@weth/owl";
 import { rpc } from "@web/core/network/rpc";
 
 export class FooterCopyrightOption extends BaseOptionComponent {

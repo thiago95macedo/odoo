@@ -3,9 +3,9 @@
 import logging
 import traceback
 
-from odoo import api, fields, models
-from odoo.fields import Domain
-from odoo.tools.sql import create_index, make_index_name
+from weth import api, fields, models
+from weth.fields import Domain
+from weth.tools.sql import create_index, make_index_name
 
 _logger = logging.getLogger(__name__)
 

@@ -9,7 +9,7 @@ import {
     queryOne,
     tick,
     waitFor,
-} from "@odoo/hoot-dom";
+} from "@weth/hoot-dom";
 import { setSelection } from "./selection";
 import { execCommand } from "./userCommands";
 import { isMobileOS } from "@web/core/browser/feature_detection";

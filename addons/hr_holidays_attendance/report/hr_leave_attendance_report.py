@@ -2,8 +2,8 @@
 
 from dateutil.relativedelta import relativedelta
 
-from odoo import api, fields, models
-from odoo.tools.sql import SQL, drop_view_if_exists
+from weth import api, fields, models
+from weth.tools.sql import SQL, drop_view_if_exists
 
 
 class HrLeaveAttendanceReport(models.Model):

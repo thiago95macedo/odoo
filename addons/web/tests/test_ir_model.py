@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
-from odoo import Command
-from odoo.exceptions import ValidationError
-from odoo.tests.common import TransactionCase
+from weth import Command
+from weth.exceptions import ValidationError
+from weth.tests.common import TransactionCase
 
-from odoo.tests import tagged
-from odoo.tests.common import new_test_user
+from weth.tests import tagged
+from weth.tests.common import new_test_user
 
 
 @tagged("post_install", "-at_install")

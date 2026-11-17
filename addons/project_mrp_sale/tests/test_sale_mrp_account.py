@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import Command
-from odoo.addons.sale_mrp.tests.test_multistep_manufacturing import TestMultistepManufacturing
-from odoo.tests import common, Form
+from weth import Command
+from weth.addons.sale_mrp.tests.test_multistep_manufacturing import TestMultistepManufacturing
+from weth.tests import common, Form
 
 
 @common.tagged('post_install', '-at_install')

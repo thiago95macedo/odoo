@@ -1,4 +1,4 @@
-import { htmlEscape, markup, usePlugin } from "@odoo/owl";
+import { htmlEscape, markup, usePlugin } from "@weth/owl";
 
 import { Interaction } from "@web/public/interaction";
 import { registry } from "@web/core/registry";
@@ -79,13 +79,13 @@ export class SlideLike extends Interaction {
                 this.showAlert(
                     data.error_signup_allowed
                         ? _t(
-                              "Please %(a_login_open)slogin%(a_login_close)s or %(a_signup_open)screate an account%(a_signup_close)s to vote for this lesson",
-                              tags
-                          )
+                            "Please %(a_login_open)slogin%(a_login_close)s or %(a_signup_open)screate an account%(a_signup_close)s to vote for this lesson",
+                            tags
+                        )
                         : _t(
-                              "Please %(a_login_open)slogin%(a_login_close)s to vote for this lesson",
-                              tags
-                          )
+                            "Please %(a_login_open)slogin%(a_login_close)s to vote for this lesson",
+                            tags
+                        )
                 );
             } else if (data.error === "slide_access") {
                 this.showAlert(_t("You don't have access to this lesson"));

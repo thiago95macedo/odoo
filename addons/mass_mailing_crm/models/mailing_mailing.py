@@ -2,7 +2,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
 from markupsafe import Markup
-from odoo import api, fields, models, tools, _
+from weth import api, fields, models, tools, _
 
 
 class MailingMailing(models.Model):

@@ -1,8 +1,8 @@
 from math import copysign
 
-from odoo import Command, _, api, fields, models
-from odoo.exceptions import UserError, ValidationError
-from odoo.tools import BinaryBytes, file_open, float_compare
+from weth import Command, _, api, fields, models
+from weth.exceptions import UserError, ValidationError
+from weth.tools import BinaryBytes, file_open, float_compare
 
 
 class PosPaymentMethod(models.Model):

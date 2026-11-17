@@ -1,9 +1,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.tests import HttpCase, tagged
-from odoo.tools import mute_logger, urls
+from weth.tests import HttpCase, tagged
+from weth.tools import mute_logger, urls
 
-from odoo.addons.base.tests.common import BaseCommon
+from weth.addons.base.tests.common import BaseCommon
 
 
 @tagged('-at_install', 'post_install')
@@ -83,7 +83,7 @@ class TestPortalAdditionalIdentifiers(BaseCommon, HttpCase):
         self.assertEqual(res, {'redirectUrl': '/my/addresses'})
         self.assertFalse(self.partner.additional_identifiers)
 
-    @mute_logger('odoo.http')
+    @mute_logger('weth.http')
     def test_invalid_additional_identifier_rejected(self):
         """An invalid identifier value highlights its own input and is not saved."""
         self.authenticate(self.portal_user.login, self.portal_user.login)
@@ -91,7 +91,7 @@ class TestPortalAdditionalIdentifiers(BaseCommon, HttpCase):
         self.assertIn('FR_CN', res['invalid_fields'])
         self.assertFalse(self.partner.additional_identifiers)
 
-    @mute_logger('odoo.http')
+    @mute_logger('weth.http')
     def test_individual_identifier_conflicts_with_vat(self):
         """A citizen number cannot be combined with a VAT number."""
         self.authenticate(self.portal_user.login, self.portal_user.login)

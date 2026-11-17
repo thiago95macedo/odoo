@@ -1,7 +1,7 @@
 import { registry } from "@web/core/registry";
 import { usePos } from "./pos_hook";
 import { PosRouterPlugin } from "../plugins/pos_router_plugin";
-import { usePlugin } from "@odoo/owl";
+import { usePlugin } from "@weth/owl";
 
 /**
  * @param {string} pageName

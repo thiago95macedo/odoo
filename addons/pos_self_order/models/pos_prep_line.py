@@ -1,4 +1,4 @@
-from odoo import models, api
+from weth import models, api
 
 
 class PosPrepLine(models.Model):

@@ -1,5 +1,5 @@
 import { useBus } from "@web/core/utils/hooks";
-import { EventBus, Component, markup, proxy, useProps, t } from "@odoo/owl";
+import { EventBus, Component, markup, proxy, useProps, t } from "@weth/owl";
 import { _t } from "@web/core/l10n/translation";
 
 export class FullscreenIndication extends Component {

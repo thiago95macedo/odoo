@@ -1,4 +1,4 @@
-import { onWillStart } from "@odoo/owl";
+import { onWillStart } from "@weth/owl";
 
 import { RelationalModel } from "@web/model/relational_model/relational_model";
 import { Record } from "@web/model/relational_model/record";

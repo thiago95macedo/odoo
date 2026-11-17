@@ -1,4 +1,4 @@
-import { registries, EvaluationError } from "@odoo/o-spreadsheet";
+import { registries, EvaluationError } from "@weth/o-spreadsheet";
 
 const LOADING_ERROR = "Loading...";
 

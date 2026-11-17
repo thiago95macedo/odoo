@@ -1,8 +1,8 @@
 import uuid
 from werkzeug.exceptions import Forbidden
 
-from odoo import models, fields, api, _
-from odoo.tools import BinaryBytes, consteq
+from weth import models, fields, api, _
+from weth.tools import BinaryBytes, consteq
 
 
 class SpreadsheetDashboardShare(models.Model):

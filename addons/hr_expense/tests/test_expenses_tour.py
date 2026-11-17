@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
-from odoo.tests import tagged, HttpCase
-from odoo.addons.hr.tests.test_utils import get_admin_employee
+from weth.tests import tagged, HttpCase
+from weth.addons.hr.tests.test_utils import get_admin_employee
 
-from odoo.addons.hr_expense.tests.common import TestExpenseCommon
+from weth.addons.hr_expense.tests.common import TestExpenseCommon
 
 
 @tagged('post_install', '-at_install')

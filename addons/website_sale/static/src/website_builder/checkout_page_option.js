@@ -1,4 +1,4 @@
-import { onWillStart } from "@odoo/owl";
+import { onWillStart } from "@weth/owl";
 import { BaseOptionComponent } from "@html_builder/core/base_option_component";
 import { registry } from "@web/core/registry";
 import { useService } from "@web/core/utils/hooks";

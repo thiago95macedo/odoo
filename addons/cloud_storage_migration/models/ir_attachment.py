@@ -6,13 +6,13 @@ import requests
 
 from datetime import timedelta
 
-from odoo.tools import SQL, config
-from odoo.http import request
-from odoo import models, fields, _
-from odoo.exceptions import UserError, ValidationError
+from weth.tools import SQL, config
+from weth.http import request
+from weth import models, fields, _
+from weth.exceptions import UserError, ValidationError
 
-from odoo.addons.base.models.ir_module import assert_log_admin_access
-from odoo.addons.cloud_storage.models.res_config_settings import DEFAULT_CLOUD_STORAGE_MIN_FILE_SIZE
+from weth.addons.base.models.ir_module import assert_log_admin_access
+from weth.addons.cloud_storage.models.res_config_settings import DEFAULT_CLOUD_STORAGE_MIN_FILE_SIZE
 
 
 _logger = logging.getLogger(__name__)

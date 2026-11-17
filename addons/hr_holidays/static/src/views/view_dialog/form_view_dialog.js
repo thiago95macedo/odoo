@@ -1,4 +1,4 @@
-import { onWillStart, useProps, t } from "@odoo/owl";
+import { onWillStart, useProps, t } from "@weth/owl";
 import { FormViewDialog, formViewDialogProps } from "@web/views/view_dialogs/form_view_dialog";
 
 import { registry } from "@web/core/registry";

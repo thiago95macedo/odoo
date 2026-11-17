@@ -1,4 +1,4 @@
-import { before, globals } from "@odoo/hoot";
+import { before, globals } from "@weth/hoot";
 import { contains, onRpc, patchWithCleanup } from "@web/../tests/web_test_helpers";
 import { dummyBase64Img } from "@html_builder/../tests/helpers";
 import { ImagePositionOverlay } from "@html_builder/plugins/image/image_position_overlay";
@@ -99,7 +99,7 @@ export function patchDragImage(el, from, to) {
         onDragMove(ev) {
             // Mock the movementX and movementY readonly property
             super.onDragMove({
-                preventDefault: () => {},
+                preventDefault: () => { },
                 movementX: ev.clientX === to.x ? to.x - from.x : 0,
                 movementY: ev.clientY === to.y ? to.y - from.y : 0,
             });

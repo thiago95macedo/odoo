@@ -1,10 +1,10 @@
 from werkzeug import urls
 
-from odoo import http
-from odoo.exceptions import AccessError
-from odoo.http import request
-from odoo.tools import consteq
-from odoo.addons.mail.controllers import mail
+from weth import http
+from weth.exceptions import AccessError
+from weth.http import request
+from weth.tools import consteq
+from weth.addons.mail.controllers import mail
 
 
 class MailController(mail.MailController):

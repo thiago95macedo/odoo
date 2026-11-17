@@ -1,7 +1,7 @@
-import { expect, test } from "@odoo/hoot";
-import { queryAllTexts, queryFirst } from "@odoo/hoot-dom";
-import { runAllTimers } from "@odoo/hoot-mock";
-import { Component, onError, proxy, signal, xml } from "@odoo/owl";
+import { expect, test } from "@weth/hoot";
+import { queryAllTexts, queryFirst } from "@weth/hoot-dom";
+import { runAllTimers } from "@weth/hoot-mock";
+import { Component, onError, proxy, signal, xml } from "@weth/owl";
 import {
     contains,
     defineModels,
@@ -803,9 +803,9 @@ test(`don't duplicate a useRecordObserver effect when switching back and forth b
                     mode: "edit",
                 },
                 hooks: {
-                    onRecordSaved: () => {},
-                    onWillSaveRecord: () => {},
-                    onRecordChanged: () => {},
+                    onRecordSaved: () => { },
+                    onWillSaveRecord: () => { },
+                    onRecordChanged: () => { },
                 },
             };
             super(env, params, services);

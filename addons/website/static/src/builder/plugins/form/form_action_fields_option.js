@@ -1,4 +1,4 @@
-import { onWillStart, onWillUpdateProps, proxy, useProps, t } from "@odoo/owl";
+import { onWillStart, onWillUpdateProps, proxy, useProps, t } from "@weth/owl";
 import { BaseOptionComponent } from "@html_builder/core/base_option_component";
 
 export class FormActionFieldsOption extends BaseOptionComponent {

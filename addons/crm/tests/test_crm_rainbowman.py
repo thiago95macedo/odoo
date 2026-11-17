@@ -1,8 +1,8 @@
 from datetime import datetime
 
-from odoo.addons.crm.tests.common import TestCrmCommon
-from odoo.addons.mail.tests.common import mail_new_test_user
-from odoo.tests import tagged, users
+from weth.addons.crm.tests.common import TestCrmCommon
+from weth.addons.mail.tests.common import mail_new_test_user
+from weth.tests import tagged, users
 
 
 @tagged('lead_internals')

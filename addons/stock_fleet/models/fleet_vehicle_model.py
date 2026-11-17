@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import _, fields, models
-from odoo.tools import format_list
+from weth import _, fields, models
+from weth.tools import format_list
 
 
 class FleetVehicleModelCategory(models.Model):

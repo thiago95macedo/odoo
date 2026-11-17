@@ -2,8 +2,8 @@ from collections import defaultdict
 from datetime import datetime, timedelta
 from unittest.mock import patch
 
-from odoo import fields
-from odoo.addons.mail.tests.common import MailCommon
+from weth import fields
+from weth.addons.mail.tests.common import MailCommon
 
 
 class MailTrackingDurationMixinCase(MailCommon):

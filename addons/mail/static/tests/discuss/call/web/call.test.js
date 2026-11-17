@@ -16,7 +16,7 @@ import { pttExtensionServiceInternal } from "@mail/discuss/call/common/ptt_exten
 import { PTT_RELEASE_DURATION } from "@mail/discuss/call/common/rtc_service";
 import { makeRecordFieldLocalId } from "@mail/model/misc";
 import { toRawValue } from "@mail/utils/common/local_storage";
-import { advanceTime, freezeTime, keyDown, test } from "@odoo/hoot";
+import { advanceTime, freezeTime, keyDown, test } from "@weth/hoot";
 import { patchWithCleanup } from "@web/../tests/web_test_helpers";
 import { browser } from "@web/core/browser/browser";
 

@@ -1,5 +1,5 @@
 import { getSnippetStructure } from "@html_builder/../tests/helpers";
-import { expect, test, waitForNone } from "@odoo/hoot";
+import { expect, test, waitForNone } from "@weth/hoot";
 import { isDarkColorPalette } from "@website/components/dialog/dark_palette_utils";
 import {
     contains,
@@ -22,7 +22,7 @@ test("snippet dialog uses dark palette content adaptations", async () => {
     class WebsiteAssets extends models.Model {
         _name = "website.assets";
 
-        make_scss_customization() {}
+        make_scss_customization() { }
     }
     defineModels([WebsiteAssets]);
 

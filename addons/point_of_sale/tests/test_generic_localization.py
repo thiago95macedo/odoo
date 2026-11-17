@@ -1,6 +1,6 @@
-from odoo.addons.point_of_sale.tests.test_frontend import TestPointOfSaleHttpCommon
-from odoo.tests import Form, tagged
-from odoo.fields import Command
+from weth.addons.point_of_sale.tests.test_frontend import TestPointOfSaleHttpCommon
+from weth.tests import Form, tagged
+from weth.fields import Command
 
 
 @tagged('post_install', '-at_install', 'post_install_l10n')

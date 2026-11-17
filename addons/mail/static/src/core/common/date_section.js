@@ -1,4 +1,4 @@
-import { Component, t, useProps } from "@odoo/owl";
+import { Component, t, useProps } from "@weth/owl";
 import { isMobileOS } from "@web/core/browser/feature_detection";
 
 export class DateSection extends Component {

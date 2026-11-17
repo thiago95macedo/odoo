@@ -1,6 +1,6 @@
 import { setSelection } from "@html_editor/../tests/_helpers/selection";
 import { expandToolbar } from "@html_editor/../tests/_helpers/toolbar";
-import { expect, test } from "@odoo/hoot";
+import { expect, test } from "@weth/hoot";
 import {
     click,
     pointerDown,
@@ -11,10 +11,10 @@ import {
     waitFor,
     waitForNone,
     waitUntil,
-} from "@odoo/hoot-dom";
+} from "@weth/hoot-dom";
 import { contains } from "@web/../tests/web_test_helpers";
 import { defineWebsiteModels, setupWebsiteBuilder } from "./website_helpers";
-import { animationFrame } from "@odoo/hoot-mock";
+import { animationFrame } from "@weth/hoot-mock";
 import { expectElementCount } from "@html_editor/../tests/_helpers/ui_expectations";
 
 defineWebsiteModels();

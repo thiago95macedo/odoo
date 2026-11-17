@@ -1,4 +1,4 @@
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@weth/hoot";
 import { setupEditor, testEditor } from "../_helpers/editor";
 import {
     cleanTextNode,
@@ -11,7 +11,7 @@ import {
 import { getContent } from "../_helpers/selection";
 import { parseHTML } from "@html_editor/utils/html";
 import { unformat } from "../_helpers/format";
-import { queryOne } from "@odoo/hoot-dom";
+import { queryOne } from "@weth/hoot-dom";
 
 describe("splitAroundUntil", () => {
     test("should split a slice of text from its inline ancestry (1)", async () => {

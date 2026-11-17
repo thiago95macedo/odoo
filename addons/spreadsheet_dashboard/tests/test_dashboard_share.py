@@ -1,10 +1,10 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
 from .common import DashboardTestCommon
-from odoo.tests import tagged
-from odoo.tests.common import new_test_user
+from weth.tests import tagged
+from weth.tests.common import new_test_user
 
-from odoo.exceptions import AccessError
+from weth.exceptions import AccessError
 
 EXCEL_FILES = [
     {

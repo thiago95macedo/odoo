@@ -1,10 +1,10 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.mail.tests.common import mail_new_test_user
-from odoo.exceptions import AccessError
-from odoo.tests import tagged
+from weth.addons.mail.tests.common import mail_new_test_user
+from weth.exceptions import AccessError
+from weth.tests import tagged
 
-from odoo.addons.hr.tests.common import TestHrCommon
+from weth.addons.hr.tests.common import TestHrCommon
 
 
 class TestHrEmployee(TestHrCommon):

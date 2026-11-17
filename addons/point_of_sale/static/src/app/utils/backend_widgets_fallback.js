@@ -1,5 +1,5 @@
 import { registry } from "@web/core/registry";
-import { Component, xml } from "@odoo/owl";
+import { Component, xml } from "@weth/owl";
 import { Widget } from "@web/views/widgets/widget";
 import { Field } from "@web/views/fields/field";
 

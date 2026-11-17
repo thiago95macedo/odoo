@@ -7,7 +7,7 @@ import {
     manuallyDispatchProgrammaticEvent,
     mockFetch,
     test,
-} from "@odoo/hoot";
+} from "@weth/hoot";
 import { patchWithCleanup } from "@web/../tests/web_test_helpers";
 
 import { assets, loadBundle, loadCSS, loadJS } from "@web/core/assets";

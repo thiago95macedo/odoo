@@ -1,6 +1,6 @@
 import { BarcodePlugin } from "@barcodes/barcode_plugin";
 import { BarcodeParser } from "@barcodes/js/barcode_parser";
-import { expect, test } from "@odoo/hoot";
+import { expect, test } from "@weth/hoot";
 
 function buildBarcodeParser(diff = {}) {
     const nomenclature = {

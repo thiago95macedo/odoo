@@ -13,7 +13,7 @@ import {
     useOnChange,
     usePlugin,
     useProps,
-} from "@odoo/owl";
+} from "@weth/owl";
 import { getActiveHotkey } from "@web/core/hotkeys/hotkey_utils";
 
 import { DiscussContent } from "@mail/core/public_web/discuss_content";

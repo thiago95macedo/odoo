@@ -6,16 +6,16 @@ from datetime import date
 
 from lxml import html
 
-from odoo.exceptions import AccessError
-from odoo.fields import Command
-from odoo.http.session import session_store
-from odoo.tests import HttpCase, common, tagged
-from odoo.tools import mute_logger
+from weth.exceptions import AccessError
+from weth.fields import Command
+from weth.http.session import session_store
+from weth.tests import HttpCase, common, tagged
+from weth.tools import mute_logger
 
-from odoo.addons.base.tests.common import TransactionCaseWithUserDemo
-from odoo.addons.http_routing.tests.common import MockRequest
-from odoo.addons.website.controllers.main import Website
-from odoo.addons.website.tests.common import set_url_code
+from weth.addons.base.tests.common import TransactionCaseWithUserDemo
+from weth.addons.http_routing.tests.common import MockRequest
+from weth.addons.website.controllers.main import Website
+from weth.addons.website.tests.common import set_url_code
 
 import werkzeug
 
@@ -382,7 +382,7 @@ class WithContext(HttpCase):
             r = self.url_open(self.page.url)
         self.assertEqual(r.status_code, 404, "Restricted users should see a 404 as the page is unpublished")
 
-    @mute_logger('odoo.addons.rpc.controllers.xmlrpc')
+    @mute_logger('weth.addons.rpc.controllers.xmlrpc')
     def test_search(self):
         dbname = common.get_db_name()
         admin_uid = self.env.ref('base.user_admin').id
@@ -396,7 +396,7 @@ class WithContext(HttpCase):
             [p['loc'] for p in pages],
         )
 
-    @mute_logger('odoo.http')
+    @mute_logger('weth.http')
     def test_03_error_page_debug(self):
         with MockRequest(self.env, website=self.env.ref('base.default_website')):
             self.base_view.arch = self.base_view.arch.replace('I am a generic page', '<t t-out="15/0"/>')

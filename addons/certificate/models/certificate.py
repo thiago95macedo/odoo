@@ -8,10 +8,10 @@ from cryptography.exceptions import InvalidSignature, UnsupportedAlgorithm
 from cryptography.hazmat.primitives import constant_time, serialization
 from cryptography.hazmat.primitives.serialization import Encoding, pkcs12, PublicFormat
 
-from odoo import _, api, fields, models
+from weth import _, api, fields, models
 from .key import STR_TO_HASH, _get_formatted_value
-from odoo.exceptions import UserError, ValidationError
-from odoo.tools import BinaryBytes, parse_version
+from weth.exceptions import UserError, ValidationError
+from weth.tools import BinaryBytes, parse_version
 
 
 class CertificateCertificate(models.Model):

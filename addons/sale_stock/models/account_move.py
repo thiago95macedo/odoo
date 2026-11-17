@@ -2,8 +2,8 @@
 
 from collections import defaultdict
 
-from odoo import api, fields, models
-from odoo.tools.misc import formatLang
+from weth import api, fields, models
+from weth.tools.misc import formatLang
 
 
 class AccountMove(models.Model):

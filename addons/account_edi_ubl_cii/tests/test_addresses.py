@@ -1,6 +1,6 @@
-from odoo.tests import tagged
+from weth.tests import tagged
 
-from odoo.addons.portal.tests.test_addresses import TestPortalAddresses
+from weth.addons.portal.tests.test_addresses import TestPortalAddresses
 
 
 @tagged('post_install', '-at_install')

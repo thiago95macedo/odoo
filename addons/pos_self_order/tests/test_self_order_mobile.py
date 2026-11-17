@@ -1,17 +1,17 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-import odoo.tests
-from odoo import http
-from odoo.addons.mail.tests.common import mail_new_test_user
+import weth.tests
+from weth import http
+from weth.addons.mail.tests.common import mail_new_test_user
 
-from odoo.addons.point_of_sale.models.pos_bus_mixin import PosBusMixin
-from odoo.addons.pos_self_order.tests.self_order_common_test import SelfOrderCommonTest
-from odoo.addons.pos_self_order.controllers.orders import PosSelfOrderController
+from weth.addons.point_of_sale.models.pos_bus_mixin import PosBusMixin
+from weth.addons.pos_self_order.tests.self_order_common_test import SelfOrderCommonTest
+from weth.addons.pos_self_order.controllers.orders import PosSelfOrderController
 from unittest.mock import patch
 from datetime import datetime, timedelta
 
 
-@odoo.tests.tagged("post_install", "-at_install")
+@weth.tests.tagged("post_install", "-at_install")
 class TestSelfOrderMobile(SelfOrderCommonTest):
     def test_self_order_mobile(self):
         self.pos_config.write({

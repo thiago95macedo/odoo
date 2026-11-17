@@ -1,4 +1,4 @@
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@weth/hoot";
 import {
     MockServer,
     defineModels,
@@ -25,12 +25,12 @@ describe.current.tags("headless");
 
 test("model name can be implicitly extracted from its constructor name", async () => {
     const [AnonymousClass, Foo, ResCurrency, ResPartner] = [
-        class extends models.Model {},
-        class Foo extends models.Model {},
+        class extends models.Model { },
+        class Foo extends models.Model { },
         class ResCurrency extends models.Model {
             _name = "project.task";
         },
-        class ResPartner extends models.Model {},
+        class ResPartner extends models.Model { },
     ];
 
     defineModels([AnonymousClass, Foo, ResCurrency, ResPartner]);

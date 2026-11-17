@@ -1,6 +1,6 @@
-from odoo import fields
+from weth import fields
 
-from odoo.tests import tagged
+from weth.tests import tagged
 
 from .common import TestHrCommon
 

@@ -1,12 +1,12 @@
 from datetime import datetime
 from operator import itemgetter
 
-from odoo import _
-from odoo.addons.portal.controllers.portal import CustomerPortal, pager as portal_pager
-from odoo.exceptions import AccessError, MissingError
-from odoo.fields import Domain
-from odoo.http import request, route
-from odoo.tools import groupby as groupbyelem
+from weth import _
+from weth.addons.portal.controllers.portal import CustomerPortal, pager as portal_pager
+from weth.exceptions import AccessError, MissingError
+from weth.fields import Domain
+from weth.http import request, route
+from weth.tools import groupby as groupbyelem
 
 
 class EventPortal(CustomerPortal):

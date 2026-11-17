@@ -1,5 +1,5 @@
-import { expect, test } from "@odoo/hoot";
-import { animationFrame, edit, getActiveElement, press } from "@odoo/hoot-dom";
+import { expect, test } from "@weth/hoot";
+import { animationFrame, edit, getActiveElement, press } from "@weth/hoot-dom";
 import {
     contains,
     defineModels,

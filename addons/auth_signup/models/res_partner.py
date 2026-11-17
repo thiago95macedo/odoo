@@ -7,7 +7,7 @@ import werkzeug.urls
 from collections import defaultdict
 from datetime import datetime, timedelta
 
-from odoo import api, exceptions, fields, models, tools, _
+from weth import api, exceptions, fields, models, tools, _
 
 class SignupError(Exception):
     pass
@@ -63,7 +63,7 @@ class ResPartner(models.Model):
                 query['redirect'] = url
             else:
                 fragment = dict()
-                base = '/odoo/'
+                base = '/weth/'
                 if action == '/mail/view':
                     base = '/mail/view?'
                 elif action:

@@ -7,7 +7,7 @@ import {
     AddPivotCommand,
     UpdatePivotCommand,
     CancelledReason,
-} from "@odoo/o-spreadsheet";
+} from "@weth/o-spreadsheet";
 import * as OdooCancelledReason from "@spreadsheet/o_spreadsheet/cancelled_reason";
 
 type CoreDispatch = CorePlugin["dispatch"];
@@ -128,13 +128,13 @@ declare module "@spreadsheet" {
         type: "UPDATE_ODOO_LINK_TO_CHART";
         chartId: string;
         odooLink:
-            | { type: "odooMenu"; odooMenuId: number | string }
-            | {
-                type: "dataSource";
-                dataSourceCoreId: string;
-                datasourceType: string;
-              }
-            | undefined;
+        | { type: "odooMenu"; odooMenuId: number | string }
+        | {
+            type: "dataSource";
+            dataSourceCoreId: string;
+            datasourceType: string;
+        }
+        | undefined;
     }
 
     // UI

@@ -1,4 +1,4 @@
-import { onMounted } from "@odoo/owl";
+import { onMounted } from "@weth/owl";
 import { FormController } from "@web/views/form/form_controller";
 
 export class TodoConversionFormController extends FormController {

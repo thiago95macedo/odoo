@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-from odoo.addons.account.tests.common import AccountTestInvoicingCommon
-from odoo.exceptions import ValidationError
-from odoo.tests import tagged, Form, freeze_time
-from odoo import fields, Command
+from weth.addons.account.tests.common import AccountTestInvoicingCommon
+from weth.exceptions import ValidationError
+from weth.tests import tagged, Form, freeze_time
+from weth import fields, Command
 
 
 @tagged('post_install', '-at_install')

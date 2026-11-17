@@ -1,5 +1,5 @@
-import { describe, expect, queryFirst, test } from "@odoo/hoot";
-import { mockDate } from "@odoo/hoot-mock";
+import { describe, expect, queryFirst, test } from "@weth/hoot";
+import { mockDate } from "@weth/hoot-mock";
 
 import { makeTestApp, mountWithCleanup } from "@web/../tests/web_test_helpers";
 
@@ -760,7 +760,7 @@ test(`"in range" operator: date range tooltips on dropdown`, async () => {
     mockDate("2025-07-03 16:20:00");
 
     await mountWithCleanup(Select, {
-        props: { value: "last7Days", update: () => {}, options: InRange.options },
+        props: { value: "last7Days", update: () => { }, options: InRange.options },
     });
     expect(queryFirst("select option", { text: "Last 7 days" })).toHaveAttribute(
         "title",

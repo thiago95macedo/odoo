@@ -1,5 +1,5 @@
 import { AvatarCard } from "@mail/core/web/avatar_card/avatar_card";
-import { onWillStart, useProps, t } from "@odoo/owl";
+import { onWillStart, useProps, t } from "@weth/owl";
 import { usePopover } from "@web/core/popover/popover_hook";
 import { user } from "@web/core/user";
 import { useService } from "@web/core/utils/hooks";

@@ -2,10 +2,10 @@
 
 from unittest.mock import patch
 
-from odoo import Command
-from odoo.tests import tagged
+from weth import Command
+from weth.tests import tagged
 
-from odoo.addons.point_of_sale.tests.test_frontend import TestPointOfSaleHttpCommon
+from weth.addons.point_of_sale.tests.test_frontend import TestPointOfSaleHttpCommon
 
 
 @tagged('post_install', '-at_install')

@@ -3,8 +3,8 @@
 from datetime import datetime, timedelta
 from freezegun import freeze_time
 
-from odoo.tests import HttpCase, tagged
-from odoo.addons.bus.models.bus import DEFAULT_GC_RETENTION_SECONDS
+from weth.tests import HttpCase, tagged
+from weth.addons.bus.models.bus import DEFAULT_GC_RETENTION_SECONDS
 
 
 @tagged("-at_install", "post_install")

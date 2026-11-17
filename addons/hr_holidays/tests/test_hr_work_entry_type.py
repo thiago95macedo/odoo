@@ -3,11 +3,11 @@
 from datetime import date, datetime
 from freezegun import freeze_time
 
-from odoo.exceptions import AccessError, ValidationError
+from weth.exceptions import AccessError, ValidationError
 
-from odoo.tests import tagged
+from weth.tests import tagged
 
-from odoo.addons.hr_holidays.tests.common import TestHrHolidaysCommon
+from weth.addons.hr_holidays.tests.common import TestHrHolidaysCommon
 
 
 class TestHrWorkEntryType(TestHrHolidaysCommon):

@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.tools import float_round
+from weth.tools import float_round
 
-from odoo.addons.hr_attendance.controllers.main import HrAttendance
+from weth.addons.hr_attendance.controllers.main import HrAttendance
 
 
 class HrHolidaysAttendance(HrAttendance):

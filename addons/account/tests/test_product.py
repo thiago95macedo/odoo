@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
-from odoo.addons.account.tests.common import AccountTestInvoicingCommon
-from odoo import Command
-from odoo.tests import Form, tagged
-from odoo.tests.common import new_test_user
+from weth.addons.account.tests.common import AccountTestInvoicingCommon
+from weth import Command
+from weth.tests import Form, tagged
+from weth.tests.common import new_test_user
 
 
 @tagged('post_install', 'post_install_l10n', '-at_install')

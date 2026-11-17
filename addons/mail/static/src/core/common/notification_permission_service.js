@@ -1,4 +1,4 @@
-import { proxy } from "@odoo/owl";
+import { proxy } from "@weth/owl";
 
 import { location, browser } from "@web/core/browser/browser";
 import {
@@ -58,8 +58,8 @@ export const notificationPermissionService = {
                 isIosApp() || isAndroidApp()
                     ? "denied"
                     : this._normalizePermission(
-                          permission?.state ?? browser.Notification?.permission
-                      ),
+                        permission?.state ?? browser.Notification?.permission
+                    ),
             requestPermission: async () => {
                 if (browser.Notification && state.permission === "prompt") {
                     state.permission = this._normalizePermission(

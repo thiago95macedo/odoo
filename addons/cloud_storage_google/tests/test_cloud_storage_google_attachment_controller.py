@@ -1,15 +1,15 @@
 import json
 import re
 
-import odoo
-from odoo.tools.misc import file_open
-from odoo.addons.base.tests.common import HttpCaseWithUserDemo
-from odoo.addons.cloud_storage.tests.tools import filter_by_expected
-from odoo.addons.cloud_storage_google.tests.test_cloud_storage_google import TestCloudStorageGoogleCommon
-from odoo.addons.mail.tests.common import MailCommon
+import weth
+from weth.tools.misc import file_open
+from weth.addons.base.tests.common import HttpCaseWithUserDemo
+from weth.addons.cloud_storage.tests.tools import filter_by_expected
+from weth.addons.cloud_storage_google.tests.test_cloud_storage_google import TestCloudStorageGoogleCommon
+from weth.addons.mail.tests.common import MailCommon
 
 
-@odoo.tests.tagged("-at_install", "post_install", "mail_controller")
+@weth.tests.tagged("-at_install", "post_install", "mail_controller")
 class TestCloudStorageAttachmentController(HttpCaseWithUserDemo, TestCloudStorageGoogleCommon, MailCommon):
     def test_cloud_storage_google_attachment_upload(self):
         """Test uploading an attachment with google cloud storage."""
@@ -46,7 +46,7 @@ class TestCloudStorageAttachmentController(HttpCaseWithUserDemo, TestCloudStorag
                         "ir.attachment": self._filter_attachments_fields(
                             {
                                 "checksum": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
-                                "create_date": odoo.fields.Datetime.to_string(
+                                "create_date": weth.fields.Datetime.to_string(
                                     attachment.create_date
                                 ),
                                 "file_size": 0,

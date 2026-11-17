@@ -3,7 +3,7 @@
 
 from markupsafe import Markup
 
-from odoo import api, fields, models, tools, _
+from weth import api, fields, models, tools, _
 
 
 class EventRegistration(models.Model):

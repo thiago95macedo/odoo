@@ -4,7 +4,7 @@ import { useService } from "@web/core/utils/hooks";
 
 import { SelectionField, selectionField } from "@web/views/fields/selection/selection_field";
 
-import { Component, t, useProps } from "@odoo/owl";
+import { Component, t, useProps } from "@weth/owl";
 
 export class DocumentStatePopover extends Component {
     static template = "account.DocumentStatePopover";

@@ -1,10 +1,10 @@
-import { Component, onWillStart, proxy, t, usePlugin, useProps } from "@odoo/owl";
+import { Component, onWillStart, proxy, t, usePlugin, useProps } from "@weth/owl";
 import { useService } from "@web/core/utils/hooks";
 
 import { useSpreadsheetNotificationStore } from "@spreadsheet/hooks";
 
-import * as spreadsheet from "@odoo/o-spreadsheet";
-import { Spreadsheet, Model } from "@odoo/o-spreadsheet";
+import * as spreadsheet from "@weth/o-spreadsheet";
+import { Spreadsheet, Model } from "@weth/o-spreadsheet";
 import { registry } from "@web/core/registry";
 import { DebugModePlugin } from "@web/core/debug_mode_plugin";
 

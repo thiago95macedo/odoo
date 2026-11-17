@@ -6,7 +6,7 @@ import { EmojiPicker } from "@web/core/emoji_picker/emoji_picker";
 import { _t } from "@web/core/l10n/translation";
 import { fuzzyLookup } from "@web/core/utils/search";
 import { debounce } from "@web/core/utils/timing";
-import { proxy } from "@odoo/owl";
+import { proxy } from "@weth/owl";
 
 /**
  * @typedef { Object } EmojiShared

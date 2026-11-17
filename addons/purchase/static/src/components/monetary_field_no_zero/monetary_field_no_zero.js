@@ -1,4 +1,4 @@
-import { useProps } from "@odoo/owl";
+import { useProps } from "@weth/owl";
 import {
     monetaryField,
     MonetaryField,

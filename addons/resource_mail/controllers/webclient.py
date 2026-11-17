@@ -1,6 +1,6 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.mail.controllers.webclient import WebclientController
+from weth.addons.mail.controllers.webclient import WebclientController
 
 
 class HrWebclientController(WebclientController):

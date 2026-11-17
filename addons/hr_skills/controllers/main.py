@@ -2,11 +2,11 @@
 
 import re
 
-from odoo import _
-from odoo.addons.base.models.ir_qweb import QWebError
-from odoo.exceptions import UserError
-from odoo.http import Controller, request, route
-from odoo.http.stream import content_disposition
+from weth import _
+from weth.addons.base.models.ir_qweb import QWebError
+from weth.exceptions import UserError
+from weth.http import Controller, request, route
+from weth.http.stream import content_disposition
 
 
 class HrEmployeeCV(Controller):

@@ -1,5 +1,5 @@
 import { rpc } from "@web/core/network/rpc";
-import { Component, markup, onWillStart, signal, types, useProps } from "@odoo/owl";
+import { Component, markup, onWillStart, signal, types, useProps } from "@weth/owl";
 
 import { ConfirmationDialog } from "@web/core/confirmation_dialog/confirmation_dialog";
 import { Dialog } from "@web/core/dialog/dialog";
@@ -79,7 +79,7 @@ export class FollowerSubtypeDialog extends Component {
             confirm: async () => {
                 await this.updateSubscription({ updateAll: true });
             },
-            cancel: () => {},
+            cancel: () => { },
         });
     }
 
@@ -118,8 +118,8 @@ export class FollowerSubtypeDialog extends Component {
             message = isSelfFollower
                 ? _t("You are no longer following this record.")
                 : _t("%(follower_name)s is no longer following this record.", {
-                      follower_name: followerName,
-                  });
+                    follower_name: followerName,
+                });
         }
         this.env.services.notification.add(message, { type: "success" });
         this.props.onFollowerChanged(thread);
@@ -143,7 +143,7 @@ export class FollowerSubtypeDialog extends Component {
 
     get parentRecordHint() {
         const record = this.parentRecord;
-        const parentRecordLink = markup`<a data-oe-model="${record.model}" href="/odoo/${record.model}/${record.id}">${record.display_name}</a>`;
+        const parentRecordLink = markup`<a data-oe-model="${record.model}" href="/weth/${record.model}/${record.id}">${record.display_name}</a>`;
         return _t(
             "💡 You can set default notifications for all future records in the notification preferences of the %(parent_model_name)s %(parent_record_name)s.",
             {

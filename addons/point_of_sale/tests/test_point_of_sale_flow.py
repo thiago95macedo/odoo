@@ -1,16 +1,16 @@
 import copy
-import odoo
+import weth
 
 from unittest.mock import patch
-from odoo import fields
-from odoo.fields import Command
+from weth import fields
+from weth.fields import Command
 from datetime import datetime, timedelta
-from odoo.addons.point_of_sale.tests.common import CommonPosTest
-from odoo.exceptions import ValidationError
-from odoo.tests import Form
+from weth.addons.point_of_sale.tests.common import CommonPosTest
+from weth.exceptions import ValidationError
+from weth.tests import Form
 
 
-@odoo.tests.tagged('post_install', '-at_install')
+@weth.tests.tagged('post_install', '-at_install')
 class TestPointOfSaleFlow(CommonPosTest):
 
     _test_user_groups = None  # FIXME list needed groups

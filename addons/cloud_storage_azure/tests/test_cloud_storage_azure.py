@@ -8,10 +8,10 @@ from datetime import datetime, timezone, timedelta
 from requests import Response
 from unittest.mock import patch
 
-from odoo.addons.mail.tests.common import MockEmail
-from odoo.tests.common import TransactionCase
-from odoo.tests import tagged, Form
-from odoo.exceptions import ValidationError, UserError
+from weth.addons.mail.tests.common import MockEmail
+from weth.tests.common import TransactionCase
+from weth.tests import tagged, Form
+from weth.exceptions import ValidationError, UserError
 
 from ..utils.cloud_storage_azure_utils import UserDelegationKey
 from .. import uninstall_hook
@@ -73,7 +73,7 @@ class TestCloudStorageAzure(TestCloudStorageAzureCommon, MockEmail):
                 response._content = self.DUMMY_USER_DELEGATION_KEY_XML
             return response
 
-        with patch('odoo.addons.cloud_storage_azure.utils.cloud_storage_azure_utils.requests.post', post):
+        with patch('weth.addons.cloud_storage_azure.utils.cloud_storage_azure_utils.requests.post', post):
             get_cloud_storage_azure_user_delegation_key(self.env)
             self.assertEqual(request_num, 2, '2 requests to create new user_delegation_key')
 
@@ -104,12 +104,12 @@ class TestCloudStorageAzure(TestCloudStorageAzureCommon, MockEmail):
                 response._content = self.DUMMY_USER_DELEGATION_KEY_XML
             return response
 
-        with patch('odoo.addons.cloud_storage_azure.utils.cloud_storage_azure_utils.requests.post', post), \
+        with patch('weth.addons.cloud_storage_azure.utils.cloud_storage_azure_utils.requests.post', post), \
                 self.assertRaises(ValidationError):
             get_cloud_storage_azure_user_delegation_key(self.env)
         self.assertEqual(request_num, 1, '1 request to validate the validity of the client id and tenant id')
 
-        with patch('odoo.addons.cloud_storage_azure.utils.cloud_storage_azure_utils.requests.post', post), \
+        with patch('weth.addons.cloud_storage_azure.utils.cloud_storage_azure_utils.requests.post', post), \
                 self.assertRaises(ValidationError):
             get_cloud_storage_azure_user_delegation_key(self.env)
         self.assertEqual(request_num, 2, '1 request to validate the validity of the client id and tenant id')
@@ -128,12 +128,12 @@ class TestCloudStorageAzure(TestCloudStorageAzureCommon, MockEmail):
                 response._content = self.DUMMY_USER_DELEGATION_KEY_XML
             return response
 
-        with patch('odoo.addons.cloud_storage_azure.utils.cloud_storage_azure_utils.requests.post', post), \
+        with patch('weth.addons.cloud_storage_azure.utils.cloud_storage_azure_utils.requests.post', post), \
                 self.assertRaises(ValidationError):
             get_cloud_storage_azure_user_delegation_key(self.env)
         self.assertEqual(request_num, 1, '1 request to validate the validity of the secret')
 
-        with patch('odoo.addons.cloud_storage_azure.utils.cloud_storage_azure_utils.requests.post', post), \
+        with patch('weth.addons.cloud_storage_azure.utils.cloud_storage_azure_utils.requests.post', post), \
                 self.assertRaises(ValidationError):
             get_cloud_storage_azure_user_delegation_key(self.env)
         self.assertEqual(request_num, 1, '401 response should be cached in case the secret is expired')
@@ -148,12 +148,12 @@ class TestCloudStorageAzure(TestCloudStorageAzureCommon, MockEmail):
                 raise requests.exceptions.ConnectionError()  # account_name wrong: domain https://accountname.blob.core.windows.net doesn't exist
             return response
 
-        with patch('odoo.addons.cloud_storage_azure.utils.cloud_storage_azure_utils.requests.post', post), \
+        with patch('weth.addons.cloud_storage_azure.utils.cloud_storage_azure_utils.requests.post', post), \
                 self.assertRaises(ValidationError):
             get_cloud_storage_azure_user_delegation_key(self.env)
 
     def test_generate_sas_url(self):
-        with patch('odoo.addons.cloud_storage_azure.models.ir_attachment.get_cloud_storage_azure_user_delegation_key', return_value=self.DUMMY_USER_DELEGATION_KEY):
+        with patch('weth.addons.cloud_storage_azure.models.ir_attachment.get_cloud_storage_azure_user_delegation_key', return_value=self.DUMMY_USER_DELEGATION_KEY):
             # create test cloud attachment like route "/mail/attachment/upload"
             # with dummy binary
             attachment = self.env['ir.attachment'].create([{

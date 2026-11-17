@@ -1,10 +1,10 @@
 import werkzeug
 import werkzeug.exceptions
-from odoo import _, api, fields, models, SUPERUSER_ID, tools
-from odoo.exceptions import UserError, ValidationError
-from odoo.tools import SQL
-from odoo.tools.image import image_data_uri
-from odoo.tools.bank_account_number import format_account_number, validate_iban, validate_clabe
+from weth import _, api, fields, models, SUPERUSER_ID, tools
+from weth.exceptions import UserError, ValidationError
+from weth.tools import SQL
+from weth.tools.image import image_data_uri
+from weth.tools.bank_account_number import format_account_number, validate_iban, validate_clabe
 
 
 class ResPartnerBank(models.Model):

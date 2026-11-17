@@ -5,12 +5,12 @@ from datetime import datetime
 from dateutil.relativedelta import relativedelta
 from lxml import etree
 
-from odoo import fields, Command
-from odoo.addons.survey.tests import common
-from odoo.addons.mail.tests.common import MailCase
-from odoo.exceptions import UserError
-from odoo.tests import tagged, Form
-from odoo.tests.common import users
+from weth import fields, Command
+from weth.addons.survey.tests import common
+from weth.addons.mail.tests.common import MailCase
+from weth.exceptions import UserError
+from weth.tests import tagged, Form
+from weth.tests.common import users
 
 
 @tagged('at_install', '-post_install')  # LEGACY at_install
@@ -350,13 +350,13 @@ class TestSurveyInvite(common.TestSurveyCommon, MailCase):
         invite_form = Form.from_action(self.env, user_survey.action_send_survey())
         invite_form.send_email = True
         invite_form.template_id = mail_template
-        invite_form.emails = 'test_survey_invite_with_template_attachment@odoo.gov'
+        invite_form.emails = 'test_survey_invite_with_template_attachment@weth.gov'
         invite = invite_form.save()
         with self.mock_mail_gateway():
             invite.action_invite()
 
         self.assertEqual(self.env['mail.mail'].sudo().search([
-            ('email_to', '=', 'test_survey_invite_with_template_attachment@odoo.gov')
+            ('email_to', '=', 'test_survey_invite_with_template_attachment@weth.gov')
         ]).attachment_ids, mail_template.attachment_ids)
 
     def test_survey_invite_mixed_langs(self):

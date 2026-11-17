@@ -1,5 +1,5 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
-from odoo.tests import common
+from weth.tests import common
 
 
 class TestFleetSendMail(common.TransactionCase):

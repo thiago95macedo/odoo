@@ -1,13 +1,13 @@
-from odoo.fields import Many2oneReference
-from odoo.tests import TransactionCase
+from weth.fields import Many2oneReference
+from weth.tests import TransactionCase
 
-from odoo.addons.populate import start_populate
-from odoo.addons.populate.generators import (
+from weth.addons.populate import start_populate
+from weth.addons.populate.generators import (
     ReferenceOne,
     ReferenceRaw,
     UnmetDependencies,
 )
-from odoo.addons.test_populate.tests.common import PopulateTestCase
+from weth.addons.test_populate.tests.common import PopulateTestCase
 
 
 class TestReferenceOne(TransactionCase):

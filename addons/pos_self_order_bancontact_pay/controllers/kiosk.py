@@ -1,8 +1,8 @@
 from werkzeug.exceptions import Unauthorized
 
-from odoo import _, http
+from weth import _, http
 
-from odoo.addons.pos_self_order.controllers.orders import PosSelfOrderController
+from weth.addons.pos_self_order.controllers.orders import PosSelfOrderController
 
 
 class PosSelfOrderControllerBancontactPay(PosSelfOrderController):

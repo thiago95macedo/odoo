@@ -10,9 +10,9 @@ import {
     startServer,
 } from "./mail_test_helpers";
 
-import { describe, expect, test } from "@odoo/hoot";
-import { press } from "@odoo/hoot-dom";
-import { markup } from "@odoo/owl";
+import { describe, expect, test } from "@weth/hoot";
+import { press } from "@weth/hoot-dom";
+import { markup } from "@weth/owl";
 
 describe.current.tags("desktop");
 defineMailModels();
@@ -26,15 +26,15 @@ test("add_link utility function", () => {
         "www.127.0.0.5": false,
         "should.notmatch": false,
         "fhttps://test.example.com/test": false,
-        "https://www.transifex.com/odoo/odoo-11/translate/#fr/lunch?q=text%3A'La+Tartiflette'": true,
-        "https://www.transifex.com/odoo/odoo-11/translate/#fr/$/119303430?q=text%3ATartiflette": true,
+        "https://www.transifex.com/weth/odoo-11/translate/#fr/lunch?q=text%3A'La+Tartiflette'": true,
+        "https://www.transifex.com/weth/odoo-11/translate/#fr/$/119303430?q=text%3ATartiflette": true,
         "https://tenor.com/view/chỗgiặt-dog-smile-gif-13860250": true,
         "http://www.boîtenoire.be": true,
-        "https://github.com/odoo/enterprise/compare/16.0...odoo-dev:enterprise:16.0-voip-fix_demo_data-tsm?expand=1": true,
-        "https://github.com/odoo/enterprise/compare/16.0...16.0-voip-fix_demo_data-tsm?expand=1": true,
-        "https://github.com/odoo/enterprise/compare/16.0...chỗgiặt-voip-fix_demo_data-tsm?expand=1": true,
-        "https://github.com/odoo/enterprise/compare/chỗgiặt...chỗgiặt-voip-fix_demo_data-tsm?expand=1": true,
-        "https://github.com/odoo/enterprise/compare/@...}-voip-fix_demo_data-tsm?expand=1": true,
+        "https://github.com/weth/enterprise/compare/16.0...odoo-dev:enterprise:16.0-voip-fix_demo_data-tsm?expand=1": true,
+        "https://github.com/weth/enterprise/compare/16.0...16.0-voip-fix_demo_data-tsm?expand=1": true,
+        "https://github.com/weth/enterprise/compare/16.0...chỗgiặt-voip-fix_demo_data-tsm?expand=1": true,
+        "https://github.com/weth/enterprise/compare/chỗgiặt...chỗgiặt-voip-fix_demo_data-tsm?expand=1": true,
+        "https://github.com/weth/enterprise/compare/@...}-voip-fix_demo_data-tsm?expand=1": true,
         "https://x.com": true,
         "http://localhost:8069/mail/message/25": true,
     };

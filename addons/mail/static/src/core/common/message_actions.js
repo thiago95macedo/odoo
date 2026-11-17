@@ -18,13 +18,13 @@ const { DateTime } = luxon;
 
 export const messageActionsRegistry = registry.category("mail.message/actions");
 
-/** @typedef {import("@odoo/owl").Component} Component */
+/** @typedef {import("@weth/owl").Component} Component */
 /** @typedef {import("models").Message} Message */
 /** @typedef {import("models").Thread} Thread */
 /**
  * @typedef {Object} MessageActionSpecificParams
  * @property {Message} message
- * @property {import("@odoo/owl").Signal<HTMLElement>} [reactionAnchorRef] when set, the anchor element for reactions
+ * @property {import("@weth/owl").Signal<HTMLElement>} [reactionAnchorRef] when set, the anchor element for reactions
  * @property {Thread} [thread] when set, the thread the message is being viewed
  */
 /** @typedef {import("@mail/core/common/action").ActionParams<MessageAction, UseMessageActions_Def> & MessageActionSpecificParams} MessageActionParams */
@@ -56,17 +56,17 @@ registerMessageAction("reaction", {
         return owner.reactionPicker.open(() => anchorEl);
     },
     setup: ({ message, owner, thread }) =>
-        (owner.reactionPicker = useEmojiPicker(undefined, {
-            onSelect: (emoji) => {
-                const reaction = message.reactions.find(
-                    ({ content, personas }) =>
-                        content === emoji && thread.effectiveSelf.in(personas)
-                );
-                if (!reaction) {
-                    message.react(emoji);
-                }
-            },
-        })),
+    (owner.reactionPicker = useEmojiPicker(undefined, {
+        onSelect: (emoji) => {
+            const reaction = message.reactions.find(
+                ({ content, personas }) =>
+                    content === emoji && thread.effectiveSelf.in(personas)
+            );
+            if (!reaction) {
+                message.react(emoji);
+            }
+        },
+    })),
     sequence: 10,
 });
 registerMessageAction("reply-to", {
@@ -224,14 +224,14 @@ registerMessageAction("end-poll", {
 export class MessageAction extends Action {
     /** @type {() => Message} */
     messageFn;
-    /** @type {import("@odoo/owl").Signal<HTMLElement>} */
+    /** @type {import("@weth/owl").Signal<HTMLElement>} */
     reactionAnchorRef;
     /** @type {() => Thread} */
     threadFn;
     /**
      * @param {Object} param0
      * @param {Message|() => Message} param0.message
-     * @param {import("@odoo/owl").Signal<HTMLElement>} [param0.reactionAnchorRef]
+     * @param {import("@weth/owl").Signal<HTMLElement>} [param0.reactionAnchorRef]
      * @param {Thread|() => Thread} [param0.thread]
      */
     constructor({ message, reactionAnchorRef, thread }) {
@@ -258,7 +258,7 @@ class UseMessageActions extends UseActions {
 }
 
 /**
- * @param {import("@mail/core/common/action").ActionRootRefParam & {message?: Message|() => Message, reactionAnchorRef?: import("@odoo/owl").Signal<HTMLElement>, thread?: Thread|() => Thread}} [params0={}]
+ * @param {import("@mail/core/common/action").ActionRootRefParam & {message?: Message|() => Message, reactionAnchorRef?: import("@weth/owl").Signal<HTMLElement>, thread?: Thread|() => Thread}} [params0={}]
  *   `reactionAnchorRef`: when set, the anchor element for reactions. `thread`: when set, the thread the
  *   message is being viewed.
  * @returns {UseMessageActions_Def}

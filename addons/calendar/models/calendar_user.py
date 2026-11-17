@@ -1,7 +1,7 @@
 from random import randint
 
-from odoo import api, fields, models, _
-from odoo.exceptions import AccessError
+from weth import api, fields, models, _
+from weth.exceptions import AccessError
 
 
 class CalendarUser(models.Model):

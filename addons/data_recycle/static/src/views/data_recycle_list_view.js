@@ -1,4 +1,4 @@
-import { onMounted, onPatched } from "@odoo/owl";
+import { onMounted, onPatched } from "@weth/owl";
 import { DataCleaningCommonListController } from "@data_recycle/views/data_cleaning_common_list";
 import { registry } from '@web/core/registry';
 import { listView } from '@web/views/list/list_view';

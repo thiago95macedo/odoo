@@ -2,10 +2,10 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 import json
 
-from odoo.addons.hr.tests.common import TestHrCommon
-from odoo.tests import tagged
+from weth.addons.hr.tests.common import TestHrCommon
+from weth.tests import tagged
 
-from odoo.tools.misc import file_open
+from weth.tools.misc import file_open
 
 
 class TestRecruitmentProcess(TestHrCommon):

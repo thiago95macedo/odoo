@@ -4,15 +4,15 @@
 from datetime import datetime, timedelta
 from dateutil.relativedelta import relativedelta
 
-from odoo import fields
-from odoo.addons.base.tests.common import HttpCaseWithUserDemo, HttpCaseWithUserPortal
-from odoo.addons.http_routing.tests.common import MockRequest
-from odoo.addons.mail.tests.common import mail_new_test_user
-from odoo.addons.website_event.tests.common import TestEventOnlineCommon, OnlineEventCase
-from odoo.exceptions import AccessError
-from odoo.tests import HttpCase, tagged
-from odoo.tools import mute_logger
-from odoo.tests.common import users
+from weth import fields
+from weth.addons.base.tests.common import HttpCaseWithUserDemo, HttpCaseWithUserPortal
+from weth.addons.http_routing.tests.common import MockRequest
+from weth.addons.mail.tests.common import mail_new_test_user
+from weth.addons.website_event.tests.common import TestEventOnlineCommon, OnlineEventCase
+from weth.exceptions import AccessError
+from weth.tests import HttpCase, tagged
+from weth.tools import mute_logger
+from weth.tests.common import users
 
 
 class TestEventRegisterUTM(HttpCase, TestEventOnlineCommon):
@@ -292,7 +292,7 @@ class TestWebsiteAccess(HttpCaseWithUserDemo, OnlineEventCase):
         self.assertTrue(published_events[0].name in resp.text, 'Event user must see the unpublished events.')
         self.assertTrue(unpublished_events[0].name in resp.text, 'Event user must see the published events.')
 
-    @mute_logger('odoo.http')
+    @mute_logger('weth.http')
     def test_website_access_portal(self):
         """ Portal users access only published events """
         self.authenticate('user_portal', 'user_portal')
@@ -308,7 +308,7 @@ class TestWebsiteAccess(HttpCaseWithUserDemo, OnlineEventCase):
         self.assertTrue(published_events[0].name in resp.text, 'Portal must see the published events.')
         self.assertFalse(unpublished_events[0].name in resp.text, 'Portal should not see the unpublished events.')
 
-    @mute_logger('odoo.http')
+    @mute_logger('weth.http')
     def test_website_access_public(self):
         """ Public users access only published events """
         published_events = self.events.filtered(lambda event: event.website_published)

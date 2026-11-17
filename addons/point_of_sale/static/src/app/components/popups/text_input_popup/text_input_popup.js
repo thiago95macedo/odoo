@@ -1,4 +1,4 @@
-import { Component, onMounted, useProps, proxy, signal, t } from "@odoo/owl";
+import { Component, onMounted, useProps, proxy, signal, t } from "@weth/owl";
 import { Dialog } from "@web/core/dialog/dialog";
 
 export class TextInputPopup extends Component {

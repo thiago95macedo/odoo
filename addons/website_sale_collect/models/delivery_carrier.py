@@ -1,11 +1,11 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, fields, models
-from odoo.exceptions import ValidationError
-from odoo.fields import Command
-from odoo.http import request
+from weth import api, fields, models
+from weth.exceptions import ValidationError
+from weth.fields import Command
+from weth.http import request
 
-from odoo.addons.website_sale_collect import utils
+from weth.addons.website_sale_collect import utils
 
 
 class DeliveryCarrier(models.Model):

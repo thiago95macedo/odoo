@@ -2,10 +2,10 @@
 
 import logging
 
-from odoo.tests import tagged
+from weth.tests import tagged
 
-from odoo.addons.mail.tests.common import mail_new_test_user
-from odoo.addons.product_matrix.tests.common import TestMatrixCommon
+from weth.addons.mail.tests.common import mail_new_test_user
+from weth.addons.product_matrix.tests.common import TestMatrixCommon
 
 _logger = logging.getLogger(__name__)
 

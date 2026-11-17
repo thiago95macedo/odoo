@@ -1,6 +1,6 @@
 import { expirableStorage } from "@im_livechat/core/common/expirable_storage";
 
-import { proxy } from "@odoo/owl";
+import { proxy } from "@weth/owl";
 
 import { rpc } from "@web/core/network/rpc";
 import { _t } from "@web/core/l10n/translation";

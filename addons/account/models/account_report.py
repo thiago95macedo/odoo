@@ -4,10 +4,10 @@ import ast
 import re
 from collections import defaultdict
 
-from odoo import _, api, fields, models
-from odoo.exceptions import UserError, ValidationError
-from odoo.fields import Command, Domain
-from odoo.tools import SQL
+from weth import _, api, fields, models
+from weth.exceptions import UserError, ValidationError
+from weth.fields import Command, Domain
+from weth.tools import SQL
 
 FIGURE_TYPE_SELECTION_VALUES = [
     ('monetary', "Monetary"),

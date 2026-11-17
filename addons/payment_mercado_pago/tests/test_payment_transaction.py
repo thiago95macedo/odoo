@@ -3,11 +3,11 @@
 from unittest.mock import patch
 from urllib.parse import quote as url_quote
 
-from odoo.tests import tagged
-from odoo.tools import mute_logger
+from weth.tests import tagged
+from weth.tools import mute_logger
 
-from odoo.addons.payment.tests.http_common import PaymentHttpCommon
-from odoo.addons.payment_mercado_pago.tests.common import MercadoPagoCommon
+from weth.addons.payment.tests.http_common import PaymentHttpCommon
+from weth.addons.payment_mercado_pago.tests.common import MercadoPagoCommon
 
 
 @tagged("post_install", "-at_install")
@@ -45,12 +45,12 @@ class TestPaymentTransaction(MercadoPagoCommon, PaymentHttpCommon):
             },
         )
 
-    @mute_logger("odoo.addons.payment.models.payment_transaction")
+    @mute_logger("weth.addons.payment.models.payment_transaction")
     def test_no_input_missing_from_redirect_form(self):
         """Test that the `api_url` key is not omitted from the rendering values."""
         tx = self._create_transaction(flow="redirect")
         with patch(
-            "odoo.addons.payment_mercado_pago.models.payment_transaction.PaymentTransaction"
+            "weth.addons.payment_mercado_pago.models.payment_transaction.PaymentTransaction"
             "._get_specific_rendering_values",
             return_value={"api_url": "https://dummy.com", "http_method": "get", "url_param": {}},
         ):
@@ -67,7 +67,7 @@ class TestPaymentTransaction(MercadoPagoCommon, PaymentHttpCommon):
         tx.with_context(payment_safe_write=True)._apply_updates(self.verification_data)
         self.assertEqual(tx.state, "done")
 
-    @mute_logger("odoo.addons.payment_mercado_pago.models.payment_transaction")
+    @mute_logger("weth.addons.payment_mercado_pago.models.payment_transaction")
     def test_apply_updates_rejects_transaction(self):
         """Test that the transaction state is set to 'error' when the payment data indicate a status
         of 404 error payment."""

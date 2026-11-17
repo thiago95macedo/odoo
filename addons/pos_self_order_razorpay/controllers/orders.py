@@ -1,6 +1,6 @@
-from odoo import http
-from odoo.tools import consteq
-from odoo.addons.pos_self_order.controllers.orders import PosSelfOrderController
+from weth import http
+from weth.tools import consteq
+from weth.addons.pos_self_order.controllers.orders import PosSelfOrderController
 from werkzeug.exceptions import Unauthorized
 
 

@@ -3,12 +3,12 @@
 from datetime import datetime
 from freezegun import freeze_time
 
-from odoo.fields import Command
-from odoo.addons.stock.tests.test_generate_serial_numbers import StockGenerateCommon
-from odoo.addons.stock.tests.test_picking_tours import TestStockPickingTour
-from odoo.tests import tagged
+from weth.fields import Command
+from weth.addons.stock.tests.test_generate_serial_numbers import StockGenerateCommon
+from weth.addons.stock.tests.test_picking_tours import TestStockPickingTour
+from weth.tests import tagged
 
-from odoo.tools.misc import get_lang
+from weth.tools.misc import get_lang
 
 
 @tagged('at_install', '-post_install')  # LEGACY at_install

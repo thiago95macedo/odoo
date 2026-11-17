@@ -7,10 +7,10 @@ import ast
 import logging
 import werkzeug
 
-from odoo import api, fields, Command, models, _
-from odoo.exceptions import AccessError, RedirectWarning, UserError, ValidationError
-from odoo.tools import clean_context, email_normalize, float_repr, float_round, is_html_empty, format_amount, format_date
-from odoo.fields import Domain
+from weth import api, fields, Command, models, _
+from weth.exceptions import AccessError, RedirectWarning, UserError, ValidationError
+from weth.tools import clean_context, email_normalize, float_repr, float_round, is_html_empty, format_amount, format_date
+from weth.fields import Domain
 from datetime import timedelta
 
 
@@ -1308,7 +1308,7 @@ class HrExpense(models.Model):
                     template='hr_expense.hr_expense_template_submitted_expenses',
                     values={
                         'manager_name': manager.name,
-                        'url': f'/odoo/{manager.id}/expenses-to-process',
+                        'url': f'/weth/{manager.id}/expenses-to-process',
                         'company': company,
                         'user': self.env.user,
                         'total_amount': sum(expenses_submitted.mapped('total_amount')),

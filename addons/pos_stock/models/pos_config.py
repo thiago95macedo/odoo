@@ -1,4 +1,4 @@
-from odoo import api, fields, models
+from weth import api, fields, models
 
 
 class PosConfig(models.Model):

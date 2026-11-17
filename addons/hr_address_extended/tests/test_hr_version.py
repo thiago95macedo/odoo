@@ -1,4 +1,4 @@
-from odoo.tests import Form, TransactionCase
+from weth.tests import Form, TransactionCase
 
 
 class TestHrVersion(TransactionCase):

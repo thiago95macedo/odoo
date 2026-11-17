@@ -4,9 +4,9 @@ import logging
 from lxml import html
 from werkzeug.urls import url_encode
 
-from odoo.tests import HttpCase, tagged
-from odoo.addons.http_routing.tests.common import MockRequest
-from odoo.addons.website.tools import create_image_attachment
+from weth.tests import HttpCase, tagged
+from weth.addons.http_routing.tests.common import MockRequest
+from weth.addons.website.tools import create_image_attachment
 
 _logger = logging.getLogger(__name__)
 
@@ -57,7 +57,7 @@ class TestSnippets(HttpCase):
                 'name': 'My Mail Group',
                 'alias_name': 'my_mail_group',
             })
-        self.start_tour(f"/odoo/action-website.website_preview?{path}", "snippets_all_drag_and_drop", login='admin', timeout=600)
+        self.start_tour(f"/weth/action-website.website_preview?{path}", "snippets_all_drag_and_drop", login='admin', timeout=600)
 
     def test_04_countdown_preview(self):
         self.start_tour(self.env['website'].get_client_action_url('/', True), 'snippet_countdown', login='admin')
@@ -69,7 +69,7 @@ class TestSnippets(HttpCase):
             'social_linkedin': 'https://www.linkedin.com/company/odoo',
             'social_youtube': 'https://www.youtube.com/user/OpenERPonline',
             'social_github': 'https://github.com/odoo',
-            'social_instagram': 'https://www.instagram.com/explore/tags/odoo/',
+            'social_instagram': 'https://www.instagram.com/explore/tags/weth/',
             'social_tiktok': 'https://www.tiktok.com/@odoo',
             'social_discord': 'https://discord.com/servers/discord-town-hall-169256939211980800',
         })

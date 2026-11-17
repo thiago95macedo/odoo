@@ -5,12 +5,12 @@ from datetime import date, timedelta
 from freezegun import freeze_time
 from unittest.mock import patch
 
-from odoo import Command
-from odoo.exceptions import UserError
-from odoo.fields import Datetime, Date
-from odoo.tests import tagged, Form
+from weth import Command
+from weth.exceptions import UserError
+from weth.fields import Datetime, Date
+from weth.tests import tagged, Form
 
-from odoo.addons.stock_account.tests.common import TestStockValuationCommon
+from weth.addons.stock_account.tests.common import TestStockValuationCommon
 
 
 class TestStockValuation(TestStockValuationCommon):

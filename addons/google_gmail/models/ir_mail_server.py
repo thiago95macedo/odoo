@@ -3,8 +3,8 @@
 
 import base64
 
-from odoo import _, fields, models, api
-from odoo.exceptions import UserError
+from weth import _, fields, models, api
+from weth.exceptions import UserError
 
 
 class IrMail_Server(models.Model):

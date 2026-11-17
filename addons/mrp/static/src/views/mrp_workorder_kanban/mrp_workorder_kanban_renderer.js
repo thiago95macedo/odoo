@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @weth-module **/
 
 import { KanbanRenderer } from "@web/views/kanban/kanban_renderer";
 import { MrpWorkorderKanbanHeader } from "./mrp_workorder_kanban_header";

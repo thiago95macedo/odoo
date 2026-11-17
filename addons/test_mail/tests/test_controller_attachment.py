@@ -10,14 +10,14 @@ try:
 except ImportError:
     markdown = None
 
-import odoo
-from odoo.addons.bus.tests.common import BusResult
-from odoo.addons.mail.controllers.attachment import AttachmentController
-from odoo.addons.mail.tests.common_controllers import MailControllerAttachmentCommon
-from odoo.http.stream import STATIC_CACHE_LONG
+import weth
+from weth.addons.bus.tests.common import BusResult
+from weth.addons.mail.controllers.attachment import AttachmentController
+from weth.addons.mail.tests.common_controllers import MailControllerAttachmentCommon
+from weth.http.stream import STATIC_CACHE_LONG
 
 
-@odoo.tests.tagged("-at_install", "post_install", "mail_controller")
+@weth.tests.tagged("-at_install", "post_install", "mail_controller")
 class TestAttachmentController(MailControllerAttachmentCommon):
     @classmethod
     def setUpClass(cls):

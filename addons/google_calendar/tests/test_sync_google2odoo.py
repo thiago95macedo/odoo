@@ -6,12 +6,12 @@ from zoneinfo import ZoneInfo
 
 from dateutil.relativedelta import relativedelta
 
-from odoo.tests.common import tagged, new_test_user, users
-from odoo.exceptions import ValidationError
-from odoo.addons.google_calendar.models.res_users import ResUsers
-from odoo.addons.google_calendar.tests.test_sync_common import TestSyncGoogle, patch_api
-from odoo.addons.google_calendar.utils.google_calendar_service import GoogleEvent, GoogleCalendarService
-from odoo import Command, tools
+from weth.tests.common import tagged, new_test_user, users
+from weth.exceptions import ValidationError
+from weth.addons.google_calendar.models.res_users import ResUsers
+from weth.addons.google_calendar.tests.test_sync_common import TestSyncGoogle, patch_api
+from weth.addons.google_calendar.utils.google_calendar_service import GoogleEvent, GoogleCalendarService
+from weth import Command, tools
 
 
 @patch.object(ResUsers, '_get_google_calendar_token', lambda user: 'dummy-token')

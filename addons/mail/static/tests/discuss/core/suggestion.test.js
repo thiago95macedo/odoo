@@ -8,12 +8,12 @@ import {
     startServer,
 } from "@mail/../tests/mail_test_helpers";
 import { htmlInsertText } from "@mail/../tests/mail_test_helpers_html";
-import { beforeEach, describe, expect, test } from "@odoo/hoot";
-import { mockDate } from "@odoo/hoot-mock";
+import { beforeEach, describe, expect, test } from "@weth/hoot";
+import { mockDate } from "@weth/hoot-mock";
 import { Command, getService, patchWithCleanup, serverState } from "@web/../tests/web_test_helpers";
 
 import { Composer } from "@mail/core/common/composer";
-import { press } from "@odoo/hoot-dom";
+import { press } from "@weth/hoot-dom";
 
 describe.current.tags("desktop");
 defineMailModels();

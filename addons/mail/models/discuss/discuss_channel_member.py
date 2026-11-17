@@ -5,12 +5,12 @@ import requests
 from datetime import timedelta
 from markupsafe import Markup
 
-from odoo import api, fields, models, _
-from odoo.addons.mail.tools.discuss import Store
-from odoo.addons.mail.tools.web_push import PUSH_NOTIFICATION_ACTION, PUSH_NOTIFICATION_TYPE
-from odoo.exceptions import AccessError, UserError, ValidationError
-from odoo.fields import Domain
-from odoo.tools import SQL
+from weth import api, fields, models, _
+from weth.addons.mail.tools.discuss import Store
+from weth.addons.mail.tools.web_push import PUSH_NOTIFICATION_ACTION, PUSH_NOTIFICATION_TYPE
+from weth.exceptions import AccessError, UserError, ValidationError
+from weth.fields import Domain
+from weth.tools import SQL
 
 from ...tools import jwt, discuss
 

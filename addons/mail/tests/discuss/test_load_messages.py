@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-import odoo.tests
+import weth.tests
 
-from odoo.tests import HttpCase
+from weth.tests import HttpCase
 
 
 class TestLoadMessages(HttpCase):
@@ -12,10 +12,10 @@ class TestLoadMessages(HttpCase):
         self.env["mail.message"].create([{
             "body": str(n),
             "model": "discuss.channel",
-            "pinned_at": odoo.fields.Datetime.now() if n == 1 else None,
+            "pinned_at": weth.fields.Datetime.now() if n == 1 else None,
             "res_id": channel.id,
             "author_id": admin.partner_id.id,
             "message_type": "comment",
         } for n in range(1, 61)])
         channel.self_member_id._mark_as_read(channel.message_ids[0].id)
-        self.start_tour("/odoo/action-mail.action_discuss", "mail_message_load_order_tour", login="admin")
+        self.start_tour("/weth/action-mail.action_discuss", "mail_message_load_order_tour", login="admin")

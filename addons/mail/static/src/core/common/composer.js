@@ -35,7 +35,7 @@ import {
     useListener,
     usePlugin,
     useProps,
-} from "@odoo/owl";
+} from "@weth/owl";
 
 import { _t } from "@web/core/l10n/translation";
 import { useService } from "@web/core/utils/hooks";
@@ -773,17 +773,17 @@ export class Composer extends Component {
             default_partner_ids: isEditing
                 ? message.partner_ids.map((p) => p.id)
                 : this.props.type === "note"
-                ? []
-                : allRecipients
-                      .filter((r) => r.recipient_type !== "cc" && r.partner_id)
-                      .map((r) => r.partner_id),
+                    ? []
+                    : allRecipients
+                        .filter((r) => r.recipient_type !== "cc" && r.partner_id)
+                        .map((r) => r.partner_id),
             default_partner_cc_ids: isEditing
                 ? message.partner_cc_ids?.map((p) => p.id) || []
                 : this.props.type === "note"
-                ? []
-                : allRecipients
-                      .filter((r) => r.recipient_type === "cc" && r.partner_id)
-                      .map((r) => r.partner_id),
+                    ? []
+                    : allRecipients
+                        .filter((r) => r.recipient_type === "cc" && r.partner_id)
+                        .map((r) => r.partner_id),
             default_res_ids: isEditing ? [message.thread.id] : [this.thread.id],
             default_subtype_xmlid:
                 this.props.type === "note" || (isEditing && message.isNote)
@@ -804,8 +804,8 @@ export class Composer extends Component {
                     ? _t("Editing note")
                     : _t("Editing message")
                 : this.props.type === "note"
-                ? _t("Log note")
-                : _t("Compose Email"),
+                    ? _t("Log note")
+                    : _t("Compose Email"),
             type: "ir.actions.act_window",
             res_model: "mail.compose.message",
             view_mode: "form",
@@ -953,11 +953,11 @@ export class Composer extends Component {
                         mention: hasEveryoneBigMention
                             ? markup`<a class="o-discuss-mention pe-none">@everyone</a>`
                             : htmlFormatList(
-                                  roles.map(
-                                      (r) =>
-                                          markup`<a class="o-discuss-mention pe-none">@${r.name}</a>`
-                                  )
-                              ),
+                                roles.map(
+                                    (r) =>
+                                        markup`<a class="o-discuss-mention pe-none">@${r.name}</a>`
+                                )
+                            ),
                     }
                 ),
                 confirmLabel: _t("Send Message"),

@@ -2,12 +2,12 @@
 
 from datetime import datetime
 
-from odoo import Command, fields
-from odoo.tests import common, Form
-from odoo.tests.common import TransactionCase
-from odoo.fields import Datetime
-from odoo.addons.hr.tests.test_utils import get_admin_employee
-from odoo.addons.mail.tests.common import mail_new_test_user
+from weth import Command, fields
+from weth.tests import common, Form
+from weth.tests.common import TransactionCase
+from weth.fields import Datetime
+from weth.addons.hr.tests.test_utils import get_admin_employee
+from weth.addons.mail.tests.common import mail_new_test_user
 
 
 class TestHrHolidaysCommon(common.TransactionCase):

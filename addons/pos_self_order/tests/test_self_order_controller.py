@@ -5,13 +5,13 @@ import uuid
 from datetime import datetime, timedelta
 from unittest.mock import patch
 
-import odoo.tests
-from odoo import Command, fields
+import weth.tests
+from weth import Command, fields
 
-from odoo.addons.pos_self_order.tests.self_order_common_test import SelfOrderCommonTest
+from weth.addons.pos_self_order.tests.self_order_common_test import SelfOrderCommonTest
 
 
-@odoo.tests.tagged('post_install', '-at_install')
+@weth.tests.tagged('post_install', '-at_install')
 class TestSelfOrderController(SelfOrderCommonTest):
     def test_dynamic_qr_order_authorization(self):
         self.pos_config.write({
@@ -316,7 +316,7 @@ class TestSelfOrderController(SelfOrderCommonTest):
         self.pos_config.current_session_id.set_opening_control(0, '')
         self.env['ir.config_parameter'].sudo().set_str('google_address_autocomplete.google_places_api_key', 'test_api_key')
 
-        with patch('odoo.addons.base_geolocalize.models.base_geocoder.BaseGeocoder.geo_find', return_value=(50.0, 4.0)):
+        with patch('weth.addons.base_geolocalize.models.base_geocoder.BaseGeocoder.geo_find', return_value=(50.0, 4.0)):
             self.delivery_preset.write({
                 'delivery_from_address': 'Main St 1',
                 'delivery_from_city': 'Test City',
@@ -349,7 +349,7 @@ class TestSelfOrderController(SelfOrderCommonTest):
             'email': customer.email,
         }
 
-        with patch('odoo.addons.base_geolocalize.models.res_partner.ResPartner.geo_localize', return_value=True):
+        with patch('weth.addons.base_geolocalize.models.res_partner.ResPartner.geo_localize', return_value=True):
             data = self.make_request_to_controller('/pos-self-order/validate-partner', params)
 
         self.assertIn('res.partner', data)
@@ -361,7 +361,7 @@ class TestSelfOrderController(SelfOrderCommonTest):
         self.pos_config.current_session_id.set_opening_control(0, '')
         self.env['ir.config_parameter'].sudo().set_str('google_address_autocomplete.google_places_api_key', 'test_api_key')
 
-        with patch('odoo.addons.base_geolocalize.models.base_geocoder.BaseGeocoder.geo_find', return_value=(0.0, 0.0)):
+        with patch('weth.addons.base_geolocalize.models.base_geocoder.BaseGeocoder.geo_find', return_value=(0.0, 0.0)):
             self.delivery_preset.write({
                 'delivery_from_address': 'Main St 1',
                 'delivery_from_city': 'Test City',
@@ -394,7 +394,7 @@ class TestSelfOrderController(SelfOrderCommonTest):
             'email': customer.email,
         }
 
-        with patch('odoo.addons.base_geolocalize.models.res_partner.ResPartner.geo_localize', return_value=True):
+        with patch('weth.addons.base_geolocalize.models.res_partner.ResPartner.geo_localize', return_value=True):
             data = self.make_request_to_controller('/pos-self-order/validate-partner', params)
 
         self.assertIn('error', data)
@@ -441,7 +441,7 @@ class TestSelfOrderController(SelfOrderCommonTest):
         })
 
         # Configure delivery preset with free delivery threshold at 50.0
-        with patch('odoo.addons.base_geolocalize.models.base_geocoder.BaseGeocoder.geo_find', return_value=(0.0, 0.0)):
+        with patch('weth.addons.base_geolocalize.models.base_geocoder.BaseGeocoder.geo_find', return_value=(0.0, 0.0)):
             self.delivery_preset.write({
                 'delivery_from_address': 'Main St 1',
                 'delivery_from_city': 'Brussels',

@@ -1,9 +1,9 @@
-import { describe, test, expect, beforeEach } from "@odoo/hoot";
-import { click, edit, queryAll, queryOne } from "@odoo/hoot-dom";
+import { describe, test, expect, beforeEach } from "@weth/hoot";
+import { click, edit, queryAll, queryOne } from "@weth/hoot-dom";
 import { mountView, onRpc, selectFieldDropdownItem } from "@web/../tests/web_test_helpers";
 import { defineHrHolidaysModels } from "@hr_holidays/../tests/hr_holidays_test_helpers";
 import { HrLeave } from "@hr_holidays/../tests/mock_server/mock_models/hr_leave";
-import { mockTimeZone } from "@odoo/hoot-mock";
+import { mockTimeZone } from "@weth/hoot-mock";
 
 describe.current.tags("desktop");
 defineHrHolidaysModels();

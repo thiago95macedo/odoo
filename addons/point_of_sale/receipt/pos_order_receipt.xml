@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<odoo>
+<weth>
     <data>
         <template id="point_of_sale.pos_order_receipt">
             <html id="pos-receipt">
@@ -248,4 +248,4 @@
             </div>
         </template>
     </data>
-</odoo>
+</weth>

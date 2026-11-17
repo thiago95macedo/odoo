@@ -1,4 +1,4 @@
-import { waitFor, queryFirst } from "@odoo/hoot-dom";
+import { waitFor, queryFirst } from "@weth/hoot-dom";
 
 export async function checkConfirmationPage() {
     await waitFor(".confirmation-page");

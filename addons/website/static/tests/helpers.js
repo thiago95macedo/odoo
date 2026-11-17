@@ -1,4 +1,4 @@
-import { animationFrame } from "@odoo/hoot-mock";
+import { animationFrame } from "@weth/hoot-mock";
 import { registry } from "@web/core/registry";
 import { buildEditableInteractions } from "@website/core/website_edit_service";
 import { setupInteractionWhiteList } from "@web/../tests/public/helpers";

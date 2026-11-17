@@ -1,11 +1,11 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, models
-from odoo.tools import urls
+from weth import api, models
+from weth.tools import urls
 
-from odoo.addons.payment.logging import get_payment_logger
-from odoo.addons.payment_buckaroo import const
-from odoo.addons.payment_buckaroo.controllers.main import BuckarooController
+from weth.addons.payment.logging import get_payment_logger
+from weth.addons.payment_buckaroo import const
+from weth.addons.payment_buckaroo.controllers.main import BuckarooController
 
 _logger = get_payment_logger(__name__)
 

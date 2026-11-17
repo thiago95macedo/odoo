@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<odoo>
+<weth>
     <data>
         <template id="pos_loyalty.pos_order_receipt" inherit_id="point_of_sale.pos_order_receipt">
             <div name="before-footer" position="before">
@@ -28,4 +28,4 @@
             </div>
         </template>
     </data>
-</odoo>
+</weth>

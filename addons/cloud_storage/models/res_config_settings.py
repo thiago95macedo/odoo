@@ -1,6 +1,6 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
-from odoo import api, models, fields
-from odoo.exceptions import UserError
+from weth import api, models, fields
+from weth.exceptions import UserError
 
 
 DEFAULT_CLOUD_STORAGE_MIN_FILE_SIZE = 20_000_000  # 20MB

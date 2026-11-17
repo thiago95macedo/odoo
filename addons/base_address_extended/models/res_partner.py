@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, fields, models
-from odoo.tools.business_data import street_split
+from weth import api, fields, models
+from weth.tools.business_data import street_split
 
 
 class ResPartner(models.Model):

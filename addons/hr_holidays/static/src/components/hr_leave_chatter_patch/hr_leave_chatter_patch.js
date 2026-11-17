@@ -1,6 +1,6 @@
 import { Chatter } from "@mail/chatter/web_portal_project/chatter";
 
-import { useOnChange } from "@odoo/owl";
+import { useOnChange } from "@weth/owl";
 
 import { useService } from "@web/core/utils/hooks";
 import { patch } from "@web/core/utils/patch";

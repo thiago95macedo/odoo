@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.http import request, route
+from weth.http import request, route
 
-from odoo.addons.website_sale.controllers.cart import Cart as WebsiteSaleCart
+from weth.addons.website_sale.controllers.cart import Cart as WebsiteSaleCart
 
 
 class Cart(WebsiteSaleCart):

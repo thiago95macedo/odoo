@@ -10,7 +10,7 @@ import { listView } from "@web/views/list/list_view";
 
 import { ListController } from "@web/views/list/list_controller";
 import { ListRenderer, listRendererProps } from "@web/views/list/list_renderer";
-import { onWillStart } from "@odoo/owl";
+import { onWillStart } from "@weth/owl";
 
 export class ExpenseListController extends ExpenseDocumentUpload(ListController) {
     static template = `hr_expense.ListView`;
@@ -68,7 +68,7 @@ export class ExpenseListController extends ExpenseDocumentUpload(ListController)
         });
     }
 
-    async onClick (action) {
+    async onClick(action) {
         const records = this.model.root.selection;
         const recordIds = records.map((a) => a.resId);
         const model = this.model.config.resModel;
@@ -76,7 +76,7 @@ export class ExpenseListController extends ExpenseDocumentUpload(ListController)
         if (action === 'action_approve') {
             context['validate_analytic'] = true;
         }
-        const res = await this.orm.call(model, action, [recordIds], {context: context});
+        const res = await this.orm.call(model, action, [recordIds], { context: context });
         if (res) {
             await this.actionService.doAction(res, {
                 additionalContext: {

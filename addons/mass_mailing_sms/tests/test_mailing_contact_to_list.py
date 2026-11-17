@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.mass_mailing.tests.common import MailingContactToListCommon
-from odoo.addons.mass_mailing_sms.tests.common import MassSMSCommon
-from odoo.tests import users, warmup
+from weth.addons.mass_mailing.tests.common import MailingContactToListCommon
+from weth.addons.mass_mailing_sms.tests.common import MassSMSCommon
+from weth.tests import users, warmup
 
 
 class TestMailingContactToListSms(MassSMSCommon, MailingContactToListCommon):

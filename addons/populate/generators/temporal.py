@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-from odoo.tools import date_utils
+from weth.tools import date_utils
 
 from .generator import Generator
 

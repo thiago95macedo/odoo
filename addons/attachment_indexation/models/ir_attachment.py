@@ -8,8 +8,8 @@ import xml.dom.minidom
 import zipfile
 from lxml import etree
 
-from odoo import api, models
-from odoo.tools.lru import LRU
+from weth import api, models
+from weth.tools.lru import LRU
 
 _logger = logging.getLogger(__name__)
 

@@ -1,11 +1,11 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.fields import Command
-from odoo.tests import tagged
+from weth.fields import Command
+from weth.tests import tagged
 
-from odoo.addons.website_event_sale.tests.common import TestWebsiteEventSaleCommon
-from odoo.addons.website_sale.controllers.main import WebsiteSale
-from odoo.addons.website_sale.tests.common import MockRequest
+from weth.addons.website_event_sale.tests.common import TestWebsiteEventSaleCommon
+from weth.addons.website_sale.controllers.main import WebsiteSale
+from weth.addons.website_sale.tests.common import MockRequest
 
 
 @tagged('post_install', '-at_install')

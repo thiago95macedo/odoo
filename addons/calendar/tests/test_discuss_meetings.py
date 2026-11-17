@@ -1,11 +1,11 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 from datetime import datetime, timedelta
 
-from odoo import fields
-from odoo.addons.base.models.avatar_mixin import generate_text_avatar_svg
-from odoo.fields import Domain
-from odoo.tests import Form
-from odoo.tests.common import HttpCase, TransactionCase, freeze_time, new_test_user
+from weth import fields
+from weth.addons.base.models.avatar_mixin import generate_text_avatar_svg
+from weth.fields import Domain
+from weth.tests import Form
+from weth.tests.common import HttpCase, TransactionCase, freeze_time, new_test_user
 
 
 @freeze_time("2024-05-20 10:00:00")

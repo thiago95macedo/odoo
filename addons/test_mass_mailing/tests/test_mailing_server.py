@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.test_mass_mailing.tests.common import TestMassMailCommon
-from odoo.exceptions import UserError
-from odoo.tests import tagged
-from odoo.tests.common import users
-from odoo.tools import mute_logger
+from weth.addons.test_mass_mailing.tests.common import TestMassMailCommon
+from weth.exceptions import UserError
+from weth.tests import tagged
+from weth.tests.common import users
+from weth.tools import mute_logger
 
 
 @tagged('mass_mailing', 'mail_server')
@@ -71,7 +71,7 @@ class TestMassMailingServer(TestMassMailCommon):
         self.assertFalse(servers.filtered('active'), 'All servers must be archived')
 
     @users('user_marketing')
-    @mute_logger('odoo.addons.mail.models.mail_mail', 'odoo.models.unlink', 'odoo.addons.mass_mailing.models.mailing')
+    @mute_logger('weth.addons.mail.models.mail_mail', 'weth.models.unlink', 'weth.addons.mass_mailing.models.mailing')
     def test_mass_mailing_server_find(self):
         """Test that the right mail server is chosen to send the mailing.
 

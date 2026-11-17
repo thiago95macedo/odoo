@@ -1,6 +1,6 @@
-from odoo.addons.hr_expense.tests.common import TestExpenseCommon
-from odoo.tests import tagged, HttpCase
-from odoo.tools import mute_logger
+from weth.addons.hr_expense.tests.common import TestExpenseCommon
+from weth.tests import tagged, HttpCase
+from weth.tools import mute_logger
 
 
 @tagged('-at_install', 'post_install')
@@ -30,6 +30,6 @@ class TestUi(TestExpenseCommon, HttpCase):
             and that a valid amount can be set subsequently.
         """
         expense = self.create_expenses({'name': 'expense_for_tour'})
-        with mute_logger("odoo.http"):
+        with mute_logger("weth.http"):
             self.start_tour('/odoo', 'do_not_create_zero_amount_expense', login=self.expense_user_manager.login)
         self.assertEqual(expense.total_amount_currency, 10.0, "Expense amount should have been set by tour")

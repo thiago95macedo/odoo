@@ -1,10 +1,10 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.exceptions import UserError
-from odoo.fields import Command
-from odoo.tests import Form, tagged
+from weth.exceptions import UserError
+from weth.fields import Command
+from weth.tests import Form, tagged
 
-from odoo.addons.delivery.tests.cash_on_delivery_common import CashOnDeliveryCommon
+from weth.addons.delivery.tests.cash_on_delivery_common import CashOnDeliveryCommon
 
 
 @tagged('post_install', '-at_install')

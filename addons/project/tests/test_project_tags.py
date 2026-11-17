@@ -1,10 +1,10 @@
 import logging
 
-from odoo.exceptions import AccessError
-from odoo.tests import tagged
-from odoo.tools import mute_logger
+from weth.exceptions import AccessError
+from weth.tests import tagged
+from weth.tools import mute_logger
 
-from odoo.addons.project.tests.test_project_base import TestProjectCommon
+from weth.addons.project.tests.test_project_base import TestProjectCommon
 
 _logger = logging.getLogger(__name__)
 
@@ -13,7 +13,7 @@ _logger = logging.getLogger(__name__)
 @tagged("at_install", "-post_install")
 class TestProjectTagsSecurity(TestProjectCommon):
     @classmethod
-    @mute_logger("odoo.models.unlink")
+    @mute_logger("weth.models.unlink")
     def setUpClass(cls):
         super().setUpClass()
         cls.tag_project, cls.tag_admin = cls.env["project.tags"].create(
@@ -97,7 +97,7 @@ class TestProjectTagsSecurity(TestProjectCommon):
         (self.tag_project | self.tag_admin).with_user(self.user_projectmanager).write({"color": 1})
         (self.tag_project | self.tag_admin).with_user(self.user_projectmanager).unlink()
 
-    @mute_logger("odoo.addons.base.models.ir_access", "odoo.models.unlink")
+    @mute_logger("weth.addons.base.models.ir_access", "weth.models.unlink")
     def test_security(self):
         """Tests the access to `project.tags` for the different user groups"""
 

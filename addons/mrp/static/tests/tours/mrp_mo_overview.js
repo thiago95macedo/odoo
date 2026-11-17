@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @weth-module **/
 import { registry } from "@web/core/registry";
 
 registry.category("web_tour.tours").add("mrp_mo_overview_no_byproducts_tour", {

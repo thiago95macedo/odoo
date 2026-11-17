@@ -2,9 +2,9 @@
 
 from datetime import date, datetime
 
-from odoo import Command
-from odoo.addons.base.tests.common import HttpCaseWithUserDemo
-from odoo.tests import tagged
+from weth import Command
+from weth.addons.base.tests.common import HttpCaseWithUserDemo
+from weth.tests import tagged
 
 
 @tagged('post_install', '-at_install')
@@ -38,7 +38,7 @@ class TestCalendarTours(HttpCaseWithUserDemo):
             'show_as': 'busy',
         })
         action_id = self.env.ref('calendar.action_calendar_event')
-        url = "/odoo/action-" + str(action_id.id)
+        url = "/weth/action-" + str(action_id.id)
         self.start_tour(url, 'test_calendar_delete_tour', login='admin')
         event = self.env['calendar.event'].search([('name', '=', 'Test Event')])
         self.assertFalse(event)  # Check if the event has been correctly deleted
@@ -63,7 +63,7 @@ class TestCalendarTours(HttpCaseWithUserDemo):
         })
         event.partner_ids = [Command.link(user_demo.partner_id.id)]
         action_id = self.env.ref('calendar.action_calendar_event')
-        url = "/odoo/action-" + str(action_id.id)
+        url = "/weth/action-" + str(action_id.id)
         self.start_tour(url, 'test_calendar_decline_tour', login='demo')
         attendee = self.env['calendar.attendee'].search([('event_id', '=', event.id), ('partner_id', '=', user_demo.partner_id.id)])
         self.assertEqual(attendee.state, 'declined')  # Check if the event has been correctly declined

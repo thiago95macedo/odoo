@@ -1,6 +1,6 @@
-import { describe, expect, test } from "@odoo/hoot";
-import { click, dblclick, queryOne, waitFor } from "@odoo/hoot-dom";
-import { animationFrame } from "@odoo/hoot-mock";
+import { describe, expect, test } from "@weth/hoot";
+import { click, dblclick, queryOne, waitFor } from "@weth/hoot-dom";
+import { animationFrame } from "@weth/hoot-mock";
 import { contains, defineModels, models, onRpc } from "@web/../tests/web_test_helpers";
 import {
     defineWebsiteModels,

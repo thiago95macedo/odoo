@@ -1,4 +1,4 @@
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@weth/hoot";
 import { makeGloryHeader, parseGloryXml, serializeGloryXml } from "@pos_glory_cash/utils/glory_xml";
 import { range } from "@web/core/utils/numbers";
 

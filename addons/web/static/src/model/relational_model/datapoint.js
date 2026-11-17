@@ -1,4 +1,4 @@
-import { markRaw } from "@odoo/owl";
+import { markRaw } from "@weth/owl";
 import { Reactive } from "@web/core/utils/reactive";
 import { getId } from "./utils";
 
@@ -34,7 +34,7 @@ export class DataPoint extends Reactive {
      * @param {Record<string, unknown>} _data
      * @param {O | undefined} _options
      */
-    setup(_config, _data, _options) {}
+    setup(_config, _data, _options) { }
 
     get activeFields() {
         return this.config.activeFields;

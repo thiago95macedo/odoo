@@ -1,4 +1,4 @@
-import { usePlugin } from "@odoo/owl";
+import { usePlugin } from "@weth/owl";
 import { Plugin } from "@html_editor/plugin";
 import { BootstrapInstance } from "@web/core/utils/bootstrap_plugin";
 import { _t } from "@web/core/l10n/translation";

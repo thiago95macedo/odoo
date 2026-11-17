@@ -1,6 +1,6 @@
 import { getStyleSheets } from "../../utils/iframe_assets";
 import { KanbanRenderer, kanbanRendererProps } from "@web/views/kanban/kanban_renderer";
-import { providePlugins, t, useProps, useScope } from "@odoo/owl";
+import { providePlugins, t, useProps, useScope } from "@weth/owl";
 import { MailingTemplateKanbanRecord } from "./mailing_template_kanban_record";
 import { StyleSheetPlugin } from "./stylesheets_plugin";
 

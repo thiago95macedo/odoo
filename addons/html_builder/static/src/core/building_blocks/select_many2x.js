@@ -1,4 +1,4 @@
-import { Component, onWillDestroy, useProps, proxy, signal, t, useEffect } from "@odoo/owl";
+import { Component, onWillDestroy, useProps, proxy, signal, t, useEffect } from "@weth/owl";
 import { useService } from "@web/core/utils/hooks";
 import { useCachedModel } from "@html_builder/core/cached_model_utils";
 import { _t } from "@web/core/l10n/translation";
@@ -13,7 +13,7 @@ export function useSelectMenuHandler(
     let removeListeners;
     const addListener = (menuEl, event, callback) => {
         if (typeof callback !== "function") {
-            return () => {};
+            return () => { };
         }
         menuEl.addEventListener(event, callback);
         return () => menuEl.removeEventListener(event, callback);

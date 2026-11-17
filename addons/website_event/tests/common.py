@@ -3,8 +3,8 @@
 
 from datetime import datetime, timedelta, time
 
-from odoo.addons.event.tests.common import EventCase
-from odoo.addons.mail.tests.common import mail_new_test_user
+from weth.addons.event.tests.common import EventCase
+from weth.addons.mail.tests.common import mail_new_test_user
 
 
 class OnlineEventCase(EventCase):

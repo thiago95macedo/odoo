@@ -1,10 +1,10 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import Command
-from odoo.exceptions import AccessError
-from odoo.tests import Form, tagged
+from weth import Command
+from weth.exceptions import AccessError
+from weth.tests import Form, tagged
 
-from odoo.addons.account.tests.common import AccountTestInvoicingCommon
+from weth.addons.account.tests.common import AccountTestInvoicingCommon
 
 
 @tagged('post_install', '-at_install')

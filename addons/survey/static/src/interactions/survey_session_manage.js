@@ -6,7 +6,7 @@ import { Interaction } from "@web/public/interaction";
 import { registry } from "@web/core/registry";
 import { fadeIn, fadeOut } from "@survey/utils";
 import { getActiveHotkey } from "@web/core/hotkeys/hotkey_utils";
-import { useListener, onWillStart, usePlugin } from "@odoo/owl";
+import { useListener, onWillStart, usePlugin } from "@weth/owl";
 import { BootstrapInstance } from "@web/core/utils/bootstrap_plugin";
 
 const nextPageTooltips = {

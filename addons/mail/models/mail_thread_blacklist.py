@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, fields, models, tools, _
-from odoo.exceptions import AccessError, UserError
-from odoo.tools import SQL
+from weth import api, fields, models, tools, _
+from weth.exceptions import AccessError, UserError
+from weth.tools import SQL
 
 
 class MailThreadBlacklist(models.AbstractModel):

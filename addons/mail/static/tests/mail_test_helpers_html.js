@@ -1,4 +1,4 @@
-import { animationFrame } from "@odoo/hoot-mock";
+import { animationFrame } from "@weth/hoot-mock";
 import { insertText as htmlEditorInsertText } from "@html_editor/../tests/_helpers/user_actions";
 
 /**

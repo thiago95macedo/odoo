@@ -1,4 +1,4 @@
-import { effect, proxy } from "@odoo/owl";
+import { effect, proxy } from "@weth/owl";
 import { registry } from "@web/core/registry";
 import { getOrigin } from "@web/core/utils/urls";
 
@@ -24,7 +24,7 @@ registry.category("web_tour.tours").add("discuss_channel_public_tour.js", {
                 if (!window.location.pathname.startsWith("/discuss/channel")) {
                     console.error("Channel secret token is still present in URL.");
                 }
-                const errors = odoo.loader.findErrors();
+                const errors = weth.loader.findErrors();
                 if (Object.keys(errors).length) {
                     console.error("Couldn't load all JS modules.", errors);
                 }
@@ -90,7 +90,7 @@ registry.category("web_tour.tours").add("discuss_channel_public_tour.js", {
                 '.o-mail-Composer .o-mail-AttachmentContainer:not(.o-isUploading)[title="image.png"]',
             async run({ waitFor }) {
                 /** @type {import("models").Store} */
-                const store = odoo.__WOWL_DEBUG__.root.env.services["mail.store"];
+                const store = weth.__WOWL_DEBUG__.root.env.services["mail.store"];
                 if (store.self_guest) {
                     const src = this.anchor.querySelector("img").src;
                     const attachment = store["ir.attachment"].get(
@@ -115,10 +115,8 @@ registry.category("web_tour.tours").add("discuss_channel_public_tour.js", {
                         disposeEffect();
                     }
                     await waitFor(
-                        `.o-mail-Composer .o-mail-AttachmentContainer[title="image.png"] img[src="${getOrigin()}/web/image/${
-                            attachment.id
-                        }?access_token=${attachment.raw_access_token}&filename=image.png&unique=${
-                            attachment.checksum
+                        `.o-mail-Composer .o-mail-AttachmentContainer[title="image.png"] img[src="${getOrigin()}/web/image/${attachment.id
+                        }?access_token=${attachment.raw_access_token}&filename=image.png&unique=${attachment.checksum
                         }"]`
                     );
                 }

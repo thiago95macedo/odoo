@@ -2,8 +2,8 @@
 
 import json
 
-from odoo import fields
-from odoo.tools.json import json_default
+from weth import fields
+from weth.tools.json import json_default
 
 
 def monkey_patch(cls):

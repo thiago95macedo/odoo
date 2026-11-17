@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
-from odoo.tests import tagged
+from weth.tests import tagged
 
-from odoo.addons.sale_gelato.tests.common import GelatoCommon
-from odoo.addons.website_sale.tests.common import MockRequest, WebsiteSaleCommon
+from weth.addons.sale_gelato.tests.common import GelatoCommon
+from weth.addons.website_sale.tests.common import MockRequest, WebsiteSaleCommon
 
 
 @tagged("post_install", "-at_install")

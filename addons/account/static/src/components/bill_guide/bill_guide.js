@@ -1,5 +1,5 @@
 import { AccountFileUploader } from "@account/components/account_file_uploader/account_file_uploader";
-import { Component, proxy, t, useProps } from "@odoo/owl";
+import { Component, proxy, t, useProps } from "@weth/owl";
 import { registry } from "@web/core/registry";
 import { useService } from "@web/core/utils/hooks";
 import { standardWidgetProps } from "@web/views/widgets/standard_widget_props";
@@ -43,7 +43,7 @@ export class BillGuide extends Component {
         this.lazySession.getValue("is_demo", v => (this.showSampleAction.value = !!v));
     }
 
-    handleButtonClick(action, model="account.journal") {
+    handleButtonClick(action, model = "account.journal") {
         this.action.doActionButton({
             resModel: model,
             name: action,

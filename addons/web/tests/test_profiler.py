@@ -4,7 +4,7 @@ import datetime
 import json
 from unittest.mock import patch
 
-from odoo.tests.common import HttpCase, tagged
+from weth.tests.common import HttpCase, tagged
 
 
 class ProfilingHttpCase(HttpCase):
@@ -16,7 +16,7 @@ class ProfilingHttpCase(HttpCase):
         # profiler calls cursor() on it, it gets a test cursor (with cls.cr as
         # its actual cursor), which prevents the profiling data from being
         # committed for real.
-        cls.patcher = patch('odoo.sql_db.db_connect', return_value=cls.registry)
+        cls.patcher = patch('weth.sql_db.db_connect', return_value=cls.registry)
         cls.startClassPatcher(cls.patcher)
 
     def profile_rpc(self, params=None):

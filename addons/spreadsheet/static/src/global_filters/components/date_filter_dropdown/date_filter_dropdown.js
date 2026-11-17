@@ -1,4 +1,4 @@
-import { Component, onWillUpdateProps, t, useProps } from "@odoo/owl";
+import { Component, onWillUpdateProps, t, useProps } from "@weth/owl";
 import {
     dateFilterValueToString,
     getDateRange,

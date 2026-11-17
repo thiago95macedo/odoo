@@ -1,6 +1,6 @@
-import { expect, test } from "@odoo/hoot";
-import { click, press, queryOne, waitFor, waitForNone } from "@odoo/hoot-dom";
-import { animationFrame, tick } from "@odoo/hoot-mock";
+import { expect, test } from "@weth/hoot";
+import { click, press, queryOne, waitFor, waitForNone } from "@weth/hoot-dom";
+import { animationFrame, tick } from "@weth/hoot-mock";
 import { contains } from "@web/../tests/web_test_helpers";
 import { setupEditor } from "../_helpers/editor";
 import { cleanLinkArtifacts } from "../_helpers/format";

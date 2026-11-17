@@ -1,8 +1,8 @@
 import json
 from collections import abc
 
-from odoo.tools.misc import frozendict
-from odoo import _
+from weth.tools.misc import frozendict
+from weth import _
 
 
 class GoogleApiResource(abc.Set):

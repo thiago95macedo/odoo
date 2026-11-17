@@ -1,6 +1,6 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, exceptions, fields, models, tools, _
+from weth import api, exceptions, fields, models, tools, _
 
 
 class MailMessageSubtype(models.Model):

@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import fields, models
-from odoo.tools import SQL
+from weth import fields, models
+from weth.tools import SQL
 
 python_to_sql_types = {
     'int': 'INTEGER',

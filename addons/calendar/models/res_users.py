@@ -3,8 +3,8 @@
 import datetime
 from zoneinfo import ZoneInfo
 
-from odoo import api, Command, fields, models, modules, _
-from odoo.fields import Domain
+from weth import api, Command, fields, models, modules, _
+from weth.fields import Domain
 
 
 class ResUsers(models.Model):

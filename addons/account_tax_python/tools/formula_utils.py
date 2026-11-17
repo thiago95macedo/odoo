@@ -2,7 +2,7 @@ import ast
 
 from collections import defaultdict
 
-from odoo.exceptions import ValidationError
+from weth.exceptions import ValidationError
 
 
 _ALLOWED_FUNCS = ('min', 'max')

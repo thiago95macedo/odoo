@@ -2,9 +2,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 import contextlib
 
-from odoo import http
-from odoo.http import request
-from odoo.tools.json import scriptsafe
+from weth import http
+from weth.http import request
+from weth.tools.json import scriptsafe
 
 
 class GoogleMap(http.Controller):

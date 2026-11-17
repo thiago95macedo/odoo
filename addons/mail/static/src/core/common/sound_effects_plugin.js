@@ -1,4 +1,4 @@
-import { usePlugin, Plugin } from "@odoo/owl";
+import { usePlugin, Plugin } from "@weth/owl";
 import { browser } from "@web/core/browser/browser";
 import { registry } from "@web/core/registry";
 import { url } from "@web/core/utils/urls";
@@ -55,7 +55,7 @@ export class SoundEffectsPlugin extends Plugin {
         soundEffect.audio.currentTime = 0;
         soundEffect.audio.loop = loop;
         soundEffect.audio.volume = volume ?? soundEffect.defaultVolume ?? 1;
-        Promise.resolve(soundEffect.audio.play()).catch(() => {});
+        Promise.resolve(soundEffect.audio.play()).catch(() => { });
     }
     /** To be patched in tests to use data-src */
     _setAudioSrc(audio, srcPath) {

@@ -1,8 +1,8 @@
-// @odoo-module ignore
+// @weth-module ignore
 
 /* eslint-disable no-restricted-globals */
-const cacheName = "odoo-sw-cache";
-const homepageURL = "/odoo";
+const cacheName = "weth-sw-cache";
+const homepageURL = "/weth";
 const offLineURL = `${homepageURL}/offline`;
 
 let sessionInfo = null;
@@ -19,7 +19,7 @@ self.addEventListener("install", (event) => {
 });
 
 const extractSessionInfo = (htmlContent) => {
-    const match = htmlContent.match(/odoo\.__session_info__\s*=\s*({.*?});/s);
+    const match = htmlContent.match(/weth\.__session_info__\s*=\s*({.*?});/s);
     return match && match[1] ? match[1] : null;
 };
 
@@ -59,7 +59,7 @@ const readDataOnCache = async (url) => {
     if (url === offLineURL) {
         return response;
     }
-    // if you come from /odoo to project the url is now /odoo/project, but it doesn't exist in cache so use /odoo instead
+    // if you come from /weth to project the url is now /weth/project, but it doesn't exist in cache so use /weth instead
     if (!response) {
         return readDataOnCache(homepageURL);
     }
@@ -106,16 +106,16 @@ const navigateOrDisplayOfflinePage = async (request) => {
 
 const serveShareTarget = (event) => {
     // Redirect so the user can refresh the page without resending data.
-    event.respondWith(Response.redirect("/odoo?share_target=trigger"));
+    event.respondWith(Response.redirect("/weth?share_target=trigger"));
     event.waitUntil(
         (async () => {
             // The page sends this message to tell the service worker it's ready to receive the file.
-            await waitingMessage("odoo_share_target");
+            await waitingMessage("weth_share_target");
             const client = await self.clients.get(event.resultingClientId || event.clientId);
             const data = await event.request.formData();
             client.postMessage({
                 shared_files: data.getAll("externalMedia") || [],
-                action: "odoo_share_target_ack",
+                action: "weth_share_target_ack",
             });
         })()
     );

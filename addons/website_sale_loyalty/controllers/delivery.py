@@ -2,10 +2,10 @@
 
 from functools import partial
 
-from odoo.http import request, route
+from weth.http import request, route
 
-from odoo.addons.payment import utils as payment_utils
-from odoo.addons.website_sale.controllers.delivery import Delivery
+from weth.addons.payment import utils as payment_utils
+from weth.addons.website_sale.controllers.delivery import Delivery
 
 
 class WebsiteSaleLoyaltyDelivery(Delivery):

@@ -1,5 +1,5 @@
 import { OverlayPlugin } from "@web/core/overlay/overlay_plugin";
-import { Component, types, useApp, usePlugin, useProps, xml } from "@odoo/owl";
+import { Component, types, useApp, usePlugin, useProps, xml } from "@weth/owl";
 import { browser } from "@web/core/browser/browser";
 import { useOwnDebugContext } from "@web/core/debug/debug_context";
 import { OverlayContainer } from "@web/core/overlay/overlay_container";
@@ -30,7 +30,7 @@ export const mailPopoutService = {
      * To be overridden to add specific assets to call PiP.
      * @param [Window] window the window on which we may add assets
      */
-    async addAssets(window) {},
+    async addAssets(window) { },
 
     dependencies: ["hotkey"],
     start(env, { hotkey }) {
@@ -41,7 +41,7 @@ export const mailPopoutService = {
          *      beforePopout?: Function;
          *      afterPopoutClosed?: Function;
          *  };
-         *  root?: import("@odoo/owl").Root;
+         *  root?: import("@weth/owl").Root;
          * }>}
          */
         const popouts = new Map();
@@ -217,7 +217,7 @@ export const mailPopoutService = {
                  * @param {Function} beforePopout - called before the external window is created.
                  * @param {Function} afterPopoutClosed - called after the external window is closed.
                  */
-                addHooks(beforePopout = () => {}, afterPopoutClosed = () => {}) {
+                addHooks(beforePopout = () => { }, afterPopoutClosed = () => { }) {
                     addHooks(id, { beforePopout, afterPopoutClosed });
                 },
 

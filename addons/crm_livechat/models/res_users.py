@@ -1,5 +1,5 @@
-from odoo import models
-from odoo.addons.mail.tools.discuss import Store
+from weth import models
+from weth.addons.mail.tools.discuss import Store
 
 
 class ResUsers(models.Model):

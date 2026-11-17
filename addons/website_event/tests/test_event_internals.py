@@ -5,13 +5,13 @@ import logging
 import unittest
 from datetime import datetime, timedelta
 
-from odoo.exceptions import UserError
-from odoo.fields import Command, Datetime as FieldsDatetime
-from odoo.tests.common import tagged, users
-from odoo.addons.website.tests.test_website_visitor import MockVisitor
-from odoo.addons.http_routing.tests.common import MockRequest
-from odoo.addons.website_event.controllers.main import WebsiteEventController
-from odoo.addons.event.tests.common import EventCase
+from weth.exceptions import UserError
+from weth.fields import Command, Datetime as FieldsDatetime
+from weth.tests.common import tagged, users
+from weth.addons.website.tests.test_website_visitor import MockVisitor
+from weth.addons.http_routing.tests.common import MockRequest
+from weth.addons.website_event.controllers.main import WebsiteEventController
+from weth.addons.event.tests.common import EventCase
 
 _logger = logging.getLogger(__name__)
 

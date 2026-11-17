@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
 
 <template id="s_dynamic_snippet_blog_posts_carousel_preview_data" name="Blogs Carousel Preview Data">
     <t t-call="website.s_dynamic_snippet_carousel_preview_data">
@@ -48,4 +48,4 @@
     </div>
 </template>
 
-</odoo>
+</weth>

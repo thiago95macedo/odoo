@@ -1,8 +1,8 @@
 import logging
 
-from odoo import http
+from weth import http
 
-from odoo.addons.payment_adyen.controllers.main import AdyenController
+from weth.addons.payment_adyen.controllers.main import AdyenController
 
 _logger = logging.getLogger(__name__)
 

@@ -1,4 +1,4 @@
-import { onMounted, onPatched, onWillUnmount, useListener } from "@odoo/owl";
+import { onMounted, onPatched, onWillUnmount, useListener } from "@weth/owl";
 import { useDebounced } from "@web/core/utils/timing";
 import { normDeg } from "@pos_restaurant/app/services/floor_plan/utils/utils";
 

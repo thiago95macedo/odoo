@@ -3,8 +3,8 @@
 
 import ast
 
-from odoo.exceptions import ValidationError
-from odoo.tools import is_list_of
+from weth.exceptions import ValidationError
+from weth.tools import is_list_of
 
 
 def parse_res_ids(res_ids, env):

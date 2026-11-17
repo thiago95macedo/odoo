@@ -1,10 +1,10 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, fields, models, tools
-from odoo.fields import Domain
+from weth import api, fields, models, tools
+from weth.fields import Domain
 
-from odoo.addons.base.models.res_partner import _tz_get
-from odoo.exceptions import ValidationError
+from weth.addons.base.models.res_partner import _tz_get
+from weth.exceptions import ValidationError
 
 
 class HrLeaveReportCalendar(models.Model):

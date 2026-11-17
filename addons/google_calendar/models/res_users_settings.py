@@ -5,9 +5,9 @@ from datetime import timedelta
 import logging
 import requests
 
-from odoo import api, fields, models, _
-from odoo.addons.google_account.models.google_service import TIMEOUT
-from odoo.exceptions import UserError
+from weth import api, fields, models, _
+from weth.addons.google_account.models.google_service import TIMEOUT
+from weth.exceptions import UserError
 
 _logger = logging.getLogger(__name__)
 

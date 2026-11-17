@@ -3,7 +3,7 @@ import { Composer } from "@mail/core/common/composer";
 import { Thread } from "@mail/core/common/thread";
 import { propComputed, useMessageScrolling } from "@mail/utils/common/hooks";
 
-import { Component, onMounted, proxy, signal, t, useOnChange } from "@odoo/owl";
+import { Component, onMounted, proxy, signal, t, useOnChange } from "@weth/owl";
 
 import { _t } from "@web/core/l10n/translation";
 import { router } from "@web/core/browser/router";

@@ -1,10 +1,10 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.mail.tests.common import MailCommon
-from odoo.exceptions import AccessError, ValidationError
-from odoo.tests.common import new_test_user
-from odoo.tools import file_open, mute_logger
-from odoo.tools.convert import convert_xml_import
+from weth.addons.mail.tests.common import MailCommon
+from weth.exceptions import AccessError, ValidationError
+from weth.tests.common import new_test_user
+from weth.tools import file_open, mute_logger
+from weth.tools.convert import convert_xml_import
 
 
 class TestDiscussChannelMember(MailCommon):
@@ -190,7 +190,7 @@ class TestDiscussChannelMember(MailCommon):
             self.assertEqual(len(members), 1)
             self.assertEqual(self.env.ref(member_xmlid), members)
 
-    @mute_logger("odoo.sql_db")
+    @mute_logger("weth.sql_db")
     def test_import_duplicate_member_still_fails(self):
         """Reusing members is only for module data: importing a member that
         already exists keeps failing instead of silently dropping values."""

@@ -1,4 +1,4 @@
-import { Component, useProps, t } from "@odoo/owl";
+import { Component, useProps, t } from "@weth/owl";
 
 /**
  *   tModel is an array that represents the state variable that this component

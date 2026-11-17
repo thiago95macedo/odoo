@@ -1,4 +1,4 @@
-import { Component, onPatched, signal, t, useEffect, useListener, useProps } from "@odoo/owl";
+import { Component, onPatched, signal, t, useEffect, useListener, useProps } from "@weth/owl";
 
 /**
  * @todo @phoenix i think that most of the "control" code in this component

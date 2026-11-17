@@ -9,9 +9,9 @@ import {
     startServer,
 } from "@mail/../tests/mail_test_helpers";
 import { htmlInsertText } from "@mail/../tests/mail_test_helpers_html";
-import { describe, expect, test } from "@odoo/hoot";
-import { queryFirst } from "@odoo/hoot-dom";
-import { disableAnimations } from "@odoo/hoot-mock";
+import { describe, expect, test } from "@weth/hoot";
+import { queryFirst } from "@weth/hoot-dom";
+import { disableAnimations } from "@weth/hoot-mock";
 import { getService, serverState } from "@web/../tests/web_test_helpers";
 import { deserializeDateTime } from "@web/core/l10n/dates";
 

@@ -1,5 +1,5 @@
 import { onWillRender } from "@web/owl2/utils";
-import { Component, proxy, signal, t, toRaw, useOnChange, useProps } from "@odoo/owl";
+import { Component, proxy, signal, t, toRaw, useOnChange, useProps } from "@weth/owl";
 import { browser } from "@web/core/browser/browser";
 import { ConfirmationDialog } from "@web/core/confirmation_dialog/confirmation_dialog";
 import { useHotkey } from "@web/core/hotkeys/hotkey_hook";
@@ -193,14 +193,14 @@ export class MultiSelectionButtons extends Component {
             this.props.reactive.nbSelected === 1
                 ? _t("Are you sure you want to delete the selected record?")
                 : _t("Are you sure you want to delete the %(nbSelected)s selected records?", {
-                      nbSelected: this.props.reactive.nbSelected,
-                  });
+                    nbSelected: this.props.reactive.nbSelected,
+                });
         this.dialogService.add(ConfirmationDialog, {
             body,
             confirm: async () => {
                 this.props.reactive.onDelete();
             },
-            cancel: () => {},
+            cancel: () => { },
         });
     }
 }

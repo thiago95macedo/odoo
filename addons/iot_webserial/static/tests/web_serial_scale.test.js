@@ -1,4 +1,4 @@
-import { advanceTime, describe, expect, test } from "@odoo/hoot";
+import { advanceTime, describe, expect, test } from "@weth/hoot";
 import { FakeSerialPort } from "@iot_webserial/../tests/fake_serial_port";
 import { WebSerialScale } from "@iot_webserial/web_serial_scale";
 

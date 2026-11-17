@@ -9,11 +9,11 @@ from dateutil.relativedelta import relativedelta
 from markupsafe import Markup
 from werkzeug.urls import url_encode
 
-from odoo import api, fields, models, _
-from odoo.fields import Command, Domain
-from odoo.tools import format_amount, format_date, formatLang, groupby, OrderedSet, SQL
-from odoo.tools.float_utils import float_is_zero, float_repr
-from odoo.exceptions import AccessDenied, UserError, ValidationError
+from weth import api, fields, models, _
+from weth.fields import Command, Domain
+from weth.tools import format_amount, format_date, formatLang, groupby, OrderedSet, SQL
+from weth.tools.float_utils import float_is_zero, float_repr
+from weth.exceptions import AccessDenied, UserError, ValidationError
 
 _logger = logging.getLogger(__name__)
 

@@ -2,11 +2,11 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 from freezegun import freeze_time
 
-from odoo import fields, Command
-from odoo.addons.mail.tests.common import mail_new_test_user
-from odoo.addons.mail.tests.common_activity import ActivityScheduleCase
-from odoo.exceptions import UserError
-from odoo.tests import tagged, users
+from weth import fields, Command
+from weth.addons.mail.tests.common import mail_new_test_user
+from weth.addons.mail.tests.common_activity import ActivityScheduleCase
+from weth.exceptions import UserError
+from weth.tests import tagged, users
 
 
 class ActivityScheduleHRCase(ActivityScheduleCase):

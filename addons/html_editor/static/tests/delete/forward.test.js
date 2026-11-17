@@ -1,10 +1,10 @@
-import { beforeEach, describe, expect, test } from "@odoo/hoot";
+import { beforeEach, describe, expect, test } from "@weth/hoot";
 import { setupEditor, testEditor } from "../_helpers/editor";
 import { unformat } from "../_helpers/format";
 import { getContent } from "../_helpers/selection";
 import { deleteForward, insertText, tripleClick } from "../_helpers/user_actions";
 import { EMBEDDED_COMPONENT_PLUGINS } from "@html_editor/plugin_sets";
-import { animationFrame, tick } from "@odoo/hoot-dom";
+import { animationFrame, tick } from "@weth/hoot-dom";
 import {
     compareHighlightedContent,
     highlightedPre,

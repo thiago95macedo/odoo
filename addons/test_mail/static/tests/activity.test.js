@@ -12,10 +12,10 @@ import { MailActivitySchedule } from "@mail/../tests/mock_server/mock_models/mai
 import { ActivityController } from "@mail/views/web/activity/activity_controller";
 import { ActivityModel } from "@mail/views/web/activity/activity_model";
 import { ActivityRenderer } from "@mail/views/web/activity/activity_renderer";
-import { beforeEach, describe, expect, test } from "@odoo/hoot";
-import { keyDown, waitFor } from "@odoo/hoot-dom";
-import { animationFrame, disableAnimations, mockDate } from "@odoo/hoot-mock";
-import { onMounted, onWillUnmount } from "@odoo/owl";
+import { beforeEach, describe, expect, test } from "@weth/hoot";
+import { keyDown, waitFor } from "@weth/hoot-dom";
+import { animationFrame, disableAnimations, mockDate } from "@weth/hoot-mock";
+import { onMounted, onWillUnmount } from "@weth/owl";
 import { MailTestActivity } from "@test_mail/../tests/mock_server/models/mail_test_activity";
 import { defineTestMailModels, testMailModels } from "@test_mail/../tests/test_mail_test_helpers";
 import {
@@ -227,14 +227,14 @@ test("activity view: Activity rendering with done activities", async () => {
                     attachment_ids:
                         state === "done"
                             ? [
-                                  pyEnv["ir.attachment"].create({
-                                      name: `attachment ${idx}`,
-                                      create_date: serializeDate(
-                                          DateTime.now().minus({ days: idx })
-                                      ),
-                                      create_uid: serverState.userId,
-                                  }),
-                              ]
+                                pyEnv["ir.attachment"].create({
+                                    name: `attachment ${idx}`,
+                                    create_date: serializeDate(
+                                        DateTime.now().minus({ days: idx })
+                                    ),
+                                    create_uid: serverState.userId,
+                                }),
+                            ]
                             : [],
                     can_write: true,
                     date_deadline: serializeDate(DateTime.now().plus({ days: idx })),

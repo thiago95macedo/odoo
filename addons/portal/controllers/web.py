@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import http
-from odoo.addons.web.controllers.home import Home as WebHome
-from odoo.addons.web.controllers.utils import is_user_internal
-from odoo.http import request
+from weth import http
+from weth.addons.web.controllers.home import Home as WebHome
+from weth.addons.web.controllers.utils import is_user_internal
+from weth.http import request
 
 
 class Home(WebHome):

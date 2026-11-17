@@ -1,10 +1,10 @@
-import { after, before, describe, expect, test } from "@odoo/hoot";
+import { after, before, describe, expect, test } from "@weth/hoot";
 import { setupEditor, testEditor } from "./_helpers/editor";
 import { unformat } from "./_helpers/format";
 import { insertText, setColor } from "./_helpers/user_actions";
 import { execCommand } from "./_helpers/userCommands";
 import { getContent } from "./_helpers/selection";
-import { animationFrame, press } from "@odoo/hoot-dom";
+import { animationFrame, press } from "@weth/hoot-dom";
 import { QWebPlugin } from "@html_editor/others/qweb_plugin";
 
 const redToBlueGradient = "linear-gradient(rgb(255, 0, 0), rgb(0, 0, 255))";

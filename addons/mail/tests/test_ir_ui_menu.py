@@ -2,9 +2,9 @@
 
 from unittest.mock import Mock, patch
 
-from odoo.addons.mail.tests.common import MailCommon, mail_new_test_user
-from odoo.tests import tagged, users
-from odoo.tests.common import warmup
+from weth.addons.mail.tests.common import MailCommon, mail_new_test_user
+from weth.tests import tagged, users
+from weth.tests.common import warmup
 
 
 @tagged('mail_thread')

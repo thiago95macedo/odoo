@@ -5,7 +5,7 @@ from typing import TYPE_CHECKING, cast
 from .generator import ComodelGenerator
 
 if TYPE_CHECKING:
-    from odoo.fields import Many2oneReference, Reference
+    from weth.fields import Many2oneReference, Reference
 
 
 class ReferenceOne(ComodelGenerator):

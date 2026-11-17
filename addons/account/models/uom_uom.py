@@ -1,4 +1,4 @@
-from odoo import fields, models, api
+from weth import fields, models, api
 
 UOM_TO_UNECE_CODE = {
     'uom.product_uom_unit': 'C62',

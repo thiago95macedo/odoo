@@ -1,4 +1,4 @@
-import { onWillStart } from "@odoo/owl";
+import { onWillStart } from "@weth/owl";
 import { BaseOptionComponent } from "@html_builder/core/base_option_component";
 
 export class MailingListSubscribeOption extends BaseOptionComponent {

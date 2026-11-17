@@ -1,6 +1,6 @@
 /** @ts-check */
-import { describe, expect, test } from "@odoo/hoot";
-import { Model } from "@odoo/o-spreadsheet";
+import { describe, expect, test } from "@weth/hoot";
+import { Model } from "@weth/o-spreadsheet";
 import {
     dateFilterValueToString,
     getDateRange,

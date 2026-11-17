@@ -20,24 +20,24 @@ from requests import RequestException
 from urllib.parse import urlparse, urlsplit
 from werkzeug import urls
 
-from odoo import api, fields, models, tools, release
-from odoo.addons.website.models.ir_http import sitemap_qs2dom
-from odoo.addons.website.tools import (
+from weth import api, fields, models, tools, release
+from weth.addons.website.models.ir_http import sitemap_qs2dom
+from weth.addons.website.tools import (
     adapt_dark_palette_content,
     get_base_domain,
     similarity_score,
     text_from_html,
 )
-from odoo.addons.portal.controllers.portal import pager
-from odoo.exceptions import AccessError, MissingError, UserError, ValidationError
-from odoo.fields import Domain
-from odoo.http import request
-from odoo.models import Query
-from odoo.modules.module import get_manifest
-from odoo.tools import BinaryBytes, BinaryValue, file_open, lazy
-from odoo.tools.image import image_process
-from odoo.tools.sql import SQL, escape_like_value
-from odoo.tools.translate import _
+from weth.addons.portal.controllers.portal import pager
+from weth.exceptions import AccessError, MissingError, UserError, ValidationError
+from weth.fields import Domain
+from weth.http import request
+from weth.models import Query
+from weth.modules.module import get_manifest
+from weth.tools import BinaryBytes, BinaryValue, file_open, lazy
+from weth.tools.image import image_process
+from weth.tools.sql import SQL, escape_like_value
+from weth.tools.translate import _
 
 logger = logging.getLogger(__name__)
 
@@ -1464,7 +1464,7 @@ class Website(models.CachedModel):
                 dependencies[model_display_name] += [{
                     'field_name': field_string,
                     'record_name': rec.display_name,
-                    'link': 'website_url' in rec and rec.website_url or f'/odoo/{model_name}/{rec.id}',
+                    'link': 'website_url' in rec and rec.website_url or f'/weth/{model_name}/{rec.id}',
                     'model_name': model_display_name,
                     'url': _choose_url(rec[field_name]),
                 } for rec in dependency_records]
@@ -1910,7 +1910,7 @@ class Website(models.CachedModel):
             action_params["enable_editor"] = 1
         if mode_debug:
             action_params["debug"] = mode_debug
-        return "/odoo/action-website.website_preview?" + urls.url_encode(action_params)
+        return "/weth/action-website.website_preview?" + urls.url_encode(action_params)
 
     def get_client_action(self, url, mode_edit=False, website_id=False):
         action = self.env["ir.actions.actions"]._for_xml_id("website.website_preview")

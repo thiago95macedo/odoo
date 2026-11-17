@@ -26,12 +26,12 @@ from psycopg2.errors import (
     UniqueViolation,
 )
 
-from odoo import SUPERUSER_ID, api, fields, models, modules
-from odoo.exceptions import ConcurrencyError, LockError, UserError, ValidationError
-from odoo.fields import Domain
-from odoo.http.retrying import retrying
-from odoo.modules.registry import Registry
-from odoo.tools import SQL, config, profiler, str2bool
+from weth import SUPERUSER_ID, api, fields, models, modules
+from weth.exceptions import ConcurrencyError, LockError, UserError, ValidationError
+from weth.fields import Domain
+from weth.http.retrying import retrying
+from weth.modules.registry import Registry
+from weth.tools import SQL, config, profiler, str2bool
 
 from ..utils.profiling import POPULATE_PROFILE_SESSION_KEY, get_profile_session_name
 from ..utils.seed import derive_seed_from
@@ -48,10 +48,10 @@ PG_EXCEPTIONS_TO_RETRY = (
     NotNullViolation,
     UniqueViolation,
 )
-POPULATE_SESSION_LOCK_NAMESPACE = 'odoo.populate.session.running'
+POPULATE_SESSION_LOCK_NAMESPACE = 'weth.populate.session.running'
 
 _logger = logging.getLogger(__name__)
-_worker_logger = logging.getLogger('odoo.addons.populate.worker')
+_worker_logger = logging.getLogger('weth.addons.populate.worker')
 
 
 def has_platform_enabled_multiprocessing() -> bool:
@@ -349,11 +349,11 @@ class ParallelExecutor(JobExecutor):
 
     @cached_property
     def _worker_init(self) -> Callable:
-        """Load the worker initializer without importing through ``odoo.addons``.
+        """Load the worker initializer without importing through ``weth.addons``.
 
         ``ProcessPoolExecutor`` with ``spawn`` imports the initializer before it
         runs it. Loading ``populate_worker`` as a top-level module avoids an
-        early import of ``odoo.addons.populate``, which may only become
+        early import of ``weth.addons.populate``, which may only become
         available after the worker initializes Odoo's addons' path.
         """
         utils_path_str = str(Path(__file__).resolve().parents[1] / 'utils')

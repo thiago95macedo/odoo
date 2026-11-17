@@ -1,4 +1,4 @@
-import { useProps, signal, t } from "@odoo/owl";
+import { useProps, signal, t } from "@weth/owl";
 import {
     ConfirmationDialog,
     confirmationDialogProps,
@@ -17,7 +17,7 @@ export class CategoryAddDialog extends ConfirmationDialog {
     setup() {
         super.setup();
         useAutofocus({ ref: this.inputRef });
-        this.csrf_token = odoo.csrf_token;
+        this.csrf_token = weth.csrf_token;
         this.lastInputValue;
     }
 

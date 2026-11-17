@@ -1,4 +1,4 @@
-import { useComponent } from "@odoo/owl";
+import { useComponent } from "@weth/owl";
 import { useBus } from "@web/core/utils/hooks";
 
 export function useMailComposerAttachmentsUploader() {

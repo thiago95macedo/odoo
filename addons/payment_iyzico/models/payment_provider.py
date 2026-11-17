@@ -7,11 +7,11 @@ import json
 import random
 import string
 
-from odoo import fields, models
-from odoo.exceptions import ValidationError
-from odoo.tools.urls import urljoin
+from weth import fields, models
+from weth.exceptions import ValidationError
+from weth.tools.urls import urljoin
 
-from odoo.addons.payment_iyzico import const
+from weth.addons.payment_iyzico import const
 
 
 class PaymentProvider(models.Model):

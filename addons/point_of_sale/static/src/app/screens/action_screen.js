@@ -1,4 +1,4 @@
-import { Component, xml, useProps, t } from "@odoo/owl";
+import { Component, xml, useProps, t } from "@weth/owl";
 import { registry } from "@web/core/registry";
 import { ActionContainer } from "@web/webclient/actions/action_container";
 
@@ -19,6 +19,6 @@ export class ActionScreen extends Component {
 registry.category("pos_pages").add("ActionScreen", {
     name: "ActionScreen",
     component: ActionScreen,
-    route: `/pos/ui/${odoo.pos_config_id}/action/{string:actionName}`,
+    route: `/pos/ui/${weth.pos_config_id}/action/{string:actionName}`,
     params: {},
 });

@@ -1,7 +1,7 @@
 import { BoardAction } from "@board/board_action";
 import { defineMailModels } from "@mail/../tests/mail_test_helpers";
-import { beforeEach, describe, expect, test } from "@odoo/hoot";
-import { queryAllTexts, queryOne } from "@odoo/hoot-dom";
+import { beforeEach, describe, expect, test } from "@weth/hoot";
+import { queryAllTexts, queryOne } from "@weth/hoot-dom";
 import {
     contains,
     defineModels,
@@ -15,7 +15,7 @@ import {
 } from "@web/../tests/web_test_helpers";
 import { browser } from "@web/core/browser/browser";
 
-class Board extends models.Model {}
+class Board extends models.Model { }
 
 class Partner extends models.Model {
     name = fields.Char({ string: "Displayed name", searchable: true });
@@ -322,7 +322,7 @@ describe("board_desktop", () => {
         });
 
         await contains(".o_kanban_record").click({ ctrlKey: true });
-        expect.verifySteps(["opened in new window: /odoo/m-partner/1"]);
+        expect.verifySteps(["opened in new window: /weth/m-partner/1"]);
     });
 
     test("can open record using action form view", async () => {

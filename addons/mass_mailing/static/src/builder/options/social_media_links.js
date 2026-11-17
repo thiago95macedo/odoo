@@ -1,6 +1,6 @@
 import { BaseOptionComponent } from "@html_builder/core/base_option_component";
 import { useDomState } from "@html_builder/core/utils";
-import { onWillStart, signal } from "@odoo/owl";
+import { onWillStart, signal } from "@weth/owl";
 import { useSortable } from "@web/core/utils/sortable_owl";
 import { user } from "@web/core/user";
 import { ResCompanyUpdateDialog } from "../components/company_update_dialog";

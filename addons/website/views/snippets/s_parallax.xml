@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
 
 <template id="s_parallax" name="Parallax">
     <section class="s_parallax parallax s_parallax_is_fixed o_three_quarter_height" data-scroll-background-ratio="-1.5">
@@ -11,4 +11,4 @@
     </section>
 </template>
 
-</odoo>
+</weth>

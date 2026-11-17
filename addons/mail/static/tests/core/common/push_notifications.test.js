@@ -8,7 +8,7 @@ import {
     startServer,
 } from "@mail/../tests/mail_test_helpers";
 import { Store } from "@mail/../tests/mock_server/store";
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@weth/hoot";
 import { getService, patchWithCleanup, serverState } from "@web/../tests/web_test_helpers";
 
 import { browser } from "@web/core/browser/browser";

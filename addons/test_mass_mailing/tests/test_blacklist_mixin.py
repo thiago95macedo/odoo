@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.test_mass_mailing.models.mailing_models import MailingTestBlacklist
-from odoo.addons.test_mass_mailing.tests import common
-from odoo.exceptions import UserError
-from odoo.tests.common import tagged, users
+from weth.addons.test_mass_mailing.models.mailing_models import MailingTestBlacklist
+from weth.addons.test_mass_mailing.tests import common
+from weth.exceptions import UserError
+from weth.tests.common import tagged, users
 
 
 class TestBLMixin(common.TestMassMailCommon):

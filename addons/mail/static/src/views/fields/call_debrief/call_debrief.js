@@ -8,7 +8,7 @@ import {
     useListener,
     useOnChange,
     useProps,
-} from "@odoo/owl";
+} from "@weth/owl";
 import { useHotkey } from "@web/core/hotkeys/hotkey_hook";
 import { CallDebriefTimeline } from "@mail/views/fields/call_debrief/call_debrief_timeline";
 import { CallDebriefMediaControls } from "@mail/views/fields/call_debrief/call_debrief_media_controls";
@@ -177,7 +177,7 @@ export class CallDebrief extends Component {
                 // Note: setting currentTime before loadeddata is valid
                 media.currentTime = pendingSeek.time;
                 if (pendingSeek.autoplay) {
-                    media.play().catch(() => {});
+                    media.play().catch(() => { });
                 }
                 this._pendingSeek = null;
                 this.isSwitchingSegment = false;
@@ -211,8 +211,8 @@ export class CallDebrief extends Component {
         const callEndDate = !end
             ? DateTime.now()
             : typeof end === "string"
-            ? deserializeDateTime(end)
-            : end;
+                ? deserializeDateTime(end)
+                : end;
 
         const duration = callEndDate.diff(callStartDate, "seconds").seconds;
         if (duration < 0) {
@@ -379,7 +379,7 @@ export class CallDebrief extends Component {
             if (mediaPlayer) {
                 mediaPlayer.currentTime = relativeTime;
                 if (autoplay) {
-                    mediaPlayer.play().catch(() => {});
+                    mediaPlayer.play().catch(() => { });
                 }
             } else {
                 // We must defer seeking if the media element hasn't been rendered or loaded yet.

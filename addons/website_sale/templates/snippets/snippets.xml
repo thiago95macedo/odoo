@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
 
 <template id="website_sale.snippets" inherit_id="website.snippets" name="e-commerce snippets">
     <xpath expr="//t[@id='sale_products_hook']" position="replace">
@@ -48,4 +48,4 @@
     </xpath>
 </template>
 
-</odoo>
+</weth>

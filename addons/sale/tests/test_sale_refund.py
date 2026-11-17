@@ -1,10 +1,10 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 # ruff: noqa: E501
 
-from odoo.fields import Command
-from odoo.tests import Form, tagged
+from weth.fields import Command
+from weth.tests import Form, tagged
 
-from odoo.addons.sale.tests.common import TestSaleCommon
+from weth.addons.sale.tests.common import TestSaleCommon
 
 
 @tagged("post_install", "-at_install")

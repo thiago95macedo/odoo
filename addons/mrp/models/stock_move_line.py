@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, fields, models
-from odoo.fields import Domain
+from weth import api, fields, models
+from weth.fields import Domain
 
 
 class StockMoveLine(models.Model):

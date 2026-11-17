@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
 
     <menuitem
         id="menu_loyalty"
@@ -14,4 +14,4 @@
             action="loyalty.loyalty_program_gift_ewallet_action"/>
     </menuitem>
 
-</odoo>
+</weth>

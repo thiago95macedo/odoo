@@ -1,7 +1,7 @@
-// @odoo-module ignore
+// @weth-module ignore
 
-odoo.define(
-    "@odoo/o-spreadsheet",
+weth.define(
+    "@weth/o-spreadsheet",
     ["@web/core/l10n/translation", "@spreadsheet/o_spreadsheet/o_spreadsheet"],
     function (require) {
         "use strict";

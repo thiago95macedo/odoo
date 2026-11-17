@@ -1,4 +1,4 @@
-import { expect, test } from "@odoo/hoot";
+import { expect, test } from "@weth/hoot";
 import { EventConfiguratorPopup } from "@pos_event/app/components/popup/event_configurator_popup/event_configurator_popup";
 import { mountPosDialog, setupPosEnv } from "@point_of_sale/../tests/unit/utils";
 import { definePosModels } from "@point_of_sale/../tests/unit/data/generate_model_definitions";
@@ -15,7 +15,7 @@ test("confirm payload and getTicketMaxQty and ticketIsAvailable", async () => {
         availabilityPerTicket: avaibilityByTicket,
         slotResult: {},
         tickets: tickets,
-        close: () => {},
+        close: () => { },
         getPayload: (data) => {
             payload = data;
         },

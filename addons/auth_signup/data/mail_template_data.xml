@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
     <data noupdate="1">
         <!-- Email template for new internal users -->
         <record id="set_password_email" model="mail.template">
@@ -130,4 +130,4 @@ Have a nice day!<br />
         </record>
 
     </data>
-</odoo>
+</weth>

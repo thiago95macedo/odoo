@@ -1,5 +1,5 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
-from odoo import SUPERUSER_ID, api
+from weth import SUPERUSER_ID, api
 
 
 def migrate(cr, version):

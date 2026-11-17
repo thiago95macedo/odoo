@@ -10,7 +10,7 @@ import {
     mockTimeZone,
     press,
     test,
-} from "@odoo/hoot";
+} from "@weth/hoot";
 import { setupEditor } from "./_helpers/editor";
 import {
     insertText,

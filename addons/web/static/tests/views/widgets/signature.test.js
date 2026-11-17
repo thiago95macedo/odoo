@@ -11,9 +11,9 @@ import {
     contains,
     clickModalButton,
 } from "@web/../tests/web_test_helpers";
-import { beforeEach, test, expect } from "@odoo/hoot";
-import { click, queryFirst, waitFor } from "@odoo/hoot-dom";
-import { animationFrame } from "@odoo/hoot-mock";
+import { beforeEach, test, expect } from "@weth/hoot";
+import { click, queryFirst, waitFor } from "@weth/hoot-dom";
+import { animationFrame } from "@weth/hoot-mock";
 
 class Partner extends models.Model {
     display_name = fields.Char();

@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import Command
-from odoo.exceptions import ValidationError
-from odoo.tests import tagged
+from weth import Command
+from weth.exceptions import ValidationError
+from weth.tests import tagged
 
 from .common import PartnershipCommon
 

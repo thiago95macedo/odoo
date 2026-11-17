@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
     <data noupdate="1">
         <record id="product_name_similarity_threshold" model="ir.config_parameter">
             <field name="key">account.product_name_similarity_threshold</field>
@@ -10,4 +10,4 @@
             <field name="value">False</field>
         </record>
     </data>
-</odoo>
+</weth>

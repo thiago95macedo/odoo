@@ -1,6 +1,6 @@
 import { Plugin } from "@html_editor/plugin";
-import { expect, test } from "@odoo/hoot";
-import { click, tick, waitFor } from "@odoo/hoot-dom";
+import { expect, test } from "@weth/hoot";
+import { click, tick, waitFor } from "@weth/hoot-dom";
 import { setupEditor, testEditor } from "./_helpers/editor";
 import { getContent, setContent } from "./_helpers/selection";
 import { withSequence } from "@html_editor/utils/resource";
@@ -59,13 +59,13 @@ test("with a part of the selector in an empty HTMLElement", async () => {
     const { el } = await setupEditor("<div>a[bc<div>]</div></div>", {});
     expect(el.innerHTML).toBe(
         '<p data-selection-placeholder=""><br></p>' +
-            `<div>abc<div class="o-paragraph"><br></div></div>` +
-            '<p data-selection-placeholder=""><br></p>'
+        `<div>abc<div class="o-paragraph"><br></div></div>` +
+        '<p data-selection-placeholder=""><br></p>'
     );
     expect(getContent(el)).toBe(
         '<p data-selection-placeholder=""><br></p>' +
-            `<div>a[bc<div class="o-paragraph">]<br></div></div>` +
-            '<p data-selection-placeholder=""><br></p>'
+        `<div>a[bc<div class="o-paragraph">]<br></div></div>` +
+        '<p data-selection-placeholder=""><br></p>'
     );
 });
 
@@ -73,13 +73,13 @@ test("inverse selection", async () => {
     const { el } = await setupEditor("<div>a]bc<div>[</div></div>", {});
     expect(el.innerHTML).toBe(
         '<p data-selection-placeholder=""><br></p>' +
-            `<div>abc<div class="o-paragraph"><br></div></div>` +
-            '<p data-selection-placeholder=""><br></p>'
+        `<div>abc<div class="o-paragraph"><br></div></div>` +
+        '<p data-selection-placeholder=""><br></p>'
     );
     expect(getContent(el)).toBe(
         '<p data-selection-placeholder=""><br></p>' +
-            `<div>a]bc<div class="o-paragraph">[<br></div></div>` +
-            '<p data-selection-placeholder=""><br></p>'
+        `<div>a]bc<div class="o-paragraph">[<br></div></div>` +
+        '<p data-selection-placeholder=""><br></p>'
     );
 });
 

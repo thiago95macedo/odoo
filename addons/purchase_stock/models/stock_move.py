@@ -2,9 +2,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 from collections import deque
 
-from odoo import api, Command, fields, models, _
-from odoo.fields import Domain
-from odoo.tools.sql import SQL
+from weth import api, Command, fields, models, _
+from weth.fields import Domain
+from weth.tools.sql import SQL
 
 
 class StockMove(models.Model):

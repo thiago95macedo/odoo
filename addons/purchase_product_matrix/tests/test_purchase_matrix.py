@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-import odoo.tests
+import weth.tests
 
-from odoo.tests import Form
+from weth.tests import Form
 
-from odoo.addons.product_matrix.tests.common import TestMatrixCommon
+from weth.addons.product_matrix.tests.common import TestMatrixCommon
 
 
-@odoo.tests.tagged('post_install', '-at_install')
+@weth.tests.tagged('post_install', '-at_install')
 class TestPurchaseMatrixUi(TestMatrixCommon):
 
     def test_purchase_matrix_ui(self):

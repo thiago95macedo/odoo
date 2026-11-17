@@ -4,9 +4,9 @@
 import logging
 import re
 
-from odoo import api, fields, models, _
-from odoo.exceptions import UserError
-from odoo.tools.translate import LazyTranslate
+from weth import api, fields, models, _
+from weth.exceptions import UserError
+from weth.tools.translate import LazyTranslate
 
 _logger = logging.getLogger(__name__)
 _lt = LazyTranslate(__name__)

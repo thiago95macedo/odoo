@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo noupdate="1">
+<weth noupdate="1">
     <record id="portal_quotations_to_review" model="portal.entry">
         <field name="name">Quotations to review</field>
         <field name="description">Review your quotations</field>
@@ -17,4 +17,4 @@
         <field name="category">client_category</field>
         <field name="sequence" eval="50"/>
     </record>
-</odoo>
+</weth>

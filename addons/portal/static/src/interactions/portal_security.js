@@ -1,4 +1,4 @@
-import { onMounted, t, usePlugin, useProps } from "@odoo/owl";
+import { onMounted, t, usePlugin, useProps } from "@weth/owl";
 import { Interaction } from "@web/public/interaction";
 import { registry } from "@web/core/registry";
 import { BootstrapInstance } from "@web/core/utils/bootstrap_plugin";
@@ -244,7 +244,7 @@ export async function handleCheckIdentity(wrapped, ormService, dialogService) {
                     resolve(result);
                     return true;
                 },
-                cancel: () => {},
+                cancel: () => { },
                 onInput: ({ inputEl }) => {
                     inputEl.classList.remove("is-invalid");
                     inputEl.setCustomValidity("");

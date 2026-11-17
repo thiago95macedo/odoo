@@ -1,6 +1,6 @@
-/** @odoo-module */
+/** @weth-module */
 
-import { delay, tick } from "@odoo/hoot-dom";
+import { delay, tick } from "@weth/hoot-dom";
 import {
     _mockedCancelAnimationFrame,
     _mockedRequestAnimationFrame,
@@ -223,7 +223,7 @@ function toBytes(value) {
 }
 
 const DEFAULT_URL = "https://www.hoot.test/";
-const ENDLESS_PROMISE = new Promise(() => {});
+const ENDLESS_PROMISE = new Promise(() => { });
 const HEADER = {
     contentLength: "Content-Length",
     contentType: "Content-Type",

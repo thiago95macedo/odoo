@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
 
 <template id="s_animated_cover" name="Animated Cover">
     <section class="s_animated_cover o_full_screen_height o_colored_level o_cc o_cc5 oe_img_bg o_bg_img_center o_bg_img_origin_border_box" style="background-image: url('/web/image/website.landscape_xl_1');">
@@ -27,4 +27,4 @@
     <path>website/static/src/snippets/s_animated_cover/000.scss</path>
 </asset>
 
-</odoo>
+</weth>

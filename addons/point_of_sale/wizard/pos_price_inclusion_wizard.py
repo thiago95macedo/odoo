@@ -1,6 +1,6 @@
 from markupsafe import escape
 
-from odoo import _, api, fields, models
+from weth import _, api, fields, models
 
 
 class PosPriceInclusionWizard(models.TransientModel):

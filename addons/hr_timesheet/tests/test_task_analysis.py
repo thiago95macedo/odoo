@@ -1,4 +1,4 @@
-from odoo.addons.hr_timesheet.tests.test_timesheet import TestCommonTimesheet
+from weth.addons.hr_timesheet.tests.test_timesheet import TestCommonTimesheet
 
 
 class TestTaskAnalysis(TestCommonTimesheet):

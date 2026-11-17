@@ -1,7 +1,7 @@
 import { _t } from "@web/core/l10n/translation";
 import { useService } from "@web/core/utils/hooks";
 
-import { Component, onWillStart, types, useProps } from "@odoo/owl";
+import { Component, onWillStart, types, useProps } from "@weth/owl";
 
 /**
  * This popover is used to show a card with details for the recipients' partner with its name,

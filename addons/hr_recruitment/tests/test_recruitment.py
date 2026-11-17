@@ -1,9 +1,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import Command
-from odoo.fields import Domain
-from odoo.addons.mail.tests.common import MailCase
-from odoo.tests import tagged, TransactionCase, Form
+from weth import Command
+from weth.fields import Domain
+from weth.addons.mail.tests.common import MailCase
+from weth.tests import tagged, TransactionCase, Form
 
 
 @tagged('recruitment')

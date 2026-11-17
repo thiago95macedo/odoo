@@ -1,4 +1,4 @@
-import { describe, expect, mockFetch, test } from "@odoo/hoot";
+import { describe, expect, mockFetch, test } from "@weth/hoot";
 import { PLATFORMS } from "@html_editor/main/media/media_dialog/video_selector";
 
 for (const [platform, platformClass] of Object.entries(PLATFORMS)) {

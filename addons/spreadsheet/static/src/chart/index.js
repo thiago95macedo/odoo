@@ -1,4 +1,4 @@
-import * as spreadsheet from "@odoo/o-spreadsheet";
+import * as spreadsheet from "@weth/o-spreadsheet";
 import { OdooChartCorePlugin } from "./plugins/odoo_chart_core_plugin";
 import { ChartOdooLinkPlugin } from "./plugins/chart_odoo_link_plugin";
 import { OdooChartCoreViewPlugin } from "./plugins/odoo_chart_core_view_plugin";

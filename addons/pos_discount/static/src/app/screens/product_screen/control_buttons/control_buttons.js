@@ -7,7 +7,7 @@ import { parseFloat } from "@web/views/fields/parsers";
 
 patch(ControlButtons.prototype, {
     get lastDiscountTypeUsedKey() {
-        return `pos_discount_last_type_used_${odoo.pos_config_id}`;
+        return `pos_discount_last_type_used_${weth.pos_config_id}`;
     },
     get lastDiscountTypeUsed() {
         return localStorage.getItem(this.lastDiscountTypeUsedKey) || "percent";

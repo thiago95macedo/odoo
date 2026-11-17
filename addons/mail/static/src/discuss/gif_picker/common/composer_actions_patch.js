@@ -1,5 +1,5 @@
 import { pickerGetAnchor, registerComposerAction } from "@mail/core/common/composer_actions";
-import { markup } from "@odoo/owl";
+import { markup } from "@weth/owl";
 import { _t } from "@web/core/l10n/translation";
 import { usePopover } from "@web/core/popover/popover_hook";
 import { markEventHandled } from "@web/core/utils/misc";

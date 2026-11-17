@@ -3,8 +3,8 @@
 from datetime import datetime, UTC
 from zoneinfo import ZoneInfo
 
-from odoo.tests import tagged
-from odoo.addons.hr_calendar.tests.common import TestHrContractCalendarCommon
+from weth.tests import tagged
+from weth.addons.hr_calendar.tests.common import TestHrContractCalendarCommon
 
 
 @tagged('event_interval')

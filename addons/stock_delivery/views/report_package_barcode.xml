@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
     <template id="report_package_barcode_delivery" inherit_id="stock.report_package_barcode">
         <xpath expr="//div[@name='datamatrix_barcode']" position="before">
             <t t-if="o.shipping_weight or o.weight">
@@ -46,4 +46,4 @@
             <div t-if="label.get('weight_text')" style="font-size: 24px; font-weight: bold;" t-out="label['weight_text']"/>
         </xpath>
     </template>
-</odoo>
+</weth>

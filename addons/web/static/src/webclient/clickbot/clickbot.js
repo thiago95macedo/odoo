@@ -3,7 +3,7 @@
  * view. On each view, click on each filter.
  */
 
-import { App, effect, proxy } from "@odoo/owl";
+import { App, effect, proxy } from "@weth/owl";
 import { browser } from "@web/core/browser/browser";
 import { rpcBus } from "@web/core/network/rpc";
 import { ClickbotOverlay } from "@web/webclient/clickbot/clickbot_overlay";
@@ -11,7 +11,7 @@ import { ClickbotOverlay } from "@web/webclient/clickbot/clickbot_overlay";
 export const SUCCESS_SIGNAL = "clickbot test succeeded";
 export const FAILURE_SIGNAL = "clickbot test failed";
 
-export class ClickbotStopError extends Error {}
+export class ClickbotStopError extends Error { }
 
 const MOUSE_EVENTS = ["mouseover", "mouseenter", "mousedown", "mouseup", "click"];
 const BLACKLISTED_MENUS = new Set([
@@ -201,7 +201,7 @@ class Clickbot {
         this._actionCount = 0;
         this._calledRPC = {};
         this._errorRPC = undefined;
-        this._disposeEffect = () => {};
+        this._disposeEffect = () => { };
     }
 
     get _stats() {
@@ -293,8 +293,8 @@ class Clickbot {
         this.state.testingOffline = true;
 
         class FakeOfflineXHR extends EventTarget {
-            open() {}
-            setRequestHeader() {}
+            open() { }
+            setRequestHeader() { }
             send() {
                 setTimeout(() => this.dispatchEvent(new ProgressEvent("error")), 20);
             }
@@ -437,9 +437,8 @@ class Clickbot {
         };
         const errorDialog = () => {
             if (document.querySelector(".o_error_dialog")) {
-                let msg = `Error dialog detected when waiting for ${message} : ${
-                    document.querySelector(".o_error_dialog").innerHTML
-                }`;
+                let msg = `Error dialog detected when waiting for ${message} : ${document.querySelector(".o_error_dialog").innerHTML
+                    }`;
                 if (this._errorRPC) {
                     msg += `\nA RPC in error was detected, maybe it's related to the error dialog : ${JSON.stringify(
                         this._errorRPC
@@ -460,9 +459,8 @@ class Clickbot {
                 throw new ClickbotStopError("Clickbot stopped by user");
             }
             if (timeLimit <= 0) {
-                let msg = `Timeout when: ${message}, it took more than ${
-                    initialTime / 1000
-                } seconds to load\n`;
+                let msg = `Timeout when: ${message}, it took more than ${initialTime / 1000
+                    } seconds to load\n`;
                 msg += `Waiting for:\n`;
                 if (Object.keys(this._calledRPC).length > 0) {
                     msg += ` * ${Object.values(this._calledRPC).join(", ")} RPC\n`;
@@ -617,8 +615,8 @@ class Clickbot {
                 const stopCondition = exceptionActions?.list?.toCheck
                     ? () => document.querySelector(exceptionActions?.list?.toCheck) !== null
                     : () =>
-                          document.querySelector(".o_form_view") !== null ||
-                          document.querySelector(".o_data_row.o_selected_row") !== null;
+                        document.querySelector(".o_form_view") !== null ||
+                        document.querySelector(".o_data_row.o_selected_row") !== null;
 
                 if (document.querySelector(".o_list_record_open_form_view")) {
                     await this._triggerClick(
@@ -664,10 +662,10 @@ class Clickbot {
             const records = document.querySelector(".o_view_sample_data")
                 ? false
                 : Boolean(
-                      document.querySelectorAll(
-                          ".o_kanban_record:not(.o_kanban_ghost).cursor-pointer"
-                      ).length
-                  );
+                    document.querySelectorAll(
+                        ".o_kanban_record:not(.o_kanban_ghost).cursor-pointer"
+                    ).length
+                );
             if (records) {
                 this.recordTested = true;
                 const card = document.querySelectorAll(

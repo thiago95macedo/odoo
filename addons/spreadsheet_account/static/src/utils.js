@@ -1,8 +1,8 @@
 // @ts-check
 
 /**
- * @typedef {import("@odoo/o-spreadsheet").CompiledFormula} CompiledFormula
- * @typedef {import("@odoo/o-spreadsheet").CoreGetters} CoreGetters
+ * @typedef {import("@weth/o-spreadsheet").CompiledFormula} CompiledFormula
+ * @typedef {import("@weth/o-spreadsheet").CoreGetters} CoreGetters
  * @typedef  {import("@spreadsheet/helpers/odoo_functions_helpers").OdooFunctionDescription} OdooFunctionDescription
  */
 
@@ -13,7 +13,7 @@ const ALL_ACCOUNTING_FUNCTIONS = ["ODOO.BALANCE", "ODOO.CREDIT", "ODOO.DEBIT", "
  * @returns {boolean}
  */
 export function hasAccountingFormula(compiledFormula) {
-    return ALL_ACCOUNTING_FUNCTIONS.some(x=>    compiledFormula.usesSymbol(x));
+    return ALL_ACCOUNTING_FUNCTIONS.some(x => compiledFormula.usesSymbol(x));
 }
 
 /**

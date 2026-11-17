@@ -4,7 +4,7 @@ import { registry } from "@web/core/registry";
 import { insertHtmlContent } from "@website_slides/js/utils";
 import { WebsiteSlidesCourseQuizQuestionForm } from "@website_slides/js/public/components/slides_course_quiz_question_form/slides_course_quiz_question_form";
 import { _t } from "@web/core/l10n/translation";
-import { markup } from "@odoo/owl";
+import { markup } from "@weth/owl";
 
 export class WebsiteSlidesQuizEdit extends Interaction {
     static selector = ".o_wslides_js_lesson_quiz";
@@ -305,7 +305,7 @@ export class WebsiteSlidesQuizEdit extends Interaction {
             body: _t('Are you sure you want to delete this question "%(title)s"?', {
                 title: markup`<strong>${question.dataset.title}</strong>`,
             }),
-            cancel: () => {},
+            cancel: () => { },
             cancelLabel: _t("No"),
             confirm: async () => {
                 if (this.isDestroyed) {

@@ -4,10 +4,10 @@ from collections import defaultdict
 from dateutil.relativedelta import relativedelta
 from datetime import datetime
 
-from odoo import api, fields, models, _
-from odoo.exceptions import UserError
-from odoo.fields import Domain
-from odoo.addons.fleet.models.fleet_vehicle_model import FUEL_TYPES
+from weth import api, fields, models, _
+from weth.exceptions import UserError
+from weth.fields import Domain
+from weth.addons.fleet.models.fleet_vehicle_model import FUEL_TYPES
 
 
 #Some fields don't have the exact same name

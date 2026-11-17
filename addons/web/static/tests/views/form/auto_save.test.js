@@ -1,6 +1,6 @@
-import { expect, test } from "@odoo/hoot";
-import { press, unload, waitFor } from "@odoo/hoot-dom";
-import { animationFrame, mockSendBeacon } from "@odoo/hoot-mock";
+import { expect, test } from "@weth/hoot";
+import { press, unload, waitFor } from "@weth/hoot-dom";
+import { animationFrame, mockSendBeacon } from "@weth/hoot-mock";
 import {
     contains,
     defineActions,
@@ -812,7 +812,7 @@ test("save on closing tab/browser (onchanges)", async () => {
 
 test("save on closing tab/browser (onchanges 2)", async () => {
     Partner._onChanges = {
-        expertise() {},
+        expertise() { },
     };
 
     const sendBeaconDeferred = Promise.withResolvers();

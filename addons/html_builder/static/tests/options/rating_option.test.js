@@ -1,6 +1,6 @@
 import { setupHTMLBuilder } from "@html_builder/../tests/helpers";
-import { expect, test, describe } from "@odoo/hoot";
-import { animationFrame, clear, click, fill, waitFor } from "@odoo/hoot-dom";
+import { expect, test, describe } from "@weth/hoot";
+import { animationFrame, clear, click, fill, waitFor } from "@weth/hoot-dom";
 import { contains } from "@web/../tests/web_test_helpers";
 
 describe.current.tags("desktop");

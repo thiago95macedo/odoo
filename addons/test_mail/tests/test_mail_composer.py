@@ -8,15 +8,15 @@ from datetime import timedelta
 from itertools import chain, product, repeat
 from unittest.mock import patch
 
-from odoo.addons.base.tests.test_ir_cron import CronMixinCase
-from odoo.addons.mail.tests.common import mail_new_test_user, MailCommon
-from odoo.addons.mail.wizard.mail_compose_message import MailComposeMessage
-from odoo.addons.test_mail.models.mail_test_ticket import MailTestTicket
-from odoo.addons.test_mail.tests.common import TestRecipients
-from odoo.fields import Command, Datetime as FieldDatetime, Domain
-from odoo.exceptions import AccessError, UserError
-from odoo.tests import Form, tagged, users
-from odoo.tools import email_normalize, mute_logger, formataddr
+from weth.addons.base.tests.test_ir_cron import CronMixinCase
+from weth.addons.mail.tests.common import mail_new_test_user, MailCommon
+from weth.addons.mail.wizard.mail_compose_message import MailComposeMessage
+from weth.addons.test_mail.models.mail_test_ticket import MailTestTicket
+from weth.addons.test_mail.tests.common import TestRecipients
+from weth.fields import Command, Datetime as FieldDatetime, Domain
+from weth.exceptions import AccessError, UserError
+from weth.tests import Form, tagged, users
+from weth.tools import email_normalize, mute_logger, formataddr
 
 
 @tagged('mail_composer')
@@ -671,7 +671,7 @@ class TestComposerInternals(TestMailComposer):
                                         'Header should be hidden when email_notification_allow_header is False')
 
     @users('employee')
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_mail_composer_attachments(self):
         """ Test attachments management in both comment and mass mail mode. """
         attachment_data = self._generate_attachments_data(3, self.template._name, self.template.id)
@@ -758,7 +758,7 @@ class TestComposerInternals(TestMailComposer):
                     self.assertFalse(composer.attachment_ids)
 
     @users('employee')
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_mail_composer_author(self):
         """ Test author_id / email_from synchronization, in both comment and mass
         mail modes. """
@@ -1088,7 +1088,7 @@ class TestComposerInternals(TestMailComposer):
                 self.assertEqual(composer.subject, 'My amazing subject')
 
     @users('employee')
-    @mute_logger('odoo.models.unlink')
+    @mute_logger('weth.models.unlink')
     def test_mail_composer_recipients(self):
         """ Test content management (partner_ids, reply_to) in both comment and
         mass mailing mode. Template update is also tested. Add some tests for
@@ -1296,7 +1296,7 @@ class TestComposerInternals(TestMailComposer):
         self.assertFalse(composer.partner_cc_ids)
 
     @users('employee')
-    @mute_logger('odoo.tests', 'odoo.addons.mail.models.mail_mail', 'odoo.models.unlink')
+    @mute_logger('weth.tests', 'weth.addons.mail.models.mail_mail', 'weth.models.unlink')
     def test_mail_composer_parent(self):
         """ Test specific management in comment mode when having parent_id set:
         subject, parent's partners. """
@@ -1320,7 +1320,7 @@ class TestComposerInternals(TestMailComposer):
         self.assertEqual(composer.subject, parent_subject)
 
     @users('user_rendering_restricted')
-    @mute_logger('odoo.tests', 'odoo.addons.base.models.ir_access', 'odoo.addons.mail.models.mail_mail', 'odoo.models.unlink')
+    @mute_logger('weth.tests', 'weth.addons.base.models.ir_access', 'weth.addons.mail.models.mail_mail', 'weth.models.unlink')
     def test_mail_composer_rights_attachments(self):
         """ Ensure a user without write access to a template can send an email"""
         template_1 = self.template.copy({
@@ -1353,7 +1353,7 @@ class TestComposerInternals(TestMailComposer):
             sorted(self.test_record.message_ids[0].attachment_ids.mapped('name')),
             sorted(template_1_attachment_name))
 
-    @mute_logger('odoo.tests', 'odoo.addons.mail.models.mail_mail', 'odoo.models.unlink')
+    @mute_logger('weth.tests', 'weth.addons.mail.models.mail_mail', 'weth.models.unlink')
     def test_mail_composer_rights_portal(self):
         portal_user = self._create_portal_user()
         # give read access to the record to portal (for check access rule)
@@ -1492,7 +1492,7 @@ class TestComposerInternals(TestMailComposer):
         self.assertEqual(composer_attachment.res_id, scheduled_message.id)
 
     @users('erp_manager')
-    @mute_logger('odoo.addons.mail.models.mail_mail', 'odoo.models.unlink')
+    @mute_logger('weth.addons.mail.models.mail_mail', 'weth.models.unlink')
     def test_mail_composer_wtpl_populate_new_recipients_mc(self):
         """ Test auto-populate of auto created partner with related record
         values when sending a mail with a template, in multi-company environment.
@@ -1666,7 +1666,7 @@ class TestComposerResultsComment(TestMailComposer, CronMixinCase):
         self.assertEqual(message.subject, 'Forced Subject')
 
     @users('employee')
-    @mute_logger('odoo.tests', 'odoo.addons.mail.models.mail_mail', 'odoo.models.unlink')
+    @mute_logger('weth.tests', 'weth.addons.mail.models.mail_mail', 'weth.models.unlink')
     def test_mail_composer_notifications_delete(self):
         """ Notifications are correctly deleted once sent """
         composer = self.env['mail.compose.message'].with_context(
@@ -1712,7 +1712,7 @@ class TestComposerResultsComment(TestMailComposer, CronMixinCase):
         self.assertEqual(len(self._new_mails.exists()), 2, 'Should not have deleted mail.mail records')
 
     @users('employee')
-    @mute_logger('odoo.tests', 'odoo.addons.mail.models.mail_mail', 'odoo.models.unlink')
+    @mute_logger('weth.tests', 'weth.addons.mail.models.mail_mail', 'weth.models.unlink')
     def test_mail_composer_post_parameters(self):
         """ Test various fields and tweaks in comment mode used for message_post
         parameters and process.. """
@@ -1852,7 +1852,7 @@ class TestComposerResultsComment(TestMailComposer, CronMixinCase):
                 self.assertEqual(message.partner_ids, self.partner_admin)
 
     @users('employee')
-    @mute_logger('odoo.tests', 'odoo.addons.mail.models.mail_mail', 'odoo.models.unlink')
+    @mute_logger('weth.tests', 'weth.addons.mail.models.mail_mail', 'weth.models.unlink')
     def test_mail_composer_recipients(self):
         """ Test partner_ids given to composer are given to the final message. """
         partners_to = self.partner_1 | self.partner_2
@@ -1944,7 +1944,7 @@ class TestComposerResultsComment(TestMailComposer, CronMixinCase):
                     self.assertFalse(composer.notified_bcc_contains_share, 'External follower should be unsubscribed')
 
     @users('employee')
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_mail_composer_server_config(self):
         """ Test various configuration to check behavior of outgoing mail
         servers, notifications, .... """
@@ -2027,7 +2027,7 @@ class TestComposerResultsComment(TestMailComposer, CronMixinCase):
                     )
 
     @users('employee')
-    @mute_logger('odoo.models.unlink', 'odoo.addons.mail.models.mail_mail', 'odoo.addons.mail.models.mail_message_schedule')
+    @mute_logger('weth.models.unlink', 'weth.addons.mail.models.mail_mail', 'weth.addons.mail.models.mail_message_schedule')
     def test_mail_composer_wtpl_complete(self):
         """ Test a posting process using a complex template, holding several
         additional recipients and attachments. It is done in monorecord and
@@ -2394,7 +2394,7 @@ class TestComposerResultsComment(TestMailComposer, CronMixinCase):
                     self.assertTrue(all(attach not in message.attachment_ids for attach in attachs), 'Should have copied attachments')
 
     @users('employee')
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_mail_composer_wtpl_mc(self):
         """ Test specific to multi-company environment, notably company propagation
         or aliases. """
@@ -2499,7 +2499,7 @@ class TestComposerResultsComment(TestMailComposer, CronMixinCase):
                             )
 
     @users('employee')
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_mail_composer_wtpl_recipients_email_fields(self):
         """ Test various combinations of corner case / not standard filling of
         email fields: multi email, formatted emails, ... on template, used to
@@ -2759,7 +2759,7 @@ class TestComposerResultsCommentStatus(TestMailComposer):
         self.assertTrue(self.test_partners[0].is_blacklisted)
 
     @users('employee')
-    @mute_logger('odoo.tests', 'odoo.addons.mail.models.mail_mail', 'odoo.models.unlink')
+    @mute_logger('weth.tests', 'weth.addons.mail.models.mail_mail', 'weth.models.unlink')
     def test_comment_blacklist(self):
         """ Tests a document-based comment with the excluded emails. It is
         currently bypassed, as we consider posting bypasses the exclusion list.
@@ -2799,7 +2799,7 @@ class TestComposerResultsMass(TestMailComposer):
         })
 
     @users('employee')
-    @mute_logger('odoo.tests', 'odoo.addons.mail.models.mail_mail', 'odoo.models.unlink')
+    @mute_logger('weth.tests', 'weth.addons.mail.models.mail_mail', 'weth.models.unlink')
     def test_mail_composer_delete(self):
         """ Check mail / msg delete support """
         # ensure initial data
@@ -2862,7 +2862,7 @@ class TestComposerResultsMass(TestMailComposer):
         self.assertFalse(self._new_notifs, 'Should not create notifications when removing logs in mass mode')
 
     @users('employee')
-    @mute_logger('odoo.tests', 'odoo.addons.mail.models.mail_mail', 'odoo.models.unlink')
+    @mute_logger('weth.tests', 'weth.addons.mail.models.mail_mail', 'weth.models.unlink')
     def test_mail_composer_duplicates(self):
         """ Ensures emails sent to the same recipient multiple times
             are only sent when they are not duplicates
@@ -3084,7 +3084,7 @@ class TestComposerResultsMass(TestMailComposer):
                 )
 
     @users('employee')
-    @mute_logger('odoo.models.unlink', 'odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.models.unlink', 'weth.addons.mail.models.mail_mail')
     def test_mail_composer_wtpl(self):
         self.template.auto_delete = False  # keep sent emails to check content
 
@@ -3135,7 +3135,7 @@ class TestComposerResultsMass(TestMailComposer):
             self.assertFalse(message.partner_ids)
 
     @users('employee')
-    @mute_logger('odoo.models.unlink', 'odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.models.unlink', 'weth.addons.mail.models.mail_mail')
     def test_mail_composer_wtpl_complete(self):
         """ Test a composer in mass mode with a quite complete template, containing
         notably email-based recipients and attachments.
@@ -3337,7 +3337,7 @@ class TestComposerResultsMass(TestMailComposer):
                             self.assertIn(exp_button_en, sent_mail['body'])
 
     @users('employee')
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_mail_composer_wtpl_mc(self):
         """ Test specific to multi-company environment, notably company propagation
         or aliases. """
@@ -3438,7 +3438,7 @@ class TestComposerResultsMass(TestMailComposer):
                             )
 
     @users('employee')
-    @mute_logger('odoo.models.unlink', 'odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.models.unlink', 'weth.addons.mail.models.mail_mail')
     def test_mail_composer_wtpl_recipients(self):
         """ Test various combinations of recipients: res_domain, active_id,
         active_ids, ... to ensure fallback behavior are working. """
@@ -3612,7 +3612,7 @@ class TestComposerResultsMass(TestMailComposer):
         self.assertFalse(self._new_mails.notification_ids)
 
     @users('employee')
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_mail_composer_wtpl_recipients_email_fields(self):
         """ Test various combinations of corner case / not standard filling of
         email fields: multi email, formatted emails, ... """
@@ -3800,7 +3800,7 @@ class TestComposerResultsMass(TestMailComposer):
                 )
 
     @users('employee')
-    @mute_logger('odoo.models.unlink', 'odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.models.unlink', 'weth.addons.mail.models.mail_mail')
     def test_mail_composer_wtpl_reply_to_default_to_from(self):
         # test without catchall filling reply-to
         composer_form = Form(self.env['mail.compose.message'].with_context(
@@ -3834,7 +3834,7 @@ class TestComposerResultsMass(TestMailComposer):
                                )
 
     @users('employee')
-    @mute_logger('odoo.models.unlink', 'odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.models.unlink', 'weth.addons.mail.models.mail_mail')
     def test_mail_composer_wtpl_reply_to_force_new(self):
         """ Test no auto thread behavior, notably with reply-to. """
         # add access to Mail Template Editor
@@ -3937,7 +3937,7 @@ class TestComposerResultsMassStatus(TestMailComposer):
         self.assertTrue(self.test_partners[0].is_blacklisted)
 
     @users('employee')
-    @mute_logger('odoo.tests', 'odoo.addons.mail.models.mail_mail', 'odoo.models.unlink')
+    @mute_logger('weth.tests', 'weth.addons.mail.models.mail_mail', 'weth.models.unlink')
     def test_mailing_blacklist_mixin(self):
         """ Tests a document-based mass mailing with excluded emails. Their emails
         are canceled if the model inherits from the blacklist mixin. """

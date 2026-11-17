@@ -2,7 +2,7 @@
 
 import re
 
-from odoo import models
+from weth import models
 
 
 class IrHttp(models.AbstractModel):

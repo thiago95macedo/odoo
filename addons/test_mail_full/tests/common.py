@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.test_mass_mailing.tests.common import TestMassMailCommon
+from weth.addons.test_mass_mailing.tests.common import TestMassMailCommon
 
 
 class TestMailFullCommon(TestMassMailCommon):

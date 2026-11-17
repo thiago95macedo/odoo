@@ -1,5 +1,5 @@
 import { BaseOptionComponent } from "@html_builder/core/base_option_component";
-import { onWillStart, proxy } from "@odoo/owl";
+import { onWillStart, proxy } from "@weth/owl";
 import { registry } from "@web/core/registry";
 
 export class ProductsRibbonOption extends BaseOptionComponent {
@@ -10,7 +10,7 @@ export class ProductsRibbonOption extends BaseOptionComponent {
     setup() {
         super.setup();
 
-        const {loadInfo, getCount} = this.dependencies.productsRibbonOptionPlugin;
+        const { loadInfo, getCount } = this.dependencies.productsRibbonOptionPlugin;
         this.count = proxy(getCount());
 
         this.state = proxy({

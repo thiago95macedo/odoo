@@ -1,4 +1,4 @@
-import { Component, computed, proxy, signal, t, useListener, useProps } from "@odoo/owl";
+import { Component, computed, proxy, signal, t, useListener, useProps } from "@weth/owl";
 import { Input } from "@point_of_sale/app/components/inputs/input/input";
 import { usePos } from "@point_of_sale/app/hooks/pos_hook";
 import { ResPartner } from "@point_of_sale/app/models/res_partner";
@@ -139,14 +139,14 @@ export class PartnerList extends Component {
         const availablePartners = searchWord
             ? partners.filter((p) => regex.test(normalize(p.searchString))).slice(0, 50)
             : partners
-                  .slice(0, 1000)
-                  .toSorted((a, b) =>
-                      this.props.partner?.id === a.id
-                          ? -1
-                          : this.props.partner?.id === b.id
-                          ? 1
-                          : localeCompare(a.name, b.name)
-                  );
+                .slice(0, 1000)
+                .toSorted((a, b) =>
+                    this.props.partner?.id === a.id
+                        ? -1
+                        : this.props.partner?.id === b.id
+                            ? 1
+                            : localeCompare(a.name, b.name)
+                );
 
         return availablePartners;
     }

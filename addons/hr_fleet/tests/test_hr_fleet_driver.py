@@ -1,9 +1,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
 from datetime import timedelta, date
-from odoo import fields
-from odoo.exceptions import ValidationError
-from odoo.tests import tagged, common
+from weth import fields
+from weth.exceptions import ValidationError
+from weth.tests import tagged, common
 
 
 class TestHrFleetDriver(common.TransactionCase):

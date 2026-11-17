@@ -4,10 +4,10 @@ import os
 from datetime import UTC
 from zoneinfo import ZoneInfo
 
-from odoo import _, api, fields, models, SUPERUSER_ID
-from odoo.fields import Domain
-from odoo.tools import email_normalize, format_date, formataddr
-from odoo.exceptions import ValidationError, UserError
+from weth import _, api, fields, models, SUPERUSER_ID
+from weth.fields import Domain
+from weth.tools import email_normalize, format_date, formataddr
+from weth.exceptions import ValidationError, UserError
 _logger = logging.getLogger(__name__)
 
 

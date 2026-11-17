@@ -18,7 +18,7 @@ export class PosPaymentMethod extends Base {
     }
 
     get config() {
-        return this.models["pos.config"].get(odoo.pos_config_id);
+        return this.models["pos.config"].get(weth.pos_config_id);
     }
 
     get availableCurrencies() {

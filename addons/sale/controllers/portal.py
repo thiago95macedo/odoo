@@ -2,14 +2,14 @@
 
 import binascii
 
-from odoo import SUPERUSER_ID, fields, http
-from odoo.exceptions import AccessError, MissingError, ValidationError
-from odoo.fields import Command
-from odoo.http import request
+from weth import SUPERUSER_ID, fields, http
+from weth.exceptions import AccessError, MissingError, ValidationError
+from weth.fields import Command
+from weth.http import request
 
-from odoo.addons.payment import utils as payment_utils
-from odoo.addons.payment.controllers import portal as payment_portal
-from odoo.addons.portal.controllers.portal import pager as portal_pager
+from weth.addons.payment import utils as payment_utils
+from weth.addons.payment.controllers import portal as payment_portal
+from weth.addons.portal.controllers.portal import pager as portal_pager
 
 
 class CustomerPortal(payment_portal.PaymentPortal):
@@ -201,7 +201,7 @@ class CustomerPortal(payment_portal.PaymentPortal):
                     body=msg, message_type="notification", subtype_xmlid="sale.mt_order_viewed"
                 )
 
-        backend_url = f"/odoo/action-{order_sudo._get_portal_return_action().id}/{order_sudo.id}"
+        backend_url = f"/weth/action-{order_sudo._get_portal_return_action().id}/{order_sudo.id}"
         prepayment_available = order_sudo.prepayment_percent and order_sudo.prepayment_percent < 1.0
         values = {
             "sale_order": order_sudo.with_context(lang=order_sudo._get_lang()),

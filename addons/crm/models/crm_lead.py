@@ -9,13 +9,13 @@ from zoneinfo import ZoneInfo
 
 from markupsafe import Markup
 
-from odoo import api, fields, models, modules, tools
-from odoo.addons.phone_validation.tools import phone_validation
-from odoo.exceptions import UserError, AccessError, ValidationError
-from odoo.fields import Domain
-from odoo.tools.translate import _
-from odoo.tools import clean_context, email_normalize_all, is_html_empty, groupby, parse_contact_from_email, SQL, mail_prepare_for_domain_search
-from odoo.tools.misc import get_lang
+from weth import api, fields, models, modules, tools
+from weth.addons.phone_validation.tools import phone_validation
+from weth.exceptions import UserError, AccessError, ValidationError
+from weth.fields import Domain
+from weth.tools.translate import _
+from weth.tools import clean_context, email_normalize_all, is_html_empty, groupby, parse_contact_from_email, SQL, mail_prepare_for_domain_search
+from weth.tools.misc import get_lang
 
 from . import crm_stage
 
@@ -1334,7 +1334,7 @@ class CrmLead(models.Model):
         if user and not user.share and self.with_user(user).has_access('read') and not force_website:
             return {
                 "type": "ir.actions.act_url",
-                "url": f"/odoo/crm/{self.id}",
+                "url": f"/weth/crm/{self.id}",
                 "target": "self",
             }
         return super()._get_access_action(access_uid, force_website)

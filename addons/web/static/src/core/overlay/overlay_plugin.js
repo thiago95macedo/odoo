@@ -7,7 +7,7 @@ import {
     t,
     untrack,
     usePlugin,
-} from "@odoo/owl";
+} from "@weth/owl";
 import { registry } from "../registry";
 import { services } from "@web/core/services";
 

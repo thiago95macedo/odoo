@@ -1,10 +1,10 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-import odoo.tests
+import weth.tests
 
 
-@odoo.tests.common.tagged('post_install', '-at_install')
-class TestIrAsset(odoo.tests.HttpCase):
+@weth.tests.common.tagged('post_install', '-at_install')
+class TestIrAsset(weth.tests.HttpCase):
 
     def test_01_website_specific_assets(self):
         IrAsset = self.env['ir.asset']

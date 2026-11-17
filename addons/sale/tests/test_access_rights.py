@@ -1,12 +1,12 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import Command
-from odoo.exceptions import AccessError, UserError
-from odoo.tests import Form, tagged
-from odoo.tools import mute_logger
+from weth import Command
+from weth.exceptions import AccessError, UserError
+from weth.tests import Form, tagged
+from weth.tools import mute_logger
 
-from odoo.addons.mail.tests.common import MailCommon
-from odoo.addons.sale.tests.common import SaleCommon
+from weth.addons.mail.tests.common import MailCommon
+from weth.addons.sale.tests.common import SaleCommon
 
 
 @tagged("post_install", "-at_install")
@@ -57,7 +57,7 @@ class TestAccessRights(SaleCommon, MailCommon):
         # Manager can confirm the SO
         sale_order.action_confirm()
         # Manager can not delete confirmed SO
-        with self.assertRaises(UserError), mute_logger("odoo.models.unlink"):
+        with self.assertRaises(UserError), mute_logger("weth.models.unlink"):
             sale_order.unlink()
 
         # Manager can delete the SO of other salesperson if SO is in 'draft' or 'cancel' state
@@ -68,7 +68,7 @@ class TestAccessRights(SaleCommon, MailCommon):
             "Sales manager should be able to delete the SO",
         )
 
-    @mute_logger('odoo.addons.base.models.ir_access')
+    @mute_logger('weth.addons.base.models.ir_access')
     def test_access_sales_person(self):
         """Test Salesperson's access rights."""
         SaleOrder = self.env["sale.order"].with_user(self.sale_user2)
@@ -120,7 +120,7 @@ class TestAccessRights(SaleCommon, MailCommon):
         with self.mock_mail_gateway(mail_unlink_sent=False):
             composer.action_send_and_print()
 
-    @mute_logger('odoo.addons.base.models.ir_access')
+    @mute_logger('weth.addons.base.models.ir_access')
     def test_access_portal_user(self):
         """Test portal user's access rights."""
         SaleOrder = self.env["sale.order"].with_user(self.user_portal)
@@ -143,7 +143,7 @@ class TestAccessRights(SaleCommon, MailCommon):
         with self.assertRaises(AccessError):
             so_as_portal_user.unlink()
 
-    @mute_logger('odoo.addons.base.models.ir_access')
+    @mute_logger('weth.addons.base.models.ir_access')
     def test_access_employee(self):
         """Test classic employee's access rights."""
         SaleOrder = self.env["sale.order"].with_user(self.user_internal)

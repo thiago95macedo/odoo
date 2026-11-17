@@ -1,7 +1,7 @@
-from odoo.fields import Domain
-from odoo.tests import TransactionCase, case
+from weth.fields import Domain
+from weth.tests import TransactionCase, case
 
-from odoo.addons.populate.utils.orm import (
+from weth.addons.populate.utils.orm import (
     DynamicDomain,
     ValueTarget,
     drop_pending_update,

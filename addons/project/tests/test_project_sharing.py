@@ -1,9 +1,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.exceptions import AccessError
-from odoo.fields import Command, Domain
-from odoo.tests import Form, tagged, new_test_user
-from odoo.tools import mute_logger
+from weth.exceptions import AccessError
+from weth.fields import Command, Domain
+from weth.tests import Form, tagged, new_test_user
+from weth.tools import mute_logger
 
 from .test_project_base import TestProjectCommon
 
@@ -273,7 +273,7 @@ class TestProjectSharing(TestProjectSharingCommon):
         with self.assertRaises(AccessError, msg='The portal user should not have any access to project sharing feature after their collaborator record is removed.'):
             self.project_portal.with_user(self.user_portal)._check_project_sharing_access()
 
-    @mute_logger('odoo.addons.base.models.ir_access')
+    @mute_logger('weth.addons.base.models.ir_access')
     def test_create_task_in_project_sharing(self):
         """ Test when portal user creates a task in project sharing views.
 
@@ -387,7 +387,7 @@ class TestProjectSharing(TestProjectSharingCommon):
         self.assertEqual(task.color, 4)
         self.assertEqual(task.tag_ids, self.task_tag)
 
-    @mute_logger('odoo.addons.base.models.ir_access')
+    @mute_logger('weth.addons.base.models.ir_access')
     def test_edit_task_in_project_sharing(self):
         """ Test when portal user creates a task in project sharing views.
 

@@ -1,4 +1,4 @@
-import { expect, test } from "@odoo/hoot";
+import { expect, test } from "@weth/hoot";
 import { mountWithCleanup, onRpc, contains, mockService } from "@web/../tests/web_test_helpers";
 import { NewContentSystrayItem } from "@website/client_actions/website_preview/new_content_systray_item";
 import { defineWebsiteModels } from "./builder/website_helpers";
@@ -29,7 +29,7 @@ test("can display a newcontent modal", async () => {
     setupTest();
     await mountWithCleanup(NewContentSystrayItem, {
         props: {
-            onNewPage: () => {},
+            onNewPage: () => { },
         },
     });
     await contains(".o_new_content_container button").click();

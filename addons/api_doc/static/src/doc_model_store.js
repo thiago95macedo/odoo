@@ -1,4 +1,4 @@
-import { markRaw, markup } from "@odoo/owl";
+import { markRaw, markup } from "@weth/owl";
 import { localeCompare } from "@web/core/l10n/utils";
 import { Reactive } from "@web/core/utils/reactive";
 
@@ -18,14 +18,14 @@ async function tryFetch(input) {
         try {
             responseJson = await response.json();
         } catch (err) {
-            throw new DocAPIError ({
+            throw new DocAPIError({
                 name: "Invalid JSON Response",
                 status: response.status,
                 traceback: err,
             });
         }
         if (!response.ok) {
-            throw new DocAPIError ({
+            throw new DocAPIError({
                 name: response.status === 500
                     ? "Internal Server Error"
                     : `HTTP $(response.status)`,
@@ -34,7 +34,7 @@ async function tryFetch(input) {
             });
         }
         return responseJson;
-    } catch(err) {
+    } catch (err) {
         if (err instanceof DocAPIError) throw err;
         throw new DocAPIError({
             name: "Network Error",

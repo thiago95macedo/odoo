@@ -4,13 +4,13 @@ import ast
 
 from collections import defaultdict
 
-from odoo import api, fields, models
-from odoo.addons.mail.tools.discuss import Store
-from odoo.exceptions import UserError
-from odoo.fields import Command, Domain
-from odoo.tools import get_lang, SQL, LazyTranslate
-from odoo.tools.misc import unquote
-from odoo.tools.translate import _, mark_as_copy
+from weth import api, fields, models
+from weth.addons.mail.tools.discuss import Store
+from weth.exceptions import UserError
+from weth.fields import Command, Domain
+from weth.tools import get_lang, SQL, LazyTranslate
+from weth.tools.misc import unquote
+from weth.tools.translate import _, mark_as_copy
 from .project_update import STATUS_COLOR
 from .project_task import CLOSED_STATES
 from markupsafe import Markup

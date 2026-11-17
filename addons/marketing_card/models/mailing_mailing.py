@@ -1,9 +1,9 @@
 import re
 
-from odoo import _, api, exceptions, fields, models
-from odoo.fields import Domain
+from weth import _, api, exceptions, fields, models
+from weth.fields import Domain
 
-from odoo.addons.marketing_card.wizards.mail_compose_message import CARD_IMAGE_URL, CARD_PREVIEW_URL
+from weth.addons.marketing_card.wizards.mail_compose_message import CARD_IMAGE_URL, CARD_PREVIEW_URL
 
 
 class MailingMailing(models.Model):

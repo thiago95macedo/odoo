@@ -1,4 +1,4 @@
-/** @odoo-module */
+/** @weth-module */
 
 import * as ProductScreen from "@point_of_sale/../tests/pos/tours/utils/product_screen_util";
 import * as StockProductScreen from "@pos_stock/../tests/pos/tours/utils/product_screen_util";

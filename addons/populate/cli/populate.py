@@ -7,10 +7,10 @@ import sys
 import time
 from typing import TYPE_CHECKING
 
-from odoo import api
-from odoo.cli import Command
-from odoo.modules.registry import Registry
-from odoo.tools import config
+from weth import api
+from weth.cli import Command
+from weth.modules.registry import Registry
+from weth.tools import config
 
 if TYPE_CHECKING:
     from ..models.blueprint import Blueprint
@@ -201,7 +201,7 @@ class Populate(Command):
         :param session: Session to execute or resume.
         :param profile: Whether to save profiler entries for this invocation.
         """
-        from odoo.addons.populate import start_populate  # noqa: PLC0415
+        from weth.addons.populate import start_populate  # noqa: PLC0415
 
         time_start = time.time()
         try:

@@ -1,4 +1,4 @@
-from odoo import _, models
+from weth import _, models
 
 
 class EventEvent(models.Model):

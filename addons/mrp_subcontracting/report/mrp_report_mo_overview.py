@@ -1,4 +1,4 @@
-from odoo import models
+from weth import models
 
 
 class ReportMrpReport_Mo_Overview(models.AbstractModel):

@@ -1,4 +1,4 @@
-import { proxy, untrack, useEffect, useListener } from "@odoo/owl";
+import { proxy, untrack, useEffect, useListener } from "@weth/owl";
 
 export function useDropdownAutoVisibility(overlayState, popoverRef) {
     if (!overlayState) {

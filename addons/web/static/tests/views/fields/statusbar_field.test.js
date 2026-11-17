@@ -1,4 +1,4 @@
-import { expect, resize, test, waitFor } from "@odoo/hoot";
+import { expect, resize, test, waitFor } from "@weth/hoot";
 import {
     click,
     edit,
@@ -7,8 +7,8 @@ import {
     queryAllTexts,
     queryAttribute,
     queryFirst,
-} from "@odoo/hoot-dom";
-import { animationFrame, runAllTimers } from "@odoo/hoot-mock";
+} from "@weth/hoot-dom";
+import { animationFrame, runAllTimers } from "@weth/hoot-mock";
 import {
     contains,
     clickSave,
@@ -26,7 +26,7 @@ import {
     pagerNext,
     pagerPrevious,
 } from "@web/../tests/web_test_helpers";
-import { EventBus } from "@odoo/owl";
+import { EventBus } from "@weth/owl";
 import { range } from "@web/core/utils/numbers";
 import { WebClient } from "@web/webclient/webclient";
 import { patch } from "@web/core/utils/patch";
@@ -291,7 +291,7 @@ test("statusbar with required modifier", async () => {
     mockService("notification", {
         add() {
             expect.step("Show error message");
-            return () => {};
+            return () => { };
         },
     });
     await mountView({

@@ -1,4 +1,4 @@
-import { beforeEach, expect, test } from "@odoo/hoot";
+import { beforeEach, expect, test } from "@weth/hoot";
 import {
     click,
     drag,
@@ -9,8 +9,8 @@ import {
     queryFirst,
     resize,
     unload,
-} from "@odoo/hoot-dom";
-import { animationFrame, mockSendBeacon, runAllTimers } from "@odoo/hoot-mock";
+} from "@weth/hoot-dom";
+import { animationFrame, mockSendBeacon, runAllTimers } from "@weth/hoot-mock";
 import {
     clickModalButton,
     contains,
@@ -2237,24 +2237,24 @@ test("quick create record fails in grouped by selection", async () => {
 test.tags("desktop");
 test("quick create record in empty grouped kanban", async () => {
     onRpc("web_read_group", () =>
-        // override web_read_group to return empty groups, as this is
-        // the case for several models (e.g. project.task grouped
-        // by stage_id)
-        ({
-            groups: [
-                {
-                    __extra_domain: [["product_id", "=", 3]],
-                    __count: 0,
-                    product_id: [3, "xplone"],
-                },
-                {
-                    __extra_domain: [["product_id", "=", 5]],
-                    __count: 0,
-                    product_id: [5, "xplan"],
-                },
-            ],
-            length: 2,
-        })
+    // override web_read_group to return empty groups, as this is
+    // the case for several models (e.g. project.task grouped
+    // by stage_id)
+    ({
+        groups: [
+            {
+                __extra_domain: [["product_id", "=", 3]],
+                __count: 0,
+                product_id: [3, "xplone"],
+            },
+            {
+                __extra_domain: [["product_id", "=", 5]],
+                __count: 0,
+                product_id: [5, "xplan"],
+            },
+        ],
+        length: 2,
+    })
     );
 
     await mountView({
@@ -3342,7 +3342,7 @@ test("quick create record in grouped kanban in a form view dialog", async () => 
 });
 
 test("click on New while kanban is loading (with quick create)", async () => {
-    onRpc("web_read_group", () => new Promise(() => {}));
+    onRpc("web_read_group", () => new Promise(() => { }));
     await mountView({
         arch: `
             <kanban on_create="quick_create">

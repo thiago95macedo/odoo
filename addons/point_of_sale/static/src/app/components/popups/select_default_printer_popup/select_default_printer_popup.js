@@ -1,4 +1,4 @@
-import { Component, proxy, useProps, t } from "@odoo/owl";
+import { Component, proxy, useProps, t } from "@weth/owl";
 import { Dialog } from "@web/core/dialog/dialog";
 
 export class SelectDefaultPrinterPopup extends Component {

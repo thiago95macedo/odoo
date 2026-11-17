@@ -2,8 +2,8 @@ import { defineBusModels } from "@bus/../tests/bus_test_helpers";
 import { Logger } from "@bus/workers/bus_worker_utils";
 import { BusLogsPlugin } from "@bus/debug/bus_logs_plugin";
 
-import { after, before, describe, expect, test, waitFor } from "@odoo/hoot";
-import { advanceTime } from "@odoo/hoot-dom";
+import { after, before, describe, expect, test, waitFor } from "@weth/hoot";
+import { advanceTime } from "@weth/hoot-dom";
 
 import {
     contains,

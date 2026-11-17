@@ -1,4 +1,4 @@
-from odoo.tests.common import TransactionCase
+from weth.tests.common import TransactionCase
 
 
 class TestPartnerMatching(TransactionCase):

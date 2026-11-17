@@ -1,10 +1,10 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import _, http, fields
-from odoo.exceptions import AccessError
-from odoo.fields import Domain
-from odoo.http import request
-from odoo.tools import float_round, float_repr
+from weth import _, http, fields
+from weth.exceptions import AccessError
+from weth.fields import Domain
+from weth.http import request
+from weth.tools import float_round, float_repr
 
 
 class LunchController(http.Controller):

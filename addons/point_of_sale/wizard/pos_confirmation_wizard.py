@@ -1,4 +1,4 @@
-from odoo import models, fields, api, _
+from weth import models, fields, api, _
 
 class PosConfirmationWizard(models.TransientModel):
     _name = 'pos.confirmation.wizard'

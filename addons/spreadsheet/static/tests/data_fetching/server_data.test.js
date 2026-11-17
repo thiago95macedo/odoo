@@ -1,7 +1,7 @@
-import { animationFrame } from "@odoo/hoot-mock";
+import { animationFrame } from "@weth/hoot-mock";
 import { LoadingDataError } from "@spreadsheet/o_spreadsheet/errors";
 import { BatchEndpoint, Request, ServerData } from "@spreadsheet/data_sources/server_data";
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@weth/hoot";
 import { defineSpreadsheetActions, defineSpreadsheetModels } from "../helpers/data";
 import { allowTranslations } from "@web/../tests/web_test_helpers";
 
@@ -183,7 +183,7 @@ test("Call the correct callback after a batch result", async () => {
             args[0].map((arg) => (arg === 5 ? { __error__: "invalid value 5" } : arg)),
     };
     const batchEndpoint = new BatchEndpoint(orm, "partner", "get_something", {
-        whenDataStartLoading: () => {},
+        whenDataStartLoading: () => { },
         successCallback: () => expect.step("success-callback"),
         failureCallback: () => expect.step("failure-callback"),
     });

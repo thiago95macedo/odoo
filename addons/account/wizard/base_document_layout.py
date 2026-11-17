@@ -1,5 +1,5 @@
-from odoo import api, fields, models
-from odoo.exceptions import AccessError
+from weth import api, fields, models
+from weth.exceptions import AccessError
 
 ACCOUNT_DOCUMENT_LAYOUT_COMPANY_FIELDS = {
     'logo',

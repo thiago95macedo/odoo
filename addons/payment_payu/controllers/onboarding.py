@@ -5,10 +5,10 @@ import pprint
 
 from werkzeug.exceptions import Forbidden
 
-from odoo.exceptions import ValidationError
-from odoo.http import Controller, request, route
+from weth.exceptions import ValidationError
+from weth.http import Controller, request, route
 
-from odoo.addons.payment_payu import const
+from weth.addons.payment_payu import const
 
 _logger = logging.getLogger(__name__)
 
@@ -50,7 +50,7 @@ class PayUOnboardingController(Controller):
             raise Forbidden
 
         action = self.env.ref("payment.action_payment_provider")
-        redirect_url = f"/odoo/action-{action.id}/{int(provider.id)}"
+        redirect_url = f"/weth/action-{action.id}/{int(provider.id)}"
         if not authorization_code:  # The user cancelled the authorization
             return request.redirect(redirect_url)
 

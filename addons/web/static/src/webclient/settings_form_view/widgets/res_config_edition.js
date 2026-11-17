@@ -2,7 +2,7 @@ import { registry } from "@web/core/registry";
 import { session } from "@web/session";
 import { Setting } from "@web/views/form/setting/setting";
 
-import { Component, useProps } from "@odoo/owl";
+import { Component, useProps } from "@weth/owl";
 import { standardWidgetProps } from "@web/views/widgets/standard_widget_props";
 const { DateTime } = luxon;
 

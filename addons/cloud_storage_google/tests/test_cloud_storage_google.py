@@ -2,8 +2,8 @@
 
 from urllib.parse import quote
 
-from odoo.tests.common import tagged, TransactionCase
-from odoo.exceptions import UserError
+from weth.tests.common import tagged, TransactionCase
+from weth.exceptions import UserError
 
 from .. import uninstall_hook
 

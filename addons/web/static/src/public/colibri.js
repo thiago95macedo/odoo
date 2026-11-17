@@ -85,16 +85,16 @@ export class Colibri {
             fn = {
                 prevent:
                     (f) =>
-                    (ev, ...args) => {
-                        ev.preventDefault();
-                        return f.call(this.interaction, ev, ...args);
-                    },
+                        (ev, ...args) => {
+                            ev.preventDefault();
+                            return f.call(this.interaction, ev, ...args);
+                        },
                 stop:
                     (f) =>
-                    (ev, ...args) => {
-                        ev.stopPropagation();
-                        return f.call(this.interaction, ev, ...args);
-                    },
+                        (ev, ...args) => {
+                            ev.stopPropagation();
+                            return f.call(this.interaction, ev, ...args);
+                        },
                 capture: (f) => {
                     options ||= {};
                     options.capture = true;
@@ -107,10 +107,10 @@ export class Colibri {
                 },
                 noUpdate:
                     (f) =>
-                    (...args) => {
-                        f.call(this.interaction, ...args);
-                        return SKIP_IMPLICIT_UPDATE;
-                    },
+                        (...args) => {
+                            f.call(this.interaction, ...args);
+                            return SKIP_IMPLICIT_UPDATE;
+                        },
             }[groups.suffix](fn);
             event = groups.event;
             groups = re.exec(event)?.groups;
@@ -118,12 +118,12 @@ export class Colibri {
         const handler = fn.isHandler
             ? fn
             : async (...args) => {
-                  if (SKIP_IMPLICIT_UPDATE !== (await fn.call(this.interaction, ...args))) {
-                      if (!this.isDestroyed) {
-                          this.updateContent();
-                      }
-                  }
-              };
+                if (SKIP_IMPLICIT_UPDATE !== (await fn.call(this.interaction, ...args))) {
+                    if (!this.isDestroyed) {
+                        this.updateContent();
+                    }
+                }
+            };
         handler.isHandler = true;
         for (const node of nodes) {
             node.addEventListener(event, handler, options);
@@ -304,7 +304,7 @@ export class Colibri {
                 } else if (directive === "t-out") {
                     this.tOuts.push({ sel, definition: value, initialValue: null });
                 } else if (directive === "t-component") {
-                    const { Component } = odoo.loader.modules.get("@odoo/owl");
+                    const { Component } = weth.loader.modules.get("@weth/owl");
                     if (Object.prototype.isPrototypeOf.call(Component, value)) {
                         for (const node of nodes) {
                             this.mountComponent(node, value);
@@ -387,7 +387,7 @@ export class Colibri {
             for (const node of nodes) {
                 if (!initialValue || !initialValue.has(node)) {
                     if (!owl) {
-                        owl = odoo.loader.modules.get("@odoo/owl");
+                        owl = weth.loader.modules.get("@weth/owl");
                     }
                     const value = node.children.length
                         ? owl.markup(node.innerHTML)

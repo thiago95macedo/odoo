@@ -2,10 +2,10 @@
 
 import time
 
-from odoo.fields import Command
-from odoo.tests import tagged
+from weth.fields import Command
+from weth.tests import tagged
 
-from odoo.addons.product.tests.common import ProductCommon
+from weth.addons.product.tests.common import ProductCommon
 
 
 @tagged('post_install', '-at_install')

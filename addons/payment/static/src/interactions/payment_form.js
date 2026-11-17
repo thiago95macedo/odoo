@@ -509,7 +509,7 @@ export class PaymentForm extends Interaction {
             'landing_route': this.paymentContext['landingRoute'],
             'is_validation': this.paymentContext['mode'] === 'validation',
             'access_token': this.paymentContext['accessToken'],
-            'csrf_token': odoo.csrf_token,
+            'csrf_token': weth.csrf_token,
         };
         // Generic payment flows (i.e., that are not attached to a document) require extra params.
         if (this.paymentContext['transactionRoute'] === '/payment/transaction') {

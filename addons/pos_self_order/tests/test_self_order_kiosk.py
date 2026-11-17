@@ -3,12 +3,12 @@
 import random
 from unittest.mock import patch
 
-import odoo.tests
-from odoo.addons.pos_self_order.tests.self_order_common_test import SelfOrderCommonTest
-from odoo import Command
+import weth.tests
+from weth.addons.pos_self_order.tests.self_order_common_test import SelfOrderCommonTest
+from weth import Command
 
 
-@odoo.tests.tagged("post_install", "-at_install")
+@weth.tests.tagged("post_install", "-at_install")
 class TestSelfOrderKiosk(SelfOrderCommonTest):
     def test_self_order_kiosk(self):
         self.pos_config.write({

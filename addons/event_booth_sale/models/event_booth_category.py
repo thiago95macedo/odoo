@@ -2,10 +2,10 @@
 
 import logging
 
-from odoo import _, api, fields, models
-from odoo.addons.product.models.product_template import PRICE_CONTEXT_KEYS
-from odoo.exceptions import ValidationError
-from odoo.tools import SQL
+from weth import _, api, fields, models
+from weth.addons.product.models.product_template import PRICE_CONTEXT_KEYS
+from weth.exceptions import ValidationError
+from weth.tools import SQL
 
 _logger = logging.getLogger(__name__)
 

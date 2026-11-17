@@ -6,12 +6,12 @@ from datetime import datetime, date, time, timedelta
 from dateutil.relativedelta import relativedelta
 from zoneinfo import ZoneInfo
 
-from odoo import api, fields, models, _
-from odoo.tools import format_date
-from odoo.fields import Domain
-from odoo.addons.hr_holidays.models.hr_leave import get_employee_from_context
-from odoo.exceptions import UserError, ValidationError
-from odoo.tools.float_utils import float_round
+from weth import api, fields, models, _
+from weth.tools import format_date
+from weth.fields import Domain
+from weth.addons.hr_holidays.models.hr_leave import get_employee_from_context
+from weth.exceptions import UserError, ValidationError
+from weth.tools.float_utils import float_round
 
 
 class HrLeaveAllocation(models.Model):
@@ -265,7 +265,7 @@ class HrLeaveAllocation(models.Model):
         Lets extensions reuse an already fetched result (e.g. ``l10n_be_hr_payroll``).
 
         :param dict employee_days_per_allocation: first element of the result of
-            :meth:`~odoo.addons.hr_holidays.models.hr_employee.HrEmployee._get_consumed_leaves`
+            :meth:`~weth.addons.hr_holidays.models.hr_employee.HrEmployee._get_consumed_leaves`
         """
         for allocation in self:
             origin = allocation._origin
@@ -1334,7 +1334,7 @@ class HrLeaveAllocation(models.Model):
         """Return the user who must approve the allocation in its current state.
 
         Same rules as
-        :meth:`~odoo.addons.hr_holidays.models.hr_leave.HrLeave._get_responsible_for_approval`.
+        :meth:`~weth.addons.hr_holidays.models.hr_leave.HrLeave._get_responsible_for_approval`.
 
         :rtype: res.users
         """

@@ -1,7 +1,7 @@
 import { BaseOptionComponent } from "@html_builder/core/base_option_component";
 import { useDomState } from "@html_builder/core/utils";
 import { ShapeSelector, shapeSelectorProps } from "@html_builder/plugins/shape/shape_selector";
-import { useProps } from "@odoo/owl";
+import { useProps } from "@weth/owl";
 
 export class BackgroundShapeSelector extends BaseOptionComponent {
     static template = "html_builder.BackgroundShapeSelector";

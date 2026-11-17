@@ -1,2 +1,2 @@
-export const session = odoo.__session_info__ || {};
-delete odoo.__session_info__;
+export const session = weth.__session_info__ || {};
+delete weth.__session_info__;

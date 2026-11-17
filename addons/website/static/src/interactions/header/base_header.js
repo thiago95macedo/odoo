@@ -1,4 +1,4 @@
-import { usePlugin } from "@odoo/owl";
+import { usePlugin } from "@weth/owl";
 import { Interaction } from "@web/public/interaction";
 
 import { SIZES, utils as uiUtils } from "@web/core/ui/ui_utils";
@@ -73,8 +73,8 @@ export class BaseHeader extends Interaction {
         const navbarEl = this.el.querySelector(".navbar");
         const navBreakpoint = navbarEl
             ? Object.keys(SIZES).find((size) =>
-                  navbarEl.classList.contains(`navbar-expand-${size.toLowerCase()}`)
-              )
+                navbarEl.classList.contains(`navbar-expand-${size.toLowerCase()}`)
+            )
             : "LG";
         this.breakpointSize = SIZES[navBreakpoint];
 

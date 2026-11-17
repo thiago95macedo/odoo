@@ -1,9 +1,9 @@
-from odoo import api, fields, models, _
-from odoo.exceptions import UserError, ValidationError
-from odoo.fields import Command, Domain
-from odoo.tools import frozendict, groupby, html2plaintext, is_html_empty, split_every, SQL
-from odoo.tools.float_utils import float_is_zero, float_repr, float_round, float_compare
-from odoo.tools.translate import html_translate, adapt_translated_field_value
+from weth import api, fields, models, _
+from weth.exceptions import UserError, ValidationError
+from weth.fields import Command, Domain
+from weth.tools import frozendict, groupby, html2plaintext, is_html_empty, split_every, SQL
+from weth.tools.float_utils import float_is_zero, float_repr, float_round, float_compare
+from weth.tools.translate import html_translate, adapt_translated_field_value
 from collections import defaultdict
 from collections.abc import Iterable
 from markupsafe import Markup

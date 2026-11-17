@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
     <data>
         <template id="lot_barcode_4x12_label">
             <td t-att-style="label['invisible'] and 'visibility:hidden;'">
@@ -67,4 +67,4 @@
         </template>
 
     </data>
-</odoo>
+</weth>

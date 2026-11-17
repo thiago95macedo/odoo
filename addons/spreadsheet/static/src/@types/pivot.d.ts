@@ -2,7 +2,7 @@ import { OdooPivotRuntimeDefinition } from "@spreadsheet/pivot/pivot_runtime";
 import { ORM } from "@web/core/orm_plugin";
 import { PivotMeasure } from "@spreadsheet/pivot/pivot_runtime";
 import { ServerData } from "@spreadsheet/data_sources/server_data";
-import { Pivot, CommonPivotCoreDefinition, PivotCoreDefinition } from "@odoo/o-spreadsheet";
+import { Pivot, CommonPivotCoreDefinition, PivotCoreDefinition } from "@weth/o-spreadsheet";
 
 declare module "@spreadsheet" {
     export interface OdooPivotCoreDefinition extends CommonPivotCoreDefinition {

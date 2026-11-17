@@ -1,4 +1,4 @@
-from odoo.addons.project.tests.test_project_base import TestProjectCommon
+from weth.addons.project.tests.test_project_base import TestProjectCommon
 
 
 class TestProjectEmbeddedActionSettings(TestProjectCommon):

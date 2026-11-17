@@ -1,9 +1,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.im_livechat.tests.chatbot_common import ChatbotCase
-from odoo.addons.im_livechat.tests.common import TestGetOperatorCommon
-from odoo.tests.common import JsonRpcException
-from odoo.tools.misc import mute_logger
+from weth.addons.im_livechat.tests.chatbot_common import ChatbotCase
+from weth.addons.im_livechat.tests.common import TestGetOperatorCommon
+from weth.tests.common import JsonRpcException
+from weth.tools.misc import mute_logger
 
 
 class TestImLivechatFeedback(ChatbotCase, TestGetOperatorCommon):
@@ -24,7 +24,7 @@ class TestImLivechatFeedback(ChatbotCase, TestGetOperatorCommon):
         )
         self.assertEqual(chat.livechat_rating, "5")
 
-    @mute_logger("odoo.http")
+    @mute_logger("weth.http")
     def test_rating_not_allowed_for_agent(self):
         agent = self._create_operator()
         livechat_channel = self.env["im_livechat.channel"].create(

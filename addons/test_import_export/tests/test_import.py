@@ -12,9 +12,9 @@ from openpyxl.cell.rich_text import CellRichText, TextBlock
 from openpyxl.cell.text import InlineFont
 from PIL import Image
 
-from odoo.tests.common import tagged, TransactionCase, can_import, RecordCapturer
-from odoo.tools import BinaryBytes, mute_logger, DEFAULT_SERVER_DATE_FORMAT, DEFAULT_SERVER_DATETIME_FORMAT
-from odoo.addons.base_import.models.base_import import ImportValidationError
+from weth.tests.common import tagged, TransactionCase, can_import, RecordCapturer
+from weth.tools import BinaryBytes, mute_logger, DEFAULT_SERVER_DATE_FORMAT, DEFAULT_SERVER_DATETIME_FORMAT
+from weth.addons.base_import.models.base_import import ImportValidationError
 
 
 def get_id_field(model_name):
@@ -394,7 +394,7 @@ class TestPreview(TransactionCase):
         })
         return import_wizard
 
-    @mute_logger('odoo.addons.base_import.models.base_import')
+    @mute_logger('weth.addons.base_import.models.base_import')
     def test_encoding(self):
         import_wizard = self.make_import()
         result = import_wizard.parse_preview({
@@ -403,7 +403,7 @@ class TestPreview(TransactionCase):
         })
         self.assertFalse('error' in result)
 
-    @mute_logger('odoo.addons.base_import.models.base_import')
+    @mute_logger('weth.addons.base_import.models.base_import')
     def test_csv_errors(self):
         import_wizard = self.make_import()
 
@@ -1005,7 +1005,7 @@ foo3,Invalid Country\n"""),
         last_record = self.env['import.complex'].search([], order='id DESC', limit=1)
         self.assertItemsEqual(last_record.html, "<p>foo</p><br><p>bar</p>")
 
-    @mute_logger('odoo.addons.base_import.models.base_import')
+    @mute_logger('weth.addons.base_import.models.base_import')
     def test_xls_datetime_values(self):
         """ Test the support of having dates set as strings with the user format and date/datetime objects
         in the same xls(x) file.
@@ -1532,7 +1532,7 @@ class TestImageImport(TransactionCase):
         chunk = b'VP8X' + (10).to_bytes(4, 'little') + b'\x00\x00\x00\x00' + dimensions
         content = b'RIFF' + (len(chunk) + 4).to_bytes(4, 'little') + b'WEBP' + chunk
 
-        with mute_logger('odoo.addons.base_import.models.base_import'), \
+        with mute_logger('weth.addons.base_import.models.base_import'), \
              self.assertRaisesRegex(ImportValidationError, r'Too large image \(above 50\.0Mpx\)'):
             self._import_image(content)
 
@@ -1572,7 +1572,7 @@ class TestUrlImport(TransactionCase):
         image_data = img_buf.getvalue()
 
         with patch(
-            "odoo.addons.base_import.models.base_import.Base_ImportImport._import_file_by_url",
+            "weth.addons.base_import.models.base_import.Base_ImportImport._import_file_by_url",
             return_value=image_data,
         ):
             demo_user = self.env['res.users'].create({
@@ -1634,7 +1634,7 @@ class TestUrlImport(TransactionCase):
             )
 
         with patch(
-            "odoo.addons.base_import.models.base_import.Base_ImportImport._import_file_by_url",
+            "weth.addons.base_import.models.base_import.Base_ImportImport._import_file_by_url",
             return_value=svg_data,
         ):
             # Non-admin user

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<odoo>
+<weth>
     <data>
         <template id="picking_type_barcode_zpl_label">
 ^PW376
@@ -11,4 +11,4 @@
             </t>
         </template>
     </data>
-</odoo>
+</weth>

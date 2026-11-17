@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<odoo>
+<weth>
     <data>
         <template id="pos_restaurant.pos_order_receipt_header" inherit_id="point_of_sale.pos_order_receipt_header">
             <div name="cashier_name" position="after">
@@ -9,4 +9,4 @@
             </div>
         </template>
     </data>
-</odoo>
+</weth>

@@ -2,10 +2,10 @@
 
 from functools import partial
 
-from odoo import api, fields, models
-from odoo.fields import Domain
-from odoo.http import request
-from odoo.tools import BinaryBytes
+from weth import api, fields, models
+from weth.fields import Domain
+from weth.http import request
+from weth.tools import BinaryBytes
 
 
 class WebsiteSnippetFilter(models.Model):

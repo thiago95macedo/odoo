@@ -4,7 +4,7 @@
 import re
 import werkzeug.urls
 
-from odoo import api, fields, models, tools
+from weth import api, fields, models, tools
 
 
 class MailMail(models.Model):

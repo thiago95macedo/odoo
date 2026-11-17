@@ -1,4 +1,4 @@
-import { beforeEach, describe, expect, test } from "@odoo/hoot";
+import { beforeEach, describe, expect, test } from "@weth/hoot";
 import {
     click,
     contains,
@@ -9,7 +9,7 @@ import {
     startServer,
 } from "@mail/../tests/mail_test_helpers";
 import { clickFieldDropdown, clickFieldDropdownItem, onRpc } from "@web/../tests/web_test_helpers";
-import { queryAll } from "@odoo/hoot-dom";
+import { queryAll } from "@weth/hoot-dom";
 import { ResPartner } from "../../mock_server/mock_models/res_partner";
 
 defineMailModels();

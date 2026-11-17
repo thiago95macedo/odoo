@@ -1,6 +1,6 @@
-from odoo import Command
+from weth import Command
 
-from odoo.addons.point_of_sale.tests.test_frontend import TestPointOfSaleHttpCommon
+from weth.addons.point_of_sale.tests.test_frontend import TestPointOfSaleHttpCommon
 
 
 class TestBancontactPay(TestPointOfSaleHttpCommon):

@@ -1,6 +1,6 @@
-from odoo.tests.common import tagged, users
-from odoo.exceptions import AccessError
-from odoo.addons.project.tests.test_access_rights import TestAccessRights
+from weth.tests.common import tagged, users
+from weth.exceptions import AccessError
+from weth.addons.project.tests.test_access_rights import TestAccessRights
 
 
 class TestAccessRightsTodo(TestAccessRights):

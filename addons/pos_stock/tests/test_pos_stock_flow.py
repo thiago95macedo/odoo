@@ -1,9 +1,9 @@
 from dateutil.relativedelta import relativedelta
 from freezegun import freeze_time
 
-from odoo import fields
-from odoo.fields import Command
-from odoo.addons.pos_stock.tests.common import CommonPosStockTest
+from weth import fields
+from weth.fields import Command
+from weth.addons.pos_stock.tests.common import CommonPosStockTest
 
 
 class TestPosStockFlow(CommonPosStockTest):

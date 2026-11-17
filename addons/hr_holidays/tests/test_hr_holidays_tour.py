@@ -2,9 +2,9 @@
 
 from freezegun import freeze_time
 
-from odoo.tests import HttpCase
-from odoo.tests.common import tagged
-from odoo.addons.hr.tests.test_utils import get_admin_employee
+from weth.tests import HttpCase
+from weth.tests.common import tagged
+from weth.addons.hr.tests.test_utils import get_admin_employee
 
 from datetime import date
 

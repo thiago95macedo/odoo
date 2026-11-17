@@ -1,4 +1,4 @@
-import { proxy } from "@odoo/owl";
+import { proxy } from "@weth/owl";
 import { PortalChatterPlugin } from "@portal/chatter/portal/portal_chatter_plugin";
 import { Composer } from "@mail/core/common/composer";
 import { useMaybePlugin } from "@mail/utils/common/hooks";

@@ -2,13 +2,13 @@
 import json
 from datetime import timedelta
 
-from odoo import exceptions, fields
-from odoo.exceptions import UserError
-from odoo.fields import Command
-from odoo.tests import Form, HttpCase, freeze_time, new_test_user
-from odoo.tools import float_compare, float_repr, float_round, format_date
+from weth import exceptions, fields
+from weth.exceptions import UserError
+from weth.fields import Command
+from weth.tests import Form, HttpCase, freeze_time, new_test_user
+from weth.tools import float_compare, float_repr, float_round, format_date
 
-from odoo.addons.mrp.tests.common import TestMrpCommon
+from weth.addons.mrp.tests.common import TestMrpCommon
 
 
 @freeze_time(fields.Date.today())
@@ -3050,7 +3050,7 @@ class TestTourBoM(HttpCase):
         self.env.user.write({'group_ids': [Command.link(grp_uom.id)]})
         self.assertEqual(len(self.bom.bom_line_ids), 0)
 
-        url = f'/odoo/action-mrp.mrp_bom_form_action/{self.bom.id}'
+        url = f'/weth/action-mrp.mrp_bom_form_action/{self.bom.id}'
 
         self.start_tour(url, 'test_mrp_bom_product_catalog', login='admin')
         self.assertEqual(len(self.bom.bom_line_ids), 1)
@@ -3059,7 +3059,7 @@ class TestTourBoM(HttpCase):
         """
         Create a new MO by pressing the "Manufacture" button in BoM Overview
         """
-        url = '/odoo/action-mrp.mrp_bom_form_action'
+        url = '/weth/action-mrp.mrp_bom_form_action'
         self.start_tour(url, 'test_manufacture_from_bom', login='admin', timeout=100)
 
     def test_bom_kit_rounding(self):
@@ -3215,7 +3215,7 @@ class TestMrpMobileTour(HttpCase):
     def test_basic_mo_process_on_mobile(self):
         """ Check that a manufacturing order can be created, confirmed and produced on mobile. """
         self.env['stock.quant']._update_available_quantity(self.component, self.stock_location, 1)
-        self.start_tour('/odoo/action-mrp.mrp_production_action/new', 'test_basic_mo_process_on_mobile', login=self.user_mrp_user.login)
+        self.start_tour('/weth/action-mrp.mrp_production_action/new', 'test_basic_mo_process_on_mobile', login=self.user_mrp_user.login)
         mo = self.env['mrp.production'].search([('product_id', '=', self.product.id)], limit=1)
         self.assertEqual(mo.state, 'done')
         self.assertRecordValues(mo.workorder_ids, [

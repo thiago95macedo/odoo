@@ -6,12 +6,12 @@ import string
 
 from werkzeug import urls
 
-from odoo import tools, models, fields, api, _
-from odoo.addons.mail.tools import link_preview
-from odoo.exceptions import UserError
-from odoo.fields import Domain
-from odoo.tools import OrderedSet
-from odoo.tools.mail import validate_url
+from weth import tools, models, fields, api, _
+from weth.addons.mail.tools import link_preview
+from weth.exceptions import UserError
+from weth.fields import Domain
+from weth.tools import OrderedSet
+from weth.tools.mail import validate_url
 
 LINK_TRACKER_UNIQUE_FIELDS = ('url', 'campaign_id', 'medium_id', 'source_id', 'utm_reference', 'label')
 

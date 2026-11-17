@@ -2,8 +2,8 @@
 
 from datetime import timedelta
 
-from odoo.fields import Datetime
-from odoo.tests import HttpCase, tagged
+from weth.fields import Datetime
+from weth.tests import HttpCase, tagged
 
 
 @tagged('post_install', '-at_install')

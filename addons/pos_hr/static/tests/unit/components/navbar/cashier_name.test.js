@@ -1,4 +1,4 @@
-import { test, expect } from "@odoo/hoot";
+import { test, expect } from "@weth/hoot";
 import { setupPosEnv } from "@point_of_sale/../tests/unit/utils";
 import { CashierName } from "@point_of_sale/app/components/navbar/cashier_name/cashier_name";
 import { mountWithCleanup } from "@web/../tests/web_test_helpers";

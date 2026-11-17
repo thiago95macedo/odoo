@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.crm.tests.common import TestCrmCommon
-from odoo.tests import HttpCase
-from odoo.tests.common import tagged
+from weth.addons.crm.tests.common import TestCrmCommon
+from weth.tests import HttpCase
+from weth.tests.common import tagged
 
 
 @tagged('post_install', '-at_install')

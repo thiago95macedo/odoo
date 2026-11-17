@@ -1,4 +1,4 @@
-import { describe, test, expect } from "@odoo/hoot";
+import { describe, test, expect } from "@weth/hoot";
 import { getFilledOrder, setupPosEnv } from "../utils";
 import { definePosModels } from "../data/generate_model_definitions";
 

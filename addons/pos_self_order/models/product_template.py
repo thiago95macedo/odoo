@@ -1,5 +1,5 @@
-from odoo import models, fields, api
-from odoo.fields import Domain
+from weth import models, fields, api
+from weth.fields import Domain
 
 
 class ProductTemplate(models.Model):

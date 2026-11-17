@@ -1,18 +1,18 @@
 # -*- coding: utf-8 -*-
-from odoo.exceptions import UserError
-from odoo.tests import tagged, users
-from odoo import fields, Command
+from weth.exceptions import UserError
+from weth.tests import tagged, users
+from weth import fields, Command
 from dateutil.relativedelta import relativedelta
 from itertools import product
 from unittest.mock import patch
 
-from odoo import fields, Command
-from odoo.exceptions import UserError
-from odoo.tests import tagged, Form
-from odoo.tests.common import Like
+from weth import fields, Command
+from weth.exceptions import UserError
+from weth.tests import tagged, Form
+from weth.tests.common import Like
 
-from odoo.addons.account.tests.common import AccountTestInvoicingWithBanksCommon
-from odoo.addons.payment.tests.common import PaymentCommon
+from weth.addons.account.tests.common import AccountTestInvoicingWithBanksCommon
+from weth.addons.payment.tests.common import PaymentCommon
 
 
 @tagged('post_install', '-at_install')
@@ -925,7 +925,7 @@ class TestAccountPaymentRegister(AccountTestInvoicingWithBanksCommon, PaymentCom
                                .with_context(active_model='account.move', active_ids=self.out_invoice_4.ids)\
                                .create({'payment_token_id': payment_token.id})
         with patch(
-            'odoo.addons.sale.models.payment_transaction.PaymentTransaction'
+            'weth.addons.sale.models.payment_transaction.PaymentTransaction'
             '._send_invoice'
         ) as patched:
             payment_register._create_payments()

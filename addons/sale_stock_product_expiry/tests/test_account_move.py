@@ -2,8 +2,8 @@
 
 from dateutil.relativedelta import relativedelta
 
-from odoo import Command, fields
-from odoo.addons.sale_stock.tests.common import TestSaleStockCommon
+from weth import Command, fields
+from weth.addons.sale_stock.tests.common import TestSaleStockCommon
 
 
 class TestInvoicedLotValues(TestSaleStockCommon):

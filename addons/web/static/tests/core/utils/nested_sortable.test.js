@@ -1,14 +1,14 @@
-import { expect, test } from "@odoo/hoot";
-import { queryFirst, queryOne, queryRect } from "@odoo/hoot-dom";
-import { animationFrame } from "@odoo/hoot-mock";
-import { Component, proxy, signal, xml } from "@odoo/owl";
+import { expect, test } from "@weth/hoot";
+import { queryFirst, queryOne, queryRect } from "@weth/hoot-dom";
+import { animationFrame } from "@weth/hoot-mock";
+import { Component, proxy, signal, xml } from "@weth/owl";
 import { contains, mountWithCleanup, sortableDrag } from "@web/../tests/web_test_helpers";
 
 import { useNestedSortable } from "@web/core/utils/nested_sortable";
 
 /**
- * @param {import("@odoo/hoot-dom").Target} from
- * @param {import("@odoo/hoot-dom").Target} to
+ * @param {import("@weth/hoot-dom").Target} from
+ * @param {import("@weth/hoot-dom").Target} to
  */
 const dragAndDrop = async (from, to) => {
     const { drop, moveUnder } = await sortableDrag(from);

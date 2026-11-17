@@ -17,7 +17,7 @@ import {
     useEffect,
     usePlugin,
     useProps,
-} from "@odoo/owl";
+} from "@weth/owl";
 import { useService } from "@web/core/utils/hooks";
 import { rpc } from "@web/core/network/rpc";
 import { DebugModePlugin } from "@web/core/debug_mode_plugin";
@@ -218,7 +218,7 @@ export class CallParticipantCard extends Component {
         const screenStream = this.rtcSession.videoStreams.get("screen");
         return Boolean(
             this.rtcSession.raisingHand &&
-                (!screenStream || screenStream !== this.props.cardData.videoStream)
+            (!screenStream || screenStream !== this.props.cardData.videoStream)
         );
     }
 

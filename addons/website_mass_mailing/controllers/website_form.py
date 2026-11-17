@@ -3,10 +3,10 @@
 
 import json
 
-from odoo import _, Command
-from odoo.addons.website.controllers.form import WebsiteForm
-from odoo.http import request
-from odoo.tools import email_normalize
+from weth import _, Command
+from weth.addons.website.controllers.form import WebsiteForm
+from weth.http import request
+from weth.tools import email_normalize
 
 
 class WebsiteNewsletterForm(WebsiteForm):

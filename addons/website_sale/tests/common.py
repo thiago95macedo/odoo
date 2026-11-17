@@ -6,12 +6,12 @@ from contextlib import contextmanager
 
 from PIL import Image
 
-from odoo.fields import Command
-from odoo.tools import BinaryBytes, json_default, lazy
+from weth.fields import Command
+from weth.tools import BinaryBytes, json_default, lazy
 
-from odoo.addons.delivery.tests.common import DeliveryCommon
-from odoo.addons.http_routing.tests.common import MockRequest as websiteMockRequest
-from odoo.addons.website_sale.models.website import (
+from weth.addons.delivery.tests.common import DeliveryCommon
+from weth.addons.http_routing.tests.common import MockRequest as websiteMockRequest
+from weth.addons.website_sale.models.website import (
     CART_SESSION_CACHE_KEY,
     FISCAL_POSITION_SESSION_CACHE_KEY,
     PRICELIST_SELECTED_SESSION_CACHE_KEY,

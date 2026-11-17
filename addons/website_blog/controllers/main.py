@@ -6,15 +6,15 @@ from zoneinfo import ZoneInfo
 import babel.dates
 import werkzeug
 
-from odoo import http, tools, models
-from odoo.addons.website.controllers.main import QueryURL
-from odoo.fields import Domain
-from odoo.http import request
-from odoo.http.session import touch
-from odoo.tools import html2plaintext
-from odoo.tools.misc import get_lang
-from odoo.tools import sql
-from odoo.tools.translate import LazyTranslate
+from weth import http, tools, models
+from weth.addons.website.controllers.main import QueryURL
+from weth.fields import Domain
+from weth.http import request
+from weth.http.session import touch
+from weth.tools import html2plaintext
+from weth.tools.misc import get_lang
+from weth.tools import sql
+from weth.tools.translate import LazyTranslate
 
 _lt = LazyTranslate(__name__)
 

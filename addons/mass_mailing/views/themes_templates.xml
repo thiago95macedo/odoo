@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
     <!-- Theme "Basic" template -->
     <template id="theme_basic_template">
         <div class="o_mail_no_options">
@@ -69,4 +69,4 @@
             </div>
         </section>
     </template>
-</odoo>
+</weth>

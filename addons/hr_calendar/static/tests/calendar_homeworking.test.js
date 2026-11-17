@@ -1,7 +1,7 @@
 import { defineMailModels } from "@mail/../tests/mail_test_helpers";
-import { beforeEach, describe, expect, test } from "@odoo/hoot";
-import { queryAll, queryAllProperties, queryAllTexts, queryFirst } from "@odoo/hoot-dom";
-import { mockDate } from "@odoo/hoot-mock";
+import { beforeEach, describe, expect, test } from "@weth/hoot";
+import { queryAll, queryAllProperties, queryAllTexts, queryFirst } from "@weth/hoot-dom";
+import { mockDate } from "@weth/hoot-mock";
 import { toggleFilter } from "@web/../tests/views/calendar/calendar_test_helpers";
 import { contains, defineModels, fields, mockService, models, mountView, onRpc, serverState } from "@web/../tests/web_test_helpers";
 

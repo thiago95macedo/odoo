@@ -6,7 +6,7 @@ from . import models
 from . import report
 from . import wizard
 
-from odoo.fields import Domain
+from weth.fields import Domain
 
 
 def _split_partial_sale_order_lines(env):

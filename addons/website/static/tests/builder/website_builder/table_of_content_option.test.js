@@ -5,7 +5,7 @@ import {
     insertText,
     undo,
 } from "@html_editor/../tests/_helpers/user_actions";
-import { expect, test } from "@odoo/hoot";
+import { expect, test } from "@weth/hoot";
 import {
     advanceTime,
     animationFrame,
@@ -18,7 +18,7 @@ import {
     queryOne,
     tick,
     waitFor,
-} from "@odoo/hoot-dom";
+} from "@weth/hoot-dom";
 import { contains } from "@web/../tests/web_test_helpers";
 import {
     defineWebsiteModels,

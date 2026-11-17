@@ -1,4 +1,4 @@
-from odoo import api, models, _
+from weth import api, models, _
 
 
 class SurveySurvey(models.Model):

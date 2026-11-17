@@ -1,6 +1,6 @@
-import { expect, test } from "@odoo/hoot";
-import { click, edit, press, queryAllTexts, runAllTimers, waitFor } from "@odoo/hoot-dom";
-import { animationFrame } from "@odoo/hoot-mock";
+import { expect, test } from "@weth/hoot";
+import { click, edit, press, queryAllTexts, runAllTimers, waitFor } from "@weth/hoot-dom";
+import { animationFrame } from "@weth/hoot-mock";
 import {
     clickSave,
     contains,
@@ -27,8 +27,8 @@ class Partner extends models.Model {
         string: "Instruments",
         relation: "instrument",
     });
-    method1() {}
-    method2() {}
+    method1() { }
+    method2() { }
     _records = [
         { id: 1, foo: "blip", name: "blipblip", bar: true },
         { id: 2, foo: "ta tata ta ta", name: "macgyver", bar: false },
@@ -93,7 +93,7 @@ test("expand with middleClick", async () => {
             }
             super.doAction(params);
         },
-        loadState() {},
+        loadState() { },
     });
 
     Partner._views.form = /* xml */ `
@@ -576,7 +576,7 @@ test("FormViewDialog with canExpand set to false", async () => {
 test.tags("desktop");
 test("close dialog with escape after modifying a field with onchange (no blur)", async () => {
     Partner._views.form = `<form><field name="foo"/></form>`;
-    Partner._onChanges.foo = () => {};
+    Partner._onChanges.foo = () => { };
     onRpc("web_save", () => {
         throw new Error("should not save");
     });

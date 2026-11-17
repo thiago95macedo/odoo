@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<odoo>
+<weth>
     <data>
         <template id="report_label_contour_marks">
             <div class="o_label_contour_mark o_label_contour_mark_top_left">
@@ -586,4 +586,4 @@
             </t>
         </template>
     </data>
-</odoo>
+</weth>

@@ -1,5 +1,5 @@
 
-from odoo.addons.hr_holidays.tests.common import TestHrHolidaysCommon
+from weth.addons.hr_holidays.tests.common import TestHrHolidaysCommon
 
 
 class TestHrLeaveReport(TestHrHolidaysCommon):

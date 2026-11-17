@@ -1,5 +1,5 @@
-from odoo import fields, models, tools
-from odoo.tools import float_is_zero
+from weth import fields, models, tools
+from weth.tools import float_is_zero
 
 
 class StockAverageCostReport(models.AbstractModel):

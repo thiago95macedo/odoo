@@ -4,14 +4,14 @@ import hashlib
 from collections import defaultdict
 from datetime import datetime, timedelta
 
-from odoo import api, fields, models
-from odoo.addons.base.models.res_partner import _tz_get
-from odoo.exceptions import UserError
-from odoo.fields import Domain
-from odoo.tools import _, SQL
-from odoo.tools.date_utils import all_timezones
-from odoo.tools.misc import _format_time_ago
-from odoo.http import request
+from weth import api, fields, models
+from weth.addons.base.models.res_partner import _tz_get
+from weth.exceptions import UserError
+from weth.fields import Domain
+from weth.tools import _, SQL
+from weth.tools.date_utils import all_timezones
+from weth.tools.misc import _format_time_ago
+from weth.http import request
 
 
 class WebsiteTrack(models.Model):

@@ -1,6 +1,6 @@
 import { propComputed } from "@mail/utils/common/hooks";
 
-import { Component, t, useProps } from "@odoo/owl";
+import { Component, t, useProps } from "@weth/owl";
 
 import { useService } from "@web/core/utils/hooks";
 import { url } from "@web/core/utils/urls";

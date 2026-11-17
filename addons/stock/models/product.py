@@ -6,11 +6,11 @@ from collections import defaultdict
 from collections.abc import Iterable
 from dateutil.relativedelta import relativedelta
 
-from odoo import _, api, fields, models
-from odoo.exceptions import UserError
-from odoo.fields import Domain
-from odoo.tools import SQL
-from odoo.tools.barcode import check_barcode_encoding
+from weth import _, api, fields, models
+from weth.exceptions import UserError
+from weth.fields import Domain
+from weth.tools import SQL
+from weth.tools.barcode import check_barcode_encoding
 
 PY_OPERATORS = {
     '<': py_operator.lt,

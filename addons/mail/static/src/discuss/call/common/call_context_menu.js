@@ -1,4 +1,4 @@
-import { Component, onMounted, onWillUnmount, proxy, types, usePlugin, useProps } from "@odoo/owl";
+import { Component, onMounted, onWillUnmount, proxy, types, usePlugin, useProps } from "@weth/owl";
 
 import { browser } from "@web/core/browser/browser";
 import { _t } from "@web/core/l10n/translation";

@@ -2,13 +2,13 @@
 
 from werkzeug import urls
 
-from odoo import models
-from odoo.exceptions import ValidationError
-from odoo.tools.urls import urljoin
+from weth import models
+from weth.exceptions import ValidationError
+from weth.tools.urls import urljoin
 
-from odoo.addons.payment import utils as payment_utils
-from odoo.addons.payment.logging import get_payment_logger
-from odoo.addons.payment_iyzico import const
+from weth.addons.payment import utils as payment_utils
+from weth.addons.payment.logging import get_payment_logger
+from weth.addons.payment_iyzico import const
 
 _logger = get_payment_logger(__name__)
 

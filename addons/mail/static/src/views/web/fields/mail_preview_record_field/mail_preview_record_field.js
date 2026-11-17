@@ -1,4 +1,4 @@
-import { onWillStart } from "@odoo/owl";
+import { onWillStart } from "@weth/owl";
 import { Pager } from "@web/core/pager/pager";
 import { registry } from "@web/core/registry";
 import { useService } from "@web/core/utils/hooks";

@@ -1,12 +1,12 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 from datetime import timedelta
 
-import odoo
+import weth
 
-from odoo import Command
-from odoo.addons.point_of_sale.tests.common import TestPoSCommon
+from weth import Command
+from weth.addons.point_of_sale.tests.common import TestPoSCommon
 
-@odoo.tests.tagged('post_install', '-at_install')
+@weth.tests.tagged('post_install', '-at_install')
 class TestReportSession(TestPoSCommon):
 
     _test_user_groups = None  # FIXME list needed groups

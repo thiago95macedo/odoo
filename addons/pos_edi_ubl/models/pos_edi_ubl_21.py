@@ -1,7 +1,7 @@
 from lxml import etree
 
-from odoo import models
-from odoo.addons.account.tools import dict_to_xml
+from weth import models
+from weth.addons.account.tools import dict_to_xml
 
 
 class PosEdiXmlUBL21(models.AbstractModel):

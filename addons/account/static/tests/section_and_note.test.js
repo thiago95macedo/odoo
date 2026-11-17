@@ -1,6 +1,6 @@
 import { defineMailModels } from "@mail/../tests/mail_test_helpers";
-import { expect, getFixture, test } from "@odoo/hoot";
-import { animationFrame, edit, queryAllTexts } from "@odoo/hoot-dom";
+import { expect, getFixture, test } from "@weth/hoot";
+import { animationFrame, edit, queryAllTexts } from "@weth/hoot-dom";
 import { range } from "@web/core/utils/numbers";
 import {
     clickSave,

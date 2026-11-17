@@ -29,6 +29,7 @@ O Antigravity opera neste repositório como o **Orquestrador Especialista no Cor
 10. **Isolamento de Produção:** Todo trabalho é restrito ao ambiente de desenvolvimento local. Nenhuma operação de deploy ou conexão de produção é autorizada sem consentimento explícito.
 11. **Nacionalização e Tradução Gradual (PT-BR como Idioma Base):** A tradução de documentações, termos de interface, mensagens de erro, views e comentários para o Português do Brasil (`pt-br`) deve acontecer de forma orgânica e contínua durante todas as intervenções no repositório, até que o PT-BR seja considerado o idioma base natural do sistema.
 12. **Identidade Visual Canônica WETH:** A paleta de cores corporativa WETH é padrão oficial no core (`addons/web/static/src/scss/primary_variables.scss`). Agentes não devem investigar o código para deduzir as cores corporativas; devem utilizar os tokens documentados na Seção 5.
+13. **WETH como Identidade Única (Sem Camadas de Legado ou Compatibilidade Retroativa):** Não estamos criando uma versão do Odoo compatível com WETH, mas transformando a base tecnológica na plataforma WETH. Toda referência estrutural, namespace, identificador, nomenclatura, schema, validação e mecanismo exclusivo de Odoo/OpenERP que não tenha justificativa funcional independente deve ser substituído por WETH ou eliminado. É expressamente proibido manter aliases, nomes alternativos, fallbacks, adaptadores ou retrocompatibilidade artificial para preservar identidades antigas. Preservam-se funcionalidades nativas, nunca identidades legadas.
 
 ---
 

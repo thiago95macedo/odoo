@@ -1,10 +1,10 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.tests import HttpCase, JsonRpcException, tagged
-from odoo.tools import mute_logger
+from weth.tests import HttpCase, JsonRpcException, tagged
+from weth.tools import mute_logger
 
-from odoo.addons.base.tests.common import HttpCaseWithUserPortal
-from odoo.addons.sale.tests.common import SaleCommon
+from weth.addons.base.tests.common import HttpCaseWithUserPortal
+from weth.addons.sale.tests.common import SaleCommon
 
 
 @tagged("post_install", "-at_install")
@@ -22,7 +22,7 @@ class TestAccessRightsControllers(HttpCase, SaleCommon):
 
         cls.user_portal = cls._create_new_portal_user()
 
-    @mute_logger('odoo.addons.base.models.ir_access')
+    @mute_logger('weth.addons.base.models.ir_access')
     def test_access_controller(self):
         private_so = self.sale_order
         portal_so = self.sale_order.copy()
@@ -172,7 +172,7 @@ class TestSaleSignature(HttpCaseWithUserPortal):
         self.assertEqual(len(signed_message), 1)
         signed_attachment = signed_message.attachment_ids
 
-        with self.assertRaises(JsonRpcException), mute_logger("odoo.http"):
+        with self.assertRaises(JsonRpcException), mute_logger("weth.http"):
             self.make_jsonrpc_request(
                 "/mail/message/update_content",
                 {

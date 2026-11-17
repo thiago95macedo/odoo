@@ -7,9 +7,9 @@ from freezegun import freeze_time
 from itertools import chain, repeat
 from unittest.mock import patch
 
-from odoo import exceptions, fields, _
-from odoo.addons.mail.tests.common import mail_new_test_user
-from odoo.tests import tagged, common
+from weth import exceptions, fields, _
+from weth.addons.mail.tests.common import mail_new_test_user
+from weth.tests import tagged, common
 
 
 @tagged('at_install', '-post_install')  # LEGACY at_install
@@ -330,7 +330,7 @@ class TestComputeRankCommon(common.TransactionCase):
         def _patched_send_mail(*args, **kwargs):
             pass
 
-        patch_email = patch('odoo.addons.mail.models.mail_template.MailTemplate.send_mail', _patched_send_mail)
+        patch_email = patch('weth.addons.mail.models.mail_template.MailTemplate.send_mail', _patched_send_mail)
         cls.startClassPatcher(patch_email)
 
         cls.users = cls.env['res.users']
@@ -415,7 +415,7 @@ class TestComputeRankCommon(common.TransactionCase):
             nonlocal number_of_users
             number_of_users = len(_self & self.users)
 
-        patch_bulk = patch('odoo.addons.gamification.models.res_users.ResUsers._recompute_rank', _patched_recompute_rank)
+        patch_bulk = patch('weth.addons.gamification.models.res_users.ResUsers._recompute_rank', _patched_recompute_rank)
         self.startPatcher(patch_bulk)
         self.rank_3.karma_min = 700
         self.assertEqual(number_of_users, 7, "Should just recompute for the 7 users between 500 and 700")
@@ -426,7 +426,7 @@ class TestComputeRankCommon(common.TransactionCase):
         def _patched_check_in_bulk(*args, **kwargs):
             raise
 
-        patch_bulk = patch('odoo.addons.gamification.models.res_users.ResUsers._recompute_rank_bulk', _patched_check_in_bulk)
+        patch_bulk = patch('weth.addons.gamification.models.res_users.ResUsers._recompute_rank_bulk', _patched_check_in_bulk)
         self.startPatcher(patch_bulk)
 
         # call on 5 users should not trigger the bulk function

@@ -1,6 +1,6 @@
 import uuid
 from psycopg2.extras import Json
-from odoo.tools import SQL
+from weth.tools import SQL
 
 
 def migrate(cr, version):

@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.stock_account.tests.test_anglo_saxon_valuation_reconciliation_common import ValuationReconciliationTestCommon
-from odoo import fields
-from odoo.fields import Command
-from odoo.tests import tagged, Form
+from weth.addons.stock_account.tests.test_anglo_saxon_valuation_reconciliation_common import ValuationReconciliationTestCommon
+from weth import fields
+from weth.fields import Command
+from weth.tests import tagged, Form
 
 
 @tagged('post_install', '-at_install')

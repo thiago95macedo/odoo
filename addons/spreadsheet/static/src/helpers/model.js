@@ -1,6 +1,6 @@
 // @ts-check
 
-import { parse, helpers, iterateAstNodes } from "@odoo/o-spreadsheet";
+import { parse, helpers, iterateAstNodes } from "@weth/o-spreadsheet";
 import { isLoadingError } from "@spreadsheet/o_spreadsheet/errors";
 import { OdooSpreadsheetModel } from "@spreadsheet/model";
 import { OdooDataProvider } from "@spreadsheet/data_sources/odoo_data_provider";

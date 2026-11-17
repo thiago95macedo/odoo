@@ -1,5 +1,5 @@
 import { _t } from "@web/core/l10n/translation";
-import { Component, proxy, useProps, t } from "@odoo/owl";
+import { Component, proxy, useProps, t } from "@weth/owl";
 import { Dialog } from "@web/core/dialog/dialog";
 
 export class SnoozeDialog extends Component {

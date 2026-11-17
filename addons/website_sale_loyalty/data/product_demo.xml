@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
     <record id="loyalty.gift_card_product_50" model="product.product">
         <field name="is_published" eval="True"/>
     </record>
@@ -20,4 +20,4 @@
         <field name="reward_type">shipping</field>
         <field name="program_id" ref="free_shipping_promotion"/>
     </record>
-</odoo>
+</weth>

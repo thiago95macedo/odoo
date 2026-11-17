@@ -1,4 +1,4 @@
-<odoo>
+<weth>
     <record id="calendar_alarm_view_kanban" model="ir.ui.view">
         <field name="name">calendar.alarm.view.kanban.inherit.sms</field>
         <field name="model">calendar.alarm</field>
@@ -9,4 +9,4 @@
             </xpath>
         </field>
     </record> 
-</odoo>
+</weth>

@@ -1,5 +1,5 @@
 import { BaseOptionComponent } from "@html_builder/core/base_option_component";
-import { onWillDestroy, useListener } from "@odoo/owl";
+import { onWillDestroy, useListener } from "@weth/owl";
 import { registry } from "@web/core/registry";
 
 /**

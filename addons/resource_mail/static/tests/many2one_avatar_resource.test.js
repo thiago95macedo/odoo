@@ -7,8 +7,8 @@ import {
     start,
     startServer,
 } from "@mail/../tests/mail_test_helpers";
-import { beforeEach, describe, expect, test } from "@odoo/hoot";
-import { queryFirst } from "@odoo/hoot-dom";
+import { beforeEach, describe, expect, test } from "@weth/hoot";
+import { queryFirst } from "@weth/hoot-dom";
 import { defineResourceMailModels } from "./resource_mail_test_helpers";
 
 describe.current.tags("desktop");

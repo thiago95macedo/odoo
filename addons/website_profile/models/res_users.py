@@ -5,8 +5,8 @@ import uuid
 
 from datetime import datetime
 from werkzeug import urls
-from odoo import api, fields, models
-from odoo.tools.translate import LazyTranslate
+from weth import api, fields, models
+from weth.tools.translate import LazyTranslate
 
 VALIDATION_KARMA_GAIN = 3
 _lt = LazyTranslate(__name__)

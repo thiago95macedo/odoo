@@ -1,9 +1,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, fields, models
-from odoo.fields import Domain
-from odoo.models import TableSQL
-from odoo.tools import SQL
+from weth import api, fields, models
+from weth.fields import Domain
+from weth.models import TableSQL
+from weth.tools import SQL
 
 
 class SaleReport(models.Model):

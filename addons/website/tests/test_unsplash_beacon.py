@@ -1,10 +1,10 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-import odoo.tests
+import weth.tests
 
 
-@odoo.tests.common.tagged('post_install', '-at_install')
-class TestUnsplashBeacon(odoo.tests.HttpCase):
+@weth.tests.common.tagged('post_install', '-at_install')
+class TestUnsplashBeacon(weth.tests.HttpCase):
 
     def fetch_proxy(self, url):
         if 'unsplash.com' in url:

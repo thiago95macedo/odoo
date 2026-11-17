@@ -1,4 +1,4 @@
-import { onMounted, proxy, signal, t, useEffect, useListener, useProps } from "@odoo/owl";
+import { onMounted, proxy, signal, t, useEffect, useListener, useProps } from "@weth/owl";
 import { Dialog } from "@web/core/dialog/dialog";
 import { useHotkey } from "@web/core/hotkeys/hotkey_hook";
 import { useDebounced } from "@web/core/utils/timing";
@@ -94,7 +94,7 @@ export class ProductImageViewer extends Dialog {
     previousImage() {
         this.selectedImage =
             this.images[
-                (this.state.selectedImageIdx - 1 + this.images.length) % this.images.length
+            (this.state.selectedImageIdx - 1 + this.images.length) % this.images.length
             ];
     }
 

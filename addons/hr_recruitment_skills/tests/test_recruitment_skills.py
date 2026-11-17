@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import Command
-from odoo.tests import Form, TransactionCase, tagged
-from odoo.tests.common import new_test_user
+from weth import Command
+from weth.tests import Form, TransactionCase, tagged
+from weth.tests.common import new_test_user
 
 
 @tagged("recruitment")

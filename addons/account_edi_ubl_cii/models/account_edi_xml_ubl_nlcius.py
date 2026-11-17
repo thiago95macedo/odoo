@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from odoo import models
+from weth import models
 
 
 class AccountEdiXmlUbl_Nl(models.AbstractModel):

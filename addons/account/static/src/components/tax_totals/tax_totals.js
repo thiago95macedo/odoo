@@ -21,7 +21,7 @@ import {
     proxy,
     useEffect,
     useProps,
-} from "@odoo/owl";
+} from "@weth/owl";
 import { useNumpadDecimal } from "@web/views/fields/numpad_decimal_hook";
 
 /**
@@ -65,7 +65,7 @@ class TaxGroupComponent extends Component {
     }
 
     formatMonetary(value) {
-        return formatMonetary(value, {currencyId: this.props.totals.currency_id});
+        return formatMonetary(value, { currencyId: this.props.totals.currency_id });
     }
 
     //--------------------------------------------------------------------------
@@ -230,7 +230,7 @@ export class TaxTotalsComponent extends Component {
                 id: "title",
                 label: _t("Rounding Methods"),
                 class: "o_cash_rounding_dropdown_title",
-                onSelected: () => {},
+                onSelected: () => { },
             },
         ];
         items.push(
@@ -292,7 +292,7 @@ export class TaxTotalsComponent extends Component {
     }
 
     formatMonetary(value) {
-        return formatMonetary(value, {currencyId: this.totals().currency_id});
+        return formatMonetary(value, { currencyId: this.totals().currency_id });
     }
 
     /**

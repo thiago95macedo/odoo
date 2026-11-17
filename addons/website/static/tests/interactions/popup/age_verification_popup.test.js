@@ -1,6 +1,6 @@
-import { beforeEach, describe, expect, test } from "@odoo/hoot";
-import { animationFrame, runAllTimers, tick } from "@odoo/hoot-dom";
-import { mockDate } from "@odoo/hoot-mock";
+import { beforeEach, describe, expect, test } from "@weth/hoot";
+import { animationFrame, runAllTimers, tick } from "@weth/hoot-dom";
+import { mockDate } from "@weth/hoot-mock";
 import { setupInteractionWhiteList, startInteractions } from "@web/../tests/public/helpers";
 import { contains, defineStyle } from "@web/../tests/web_test_helpers";
 

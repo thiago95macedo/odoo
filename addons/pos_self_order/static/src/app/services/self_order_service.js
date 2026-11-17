@@ -3,7 +3,7 @@ import { Mutex } from "@web/core/utils/concurrency";
 import { ConnectionLostError, RPCError, rpc } from "@web/core/network/rpc";
 import { _t } from "@web/core/l10n/translation";
 import { formatCurrency as webFormatCurrency } from "@web/core/currency";
-import { markup, usePlugin } from "@odoo/owl";
+import { markup, usePlugin } from "@weth/owl";
 import { useService } from "@web/core/utils/hooks";
 import { registry } from "@web/core/registry";
 import { cookie } from "@web/core/browser/cookie";
@@ -53,13 +53,13 @@ export class SelfOrder extends Reactive {
 
         // data
         this.models = this.data.models;
-        this.session = this.models["pos.session"].get(odoo.pos_session_id);
-        this.config = this.models["pos.config"].get(odoo.pos_config_id);
+        this.session = this.models["pos.session"].get(weth.pos_session_id);
+        this.config = this.models["pos.config"].get(weth.pos_config_id);
         this.company = this.config.company_id;
         this.currency = this.config.currency_id;
 
         this.markupDescriptions();
-        this.access_token = odoo.access_token;
+        this.access_token = weth.access_token;
         this.lastEditedProductId = null;
         this.currentProduct = 0;
         this.priceLoading = false;
@@ -792,15 +792,15 @@ export class SelfOrder extends Reactive {
                         customer_note: changes["customer_note"],
                         attribute_value_ids: changes["attribute_value_ids"]
                             ? JSON.parse(changes["attribute_value_ids"]).map((a) => [
-                                  "link",
-                                  this.models["product.template.attribute.value"].get(a),
-                              ])
+                                "link",
+                                this.models["product.template.attribute.value"].get(a),
+                            ])
                             : [],
                         custom_attribute_value_ids: changes["custom_attribute_value_ids"]
                             ? JSON.parse(changes["custom_attribute_value_ids"]).map((a) => [
-                                  "link",
-                                  this.models["product.attribute.custom.value"].get(a),
-                              ])
+                                "link",
+                                this.models["product.attribute.custom.value"].get(a),
+                            ])
                             : [],
                     });
                 }
@@ -1063,7 +1063,7 @@ export class SelfOrder extends Reactive {
             } else if (error.data.name === "werkzeug.exceptions.NotFound") {
                 message = _t("Orders not found on server");
                 cleanOrders = true;
-            } else if (error?.data?.name === "odoo.exceptions.UserError") {
+            } else if (error?.data?.name === "weth.exceptions.UserError") {
                 message = error.data.message;
             }
         } else if (error instanceof ConnectionLostError) {

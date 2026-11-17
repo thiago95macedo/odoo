@@ -1,7 +1,7 @@
-import { expect, getFixture, test } from "@odoo/hoot";
-import { queryOne, scroll, waitFor } from "@odoo/hoot-dom";
-import { animationFrame } from "@odoo/hoot-mock";
-import { Component, onWillStart, xml } from "@odoo/owl";
+import { expect, getFixture, test } from "@weth/hoot";
+import { queryOne, scroll, waitFor } from "@weth/hoot-dom";
+import { animationFrame } from "@weth/hoot-mock";
+import { Component, onWillStart, xml } from "@weth/owl";
 import {
     contains,
     defineActions,
@@ -242,7 +242,7 @@ test("getCurrentAction (virtual controller)", async () => {
     }
     actionRegistry.add("HelloWorldTest", ClientAction);
 
-    redirect("/odoo/action-1/plop");
+    redirect("/weth/action-1/plop");
     await mountWithCleanup(WebClient);
 
     await animationFrame();
@@ -726,7 +726,7 @@ test("retrieving a stored action should remove 'allowed_company_ids' from its co
 
     // Prepare the URL hash to make sure the stored action will get executed.
     // Object.assign(location, { search: "?model=partner&view_type=kanban" });
-    redirect("/odoo/action-1?view_type=kanban");
+    redirect("/weth/action-1?view_type=kanban");
 
     // Create the web client. It should execute the stored action.
     await mountWithCleanup(WebClient);

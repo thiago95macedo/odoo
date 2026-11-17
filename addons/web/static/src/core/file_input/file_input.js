@@ -1,4 +1,4 @@
-import { Component, onMounted, proxy, signal, status, t, useProps } from "@odoo/owl";
+import { Component, onMounted, proxy, signal, status, t, useProps } from "@weth/owl";
 import { useFileUploader } from "@web/core/utils/files";
 
 /**
@@ -26,7 +26,7 @@ export class FileInput extends Component {
         autoOpen: t.boolean().optional(),
         hidden: t.boolean().optional(false),
         multiUpload: t.boolean().optional(false),
-        onUpload: t.function().optional(() => () => {}),
+        onUpload: t.function().optional(() => () => { }),
         onWillUploadFiles: t.function().optional(),
         beforeOpen: t.function().optional(() => async () => true),
         resId: t.number().optional(),
@@ -53,7 +53,7 @@ export class FileInput extends Component {
     get httpParams() {
         const { resId, resModel } = this.props;
         const params = {
-            csrf_token: odoo.csrf_token,
+            csrf_token: weth.csrf_token,
             ufile: [...(this.fileInputRef()?.files ?? [])],
         };
         if (resModel) {

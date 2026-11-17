@@ -1,5 +1,5 @@
 import { Chatter } from "@mail/chatter/web_portal_project/chatter";
-import { providePlugins, t, usePlugin, useProps } from "@odoo/owl";
+import { providePlugins, t, usePlugin, useProps } from "@weth/owl";
 import { ProjectSharingPlugin } from "@project/project_sharing/chatter/project_sharing_plugin";
 import { useService } from "@web/core/utils/hooks";
 import { patch } from "@web/core/utils/patch";

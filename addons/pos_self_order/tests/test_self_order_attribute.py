@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-import odoo.tests
-from odoo import Command
-from odoo.addons.pos_self_order.tests.self_order_common_test import SelfOrderCommonTest
+import weth.tests
+from weth import Command
+from weth.addons.pos_self_order.tests.self_order_common_test import SelfOrderCommonTest
 
 
-@odoo.tests.tagged("post_install", "-at_install")
+@weth.tests.tagged("post_install", "-at_install")
 class TestSelfOrderAttribute(SelfOrderCommonTest):
     def test_self_order_attribute(self):
         self.pos_config.write({

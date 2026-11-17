@@ -1,4 +1,4 @@
-import { beforeEach, describe, expect, test } from "@odoo/hoot";
+import { beforeEach, describe, expect, test } from "@weth/hoot";
 import { getService, makeTestApp } from "@web/../tests/web_test_helpers";
 
 describe.current.tags("headless");

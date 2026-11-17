@@ -5,9 +5,9 @@ import logging
 import re
 import werkzeug
 
-from odoo import api, fields, models, tools, _
-from odoo.exceptions import UserError, ValidationError
-from odoo.tools.mail import email_split_and_format, email_normalize
+from weth import api, fields, models, tools, _
+from weth.exceptions import UserError, ValidationError
+from weth.tools.mail import email_split_and_format, email_normalize
 
 _logger = logging.getLogger(__name__)
 

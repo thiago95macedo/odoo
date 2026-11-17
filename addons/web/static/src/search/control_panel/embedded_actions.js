@@ -1,4 +1,4 @@
-import { Component, proxy, signal, t, useEnv, useLayoutEffect, useProps } from "@odoo/owl";
+import { Component, proxy, signal, t, useEnv, useLayoutEffect, useProps } from "@weth/owl";
 import { CheckBox } from "@web/core/checkbox/checkbox";
 import { ConfirmationDialog } from "@web/core/confirmation_dialog/confirmation_dialog";
 import { makeContext } from "@web/core/context";
@@ -278,7 +278,7 @@ export class EmbeddedActionsState {
                 : _t("This embedded action is global and will be removed for everyone."),
             confirmLabel: _t("Delete"),
             confirm: async () => await this._deleteEmbeddedAction(action),
-            cancel: () => {},
+            cancel: () => { },
         };
         this.dialogService.add(ConfirmationDialog, dialogProps);
     }

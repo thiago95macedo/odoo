@@ -3,13 +3,13 @@
 import json
 from uuid import uuid4
 
-import odoo.tests
-from odoo.tools import mute_logger
+import weth.tests
+from weth.tools import mute_logger
 
-from odoo.addons.pos_self_order.tests.self_order_common_test import SelfOrderCommonTest
+from weth.addons.pos_self_order.tests.self_order_common_test import SelfOrderCommonTest
 
 
-@odoo.tests.tagged("post_install", "-at_install")
+@weth.tests.tagged("post_install", "-at_install")
 class TestSelfOrderSiblingPtav(SelfOrderCommonTest):
     def setUp(self):
         super().setUp()
@@ -121,9 +121,9 @@ class TestSelfOrderSiblingPtav(SelfOrderCommonTest):
                          "a non-zero self-order must stay draft until paid")
 
     def test_sibling_ptav_is_rejected(self):
-        with mute_logger("odoo.http"):
+        with mute_logger("weth.http"):
             response = self._post_order_json([self.premium_ptav.id, self.free_ptav.id])
-        self.assertEqual(response["error"]["data"]["name"], "odoo.exceptions.UserError")
+        self.assertEqual(response["error"]["data"]["name"], "weth.exceptions.UserError")
         self.assertEqual(response["error"]["data"]["message"], "Invalid product attribute")
         self.assertFalse(self.env["pos.order"].search([("session_id", "=", self.pos_config.current_session_id.id)]),
                          "no order is created, paid or fulfilled")
@@ -131,7 +131,7 @@ class TestSelfOrderSiblingPtav(SelfOrderCommonTest):
     def test_rejected_order_does_not_consume_sequence(self):
         sequence = self.pos_config.order_backend_seq_id
         next_number = sequence.number_next_actual
-        with mute_logger("odoo.http"):
+        with mute_logger("weth.http"):
             response = self._post_order_json([self.premium_ptav.id, self.free_ptav.id])
         self.assertIn("error", response)
 
@@ -183,7 +183,7 @@ class TestSelfOrderSiblingPtav(SelfOrderCommonTest):
                          "the archived value stays on the line it was ordered with")
         self.assertEqual(order.amount_total, 2100.0)
 
-        with mute_logger("odoo.http"):
+        with mute_logger("weth.http"):
             response = self._post_lines_json([(self.premium_variant, 1, ptav_ids)])
         self.assertEqual(response["error"]["data"]["message"], "Invalid product attribute",
                          "an archived value cannot be ordered on a new line")
@@ -207,9 +207,9 @@ class TestSelfOrderSiblingPtav(SelfOrderCommonTest):
             lambda al: al.attribute_id == size_attribute,
         ).product_template_value_ids
 
-        with mute_logger("odoo.http"):
+        with mute_logger("weth.http"):
             response = self._post_order_json([self.premium_ptav.id, *size_ptavs.ids])
-        self.assertEqual(response["error"]["data"]["name"], "odoo.exceptions.UserError")
+        self.assertEqual(response["error"]["data"]["name"], "weth.exceptions.UserError")
         self.assertEqual(response["error"]["data"]["message"], "Invalid product configuration")
         self.assertFalse(self.env["pos.order"].search([("session_id", "=", self.pos_config.current_session_id.id)]),
                          "no order is created from an invalid configuration")
@@ -241,9 +241,9 @@ class TestSelfOrderSiblingPtav(SelfOrderCommonTest):
             "excluded_value_ids": [(6, 0, self.premium_ptav.ids)],
         })
 
-        with mute_logger("odoo.http"):
+        with mute_logger("weth.http"):
             response = self._post_order_json([self.premium_ptav.id, discount_ptav.id])
-        self.assertEqual(response["error"]["data"]["name"], "odoo.exceptions.UserError")
+        self.assertEqual(response["error"]["data"]["name"], "weth.exceptions.UserError")
         self.assertEqual(response["error"]["data"]["message"], "Invalid product configuration")
         self.assertFalse(self.env["pos.order"].search([("session_id", "=", self.pos_config.current_session_id.id)]),
                          "no order is created from an excluded combination")
@@ -282,12 +282,12 @@ class TestSelfOrderSiblingPtav(SelfOrderCommonTest):
             lambda v: v.product_template_attribute_value_ids == self.budget_ptav,
         )
 
-        with mute_logger("odoo.http"):
+        with mute_logger("weth.http"):
             response = self._post_lines_json([
                 (self.premium_variant, 1, [self.premium_ptav.id]),
                 (budget_variant, 1, [self.budget_ptav.id, discount_ptav.id]),
             ])
-        self.assertEqual(response["error"]["data"]["name"], "odoo.exceptions.UserError")
+        self.assertEqual(response["error"]["data"]["name"], "weth.exceptions.UserError")
         self.assertEqual(response["error"]["data"]["message"], "Invalid product configuration")
         self.assertFalse(self.env["pos.order"].search([("session_id", "=", self.pos_config.current_session_id.id)]),
                          "no order is created, paid or fulfilled")

@@ -1,10 +1,10 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, fields, models, _
-from odoo.addons.website.tools import text_from_html
-from odoo.tools import mute_logger
-from odoo.tools.urls import urljoin as url_join
-from odoo.tools.translate import html_translate
+from weth import api, fields, models, _
+from weth.addons.website.tools import text_from_html
+from weth.tools import mute_logger
+from weth.tools.urls import urljoin as url_join
+from weth.tools.translate import html_translate
 
 
 class HrJob(models.Model):
@@ -17,11 +17,11 @@ class HrJob(models.Model):
         'website.structured_data.mixin',
     ]
 
-    @mute_logger('odoo.addons.base.models.ir_qweb')
+    @mute_logger('weth.addons.base.models.ir_qweb')
     def _get_default_website_description(self):
         return self.env['ir.qweb']._render("website_hr_recruitment.default_website_description", raise_if_not_found=False)
 
-    @mute_logger('odoo.addons.base.models.ir_qweb')
+    @mute_logger('weth.addons.base.models.ir_qweb')
     def _get_default_website_rating(self):
         return self.env['ir.qweb']._render("website_hr_recruitment.default_website_rating", raise_if_not_found=False)
 

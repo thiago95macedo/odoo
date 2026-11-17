@@ -1,12 +1,12 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-import odoo.tests
-from odoo import Command, fields
+import weth.tests
+from weth import Command, fields
 
-from odoo.addons.account.tests.common import AccountTestInvoicingHttpCommon
+from weth.addons.account.tests.common import AccountTestInvoicingHttpCommon
 
 
-@odoo.tests.tagged('post_install_l10n', 'post_install', '-at_install')
+@weth.tests.tagged('post_install_l10n', 'post_install', '-at_install')
 class TestUi(AccountTestInvoicingHttpCommon):
 
     _test_user_groups = None  # FIXME list needed groups
@@ -96,7 +96,7 @@ class TestUi(AccountTestInvoicingHttpCommon):
             'is_favorite': True,
             'default_code': '0',
         })
-        self.start_tour("/odoo/customer-invoices/new", 'test_use_product_catalog_on_invoice', login="admin")
+        self.start_tour("/weth/customer-invoices/new", 'test_use_product_catalog_on_invoice', login="admin")
 
     def test_deductible_percentage_column(self):
         self.assertFalse(self.env.user.has_group('account.group_partial_purchase_deductibility'))
@@ -109,12 +109,12 @@ class TestUi(AccountTestInvoicingHttpCommon):
         })
         move.action_post()
         self.assertTrue(self.env.user.has_group('account.group_partial_purchase_deductibility'))
-        self.start_tour("/odoo/vendor-bills/new", 'deductible_percentage_column', login=self.env.user.login)
+        self.start_tour("/weth/vendor-bills/new", 'deductible_percentage_column', login=self.env.user.login)
 
     def test_add_section_from_product_catalog_on_invoice_tour(self):
         self.product.write({'is_favorite': True})
         self.start_tour(
-            '/odoo/customer-invoices/new',
+            '/weth/customer-invoices/new',
             'test_add_section_from_product_catalog_on_invoice',
             login='admin',
         )

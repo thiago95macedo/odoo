@@ -1,10 +1,10 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.mail.tests.common import mail_new_test_user
-from odoo.addons.sale_timesheet.tests.common import TestCommonSaleTimesheet
-from odoo.exceptions import UserError, ValidationError
-from odoo.tests import tagged
-from odoo.tests import Form
+from weth.addons.mail.tests.common import mail_new_test_user
+from weth.addons.sale_timesheet.tests.common import TestCommonSaleTimesheet
+from weth.exceptions import UserError, ValidationError
+from weth.tests import tagged
+from weth.tests import Form
 
 
 @tagged('-at_install', 'post_install')

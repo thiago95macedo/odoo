@@ -4,9 +4,9 @@
 from datetime import date, datetime, timedelta
 from freezegun import freeze_time
 
-from odoo.addons.event_sale.tests.common import TestEventSaleCommon
-from odoo.fields import Datetime as FieldsDatetime, Date as FieldsDate
-from odoo.tests.common import tagged, users
+from weth.addons.event_sale.tests.common import TestEventSaleCommon
+from weth.fields import Datetime as FieldsDatetime, Date as FieldsDate
+from weth.tests.common import tagged, users
 
 
 @tagged('at_install', '-post_install')  # LEGACY at_install

@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import http
-from odoo.http import request
-from odoo.addons.mail.tools.discuss import mail_route
+from weth import http
+from weth.http import request
+from weth.addons.mail.tools.discuss import mail_route
 
 
 class LinkPreviewController(http.Controller):

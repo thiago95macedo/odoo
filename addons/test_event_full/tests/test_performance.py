@@ -4,9 +4,9 @@
 from datetime import timedelta
 from freezegun import freeze_time
 
-from odoo.addons.test_event_full.tests.common import TestEventFullCommon
-from odoo.addons.website.tests.test_performance import UtilPerf
-from odoo.tests import Form, users, warmup, tagged
+from weth.addons.test_event_full.tests.common import TestEventFullCommon
+from weth.addons.website.tests.test_performance import UtilPerf
+from weth.tests import Form, users, warmup, tagged
 
 
 @tagged('event_performance', 'post_install', '-at_install', '-standard')

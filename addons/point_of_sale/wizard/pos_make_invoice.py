@@ -1,5 +1,5 @@
-from odoo import _, fields, models, modules, tools
-from odoo.exceptions import UserError
+from weth import _, fields, models, modules, tools
+from weth.exceptions import UserError
 
 
 class PosMakeInvoice(models.TransientModel):

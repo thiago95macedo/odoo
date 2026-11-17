@@ -1,5 +1,5 @@
-import { expect, test } from "@odoo/hoot";
-import { edit, queryAll, queryFirst, queryOne } from "@odoo/hoot-dom";
+import { expect, test } from "@weth/hoot";
+import { edit, queryAll, queryFirst, queryOne } from "@weth/hoot-dom";
 import { contains } from "@web/../tests/web_test_helpers";
 import { defineWebsiteModels, setupWebsiteBuilderWithSnippet } from "./website_helpers";
 

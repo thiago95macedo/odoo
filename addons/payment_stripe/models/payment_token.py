@@ -1,9 +1,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import fields, models
-from odoo.exceptions import ValidationError
+from weth import fields, models
+from weth.exceptions import ValidationError
 
-from odoo.addons.payment.logging import get_payment_logger
+from weth.addons.payment.logging import get_payment_logger
 
 _logger = get_payment_logger(__name__)
 

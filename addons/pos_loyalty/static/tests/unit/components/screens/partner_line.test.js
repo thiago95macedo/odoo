@@ -1,4 +1,4 @@
-import { test, expect } from "@odoo/hoot";
+import { test, expect } from "@weth/hoot";
 import { mountWithCleanup } from "@web/../tests/web_test_helpers";
 import { setupPosEnv } from "@point_of_sale/../tests/unit/utils";
 import { PartnerLine } from "@point_of_sale/app/screens/partner_list/partner_line/partner_line";
@@ -18,13 +18,13 @@ test("getLoyaltyPoints lists loyalty balances for the partner", async () => {
     const component = await mountWithCleanup(PartnerLine, {
         props: {
             partner,
-            close: () => {},
+            close: () => { },
             isSelected: false,
             isBalanceDisplayed: true,
-            onClickEdit: () => {},
-            onClickUnselect: () => {},
-            onClickPartner: () => {},
-            onClickOrders: () => {},
+            onClickEdit: () => { },
+            onClickUnselect: () => { },
+            onClickPartner: () => { },
+            onClickOrders: () => { },
         },
     });
 

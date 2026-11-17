@@ -3,10 +3,10 @@
 
 from unittest.mock import patch
 
-from odoo.addons.utm.models.utm_mixin import UtmMixin
-from odoo.addons.utm.tests.common import TestUTMCommon
-from odoo.exceptions import UserError
-from odoo.tests.common import tagged, users
+from weth.addons.utm.models.utm_mixin import UtmMixin
+from weth.addons.utm.tests.common import TestUTMCommon
+from weth.exceptions import UserError
+from weth.tests.common import tagged, users
 
 
 @tagged('post_install', '-at_install', 'utm', 'utm_consistency')

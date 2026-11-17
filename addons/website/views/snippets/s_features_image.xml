@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
 
 <template id="s_features_image" name="Features Image">
     <section class="s_features_image pt80 pb80">
@@ -18,4 +18,4 @@
     </section>
 </template>
 
-</odoo>
+</weth>

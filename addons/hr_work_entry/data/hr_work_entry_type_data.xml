@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo><data noupdate="1">
+<weth><data noupdate="1">
     <!-- Generic -->
     <record id="generic_work_entry_type_attendance" model="hr.work.entry.type">
         <field name="name">Work</field>
@@ -5915,4 +5915,4 @@
         <field name="country_id" ref="base.za"/>
     </record>
 
-</data></odoo>
+</data></weth>

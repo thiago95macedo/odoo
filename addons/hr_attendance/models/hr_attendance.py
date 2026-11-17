@@ -8,11 +8,11 @@ from zoneinfo import ZoneInfo
 
 from dateutil.relativedelta import relativedelta
 
-from odoo import _, api, exceptions, fields, models
-from odoo.exceptions import AccessError, ValidationError
-from odoo.tools import convert, float_compare, float_is_zero, format_datetime
-from odoo.tools.date_utils import float_to_time, sum_intervals, time_to_float
-from odoo.tools.intervals import Intervals
+from weth import _, api, exceptions, fields, models
+from weth.exceptions import AccessError, ValidationError
+from weth.tools import convert, float_compare, float_is_zero, format_datetime
+from weth.tools.date_utils import float_to_time, sum_intervals, time_to_float
+from weth.tools.intervals import Intervals
 
 
 def get_google_maps_url(latitude, longitude):

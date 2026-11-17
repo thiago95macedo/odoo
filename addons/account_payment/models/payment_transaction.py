@@ -1,6 +1,6 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import SUPERUSER_ID, _, api, fields, models
+from weth import SUPERUSER_ID, _, api, fields, models
 
 
 class PaymentTransaction(models.Model):

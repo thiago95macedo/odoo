@@ -4,9 +4,9 @@ from os.path import join as opj
 import werkzeug.exceptions
 from lxml import etree
 
-from odoo import tools
-from odoo.tools.image import binary_to_image, get_webp_size, image_data_uri
-from odoo.tools.misc import file_open
+from weth import tools
+from weth.tools.image import binary_to_image, get_webp_size, image_data_uri
+from weth.tools.misc import file_open
 
 
 def get_shape_svg(module, *segments):

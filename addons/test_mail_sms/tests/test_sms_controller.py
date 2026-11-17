@@ -1,9 +1,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import Command
-from odoo.addons.test_mail_sms.tests.test_sms_management import TestSMSActionsCommon
-from odoo.tests.common import tagged, JsonRpcException
-from odoo.tools import mute_logger
+from weth import Command
+from weth.addons.test_mail_sms.tests.test_sms_management import TestSMSActionsCommon
+from weth.tests.common import tagged, JsonRpcException
+from weth.tools import mute_logger
 
 
 @tagged('at_install', '-post_install')  # LEGACY at_install
@@ -43,7 +43,7 @@ class TestSmsController(TestSMSActionsCommon):
         ])
         cls.sms_sent.unlink()  # as it would normally be.
 
-    @mute_logger("odoo.addons.base.models.ir_http")
+    @mute_logger("weth.addons.base.models.ir_http")
     def test_webhook_update_notification_from_processing_to_pending(self):
         self.assertTrue(self.sms_processing)
         statuses = [{'sms_status': 'sent', 'uuids': [self.sms_processing.uuid]}]
@@ -51,26 +51,26 @@ class TestSmsController(TestSMSActionsCommon):
         self.assertFalse(self.sms_processing.to_delete, 'Update does not change original to_delete status')
         self.assertEqual(self.notification_processing.notification_status, 'pending')
 
-    @mute_logger('odoo.addons.base.models.ir_http')
+    @mute_logger('weth.addons.base.models.ir_http')
     def test_webhook_update_notification_from_pending_to_bounced(self):
         statuses = [{'sms_status': 'invalid_destination', 'uuids': [self.notification_pending.sms_tracker_ids.sms_uuid]}]
         self.assertEqual(self._make_webhook_jsonrpc_request(statuses), 'OK')
         self.assertEqual(self.notification_pending.notification_status, 'bounce')
 
-    @mute_logger('odoo.addons.base.models.ir_http')
+    @mute_logger('weth.addons.base.models.ir_http')
     def test_webhook_update_notification_from_pending_to_delivered(self):
         statuses = [{'sms_status': 'delivered', 'uuids': [self.notification_pending.sms_tracker_ids.sms_uuid]}]
         self.assertEqual(self._make_webhook_jsonrpc_request(statuses), 'OK')
         self.assertEqual(self.notification_pending.notification_status, 'sent')
 
-    @mute_logger('odoo.addons.base.models.ir_http')
+    @mute_logger('weth.addons.base.models.ir_http')
     def test_webhook_update_notification_from_pending_to_failed(self):
         statuses = [{'sms_status': 'not_delivered', 'uuids': [self.notification_pending.sms_tracker_ids.sms_uuid]}]
         self.assertEqual(self._make_webhook_jsonrpc_request(statuses), 'OK')
         self.assertEqual(self.notification_pending.notification_status, 'exception')
         self.assertEqual(self.notification_pending.failure_type, 'sms_not_delivered')
 
-    @mute_logger('odoo.addons.base.models.ir_http')
+    @mute_logger('weth.addons.base.models.ir_http')
     def test_webhook_update_notification_multiple_statuses(self):
         statuses = [
             {'sms_status': 'sent', 'uuids': [self.notification_processing.sms_tracker_ids.sms_uuid]},
@@ -80,18 +80,18 @@ class TestSmsController(TestSMSActionsCommon):
         self.assertEqual(self.notification_processing.notification_status, 'pending')
         self.assertEqual(self.notification_pending.notification_status, 'sent')
 
-    @mute_logger('odoo.addons.base.models.ir_http', 'odoo.addons.sms.controllers.main', 'odoo.http')
+    @mute_logger('weth.addons.base.models.ir_http', 'weth.addons.sms.controllers.main', 'weth.http')
     def test_webhook_update_raises_with_wrong_event_data(self):
         statuses = [{'sms_status': 'delivered', 'uuids': ['not a uuid']}]
         with self.assertRaises(JsonRpcException):
             self._make_webhook_jsonrpc_request(statuses)
 
-    @mute_logger('odoo.addons.base.models.ir_http')
+    @mute_logger('weth.addons.base.models.ir_http')
     def test_webhook_update_succeeds_with_non_existent_uuids(self):
         statuses = [{'sms_status': 'delivered', 'uuids': ['00000000000000000000000000000000']}]
         self.assertEqual(self._make_webhook_jsonrpc_request(statuses), 'OK')
 
-    @mute_logger('odoo.addons.base.models.ir_http')
+    @mute_logger('weth.addons.base.models.ir_http')
     def test_webhook_update_succeeds_with_unknown_status(self):
         statuses = [{'sms_status': 'something_new', 'uuids': [self.notification_pending.sms_tracker_ids.sms_uuid]}]
         self.assertEqual(self._make_webhook_jsonrpc_request(statuses), 'OK')

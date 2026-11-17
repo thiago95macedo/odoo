@@ -1,4 +1,4 @@
-import { computed, onWillDestroy, signal } from "@odoo/owl";
+import { computed, onWillDestroy, signal } from "@weth/owl";
 import { clamp } from "@web/core/utils/numbers";
 
 /**

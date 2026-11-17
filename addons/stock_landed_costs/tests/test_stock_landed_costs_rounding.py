@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import Command
-from odoo.addons.stock_landed_costs.tests.common import TestStockLandedCostsCommon
-from odoo.fields import Date
-from odoo.tests import tagged, Form
+from weth import Command
+from weth.addons.stock_landed_costs.tests.common import TestStockLandedCostsCommon
+from weth.fields import Date
+from weth.tests import tagged, Form
 
 
 @tagged('post_install', '-at_install')

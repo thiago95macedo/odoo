@@ -1,4 +1,4 @@
-import { Component, asyncComputed, onWillStart, t, useProps } from "@odoo/owl";
+import { Component, asyncComputed, onWillStart, t, useProps } from "@weth/owl";
 import { useService } from "@web/core/utils/hooks";
 import {
     basicContainerBuilderComponentProps,

@@ -21,9 +21,9 @@ import {
 import { fields } from "@mail/model/export";
 import { messagingMenuHelpers } from "@mail/../tests/mock_server/controllers/discuss/messaging_menu";
 
-import { describe, expect, mockPermission, test } from "@odoo/hoot";
-import { rightClick, waitFor, waitUntil } from "@odoo/hoot-dom";
-import { animationFrame, mockDate } from "@odoo/hoot-mock";
+import { describe, expect, mockPermission, test } from "@weth/hoot";
+import { rightClick, waitFor, waitUntil } from "@weth/hoot-dom";
+import { animationFrame, mockDate } from "@weth/hoot-mock";
 
 import {
     Command,

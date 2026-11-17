@@ -3,9 +3,9 @@
 
 from werkzeug.urls import url_parse
 
-from odoo.addons.test_mail_full.tests.common import TestMailFullCommon
-from odoo.addons.test_mail_sms.tests.common import TestSMSRecipients
-from odoo.tests import tagged, users
+from weth.addons.test_mail_full.tests.common import TestMailFullCommon
+from weth.addons.test_mail_sms.tests.common import TestSMSRecipients
+from weth.tests import tagged, users
 
 
 class TestMailThreadInternalsCommon(TestMailFullCommon, TestSMSRecipients):

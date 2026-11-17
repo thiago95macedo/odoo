@@ -1,10 +1,10 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.fields import Command
-from odoo.tests import tagged
-from odoo.tools import mute_logger
+from weth.fields import Command
+from weth.tests import tagged
+from weth.tools import mute_logger
 
-from odoo.addons.payment.tests.http_common import PaymentHttpCommon
+from weth.addons.payment.tests.http_common import PaymentHttpCommon
 
 
 @tagged("post_install", "-at_install")
@@ -78,7 +78,7 @@ class TestMultiCompanyFlows(PaymentHttpCommon):
             "flow": "direct",
             "tokenization_requested": False,
         })
-        with mute_logger("odoo.addons.payment.models.payment_transaction"):
+        with mute_logger("weth.addons.payment.models.payment_transaction"):
             processing_values = self._get_processing_values(**validation_values)
         tx_sudo = self._get_tx(processing_values["reference"])
 

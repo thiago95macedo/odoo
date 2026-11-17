@@ -1,4 +1,4 @@
-import { Component, useProps, t } from "@odoo/owl";
+import { Component, useProps, t } from "@weth/owl";
 import { RestaurantOrderCourse } from "@pos_restaurant/app/models/restaurant_order_course";
 
 export class OrderCourse extends Component {

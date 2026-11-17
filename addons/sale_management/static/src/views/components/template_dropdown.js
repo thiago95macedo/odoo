@@ -1,4 +1,4 @@
-import { Component, onWillStart, useProps, proxy, t } from "@odoo/owl";
+import { Component, onWillStart, useProps, proxy, t } from "@weth/owl";
 import { useService } from "@web/core/utils/hooks";
 import { ConfirmationDialog, deleteConfirmationMessage } from "@web/core/confirmation_dialog/confirmation_dialog";
 import { Dropdown } from "@web/core/dropdown/dropdown";
@@ -97,7 +97,7 @@ export class SaleTemplateDropdown extends Component {
                 await this.orm.unlink("sale.order.template", [templateId]);
                 this.action.doAction("soft_reload");
             },
-            cancel: () => {},
+            cancel: () => { },
         });
     }
 

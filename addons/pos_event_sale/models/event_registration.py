@@ -1,6 +1,6 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
-from odoo import models, api
-from odoo.tools import float_is_zero
+from weth import models, api
+from weth.tools import float_is_zero
 
 
 class EventRegistration(models.Model):

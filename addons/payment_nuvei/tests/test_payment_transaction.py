@@ -4,11 +4,11 @@ from unittest.mock import patch
 
 from werkzeug import urls
 
-from odoo.tests import tagged
-from odoo.tools import mute_logger
+from weth.tests import tagged
+from weth.tools import mute_logger
 
-from odoo.addons.payment_nuvei.controllers.main import NuveiController
-from odoo.addons.payment_nuvei.tests.common import NuveiCommon
+from weth.addons.payment_nuvei.controllers.main import NuveiController
+from weth.addons.payment_nuvei.tests.common import NuveiCommon
 
 
 @tagged("post_install", "-at_install")
@@ -70,15 +70,15 @@ class TestPaymentTransaction(NuveiCommon):
         self.maxDiff = None  # Allow comparing large dicts.
         with (
             patch(
-                "odoo.addons.payment.utils.generate_access_token",
+                "weth.addons.payment.utils.generate_access_token",
                 new=self._generate_test_access_token,
             ),
-            patch("odoo.addons.payment_nuvei.models.payment_transaction.uuid4", make_uuid),
+            patch("weth.addons.payment_nuvei.models.payment_transaction.uuid4", make_uuid),
         ):
             processing_values = tx._get_specific_rendering_values(None)
         self.assertDictEqual(processing_values, expected_values)
 
-    @mute_logger("odoo.addons.payment.models.payment_transaction")
+    @mute_logger("weth.addons.payment.models.payment_transaction")
     def test_no_input_missing_from_redirect_form(self):
         """Test that no key is omitted from the rendering values."""
         tx = self._create_transaction(flow="redirect")
@@ -116,7 +116,7 @@ class TestPaymentTransaction(NuveiCommon):
         ]
         expected_input_keys.sort()
         with patch(
-            "odoo.addons.payment.utils.generate_access_token", new=self._generate_test_access_token
+            "weth.addons.payment.utils.generate_access_token", new=self._generate_test_access_token
         ):
             processing_values = tx._get_processing_values()
 
@@ -167,7 +167,7 @@ class TestPaymentTransaction(NuveiCommon):
             "redirect", amount=1000.50, currency_id=currency_usd.id, payment_method_id=webpay_id.id
         )
         with patch(
-            "odoo.addons.payment.utils.generate_access_token", new=self._generate_test_access_token
+            "weth.addons.payment.utils.generate_access_token", new=self._generate_test_access_token
         ):
             processing_values = tx._get_specific_rendering_values(None)
         self.assertEqual(processing_values.get("url_params").get("total_amount"), 1000)

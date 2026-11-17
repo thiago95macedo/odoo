@@ -26,7 +26,7 @@ import {
     useEffect,
     useProps,
     xml,
-} from "@odoo/owl";
+} from "@weth/owl";
 
 export const formRendererProps = {
     archInfo: t.object(),
@@ -35,7 +35,7 @@ export const formRendererProps = {
     // Template props : added by the FormCompiler
     class: t.string().optional(),
     translateAlert: t.or([t.object(), t.literal(null)]).optional(),
-    onNotebookPageChange: t.function().optional(() => () => {}),
+    onNotebookPageChange: t.function().optional(() => () => { }),
     activeNotebookPages: t.object().optional({}),
     readonly: t.boolean().optional(),
     saveRecord: t.function().optional(),

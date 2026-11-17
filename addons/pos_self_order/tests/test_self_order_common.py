@@ -1,10 +1,10 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
-import odoo.tests
-from odoo.addons.pos_self_order.tests.self_order_common_test import SelfOrderCommonTest
-from odoo.exceptions import UserError
+import weth.tests
+from weth.addons.pos_self_order.tests.self_order_common_test import SelfOrderCommonTest
+from weth.exceptions import UserError
 
 
-@odoo.tests.tagged("post_install", "-at_install")
+@weth.tests.tagged("post_install", "-at_install")
 class TestSelfOrderCommon(SelfOrderCommonTest):
     def test_self_order_config_default_user(self):
         self.pos_config.payment_method_ids = self.pos_config.payment_method_ids.filtered(lambda pm: pm.type != 'cash')

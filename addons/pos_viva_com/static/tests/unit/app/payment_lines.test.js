@@ -1,4 +1,4 @@
-import { test, expect } from "@odoo/hoot";
+import { test, expect } from "@weth/hoot";
 import { mountWithCleanup } from "@web/../tests/web_test_helpers";
 import {
     setupPosEnv,
@@ -19,13 +19,13 @@ test("getPaymentActionState", async () => {
     const comp = await mountWithCleanup(PaymentScreenPaymentLines, {
         props: {
             paymentLines: [paymentline],
-            deleteLine: () => {},
-            selectLine: () => {},
-            sendForceDone: () => {},
-            sendForceCancel: () => {},
-            sendPaymentCancel: () => {},
-            sendPaymentRequest: () => {},
-            updateSelectedPaymentline: () => {},
+            deleteLine: () => { },
+            selectLine: () => { },
+            sendForceDone: () => { },
+            sendForceCancel: () => { },
+            sendPaymentCancel: () => { },
+            sendPaymentRequest: () => { },
+            updateSelectedPaymentline: () => { },
             isRefundOrder: false,
         },
     });
@@ -84,7 +84,7 @@ test("getPaymentActionState", async () => {
         isIntegrated: () => false,
         use: () => true,
         hasRefused: () => true,
-        forgetIntegration: () => {},
+        forgetIntegration: () => { },
     };
     expect(normalizeActionState(comp.getPaymentActionState(paymentline))).toEqual({
         id: "waiting_card",

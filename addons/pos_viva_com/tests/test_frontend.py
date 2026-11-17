@@ -1,13 +1,13 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.point_of_sale.tests.test_frontend import TestPointOfSaleHttpCommon
-from odoo.addons.pos_viva_com.models.pos_payment_method import PosPaymentMethod
+from weth.addons.point_of_sale.tests.test_frontend import TestPointOfSaleHttpCommon
+from weth.addons.pos_viva_com.models.pos_payment_method import PosPaymentMethod
 from unittest.mock import patch
-from odoo import Command
-import odoo.tests
+from weth import Command
+import weth.tests
 
 
-@odoo.tests.tagged('post_install', '-at_install')
+@weth.tests.tagged('post_install', '-at_install')
 class TestVivaComHttpCommon(TestPointOfSaleHttpCommon):
 
     _test_user_groups = None  # FIXME list needed groups

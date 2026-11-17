@@ -1,6 +1,6 @@
 import { SlideUploadCategory } from "@website_slides/js/public/components/slide_upload_dialog/slide_upload_category";
 import { patch } from "@web/core/utils/patch";
-import { onWillStart } from "@odoo/owl";
+import { onWillStart } from "@weth/owl";
 import { _t } from "@web/core/l10n/translation";
 import { rpc } from "@web/core/network/rpc";
 
@@ -24,8 +24,8 @@ patch(SlideUploadCategory.prototype, {
     get displayCertificationValue() {
         return this.state.choices.certificationId
             ? this.state.choices.certifications.find(
-                  (c) => c.value === this.state.choices.certificationId
-              ).label
+                (c) => c.value === this.state.choices.certificationId
+            ).label
             : _t("Select a certification");
     },
 

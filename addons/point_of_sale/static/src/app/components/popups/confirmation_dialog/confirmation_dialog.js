@@ -3,7 +3,7 @@ import {
     ConfirmationDialog,
     confirmationDialogProps,
 } from "@web/core/confirmation_dialog/confirmation_dialog";
-import { t } from "@odoo/owl";
+import { t } from "@weth/owl";
 import { patch } from "@web/core/utils/patch";
 import { logPosMessage } from "@point_of_sale/app/utils/pretty_console_log";
 import { usePos } from "@point_of_sale/app/hooks/pos_hook";

@@ -1,6 +1,6 @@
 import { registry } from "@web/core/registry";
 import { PeerToPeer } from "@mail/discuss/call/common/peer_to_peer";
-import { usePlugin } from "@odoo/owl";
+import { usePlugin } from "@weth/owl";
 import { DebugModePlugin } from "@web/core/debug_mode_plugin";
 
 export const discussP2P = {

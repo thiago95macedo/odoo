@@ -1,4 +1,4 @@
-import { globals } from "@odoo/hoot";
+import { globals } from "@weth/hoot";
 
 let translatedElements;
 export const getTranslatedElements = async () => {

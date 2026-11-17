@@ -1,6 +1,6 @@
-from odoo.tests import tagged
+from weth.tests import tagged
 
-from odoo.addons.website.tests.test_website_technical_page import TestWebsiteTechnicalPage
+from weth.addons.website.tests.test_website_technical_page import TestWebsiteTechnicalPage
 
 
 @tagged("post_install", "-at_install")

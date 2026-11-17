@@ -1,7 +1,7 @@
-import { expect, test } from "@odoo/hoot";
-import { click, drag, hover, leave, pointerDown, pointerUp, queryOne } from "@odoo/hoot-dom";
-import { advanceTime, animationFrame, mockTouch, runAllTimers } from "@odoo/hoot-mock";
-import { Component, proxy, xml } from "@odoo/owl";
+import { expect, test } from "@weth/hoot";
+import { click, drag, hover, leave, pointerDown, pointerUp, queryOne } from "@weth/hoot-dom";
+import { advanceTime, animationFrame, mockTouch, runAllTimers } from "@weth/hoot-mock";
+import { Component, proxy, xml } from "@weth/owl";
 import {
     assignTestEnv,
     mountWithCleanup,

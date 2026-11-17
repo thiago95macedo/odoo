@@ -1,4 +1,4 @@
-import { onWillDestroy, Plugin, usePlugin } from "@odoo/owl";
+import { onWillDestroy, Plugin, usePlugin } from "@weth/owl";
 import { BusPlugin } from "@bus/services/bus_plugin";
 import { NotificationPlugin } from "@web/core/notifications/notification_plugin";
 import { services } from "@web/core/services";

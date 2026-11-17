@@ -4,11 +4,11 @@ from lxml import html
 from itertools import product
 from uuid import uuid4
 
-from odoo.addons.mail.tests.common import MailCommon
-from odoo.exceptions import UserError
-from odoo.tests import HttpCase, JsonRpcException, new_test_user, users
-from odoo.tools import mute_logger
-from odoo.tools.misc import hash_sign
+from weth.addons.mail.tests.common import MailCommon
+from weth.exceptions import UserError
+from weth.tests import HttpCase, JsonRpcException, new_test_user, users
+from weth.tools import mute_logger
+from weth.tools.misc import hash_sign
 
 
 class TestDiscussChannelInvite(HttpCase, MailCommon):
@@ -20,7 +20,7 @@ class TestDiscussChannelInvite(HttpCase, MailCommon):
         )
         with self.mock_mail_gateway():
             self.start_tour(
-                f"/odoo/discuss?active_id={group_chat.id}", "discuss.invite_by_email", login="bob"
+                f"/weth/discuss?active_id={group_chat.id}", "discuss.invite_by_email", login="bob"
             )
         self.assertIn(john.partner_id, group_chat.channel_member_ids.partner_id)
         self.assertNoMail(self.env["res.partner"], "john@test.com")
@@ -352,9 +352,9 @@ class TestDiscussChannelInvite(HttpCase, MailCommon):
         # John reaches the channel and its members, but did not join it.
         self.authenticate("john", "john")
         with (
-            self.assertRaises(JsonRpcException, msg="odoo.exceptions.AccessError"),
+            self.assertRaises(JsonRpcException, msg="weth.exceptions.AccessError"),
             self.mock_mail_gateway(),
-            mute_logger("odoo.http"),
+            mute_logger("weth.http"),
         ):
             self.make_jsonrpc_request(
                 "/discuss/channel/member/resend_invitation", {"member_id": pending_member.id}

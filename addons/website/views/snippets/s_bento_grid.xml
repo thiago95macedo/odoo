@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
 
 <template id="s_bento_grid" name="Bento Grid">
     <section class="s_bento_grid o_colored_level pt64 pb64">
@@ -76,4 +76,4 @@
     <path>website/static/src/snippets/s_bento_grid/000.scss</path>
 </asset>
 
-</odoo>
+</weth>

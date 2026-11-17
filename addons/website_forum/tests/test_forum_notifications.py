@@ -1,6 +1,6 @@
-from odoo.addons.mail.tests.common import MailCase
-from odoo.addons.website_forum.tests.common import TestForumCommon
-from odoo.tests import users
+from weth.addons.mail.tests.common import MailCase
+from weth.addons.website_forum.tests.common import TestForumCommon
+from weth.tests import users
 
 
 class TestForumNotification(MailCase, TestForumCommon):

@@ -1,6 +1,6 @@
-import { beforeEach, describe, expect, test } from "@odoo/hoot";
-import { queryAll, press, queryAllTexts, pointerDown } from "@odoo/hoot-dom";
-import { animationFrame } from "@odoo/hoot-mock";
+import { beforeEach, describe, expect, test } from "@weth/hoot";
+import { queryAll, press, queryAllTexts, pointerDown } from "@weth/hoot-dom";
+import { animationFrame } from "@weth/hoot-mock";
 import { getBasicData, Product } from "@spreadsheet/../tests/helpers/data";
 import { createSpreadsheetDashboard } from "@spreadsheet_dashboard/../tests/helpers/dashboard_action";
 import {

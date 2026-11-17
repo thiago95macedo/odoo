@@ -1,8 +1,8 @@
-import { test, expect } from "@odoo/hoot";
-import { animationFrame } from "@odoo/hoot-dom";
+import { test, expect } from "@weth/hoot";
+import { animationFrame } from "@weth/hoot-dom";
 import { mountWithCleanup } from "@web/../tests/web_test_helpers";
 import { patch } from "@web/core/utils/patch";
-import { mockDate } from "@odoo/hoot-mock";
+import { mockDate } from "@weth/hoot-mock";
 import { LandingPage } from "@pos_self_order/app/pages/landing_page/landing_page";
 import { setupSelfPosEnv, getFilledSelfOrder, mockNavigate } from "../utils";
 import { definePosSelfModels } from "../data/generate_model_definitions";

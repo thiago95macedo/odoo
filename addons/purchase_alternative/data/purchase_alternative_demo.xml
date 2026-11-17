@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
     <data noupdate="1">
         <!-- Call to Tender, i.e. linked RFQs -->
         <!-- Note that forcecreate="0" is added to this demo data due to product type being updated to 'product'
@@ -34,4 +34,4 @@
             <field name="order_ids" eval="[Command.set([ref('purchase_alternative.rfq3'), ref('purchase_alternative.rfq4')])]"/>
         </record>
     </data>
-</odoo>
+</weth>

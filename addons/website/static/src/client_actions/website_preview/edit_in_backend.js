@@ -1,6 +1,6 @@
 import { registry } from "@web/core/registry";
 import { useService, useBus } from "@web/core/utils/hooks";
-import { Component, onWillStart, proxy, useProps } from "@odoo/owl";
+import { Component, onWillStart, proxy, useProps } from "@weth/owl";
 
 const websiteSystrayRegistry = registry.category("website_systray");
 

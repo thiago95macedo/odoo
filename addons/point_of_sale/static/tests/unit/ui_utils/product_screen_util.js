@@ -1,4 +1,4 @@
-import { animationFrame, waitFor } from "@odoo/hoot-dom";
+import { animationFrame, waitFor } from "@weth/hoot-dom";
 import { contains, getService } from "@web/../tests/web_test_helpers";
 import { ensurePane, isMobile } from "./common";
 import { clickNumpadButtons } from "./numpad_util";

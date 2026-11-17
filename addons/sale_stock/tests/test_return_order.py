@@ -5,9 +5,9 @@ from urllib.parse import urlencode
 
 from markupsafe import Markup
 
-from odoo.tests import Form, HttpCase, tagged
+from weth.tests import Form, HttpCase, tagged
 
-from odoo.addons.sale_stock.tests.common import TestSaleStockCommon
+from weth.addons.sale_stock.tests.common import TestSaleStockCommon
 
 
 @tagged("-at_install", "post_install")

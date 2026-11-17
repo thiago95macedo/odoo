@@ -1,5 +1,5 @@
 import { BaseOptionComponent } from "@html_builder/core/base_option_component";
-import { useProps, t } from "@odoo/owl";
+import { useProps, t } from "@weth/owl";
 import { registry } from "@web/core/registry";
 import { convertCSSColorToRgba } from "@web/core/utils/colors";
 import { useDomState } from "@html_builder/core/utils";

@@ -1,5 +1,5 @@
-from odoo.tests import HttpCase, tagged, users
-from odoo.addons.hr.tests.test_utils import get_admin_employee
+from weth.tests import HttpCase, tagged, users
+from weth.addons.hr.tests.test_utils import get_admin_employee
 
 @tagged('post_install', '-at_install')
 class TestTimeOffCardTour(HttpCase):

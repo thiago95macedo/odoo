@@ -1,4 +1,4 @@
-import { Component, useProps, toRaw, proxy, signal, t } from "@odoo/owl";
+import { Component, useProps, toRaw, proxy, signal, t } from "@weth/owl";
 import * as BarcodeScanner from "@web/core/barcode/barcode_dialog";
 import { isBarcodeScannerSupported } from "@web/core/barcode/barcode_video_scanner";
 import { isMobileOS } from "@web/core/browser/feature_detection";
@@ -100,7 +100,7 @@ export const many2OneProps = {
     string: t.string().optional(""),
     update: t.function(),
     willOpenRecordInDialog: t.function().optional(() => () => true),
-    onRecordSaved: t.function().optional(() => {}),
+    onRecordSaved: t.function().optional(() => { }),
     value: t.or([t.array(), t.object(), t.literal(false)]).optional(),
 };
 
@@ -127,7 +127,7 @@ export class Many2One extends Component {
                     this.input?.focus();
                 },
                 onRecordSaved: this.props.onRecordSaved,
-                onRecordDiscarded: () => {},
+                onRecordDiscarded: () => { },
                 resModel: this.props.relation,
             }),
         };
@@ -187,9 +187,9 @@ export class Many2One extends Component {
         const name = this.props.value?.display_name;
         return name
             ? name
-                  .split("\n")
-                  .map((line) => line.trim())
-                  .slice(1)
+                .split("\n")
+                .map((line) => line.trim())
+                .slice(1)
             : [];
     }
 
@@ -213,7 +213,7 @@ export class Many2One extends Component {
         const relation = this.props.relation.includes(".")
             ? this.props.relation
             : `m-${this.props.relation}`;
-        return `/odoo/${relation}/${this.props.value.id}`;
+        return `/weth/${relation}/${this.props.value.id}`;
     }
 
     async openBarcodeScanner() {

@@ -2,12 +2,12 @@
 import psycopg2.errors
 from werkzeug.exceptions import NotFound
 
-from odoo import http
-from odoo.exceptions import UserError
-from odoo.http import request
-from odoo.tools import consteq, email_normalize, replace_exceptions
-from odoo.tools.misc import verify_hash_signed
-from odoo.addons.mail.tools.discuss import mail_route, Store
+from weth import http
+from weth.exceptions import UserError
+from weth.http import request
+from weth.tools import consteq, email_normalize, replace_exceptions
+from weth.tools.misc import verify_hash_signed
+from weth.addons.mail.tools.discuss import mail_route, Store
 
 
 class PublicPageController(http.Controller):
@@ -127,7 +127,7 @@ class PublicPageController(http.Controller):
             store.add_global_values(is_welcome_page_displayed=True)
             channel = channel.with_context(guest=guest)
         if self.env.user._is_internal():
-            return request.redirect(f"/odoo/action-mail.action_discuss?active_id={channel.id}")
+            return request.redirect(f"/weth/action-mail.action_discuss?active_id={channel.id}")
         return self._response_discuss_public_template(store, channel)
 
     def _response_discuss_public_template(self, store: Store, channel=None):

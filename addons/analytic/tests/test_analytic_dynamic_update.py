@@ -1,8 +1,8 @@
 from contextlib import contextmanager
 from unittest.mock import patch
 
-from odoo.tests import tagged
-from odoo.addons.analytic.tests.common import AnalyticCommon
+from weth.tests import tagged
+from weth.addons.analytic.tests.common import AnalyticCommon
 
 
 @tagged('post_install', '-at_install')

@@ -4,9 +4,9 @@ from collections import defaultdict
 from datetime import datetime, time, timedelta, UTC
 from zoneinfo import ZoneInfo
 
-from odoo import api, models
-from odoo.addons.hr_work_entry.models.hr_time_rule import resolve_intervals_by_sequence
-from odoo.tools.intervals import Intervals
+from weth import api, models
+from weth.addons.hr_work_entry.models.hr_time_rule import resolve_intervals_by_sequence
+from weth.tools.intervals import Intervals
 
 
 class HrVersion(models.Model):

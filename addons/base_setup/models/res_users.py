@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import models, api, tools
-from odoo.tools.misc import str2bool
-from odoo.exceptions import UserError
+from weth import models, api, tools
+from weth.tools.misc import str2bool
+from weth.exceptions import UserError
 
 
 class ResUsers(models.Model):

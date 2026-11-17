@@ -10,7 +10,7 @@ import { waitImages } from "@point_of_sale/utils";
 import { SelectDefaultPrinterPopup } from "@point_of_sale/app/components/popups/select_default_printer_popup/select_default_printer_popup";
 import { makeAwaitable } from "@point_of_sale/app/utils/make_awaitable_dialog";
 import { ZebraPrinter } from "@point_of_sale/app/utils/printer/zebra_printer";
-import { useApp, usePlugin, Plugin } from "@odoo/owl";
+import { useApp, usePlugin, Plugin } from "@weth/owl";
 import { PosDataPlugin } from "../plugins/pos_data_plugin";
 import { NotificationPlugin } from "@web/core/notifications/notification_plugin";
 import { DialogPlugin } from "@web/core/dialog/dialog_plugin";
@@ -61,11 +61,11 @@ export class PosTicketPrinterPlugin extends Plugin {
     }
 
     get config() {
-        return this.data.models["pos.config"].get(odoo.pos_config_id);
+        return this.data.models["pos.config"].get(weth.pos_config_id);
     }
 
     get session() {
-        return this.data.models["pos.session"].get(odoo.pos_session_id);
+        return this.data.models["pos.session"].get(weth.pos_session_id);
     }
 
     get receiptPrinters() {
@@ -85,7 +85,7 @@ export class PosTicketPrinterPlugin extends Plugin {
     }
 
     get printerStorageKey() {
-        return `pos_default_printer_id_${this.config.id}_${odoo.info?.db}`;
+        return `pos_default_printer_id_${this.config.id}_${weth.info?.db}`;
     }
 
     getGenerator() {

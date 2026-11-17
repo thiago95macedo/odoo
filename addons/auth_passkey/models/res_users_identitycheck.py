@@ -1,5 +1,5 @@
-from odoo import api, fields, _, models
-from odoo.exceptions import UserError, AccessDenied
+from weth import api, fields, _, models
+from weth.exceptions import UserError, AccessDenied
 
 
 class ResUsersIdentitycheck(models.TransientModel):

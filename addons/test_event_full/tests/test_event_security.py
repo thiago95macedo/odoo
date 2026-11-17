@@ -3,12 +3,12 @@
 
 from datetime import datetime, timedelta
 
-from odoo.addons.test_event_full.tests.common import TestEventFullCommon
-from odoo.exceptions import AccessError
-from odoo.fields import Command
-from odoo.tests import tagged
-from odoo.tests.common import users
-from odoo.tools import mute_logger
+from weth.addons.test_event_full.tests.common import TestEventFullCommon
+from weth.exceptions import AccessError
+from weth.fields import Command
+from weth.tests import tagged
+from weth.tests.common import users
+from weth.tools import mute_logger
 
 
 @tagged('security')
@@ -16,7 +16,7 @@ from odoo.tools import mute_logger
 class TestEventSecurity(TestEventFullCommon):
 
     @users('user_employee')
-    @mute_logger('odoo.models.unlink', 'odoo.addons.base.models.ir_access')
+    @mute_logger('weth.models.unlink', 'weth.addons.base.models.ir_access')
     def test_event_access_employee(self):
         # Event: read ok
         event = self.test_event.with_user(self.env.user)
@@ -58,7 +58,7 @@ class TestEventSecurity(TestEventFullCommon):
             registration_2.read(['name'])
 
     @users('user_eventregistrationdesk')
-    @mute_logger('odoo.models.unlink', 'odoo.addons.base.models.ir_access')
+    @mute_logger('weth.models.unlink', 'weth.addons.base.models.ir_access')
     def test_event_access_event_registration(self):
         # Event: read ok
         event = self.test_event.with_user(self.env.user)
@@ -80,7 +80,7 @@ class TestEventSecurity(TestEventFullCommon):
             registration.unlink()
 
     @users('user_eventuser')
-    @mute_logger('odoo.models.unlink', 'odoo.addons.base.models.ir_access')
+    @mute_logger('weth.models.unlink', 'weth.addons.base.models.ir_access')
     def test_event_access_event_user(self):
         # Event
         event = self.test_event.with_user(self.env.user)
@@ -106,7 +106,7 @@ class TestEventSecurity(TestEventFullCommon):
             })
 
     @users('user_eventmanager')
-    @mute_logger('odoo.models.unlink', 'odoo.addons.base.models.ir_access')
+    @mute_logger('weth.models.unlink', 'weth.addons.base.models.ir_access')
     def test_event_access_event_manager(self):
         # Event Type
         event_type = self.env['event.type'].create({

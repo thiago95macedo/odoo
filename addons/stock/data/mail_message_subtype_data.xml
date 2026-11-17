@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
     <data noupdate="1">
         <record id="mt_picking_state" model="mail.message.subtype">
             <field name="name">Transfer Status</field>
@@ -16,4 +16,4 @@
             <field name="description">Stage Changed</field>
         </record>
     </data>
-</odoo>
+</weth>

@@ -1,5 +1,5 @@
-import { describe, expect, test } from "@odoo/hoot";
-import { queryOne, waitFor } from "@odoo/hoot-dom";
+import { describe, expect, test } from "@weth/hoot";
+import { queryOne, waitFor } from "@weth/hoot-dom";
 import { contains, onRpc } from "@web/../tests/web_test_helpers";
 import { isHeaderBgBlurAvailable } from "@website/builder/plugins/options/header/header_template_option";
 import {

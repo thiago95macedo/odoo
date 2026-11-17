@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import fields, models
-from odoo.tools import float_round, groupby
+from weth import fields, models
+from weth.tools import float_round, groupby
 
 
 class ProductTemplate(models.Model):

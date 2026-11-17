@@ -2,10 +2,10 @@
 import re
 from random import randint
 
-from odoo import _, api, fields, models
-from odoo.exceptions import UserError
-from odoo.tools import frozendict
-from odoo.tools.sql import create_index, make_index_name
+from weth import _, api, fields, models
+from weth.exceptions import UserError
+from weth.tools import frozendict
+from weth.tools.sql import create_index, make_index_name
 
 
 class AccountAnalyticPlan(models.Model):

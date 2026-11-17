@@ -1,4 +1,4 @@
-import { Component, signal, t, useProps } from "@odoo/owl";
+import { Component, signal, t, useProps } from "@weth/owl";
 import {
     basicContainerBuilderComponentProps,
     useActionInfo,
@@ -61,7 +61,7 @@ export class BuilderRange extends Component {
                         const ratioValue =
                             ((parseFloat(value) - this.props.min) /
                                 (this.props.max - this.props.min)) *
-                                99 +
+                            99 +
                             1;
                         return Math.round(isInverted ? 101 - ratioValue : ratioValue);
                     },
@@ -78,7 +78,7 @@ export class BuilderRange extends Component {
             if (!this.convertorObject.ratioStep) {
                 this.convertorObject.ratioStep = Math.round(
                     (this.props.step / (this.props.max - this.props.min)) *
-                        (this.maxRatio - this.minRatio)
+                    (this.maxRatio - this.minRatio)
                 );
             }
         }

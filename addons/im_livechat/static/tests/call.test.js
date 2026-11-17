@@ -9,8 +9,8 @@ import {
 
 import { defineLivechatModels } from "@im_livechat/../tests/livechat_test_helpers";
 
-import { test } from "@odoo/hoot";
-import { mockDate } from "@odoo/hoot-mock";
+import { test } from "@weth/hoot";
+import { mockDate } from "@weth/hoot-mock";
 
 import { Command, serverState } from "@web/../tests/web_test_helpers";
 import { deserializeDateTime } from "@web/core/l10n/dates";

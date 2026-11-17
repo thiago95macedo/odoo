@@ -2,7 +2,7 @@
 
 from collections import OrderedDict
 
-from odoo import models
+from weth import models
 
 
 class ProductTemplateAttributeLine(models.Model):

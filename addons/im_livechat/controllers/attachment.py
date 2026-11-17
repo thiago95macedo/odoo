@@ -2,11 +2,11 @@
 
 from werkzeug.exceptions import NotFound
 
-from odoo import _
-from odoo.http import request
-from odoo.exceptions import AccessError
-from odoo.addons.mail.controllers.attachment import AttachmentController
-from odoo.addons.mail.tools.discuss import mail_route
+from weth import _
+from weth.http import request
+from weth.exceptions import AccessError
+from weth.addons.mail.controllers.attachment import AttachmentController
+from weth.addons.mail.tools.discuss import mail_route
 
 
 class LivechatAttachmentController(AttachmentController):

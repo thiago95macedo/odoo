@@ -1,6 +1,6 @@
 import { useDomState } from "@html_builder/core/utils";
 import { useOperation } from "@html_builder/core/operation_plugin";
-import { Component, useProps, t } from "@odoo/owl";
+import { Component, useProps, t } from "@weth/owl";
 
 export class NavTabsHeaderMiddleButtons extends Component {
     static template = "website.NavTabsHeaderMiddleButtons";

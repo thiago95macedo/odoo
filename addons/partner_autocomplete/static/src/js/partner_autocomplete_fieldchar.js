@@ -1,4 +1,4 @@
-import { signal } from "@odoo/owl";
+import { signal } from "@weth/owl";
 import { useService } from "@web/core/utils/hooks";
 import { registry } from "@web/core/registry";
 import { _t } from "@web/core/l10n/translation";
@@ -21,7 +21,7 @@ export class PartnerAutoCompleteCharField extends CharField {
         this.partnerAutocomplete = usePartnerAutocomplete();
 
         this.inputRef = signal.ref();
-        useInputField({ getValue: () => this.props.record.data[this.props.name] || "", parse: (v) => this.parse(v), ref: this.inputRef});
+        useInputField({ getValue: () => this.props.record.data[this.props.name] || "", parse: (v) => this.parse(v), ref: this.inputRef });
     }
 
     async validateSearchTerm(request) {
@@ -34,8 +34,8 @@ export class PartnerAutoCompleteCharField extends CharField {
                 options: async (request, shouldSearchWorldWide) => {
                     if (await this.validateSearchTerm(request)) {
                         let queryCountryId = this.props.record.data?.country_id ? this.props.record.data.country_id.id : false;
-                        if (shouldSearchWorldWide){
-                        	queryCountryId = 0;
+                        if (shouldSearchWorldWide) {
+                            queryCountryId = 0;
                         }
                         const suggestions = await this.partnerAutocomplete.autocomplete(fieldName, request, queryCountryId);
                         return suggestions.map((suggestion) => ({
@@ -67,15 +67,15 @@ export class PartnerAutoCompleteCharField extends CharField {
         }
 
         const additionalData = {
-            entity_type : data.company.entity_type,
-            unspsc_codes : data.company.unspsc_codes,
+            entity_type: data.company.entity_type,
+            unspsc_codes: data.company.unspsc_codes,
         };
         // Delete useless fields before updating record
         data.company = this.partnerAutocomplete.removeUselessFields(data.company, Object.keys(this.props.record.fields));
 
         // Update record with retrieved values
         if (data.company.name) {
-            await this.props.record.update({name: data.company.name});  // Needed otherwise name it is not saved
+            await this.props.record.update({ name: data.company.name });  // Needed otherwise name it is not saved
         }
         await this.props.record.update(data.company);
 

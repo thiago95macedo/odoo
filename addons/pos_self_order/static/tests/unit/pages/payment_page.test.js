@@ -1,10 +1,10 @@
-import { test, describe, expect, queryOne, click } from "@odoo/hoot";
+import { test, describe, expect, queryOne, click } from "@weth/hoot";
 import { mountWithCleanup, onRpc, patchWithCleanup } from "@web/../tests/web_test_helpers";
 import { PaymentPage } from "@pos_self_order/app/pages/payment_page/payment_page";
 import { setupSelfPosEnv, getFilledSelfOrder } from "../utils";
 import { definePosSelfModels } from "../data/generate_model_definitions";
 import { PaymentInterface } from "@point_of_sale/app/utils/payment/payment_interface";
-import { advanceTime } from "@odoo/hoot-mock";
+import { advanceTime } from "@weth/hoot-mock";
 
 definePosSelfModels();
 

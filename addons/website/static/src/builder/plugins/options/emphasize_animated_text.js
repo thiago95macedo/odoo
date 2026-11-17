@@ -1,4 +1,4 @@
-import { Component, proxy, useProps } from "@odoo/owl";
+import { Component, proxy, useProps } from "@weth/owl";
 import { CheckBox } from "@web/core/checkbox/checkbox";
 import { useBus } from "@web/core/utils/hooks";
 

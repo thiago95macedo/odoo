@@ -3,14 +3,14 @@
 from urllib.parse import urlencode
 from uuid import uuid4
 
-from odoo import api, models
-from odoo.exceptions import UserError
-from odoo.tools import float_round
+from weth import api, models
+from weth.exceptions import UserError
+from weth.tools import float_round
 
-from odoo.addons.payment import utils as payment_utils
-from odoo.addons.payment.logging import get_payment_logger
-from odoo.addons.payment_nuvei import const
-from odoo.addons.payment_nuvei.controllers.main import NuveiController
+from weth.addons.payment import utils as payment_utils
+from weth.addons.payment.logging import get_payment_logger
+from weth.addons.payment_nuvei import const
+from weth.addons.payment_nuvei.controllers.main import NuveiController
 
 _logger = get_payment_logger(__name__)
 

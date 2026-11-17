@@ -1,6 +1,6 @@
 // ! WARNING: this module cannot depend on modules not ending with ".hoot" (except libs) !
 
-import { afterEach } from "@odoo/hoot";
+import { afterEach } from "@weth/hoot";
 
 class Mutex {
     constructor() {
@@ -8,7 +8,7 @@ class Mutex {
     }
 
     exec(task) {
-        this.queue = this.queue.then(() => task()).catch(() => {});
+        this.queue = this.queue.then(() => task()).catch(() => { });
         return this.queue;
     }
 }

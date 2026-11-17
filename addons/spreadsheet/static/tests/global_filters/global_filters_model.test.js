@@ -1,8 +1,8 @@
 /** @ts-check */
-import { describe, expect, test } from "@odoo/hoot";
-import { animationFrame, mockDate, mockTimeZone } from "@odoo/hoot-mock";
+import { describe, expect, test } from "@weth/hoot";
+import { animationFrame, mockDate, mockTimeZone } from "@weth/hoot-mock";
 
-import { DispatchResult, Model, helpers, constants, CompiledFormula } from "@odoo/o-spreadsheet";
+import { DispatchResult, Model, helpers, constants, CompiledFormula } from "@weth/o-spreadsheet";
 import { Domain } from "@web/core/domain";
 import {
     defineSpreadsheetModels,

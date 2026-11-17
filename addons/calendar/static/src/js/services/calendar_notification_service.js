@@ -2,7 +2,7 @@ import { _t } from "@web/core/l10n/translation";
 import { browser } from "@web/core/browser/browser";
 import { ConnectionLostError, rpc } from "@web/core/network/rpc";
 import { registry } from "@web/core/registry";
-import { markup } from "@odoo/owl";
+import { markup } from "@weth/owl";
 
 export const calendarNotificationService = {
     dependencies: ["action", "bus_service", "notification"],

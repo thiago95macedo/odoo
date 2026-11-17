@@ -1,5 +1,5 @@
-import { animationFrame } from "@odoo/hoot-mock";
-import { expect, test } from "@odoo/hoot";
+import { animationFrame } from "@weth/hoot-mock";
+import { expect, test } from "@weth/hoot";
 import { defineSpreadsheetModels } from "@spreadsheet/../tests/helpers/data";
 import { createBasicChart, updateChart } from "@spreadsheet/../tests/helpers/commands";
 import { mountSpreadsheet } from "@spreadsheet/../tests/helpers/ui";

@@ -5,9 +5,9 @@ import selectors
 import threading
 from unittest.mock import MagicMock, patch
 
-import odoo
-from odoo.tests import TransactionCase, tagged
-from odoo.tools import config
+import weth
+from weth.tests import TransactionCase, tagged
+from weth.tools import config
 
 from .. import bus_dispatcher
 from ..models.bus import (
@@ -75,7 +75,7 @@ class NotifyTests(TransactionCase):
         def single_listen():
             nonlocal channels
             with (
-                odoo.sql_db.db_connect(config['db_system']).cursor() as cr,
+                weth.sql_db.db_connect(config['db_system']).cursor() as cr,
                 selectors.DefaultSelector() as sel,
             ):
                 cr.execute("listen imbus")
@@ -141,13 +141,13 @@ class NotifyTests(TransactionCase):
         selector = MagicMock()
         selector.__enter__.return_value.select.side_effect = lambda timeout: stop_event.set() or True
         self.patch(bus_dispatcher, "stop_event", stop_event)
-        self.patch(odoo.sql_db, "db_connect", db_connect)
+        self.patch(weth.sql_db, "db_connect", db_connect)
         self.patch(bus_dispatcher.selectors, "DefaultSelector", MagicMock(return_value=selector))
         dispatcher = bus_dispatcher.BusDispatcher()
         channel = (self.env.cr.dbname, "channel 1")
         topic = bus_dispatcher.ChannelTopic(channel, 0)
         dispatcher._topic_by_channel[channel] = topic
-        with self.assertLogs("odoo.addons.bus.bus_dispatcher", "WARNING") as logs:
+        with self.assertLogs("weth.addons.bus.bus_dispatcher", "WARNING") as logs:
             dispatcher._listener_loop()
         self.assertEqual(len(logs.output), 4)
         self.assertIs(topic._state, bus_dispatcher.DispatchState.QUEUED)

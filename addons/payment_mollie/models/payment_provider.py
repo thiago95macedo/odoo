@@ -1,10 +1,10 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import fields, models, release
-from odoo.tools import urls
+from weth import fields, models, release
+from weth.tools import urls
 
-from odoo.addons.payment.logging import get_payment_logger
-from odoo.addons.payment_mollie import const
+from weth.addons.payment.logging import get_payment_logger
+from weth.addons.payment_mollie import const
 
 _logger = get_payment_logger(__name__)
 

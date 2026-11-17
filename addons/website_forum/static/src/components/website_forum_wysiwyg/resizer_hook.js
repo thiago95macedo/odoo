@@ -1,4 +1,4 @@
-import { useListener } from "@odoo/owl";
+import { useListener } from "@weth/owl";
 
 /**
  * @param {(() => HTMLElement | null)} targetRef

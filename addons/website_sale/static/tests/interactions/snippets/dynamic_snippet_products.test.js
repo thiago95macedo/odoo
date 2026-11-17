@@ -1,6 +1,6 @@
-import { beforeEach, describe, expect, test } from "@odoo/hoot";
-import { animationFrame, click, queryAll, queryOne } from "@odoo/hoot-dom";
-import { advanceTime } from "@odoo/hoot-mock";
+import { beforeEach, describe, expect, test } from "@weth/hoot";
+import { animationFrame, click, queryAll, queryOne } from "@weth/hoot-dom";
+import { advanceTime } from "@weth/hoot-mock";
 import { setupInteractionWhiteList, startInteractions } from "@web/../tests/public/helpers";
 import { onRpc } from "@web/../tests/web_test_helpers";
 import { registry } from "@web/core/registry";

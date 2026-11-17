@@ -1,4 +1,4 @@
-import { Component, proxy, useProps, t } from "@odoo/owl";
+import { Component, proxy, useProps, t } from "@weth/owl";
 import { useBus, useService } from "@web/core/utils/hooks";
 import { registry } from "@web/core/registry";
 import { Dropdown } from "@web/core/dropdown/dropdown";

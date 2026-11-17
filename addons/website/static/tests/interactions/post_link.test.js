@@ -4,8 +4,8 @@ import {
     setupInteractionWhiteList,
 } from "@web/../tests/public/helpers";
 
-import { describe, expect, test } from "@odoo/hoot";
-import { animationFrame, click } from "@odoo/hoot-dom";
+import { describe, expect, test } from "@weth/hoot";
+import { animationFrame, click } from "@weth/hoot-dom";
 
 setupInteractionWhiteList("website.post_link");
 

@@ -1,4 +1,4 @@
-import { expect, test, describe } from "@odoo/hoot";
+import { expect, test, describe } from "@weth/hoot";
 import { ScaleInterface } from "@point_of_sale/app/utils/scale/scale_interface";
 import { setupPosEnv } from "@point_of_sale/../tests/unit/utils";
 import { definePosModels } from "@point_of_sale/../tests/unit/data/generate_model_definitions";

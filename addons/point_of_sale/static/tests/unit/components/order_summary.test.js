@@ -1,10 +1,10 @@
-import { test, expect, animationFrame } from "@odoo/hoot";
+import { test, expect, animationFrame } from "@weth/hoot";
 import { mountWithCleanup } from "@web/../tests/web_test_helpers";
 import { OrderSummary } from "@point_of_sale/app/screens/product_screen/order_summary/order_summary";
 import { setupPosEnv, getFilledOrder } from "../utils";
 import { getFilledOrderForPriceCheck } from "../accounting/utils";
 import { definePosModels } from "../data/generate_model_definitions";
-import { queryAll, queryOne } from "@odoo/hoot-dom";
+import { queryAll, queryOne } from "@weth/hoot-dom";
 
 definePosModels();
 

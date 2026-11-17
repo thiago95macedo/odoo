@@ -3,8 +3,8 @@ from io import BytesIO
 from PIL import Image
 from xml.etree import ElementTree as ET
 
-from odoo.tests import TransactionCase
-from odoo.addons.printer.models.ir_actions_report import thermal_printer_format
+from weth.tests import TransactionCase
+from weth.addons.printer.models.ir_actions_report import thermal_printer_format
 
 
 def make_image_bytes(width: int, height: int, mode: str = "RGB") -> bytes:

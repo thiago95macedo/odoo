@@ -4,11 +4,11 @@ import re
 
 from collections import defaultdict
 
-from odoo import models, fields, api, _
-from odoo.exceptions import UserError, RedirectWarning
-from odoo.tools import SQL
-from odoo.fields import Domain
-from odoo.addons.rating.models.rating_data import OPERATOR_MAPPING, OPMAP
+from weth import models, fields, api, _
+from weth.exceptions import UserError, RedirectWarning
+from weth.tools import SQL
+from weth.fields import Domain
+from weth.addons.rating.models.rating_data import OPERATOR_MAPPING, OPMAP
 
 PROJECT_TASK_READABLE_FIELDS = {
     'allow_timesheets',

@@ -1,4 +1,4 @@
-import { Component, computed, useProps, t } from "@odoo/owl";
+import { Component, computed, useProps, t } from "@weth/owl";
 
 export class PlanBox extends Component {
     static template = "mysubscription.PlanBox";

@@ -4,7 +4,7 @@ import { ProjectSharingPlugin } from "@project/project_sharing/chatter/project_s
 import { _t } from "@web/core/l10n/translation";
 
 import { patch } from "@web/core/utils/patch";
-import { onWillStart } from "@odoo/owl";
+import { onWillStart } from "@weth/owl";
 
 patch(Composer.prototype, {
     setup() {

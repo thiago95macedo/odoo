@@ -1,7 +1,7 @@
 import { defineCalendarModels, togglePartnerFilter } from "@calendar/../tests/calendar_test_helpers";
-import { beforeEach, expect, queryAllTexts, test } from "@odoo/hoot";
-import { waitFor, waitForNone } from "@odoo/hoot-dom";
-import { mockDate } from "@odoo/hoot-mock";
+import { beforeEach, expect, queryAllTexts, test } from "@weth/hoot";
+import { waitFor, waitForNone } from "@weth/hoot-dom";
+import { mockDate } from "@weth/hoot-mock";
 import {
     contains,
     makeMockServer,

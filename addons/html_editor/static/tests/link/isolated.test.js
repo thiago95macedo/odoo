@@ -1,11 +1,11 @@
-import { click, describe, expect, test } from "@odoo/hoot";
+import { click, describe, expect, test } from "@weth/hoot";
 import { deleteBackward, insertText } from "../_helpers/user_actions";
 import { setupEditor, testEditor } from "../_helpers/editor";
 import { descendants } from "@html_editor/utils/dom_traversal";
-import { tick } from "@odoo/hoot-mock";
+import { tick } from "@weth/hoot-mock";
 import { getContent, moveSelectionOutsideEditor, setSelection } from "../_helpers/selection";
 import { cleanLinkArtifacts } from "../_helpers/format";
-import { animationFrame, press } from "@odoo/hoot-dom";
+import { animationFrame, press } from "@weth/hoot-dom";
 import { expectElementCount } from "../_helpers/ui_expectations";
 import { isBlock } from "@html_editor/utils/blocks";
 import { onRpc, patchWithCleanup } from "@web/../tests/web_test_helpers";

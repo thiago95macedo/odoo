@@ -2,9 +2,9 @@ from io import BytesIO
 from unittest.mock import patch
 from zipfile import ZipFile
 
-from odoo.fields import Command
-from odoo.tests.common import tagged
-from odoo.addons.account.tests.common import AccountTestInvoicingHttpCommon
+from weth.fields import Command
+from weth.tests.common import tagged
+from weth.addons.account.tests.common import AccountTestInvoicingHttpCommon
 
 
 @tagged('post_install', '-at_install')

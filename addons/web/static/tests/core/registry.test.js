@@ -1,5 +1,5 @@
-import { describe, expect, test } from "@odoo/hoot";
-import { Component, t } from "@odoo/owl";
+import { describe, expect, test } from "@weth/hoot";
+import { Component, t } from "@weth/owl";
 import { serverState } from "@web/../tests/web_test_helpers";
 
 import { Registry } from "@web/core/registry";
@@ -195,7 +195,7 @@ test("can validate subclassess", async () => {
     });
     const widgetRegistry = new Registry();
     widgetRegistry.addValidation(schema);
-    class Widget extends Component {} // eslint-disable-line
+    class Widget extends Component { } // eslint-disable-line
     expect(() => widgetRegistry.add("calculator", { component: Widget })).not.toThrow({
         message: "Support subclasses",
     });

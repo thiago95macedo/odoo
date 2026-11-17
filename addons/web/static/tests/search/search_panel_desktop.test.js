@@ -1,7 +1,7 @@
-import { describe, expect, press, test } from "@odoo/hoot";
-import { drag, queryAll, queryAllTexts, queryFirst, scroll } from "@odoo/hoot-dom";
-import { animationFrame } from "@odoo/hoot-mock";
-import { Component, useOnChange, useProps, xml } from "@odoo/owl";
+import { describe, expect, press, test } from "@weth/hoot";
+import { drag, queryAll, queryAllTexts, queryFirst, scroll } from "@weth/hoot-dom";
+import { animationFrame } from "@weth/hoot-mock";
+import { Component, useOnChange, useProps, xml } from "@weth/owl";
 import {
     contains,
     defineActions,

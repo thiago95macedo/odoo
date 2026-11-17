@@ -1,6 +1,6 @@
 import { toggleFn } from "@mail/utils/common/signal";
 
-import { signal } from "@odoo/owl";
+import { signal } from "@weth/owl";
 
 import { _t } from "@web/core/l10n/translation";
 import { patch } from "@web/core/utils/patch";

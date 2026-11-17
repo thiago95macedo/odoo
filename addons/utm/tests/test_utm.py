@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.utm.models.utm_mixin import UtmMixin
-from odoo.addons.utm.tests.common import TestUTMCommon
-from odoo.tests import tagged
+from weth.addons.utm.models.utm_mixin import UtmMixin
+from weth.addons.utm.tests.common import TestUTMCommon
+from weth.tests import tagged
 
 
 @tagged("utm", "post_install", "-at_install")

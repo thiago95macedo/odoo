@@ -1,7 +1,7 @@
-from odoo.tests.common import TransactionCase
+from weth.tests.common import TransactionCase
 
-from odoo.addons.populate.generators import Generator, generate_values
-from odoo.addons.populate.utils.orm import ValueTarget
+from weth.addons.populate.generators import Generator, generate_values
+from weth.addons.populate.utils.orm import ValueTarget
 
 
 class TestPropertiesGenerators(TransactionCase):

@@ -1,6 +1,6 @@
 import { defineMailModels } from "@mail/../tests/mail_test_helpers";
-import { beforeEach, expect, test } from "@odoo/hoot";
-import { animationFrame, queryAllTexts } from "@odoo/hoot-dom";
+import { beforeEach, expect, test } from "@weth/hoot";
+import { animationFrame, queryAllTexts } from "@weth/hoot-dom";
 import {
     contains,
     defineModels,

@@ -5,8 +5,8 @@ import {
     mountView,
     mountWithCleanup,
 } from "@web/../tests/web_test_helpers";
-import { Component, xml } from "@odoo/owl";
-import { expect, test } from "@odoo/hoot";
+import { Component, xml } from "@weth/owl";
+import { expect, test } from "@weth/hoot";
 import { DocumentationLink } from "@web/views/widgets/documentation_link/documentation_link";
 
 class Partner extends models.Model {

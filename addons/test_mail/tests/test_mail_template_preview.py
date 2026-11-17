@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.test_mail.tests.test_mail_template import TestMailTemplateCommon
-from odoo.tests import Form, tagged, users
+from weth.addons.test_mail.tests.test_mail_template import TestMailTemplateCommon
+from weth.tests import Form, tagged, users
 
 
 @tagged('mail_template', 'multi_lang')

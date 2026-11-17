@@ -1,4 +1,4 @@
-import { expect, test } from "@odoo/hoot";
+import { expect, test } from "@weth/hoot";
 import {
     click,
     edit,
@@ -8,8 +8,8 @@ import {
     queryFirst,
     setInputFiles,
     waitFor,
-} from "@odoo/hoot-dom";
-import { animationFrame, mockUserAgent, runAllTimers } from "@odoo/hoot-mock";
+} from "@weth/hoot-dom";
+import { animationFrame, mockUserAgent, runAllTimers } from "@weth/hoot-mock";
 import {
     clickSave,
     defineModels,
@@ -381,7 +381,7 @@ test("ImageField preview_image is updated when an image is uploaded", async () =
 });
 
 test("clicking save manually after uploading new image should change the unique of the image src", async () => {
-    Partner._onChanges.foo = () => {};
+    Partner._onChanges.foo = () => { };
 
     const rec = Partner._records.find((rec) => rec.id === 1);
     rec.document = PRODUCT_IMAGE;
@@ -453,7 +453,7 @@ test("clicking save manually after uploading new image should change the unique 
 
 test("save record with image field modified by onchange", async () => {
     Partner._onChanges.foo = (data) => {
-        data.document = {"content": MY_IMAGE};
+        data.document = { "content": MY_IMAGE };
     };
     const rec = Partner._records.find((rec) => rec.id === 1);
     rec.document = PRODUCT_IMAGE;
@@ -813,7 +813,7 @@ test("ImageField is reset when changing record", async () => {
     );
 });
 test("unique in url doesn't change on onchange", async () => {
-    Partner._onChanges.foo = () => {};
+    Partner._onChanges.foo = () => { };
 
     const rec = Partner._records.find((rec) => rec.id === 1);
     rec.document = PRODUCT_IMAGE;

@@ -1,10 +1,10 @@
-import { describe, expect, queryAllTexts, test } from "@odoo/hoot";
-import { animationFrame } from "@odoo/hoot-mock";
+import { describe, expect, queryAllTexts, test } from "@weth/hoot";
+import { animationFrame } from "@weth/hoot-mock";
 import { setupEditor } from "../_helpers/editor";
 import { getContent } from "../_helpers/selection";
 import { insertText } from "../_helpers/user_actions";
 import { unformat } from "../_helpers/format";
-import { click, press, waitFor, queryOne } from "@odoo/hoot-dom";
+import { click, press, waitFor, queryOne } from "@weth/hoot-dom";
 import { expectElementCount } from "../_helpers/ui_expectations";
 import { findInSelection } from "@html_editor/utils/selection";
 

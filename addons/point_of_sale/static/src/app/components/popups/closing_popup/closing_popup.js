@@ -3,7 +3,7 @@ import { SaleDetailsButton } from "@point_of_sale/app/components/navbar/sale_det
 import { ConfirmationDialog, AlertDialog } from "@web/core/confirmation_dialog/confirmation_dialog";
 import { MoneyDetailsPopup } from "@point_of_sale/app/components/popups/money_details_popup/money_details_popup";
 import { useService } from "@web/core/utils/hooks";
-import { Component, proxy, useProps, t } from "@odoo/owl";
+import { Component, proxy, useProps, t } from "@weth/owl";
 import { _t } from "@web/core/l10n/translation";
 import { usePos } from "@point_of_sale/app/hooks/pos_hook";
 import { useAsyncLockedMethod } from "@point_of_sale/app/hooks/hooks";
@@ -242,11 +242,11 @@ export class ClosePosPopup extends Component {
                 this.pos.router.close();
             }
         } finally {
-            localStorage.removeItem(`pos.session.${odoo.pos_config_id}`);
+            localStorage.removeItem(`pos.session.${weth.pos_config_id}`);
         }
     }
     // Hook called once the session has been successfully closed in the backend, overrode inside `l10n_be_pos_blackbox`
-    async postCloseSession() {}
+    async postCloseSession() { }
     async handleClosingError(response) {
         if (response.type === "session_already_closed") {
             return await makeAwaitable(
@@ -284,7 +284,7 @@ export class ClosePosPopup extends Component {
                         this.closeSession();
                     }
                 },
-                dismiss: async () => {},
+                dismiss: async () => { },
             });
         }
     }

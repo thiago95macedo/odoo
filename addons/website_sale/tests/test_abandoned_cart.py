@@ -5,9 +5,9 @@ from unittest.mock import patch
 
 from dateutil.relativedelta import relativedelta
 
-from odoo.tests import RecordCapturer, tagged
+from weth.tests import RecordCapturer, tagged
 
-from odoo.addons.base.tests.common import TransactionCaseWithUserPortal
+from weth.addons.base.tests.common import TransactionCaseWithUserPortal
 
 
 class TestWebsiteSaleCartAbandonedCommon(TransactionCaseWithUserPortal):

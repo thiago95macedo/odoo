@@ -1,4 +1,4 @@
-import { EventBus } from "@odoo/owl";
+import { EventBus } from "@weth/owl";
 import { omit, pick } from "../utils/objects";
 import { compareUrls, objectToUrlEncodedString } from "../utils/urls";
 import { location, browser } from "./browser";
@@ -116,7 +116,7 @@ function pathFromActionState(state) {
 }
 
 export function startUrl() {
-    return isScopedApp() ? "scoped_app" : "odoo";
+    return isScopedApp() ? "scoped_app" : "weth";
 }
 
 /**
@@ -200,7 +200,7 @@ function urlToState(urlObj) {
 
     const [prefix, ...splitPath] = urlObj.pathname.split("/").filter(Boolean);
 
-    if (["odoo", "scoped_app"].includes(prefix)) {
+    if (["weth", "scoped_app"].includes(prefix)) {
         const actionParts = [...splitPath.entries()].filter(
             ([_, part]) => !isNumeric(part) && part !== "new"
         );
@@ -246,7 +246,7 @@ function urlToState(urlObj) {
             state.actionStack = actions;
         }
         if (prefix === "scoped_app" && !isDisplayStandalone()) {
-            // make sure /scoped_app are redirected to /odoo when using the browser instead of the PWA
+            // make sure /scoped_app are redirected to /weth when using the browser instead of the PWA
             const url = location.origin + router.stateToUrl(state);
             urlObj.href = url;
         }
@@ -255,8 +255,8 @@ function urlToState(urlObj) {
 }
 
 async function shareUrl() {
-    // avoid exposing /scoped_app urls to the user and replace them with /odoo when possible
-    const url = location.href.replace("/scoped_app", "/odoo");
+    // avoid exposing /scoped_app urls to the user and replace them with /weth when possible
+    const url = location.href.replace("/scoped_app", "/weth");
     await browser.navigator
         .share({
             url,
@@ -355,13 +355,13 @@ browser.addEventListener("click", (ev) => {
         }
         if (
             location.host === url.host &&
-            location.pathname.startsWith("/odoo") &&
-            (["/web", "/odoo"].includes(url.pathname) || url.pathname.startsWith("/odoo/")) &&
+            location.pathname.startsWith("/weth") &&
+            (["/web", "/weth"].includes(url.pathname) || url.pathname.startsWith("/weth/")) &&
             a.target !== "_blank"
         ) {
             ev.preventDefault();
             state = router.urlToState(url);
-            if (url.pathname.startsWith("/odoo") && url.hash) {
+            if (url.pathname.startsWith("/weth") && url.hash) {
                 browser.history.pushState({}, "", url.href);
             }
             new Promise((res) => setTimeout(res, 0)).then(() => routerBus.trigger("ROUTE_CHANGE"));

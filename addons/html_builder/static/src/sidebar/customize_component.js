@@ -1,4 +1,4 @@
-import { Component, useProps, t } from "@odoo/owl";
+import { Component, useProps, t } from "@weth/owl";
 import { useOptionsSubEnv } from "@html_builder/utils/utils";
 import { Image } from "@html_builder/core/img";
 

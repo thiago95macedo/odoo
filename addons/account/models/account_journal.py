@@ -1,12 +1,12 @@
 from ast import literal_eval
 from urllib.parse import urlencode
 
-from odoo import api, Command, fields, models, _
-from odoo.exceptions import UserError, ValidationError
-from odoo.addons.base.models.res_partner_bank import sanitize_account_number
-from odoo.tools import email_normalize, email_normalize_all, groupby, urls, clean_context
-from odoo.tools.misc import hash_sign
-from odoo.fields import Domain
+from weth import api, Command, fields, models, _
+from weth.exceptions import UserError, ValidationError
+from weth.addons.base.models.res_partner_bank import sanitize_account_number
+from weth.tools import email_normalize, email_normalize_all, groupby, urls, clean_context
+from weth.tools.misc import hash_sign
+from weth.fields import Domain
 from collections import defaultdict
 import logging
 import re

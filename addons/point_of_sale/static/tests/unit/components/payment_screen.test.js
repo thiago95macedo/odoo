@@ -1,9 +1,9 @@
-import { test, expect, animationFrame } from "@odoo/hoot";
+import { test, expect, animationFrame } from "@weth/hoot";
 import { mountWithCleanup, patchWithCleanup } from "@web/../tests/web_test_helpers";
 import { patch } from "@web/core/utils/patch";
 import { setupPosEnv, getFilledOrder, expectFormattedPrice, addTestTerminals } from "../utils";
 import { definePosModels } from "../data/generate_model_definitions";
-import { queryOne } from "@odoo/hoot-dom";
+import { queryOne } from "@weth/hoot-dom";
 import { PaymentScreen } from "@point_of_sale/app/screens/payment_screen/payment_screen";
 import { localization } from "@web/core/l10n/localization";
 import { currencies } from "@web/core/currency";

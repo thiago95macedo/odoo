@@ -1,4 +1,4 @@
-import { animationFrame, waitFor } from "@odoo/hoot-dom";
+import { animationFrame, waitFor } from "@weth/hoot-dom";
 import { makeServerError, patchWithCleanup } from "@web/../tests/web_test_helpers";
 import { setupAndMountPosApp } from "@point_of_sale/../tests/unit/utils";
 import {

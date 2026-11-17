@@ -2,16 +2,16 @@
 
 from collections import OrderedDict
 
-from odoo import _, fields, http
-from odoo.exceptions import AccessError, MissingError
-from odoo.fields import Domain
-from odoo.http import request
-from odoo.tools import email_normalize, email_normalize_all
-from odoo.tools.misc import verify_hash_signed
+from weth import _, fields, http
+from weth.exceptions import AccessError, MissingError
+from weth.fields import Domain
+from weth.http import request
+from weth.tools import email_normalize, email_normalize_all
+from weth.tools.misc import verify_hash_signed
 
-from odoo.addons.account.controllers.download_docs import _build_zip_from_data, _get_headers
-from odoo.addons.portal.controllers.portal import CustomerPortal
-from odoo.addons.portal.controllers.portal import pager as portal_pager
+from weth.addons.account.controllers.download_docs import _build_zip_from_data, _get_headers
+from weth.addons.portal.controllers.portal import CustomerPortal
+from weth.addons.portal.controllers.portal import pager as portal_pager
 
 
 class PortalAccount(CustomerPortal):

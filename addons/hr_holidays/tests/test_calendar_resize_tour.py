@@ -2,9 +2,9 @@
 
 from datetime import date, timedelta
 
-from odoo.tests import freeze_time, HttpCase, tagged
+from weth.tests import freeze_time, HttpCase, tagged
 
-from odoo.addons.hr_holidays.tests.common import TestHrHolidaysCommon
+from weth.addons.hr_holidays.tests.common import TestHrHolidaysCommon
 
 
 @tagged("post_install", "-at_install")

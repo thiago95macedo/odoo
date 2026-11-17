@@ -1,11 +1,11 @@
 from datetime import timedelta
 
-from odoo.fields import Datetime
-from odoo.tools import mute_logger
-from odoo.addons.base.tests.common import HttpCaseWithUserPortal
-from odoo.tests import tagged
+from weth.fields import Datetime
+from weth.tools import mute_logger
+from weth.addons.base.tests.common import HttpCaseWithUserPortal
+from weth.tests import tagged
 
-from odoo.addons.website_event_sale.tests.common import TestWebsiteEventSaleCommon
+from weth.addons.website_event_sale.tests.common import TestWebsiteEventSaleCommon
 
 
 class TestWebsiteEventSale(HttpCaseWithUserPortal, TestWebsiteEventSaleCommon):
@@ -75,7 +75,7 @@ class TestWebsiteEventSale(HttpCaseWithUserPortal, TestWebsiteEventSaleCommon):
             ('order_line.event_ticket_id', '=', free_ticket.id)
         ]), "Sale order should be created for the free/paid tickets mix")
 
-    @mute_logger('odoo.http')  # the forged tickets are rejected with a UserError
+    @mute_logger('weth.http')  # the forged tickets are rejected with a UserError
     def test_website_event_sale_closed_ticket(self):
         """ A visitor cannot register on a ticket whose sales window is closed by
         forging its id in the registration request, neither to attend for free

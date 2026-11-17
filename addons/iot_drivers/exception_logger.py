@@ -5,7 +5,7 @@ import logging
 import sys
 import threading
 
-from odoo.addons.iot_drivers.tools.system import IS_TEST
+from weth.addons.iot_drivers.tools.system import IS_TEST
 
 _logger = logging.getLogger(__name__)
 

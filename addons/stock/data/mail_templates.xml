@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
     <template id="track_move_template" technical_usage="mail_post_source">
         <div>
             <t t-call="stock.message_head"/>
@@ -29,4 +29,4 @@
             </div>
         </div>
     </template>
-</odoo>
+</weth>

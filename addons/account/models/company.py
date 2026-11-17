@@ -4,17 +4,17 @@ import calendar
 
 from dateutil.relativedelta import relativedelta
 
-from odoo import fields, models, api, _, Command
-from odoo.exceptions import LockError, ValidationError, UserError, RedirectWarning
-from odoo.tools import date_utils, format_list, SQL
-from odoo.tools.mail import is_html_empty
-from odoo.tools.misc import format_date
+from weth import fields, models, api, _, Command
+from weth.exceptions import LockError, ValidationError, UserError, RedirectWarning
+from weth.tools import date_utils, format_list, SQL
+from weth.tools.mail import is_html_empty
+from weth.tools.misc import format_date
 
-from odoo.addons.account.models.account_move import MAX_HASH_VERSION
-from odoo.addons.account.models.product import ACCOUNT_DOMAIN
-from odoo.addons.base.models.res_partner import _ref_vat
-from odoo.addons.base.models.res_company import company_default_for
-from odoo.fields import Domain
+from weth.addons.account.models.account_move import MAX_HASH_VERSION
+from weth.addons.account.models.product import ACCOUNT_DOMAIN
+from weth.addons.base.models.res_partner import _ref_vat
+from weth.addons.base.models.res_company import company_default_for
+from weth.fields import Domain
 
 
 MONTH_SELECTION = [

@@ -1,10 +1,10 @@
 from freezegun import freeze_time
 
-from odoo import exceptions
-from odoo.addons.mail.models import mail_activity as mail_activity_module
-from odoo.addons.mail.tests.common import mail_new_test_user
-from odoo.addons.mail.tests.common_activity import ActivityScheduleCase
-from odoo.tests import tagged, HttpCase
+from weth import exceptions
+from weth.addons.mail.models import mail_activity as mail_activity_module
+from weth.addons.mail.tests.common import mail_new_test_user
+from weth.addons.mail.tests.common_activity import ActivityScheduleCase
+from weth.tests import tagged, HttpCase
 
 from unittest.mock import patch
 
@@ -36,7 +36,7 @@ class TestMailActivityChatter(HttpCase):
 
     def test_mail_activity_schedule_from_chatter(self):
         self.start_tour(
-            f"/odoo/res.partner/{self.test_partner.id}",
+            f"/weth/res.partner/{self.test_partner.id}",
             "mail_activity_schedule_from_chatter",
             login="admin",
         )

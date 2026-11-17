@@ -1,6 +1,6 @@
-import { describe, expect, mockFetch, test } from "@odoo/hoot";
-import { press, waitFor, waitForNone } from "@odoo/hoot-dom";
-import { animationFrame } from "@odoo/hoot-mock";
+import { describe, expect, mockFetch, test } from "@weth/hoot";
+import { press, waitFor, waitForNone } from "@weth/hoot-dom";
+import { animationFrame } from "@weth/hoot-mock";
 
 import { setupEditor } from "../_helpers/editor";
 import { insertText, pasteText, undo } from "../_helpers/user_actions";

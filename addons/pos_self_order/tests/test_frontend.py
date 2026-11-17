@@ -4,11 +4,11 @@
 import json
 from uuid import uuid4
 
-import odoo.tests
-from odoo.addons.pos_self_order.tests.self_order_common_test import SelfOrderCommonTest
+import weth.tests
+from weth.addons.pos_self_order.tests.self_order_common_test import SelfOrderCommonTest
 
 
-@odoo.tests.tagged("post_install", "-at_install")
+@weth.tests.tagged("post_install", "-at_install")
 class TestFrontendMobile(SelfOrderCommonTest):
     def test_order_fiscal_position(self):
         """ Orders made in take away should have the alternative fiscal position. """

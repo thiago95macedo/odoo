@@ -2,8 +2,8 @@
 
 from datetime import datetime
 
-from odoo import _, api, fields, models
-from odoo.fields import Domain
+from weth import _, api, fields, models
+from weth.fields import Domain
 
 
 FUEL_TYPES = [

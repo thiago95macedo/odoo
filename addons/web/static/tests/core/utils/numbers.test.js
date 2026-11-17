@@ -1,4 +1,4 @@
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@weth/hoot";
 import { allowTranslations, patchWithCleanup } from "@web/../tests/web_test_helpers";
 
 import { localization } from "@web/core/l10n/localization";
@@ -393,7 +393,7 @@ describe("formatFloat", () => {
             expect(formatFloat(value, options)).toBe(resHuman);
         });
 
-        Object.assign(options, { humanReadable: false, digits: undefined, minDigits: undefined});
+        Object.assign(options, { humanReadable: false, digits: undefined, minDigits: undefined });
         expect(formatFloat(-0.0000001, options)).toBe("0.00");
     });
 });

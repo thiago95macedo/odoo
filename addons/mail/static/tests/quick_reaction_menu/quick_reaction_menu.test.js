@@ -8,8 +8,8 @@ import {
     startServer,
 } from "@mail/../tests/mail_test_helpers";
 import { QuickReactionMenu } from "@mail/core/common/quick_reaction_menu";
-import { describe, expect, test } from "@odoo/hoot";
-import { animationFrame, hover, leave, press, waitFor } from "@odoo/hoot-dom";
+import { describe, expect, test } from "@weth/hoot";
+import { animationFrame, hover, leave, press, waitFor } from "@weth/hoot-dom";
 
 describe.current.tags("desktop");
 defineMailModels();

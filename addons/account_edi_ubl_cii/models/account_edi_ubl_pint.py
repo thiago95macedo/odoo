@@ -1,7 +1,7 @@
-from odoo import _, models
-from odoo.tools import formatLang, html2plaintext
-from odoo.tools.misc import NON_BREAKING_SPACE
-from odoo.addons.account_edi_ubl_cii.models.account_edi_common import FloatFmt
+from weth import _, models
+from weth.tools import formatLang, html2plaintext
+from weth.tools.misc import NON_BREAKING_SPACE
+from weth.addons.account_edi_ubl_cii.models.account_edi_common import FloatFmt
 
 
 class AccountEdiUBLPint(models.AbstractModel):

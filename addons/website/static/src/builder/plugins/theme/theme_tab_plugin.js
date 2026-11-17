@@ -1,4 +1,4 @@
-import { proxy } from "@odoo/owl";
+import { proxy } from "@weth/owl";
 import { Plugin } from "@html_editor/plugin";
 import { getCSSVariableValue, getHtmlStyle } from "@html_editor/utils/formatting";
 import { withSequence } from "@html_editor/utils/resource";
@@ -239,26 +239,26 @@ export class ThemeTabPlugin extends Plugin {
         this.grayParams[GRAY_PARAMS.HUE] = !hues.length
             ? 0
             : Math.round(
-                  (Math.atan2(
-                      hues
-                          .map((hue) => Math.sin((hue * Math.PI) / 180))
-                          .reduce((memo, value) => memo + value, 0) / hues.length,
-                      hues
-                          .map((hue) => Math.cos((hue * Math.PI) / 180))
-                          .reduce((memo, value) => memo + value, 0) / hues.length
-                  ) *
-                      180) /
-                      Math.PI +
-                      360
-              ) % 360;
+                (Math.atan2(
+                    hues
+                        .map((hue) => Math.sin((hue * Math.PI) / 180))
+                        .reduce((memo, value) => memo + value, 0) / hues.length,
+                    hues
+                        .map((hue) => Math.cos((hue * Math.PI) / 180))
+                        .reduce((memo, value) => memo + value, 0) / hues.length
+                ) *
+                    180) /
+                Math.PI +
+                360
+            ) % 360;
 
         // Average of found saturation diffs, or all grays have no
         // saturation, or all grays are fully saturated.
         this.grayParams[GRAY_PARAMS.EXTRA_SATURATION] = saturationDiffs.length
             ? saturationDiffs.reduce((memo, value) => memo + value, 0) / saturationDiffs.length
             : oneHasNoSaturation
-            ? -100
-            : 100;
+                ? -100
+                : 100;
     }
     getGrayParams() {
         return this.grayParams;

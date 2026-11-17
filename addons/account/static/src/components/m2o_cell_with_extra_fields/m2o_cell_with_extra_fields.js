@@ -7,7 +7,7 @@ import {
     extractM2OFieldProps,
     many2OneFieldProps,
 } from "@web/views/fields/many2one/many2one_field";
-import { t, useProps } from "@odoo/owl";
+import { t, useProps } from "@weth/owl";
 
 export class Many2XAccountAccountAutocomplete extends Many2XAutocomplete {
     addSearchMoreSuggestion(options) {

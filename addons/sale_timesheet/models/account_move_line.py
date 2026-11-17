@@ -2,7 +2,7 @@
 
 from collections import defaultdict
 
-from odoo import models
+from weth import models
 
 
 class AccountMoveLine(models.Model):

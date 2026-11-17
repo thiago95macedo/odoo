@@ -1,6 +1,6 @@
 import { Avatar } from "@mail/views/web/fields/avatar/avatar";
 
-import { Component, onWillStart, t, useProps } from "@odoo/owl";
+import { Component, onWillStart, t, useProps } from "@weth/owl";
 import { _t } from "@web/core/l10n/translation";
 import { registry } from "@web/core/registry";
 import { user } from "@web/core/user";

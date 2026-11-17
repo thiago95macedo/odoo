@@ -3,8 +3,8 @@ import time
 from requests import Response
 from unittest.mock import patch
 
-from odoo.addons.point_of_sale.tests.test_frontend import TestPointOfSaleHttpCommon
-from odoo.tests.common import tagged
+from weth.addons.point_of_sale.tests.test_frontend import TestPointOfSaleHttpCommon
+from weth.tests.common import tagged
 
 
 @tagged("post_install_l10n", "post_install", "-at_install")
@@ -144,15 +144,15 @@ class TestRazorPayPoS(TestPointOfSaleHttpCommon):
         return response
 
     def test_razorpay_basic_order(self):
-        with patch("odoo.addons.pos_razorpay.models.razorpay_pos_request.requests.Session.post", self._mock_post):
+        with patch("weth.addons.pos_razorpay.models.razorpay_pos_request.requests.Session.post", self._mock_post):
             self.start_pos_tour("PosRazorpayTour")
 
     def test_razorpay_cancel_payment(self):
         self.is_cancel_payment_test = True
 
-        with patch("odoo.addons.pos_razorpay.models.razorpay_pos_request.requests.Session.post", self._mock_post):
+        with patch("weth.addons.pos_razorpay.models.razorpay_pos_request.requests.Session.post", self._mock_post):
             self.start_pos_tour("PosRazorpayCancelTour")
 
     def test_razorpay_refund_order(self):
-        with patch("odoo.addons.pos_razorpay.models.razorpay_pos_request.requests.Session.post", self._mock_post):
+        with patch("weth.addons.pos_razorpay.models.razorpay_pos_request.requests.Session.post", self._mock_post):
             self.start_pos_tour("PosRazorpayRefundTour")

@@ -1,8 +1,8 @@
 from unittest.mock import patch
 
-from odoo.tests.common import tagged
+from weth.tests.common import tagged
 
-from odoo.addons.point_of_sale.tests.test_frontend import TestPointOfSaleHttpCommon
+from weth.addons.point_of_sale.tests.test_frontend import TestPointOfSaleHttpCommon
 
 
 @tagged("post_install", "-at_install")
@@ -28,7 +28,7 @@ class TestMolliePaymentMethod(TestPointOfSaleHttpCommon):
 
     def test_payment(self):
         with patch(
-            "odoo.addons.payment.models.payment_provider.PaymentProvider._send_api_request",
+            "weth.addons.payment.models.payment_provider.PaymentProvider._send_api_request",
             return_value={"id": "test", "status": "open"},
         ) as mock_request:
             self.mollie_payment_method.mollie_create_payment(5.00, "uuid", 1)
@@ -44,7 +44,7 @@ class TestMolliePaymentMethod(TestPointOfSaleHttpCommon):
 
     def test_refund(self):
         with patch(
-            "odoo.addons.payment.models.payment_provider.PaymentProvider._send_api_request",
+            "weth.addons.payment.models.payment_provider.PaymentProvider._send_api_request",
             return_value={"id": "test", "status": "open"},
         ) as mock_request:
             self.mollie_payment_method.mollie_create_refund("test", 5.00, "uuid", 1)
@@ -58,7 +58,7 @@ class TestMolliePaymentMethod(TestPointOfSaleHttpCommon):
 
     def test_cancel(self):
         with patch(
-            "odoo.addons.payment.models.payment_provider.PaymentProvider._send_api_request",
+            "weth.addons.payment.models.payment_provider.PaymentProvider._send_api_request",
             return_value={"id": "test", "status": "open"},
         ) as mock_request:
             self.mollie_payment_method.mollie_cancel_payment("test")
@@ -69,7 +69,7 @@ class TestMolliePaymentMethod(TestPointOfSaleHttpCommon):
 
     def test_get(self):
         with patch(
-            "odoo.addons.payment.models.payment_provider.PaymentProvider._send_api_request",
+            "weth.addons.payment.models.payment_provider.PaymentProvider._send_api_request",
             return_value={"id": "test", "status": "open"},
         ) as mock_request:
             self.mollie_payment_method.mollie_get_payment("test")

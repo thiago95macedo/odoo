@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, fields, models, _
-from odoo.tools import float_round
+from weth import api, fields, models, _
+from weth.tools import float_round
 
 
 class LunchCashmove(models.Model):

@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import models
+from weth import models
 
-from odoo.addons.website_sale import const
+from weth.addons.website_sale import const
 
 
 class ProductTemplateAttributeValue(models.Model):

@@ -1,10 +1,10 @@
-/** @odoo-module **/
+/** @weth-module **/
 
-import { beforeEach, expect, test } from "@odoo/hoot";
-import { getActiveElement, queryFirst, keyDown, click } from "@odoo/hoot-dom";
+import { beforeEach, expect, test } from "@weth/hoot";
+import { getActiveElement, queryFirst, keyDown, click } from "@weth/hoot-dom";
 import { mountWithCleanup, patchWithCleanup } from "@web/../tests/web_test_helpers";
 import { BarcodePlugin } from "@barcodes/barcode_plugin";
-import { Component, xml } from "@odoo/owl";
+import { Component, xml } from "@weth/owl";
 
 beforeEach(() => {
     patchWithCleanup(BarcodePlugin, {

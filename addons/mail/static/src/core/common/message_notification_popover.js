@@ -1,4 +1,4 @@
-import { Component, types, useProps } from "@odoo/owl";
+import { Component, types, useProps } from "@weth/owl";
 import { _t } from "@web/core/l10n/translation";
 import { useService } from "@web/core/utils/hooks";
 

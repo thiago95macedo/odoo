@@ -13,7 +13,7 @@ import {
     proxy,
     t,
     useEffect,
-} from "@odoo/owl";
+} from "@weth/owl";
 import { LazyComponent } from "@web/core/lazy_component";
 import { isBrowserSafari } from "@web/core/browser/feature_detection";
 import { localization } from "@web/core/l10n/localization";
@@ -45,8 +45,8 @@ export class MassMailingIframe extends Component {
         showCodeView: t.boolean().optional(),
         toggleCodeView: t.function().optional(),
         readonly: t.boolean().optional(),
-        onEditorLoad: t.function().optional(() => () => {}),
-        onFocus: t.function().optional(() => () => {}),
+        onEditorLoad: t.function().optional(() => () => { }),
+        onFocus: t.function().optional(() => () => { }),
         extraClass: t.string().optional(),
         withBuilder: t.boolean().optional(),
     });
@@ -143,19 +143,18 @@ export class MassMailingIframe extends Component {
                     }
                 }
                 const top = scrollableY
-                    ? `${
-                          -1 * (parseInt(getComputedStyle(scrollableY).paddingTop) || 0) +
-                          stickyHeight
-                      }px`
+                    ? `${-1 * (parseInt(getComputedStyle(scrollableY).paddingTop) || 0) +
+                    stickyHeight
+                    }px`
                     : `${stickyHeight}px`;
                 const maxHeight = this.state.isMobile
                     ? 1000
                     : Math.max(
-                          // height to fill remaining viewport space on an unscrolled page
-                          window.innerHeight - sidebar.parentElement.getBoundingClientRect().y - 5,
-                          // height of the parent element
-                          sidebar.parentElement.clientHeight
-                      );
+                        // height to fill remaining viewport space on an unscrolled page
+                        window.innerHeight - sidebar.parentElement.getBoundingClientRect().y - 5,
+                        // height of the parent element
+                        sidebar.parentElement.clientHeight
+                    );
                 const offsetHeight =
                     window.innerHeight -
                     stickyHeight -
@@ -352,7 +351,7 @@ export class MassMailingIframe extends Component {
                 this.props.onEditorLoad(editor);
             },
             getThemeTab: () =>
-                odoo.loader.modules.get("@mass_mailing/builder/tabs/design_tab").DesignTab,
+                weth.loader.modules.get("@mass_mailing/builder/tabs/design_tab").DesignTab,
             themeTabDisplayName: _t("Design"),
             localOverlayContainerKey: this.localOverlayContainerKey,
         };

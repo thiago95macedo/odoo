@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from odoo import http
-from odoo.http import request
+from weth import http
+from weth.http import request
 
 
 class WebsitePartnerPage(http.Controller):

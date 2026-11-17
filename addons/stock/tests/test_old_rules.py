@@ -2,10 +2,10 @@
 
 from datetime import timedelta
 
-from odoo import Command
-from odoo.addons.stock.models.stock_rule import StockRule
-from odoo.tests import tagged, Form
-from odoo.addons.stock.tests.common import TestStockCommon
+from weth import Command
+from weth.addons.stock.models.stock_rule import StockRule
+from weth.tests import tagged, Form
+from weth.addons.stock.tests.common import TestStockCommon
 
 
 @tagged('at_install', '-post_install')  # LEGACY at_install Fails in post install

@@ -22,7 +22,7 @@ import { Message } from "@mail/core/common/message_model";
 import { Thread } from "@mail/core/common/thread";
 import { UseForwardRefsToParent } from "@mail/utils/common/hooks";
 
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@weth/hoot";
 import {
     advanceFrame,
     advanceTime,
@@ -30,8 +30,8 @@ import {
     press,
     queryFirst,
     queryOne,
-} from "@odoo/hoot-dom";
-import { mockDate, tick } from "@odoo/hoot-mock";
+} from "@weth/hoot-dom";
+import { mockDate, tick } from "@weth/hoot-mock";
 import {
     Command,
     getService,

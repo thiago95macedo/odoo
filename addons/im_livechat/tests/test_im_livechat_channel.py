@@ -2,11 +2,11 @@
 
 from datetime import timedelta
 
-from odoo.tests import new_test_user
-from odoo.exceptions import AccessError, ValidationError
-from odoo.addons.im_livechat.tests.common import TestImLivechatCommon
-from odoo.addons.im_livechat.tests.test_get_operator import TestGetOperator
-from odoo.fields import Command, Datetime
+from weth.tests import new_test_user
+from weth.exceptions import AccessError, ValidationError
+from weth.addons.im_livechat.tests.common import TestImLivechatCommon
+from weth.addons.im_livechat.tests.test_get_operator import TestGetOperator
+from weth.fields import Command, Datetime
 
 
 class TestImLivechatChannel(TestImLivechatCommon, TestGetOperator):

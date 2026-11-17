@@ -1,6 +1,6 @@
 import { Record } from "@web/model/record";
 import { FormRenderer } from "@web/views/form/form_renderer";
-import { Component, useProps, types as t, signal } from "@odoo/owl";
+import { Component, useProps, types as t, signal } from "@weth/owl";
 import { executeButtonCallback, useViewButtons } from "@web/views/view_button/view_button_hook";
 import { Dropdown } from "@web/core/dropdown/dropdown";
 import { DropdownItem } from "@web/core/dropdown/dropdown_item";

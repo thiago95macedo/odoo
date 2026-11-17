@@ -5,11 +5,11 @@ from datetime import timedelta
 from operator import itemgetter
 from re import findall as regex_findall
 
-from odoo import _, api, Command, fields, models, SUPERUSER_ID
-from odoo.exceptions import UserError, ValidationError
-from odoo.fields import Domain
-from odoo.tools.float_utils import float_compare, float_repr, float_round
-from odoo.tools.misc import clean_context, OrderedSet, groupby
+from weth import _, api, Command, fields, models, SUPERUSER_ID
+from weth.exceptions import UserError, ValidationError
+from weth.fields import Domain
+from weth.tools.float_utils import float_compare, float_repr, float_round
+from weth.tools.misc import clean_context, OrderedSet, groupby
 
 PROCUREMENT_PRIORITIES = [('0', 'Normal'), ('1', 'Urgent')]
 

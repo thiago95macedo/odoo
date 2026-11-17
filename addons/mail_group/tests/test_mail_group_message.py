@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.mail_group.tests.common import TestMailListCommon
-from odoo.addons.mail_group.tests.data import GROUP_TEMPLATE
-from odoo.exceptions import AccessError
-from odoo.tests import tagged
+from weth.addons.mail_group.tests.common import TestMailListCommon
+from weth.addons.mail_group.tests.data import GROUP_TEMPLATE
+from weth.exceptions import AccessError
+from weth.tests import tagged
 
-from odoo.tools import mute_logger
+from weth.tools import mute_logger
 
 
 @tagged('at_install', '-post_install')  # LEGACY at_install
@@ -64,7 +64,7 @@ class TestMailGroupMessage(TestMailListCommon):
         )
         self.assertIn('The mailing list you are trying to reach has been closed', self._mails[0]['body'])
 
-    @mute_logger('odoo.addons.mail.models.mail_thread', 'odoo.addons.mail_group.models.mail_group_message')
+    @mute_logger('weth.addons.mail.models.mail_thread', 'weth.addons.mail_group.models.mail_group_message')
     def test_email_duplicated(self):
         """ Test gateway does not accept two times same incoming email """
         self.test_group.write({'moderation': False})
@@ -85,7 +85,7 @@ class TestMailGroupMessage(TestMailListCommon):
         new_message = self.env['mail.group.message'].search([('mail_message_id.message_id', '=', '<test.message.id@localhost>')])
         self.assertEqual(new_message, message)
 
-    @mute_logger('odoo.addons.mail.models.mail_thread', 'odoo.addons.mail_group.models.mail_group_message')
+    @mute_logger('weth.addons.mail.models.mail_thread', 'weth.addons.mail_group.models.mail_group_message')
     def test_email_not_sent_to_author(self):
         """Test that when someone sends an email the group process does not send
         it back to the original author."""
@@ -101,7 +101,7 @@ class TestMailGroupMessage(TestMailListCommon):
         self.assertEqual(len(mails), len(self.test_group.member_ids) - 1)
         self.assertNotIn(self.test_group_member_1.email, mails.mapped('email_to'), 'Should not have send the email to the original author')
 
-    @mute_logger('odoo.addons.base.models.ir_access')
+    @mute_logger('weth.addons.base.models.ir_access')
     def test_mail_group_message_security_groups(self):
         user_group = self.env.ref('base.group_partner_manager')
         self.test_group.access_group_id = user_group
@@ -133,7 +133,7 @@ class TestMailGroupMessage(TestMailListCommon):
         with self.assertRaises(AccessError, msg='User not in the group should not have access to accepted message'):
             self.test_group_msg_2_accepted.with_user(self.user_portal).check_access('read')
 
-    @mute_logger('odoo.addons.base.models.ir_access')
+    @mute_logger('weth.addons.base.models.ir_access')
     def test_mail_group_message_security_public(self):
         self.test_group.access_mode = 'public'
 
@@ -160,7 +160,7 @@ class TestMailGroupMessage(TestMailListCommon):
         self.assertEqual(self.test_group_msg_1_pending.with_user(self.user_admin).moderation_status, 'pending_moderation',
                          msg='Mail Group Administrator should have access to all messages')
 
-    @mute_logger('odoo.addons.mail.models.mail_thread', 'odoo.addons.mail_group.models.mail_group_message')
+    @mute_logger('weth.addons.mail.models.mail_thread', 'weth.addons.mail_group.models.mail_group_message')
     def test_email_empty_from(self):
         """Test that when someone sends an email the group process does not send
         it back to the original author."""

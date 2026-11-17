@@ -2,12 +2,12 @@
 
 from psycopg2.errors import LockNotAvailable
 
-from odoo.exceptions import AccessError, MissingError, UserError, ValidationError
-from odoo.fields import Command
-from odoo.http import request, route
-from odoo.tools import SQL
+from weth.exceptions import AccessError, MissingError, UserError, ValidationError
+from weth.fields import Command
+from weth.http import request, route
+from weth.tools import SQL
 
-from odoo.addons.payment.controllers import portal as payment_portal
+from weth.addons.payment.controllers import portal as payment_portal
 
 # TODO ANVFE part of payment routes ? /shop/payment ? express_checkout ?
 

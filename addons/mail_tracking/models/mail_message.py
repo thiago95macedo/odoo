@@ -2,11 +2,11 @@ from __future__ import annotations
 
 import typing
 
-from odoo import api, fields, models
-from odoo.exceptions import UserError
+from weth import api, fields, models
+from weth.exceptions import UserError
 
 if typing.TYPE_CHECKING:
-    from odoo.api import CommandValue
+    from weth.api import CommandValue
 
 
 class MailMessage(models.Model):

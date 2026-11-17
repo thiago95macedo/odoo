@@ -3,9 +3,9 @@
 import logging
 import re
 
-from odoo import _
-from odoo.exceptions import UserError
-from odoo.http import Controller, request, route
+from weth import _
+from weth.exceptions import UserError
+from weth.http import Controller, request, route
 
 _logger = logging.getLogger(__name__)
 

@@ -1,4 +1,4 @@
-import { beforeEach, describe, test } from "@odoo/hoot";
+import { beforeEach, describe, test } from "@weth/hoot";
 import { defineTestDiscussFullModels } from "@test_discuss_full/../tests/test_discuss_full_test_helpers";
 import { HrEmployee } from "@hr/../tests/mock_server/mock_models/hr_employee";
 import { serverState } from "@web/../tests/web_test_helpers";

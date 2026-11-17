@@ -2,7 +2,7 @@ import { useService } from "@web/core/utils/hooks";
 import { registry } from "@web/core/registry";
 import { standardFieldProps } from "@web/views/fields/standard_field_props";
 
-import { Component, useProps } from "@odoo/owl";
+import { Component, useProps } from "@weth/owl";
 
 export class TimesheetUOM extends Component {
     static template = "hr_timesheet.TimesheetUOM";

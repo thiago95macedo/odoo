@@ -1,5 +1,5 @@
-import { after, animationFrame, expect, press, test } from "@odoo/hoot";
-import { Component, xml } from "@odoo/owl";
+import { after, animationFrame, expect, press, test } from "@weth/hoot";
+import { Component, xml } from "@weth/owl";
 import {
     defineModels,
     editFavoriteName,
@@ -30,7 +30,7 @@ class Foo extends models.Model {
     foo = fields.Char();
 }
 
-class Partner extends models.Model {}
+class Partner extends models.Model { }
 
 defineModels([Foo, Partner]);
 

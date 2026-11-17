@@ -1,6 +1,6 @@
-import { getFixture } from "@odoo/hoot";
-import { animationFrame } from "@odoo/hoot-mock";
-import { Spreadsheet } from "@odoo/o-spreadsheet";
+import { getFixture } from "@weth/hoot";
+import { animationFrame } from "@weth/hoot-mock";
+import { Spreadsheet } from "@weth/o-spreadsheet";
 import { makeSpreadsheetMockEnv } from "@spreadsheet/../tests/helpers/model";
 import {
     getMockEnv,

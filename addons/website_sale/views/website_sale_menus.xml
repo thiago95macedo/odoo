@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<odoo>
+<weth>
     <record id="action_open_shop_page" model="ir.actions.act_url">
         <field name="name">Open Shop Page</field>
-        <field name="url">/odoo/action-website.website_preview?path=/shop</field>
+        <field name="url">/weth/action-website.website_preview?path=/shop</field>
         <field name="target">self</field>
     </record>
 
@@ -127,4 +127,4 @@
     <record id="website.menu_website_dashboard" model="ir.ui.menu">
         <field name="group_ids" eval="[Command.link(ref('sales_team.group_sale_salesman'))]"/>
     </record>
-</odoo>
+</weth>

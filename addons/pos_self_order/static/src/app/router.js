@@ -1,4 +1,4 @@
-import { Component, computed, xml, useProps, t, useEffect } from "@odoo/owl";
+import { Component, computed, xml, useProps, t, useEffect } from "@weth/owl";
 import { escapeRegExp } from "@web/core/utils/strings";
 import { zip } from "@web/core/utils/arrays";
 import { useService } from "@web/core/utils/hooks";

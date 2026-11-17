@@ -1,4 +1,4 @@
-import { Component, useProps, t } from "@odoo/owl";
+import { Component, useProps, t } from "@weth/owl";
 import { getColors } from "@pos_restaurant/app/services/floor_plan/utils/colors";
 import {
     opacityToTransparency,

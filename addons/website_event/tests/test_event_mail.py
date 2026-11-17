@@ -3,9 +3,9 @@
 
 from datetime import datetime, timedelta
 
-from odoo.addons.mail.tests.common import MailCase
-from odoo.tests import tagged
-from odoo.tools import formataddr
+from weth.addons.mail.tests.common import MailCase
+from weth.tests import tagged
+from weth.tools import formataddr
 
 @tagged('post_install', '-at_install')
 class TestMail(MailCase):

@@ -1,6 +1,6 @@
 import { CallInvitation } from "@mail/discuss/call/common/call_invitation";
 
-import { Component } from "@odoo/owl";
+import { Component } from "@weth/owl";
 
 import { registry } from "@web/core/registry";
 import { useService } from "@web/core/utils/hooks";

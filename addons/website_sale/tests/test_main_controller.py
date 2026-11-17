@@ -2,11 +2,11 @@
 
 from unittest.mock import patch
 
-from odoo.tests import tagged
+from weth.tests import tagged
 
-from odoo.addons.payment.models.payment_provider import PaymentProvider
-from odoo.addons.payment.tests.http_common import PaymentHttpCommon
-from odoo.addons.sale.tests.common import SaleCommon
+from weth.addons.payment.models.payment_provider import PaymentProvider
+from weth.addons.payment.tests.http_common import PaymentHttpCommon
+from weth.addons.sale.tests.common import SaleCommon
 
 
 @tagged("post_install", "-at_install")
@@ -38,7 +38,7 @@ class TestPaymentProviderVisibility(PaymentHttpCommon, SaleCommon):
         portal_url = f"{website_portal.domain}{url_so}"
 
         with patch(
-            "odoo.addons.website_payment.models.payment_provider.PaymentProvider._find_available_providers",
+            "weth.addons.website_payment.models.payment_provider.PaymentProvider._find_available_providers",
             side_effect=lambda *args, **kwargs: PaymentProvider._find_available_providers(
                 self.env["payment.provider"], *args, **kwargs
             ),
@@ -51,7 +51,7 @@ class TestPaymentProviderVisibility(PaymentHttpCommon, SaleCommon):
         mock_method.call_args.kwargs.pop("show_non_tokenize_provider", None)
         providers = self.provider + restricted_provider
         with patch(
-            "odoo.addons.payment.models.payment_provider.PaymentProvider._find_available_providers",
+            "weth.addons.payment.models.payment_provider.PaymentProvider._find_available_providers",
             return_value=providers,
         ):
             providers = self.env["payment.provider"]._find_available_providers(

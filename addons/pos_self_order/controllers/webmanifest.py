@@ -4,9 +4,9 @@ import mimetypes
 import re
 
 from urllib.parse import unquote
-from odoo import http
-from odoo.http import request
-from odoo.addons.web.controllers import webmanifest
+from weth import http
+from weth.http import request
+from weth.addons.web.controllers import webmanifest
 
 
 class WebManifest(webmanifest.WebManifest):

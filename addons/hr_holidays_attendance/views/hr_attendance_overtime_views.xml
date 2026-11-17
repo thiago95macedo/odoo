@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
     <!-- Overtime attendance entries page on the attendance form -->
     <record id="view_attendance_overtime_leave_form" model="ir.ui.view">
         <field name="name">hr.attendance.overtime.leave.form</field>
@@ -24,4 +24,4 @@
         </field>
     </record>
 
-</odoo>
+</weth>

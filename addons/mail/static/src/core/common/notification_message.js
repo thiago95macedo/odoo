@@ -1,5 +1,5 @@
 import { useForwardRefsToParent } from "@mail/utils/common/hooks";
-import { Component, htmlEscape, markup, signal, t, useProps } from "@odoo/owl";
+import { Component, htmlEscape, markup, signal, t, useProps } from "@weth/owl";
 import { _t } from "@web/core/l10n/translation";
 import { useService } from "@web/core/utils/hooks";
 
@@ -50,12 +50,12 @@ export class NotificationMessage extends Component {
         return _t(
             "A recording is being processed and will be available %(anchor_start)shere%(anchor_end)s.",
             {
-                anchor_start: markup`<a href="/odoo/discuss.call.history/${history.id}" data-oe-model="discuss.call.history" data-oe-id="${history.id}">`,
+                anchor_start: markup`<a href="/weth/discuss.call.history/${history.id}" data-oe-model="discuss.call.history" data-oe-id="${history.id}">`,
                 anchor_end: markup`</a>`,
             }
         );
     }
-    
+
     get showDate() {
         return true;
     }

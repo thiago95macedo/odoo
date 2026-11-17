@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
 import re
-from odoo import models
-from odoo.exceptions import AccessError
+from weth import models
+from weth.exceptions import AccessError
 
 
 class IrWebsocket(models.AbstractModel):

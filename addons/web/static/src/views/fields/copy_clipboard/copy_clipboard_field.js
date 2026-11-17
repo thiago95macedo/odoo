@@ -8,7 +8,7 @@ import { CharField } from "../char/char_field";
 import { standardFieldProps } from "../standard_field_props";
 import { UrlField } from "../url/url_field";
 
-import { Component, t, useProps } from "@odoo/owl";
+import { Component, t, useProps } from "@weth/owl";
 
 export const copyClipboardFieldProps = {
     ...standardFieldProps,
@@ -37,9 +37,9 @@ class CopyClipboardField extends Component {
     get disabled() {
         return this.props.disabledExpr
             ? evaluateBooleanExpr(
-                  this.props.disabledExpr,
-                  this.props.record.evalContextWithVirtualIds
-              )
+                this.props.disabledExpr,
+                this.props.record.evalContextWithVirtualIds
+            )
             : false;
     }
 }

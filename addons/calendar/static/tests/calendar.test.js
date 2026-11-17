@@ -1,5 +1,5 @@
 import { defineCalendarModels } from "@calendar/../tests/calendar_test_helpers";
-import { beforeEach, expect, test } from "@odoo/hoot";
+import { beforeEach, expect, test } from "@weth/hoot";
 import { contains, makeMockServer, mountView, onRpc } from "@web/../tests/web_test_helpers";
 import { getOrigin } from "@web/core/utils/urls";
 
@@ -53,8 +53,7 @@ test("Many2ManyAttendee: basic rendering", async () => {
     expect(".o_field_widget[name='partner_ids'] .o_tag:eq(0) img").toHaveCount(1);
     expect(".o_field_widget[name='partner_ids'] .o_tag:eq(0) img").toHaveAttribute(
         "data-src",
-        `${getOrigin()}/web/image/res.partner/${
-            serverData.partnerIds[0]
+        `${getOrigin()}/web/image/res.partner/${serverData.partnerIds[0]
         }/avatar_128?unique=1676282400000`
     );
     expect.verifySteps(["get_attendee_detail"]);
@@ -85,8 +84,7 @@ test("[Offline] Many2ManyAttendee: basic rendering", async () => {
     expect(".o_field_widget[name='partner_ids'] .o_tag:eq(0) img").toHaveCount(1);
     expect(".o_field_widget[name='partner_ids'] .o_tag:eq(0) img").toHaveAttribute(
         "data-src",
-        `${getOrigin()}/web/image/res.partner/${
-            serverData.partnerIds[0]
+        `${getOrigin()}/web/image/res.partner/${serverData.partnerIds[0]
         }/avatar_128?unique=1676282400000`
     );
 });

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
 
 <template id="s_references_tiles" name="References Tiles">
     <section class="s_references_tiles pt64 pb64">
@@ -36,4 +36,4 @@
     <bundle>web.assets_frontend</bundle>
     <path>website/static/src/snippets/s_references_tiles/000.scss</path>
 </asset>
-</odoo>
+</weth>

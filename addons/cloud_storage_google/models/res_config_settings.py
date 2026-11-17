@@ -6,9 +6,9 @@ from datetime import UTC, datetime
 import requests
 from google.auth.transport.requests import Request
 
-from odoo import _, api, fields, models
-from odoo.exceptions import UserError, ValidationError
-from odoo.tools.binary import BinaryBytes
+from weth import _, api, fields, models
+from weth.exceptions import UserError, ValidationError
+from weth.tools.binary import BinaryBytes
 
 from .ir_attachment import get_cloud_storage_google_credential
 

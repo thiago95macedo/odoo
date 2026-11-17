@@ -16,10 +16,10 @@ import {
     startServer,
     triggerHotkey,
 } from "@mail/../tests/mail_test_helpers";
-import { describe, expect, getFixture, queryFirst, test } from "@odoo/hoot";
-import { queryAllTexts } from "@odoo/hoot-dom";
+import { describe, expect, getFixture, queryFirst, test } from "@weth/hoot";
+import { queryAllTexts } from "@weth/hoot-dom";
 
-import { signal } from "@odoo/owl";
+import { signal } from "@weth/owl";
 import { emojiLoader } from "@web/core/emoji_picker/emoji_loader";
 
 describe.current.tags("desktop");

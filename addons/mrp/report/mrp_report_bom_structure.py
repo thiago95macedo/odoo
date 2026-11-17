@@ -2,9 +2,9 @@ from collections import defaultdict, OrderedDict
 from datetime import date, datetime, time, timedelta
 import json
 
-from odoo import api, fields, models, _
-from odoo.tools import float_round, format_date, float_repr
-from odoo.exceptions import UserError
+from weth import api, fields, models, _
+from weth.tools import float_round, format_date, float_repr
+from weth.exceptions import UserError
 
 
 class ReportMrpReport_Bom_Structure(models.AbstractModel):

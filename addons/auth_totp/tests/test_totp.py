@@ -5,11 +5,11 @@ from xmlrpc.client import Fault
 
 from passlib.totp import TOTP
 
-from odoo import http
-from odoo.tests import TransactionCase, tagged, get_db_name, new_test_user, HttpCase
-from odoo.tools import mute_logger
+from weth import http
+from weth.tests import TransactionCase, tagged, get_db_name, new_test_user, HttpCase
+from weth.tools import mute_logger
 
-from odoo.addons.auth_totp.models.totp import TOTP as auth_TOTP
+from weth.addons.auth_totp.models.totp import TOTP as auth_TOTP
 
 from ..controllers.home import Home
 
@@ -24,7 +24,7 @@ class TestTOTPMixin:
             cls.env, 'test_user', password='test_user', tz='UTC',
         )
 
-        ml = mute_logger('odoo.addons.rpc.controllers.xmlrpc')
+        ml = mute_logger('weth.addons.rpc.controllers.xmlrpc')
         ml.__enter__()  # noqa: PLC2801
         cls.addClassCleanup(ml.__exit__)
 
@@ -90,14 +90,14 @@ class TestTOTP(TestTOTPMixin, HttpCase):
             'Trying to fake the auth type should not work'
         )
         uid = self.user_test.id
-        with self.assertRaisesRegex(Fault, r'Access Denied'), mute_logger("odoo.http"):
+        with self.assertRaisesRegex(Fault, r'Access Denied'), mute_logger("weth.http"):
             self.xmlrpc_object.execute_kw(
                 get_db_name(), uid, 'test_user',
                 'res.users', 'read', [uid, ['login']]
             )
 
         # 3. Check 2FA is required
-        with self.assertLogs("odoo.addons.auth_totp.models.res_users", "WARNING") as cm:
+        with self.assertLogs("weth.addons.auth_totp.models.res_users", "WARNING") as cm:
             self.start_tour('/', 'totp_login_enabled', login=None)
 
         self.assertEqual(len(cm.output), 1)
@@ -123,7 +123,7 @@ class TestTOTP(TestTOTPMixin, HttpCase):
         self.start_tour('/odoo', 'totp_admin_disables', login='admin')
         self.start_tour('/', 'totp_login_disabled', login=None)
 
-    @mute_logger('odoo.http')
+    @mute_logger('weth.http')
     def test_totp_authenticate(self):
         """
         Ensure we don't leak the session info from an half-logged-in

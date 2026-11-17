@@ -1,5 +1,5 @@
-import { expect, test } from '@odoo/hoot';
-import { queryAllTexts } from '@odoo/hoot-dom';
+import { expect, test } from '@weth/hoot';
+import { queryAllTexts } from '@weth/hoot-dom';
 import { saleManagementModels } from "@sale_management/../tests/sale_management_test_helpers";
 import {
     clickSave,
@@ -186,16 +186,16 @@ const EXPECTED_LINE_RECORDS = [
     "Sec1",
     "Sec2",
     "Sec3",
-        "Sec3-r1",
-        "Sec3-r2",
-        "Sec3-sub1",
-            "Sec3-sub1-r1",
-        "Sec3-sub2",
-            "Sec3-sub2-r1",
+    "Sec3-r1",
+    "Sec3-r2",
+    "Sec3-sub1",
+    "Sec3-sub1-r1",
+    "Sec3-sub2",
+    "Sec3-sub2-r1",
     "Sec4",
-        "Sec4-r1",
-        "Sec4-sub1",
-            "Sec4-sub1-r1",
+    "Sec4-r1",
+    "Sec4-sub1",
+    "Sec4-sub1-r1",
 ];
 
 test("Can't mark section hidden if optional and vice versa", async () => {

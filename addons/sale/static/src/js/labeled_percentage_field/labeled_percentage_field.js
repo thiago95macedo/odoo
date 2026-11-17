@@ -2,7 +2,7 @@ import { registry } from "@web/core/registry";
 import { getShortLabel } from "../labeled_field_short_labels";
 import { PercentageField, percentageField } from "@web/views/fields/percentage/percentage_field";
 import { standardFieldProps } from "@web/views/fields/standard_field_props";
-import { t, useProps } from "@odoo/owl";
+import { t, useProps } from "@weth/owl";
 
 export class LabeledPercentageField extends PercentageField {
     static template = "sale.LabeledPercentageField";

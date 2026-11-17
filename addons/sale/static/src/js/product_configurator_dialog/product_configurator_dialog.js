@@ -1,5 +1,5 @@
 import { useSubEnv } from "@web/owl2/utils";
-import { Component, onMounted, onWillUnmount, useProps, proxy, t } from "@odoo/owl";
+import { Component, onMounted, onWillUnmount, useProps, proxy, t } from "@weth/owl";
 import { Dialog } from '@web/core/dialog/dialog';
 import { _t } from "@web/core/l10n/translation";
 import { rpc } from "@web/core/network/rpc";
@@ -11,7 +11,7 @@ import { formatCurrency } from '@web/core/currency';
 import { useHotkey } from "@web/core/hotkeys/hotkey_hook";
 
 export class ProductConfiguratorDialog extends Component {
-    static components = { Dialog, ProductList};
+    static components = { Dialog, ProductList };
     static template = 'sale.ProductConfiguratorDialog';
 
     props = useProps({
@@ -429,17 +429,17 @@ export class ProductConfiguratorDialog extends Component {
         ptavList.map(ptav => ptav.excluded = false); // Reset all the values
 
         if (exclusions) {
-            for(const ptavId of combination) {
-                for(const excludedPtavId of exclusions[ptavId]) {
+            for (const ptavId of combination) {
+                for (const excludedPtavId of exclusions[ptavId]) {
                     ptavList.find(ptav => ptav.id === excludedPtavId).excluded = true;
                 }
             }
         }
         if (archivedCombinations) {
-            for(const excludedCombination of archivedCombinations) {
+            for (const excludedCombination of archivedCombinations) {
                 const ptavCommon = excludedCombination.filter((ptav) => combination.includes(ptav));
                 if (ptavCommon.length === combination.length) {
-                    for(const excludedPtavId of ptavCommon) {
+                    for (const excludedPtavId of ptavCommon) {
                         ptavList.find(ptav => ptav.id === excludedPtavId).excluded = true;
                     }
                 } else if (ptavCommon.length === (combination.length - 1)) {
@@ -454,7 +454,7 @@ export class ProductConfiguratorDialog extends Component {
                 }
             }
         }
-        for(const optionalProductTmpl of childProducts) {
+        for (const optionalProductTmpl of childProducts) {
             this._checkExclusions(optionalProductTmpl);
         }
     }
@@ -471,8 +471,8 @@ export class ProductConfiguratorDialog extends Component {
      */
     _findProduct(productTmplId) {
         // The product might be in either of the two lists `products` or `optional_products`.
-        return  this.state.products.find(p => p.product_tmpl_id === productTmplId) ||
-                this.state.optionalProducts.find(p => p.product_tmpl_id === productTmplId);
+        return this.state.products.find(p => p.product_tmpl_id === productTmplId) ||
+            this.state.optionalProducts.find(p => p.product_tmpl_id === productTmplId);
     }
 
     /**

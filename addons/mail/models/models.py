@@ -8,13 +8,13 @@ from lxml.builder import E
 from markupsafe import Markup
 from werkzeug.urls import url_encode
 
-from odoo import _, api, exceptions, models, tools
-from odoo.fields import Domain
-from odoo.tools import parse_contact_from_email
-from odoo.tools.mail import email_normalize, email_split_and_format
+from weth import _, api, exceptions, models, tools
+from weth.fields import Domain
+from weth.tools import parse_contact_from_email
+from weth.tools.mail import email_normalize, email_split_and_format
 
-from odoo.addons.mail.tools.alias_error import AliasError
-from odoo.addons.mail.tools.discuss import Store, StoreVersion
+from weth.addons.mail.tools.alias_error import AliasError
+from weth.addons.mail.tools.discuss import Store, StoreVersion
 
 _logger = logging.getLogger(__name__)
 

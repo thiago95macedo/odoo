@@ -5,7 +5,7 @@ import { ActivityAssignPopover } from "@mail/core/web/activity_assign_popover";
 import { propComputed } from "@mail/utils/common/hooks";
 import { toggleFn } from "@mail/utils/common/signal";
 
-import { Component, computed, signal, t, useProps } from "@odoo/owl";
+import { Component, computed, signal, t, useProps } from "@weth/owl";
 
 import { _t } from "@web/core/l10n/translation";
 import { useService } from "@web/core/utils/hooks";

@@ -1,6 +1,6 @@
-import { describe, expect, test } from "@odoo/hoot";
-import { click, manuallyDispatchProgrammaticEvent, press, queryOne } from "@odoo/hoot-dom";
-import { animationFrame, tick, advanceTime } from "@odoo/hoot-mock";
+import { describe, expect, test } from "@weth/hoot";
+import { click, manuallyDispatchProgrammaticEvent, press, queryOne } from "@weth/hoot-dom";
+import { animationFrame, tick, advanceTime } from "@weth/hoot-mock";
 import { patchWithCleanup } from "@web/../tests/web_test_helpers";
 import { setupEditor, testEditor } from "../_helpers/editor";
 import { unformat } from "../_helpers/format";
@@ -77,8 +77,8 @@ test("should make qweb tag bold and create a commit even with partial selection 
     bold(editor);
     expect(getContent(el)).toBe(
         '<p data-selection-placeholder=""><br></p>' +
-            `<div>[<p t-out="'Test'" contenteditable="false" data-oe-protected="true" style="font-weight: bolder;">Test</p>]</div>` +
-            '<p data-selection-placeholder=""><br></p>'
+        `<div>[<p t-out="'Test'" contenteditable="false" data-oe-protected="true" style="font-weight: bolder;">Test</p>]</div>` +
+        '<p data-selection-placeholder=""><br></p>'
     );
     expect(queryOne(`p[contenteditable="false"]`).childNodes.length).toBe(1);
     const historyCommits = editor.shared.history.getCommits();
@@ -336,7 +336,7 @@ test("should type in bold", async () => {
     const { editor, el } = await setupEditor("<p>ab[]cd</p>");
 
     /** @todo fix warnings */
-    patchWithCleanup(console, { warn: () => {} });
+    patchWithCleanup(console, { warn: () => { } });
 
     // Toggle bold on.
     bold(editor);
@@ -362,7 +362,7 @@ test("should type a space after toggling bold off", async () => {
     const { editor, el } = await setupEditor("<p>ab[]cd</p>");
 
     /** @todo fix warnings */
-    patchWithCleanup(console, { warn: () => {} });
+    patchWithCleanup(console, { warn: () => { } });
 
     bold(editor);
     await typeChar(editor, "x");
@@ -498,7 +498,7 @@ test("should not remove empty bold tag in an empty block when changing selection
 test("should not add history commit for bold on collapsed selection", async () => {
     const { editor, el } = await setupEditor("<p>abcd[]</p>");
 
-    patchWithCleanup(console, { warn: () => {} });
+    patchWithCleanup(console, { warn: () => { } });
 
     // Collapsed formatting shortcuts (e.g. Ctrl+B) shouldn’t create a history
     // commit. The empty inline tag is temporary: auto-cleaned if unused. We want

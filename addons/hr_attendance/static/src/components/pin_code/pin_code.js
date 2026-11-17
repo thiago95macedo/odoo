@@ -1,4 +1,4 @@
-import { Component, onWillStart, onWillDestroy, proxy, t, useProps } from "@odoo/owl";
+import { Component, onWillStart, onWillDestroy, proxy, t, useProps } from "@weth/owl";
 import { browser } from "@web/core/browser/browser";
 import { range } from "@web/core/utils/numbers";
 

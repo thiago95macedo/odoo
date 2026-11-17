@@ -1,4 +1,4 @@
-import { t, useEffect, useListener, useProps } from "@odoo/owl";
+import { t, useEffect, useListener, useProps } from "@weth/owl";
 import { AutoComplete, autoCompleteProps } from "@web/core/autocomplete/autocomplete";
 
 export class AutoCompleteWithPages extends AutoComplete {

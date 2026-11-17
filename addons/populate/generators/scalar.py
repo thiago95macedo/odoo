@@ -3,8 +3,8 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from odoo import fields
-    from odoo.api import Environment
+    from weth import fields
+    from weth.api import Environment
 
 from .generator import Generator
 

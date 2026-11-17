@@ -6,7 +6,7 @@ import { MessagingMenuItemContextMenu } from "@mail/core/public_web/messaging_me
 import { NotificationItem } from "@mail/core/public_web/notification_item";
 import { propSignal, useLongPress, useRightClickMenu } from "@mail/utils/common/hooks";
 
-import { Component, computed, signal, types, useProps } from "@odoo/owl";
+import { Component, computed, signal, types, useProps } from "@weth/owl";
 
 import { hasTouch, isMobileOS } from "@web/core/browser/feature_detection";
 import { DROPDOWN_NESTING } from "@web/core/dropdown/_behaviours/dropdown_nesting";
@@ -43,7 +43,7 @@ export class MessagingMenuItem extends Component {
         const parentNesting = useEnv()[DROPDOWN_NESTING];
         if (parentNesting) {
             const boundary = Object.create(parentNesting);
-            boundary.closeAllParents = () => {};
+            boundary.closeAllParents = () => { };
             useSubEnv({ [DROPDOWN_NESTING]: boundary });
         }
         this.store = useService("mail.store");
@@ -174,10 +174,10 @@ export class MessagingMenuItem extends Component {
                 textClassName: "text-truncate",
                 onSwipeRight: isNotificationTab
                     ? {
-                          action: () => this.message?.setDone(),
-                          icon: "check_circle",
-                          bgColor: "bg-success",
-                      }
+                        action: () => this.message?.setDone(),
+                        icon: "check_circle",
+                        bgColor: "bg-success",
+                    }
                     : undefined,
                 onClick: (isMarkAsRead, isMiddleClick) => this.onClick(message, { isMiddleClick }),
             };

@@ -1,6 +1,6 @@
-from odoo.tests import tagged
+from weth.tests import tagged
 
-from odoo.addons.account_edi_ubl_cii.tests.test_ubl_export_bis3_be import TestUblExportBis3BE
+from weth.addons.account_edi_ubl_cii.tests.test_ubl_export_bis3_be import TestUblExportBis3BE
 
 
 @tagged('post_install_l10n', 'post_install', '-at_install', *TestUblExportBis3BE.extra_tags)

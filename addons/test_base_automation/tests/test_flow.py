@@ -6,11 +6,11 @@ import sys
 from freezegun import freeze_time
 from unittest.mock import patch
 
-from odoo import Command
-from odoo.addons.base.tests.common import TransactionCaseWithUserDemo
-from odoo.exceptions import AccessError, UserError, ValidationError
-from odoo.tests import Form, common, tagged, WhitespaceInsensitive
-from odoo.tools import mute_logger
+from weth import Command
+from weth.addons.base.tests.common import TransactionCaseWithUserDemo
+from weth.exceptions import AccessError, UserError, ValidationError
+from weth.tests import Form, common, tagged, WhitespaceInsensitive
+from weth.tools import mute_logger
 
 
 def create_automation(self, **kwargs):
@@ -489,7 +489,7 @@ if env.context.get('old_values', None):  # on write
         def _patch(*args, **kwargs):
             self.assertEqual(args[0], automations.pop(0))
 
-        patcher = patch('odoo.addons.base_automation.models.base_automation.BaseAutomation._process', _patch)
+        patcher = patch('weth.addons.base_automation.models.base_automation.BaseAutomation._process', _patch)
         self.startPatcher(patcher)
 
         lead = self.create_lead(state='draft')
@@ -941,7 +941,7 @@ action = {
             called_count += 1
             self.assertEqual(args[0], automation)
 
-        patcher = patch('odoo.addons.base_automation.models.base_automation.BaseAutomation._process', _patch)
+        patcher = patch('weth.addons.base_automation.models.base_automation.BaseAutomation._process', _patch)
         self.startPatcher(patcher)
 
         lead = self.create_lead()
@@ -971,7 +971,7 @@ action = {
         # first run, check we have a field set
         # this does not happen using the UI where the trigger is forced to be set
         self.assertFalse(automation.last_run)
-        with self.assertLogs('odoo.addons.base_automation', 'WARNING') as capture, self.enter_registry_test_mode():
+        with self.assertLogs('weth.addons.base_automation', 'WARNING') as capture, self.enter_registry_test_mode():
             self.automation_cron.method_direct_trigger()
         self.assertRegex(capture.output[0], r"Missing date trigger")
         automation.trg_date_id = model.field_id.filtered(lambda f: f.name == 'date_automation_last')
@@ -1057,8 +1057,8 @@ action = {
 
         with (
             self.enter_registry_test_mode(),
-            mute_logger('odoo.addons.base.models.ir_cron'),
-            self.assertLogs('odoo.addons.base_automation', 'ERROR') as capture,
+            mute_logger('weth.addons.base.models.ir_cron'),
+            self.assertLogs('weth.addons.base_automation', 'ERROR') as capture,
         ):
             self.automation_cron.method_direct_trigger()
 
@@ -1849,7 +1849,7 @@ class TestHttp(common.HttpCase):
         self.assertEqual(obj.another_field, "written")
 
         obj.another_field = False
-        with mute_logger("odoo.addons.base_automation.models.base_automation"):
+        with mute_logger("weth.addons.base_automation.models.base_automation"):
             response = self.url_open(automation.url, data=json.dumps({}))
         self.assertEqual(response.json(), {"status": "error"})
         self.assertEqual(response.status_code, 500)
@@ -1870,7 +1870,7 @@ class TestHttp(common.HttpCase):
         })
         obj = self.env[model.model].create({"name": "some name"})
 
-        with self.assertLogs("odoo.addons.base_automation", "WARNING") as capture, self.assertRaises(UserError):
+        with self.assertLogs("weth.addons.base_automation", "WARNING") as capture, self.assertRaises(UserError):
             automation._execute_webhook({"name": "some name"})
 
         self.assertIn(f"Webhook #{automation.id} failed on record base.automation.linked.test({obj.id},)", "\n".join(capture.output))

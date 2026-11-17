@@ -3,7 +3,7 @@ import { registry } from "@web/core/registry";
 import { PortalComposer } from "@portal/interactions/portal_composer";
 import { _t } from "@web/core/l10n/translation";
 import { user } from "@web/core/user";
-import { useListener } from "@odoo/owl";
+import { useListener } from "@weth/owl";
 
 /**
  * RatingPopupComposer
@@ -25,7 +25,7 @@ export class RatingPopupComposer extends Interaction {
             "res_id": false,
             "pid": 0,
             "display_rating": true,
-            "csrf_token": odoo.csrf_token,
+            "csrf_token": weth.csrf_token,
             "user_id": user.userId,
             "reloadRatingPopupComposer": this.onReloadRatingPopupComposer.bind(this),
         }, options, {});

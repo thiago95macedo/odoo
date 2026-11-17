@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 from datetime import timedelta
 
-from odoo import Command, fields
-from odoo.addons.stock_account.tests.common import TestStockValuationCommon
-from odoo import tools
+from weth import Command, fields
+from weth.addons.stock_account.tests.common import TestStockValuationCommon
+from weth import tools
 
 
 class PurchaseTestCommon(TestStockValuationCommon):

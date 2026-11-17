@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import _, api, fields, models
-from odoo.exceptions import AccessError
+from weth import _, api, fields, models
+from weth.exceptions import AccessError
 
 
 class ForumPostMessage(models.Model):

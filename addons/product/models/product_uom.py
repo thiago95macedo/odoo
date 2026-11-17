@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
 
-from odoo import _, api, fields, models
-from odoo.exceptions import UserError, ValidationError
+from weth import _, api, fields, models
+from weth.exceptions import UserError, ValidationError
 
 
 class ProductUom(models.Model):

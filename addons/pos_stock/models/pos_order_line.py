@@ -1,7 +1,7 @@
 from datetime import UTC
 
-from odoo import Command, api, fields, models
-from odoo.exceptions import UserError
+from weth import Command, api, fields, models
+from weth.exceptions import UserError
 
 
 class PosOrderLine(models.Model):

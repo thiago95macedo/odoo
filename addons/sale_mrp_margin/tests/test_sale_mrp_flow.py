@@ -3,9 +3,9 @@
 import datetime
 from freezegun import freeze_time
 
-from odoo.addons.sale_mrp.tests import test_sale_mrp_flow
-from odoo.fields import Command
-from odoo.tests import common, Form
+from weth.addons.sale_mrp.tests import test_sale_mrp_flow
+from weth.fields import Command
+from weth.tests import common, Form
 
 
 @common.tagged('post_install', '-at_install')

@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.test_event_full.tests.common import TestEventFullCommon
-from odoo.tests import tagged, users
+from weth.addons.test_event_full.tests.common import TestEventFullCommon
+from weth.tests import tagged, users
 
 
 @tagged("event_crm")

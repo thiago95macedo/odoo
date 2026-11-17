@@ -1,4 +1,4 @@
-import { proxy, signal, t, useListener, useProps } from "@odoo/owl";
+import { proxy, signal, t, useListener, useProps } from "@weth/owl";
 import { Domain } from "@web/core/domain";
 import { _t } from "@web/core/l10n/translation";
 import { useBus, useService } from '@web/core/utils/hooks';
@@ -45,7 +45,7 @@ export const ExpenseDocumentDropZone = (T, parentProps) => class ExpenseDocument
         ev.preventDefault();
         await this.env.bus.trigger("change_file_input", {
             files: ev.dataTransfer.files,
-        });        
+        });
         this.dragState.showDragZone = false;
     }
 };
@@ -93,8 +93,8 @@ export const AbstractExpenseDocumentUpload = (T) => class AbstractExpenseDocumen
 
     async _onChangeFileInput(files) {
         const params = {
-            csrf_token: odoo.csrf_token,
-            ufile : files,
+            csrf_token: weth.csrf_token,
+            ufile: files,
             model: this.modelName,
             id: 0,
         };

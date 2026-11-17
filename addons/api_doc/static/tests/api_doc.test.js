@@ -2,7 +2,7 @@ import { DocClient } from "@api_doc/doc_client";
 import { startDocClient } from "@api_doc/start_doc_client";
 import { DocCopyablePre } from "@api_doc/components/doc_copyable_pre";
 import { mockDocIndex, mockDocModel } from "./doc_test_helpers";
-import { keyDown, keyUp, queryAll, queryAllTexts, queryFirst, resize } from "@odoo/hoot-dom";
+import { keyDown, keyUp, queryAll, queryAllTexts, queryFirst, resize } from "@weth/hoot-dom";
 import {
     after,
     animationFrame,
@@ -12,7 +12,7 @@ import {
     test,
     tick,
     waitFor
-} from "@odoo/hoot";
+} from "@weth/hoot";
 
 import {
     contains,
@@ -34,7 +34,7 @@ function setupMockModel(modelNames) {
     });
 }
 
-async function setupDocModel(index=0, modelNames=["M1", "M2", "M3"]) {
+async function setupDocModel(index = 0, modelNames = ["M1", "M2", "M3"]) {
     setupMockModel(modelNames);
     const docClient = await mountWithCleanup(DocClient, {});
     await waitFor(".o-doc-sidebar-content div a");
@@ -43,7 +43,7 @@ async function setupDocModel(index=0, modelNames=["M1", "M2", "M3"]) {
     await waitFor(".o-doc-method");
     return docClient;
 }
-function getCodeEditorDomValue(target="") {
+function getCodeEditorDomValue(target = "") {
     return queryAll(`${target} .ace_line`)
         .map((root) => queryAllTexts(`:scope > span`, { root }).join(""))
         .join("\n");
@@ -180,7 +180,7 @@ test("Generate api key hyperlink", async () => {
     await contains(".modal a").click();
 
     await expect.waitForSteps([
-        `callWindowOpen ${window.location.origin}/odoo/action-doc_api_key_wizard`
+        `callWindowOpen ${window.location.origin}/weth/action-doc_api_key_wizard`
     ]);
 });
 

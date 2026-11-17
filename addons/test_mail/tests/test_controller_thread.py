@@ -2,9 +2,9 @@ from ast import literal_eval
 import base64
 import json
 
-from odoo.addons.mail.tests.common_controllers import MailControllerThreadCommon
-from odoo.tests import tagged
-from odoo.tools import mute_logger
+from weth.addons.mail.tests.common_controllers import MailControllerThreadCommon
+from weth.tests import tagged
+from weth.tools import mute_logger
 
 
 @tagged("-at_install", "post_install", "mail_controller")
@@ -16,7 +16,7 @@ class TestMessageController(MailControllerThreadCommon):
 
         cls.test_public_record = cls.env["mail.test.access.public"].create({"name": "Public Channel", "email": "john@test.be", "mobile": "+32455001122"})
 
-    @mute_logger("odoo.http")
+    @mute_logger("weth.http")
     def test_thread_attachment_hijack(self):
         att = self.env["ir.attachment"].create({
             "name": "arguments_for_firing_marc_demo",

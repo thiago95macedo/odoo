@@ -1,5 +1,5 @@
-import { expect, test } from "@odoo/hoot";
-import { press } from "@odoo/hoot-dom";
+import { expect, test } from "@weth/hoot";
+import { press } from "@weth/hoot-dom";
 import { patchWithCleanup } from "@web/../tests/web_test_helpers";
 import { setupEditor, testEditor } from "../_helpers/editor";
 import { getContent } from "../_helpers/selection";
@@ -11,7 +11,7 @@ import {
     undo,
 } from "../_helpers/user_actions";
 import { unformat } from "../_helpers/format";
-import { tick } from "@odoo/hoot-mock";
+import { tick } from "@weth/hoot-mock";
 import { QWebPlugin } from "@html_editor/others/qweb_plugin";
 
 test("should make a few characters italic", async () => {
@@ -225,7 +225,7 @@ test("should make a few characters italic inside table (italic)", async () => {
 test("should not add history commit for italic on collapsed selection", async () => {
     const { editor, el } = await setupEditor("<p>abcd[]</p>");
 
-    patchWithCleanup(console, { warn: () => {} });
+    patchWithCleanup(console, { warn: () => { } });
 
     // Collapsed formatting shortcuts (e.g. Ctrl+I) shouldn’t create a history
     // commit. The empty inline tag is temporary: auto-cleaned if unused. We want

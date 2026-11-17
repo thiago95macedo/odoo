@@ -4,8 +4,8 @@ from datetime import date
 
 from freezegun import freeze_time
 
-from odoo import tests
-from odoo.tests import TransactionCase
+from weth import tests
+from weth.tests import TransactionCase
 
 
 @tests.tagged('access_rights', 'post_install', '-at_install')

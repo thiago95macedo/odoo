@@ -6,10 +6,10 @@ import warnings
 
 from passlib.context import CryptContext
 
-from odoo import http
-from odoo.tools.config import config
-from odoo.addons.iot_drivers.tools import route
-from odoo.addons.iot_drivers.tools.system import IOT_SYSTEM, IS_RPI, IS_WINDOWS
+from weth import http
+from weth.tools.config import config
+from weth.addons.iot_drivers.tools import route
+from weth.addons.iot_drivers.tools.system import IOT_SYSTEM, IS_RPI, IS_WINDOWS
 
 warnings.filterwarnings(
     "ignore",

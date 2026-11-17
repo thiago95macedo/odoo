@@ -5,7 +5,7 @@
 O ambiente de desenvolvimento do Odoo 20 na WETH é executado localmente na estação de trabalho Linux (Ubuntu 26.04), operando sob Python 3.14 e PostgreSQL local.
 
 ```
-/home/arcanus/Workspace/clientes/weth/odoo/
+/home/arcanus/Workspace/clientes/weth/weth/
 ├── .agents/                 # Orquestração do Antigravity (skills e rules)
 │   ├── rules/              # Regras arquiteturais e governança
 │   └── skills/             # Links simbólicos para as skills locais e WETH
@@ -14,7 +14,7 @@ O ambiente de desenvolvimento do Odoo 20 na WETH é executado localmente na esta
 ├── docs/                   # Memória operacional e arquitetura
 ├── skills/                 # Biblioteca fonte de skills Odoo
 ├── requirements.txt        # Dependências Python (otimizado para Linux)
-├── odoo-bin                # Executável do servidor
+├── weth-bin                # Executável do servidor
 └── odoo.conf               # Configuração do servidor local (a provisionar)
 ```
 

@@ -285,7 +285,7 @@ const FILETYPE_BY_MAGIC_CHAR = {
     P: "svg+xml",
     U: "webp",
 };
-// Equivalent to `image_data_uri` from odoo/tools/image.py
+// Equivalent to `image_data_uri` from weth/tools/image.py
 export function imageDataUri(base64Source) {
     if (!base64Source || typeof base64Source !== "string") {
         return null;

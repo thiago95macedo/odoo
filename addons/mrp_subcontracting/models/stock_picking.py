@@ -3,11 +3,11 @@
 from collections import defaultdict
 from datetime import timedelta
 
-from odoo import api, fields, models, _
-from odoo.exceptions import UserError
-from odoo.fields import Command
-from odoo.tools.float_utils import float_compare
-from odoo.tools.misc import clean_context
+from weth import api, fields, models, _
+from weth.exceptions import UserError
+from weth.fields import Command
+from weth.tools.float_utils import float_compare
+from weth.tools.misc import clean_context
 from dateutil.relativedelta import relativedelta
 
 

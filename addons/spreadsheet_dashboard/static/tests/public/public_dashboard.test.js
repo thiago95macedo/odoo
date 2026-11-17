@@ -5,7 +5,7 @@ import {
     mountWithCleanup,
 } from "@web/../tests/web_test_helpers";
 import { defineSpreadsheetModels } from "@spreadsheet/../tests/helpers/data";
-import { animationFrame, expect, getFixture, test } from "@odoo/hoot";
+import { animationFrame, expect, getFixture, test } from "@weth/hoot";
 
 import { THIS_YEAR_GLOBAL_FILTER } from "@spreadsheet/../tests/helpers/global_filter";
 import { addGlobalFilter } from "@spreadsheet/../tests/helpers/commands";

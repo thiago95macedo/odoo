@@ -1,4 +1,4 @@
-import { expect, test } from "@odoo/hoot";
+import { expect, test } from "@weth/hoot";
 import { contains } from "@web/../tests/web_test_helpers";
 import { setupEditor } from "../_helpers/editor";
 import { expandToolbar } from "../_helpers/toolbar";

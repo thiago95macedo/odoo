@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
 
     <!-- Display of /pos/pay (the order of the if conditions matters)-->
     <template id="pay">
@@ -118,7 +118,7 @@
     </template>
 
     <!-- Header -->
-    <!-- TODO (PR https://github.com/odoo/odoo/pull/242202): apply suggestions comments -->
+    <!-- TODO (PR https://github.com/weth/odoo/pull/242202): apply suggestions comments -->
     <template id="pos_state_header" name="POS State Header" inherit_id="payment.state_header" primary="True">
         <xpath expr="//div[@name='o_payment_status_alert']" position="replace">
             <t t-if="status_message">
@@ -231,4 +231,4 @@
         </t>
     </template>
 
-</odoo>
+</weth>

@@ -1,11 +1,11 @@
 from datetime import date
 from freezegun import freeze_time
 
-from odoo import Command, fields
-from odoo.tests import tagged
-from odoo.tools.misc import format_date
+from weth import Command, fields
+from weth.tests import tagged
+from weth.tools.misc import format_date
 
-from odoo.addons.account.tests.common import AccountTestInvoicingCommon
+from weth.addons.account.tests.common import AccountTestInvoicingCommon
 
 
 @tagged('post_install', '-at_install')

@@ -8,9 +8,9 @@ from urllib.parse import unquote
 import qrcode
 import qrcode.image.svg
 
-from odoo import _, api, fields, models, release
-from odoo.exceptions import AccessError, UserError
-from odoo.fields import Domain
+from weth import _, api, fields, models, release
+from weth.exceptions import AccessError, UserError
+from weth.fields import Domain
 
 
 class PosConfig(models.Model):

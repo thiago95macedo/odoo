@@ -1,4 +1,4 @@
-import { Component, useProps, proxy, signal, t } from "@odoo/owl";
+import { Component, useProps, proxy, signal, t } from "@weth/owl";
 import { Dropdown } from "@web/core/dropdown/dropdown";
 import { DropdownItem } from "@web/core/dropdown/dropdown_item";
 import { useDropdownState } from "@web/core/dropdown/dropdown_hooks";

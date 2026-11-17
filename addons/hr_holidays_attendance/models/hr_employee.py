@@ -2,7 +2,7 @@
 from datetime import UTC
 from zoneinfo import ZoneInfo
 
-from odoo import fields, models
+from weth import fields, models
 
 
 class HrEmployee(models.Model):

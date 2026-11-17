@@ -5,7 +5,7 @@ import { BuilderAction } from "@html_builder/core/builder_action";
 import { FooterTemplateChoice } from "./footer_template_option";
 import { _t } from "@web/core/l10n/translation";
 
-/** @typedef {import("@odoo/owl").Component} Component */
+/** @typedef {import("@weth/owl").Component} Component */
 
 /**
  * @typedef { Object } FooterOptionShared
@@ -68,7 +68,7 @@ export class FooterOptionPlugin extends Plugin {
     prepareDrag() {
         // Remove the footer scroll effect if it has one (because the footer
         // dropzone flickers otherwise when it is in grid mode).
-        let restore = () => {};
+        let restore = () => { };
         const wrapwrapEl = this.editable;
         const hasFooterScrollEffect = wrapwrapEl.classList.contains("o_footer_effect_enable");
         if (hasFooterScrollEffect) {

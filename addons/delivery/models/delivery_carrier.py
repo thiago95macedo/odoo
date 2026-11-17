@@ -5,10 +5,10 @@ import json
 
 import psycopg2
 
-from odoo import SUPERUSER_ID, Command, api, fields, models
-from odoo.exceptions import UserError
-from odoo.modules.registry import Registry
-from odoo.tools.safe_eval import expr_eval
+from weth import SUPERUSER_ID, Command, api, fields, models
+from weth.exceptions import UserError
+from weth.modules.registry import Registry
+from weth.tools.safe_eval import expr_eval
 
 
 class DeliveryCarrier(models.Model):

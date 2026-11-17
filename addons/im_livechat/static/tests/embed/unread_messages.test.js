@@ -16,10 +16,10 @@ import {
     startServer,
     waitStoreFetch,
 } from "@mail/../tests/mail_test_helpers";
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@weth/hoot";
 import { Command, patchWithCleanup, serverState, withUser } from "@web/../tests/web_test_helpers";
 
-import { queryFirst } from "@odoo/hoot-dom";
+import { queryFirst } from "@weth/hoot-dom";
 import { rpc } from "@web/core/network/rpc";
 
 describe.current.tags("desktop");

@@ -1,8 +1,8 @@
 import { startInteractions, setupInteractionWhiteList } from "@web/../tests/public/helpers";
 
-import { describe, expect, test, microTick, freezeTime } from "@odoo/hoot";
-import { queryAll, queryOne, tick } from "@odoo/hoot-dom";
-import { advanceTime } from "@odoo/hoot-mock";
+import { describe, expect, test, microTick, freezeTime } from "@weth/hoot";
+import { queryAll, queryOne, tick } from "@weth/hoot-dom";
+import { advanceTime } from "@weth/hoot-mock";
 
 setupInteractionWhiteList("website.countdown");
 
@@ -11,9 +11,8 @@ describe.current.tags("interaction_dev");
 const getTemplate = function (options = { endAction: "nothing", endTime: "98765432100" }) {
     return `
         <div style="background-color: white;">
-            <section class="s_countdown pt48 pb48 ${
-                options.endAction === "message_no_countdown" ? "hide-countdown" : ""
-            }"
+            <section class="s_countdown pt48 pb48 ${options.endAction === "message_no_countdown" ? "hide-countdown" : ""
+        }"
             data-display="dhms"
             data-end-action="${options.endAction}"
             data-size="175"

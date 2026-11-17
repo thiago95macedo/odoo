@@ -1,6 +1,6 @@
-/** @odoo-module */
+/** @weth-module */
 
-import { Component, t, useProps, xml } from "@odoo/owl";
+import { Component, t, useProps, xml } from "@weth/owl";
 
 export class HootLogCounters extends Component {
     static template = xml`

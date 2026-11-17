@@ -13,11 +13,11 @@ from markupsafe import Markup
 
 from werkzeug.urls import url_encode, url_parse
 
-from odoo import api, fields, models
-from odoo.fields import Command, Domain
-from odoo.addons.base.models.res_partner import _tz_get
-from odoo.addons.calendar.models.calendar_attendee import CalendarAttendee
-from odoo.addons.calendar.models.calendar_recurrence import (
+from weth import api, fields, models
+from weth.fields import Command, Domain
+from weth.addons.base.models.res_partner import _tz_get
+from weth.addons.calendar.models.calendar_attendee import CalendarAttendee
+from weth.addons.calendar.models.calendar_recurrence import (
     weekday_to_field,
     RRULE_TYPE_SELECTION,
     END_TYPE_SELECTION,
@@ -25,13 +25,13 @@ from odoo.addons.calendar.models.calendar_recurrence import (
     WEEKDAY_SELECTION,
     BYDAY_SELECTION
 )
-from odoo.addons.calendar.models.utils import interval_from_events
-from odoo.addons.mail.tools.discuss import Store
-from odoo.tools.intervals import intervals_overlap
-from odoo.tools.translate import _
-from odoo.tools.misc import get_lang, babel_locale_parse
-from odoo.tools import html2plaintext, html_sanitize, is_html_empty, single_email_re, format_date, format_time
-from odoo.exceptions import UserError, ValidationError
+from weth.addons.calendar.models.utils import interval_from_events
+from weth.addons.mail.tools.discuss import Store
+from weth.tools.intervals import intervals_overlap
+from weth.tools.translate import _
+from weth.tools.misc import get_lang, babel_locale_parse
+from weth.tools import html2plaintext, html_sanitize, is_html_empty, single_email_re, format_date, format_time
+from weth.exceptions import UserError, ValidationError
 
 _logger = logging.getLogger(__name__)
 

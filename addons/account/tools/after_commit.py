@@ -1,7 +1,7 @@
 import logging
 from functools import wraps
 
-from odoo import models
+from weth import models
 
 _logger = logging.getLogger(__name__)
 

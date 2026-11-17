@@ -2,9 +2,9 @@
 
 from datetime import datetime
 
-from odoo import models
-from odoo.tools.date_utils import sum_intervals
-from odoo.tools.intervals import Intervals
+from weth import models
+from weth.tools.date_utils import sum_intervals
+from weth.tools.intervals import Intervals
 
 
 class HrLeaveAllocation(models.Model):

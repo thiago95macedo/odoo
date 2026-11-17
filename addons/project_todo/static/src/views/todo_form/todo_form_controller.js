@@ -1,4 +1,4 @@
-import { markup, onWillStart } from "@odoo/owl";
+import { markup, onWillStart } from "@weth/owl";
 
 import { HistoryDialog } from "@html_editor/components/history_dialog/history_dialog";
 import { ConfirmationDialog } from "@web/core/confirmation_dialog/confirmation_dialog";
@@ -87,8 +87,8 @@ export class TodoFormController extends FormControllerWithHTMLExpander {
                 title: _t("To-do History"),
                 noContentHelper: markup`
                     <span class='text-muted fst-italic'>${_t(
-                        "The To-do description was empty at the time."
-                    )}</span>`,
+                    "The To-do description was empty at the time."
+                )}</span>`,
                 recordId: record.resId,
                 recordModel: this.props.resModel,
                 versionedFieldName,

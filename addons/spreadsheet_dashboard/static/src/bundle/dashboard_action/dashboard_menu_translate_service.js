@@ -1,5 +1,5 @@
 import { registry } from "@web/core/registry";
-import * as spreadsheet from "@odoo/o-spreadsheet";
+import * as spreadsheet from "@weth/o-spreadsheet";
 
 import { dynamicSpreadsheetTranslate } from "@spreadsheet/o_spreadsheet/translation";
 

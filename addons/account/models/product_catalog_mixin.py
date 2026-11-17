@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import models
-from odoo.exceptions import ValidationError
-from odoo.fields import Command
+from weth import models
+from weth.exceptions import ValidationError
+from weth.fields import Command
 
 
 class ProductCatalogMixin(models.AbstractModel):

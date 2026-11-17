@@ -3,7 +3,7 @@ import { _t } from '@web/core/l10n/translation';
 import { rpc } from "@web/core/network/rpc";
 import { createElementWithContent, setElementContent } from '@web/core/utils/html';
 import { redirect } from '@web/core/utils/urls';
-import { markup } from "@odoo/owl";
+import { markup } from "@weth/owl";
 
 /**
  * Updates both navbar cart
@@ -14,7 +14,7 @@ function updateCartNavBar(data) {
     browser.sessionStorage.setItem('website_sale_cart_quantity', data.cart_quantity);
     // Mobile and Desktop elements have to be updated.
     const cartQuantityElements = document.querySelectorAll('.my_cart_quantity');
-    for(const cartQuantityElement of cartQuantityElements) {
+    for (const cartQuantityElement of cartQuantityElements) {
         if (data.cart_quantity === 0) {
             cartQuantityElement.classList.add('d-none');
         } else {
@@ -73,7 +73,7 @@ function updateCartSummary(data) {
  * @return {void}
  */
 function updateQuickReorderSidebar(data) {
-    const quickReorderButton  = document.getElementById('quick_reorder_button');
+    const quickReorderButton = document.getElementById('quick_reorder_button');
     document.querySelectorAll('.o_wsale_quick_reorder_line_group').forEach(el => el.remove());
     if (data['website_sale.quick_reorder_history'].trim()) {
         document.querySelector('#quick_reorder_sidebar .offcanvas-body').insertAdjacentHTML(
@@ -105,7 +105,7 @@ function updateQuickReorderSidebar(data) {
 function updateElementContent(
     newRoot,
     selector,
-    { postUpdate = () => {}, currSelector = null } = {},
+    { postUpdate = () => { }, currSelector = null } = {},
 ) {
     let newEl = newRoot.querySelector(selector);
     const currentSelector = currSelector ?? selector;
@@ -150,7 +150,7 @@ async function updateShopContent(interaction, {
     try {
         const paramsObject = Object.fromEntries(searchParams.entries());
         const headerEl = document.querySelector("#o_wsale_products_header");
-        if (headerEl){
+        if (headerEl) {
             paramsObject.category = headerEl.dataset.categoryId;
         }
         const data = await interaction.waitFor(rpc('/shop/reload', paramsObject));

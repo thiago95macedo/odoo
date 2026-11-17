@@ -1,9 +1,9 @@
 
 from ast import literal_eval
 from collections import OrderedDict
-from odoo import models, fields, api, _
-from odoo.exceptions import ValidationError, MissingError
-from odoo.fields import Domain
+from weth import models, fields, api, _
+from weth.exceptions import ValidationError, MissingError
+from weth.fields import Domain
 from lxml import etree, html
 import logging
 from random import randint

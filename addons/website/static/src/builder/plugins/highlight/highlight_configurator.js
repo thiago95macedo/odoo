@@ -1,4 +1,4 @@
-import { Component, onWillStart, proxy, useProps, t } from "@odoo/owl";
+import { Component, onWillStart, proxy, useProps, t } from "@weth/owl";
 import { ColorPicker } from "@html_editor/components/color_picker/color_picker";
 import { HighlightPicker } from "./highlight_picker";
 import { normalizeColor } from "@html_builder/utils/utils_css";

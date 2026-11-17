@@ -4,13 +4,13 @@ import urllib.parse
 
 from werkzeug.exceptions import BadRequest, Forbidden, NotFound
 
-from odoo import http
-from odoo.exceptions import AccessError, ValidationError
-from odoo.http import request
+from weth import http
+from weth.exceptions import AccessError, ValidationError
+from weth.http import request
 
-from odoo.addons.payment import utils as payment_utils
-from odoo.addons.payment.controllers.payment_status import PaymentStatus
-from odoo.addons.portal.controllers import portal
+from weth.addons.payment import utils as payment_utils
+from weth.addons.payment.controllers.payment_status import PaymentStatus
+from weth.addons.portal.controllers import portal
 
 
 class PaymentPortal(portal.CustomerPortal):

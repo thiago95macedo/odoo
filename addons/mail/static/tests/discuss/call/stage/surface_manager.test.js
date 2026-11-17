@@ -1,6 +1,6 @@
 import { Surface, SurfaceManager } from "@mail/discuss/call/common/stage/surface_manager";
 
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@weth/hoot";
 
 describe.current.tags("desktop");
 

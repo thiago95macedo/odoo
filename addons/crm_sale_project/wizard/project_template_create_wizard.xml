@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<odoo>
+<weth>
 
     <record id="crm_project_view_form_simplified_template" model="ir.ui.view">
         <field name="name">crm.project.create.wizard.form</field>
@@ -33,4 +33,4 @@
         </field>
     </record>
 
-</odoo>
+</weth>

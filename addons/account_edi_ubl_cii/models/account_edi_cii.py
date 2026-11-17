@@ -1,9 +1,9 @@
-from odoo import models, Command
-from odoo.tools import formatLang, frozendict, html2plaintext
-from odoo.tools.misc import NON_BREAKING_SPACE
-from odoo.tools.partner_identifiers import is_identifier_void
+from weth import models, Command
+from weth.tools import formatLang, frozendict, html2plaintext
+from weth.tools.misc import NON_BREAKING_SPACE
+from weth.tools.partner_identifiers import is_identifier_void
 from datetime import datetime
-from odoo.addons.account_edi_ubl_cii.models.account_edi_common import (
+from weth.addons.account_edi_ubl_cii.models.account_edi_common import (
     FloatFmt,
 )
 

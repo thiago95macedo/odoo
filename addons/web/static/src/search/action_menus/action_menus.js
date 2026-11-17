@@ -14,7 +14,7 @@ import {
     proxy,
     t,
     useProps,
-} from "@odoo/owl";
+} from "@weth/owl";
 import { OfflinePlugin } from "@web/core/offline/offline_plugin";
 import { ConnectionLostError } from "@web/core/network/rpc";
 
@@ -32,7 +32,7 @@ export const actionMenusProps = {
         action: t.array().optional(),
         print: t.array().optional(),
     }),
-    onActionExecuted: t.function().optional(() => () => {}),
+    onActionExecuted: t.function().optional(() => () => { }),
     shouldExecuteAction: t.function().optional(() => () => true),
     loadExtraPrintItems: t.function().optional(() => () => []),
 };

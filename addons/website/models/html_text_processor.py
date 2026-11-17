@@ -5,9 +5,9 @@ import uuid
 from lxml import etree, html
 from markupsafe import escape
 
-from odoo import api, models
-from odoo.tools import xml_translate
-from odoo.tools.translate import StoredTranslations
+from weth import api, models
+from weth.tools import xml_translate
+from weth.tools.translate import StoredTranslations
 
 _logger = logging.getLogger(__name__)
 

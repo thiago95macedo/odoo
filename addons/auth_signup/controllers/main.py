@@ -4,15 +4,15 @@ import logging
 import werkzeug
 from werkzeug.urls import url_encode
 
-from odoo import http, tools, _
-from odoo.addons.auth_signup.models.res_users import SignupError
-from odoo.addons.web.controllers.home import ensure_db, Home, SIGN_UP_REQUEST_PARAMS, LOGIN_SUCCESSFUL_PARAMS
-from odoo.addons.web.models.res_users import SKIP_CAPTCHA_LOGIN
-from odoo.addons.base_setup.controllers.main import BaseSetup
-from odoo.exceptions import UserError
-from odoo.tools.translate import LazyTranslate
-from odoo.http import request
-from odoo.http.session import authenticate
+from weth import http, tools, _
+from weth.addons.auth_signup.models.res_users import SignupError
+from weth.addons.web.controllers.home import ensure_db, Home, SIGN_UP_REQUEST_PARAMS, LOGIN_SUCCESSFUL_PARAMS
+from weth.addons.web.models.res_users import SKIP_CAPTCHA_LOGIN
+from weth.addons.base_setup.controllers.main import BaseSetup
+from weth.exceptions import UserError
+from weth.tools.translate import LazyTranslate
+from weth.http import request
+from weth.http.session import authenticate
 from markupsafe import Markup
 
 _lt = LazyTranslate(__name__)

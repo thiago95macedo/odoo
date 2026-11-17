@@ -2,9 +2,9 @@
 
 from unittest.mock import patch
 
-from odoo.tests import tagged
+from weth.tests import tagged
 
-from odoo.addons.payment.tests.common import PaymentCommon
+from weth.addons.payment.tests.common import PaymentCommon
 
 
 @tagged("-at_install", "post_install")
@@ -36,7 +36,7 @@ class TestIrWebsocket(PaymentCommon):
     def test_subscription_resends_status_notifications(self):
         self._update_transaction(self.tx, is_post_processed=True)
         with (
-            patch("odoo.addons.mail.models.ir_websocket.IrWebsocket._subscribe"),
+            patch("weth.addons.mail.models.ir_websocket.IrWebsocket._subscribe"),
             patch.object(
                 self.PaymentTransaction, "_notify_status", autospec=True
             ) as notify_status_mock,
@@ -47,7 +47,7 @@ class TestIrWebsocket(PaymentCommon):
     def test_subscription_skips_not_yet_post_processed_transactions(self):
         self._update_transaction(self.tx, is_post_processed=False)
         with (
-            patch("odoo.addons.mail.models.ir_websocket.IrWebsocket._subscribe"),
+            patch("weth.addons.mail.models.ir_websocket.IrWebsocket._subscribe"),
             patch.object(
                 self.PaymentTransaction, "_notify_status", autospec=True
             ) as notify_status_mock,
@@ -58,7 +58,7 @@ class TestIrWebsocket(PaymentCommon):
     def test_subscription_skips_status_notification_for_invalid_channels(self):
         channel = f"payment_transaction_channel:{self.tx.id},invalid-token"
         with (
-            patch("odoo.addons.mail.models.ir_websocket.IrWebsocket._subscribe"),
+            patch("weth.addons.mail.models.ir_websocket.IrWebsocket._subscribe"),
             patch.object(self.PaymentTransaction, "_notify_status") as notify_status_mock,
         ):
             self.IrWebsocket._subscribe({"channels": [channel]})

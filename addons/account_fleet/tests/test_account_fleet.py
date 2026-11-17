@@ -1,9 +1,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
 from freezegun import freeze_time
-from odoo.tests import tagged
+from weth.tests import tagged
 
-from odoo.addons.account.tests.common import AccountTestInvoicingCommon
+from weth.addons.account.tests.common import AccountTestInvoicingCommon
 
 
 @tagged('post_install', '-at_install')

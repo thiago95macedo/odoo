@@ -14,11 +14,11 @@ Environment="ODOO_PY_COLORS=True"
 ExecStartPre=sudo /bin/mkdir -p /run/odoo
 ExecStartPre=sudo /bin/chown odoo:odoo /run/odoo
 ExecStartPre=sudo timedatectl set-ntp true
-ExecStart=/usr/bin/python3 /home/pi/odoo/odoo-bin --config /home/pi/odoo.conf
+ExecStart=/usr/bin/python3 /home/pi/weth/weth-bin --config /home/pi/odoo.conf
 Restart=on-failure
 RestartSec=10s
 StandardOutput=null
-StandardError=append:/var/log/odoo/odoo-server.log
+StandardError=append:/var/log/weth/odoo-server.log
 
 [Install]
 WantedBy=multi-user.target

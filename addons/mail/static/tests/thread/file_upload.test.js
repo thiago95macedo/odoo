@@ -10,7 +10,7 @@ import {
     startServer,
     MENU_ACTIVE_IDS,
 } from "@mail/../tests/mail_test_helpers";
-import { describe, test } from "@odoo/hoot";
+import { describe, test } from "@weth/hoot";
 import { onRpc } from "@web/../tests/web_test_helpers";
 
 describe.current.tags("desktop");
@@ -50,7 +50,7 @@ test("Attachment shows spinner during upload", async () => {
     const pyEnv = await startServer();
     const channelId = pyEnv["discuss.channel"].create({ name: "channel_1" });
     const text2 = new File(["hello, world"], "text2.txt", { type: "text/plain" });
-    onRpc("/mail/attachment/upload", () => new Promise(() => {})); // never fulfill the attachment upload promise.
+    onRpc("/mail/attachment/upload", () => new Promise(() => { })); // never fulfill the attachment upload promise.
     await start();
     await openDiscuss(channelId);
     await inputFiles(".o-mail-Composer input[type=file]", [text2]);

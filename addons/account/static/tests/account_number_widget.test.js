@@ -1,7 +1,7 @@
 import { defineAccountNumberModels } from "./account_number_widget_test_helpers";
 import { DELAY } from "@account/components/account_number_widget/account_number_widget";
-import { test } from "@odoo/hoot";
-import { advanceTime } from "@odoo/hoot-mock";
+import { test } from "@weth/hoot";
+import { advanceTime } from "@weth/hoot-mock";
 import {
     click,
     contains,

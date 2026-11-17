@@ -1,5 +1,5 @@
 from datetime import datetime
-from odoo.tests import TransactionCase, tagged, new_test_user, users
+from weth.tests import TransactionCase, tagged, new_test_user, users
 
 
 @tagged('post_install', '-at_install')

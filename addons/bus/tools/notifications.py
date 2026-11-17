@@ -1,7 +1,7 @@
 import json
 from collections import defaultdict
 
-from odoo.tools import SQL, json_default
+from weth.tools import SQL, json_default
 
 from . import orjson
 from .misc import tuplify

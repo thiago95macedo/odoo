@@ -1,9 +1,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import fields, models, api
-from odoo.tools import LazyTranslate
-from odoo.tools.translate import mark_as_copy
-from odoo.addons.mail.tools.discuss import Store
+from weth import fields, models, api
+from weth.tools import LazyTranslate
+from weth.tools.translate import mark_as_copy
+from weth.addons.mail.tools.discuss import Store
 
 _lt = LazyTranslate(__name__)
 

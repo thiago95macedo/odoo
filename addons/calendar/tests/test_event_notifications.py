@@ -5,13 +5,13 @@ from dateutil.relativedelta import relativedelta
 from freezegun import freeze_time
 from markupsafe import Markup
 
-from odoo import fields
-from odoo.tools import format_time
-from odoo.tests import Form, tagged
-from odoo.tests.common import new_test_user
-from odoo.addons.base.tests.test_ir_cron import CronMixinCase
-from odoo.addons.bus.tests.common import BusResult
-from odoo.addons.mail.tests.common import MailCase
+from weth import fields
+from weth.tools import format_time
+from weth.tests import Form, tagged
+from weth.tests.common import new_test_user
+from weth.addons.base.tests.test_ir_cron import CronMixinCase
+from weth.addons.bus.tests.common import BusResult
+from weth.addons.mail.tests.common import MailCase
 
 
 class CalendarMailCommon(MailCase, CronMixinCase):

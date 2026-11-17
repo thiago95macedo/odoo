@@ -8,7 +8,7 @@ import {
     nextLeaf,
     previousLeaf,
 } from "@html_editor/utils/dom_info";
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@weth/hoot";
 import { insertTestHtml } from "../_helpers/editor";
 import { unformat } from "../_helpers/format";
 import { isBlock } from "../../src/utils/blocks";

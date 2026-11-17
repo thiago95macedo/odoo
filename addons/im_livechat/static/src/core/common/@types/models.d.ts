@@ -10,19 +10,19 @@ declare module "models" {
     import { LivechatChannelRule as LivechatChannelRuleClass } from "@im_livechat/core/common/livechat_channel_rule_model";
     import { LivechatExpertise as LivechatExpertiseClass } from "@im_livechat/core/common/livechat_expertise_model";
 
-    export interface Chatbot extends ChatbotClass {}
-    export interface ChatbotMessage extends ChatbotMessageClass {}
-    export interface ChatbotScript extends ChatbotScriptClass {}
-    export interface ChatbotScriptStep extends ChatbotScriptStepClass {}
-    export interface ChatbotScriptStepAnswer extends ChatbotScriptStepAnswerClass {}
-    export interface ChatbotStep extends ChatbotStepClass {}
-    export interface LivechatChannel extends LivechatChannelClass {}
-    export interface LivechatChannelMemberHistory extends LivechatChannelMemberHistoryClass {}
-    export interface LivechatChannelRule extends LivechatChannelRuleClass {}
-    export interface LivechatExpertise extends LivechatExpertiseClass {}
+    export interface Chatbot extends ChatbotClass { }
+    export interface ChatbotMessage extends ChatbotMessageClass { }
+    export interface ChatbotScript extends ChatbotScriptClass { }
+    export interface ChatbotScriptStep extends ChatbotScriptStepClass { }
+    export interface ChatbotScriptStepAnswer extends ChatbotScriptStepAnswerClass { }
+    export interface ChatbotStep extends ChatbotStepClass { }
+    export interface LivechatChannel extends LivechatChannelClass { }
+    export interface LivechatChannelMemberHistory extends LivechatChannelMemberHistoryClass { }
+    export interface LivechatChannelRule extends LivechatChannelRuleClass { }
+    export interface LivechatExpertise extends LivechatExpertiseClass { }
 
     export interface ChannelMember {
-        livechat_member_type: "agent"|"bot"|"visitor";
+        livechat_member_type: "agent" | "bot" | "visitor";
     }
     export interface ChatWindow {
         confirmCloseResolver: PromiseWithResolvers<boolean>;
@@ -34,7 +34,7 @@ declare module "models" {
     export interface DiscussChannel {
         chatbot: Chatbot;
         chatbot_current_step_id: ChatbotScriptStep;
-        chatbotTriggerFailedError: import("@web/core/network/rpc").RPCError|import("@web/core/network/rpc").ConnectionLostError|import("@web/core/network/rpc").ConnectionAbortedError|undefined;
+        chatbotTriggerFailedError: import("@web/core/network/rpc").RPCError | import("@web/core/network/rpc").ConnectionLostError | import("@web/core/network/rpc").ConnectionAbortedError | undefined;
         country_id: Country;
         livechat_agent_history_ids: LivechatChannelMemberHistory[];
         livechat_bot_history_ids: LivechatChannelMemberHistory[];
@@ -46,11 +46,11 @@ declare module "models" {
         livechat_expertise_ids: LivechatExpertise[];
         livechat_lang_id: ResLang;
         livechat_looking_for_help_since_dt: import("luxon").DateTime;
-        livechat_note: ReturnType<typeof import("@odoo/owl").markup>|string;
+        livechat_note: ReturnType<typeof import("@weth/owl").markup> | string;
         livechat_operator_id: ResPartner;
-        livechat_outcome: string|undefined;
-        livechat_status: "in_progress"|"need_help"|undefined;
-        livechatNoteText: string|undefined;
+        livechat_outcome: string | undefined;
+        livechat_status: "in_progress" | "need_help" | undefined;
+        livechatNoteText: string | undefined;
         livechatShouldAskLeaveConfirmation: Readonly<boolean>;
         livechatVisitorMember: ChannelMember;
         transcriptUrl: Readonly<string>;
@@ -62,11 +62,11 @@ declare module "models" {
         chatbotStep: ChatbotStep;
     }
     export interface ResPartner {
-        invite_by_self_count: number|undefined;
-        is_available: boolean|undefined;
-        lang_name: string|undefined;
+        invite_by_self_count: number | undefined;
+        is_available: boolean | undefined;
+        lang_name: string | undefined;
         livechat_languages: String[];
-        user_livechat_username: string|undefined;
+        user_livechat_username: string | undefined;
     }
     export interface ResUsers {
         is_livechat_manager: boolean;
@@ -75,10 +75,10 @@ declare module "models" {
     export interface ResUsersSettings {
         livechat_expertise_ids: number[];
         livechat_lang_ids: number[];
-        livechat_username: string|undefined;
+        livechat_username: string | undefined;
     }
     export interface Store {
-        can_download_transcript: boolean|undefined;
+        can_download_transcript: boolean | undefined;
         Chatbot: StaticMailRecord<Chatbot, typeof ChatbotClass>;
         "chatbot.message": StaticMailRecord<ChatbotMessage, typeof ChatbotMessageClass>;
         "chatbot.script": StaticMailRecord<ChatbotScript, typeof ChatbotScriptClass>;

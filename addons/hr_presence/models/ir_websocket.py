@@ -1,11 +1,11 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import fields, models
-from odoo.api import Environment
-from odoo.fields import Datetime
-from odoo.http import request
-from odoo.modules.registry import Registry
-from odoo.addons.bus.websocket import wsrequest
+from weth import fields, models
+from weth.api import Environment
+from weth.fields import Datetime
+from weth.http import request
+from weth.modules.registry import Registry
+from weth.addons.bus.websocket import wsrequest
 
 
 class IrWebsocket(models.AbstractModel):

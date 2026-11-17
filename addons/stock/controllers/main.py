@@ -2,10 +2,10 @@ import json
 
 from werkzeug.exceptions import InternalServerError
 
-from odoo.http import Controller, request, route
-from odoo.http.dispatcher import serialize_exception
-from odoo.http.stream import content_disposition
-from odoo.tools.misc import html_escape
+from weth.http import Controller, request, route
+from weth.http.dispatcher import serialize_exception
+from weth.http.stream import content_disposition
+from weth.tools.misc import html_escape
 
 
 class StockReportController(Controller):

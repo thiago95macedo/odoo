@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @weth-module **/
 
 import { mailComposerTemplateSelector, MailComposerTemplateSelector } from "@mail/core/web/mail_composer_template_selector";
 import { _t } from "@web/core/l10n/translation";

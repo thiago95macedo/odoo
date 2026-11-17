@@ -4,10 +4,10 @@ import ast
 from collections import defaultdict
 from markupsafe import Markup
 
-from odoo import api, models, fields, _
-from odoo.addons.mail.tools.discuss import Store
-from odoo.tools.misc import OrderedSet
-from odoo.fields import Domain
+from weth import api, models, fields, _
+from weth.addons.mail.tools.discuss import Store
+from weth.tools.misc import OrderedSet
+from weth.fields import Domain
 
 class ResPartner(models.Model):
     """Update of res.partner class to take into account the livechat username."""

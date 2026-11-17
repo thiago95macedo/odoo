@@ -1,5 +1,5 @@
-from odoo import models
-from odoo.tools import float_compare
+from weth import models
+from weth.tools import float_compare
 
 
 class AccountMoveLine(models.Model):

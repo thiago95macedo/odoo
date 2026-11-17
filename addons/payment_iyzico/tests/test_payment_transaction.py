@@ -4,13 +4,13 @@ from unittest.mock import patch
 
 from werkzeug.urls import url_encode
 
-from odoo.tests import tagged
-from odoo.tools import mute_logger
+from weth.tests import tagged
+from weth.tools import mute_logger
 
-from odoo.addons.payment import utils as payment_utils
-from odoo.addons.payment.tests.http_common import PaymentHttpCommon
-from odoo.addons.payment_iyzico import const
-from odoo.addons.payment_iyzico.tests.common import IyzicoCommon
+from weth.addons.payment import utils as payment_utils
+from weth.addons.payment.tests.http_common import PaymentHttpCommon
+from weth.addons.payment_iyzico import const
+from weth.addons.payment_iyzico.tests.common import IyzicoCommon
 
 
 @tagged("post_install", "-at_install")
@@ -62,12 +62,12 @@ class TestPaymentTransaction(IyzicoCommon, PaymentHttpCommon):
             },
         )
 
-    @mute_logger("odoo.addons.payment.models.payment_transaction")
+    @mute_logger("weth.addons.payment.models.payment_transaction")
     def test_no_input_missing_from_redirect_form(self):
         """Test that the `api_url` key is not omitted from the rendering values."""
         tx = self._create_transaction("redirect")
         with patch(
-            "odoo.addons.payment_iyzico.models.payment_transaction.PaymentTransaction"
+            "weth.addons.payment_iyzico.models.payment_transaction.PaymentTransaction"
             "._get_specific_rendering_values",
             return_value={"api_url": "https://dummy.com", "http_method": "get", "url_param": {}},
         ):

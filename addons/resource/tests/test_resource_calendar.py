@@ -2,9 +2,9 @@
 from datetime import datetime, UTC
 from zoneinfo import ZoneInfo
 
-from odoo.exceptions import UserError
-from odoo.tests import Form
-from odoo.tests.common import tagged, TransactionCase
+from weth.exceptions import UserError
+from weth.tests import Form
+from weth.tests.common import tagged, TransactionCase
 
 
 @tagged('at_install', '-post_install')  # LEGACY at_install

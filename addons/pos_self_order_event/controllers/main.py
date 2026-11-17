@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import http
+from weth import http
 from werkzeug.exceptions import NotFound
-from odoo.addons.pos_self_order.controllers.orders import PosSelfOrderController
+from weth.addons.pos_self_order.controllers.orders import PosSelfOrderController
 
 
 class PosSelfEventController(PosSelfOrderController):

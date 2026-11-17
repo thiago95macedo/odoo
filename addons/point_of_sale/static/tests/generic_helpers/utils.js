@@ -5,7 +5,7 @@ import { TourHelpers } from "@web_tour/tour_helpers/tour_helpers";
 
 patch(TourHelpers.prototype, {
     async scan(barcode) {
-        odoo.__WOWL_DEBUG__.root.env.services.barcode.bus.trigger("barcode_scanned", { barcode });
+        weth.__WOWL_DEBUG__.root.env.services.barcode.bus.trigger("barcode_scanned", { barcode });
         await new Promise((resolve) => requestAnimationFrame(resolve));
     },
 });

@@ -2,9 +2,9 @@
 
 from werkzeug.exceptions import NotFound
 
-from odoo.http import request
-from odoo.addons.mail.controllers.discuss.rtc import RtcController
-from odoo.addons.mail.tools.discuss import mail_route
+from weth.http import request
+from weth.addons.mail.controllers.discuss.rtc import RtcController
+from weth.addons.mail.tools.discuss import mail_route
 
 
 class LivechatRtcController(RtcController):

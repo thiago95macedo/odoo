@@ -2,7 +2,7 @@ import { registry } from "@web/core/registry";
 import { useService } from "@web/core/utils/hooks";
 
 import { standardWidgetProps } from "@web/views/widgets/standard_widget_props";
-import { Component, asyncComputed, useProps } from "@odoo/owl";
+import { Component, asyncComputed, useProps } from "@weth/owl";
 
 export class DepartmentChart extends Component {
     static template = "hr.DepartmentChart";

@@ -3,7 +3,7 @@
 
 from datetime import date
 
-from odoo.tests import TransactionCase, tagged
+from weth.tests import TransactionCase, tagged
 
 
 @tagged('-at_install', 'post_install')

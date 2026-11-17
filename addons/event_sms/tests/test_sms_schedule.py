@@ -3,10 +3,10 @@
 
 from datetime import datetime, timedelta
 
-from odoo.addons.event.tests.common import EventCase
-from odoo.addons.phone_validation.tools import phone_validation
-from odoo.addons.sms.tests.common import SMSCase
-from odoo.tests import tagged, users
+from weth.addons.event.tests.common import EventCase
+from weth.addons.phone_validation.tools import phone_validation
+from weth.addons.sms.tests.common import SMSCase
+from weth.tests import tagged, users
 
 
 @tagged('event_mail', 'post_install', '-at_install')

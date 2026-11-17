@@ -1,5 +1,5 @@
-import { expect, test } from "@odoo/hoot";
-import { waitFor } from "@odoo/hoot-dom";
+import { expect, test } from "@weth/hoot";
+import { waitFor } from "@weth/hoot-dom";
 import { KioskBarcodeScanner } from "@hr_attendance/components/kiosk_barcode/kiosk_barcode";
 import { contains, mountWithCleanup, patchWithCleanup } from "@web/../tests/web_test_helpers";
 import { defineMailModels, mockGetMedia } from "@mail/../tests/mail_test_helpers";
@@ -25,9 +25,9 @@ test("KioskBarcodeScanner can be opened and closed", async () => {
             barcodeSource: "environment",
             kioskMode: "manual",
             fromTrialMode: false,
-            onBarcodeScanned: () => {},
+            onBarcodeScanned: () => { },
             captureCheckInImage: false,
-            exposeCameraCapture: () => {},
+            exposeCameraCapture: () => { },
         },
     });
     await contains("button.o_mobile_barcode").click();

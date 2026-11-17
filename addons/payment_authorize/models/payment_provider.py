@@ -5,14 +5,14 @@ import pprint
 import re
 import unicodedata
 
-from odoo import api, fields, models
-from odoo.exceptions import UserError, ValidationError
-from odoo.fields import Command
-from odoo.tools import urls
+from weth import api, fields, models
+from weth.exceptions import UserError, ValidationError
+from weth.fields import Command
+from weth.tools import urls
 
-from odoo.addons.payment.logging import get_payment_logger
-from odoo.addons.payment_authorize import const
-from odoo.addons.payment_authorize.models.authorize_request import AuthorizeAPI
+from weth.addons.payment.logging import get_payment_logger
+from weth.addons.payment_authorize import const
+from weth.addons.payment_authorize.models.authorize_request import AuthorizeAPI
 
 _logger = get_payment_logger(__name__)
 

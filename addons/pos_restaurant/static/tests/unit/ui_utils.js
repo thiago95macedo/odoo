@@ -1,4 +1,4 @@
-import { animationFrame, waitFor, press } from "@odoo/hoot-dom";
+import { animationFrame, waitFor, press } from "@weth/hoot-dom";
 import { contains } from "@web/../tests/web_test_helpers";
 import { waitUntilOrdersSynced } from "@point_of_sale/../tests/unit/utils";
 import { clickControlButton, ensurePane } from "@point_of_sale/../tests/unit/ui_utils";

@@ -3,7 +3,7 @@ import { insertText } from "@html_editor/../tests/_helpers/user_actions";
 import { FileSelector } from "@html_editor/main/media/media_dialog/file_selector";
 import { uploadService } from "@html_editor/main/media/media_dialog/upload_progress_toast/upload_service";
 import { HtmlComposerMessageField } from "@mail/views/web/fields/html_composer_message_field/html_composer_message_field";
-import { beforeEach, describe, expect, test } from "@odoo/hoot";
+import { beforeEach, describe, expect, test } from "@weth/hoot";
 import {
     manuallyDispatchProgrammaticEvent,
     press,
@@ -13,8 +13,8 @@ import {
     setInputFiles,
     waitFor,
     waitForNone,
-} from "@odoo/hoot-dom";
-import { animationFrame } from "@odoo/hoot-mock";
+} from "@weth/hoot-dom";
+import { animationFrame } from "@weth/hoot-mock";
 import {
     contains,
     makeMockServer,
@@ -186,7 +186,7 @@ test("mention a partner", async () => {
     await press("enter");
     await animationFrame();
     expect(getContent(editable)).toBe(
-        `<p>\uFEFF<a href="/odoo/res.partner/${serverState.partnerId}" class="o_mail_redirect" data-oe-id="${serverState.partnerId}" data-oe-model="res.partner" target="_blank" contenteditable="false">@Mitchell Admin</a>\uFEFF[]</p>`
+        `<p>\uFEFF<a href="/weth/res.partner/${serverState.partnerId}" class="o_mail_redirect" data-oe-id="${serverState.partnerId}" data-oe-model="res.partner" target="_blank" contenteditable="false">@Mitchell Admin</a>\uFEFF[]</p>`
     );
 });
 

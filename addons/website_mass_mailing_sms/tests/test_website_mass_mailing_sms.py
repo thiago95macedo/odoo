@@ -1,6 +1,6 @@
-from odoo.addons.mass_mailing_sms.tests.common import MassSMSCommon
-from odoo.addons.website_mass_mailing.tests.common import WebsiteMassMailingMultiCompanyCommon
-from odoo.tests.common import tagged, users
+from weth.addons.mass_mailing_sms.tests.common import MassSMSCommon
+from weth.addons.website_mass_mailing.tests.common import WebsiteMassMailingMultiCompanyCommon
+from weth.tests.common import tagged, users
 
 
 @tagged('mass_mailing', 'mass_mailing_sms')

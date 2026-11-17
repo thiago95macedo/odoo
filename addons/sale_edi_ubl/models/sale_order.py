@@ -1,6 +1,6 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import _, api, models, Command
+from weth import _, api, models, Command
 
 
 class SaleOrder(models.Model):

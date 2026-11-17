@@ -5,8 +5,8 @@ import logging
 from werkzeug.exceptions import Unauthorized
 from werkzeug.datastructures import WWWAuthenticate
 
-from odoo import models
-from odoo.http import request
+from weth import models
+from weth.http import request
 
 _logger = logging.getLogger(__name__)
 
@@ -23,7 +23,7 @@ class IrHttp(models.AbstractModel):
         if access_token.startswith('Bearer '):
             access_token = access_token[7:]
 
-        user_id = request.env["res.users.apikeys"]._check_credentials(scope='odoo.plugin.outlook', key=access_token)
+        user_id = request.env["res.users.apikeys"]._check_credentials(scope='weth.plugin.outlook', key=access_token)
         if not user_id:
             raise Unauthorized('Access token invalid', www_authenticate=WWWAuthenticate('bearer'))
 

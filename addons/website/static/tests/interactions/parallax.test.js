@@ -1,8 +1,8 @@
 import { startInteractions, setupInteractionWhiteList } from "@web/../tests/public/helpers";
 
-import { describe, expect, getFixture, test } from "@odoo/hoot";
-import { animationFrame } from "@odoo/hoot-mock";
-import { manuallyDispatchProgrammaticEvent, queryOne, queryRect, scroll } from "@odoo/hoot-dom";
+import { describe, expect, getFixture, test } from "@weth/hoot";
+import { animationFrame } from "@weth/hoot-mock";
+import { manuallyDispatchProgrammaticEvent, queryOne, queryRect, scroll } from "@weth/hoot-dom";
 
 setupInteractionWhiteList("website.parallax");
 

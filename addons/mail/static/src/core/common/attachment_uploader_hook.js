@@ -1,4 +1,4 @@
-import { proxy } from "@odoo/owl";
+import { proxy } from "@weth/owl";
 
 import { useService } from "@web/core/utils/hooks";
 
@@ -42,9 +42,9 @@ export class AttachmentUploader {
 }
 
 /**
- * @param {import("@odoo/owl").Signal<import("models").Thread>} thread
+ * @param {import("@weth/owl").Signal<import("models").Thread>} thread
  * @param {Object} [param1={}]
- * @param {import("@odoo/owl").Signal<import("models").Composer>} [param1.composer]
+ * @param {import("@weth/owl").Signal<import("models").Composer>} [param1.composer]
  * @param {function} [param1.onFileUploaded]
  */
 export function useAttachmentUploader(thread, { composer, onFileUploaded } = {}) {

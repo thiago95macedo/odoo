@@ -2,16 +2,16 @@
 
 from datetime import timedelta
 
-from odoo import fields, http
-from odoo.exceptions import ValidationError
-from odoo.fields import Command
-from odoo.tests import HttpCase, tagged
-from odoo.tools import SQL
+from weth import fields, http
+from weth.exceptions import ValidationError
+from weth.fields import Command
+from weth.tests import HttpCase, tagged
+from weth.tools import SQL
 
-from odoo.addons.sale.tests.common import TestSaleCommon
-from odoo.addons.website_sale.tests.common import MockRequest, WebsiteSaleCommon
-from odoo.addons.website_sale_loyalty.controllers.cart import Cart
-from odoo.addons.website_sale_loyalty.controllers.main import WebsiteSale
+from weth.addons.sale.tests.common import TestSaleCommon
+from weth.addons.website_sale.tests.common import MockRequest, WebsiteSaleCommon
+from weth.addons.website_sale_loyalty.controllers.cart import Cart
+from weth.addons.website_sale_loyalty.controllers.main import WebsiteSale
 
 
 @tagged("post_install", "-at_install")

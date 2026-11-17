@@ -2,8 +2,8 @@
 
 from unittest.mock import Mock, patch
 
-from odoo.tests import tagged
-from odoo.tests.common import TransactionCase
+from weth.tests import tagged
+from weth.tests.common import TransactionCase
 
 
 @tagged('post_install', '-at_install')
@@ -39,7 +39,7 @@ class TestPosDpoPayPaymentMethod(TransactionCase):
         return response
 
     def test_send_dpopay_request_sets_transaction_type(self):
-        with patch('odoo.addons.pos_dpopay.models.pos_payment_method.requests.post', self._mock_post):
+        with patch('weth.addons.pos_dpopay.models.pos_payment_method.requests.post', self._mock_post):
             for payment_method, transaction_type in zip(self.payment_methods, ('pushPaymentSale', 'pushPaymentDpoMomoSale')):
                 payment_method.send_dpopay_request({'amount': 100}, 'start-transaction')
                 self.assertEqual(self.payload['transactionType'], transaction_type)

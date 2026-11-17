@@ -1,16 +1,16 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.exceptions import UserError
-from odoo.fields import Command
-from odoo.tests import patch, tagged
-from odoo.tests.common import HttpCase
+from weth.exceptions import UserError
+from weth.fields import Command
+from weth.tests import patch, tagged
+from weth.tests.common import HttpCase
 
-from odoo.addons.payment.tests.common import PaymentCommon
-from odoo.addons.website_sale.controllers.cart import Cart as CartController
-from odoo.addons.website_sale.controllers.main import WebsiteSale as CheckoutController
-from odoo.addons.website_sale.controllers.payment import PaymentPortal as PaymentController
-from odoo.addons.website_sale.models.website import CART_SESSION_CACHE_KEY
-from odoo.addons.website_sale.tests.common import WebsiteSaleCommon
+from weth.addons.payment.tests.common import PaymentCommon
+from weth.addons.website_sale.controllers.cart import Cart as CartController
+from weth.addons.website_sale.controllers.main import WebsiteSale as CheckoutController
+from weth.addons.website_sale.controllers.payment import PaymentPortal as PaymentController
+from weth.addons.website_sale.models.website import CART_SESSION_CACHE_KEY
+from weth.addons.website_sale.tests.common import WebsiteSaleCommon
 
 
 @tagged("post_install", "-at_install")
@@ -186,7 +186,7 @@ class TestCheckoutFlow(WebsiteSaleCommon, PaymentCommon, HttpCase):
         self.update_session(**{CART_SESSION_CACHE_KEY: self.cart.id})
 
         with patch(
-            "odoo.addons.website_sale.models.sale_order.SaleOrder._clear_alerts", autospec=True
+            "weth.addons.website_sale.models.sale_order.SaleOrder._clear_alerts", autospec=True
         ) as clear_alerts_mock:
             self.url_open("/shop/cart")
 

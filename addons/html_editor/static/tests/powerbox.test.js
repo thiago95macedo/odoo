@@ -1,6 +1,6 @@
 import { Plugin } from "@html_editor/plugin";
 import { CORE_PLUGINS } from "@html_editor/plugin_sets";
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@weth/hoot";
 import {
     click,
     hover,
@@ -10,8 +10,8 @@ import {
     queryAllTexts,
     scroll,
     waitFor,
-} from "@odoo/hoot-dom";
-import { animationFrame, tick } from "@odoo/hoot-mock";
+} from "@weth/hoot-dom";
+import { animationFrame, tick } from "@weth/hoot-mock";
 import {
     applyConcurrentActions,
     mergePeersCommits,
@@ -178,7 +178,7 @@ describe("search", () => {
         class TestPlugin extends Plugin {
             static id = "test";
             resources = {
-                user_commands: { id: "testCommand", run: () => {} },
+                user_commands: { id: "testCommand", run: () => { } },
                 powerbox_categories: { id: "test", name: "Test" },
                 powerbox_items: [
                     {
@@ -321,7 +321,7 @@ describe("search", () => {
             class TestPlugin extends Plugin {
                 static id = "test";
                 resources = {
-                    user_commands: { id: "testCommand", run: () => {} },
+                    user_commands: { id: "testCommand", run: () => { } },
                     powerbox_categories: { id: "test", name: "Test" },
                     powerbox_items: [
                         {
@@ -371,7 +371,7 @@ describe("search", () => {
             class TestPlugin extends Plugin {
                 static id = "test";
                 resources = {
-                    user_commands: { id: "testCommand", run: () => {} },
+                    user_commands: { id: "testCommand", run: () => { } },
                     powerbox_categories: { id: "test", name: "Test" },
                     powerbox_items: [
                         {
@@ -578,7 +578,7 @@ test("should toggle list on empty paragraph", async () => {
     const { el, editor } = await setupEditor("<p>[]<br></p>");
 
     /** @todo fix warnings */
-    patchWithCleanup(console, { warn: () => {} });
+    patchWithCleanup(console, { warn: () => { } });
 
     await insertText(editor, "/checklist");
     expect(getContent(el)).toBe("<p>/checklist[]</p>");
@@ -598,7 +598,7 @@ test("should display the correct shorthand label for the corresponding command",
     class TestPlugin extends Plugin {
         static id = "test";
         resources = {
-            user_commands: { id: "testCommand", run: () => {} },
+            user_commands: { id: "testCommand", run: () => { } },
             powerbox_categories: { id: "test", name: "Test" },
             powerbox_items: [
                 {
@@ -662,7 +662,7 @@ class NoOpPlugin extends Plugin {
         user_commands: [
             {
                 id: "noOp",
-                run: () => {},
+                run: () => { },
             },
         ],
         powerbox_categories: { id: "no_op", name: "No-op" },
@@ -697,7 +697,7 @@ test("should restore state before /command insertion when command is executed (2
     });
 
     /** @todo fix warnings */
-    patchWithCleanup(console, { warn: () => {} });
+    patchWithCleanup(console, { warn: () => { } });
 
     expect(getContent(el)).toBe(
         `<p o-we-hint-text='Type "/" for commands' class="o-we-hint">[]<br></p>`
@@ -717,7 +717,7 @@ test("should discard /command insertion from history when command is executed", 
     const { el, editor } = await setupEditor("<p>[]<br></p>");
 
     /** @todo fix warnings */
-    patchWithCleanup(console, { warn: () => {} });
+    patchWithCleanup(console, { warn: () => { } });
 
     expect(getContent(el)).toBe(
         `<p o-we-hint-text='Type "/" for commands' class="o-we-hint">[]<br></p>`

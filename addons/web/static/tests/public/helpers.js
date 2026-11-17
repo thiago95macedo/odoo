@@ -1,4 +1,4 @@
-import { getFixture, after } from "@odoo/hoot";
+import { getFixture, after } from "@weth/hoot";
 import {
     clearRegistry,
     getService,
@@ -35,8 +35,8 @@ export async function startInteractions(
     html,
     options = { waitForStart: true, editMode: false, translateMode: false }
 ) {
-    if (odoo.loader.modules.has("@mail/../tests/mail_test_helpers")) {
-        const { defineMailModels } = odoo.loader.modules.get("@mail/../tests/mail_test_helpers");
+    if (weth.loader.modules.has("@mail/../tests/mail_test_helpers")) {
+        const { defineMailModels } = weth.loader.modules.get("@mail/../tests/mail_test_helpers");
         defineMailModels();
     }
     const fixture = getFixture();

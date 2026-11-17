@@ -1,4 +1,4 @@
-import { t, useProps } from "@odoo/owl";
+import { t, useProps } from "@weth/owl";
 import { patch } from "@web/core/utils/patch";
 import { ItemAddedNotification } from
     "@website_sale/js/cart_notification/item_added_notification/item_added_notification";

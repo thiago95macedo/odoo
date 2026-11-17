@@ -8,7 +8,7 @@ import { htmlToTextContentInline } from "@mail/utils/common/format";
 import { useOnBottomScrolled, useSearch } from "@mail/utils/common/hooks";
 import { incrementFn } from "@mail/utils/common/signal";
 
-import { Component, computed, signal, types, useEffect, useProps } from "@odoo/owl";
+import { Component, computed, signal, types, useEffect, useProps } from "@weth/owl";
 
 import { hasTouch, isDisplayStandalone, isIOS } from "@web/core/browser/feature_detection";
 import { _t } from "@web/core/l10n/translation";
@@ -175,7 +175,7 @@ export class MessagingMenu extends Component {
                 }
             })
             .catch((error) => {
-                if (error.exceptionName === "odoo.exceptions.AccessError") {
+                if (error.exceptionName === "weth.exceptions.AccessError") {
                     this.dialog.add(MessageInDialog, { message });
                     return;
                 }

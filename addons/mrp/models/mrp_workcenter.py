@@ -10,12 +10,12 @@ from babel.dates import format_date
 from collections import defaultdict
 from dateutil import relativedelta
 
-from odoo import api, exceptions, fields, models, _
-from odoo.exceptions import UserError, ValidationError
-from odoo.tools.intervals import Intervals
-from odoo.tools.date_utils import start_of, end_of, localized, to_timezone
-from odoo.tools.float_utils import float_compare, float_is_zero, float_round
-from odoo.tools.misc import get_lang
+from weth import api, exceptions, fields, models, _
+from weth.exceptions import UserError, ValidationError
+from weth.tools.intervals import Intervals
+from weth.tools.date_utils import start_of, end_of, localized, to_timezone
+from weth.tools.float_utils import float_compare, float_is_zero, float_round
+from weth.tools.misc import get_lang
 
 
 class MrpWorkcenter(models.Model):

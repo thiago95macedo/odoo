@@ -1,4 +1,4 @@
-import { Component, t, useProps } from "@odoo/owl";
+import { Component, t, useProps } from "@weth/owl";
 import { FilterValue } from "@spreadsheet/global_filters/components/filter_value/filter_value";
 import {
     getEmptyFilterValue,

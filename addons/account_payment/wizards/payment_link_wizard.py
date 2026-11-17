@@ -1,9 +1,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import _, api, fields, models
-from odoo.tools import format_date, formatLang
+from weth import _, api, fields, models
+from weth.tools import format_date, formatLang
 
-from odoo.addons.payment import utils as payment_utils
+from weth.addons.payment import utils as payment_utils
 
 
 class PaymentLinkWizard(models.TransientModel):

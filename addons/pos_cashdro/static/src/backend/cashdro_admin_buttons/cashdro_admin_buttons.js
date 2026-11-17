@@ -1,4 +1,4 @@
-import { Component, useProps } from "@odoo/owl";
+import { Component, useProps } from "@weth/owl";
 import { _t } from "@web/core/l10n/translation";
 import { browser } from "@web/core/browser/browser";
 import { registry } from "@web/core/registry";

@@ -16,14 +16,14 @@ from dateutil.relativedelta import relativedelta
 from markupsafe import Markup
 from PIL import Image, UnidentifiedImageError
 
-from odoo import api, Command, fields, models, modules, tools, _
-from odoo.addons.base_import.models.base_import import ImportValidationError
-from odoo.exceptions import UserError, ValidationError
-from odoo.fields import Datetime, Domain
-from odoo.tools import SQL
-from odoo.tools.float_utils import float_round
-from odoo.tools.image import ImageProcess
-from odoo.tools.misc import clean_context
+from weth import api, Command, fields, models, modules, tools, _
+from weth.addons.base_import.models.base_import import ImportValidationError
+from weth.exceptions import UserError, ValidationError
+from weth.fields import Datetime, Domain
+from weth.tools import SQL
+from weth.tools.float_utils import float_round
+from weth.tools.image import ImageProcess
+from weth.tools.misc import clean_context
 
 _logger = logging.getLogger(__name__)
 
@@ -1339,7 +1339,7 @@ class MailingMailing(models.Model):
                        mailing_name=self.subject
                        ),
             'top_button_label': _('More Info'),
-            'top_button_url': tools.urls.urljoin(web_base_url, f'/odoo/mailing.mailing/{self.id}'),
+            'top_button_url': tools.urls.urljoin(web_base_url, f'/weth/mailing.mailing/{self.id}'),
             'kpi_data': [
                 kpi,
                 {

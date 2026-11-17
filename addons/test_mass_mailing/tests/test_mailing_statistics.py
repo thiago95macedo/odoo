@@ -3,12 +3,12 @@
 
 from lxml import html
 
-from odoo.addons.mail.tests.common import mail_new_test_user
-from odoo.addons.test_mass_mailing.data.mail_test_data import MAIL_TEMPLATE
-from odoo.addons.test_mass_mailing.tests.common import TestMassMailCommon
-from odoo.tests.common import users
-from odoo.tests import tagged
-from odoo.tools import mute_logger
+from weth.addons.mail.tests.common import mail_new_test_user
+from weth.addons.test_mass_mailing.data.mail_test_data import MAIL_TEMPLATE
+from weth.addons.test_mass_mailing.tests.common import TestMassMailCommon
+from weth.tests.common import users
+from weth.tests import tagged
+from weth.tools import mute_logger
 
 
 @tagged('digest', 'mass_mailing')
@@ -27,7 +27,7 @@ class TestMailingStatistics(TestMassMailCommon):
         )
 
     @users('user_marketing')
-    @mute_logger('odoo.addons.mass_mailing.models.mailing', 'odoo.addons.mail.models.mail_mail', 'odoo.addons.mail.models.mail_thread')
+    @mute_logger('weth.addons.mass_mailing.models.mailing', 'weth.addons.mail.models.mail_mail', 'weth.addons.mail.models.mail_thread')
     def test_mailing_statistics(self):
         target_records = self._create_mailing_test_records(model='mailing.test.blacklist', count=13)
         target_records[10]['email_from'] = False  # void email should lead to a 'cancel' trace_status
@@ -42,9 +42,9 @@ class TestMailingStatistics(TestMassMailCommon):
         self.gateway_mail_reply_wrecord(MAIL_TEMPLATE, target_records[0], use_in_reply_to=True)
         self.gateway_mail_reply_wrecord(MAIL_TEMPLATE, target_records[1], use_in_reply_to=True)
         self.gateway_mail_reply_wrecord(MAIL_TEMPLATE, target_records[2], use_in_reply_to=True)
-        self.gateway_mail_trace_click(mailing, target_records[0], 'https://www.odoo.be')
-        self.gateway_mail_trace_click(mailing, target_records[2], 'https://www.odoo.be')
-        self.gateway_mail_trace_click(mailing, target_records[3], 'https://www.odoo.be')
+        self.gateway_mail_trace_click(mailing, target_records[0], 'https://www.weth.be')
+        self.gateway_mail_trace_click(mailing, target_records[2], 'https://www.weth.be')
+        self.gateway_mail_trace_click(mailing, target_records[3], 'https://www.weth.be')
         self.assertEqual(target_records[12].message_bounce, 0)
         self.gateway_mail_trace_bounce(mailing, target_records[12])
         self.assertEqual(target_records[12].message_bounce, 1)
@@ -89,7 +89,7 @@ class TestMailingStatistics(TestMassMailCommon):
         self.assertEqual(first_link_value, mailing.clicked)
 
     @users('user_marketing')
-    @mute_logger('odoo.addons.mass_mailing.models.mailing', 'odoo.addons.mail.models.mail_mail', 'odoo.addons.mail.models.mail_thread')
+    @mute_logger('weth.addons.mass_mailing.models.mailing', 'weth.addons.mail.models.mail_mail', 'weth.addons.mail.models.mail_thread')
     def test_mailing_statistics_wo_user(self):
         target_records = self._create_mailing_test_records(model='mailing.test.blacklist', count=10)
         mailing = self.env['mailing.mailing'].browse(self.mailing_bl.ids)
@@ -111,7 +111,7 @@ class TestMailingStatistics(TestMassMailCommon):
         self.assertEqual(mail.state, 'outgoing')
 
     @users('user_marketing')
-    @mute_logger('odoo.addons.mass_mailing.models.mailing', 'odoo.addons.mail.models.mail_mail', 'odoo.addons.mail.models.mail_thread')
+    @mute_logger('weth.addons.mass_mailing.models.mailing', 'weth.addons.mail.models.mail_mail', 'weth.addons.mail.models.mail_thread')
     def test_mailing_contact_statistics(self):
         mailing_contacts = self._create_mailing_contact_test_records(count=5)
         mailing_contacts[3]['email'] = False  # void email should lead to a 'cancel' trace_status
@@ -128,9 +128,9 @@ class TestMailingStatistics(TestMassMailCommon):
         # simulate some replies and clicks
         self.gateway_mail_reply_wrecord(MAIL_TEMPLATE, mailing_contacts[0], use_in_reply_to=True)
         self.gateway_mail_reply_wrecord(MAIL_TEMPLATE, mailing_contacts[1], use_in_reply_to=True)
-        self.gateway_mail_trace_click(mailings[0], mailing_contacts[1], 'https://www.odoo.be')
-        self.gateway_mail_trace_click(mailings[0], mailing_contacts[2], 'https://www.odoo.be')
-        self.gateway_mail_trace_click(mailings[1], mailing_contacts[1], 'https://www.odoo.be')
+        self.gateway_mail_trace_click(mailings[0], mailing_contacts[1], 'https://www.weth.be')
+        self.gateway_mail_trace_click(mailings[0], mailing_contacts[2], 'https://www.weth.be')
+        self.gateway_mail_trace_click(mailings[1], mailing_contacts[1], 'https://www.weth.be')
 
         # check mailing statistics
         self.assertEqual(mailing_contacts[0].received_ratio, 100)

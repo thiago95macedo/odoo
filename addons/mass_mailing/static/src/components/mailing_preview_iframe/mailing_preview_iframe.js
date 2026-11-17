@@ -1,5 +1,5 @@
 import { loadIframe } from "@mail/convert_inline/iframe_utils";
-import { Component, onMounted, proxy, signal, status, useProps } from "@odoo/owl";
+import { Component, onMounted, proxy, signal, status, useProps } from "@weth/owl";
 import { isBrowserSafari } from "@web/core/browser/feature_detection";
 import { registry } from "@web/core/registry";
 import { useBus, useService } from "@web/core/utils/hooks";

@@ -7,7 +7,7 @@ import {
     start,
     startServer,
 } from "@mail/../tests/mail_test_helpers";
-import { beforeEach, describe, expect, test } from "@odoo/hoot";
+import { beforeEach, describe, expect, test } from "@weth/hoot";
 import { Command, onRpc, serverState } from "@web/../tests/web_test_helpers";
 
 describe.current.tags("desktop");

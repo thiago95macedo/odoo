@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
-import odoo
-from odoo.tests import HttpCase, tagged
-from odoo.tools import mute_logger
+import weth
+from weth.tests import HttpCase, tagged
+from weth.tools import mute_logger
 
 from unittest.mock import patch
 
-from odoo.addons.website.tests.common import set_url_code
+from weth.addons.website.tests.common import set_url_code
 
 
 @tagged('-at_install', 'post_install')
@@ -83,7 +83,7 @@ class TestRedirect(HttpCase):
             b'<a href="/get_new"></a><a href="/post_new"></a><a href="/get_post_new"></a>'
         )
 
-    @mute_logger('odoo.http')  # mute 403 warning
+    @mute_logger('weth.http')  # mute 403 warning
     def test_02_redirect_308_RequestUID(self):
         self.env['website.rewrite'].create({
             'name': 'Test Website Redirect',
@@ -95,7 +95,7 @@ class TestRedirect(HttpCase):
         rec_published = self.env['test.model'].create({'name': 'name', 'website_published': True})
         rec_unpublished = self.env['test.model'].create({'name': 'name', 'website_published': False})
 
-        WebsiteHttp = odoo.addons.website.models.ir_http.IrHttp
+        WebsiteHttp = weth.addons.website.models.ir_http.IrHttp
 
         def _get_error_html(self, code, value):
             return str(code).split('_')[-1], f"CUSTOM {code}"
@@ -199,7 +199,7 @@ class TestRedirect(HttpCase):
             "Redirection should have been applied, and query string should not have been duplicated.",
         )
 
-    @mute_logger('odoo.http')  # mute 403 warning
+    @mute_logger('weth.http')  # mute 403 warning
     def test_04_redirect_301_route_unpublished_record(self):
         # 1. Accessing published record: Normal case, expecting 200
         rec1 = self.env['test.model'].create({
@@ -236,7 +236,7 @@ class TestRedirect(HttpCase):
             r.url.endswith(url_rec2),
             "Unpublished record should redirect to published record set in redirect")
 
-    @mute_logger('odoo.http')
+    @mute_logger('weth.http')
     def test_05_redirect_404_notfound_record(self):
         # 1. Accessing unexisting record: raise 404
         url_rec1 = '/test_website/200/unexisting-100000'
@@ -258,7 +258,7 @@ class TestRedirect(HttpCase):
         self.assertEqual(r.status_code, 200)
         self.assertURLEqual(r.url, redirect.url_to)
 
-    @mute_logger('odoo.http')
+    @mute_logger('weth.http')
     def test_06_redirect_404_unslug_record(self):
         # 1. Accessing nonexisting record: raise 404
         url_rec1 = '/test_website/200/an-old-slug-100000'
@@ -281,7 +281,7 @@ class TestRedirect(HttpCase):
         self.assertEqual(r.status_code, 200)
         self.assertURLEqual(r.url, redirect.url_to)
 
-    @mute_logger('odoo.http')
+    @mute_logger('weth.http')
     def test_07_redirect_404_unslug2slug_record(self):
         rec_unpublished = self.env['test.model'].create({'name': 'name-unpub', 'website_published': False})
         rec_published = self.env['test.model'].create({'name': 'name-pub', 'website_published': True})
@@ -308,7 +308,7 @@ class TestRedirect(HttpCase):
         self.assertEqual(r.status_code, 200)
         self.assertURLEqual(r.url, '/test_website/200/name-pub-%d' % rec_published.id)
 
-    @mute_logger('odoo.http')
+    @mute_logger('weth.http')
     def test_08_redirect_404_unslug_translated_record(self):
         lang_fr = self.env['res.lang']._activate_lang('fr_FR')
         self.env['website'].search([]).language_ids = self.env.ref('base.lang_en') + lang_fr
@@ -347,7 +347,7 @@ class TestRedirect(HttpCase):
         self.assertEqual(r.status_code, 200)
         self.assertURLEqual(r.url, fr_prefix + '/test_website/200/nom-publi%%C3%%A9-%d' % rec_published.id)
 
-    @mute_logger('odoo.http')
+    @mute_logger('weth.http')
     def test_09_redirect_absolute_url(self):
         urlfrom = '/test_website/200/a-new-job-20019'
         r = self.url_open(urlfrom, allow_redirects=True)
@@ -365,7 +365,7 @@ class TestRedirect(HttpCase):
         self.assertEqual(r.status_code, 301)
         self.assertURLEqual(r.headers.get('Location'), urlto)
 
-    @mute_logger('odoo.http')
+    @mute_logger('weth.http')
     def test_10_redirect_unslug_multi_segment(self):
         # A single redirect stored in the fully-unslugged form should match a
         # slugged URL that has *several* record segments, e.g. a blog post
@@ -386,7 +386,7 @@ class TestRedirect(HttpCase):
         self.assertEqual(r.status_code, 301)
         self.assertURLEqual(r.headers.get('Location'), redirect.url_to)
 
-    @mute_logger('odoo.http')
+    @mute_logger('weth.http')
     def test_redirect_308_multiple_url_endpoint(self):
         self.env['website.rewrite'].create({
             'name': 'Test Multi URL 308',

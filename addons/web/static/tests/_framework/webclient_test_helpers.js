@@ -1,5 +1,5 @@
-import { animationFrame } from "@odoo/hoot";
-import { Component, useProps, xml } from "@odoo/owl";
+import { animationFrame } from "@weth/hoot";
+import { Component, useProps, xml } from "@weth/owl";
 import { registry } from "@web/core/registry";
 import { WebClient } from "@web/webclient/webclient";
 import { mountWithCleanup } from "./component_test_helpers";

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
 
     <!-- Call this template instead of "web.assets_tests" to have the proper conditional check -->
     <template id="conditional_assets_tests" name="Tests Assets Bundle">
@@ -21,8 +21,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
         <title t-out="title or 'WETH'"/>
         <link type="image/x-icon" rel="shortcut icon" t-att-href="x_icon or '/web/static/img/favicon.ico'"/>
-        <script id="web.layout.odooscript" type="text/javascript">
-            var odoo = {
+        <script id="web.layout.wethscript" type="text/javascript">
+            var weth = {
                 csrf_token: "<t t-out="request.csrf_token(None)"/>",
                 debug: "<t t-out="debug"/>",
             };
@@ -44,9 +44,9 @@
         <t t-call-assets="web.odoo_ui_icons" t-binary="True"/>
         <t t-call-assets="web.assets_frontend" t-js="false"/>
       </xpath>
-      <xpath expr="//head/script[@id='web.layout.odooscript']" position="after">
+      <xpath expr="//head/script[@id='web.layout.wethscript']" position="after">
         <script type="text/javascript">
-            odoo.__session_info__ = <t t-out="json.dumps({**env['ir.http'].get_frontend_session_info(), **(extra_session_info or {})})"/>;
+            weth.__session_info__ = <t t-out="json.dumps({**env['ir.http'].get_frontend_session_info(), **(extra_session_info or {})})"/>;
             if (!/(^|;\s)tz=/.test(document.cookie)) {
                 const userTZ = Intl.DateTimeFormat().resolvedOptions().timeZone;
                 document.cookie = `tz=${userTZ}; path=/`;
@@ -262,7 +262,7 @@
             <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
 
             <script type="text/javascript">
-                odoo.__session_info__ = <t t-out="json.dumps(session_info)"/>;
+                weth.__session_info__ = <t t-out="json.dumps(session_info)"/>;
             </script>
 
             <t t-call-assets="web.assets_unit_tests_setup" />
@@ -283,16 +283,16 @@
             <script type="text/javascript">
                 // Block to avoid leaking variables in the script scope
                 {
-                    odoo.__session_info__ = <t t-out="json.dumps(session_info)"/>;
-                    const { user_context } = odoo.__session_info__;
+                    weth.__session_info__ = <t t-out="json.dumps(session_info)"/>;
+                    const { user_context } = weth.__session_info__;
                     const lang = new URLSearchParams(document.location.search).get("lang");
                     let menuURL = "/web/webclient/load_menus";
                     if (lang) {
                         user_context.lang = lang;
                         menuURL += `&amp;lang=${lang}`;
                     }
-                    odoo.reloadMenus = () =&gt; fetch(menuURL, { cache: "no-store" }).then(res =&gt; res.json());
-                    odoo.loadMenusPromise = odoo.reloadMenus();
+                    weth.reloadMenus = () =&gt; fetch(menuURL, { cache: "no-store" }).then(res =&gt; res.json());
+                    weth.loadMenusPromise = weth.reloadMenus();
                 }
             </script>
             <t t-call-assets="web.assets_web_print" media="print" t-js="false"/>
@@ -390,4 +390,4 @@
             <owl-component name="web.install_scoped_app" />
         </t>
     </template>
-</odoo>
+</weth>

@@ -1,4 +1,4 @@
-import { expect, test, waitFor } from "@odoo/hoot";
+import { expect, test, waitFor } from "@weth/hoot";
 import { definePosModels } from "@point_of_sale/../tests/unit/data/generate_model_definitions";
 import { mountPosDialog, setupPosEnv } from "@point_of_sale/../tests/unit/utils";
 import { ProductInfoPopup } from "@point_of_sale/app/components/popups/product_info_popup/product_info_popup";
@@ -22,7 +22,7 @@ test("Product info popup displays product tag names and colors", async () => {
     product.product_tag_ids = [redTag, blueTag];
 
     await mountPosDialog(ProductInfoPopup, {
-        close: () => {},
+        close: () => { },
         info: {
             productInfo,
             costCurrency: "$\u00a00.00",
@@ -62,7 +62,7 @@ test("Product info popup prices come from the tax details, not from the server p
     const product = store.models["product.template"].get(5);
 
     await mountPosDialog(ProductInfoPopup, {
-        close: () => {},
+        close: () => { },
         info: {
             productInfo,
             costCurrency: "$ 0.00",

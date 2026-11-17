@@ -1,4 +1,4 @@
-import { expect } from "@odoo/hoot";
+import { expect } from "@weth/hoot";
 import { setupPosEnv } from "@point_of_sale/../tests/unit/utils";
 
 export const EMPLOYEE_ROLES = ["supervised", "restrictive", "cashier", "manager"];

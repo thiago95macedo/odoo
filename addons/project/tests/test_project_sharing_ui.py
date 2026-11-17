@@ -1,7 +1,7 @@
-from odoo import Command
-from odoo.tests import HttpCase, tagged
+from weth import Command
+from weth.tests import HttpCase, tagged
 
-from odoo.addons.mail.tests.common import mail_new_test_user
+from weth.addons.mail.tests.common import mail_new_test_user
 
 @tagged('post_install', '-at_install')
 class TestProjectSharingUi(HttpCase):

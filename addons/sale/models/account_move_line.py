@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, fields, models
-from odoo.exceptions import UserError
-from odoo.tools import float_compare, float_is_zero
+from weth import api, fields, models
+from weth.exceptions import UserError
+from weth.tools import float_compare, float_is_zero
 
 
 class AccountMoveLine(models.Model):

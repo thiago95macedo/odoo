@@ -1,6 +1,6 @@
 import { subscribeToStorage } from "@mail/utils/common/local_storage";
 
-import { signal } from "@odoo/owl";
+import { signal } from "@weth/owl";
 
 import { browser } from "@web/core/browser/browser";
 import { registry } from "@web/core/registry";
@@ -8,7 +8,7 @@ import { registry } from "@web/core/registry";
 export const composerService = {
     dependencies: ["mail.store"],
     /**
-     * Enable Html composer with: odoo.__WOWL_DEBUG__.root.env.services["mail.composer"].setHtmlComposer()
+     * Enable Html composer with: weth.__WOWL_DEBUG__.root.env.services["mail.composer"].setHtmlComposer()
      */
     start(env, services) {
         const store = services["mail.store"];

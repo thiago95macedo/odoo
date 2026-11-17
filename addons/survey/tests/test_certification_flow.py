@@ -4,12 +4,12 @@
 from freezegun import freeze_time
 from unittest.mock import patch
 
-from odoo import Command
-from odoo.addons.base.models.ir_mail_server import IrMail_Server
-from odoo.addons.mail.tests.common import MockEmail
-from odoo.addons.survey.tests import common
-from odoo.tests import tagged
-from odoo.tests.common import HttpCase
+from weth import Command
+from weth.addons.base.models.ir_mail_server import IrMail_Server
+from weth.addons.mail.tests.common import MockEmail
+from weth.addons.survey.tests import common
+from weth.tests import tagged
+from weth.tests.common import HttpCase
 
 
 @tagged('-at_install', 'post_install', 'functional', 'is_query_count')

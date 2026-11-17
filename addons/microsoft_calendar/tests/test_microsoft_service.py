@@ -4,11 +4,11 @@ import json
 import requests
 from unittest.mock import patch, call, MagicMock
 
-from odoo import fields
-from odoo.addons.microsoft_calendar.utils.microsoft_calendar import MicrosoftCalendarService
-from odoo.addons.microsoft_calendar.utils.microsoft_event import MicrosoftEvent
-from odoo.addons.microsoft_account.models.microsoft_service import MicrosoftService, DEFAULT_MICROSOFT_TOKEN_ENDPOINT
-from odoo.tests import tagged, TransactionCase
+from weth import fields
+from weth.addons.microsoft_calendar.utils.microsoft_calendar import MicrosoftCalendarService
+from weth.addons.microsoft_calendar.utils.microsoft_event import MicrosoftEvent
+from weth.addons.microsoft_account.models.microsoft_service import MicrosoftService, DEFAULT_MICROSOFT_TOKEN_ENDPOINT
+from weth.tests import tagged, TransactionCase
 
 
 DEFAULT_TIMEOUT = 20

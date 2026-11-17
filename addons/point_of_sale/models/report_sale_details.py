@@ -1,9 +1,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 import datetime
 
-from odoo import api, fields, models, _
-from odoo.fields import Domain
-from odoo.tools import SQL
+from weth import api, fields, models, _
+from weth.fields import Domain
+from weth.tools import SQL
 
 
 class ReportPoint_Of_SaleReport_Saledetails(models.AbstractModel):

@@ -8,8 +8,8 @@ import {
     start,
     startServer,
 } from "@mail/../tests/mail_test_helpers";
-import { describe, expect, test } from "@odoo/hoot";
-import { mockDate } from "@odoo/hoot-mock";
+import { describe, expect, test } from "@weth/hoot";
+import { mockDate } from "@weth/hoot-mock";
 import {
     Command,
     mockService,
@@ -50,7 +50,7 @@ test("notify message to user as non member", async () => {
             constructor() {
                 expect.step("push notification");
             }
-            addEventListener() {}
+            addEventListener() { }
         },
     });
     mockService("multi_tab", { isOnMainTab: () => true });

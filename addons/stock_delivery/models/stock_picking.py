@@ -4,10 +4,10 @@ from datetime import date
 from markupsafe import Markup
 import json
 
-from odoo import _, api, fields, models
-from odoo.exceptions import UserError
-from odoo.fields import Domain
-from odoo.addons.web.controllers.utils import clean_action
+from weth import _, api, fields, models
+from weth.exceptions import UserError
+from weth.fields import Domain
+from weth.addons.web.controllers.utils import clean_action
 
 
 class StockPicking(models.Model):

@@ -1,5 +1,5 @@
-import { beforeEach, describe, expect, test } from "@odoo/hoot";
-import { mockDate, mockTimeZone } from "@odoo/hoot-mock";
+import { beforeEach, describe, expect, test } from "@weth/hoot";
+import { mockDate, mockTimeZone } from "@weth/hoot-mock";
 import {
     allowTranslations,
     patchTranslations,
@@ -183,10 +183,10 @@ test("construct domain based on date field (no comparisonOptionId)", () => {
     expect(domain).toEqual({
         domain: new Domain(
             "[" +
-                `"|", ` +
-                `"&", ("date_field", ">=", "2020-01-01"), ("date_field", "<=", "2020-01-31"), ` +
-                `"&", ("date_field", ">=", "2020-01-01"), ("date_field", "<=", "2020-03-31")` +
-                "]"
+            `"|", ` +
+            `"&", ("date_field", ">=", "2020-01-01"), ("date_field", "<=", "2020-01-31"), ` +
+            `"&", ("date_field", ">=", "2020-01-01"), ("date_field", "<=", "2020-03-31")` +
+            "]"
         ),
         description: "January 2020/Q1 2020",
     });
@@ -199,10 +199,10 @@ test("construct domain based on date field (no comparisonOptionId)", () => {
     expect(domain).toEqual({
         domain: new Domain(
             "[" +
-                `"|", ` +
-                `"&", ("date_field", ">=", "2019-04-01"), ("date_field", "<=", "2019-06-30"), ` +
-                `"&", ("date_field", ">=", "2020-04-01"), ("date_field", "<=", "2020-06-30")` +
-                "]"
+            `"|", ` +
+            `"&", ("date_field", ">=", "2019-04-01"), ("date_field", "<=", "2019-06-30"), ` +
+            `"&", ("date_field", ">=", "2020-04-01"), ("date_field", "<=", "2020-06-30")` +
+            "]"
         ),
         description: "Q2 2019/Q2 2020",
     });
@@ -211,10 +211,10 @@ test("construct domain based on date field (no comparisonOptionId)", () => {
     expect(domain).toEqual({
         domain: new Domain(
             "[" +
-                `"|", ` +
-                `"&", ("date_field", ">=", "2020-01-01"), ("date_field", "<=", "2020-01-31"), ` +
-                `"&", ("date_field", ">=", "2020-11-01"), ("date_field", "<=", "2020-11-30")` +
-                "]"
+            `"|", ` +
+            `"&", ("date_field", ">=", "2020-01-01"), ("date_field", "<=", "2020-01-31"), ` +
+            `"&", ("date_field", ">=", "2020-11-01"), ("date_field", "<=", "2020-11-30")` +
+            "]"
         ),
         description: "January 2020/November 2020",
     });
@@ -232,10 +232,10 @@ test("construct domain based on datetime field (no comparisonOptionId)", () => {
     expect(domain).toEqual({
         domain: new Domain(
             "[" +
-                `"|", ` +
-                `"&", ("date_field", ">=", "2020-01-01 00:00:00"), ("date_field", "<=", "2020-01-31 23:59:59"), ` +
-                `"&", ("date_field", ">=", "2020-01-01 00:00:00"), ("date_field", "<=", "2020-03-31 23:59:59")` +
-                "]"
+            `"|", ` +
+            `"&", ("date_field", ">=", "2020-01-01 00:00:00"), ("date_field", "<=", "2020-01-31 23:59:59"), ` +
+            `"&", ("date_field", ">=", "2020-01-01 00:00:00"), ("date_field", "<=", "2020-03-31 23:59:59")` +
+            "]"
         ),
         description: "January 2020/Q1 2020",
     });
@@ -248,10 +248,10 @@ test("construct domain based on datetime field (no comparisonOptionId)", () => {
     expect(domain).toEqual({
         domain: new Domain(
             "[" +
-                `"|", ` +
-                `"&", ("date_field", ">=", "2019-04-01 00:00:00"), ("date_field", "<=", "2019-06-30 23:59:59"), ` +
-                `"&", ("date_field", ">=", "2020-04-01 00:00:00"), ("date_field", "<=", "2020-06-30 23:59:59")` +
-                "]"
+            `"|", ` +
+            `"&", ("date_field", ">=", "2019-04-01 00:00:00"), ("date_field", "<=", "2019-06-30 23:59:59"), ` +
+            `"&", ("date_field", ">=", "2020-04-01 00:00:00"), ("date_field", "<=", "2020-06-30 23:59:59")` +
+            "]"
         ),
         description: "Q2 2019/Q2 2020",
     });
@@ -260,10 +260,10 @@ test("construct domain based on datetime field (no comparisonOptionId)", () => {
     expect(domain).toEqual({
         domain: new Domain(
             "[" +
-                `"|", ` +
-                `"&", ("date_field", ">=", "2020-01-01 00:00:00"), ("date_field", "<=", "2020-01-31 23:59:59"), ` +
-                `"&", ("date_field", ">=", "2020-11-01 00:00:00"), ("date_field", "<=", "2020-11-30 23:59:59")` +
-                "]"
+            `"|", ` +
+            `"&", ("date_field", ">=", "2020-01-01 00:00:00"), ("date_field", "<=", "2020-01-31 23:59:59"), ` +
+            `"&", ("date_field", ">=", "2020-11-01 00:00:00"), ("date_field", "<=", "2020-11-30 23:59:59")` +
+            "]"
         ),
         description: "January 2020/November 2020",
     });
@@ -321,10 +321,10 @@ test("construct domain based on a date range: the periods overlapping it", () =>
     expect(domain).toEqual({
         domain: new Domain(
             "[" +
-                `"&", ("date_field", "<=", "2020-01-31"), ` +
-                `"|", ("end_date_field", ">=", "2020-01-01"), ` +
-                `"&", ("end_date_field", "=", False), ("date_field", ">=", "2020-01-01")` +
-                "]"
+            `"&", ("date_field", "<=", "2020-01-31"), ` +
+            `"|", ("end_date_field", ">=", "2020-01-01"), ` +
+            `"&", ("end_date_field", "=", False), ("date_field", ">=", "2020-01-01")` +
+            "]"
         ),
         description: "January 2020",
     });
@@ -337,14 +337,14 @@ test("construct domain based on a date range: the periods overlapping it", () =>
     expect(domain).toEqual({
         domain: new Domain(
             "[" +
-                `"|", ` +
-                `"&", ("date_field", "<=", "2020-01-31"), ` +
-                `"|", ("end_date_field", ">=", "2020-01-01"), ` +
-                `"&", ("end_date_field", "=", False), ("date_field", ">=", "2020-01-01"), ` +
-                `"&", ("date_field", "<=", "2020-11-30"), ` +
-                `"|", ("end_date_field", ">=", "2020-11-01"), ` +
-                `"&", ("end_date_field", "=", False), ("date_field", ">=", "2020-11-01")` +
-                "]"
+            `"|", ` +
+            `"&", ("date_field", "<=", "2020-01-31"), ` +
+            `"|", ("end_date_field", ">=", "2020-01-01"), ` +
+            `"&", ("end_date_field", "=", False), ("date_field", ">=", "2020-01-01"), ` +
+            `"&", ("date_field", "<=", "2020-11-30"), ` +
+            `"|", ("end_date_field", ">=", "2020-11-01"), ` +
+            `"&", ("end_date_field", "=", False), ("date_field", ">=", "2020-11-01")` +
+            "]"
         ),
         description: "January 2020/November 2020",
     });
@@ -364,10 +364,10 @@ test("construct domain based on a date range mixing date and datetime fields", (
     expect(domain).toEqual({
         domain: new Domain(
             "[" +
-                `"&", ("date_field", "<=", "2020-06-30"), ` +
-                `"|", ("end_date_field", ">=", "2020-05-31 22:00:00"), ` +
-                `"&", ("end_date_field", "=", False), ("date_field", ">=", "2020-06-01")` +
-                "]"
+            `"&", ("date_field", "<=", "2020-06-30"), ` +
+            `"|", ("end_date_field", ">=", "2020-05-31 22:00:00"), ` +
+            `"&", ("end_date_field", "=", False), ("date_field", ">=", "2020-06-01")` +
+            "]"
         ),
         description: "June 2020",
     });
@@ -383,37 +383,37 @@ test("construct relative domain based on a date range", () => {
     expect(relativeDomain(dateRangeSearchItem, "today", 0)).toEqual(
         new Domain(
             "[" +
-                `"&", ("date_field", "<", "today +1d"), ` +
-                `"|", ("end_date_field", ">=", "today"), ` +
-                `"&", ("end_date_field", "=", False), ("date_field", ">=", "today")` +
-                "]"
+            `"&", ("date_field", "<", "today +1d"), ` +
+            `"|", ("end_date_field", ">=", "today"), ` +
+            `"&", ("end_date_field", "=", False), ("date_field", ">=", "today")` +
+            "]"
         )
     );
     expect(relativeDomain(dateRangeSearchItem, "this_week", -1)).toEqual(
         new Domain(
             "[" +
-                `"&", ("date_field", "<", "today =week_start"), ` +
-                `"|", ("end_date_field", ">=", "today =week_start -1w"), ` +
-                `"&", ("end_date_field", "=", False), ("date_field", ">=", "today =week_start -1w")` +
-                "]"
+            `"&", ("date_field", "<", "today =week_start"), ` +
+            `"|", ("end_date_field", ">=", "today =week_start -1w"), ` +
+            `"&", ("end_date_field", "=", False), ("date_field", ">=", "today =week_start -1w")` +
+            "]"
         )
     );
     expect(relativeDomain(dateRangeSearchItem, "this_month", 1)).toEqual(
         new Domain(
             "[" +
-                `"&", ("date_field", "<", "today =1d +2m"), ` +
-                `"|", ("end_date_field", ">=", "today =1d +1m"), ` +
-                `"&", ("end_date_field", "=", False), ("date_field", ">=", "today =1d +1m")` +
-                "]"
+            `"&", ("date_field", "<", "today =1d +2m"), ` +
+            `"|", ("end_date_field", ">=", "today =1d +1m"), ` +
+            `"&", ("end_date_field", "=", False), ("date_field", ">=", "today =1d +1m")` +
+            "]"
         )
     );
     expect(relativeDomain(dateRangeSearchItem, "this_year", 0)).toEqual(
         new Domain(
             "[" +
-                `"&", ("date_field", "<", "today =1d =1m +1y"), ` +
-                `"|", ("end_date_field", ">=", "today =1d =1m"), ` +
-                `"&", ("end_date_field", "=", False), ("date_field", ">=", "today =1d =1m")` +
-                "]"
+            `"&", ("date_field", "<", "today =1d =1m +1y"), ` +
+            `"|", ("end_date_field", ">=", "today =1d =1m"), ` +
+            `"&", ("end_date_field", "=", False), ("date_field", ">=", "today =1d =1m")` +
+            "]"
         )
     );
 
@@ -425,13 +425,13 @@ test("construct relative domain based on a date range", () => {
     ).toEqual(
         new Domain(
             "[" +
-                `"&", ` +
-                `("date_field", "<", (context_today() + relativedelta(${quarterStart}, months=3)).strftime("%Y-%m-%d")), ` +
-                `"|", ` +
-                `("end_date_field", ">=", datetime.datetime.combine(context_today() + relativedelta(${quarterStart}), datetime.time(0, 0, 0)).to_utc().strftime("%Y-%m-%d %H:%M:%S")), ` +
-                `"&", ("end_date_field", "=", False), ` +
-                `("date_field", ">=", (context_today() + relativedelta(${quarterStart})).strftime("%Y-%m-%d"))` +
-                "]"
+            `"&", ` +
+            `("date_field", "<", (context_today() + relativedelta(${quarterStart}, months=3)).strftime("%Y-%m-%d")), ` +
+            `"|", ` +
+            `("end_date_field", ">=", datetime.datetime.combine(context_today() + relativedelta(${quarterStart}), datetime.time(0, 0, 0)).to_utc().strftime("%Y-%m-%d %H:%M:%S")), ` +
+            `"&", ("end_date_field", "=", False), ` +
+            `("date_field", ">=", (context_today() + relativedelta(${quarterStart})).strftime("%Y-%m-%d"))` +
+            "]"
         )
     );
 });

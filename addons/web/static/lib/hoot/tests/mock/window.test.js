@@ -1,8 +1,8 @@
-/** @odoo-module */
+/** @weth-module */
 
-import { after, describe, expect, test, watchListeners } from "@odoo/hoot";
-import { queryOne } from "@odoo/hoot-dom";
-import { EventBus } from "@odoo/owl";
+import { after, describe, expect, test, watchListeners } from "@weth/hoot";
+import { queryOne } from "@weth/hoot-dom";
+import { EventBus } from "@weth/owl";
 import { mountForTest, parseUrl } from "../local_helpers";
 
 describe(parseUrl(import.meta.url), () => {

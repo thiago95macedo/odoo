@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import _, api, models, fields
-from odoo.exceptions import ValidationError
+from weth import _, api, models, fields
+from weth.exceptions import ValidationError
 
 
 class EventEventConfigurator(models.TransientModel):

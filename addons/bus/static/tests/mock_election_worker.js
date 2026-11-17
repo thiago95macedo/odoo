@@ -1,5 +1,5 @@
 import { ElectionWorker } from "@bus/workers/election_worker";
-import { mockWorker } from "@odoo/hoot";
+import { mockWorker } from "@weth/hoot";
 import { MockServer, patchWithCleanup } from "@web/../tests/web_test_helpers";
 
 patchWithCleanup(MockServer.prototype, {

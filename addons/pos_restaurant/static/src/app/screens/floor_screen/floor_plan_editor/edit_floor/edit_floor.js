@@ -1,4 +1,4 @@
-import { Component, onMounted, proxy, useListener, useProps, t } from "@odoo/owl";
+import { Component, onMounted, proxy, useListener, useProps, t } from "@weth/owl";
 import { Handles } from "@pos_restaurant/app/screens/floor_screen/floor_plan_editor/handles/handles";
 import { _t } from "@web/core/l10n/translation";
 import { getColorRGBA, getColors } from "@pos_restaurant/app/services/floor_plan/utils/colors";
@@ -82,7 +82,7 @@ export class EditFloorProperties extends Component {
         this.dialog.add(ConfirmationDialog, {
             body: _t("Are you sure you want to delete this floor?"),
             confirmLabel: _t("Delete"),
-            cancel: () => {},
+            cancel: () => { },
             confirm: () => {
                 this.floorPlanStore.removeFloor(this.floor.uuid);
             },

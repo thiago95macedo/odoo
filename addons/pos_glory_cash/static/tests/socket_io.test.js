@@ -1,6 +1,6 @@
-import { afterEach, beforeEach, describe, expect, test } from "@odoo/hoot";
-import { waitUntil } from "@odoo/hoot-dom";
-import { advanceTime, mockWebSocket } from "@odoo/hoot-mock";
+import { afterEach, beforeEach, describe, expect, test } from "@weth/hoot";
+import { waitUntil } from "@weth/hoot-dom";
+import { advanceTime, mockWebSocket } from "@weth/hoot-mock";
 import { SocketIoService } from "@pos_glory_cash/utils/socket_io";
 
 describe.current.tags("headless");
@@ -52,7 +52,7 @@ describe("when open message is received", () => {
     });
 
     test("sends ping request every 5 seconds", async () => {
-        const socketIo = new SocketIoService({ onClose: () => {} });
+        const socketIo = new SocketIoService({ onClose: () => { } });
         socketIo.connect("mockUrl");
         await waitUntil(() => websocketState.instance.readyState);
 
@@ -65,7 +65,7 @@ describe("when open message is received", () => {
     });
 
     test("closes connection if pong response is not received in 10s after ping", async () => {
-        const socketIo = new SocketIoService({ onClose: () => {} });
+        const socketIo = new SocketIoService({ onClose: () => { } });
         socketIo.connect("mockUrl");
         await waitUntil(() => websocketState.instance.readyState);
 
@@ -131,7 +131,7 @@ describe("when event message is received", () => {
     test("does not call callback and closes websocket if message is empty", async () => {
         let eventReceived = null;
         const socketIo = new SocketIoService({
-            onClose: () => {},
+            onClose: () => { },
             onEvent: (event) => {
                 eventReceived = event;
             },
@@ -148,7 +148,7 @@ describe("when event message is received", () => {
     test("does not call callback and closes websocket if message is invalid", async () => {
         let eventReceived = null;
         const socketIo = new SocketIoService({
-            onClose: () => {},
+            onClose: () => { },
             onEvent: (event) => {
                 eventReceived = event;
             },

@@ -1,4 +1,4 @@
-import { test, expect } from "@odoo/hoot";
+import { test, expect } from "@weth/hoot";
 import { mountWithCleanup } from "@web/../tests/web_test_helpers";
 import { Orderline } from "@point_of_sale/app/components/orderline/orderline";
 import { expectFormattedPrice, setupPosEnv } from "../utils";

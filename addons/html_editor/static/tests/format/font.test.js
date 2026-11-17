@@ -1,7 +1,7 @@
-import { waitFor } from "@odoo/hoot-dom";
+import { waitFor } from "@weth/hoot-dom";
 import { setupEditor } from "../_helpers/editor";
 import { getContent } from "../_helpers/selection";
-import { expect, test } from "@odoo/hoot";
+import { expect, test } from "@weth/hoot";
 import { expandToolbar } from "../_helpers/toolbar";
 import { contains } from "@web/../tests/web_test_helpers";
 import { expectElementCount } from "../_helpers/ui_expectations";

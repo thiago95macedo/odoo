@@ -1,5 +1,5 @@
 import { useLayoutEffect } from "@web/owl2/utils";
-import { Component, proxy, signal, useListener, useProps, t } from "@odoo/owl";
+import { Component, proxy, signal, useListener, useProps, t } from "@weth/owl";
 import { useAutofocus, useService } from "@web/core/utils/hooks";
 
 /**

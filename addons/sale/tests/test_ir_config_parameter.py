@@ -2,8 +2,8 @@
 
 from unittest.mock import patch
 
-from odoo.tests import tagged
-from odoo.tests.common import TransactionCase
+from weth.tests import tagged
+from weth.tests.common import TransactionCase
 
 
 @tagged("post_install", "-at_install")
@@ -41,7 +41,7 @@ class TestIrConfigParameter(TransactionCase):
             return mapping
 
         _get_param_cron_mapping_patcher = patch(
-            "odoo.addons.sale.models.ir_config_parameter.IrConfigParameter._get_param_cron_mapping",
+            "weth.addons.sale.models.ir_config_parameter.IrConfigParameter._get_param_cron_mapping",
             new=patched_get_param_cron_mapping,
         )
         cls.startClassPatcher(_get_param_cron_mapping_patcher)

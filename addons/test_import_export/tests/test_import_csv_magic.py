@@ -3,8 +3,8 @@ Tests for various autodetection magics for CSV imports
 """
 import codecs
 
-from odoo.tests import tagged, common
-from odoo.tools import BinaryBytes
+from weth.tests import tagged, common
+from weth.tools import BinaryBytes
 
 
 class ImportCase(common.TransactionCase):

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
 
     <record id="cron_auto_confirm_paid_wire_transfer_txs" model="ir.cron">
         <field name="name">Wire Transfer: Confirm paid transactions</field>
@@ -12,4 +12,4 @@
         <field name="active">False</field>
     </record>
 
-</odoo>
+</weth>

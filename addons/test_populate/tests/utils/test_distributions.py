@@ -1,8 +1,8 @@
 from random import Random
 
-from odoo.tests import TransactionCase
+from weth.tests import TransactionCase
 
-from odoo.addons.populate.utils.distributions import (
+from weth.addons.populate.utils.distributions import (
     BetaDistribution,
     Distribution,
     ExponentialDistribution,

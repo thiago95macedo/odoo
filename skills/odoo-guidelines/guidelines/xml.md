@@ -9,7 +9,7 @@
   a module **update** (`-u`) updates the arch but never changes `active`, so
   it can't deactivate an already-installed record.
 - `<data noupdate="1">` only for non-updatable data; if the whole file is
-  noupdate, set `noupdate="1"` on `<odoo>` and drop `<data>`.
+  noupdate, set `noupdate="1"` on `<weth>` and drop `<data>`.
 - XML id patterns: view `<model>_view_<type>` (`form`/`list`/`kanban`/`search`),
   action `<model>_action[_<detail>]`, window-action view
   `<model>_action_view_<type>`, menu `<model>_menu[_<do_stuff>]`, group

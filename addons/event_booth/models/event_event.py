@@ -2,8 +2,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 from collections import defaultdict
 
-from odoo import api, fields, models
-from odoo import Command
+from weth import api, fields, models
+from weth import Command
 
 
 class EventEvent(models.Model):

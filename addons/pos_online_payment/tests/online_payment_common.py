@@ -3,9 +3,9 @@
 
 import json
 
-from odoo.tools import mute_logger
-from odoo.addons.payment.tests.http_common import PaymentHttpCommon
-from odoo.addons.pos_online_payment.controllers.payment_portal import PaymentPortal
+from weth.tools import mute_logger
+from weth.addons.payment.tests.http_common import PaymentHttpCommon
+from weth.addons.pos_online_payment.controllers.payment_portal import PaymentPortal
 
 
 class OnlinePaymentCommon(PaymentHttpCommon):
@@ -50,7 +50,7 @@ class OnlinePaymentCommon(PaymentHttpCommon):
             'tokenization_requested': False,
         })
 
-        with mute_logger('odoo.addons.payment.models.payment_transaction'):
+        with mute_logger('weth.addons.payment.models.payment_transaction'):
             processing_values = self._fake_request_pos_order_pay_transaction_page(pos_order_id, route_values)
         tx_sudo = self._get_tx(processing_values['reference'])
         tx_sudo.action_confirm()

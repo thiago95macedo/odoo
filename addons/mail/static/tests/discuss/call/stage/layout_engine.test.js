@@ -9,7 +9,7 @@ import {
     SURFACE_PLACEMENT,
 } from "@mail/discuss/call/common/stage/layout_engine";
 
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@weth/hoot";
 
 describe.current.tags("desktop");
 

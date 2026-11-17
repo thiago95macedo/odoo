@@ -1,7 +1,7 @@
 from datetime import datetime, date
 
-from odoo import models
-from odoo.addons.google_calendar.utils.google_event import GoogleEvent
+from weth import models
+from weth.addons.google_calendar.utils.google_event import GoogleEvent
 
 
 class GoogleEventSync(models.AbstractModel):

@@ -13,12 +13,12 @@ import {
     MENU_ACTIVE_IDS,
 } from "@mail/../tests/mail_test_helpers";
 import { withGuest } from "@mail/../tests/mock_server/mail_mock_server";
-import { describe, test } from "@odoo/hoot";
-import { press, waitFor } from "@odoo/hoot-dom";
+import { describe, test } from "@weth/hoot";
+import { press, waitFor } from "@weth/hoot-dom";
 import { Command, serverState } from "@web/../tests/web_test_helpers";
 import { rpc } from "@web/core/network/rpc";
 import { defineLivechatModels } from "./livechat_test_helpers";
-import { advanceTime, mockDate } from "@odoo/hoot-mock";
+import { advanceTime, mockDate } from "@weth/hoot-mock";
 
 describe.current.tags("desktop");
 defineLivechatModels();

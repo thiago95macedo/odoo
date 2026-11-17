@@ -1,10 +1,10 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 from datetime import timedelta
 
-from odoo import fields, Command
-from odoo.exceptions import UserError, AccessError
-from odoo.tests import tagged
-from odoo.addons.sale_purchase.tests.common import TestCommonSalePurchaseNoChart
+from weth import fields, Command
+from weth.exceptions import UserError, AccessError
+from weth.tests import tagged
+from weth.addons.sale_purchase.tests.common import TestCommonSalePurchaseNoChart
 
 
 @tagged('-at_install', 'post_install')

@@ -1,4 +1,4 @@
-import { t } from "@odoo/owl";
+import { t } from "@weth/owl";
 
 /**
  * @typedef StandardFieldProps

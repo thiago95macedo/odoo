@@ -4,13 +4,13 @@ from dateutil.relativedelta import relativedelta
 from psycopg2.errors import UniqueViolation
 from freezegun import freeze_time
 
-from odoo import fields, Command
-from odoo.addons.phone_validation.tools import phone_validation
-from odoo.fields import Domain
-from odoo.tests import Form, users, new_test_user, HttpCase, tagged, TransactionCase
-from odoo.addons.hr.tests.common import TestHrCommon
-from odoo.tools import mute_logger
-from odoo.exceptions import AccessError, UserError, ValidationError
+from weth import fields, Command
+from weth.addons.phone_validation.tools import phone_validation
+from weth.fields import Domain
+from weth.tests import Form, users, new_test_user, HttpCase, tagged, TransactionCase
+from weth.addons.hr.tests.common import TestHrCommon
+from weth.tools import mute_logger
+from weth.exceptions import AccessError, UserError, ValidationError
 from psycopg2.errors import NotNullViolation
 
 # 1x1 px pictures, to tell an employee's own photo from its user's avatar.
@@ -127,11 +127,11 @@ class TestHrEmployee(TestHrCommon):
         self.assertEqual(self.res_users_hr_officer.tz, employee.tz)
 
         # Check False value on employee
-        with mute_logger('odoo.sql_db'), self.assertRaises(NotNullViolation):
+        with mute_logger('weth.sql_db'), self.assertRaises(NotNullViolation):
             employee.tz = False
 
         # Check False value on user
-        with mute_logger('odoo.sql_db'), self.assertRaises(NotNullViolation):
+        with mute_logger('weth.sql_db'), self.assertRaises(NotNullViolation):
             self.res_users_hr_officer.tz = False
 
     def test_employee_from_user(self):
@@ -323,7 +323,7 @@ class TestHrEmployee(TestHrCommon):
         user = self.env['res.users'].create([{
             'name': 'Test user',
             'login': 'test',
-            'email': 'test@odoo.perso',
+            'email': 'test@weth.perso',
             'phone': '+32488990011',
         }])
         employee = self.env['hr.employee'].create([{
@@ -351,7 +351,7 @@ class TestHrEmployee(TestHrCommon):
         employee_form.name = "Second employee"
         employee_form.work_location_id = self.work_location
         employee_form.user_id = self.res_users_hr_officer
-        with mute_logger('odoo.sql_db'), self.assertRaises(UniqueViolation), self.assertRaises(ValidationError):
+        with mute_logger('weth.sql_db'), self.assertRaises(UniqueViolation), self.assertRaises(ValidationError):
             employee_form.save()
 
         employee_2 = self.env['hr.employee'].create({
@@ -363,7 +363,7 @@ class TestHrEmployee(TestHrCommon):
         # Try to set the user with existing employee in the company, on another existing employee
         employee_2_form = Form(employee_2.with_user(self.res_users_hr_officer).with_company(company=test_company.id))
         employee_2_form.user_id = self.res_users_hr_officer
-        with mute_logger('odoo.sql_db'), self.assertRaises(UniqueViolation), self.assertRaises(ValidationError):
+        with mute_logger('weth.sql_db'), self.assertRaises(UniqueViolation), self.assertRaises(ValidationError):
             employee_2_form.save()
 
 
@@ -492,7 +492,7 @@ class TestHrEmployee(TestHrCommon):
             'company_id': company_A.id,
         })
         # User cannot be assigned to more than one employee in the same company. work_contact_id should not be removed.
-        with mute_logger('odoo.sql_db'), self.assertRaises(UniqueViolation), self.assertRaises(ValidationError):
+        with mute_logger('weth.sql_db'), self.assertRaises(UniqueViolation), self.assertRaises(ValidationError):
             self.env['hr.employee'].create({
                 'name': 'new_employee_B',
                 'user_id': user.id,
@@ -571,7 +571,7 @@ class TestHrEmployee(TestHrCommon):
             ('name', '=', 'Test Employee'),
             ('active', '=', True)
         ]).optimize(self.env['hr.employee'])
-        with self.assertNoLogs('odoo.domains'):
+        with self.assertNoLogs('weth.domains'):
             self.assertEqual(
                 employee.ids,
                 self.env['hr.employee'].with_user(new_user).search(domain).ids,
@@ -991,9 +991,9 @@ class TestHrEmployeeLinks(HttpCase):
         employee_sonic = self.env['hr.employee'].create({
             'name': 'Sonic the Hedgehog',
         })
-        with mute_logger('odoo.http'):  # ignore raised RedirectWarning
+        with mute_logger('weth.http'):  # ignore raised RedirectWarning
             self.start_tour(
-                f"/odoo/employees/{employee_sonic.id}",
+                f"/weth/employees/{employee_sonic.id}",
                 "check_public_employee_link_redirect",
                 login=user_amy.login,
             )

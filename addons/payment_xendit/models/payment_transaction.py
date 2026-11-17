@@ -5,16 +5,16 @@ from uuid import uuid4
 
 from werkzeug import urls
 
-from odoo import api, models
-from odoo.exceptions import ValidationError
-from odoo.http import request
-from odoo.tools import float_round
-from odoo.tools.urls import urljoin
+from weth import api, models
+from weth.exceptions import ValidationError
+from weth.http import request
+from weth.tools import float_round
+from weth.tools.urls import urljoin
 
-from odoo.addons.payment import utils as payment_utils
-from odoo.addons.payment.logging import get_payment_logger
-from odoo.addons.payment_xendit import const
-from odoo.addons.payment_xendit.controllers.main import XenditController
+from weth.addons.payment import utils as payment_utils
+from weth.addons.payment.logging import get_payment_logger
+from weth.addons.payment_xendit import const
+from weth.addons.payment_xendit.controllers.main import XenditController
 
 _logger = get_payment_logger(__name__)
 

@@ -3,9 +3,9 @@
 from datetime import UTC, datetime, time
 from zoneinfo import ZoneInfo
 
-from odoo import fields, models
-from odoo.tools import babel_locale_parse
-from odoo.tools.date_utils import weeknumber
+from weth import fields, models
+from weth.tools import babel_locale_parse
+from weth.tools.date_utils import weeknumber
 
 
 class ResourceResource(models.Model):

@@ -1,6 +1,6 @@
-from odoo import fields, models
-from odoo.exceptions import UserError
-from odoo.addons.mail.tools.parser import parse_res_ids
+from weth import fields, models
+from weth.exceptions import UserError
+from weth.addons.mail.tools.parser import parse_res_ids
 
 
 class MailFollowersEdit(models.TransientModel):

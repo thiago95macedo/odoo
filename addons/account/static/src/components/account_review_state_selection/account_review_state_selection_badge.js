@@ -1,6 +1,6 @@
 import { registry } from "@web/core/registry";
 import { Dropdown } from "@web/core/dropdown/dropdown";
-import { Component, onWillStart, useProps, t } from "@odoo/owl";
+import { Component, onWillStart, useProps, t } from "@weth/owl";
 import { standardFieldProps } from "@web/views/fields/standard_field_props";
 import { DropdownItem } from "@web/core/dropdown/dropdown_item";
 import { cookie } from "@web/core/browser/cookie";
@@ -50,7 +50,7 @@ export class AccountReviewStateSelectionBadge extends Component {
         return null;
     }
 
-    async getEditableOptions () {
+    async getEditableOptions() {
         const editableOptions = []
         if (this.props.readonly || this.props.record.model.useSampleModel || !this.props.record.resId) {
             return editableOptions;

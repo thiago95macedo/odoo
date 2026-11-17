@@ -1,8 +1,8 @@
 from datetime import date, datetime, timedelta
 
-from odoo.addons.event.tests.common import EventCase
-from odoo import exceptions
-from odoo.tests import tagged
+from weth.addons.event.tests.common import EventCase
+from weth import exceptions
+from weth.tests import tagged
 
 
 class TestEventSlotsCommon(EventCase):

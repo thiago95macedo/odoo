@@ -5,16 +5,16 @@ import uuid
 
 from unittest.mock import patch
 
-from odoo import Command, fields
-from odoo.exceptions import ValidationError
-from odoo.tests import tagged, RecordCapturer
-from odoo.tools import file_open
-from odoo.tools.misc import mute_logger
+from weth import Command, fields
+from weth.exceptions import ValidationError
+from weth.tests import tagged, RecordCapturer
+from weth.tools import file_open
+from weth.tools.misc import mute_logger
 
-from odoo.addons.account.tests.common import AccountTestInvoicingCommon
-from odoo.addons.base.tests.files import GIF_RAW, DOCX_RAW, PDF_RAW, XLSX_RAW
-from odoo.addons.mail.tests.common import MailCommon
-from odoo.addons.test_mail.data.test_mail_data import MAIL_TEMPLATE, MAIL_PDF_MIME_TEMPLATE
+from weth.addons.account.tests.common import AccountTestInvoicingCommon
+from weth.addons.base.tests.files import GIF_RAW, DOCX_RAW, PDF_RAW, XLSX_RAW
+from weth.addons.mail.tests.common import MailCommon
+from weth.addons.test_mail.data.test_mail_data import MAIL_TEMPLATE, MAIL_PDF_MIME_TEMPLATE
 
 
 class TestAccountInvoiceImportMixin:
@@ -1148,8 +1148,8 @@ class TestAccountIncomingSupplierInvoice(AccountTestInvoicingCommon, TestAccount
 
         with (
             self._patch_import_methods(),
-            patch('odoo.addons.account.models.partner.ResPartner.search', side_effect=ValueError('We want to test an unexpected error')),
-            mute_logger('odoo.addons.account.models.account_document_import_mixin'),
+            patch('weth.addons.account.models.partner.ResPartner.search', side_effect=ValueError('We want to test an unexpected error')),
+            mute_logger('weth.addons.account.models.account_document_import_mixin'),
         ):
             move_id = self.journal.create_document_from_attachment(attachment.ids).get('res_id')
 

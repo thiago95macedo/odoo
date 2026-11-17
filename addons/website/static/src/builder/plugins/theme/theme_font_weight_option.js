@@ -1,6 +1,6 @@
 import { BaseOptionComponent } from "@html_builder/core/base_option_component";
 import { useDomState } from "@html_builder/core/utils";
-import { useProps, t } from "@odoo/owl";
+import { useProps, t } from "@weth/owl";
 import { _t } from "@web/core/l10n/translation";
 import { CustomizeWebsiteVariableAction } from "../customize_website_plugin";
 
@@ -50,8 +50,8 @@ export class ThemeFontWeightOption extends BaseOptionComponent {
         return this.isBoldDisabled
             ? _t("This font is missing font weight")
             : _t(
-                  'Weight for "Bold" in the text toolbar. Unless Font Weight is "Auto", only equal or heavier values are available.'
-              );
+                'Weight for "Bold" in the text toolbar. Unless Font Weight is "Auto", only equal or heavier values are available.'
+            );
     }
 
     get filteredLightWeights() {

@@ -1,12 +1,12 @@
-import { expect, queryOne, test } from "@odoo/hoot";
-import { Model } from "@odoo/o-spreadsheet";
+import { expect, queryOne, test } from "@weth/hoot";
+import { Model } from "@weth/o-spreadsheet";
 import { insertChartInSpreadsheet } from "@spreadsheet/../tests/helpers/chart";
 import { makeSpreadsheetMockEnv } from "@spreadsheet/../tests/helpers/model";
 import { OdooDataProvider } from "@spreadsheet/data_sources/odoo_data_provider";
 import { createDashboardActionWithData } from "@spreadsheet_dashboard/../tests/helpers/dashboard_action";
 import { defineSpreadsheetDashboardModels } from "@spreadsheet_dashboard/../tests/helpers/data";
 import { contains, getMockEnv } from "@web/../tests/web_test_helpers";
-import { click } from "@odoo/hoot-dom";
+import { click } from "@weth/hoot-dom";
 
 defineSpreadsheetDashboardModels();
 

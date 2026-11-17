@@ -1,6 +1,6 @@
-/** @odoo-module */
+/** @weth-module */
 
-import { Component, computed, signal, t, usePlugin, useProps, xml } from "@odoo/owl";
+import { Component, computed, signal, t, usePlugin, useProps, xml } from "@weth/owl";
 import { isFirefox } from "../../hoot-dom/hoot_dom_utils";
 import { Tag } from "../core/tag";
 import { Test } from "../core/test";

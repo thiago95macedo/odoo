@@ -11,16 +11,16 @@ import werkzeug.routing
 import werkzeug.urls
 from werkzeug.exceptions import HTTPException, NotFound
 
-from odoo import api, exceptions, models, tools
-from odoo.exceptions import AccessError, MissingError
-from odoo.fields import Domain
-from odoo.http import Response, request
-from odoo.http.router import root
+from weth import api, exceptions, models, tools
+from weth.exceptions import AccessError, MissingError
+from weth.fields import Domain
+from weth.http import Response, request
+from weth.http.router import root
 
-from odoo.addons.base.models import ir_http
-from odoo.addons.base.models.ir_http import RequestUID
-from odoo.addons.base.models.ir_qweb import keep_query
-from odoo.addons.base.models.res_lang import LangData
+from weth.addons.base.models import ir_http
+from weth.addons.base.models.ir_http import RequestUID
+from weth.addons.base.models.ir_qweb import keep_query
+from weth.addons.base.models.res_lang import LangData
 
 _logger = logging.getLogger(__name__)
 

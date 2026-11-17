@@ -1,4 +1,4 @@
-import { test, describe, expect } from "@odoo/hoot";
+import { test, describe, expect } from "@weth/hoot";
 import { mountWithCleanup } from "@web/../tests/web_test_helpers";
 import { PresetInfoPopup } from "@pos_self_order/app/components/preset_info_popup/preset_info_popup";
 import {
@@ -58,7 +58,7 @@ describe("preparation ticket", () => {
         order.preset_id = preset;
 
         const comp = await mountWithCleanup(PresetInfoPopup, {
-            props: { close: () => {}, getPayload: () => {} },
+            props: { close: () => { }, getPayload: () => { } },
         });
         comp.state.name = "Robin";
         comp.state.email = "robin@example.com";
@@ -94,7 +94,7 @@ describe("preparation ticket", () => {
         order.preset_id = preset;
 
         const comp = await mountWithCleanup(PresetInfoPopup, {
-            props: { close: () => {}, getPayload: () => {} },
+            props: { close: () => { }, getPayload: () => { } },
         });
         comp.state.name = "Sam";
         comp.state.phoneLocal = "2025551234";

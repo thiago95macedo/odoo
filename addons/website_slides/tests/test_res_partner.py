@@ -1,5 +1,5 @@
-from odoo.addons.website_slides.tests import common as slides_common
-from odoo import Command
+from weth.addons.website_slides.tests import common as slides_common
+from weth import Command
 
 
 class TestPartner(slides_common.SlidesCase):

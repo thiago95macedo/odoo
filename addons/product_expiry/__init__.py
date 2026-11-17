@@ -4,7 +4,7 @@ from . import models
 from . import report
 from . import wizard
 
-from odoo import Command
+from weth import Command
 
 
 def _enable_tracking_numbers(env):

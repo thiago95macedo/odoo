@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.fields import Domain
+from weth.fields import Domain
 
-from odoo.addons.payment.tests.common import PaymentCommon
+from weth.addons.payment.tests.common import PaymentCommon
 
 
 class PaymentCustomCommon(PaymentCommon):

@@ -3,10 +3,10 @@
 import io
 import re
 
-from odoo import api, fields, models
-from odoo.exceptions import ValidationError
-from odoo.fields import Command
-from odoo.tools import pdf, unique
+from weth import api, fields, models
+from weth.exceptions import ValidationError
+from weth.fields import Command
+from weth.tools import pdf, unique
 
 
 class SalePdfFormField(models.Model):

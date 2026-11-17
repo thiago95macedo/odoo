@@ -1,8 +1,8 @@
-import { expect, test } from "@odoo/hoot";
+import { expect, test } from "@weth/hoot";
 import { setupPosEnv, dialogActions } from "../utils";
 import { definePosModels } from "../data/generate_model_definitions";
 import { mountWithCleanup } from "@web/../tests/web_test_helpers";
-import { click } from "@odoo/hoot-dom";
+import { click } from "@weth/hoot-dom";
 import {
     InternalNoteButton,
     NoteButton,

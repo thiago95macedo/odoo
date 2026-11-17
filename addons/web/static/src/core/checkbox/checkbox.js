@@ -1,6 +1,6 @@
 import { useHotkey } from "../hotkeys/hotkey_hook";
 
-import { Component, signal, t, useProps } from "@odoo/owl";
+import { Component, signal, t, useProps } from "@weth/owl";
 
 /**
  * Custom checkbox
@@ -24,7 +24,7 @@ export class CheckBox extends Component {
         disabled: t.boolean().optional(),
         value: t.boolean().optional(),
         slots: t.object().optional(),
-        onChange: t.function().optional(() => () => {}),
+        onChange: t.function().optional(() => () => { }),
         className: t.string().optional(),
         name: t.string().optional(),
         indeterminate: t.boolean().optional(),

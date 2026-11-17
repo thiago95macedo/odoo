@@ -1,6 +1,6 @@
-from odoo.addons.test_event_full.tests.common import TestWEventCommon
-from odoo.tests import tagged
-from odoo.tests.common import users
+from weth.addons.test_event_full.tests.common import TestWEventCommon
+from weth.tests import tagged
+from weth.tests.common import users
 
 
 @tagged('event_online', 'post_install', '-at_install')

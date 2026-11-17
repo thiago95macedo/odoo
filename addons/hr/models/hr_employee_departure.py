@@ -2,8 +2,8 @@
 from dateutil.relativedelta import relativedelta
 from markupsafe import Markup
 
-from odoo import api, fields, models
-from odoo.exceptions import ValidationError
+from weth import api, fields, models
+from weth.exceptions import ValidationError
 
 
 class HrEmployeeDeparture(models.Model):

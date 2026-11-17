@@ -1,10 +1,10 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.fields import Command, Date
+from weth.fields import Command, Date
 
-from odoo.addons.product.tests.common import ProductVariantsCommon
-from odoo.addons.website_sale.controllers.product_feed import ProductFeed
-from odoo.addons.website_sale.tests.common import MockRequest, WebsiteSaleCommon
+from weth.addons.product.tests.common import ProductVariantsCommon
+from weth.addons.website_sale.controllers.product_feed import ProductFeed
+from weth.addons.website_sale.tests.common import MockRequest, WebsiteSaleCommon
 
 
 class WebsiteSaleGMCCommon(ProductVariantsCommon, WebsiteSaleCommon):

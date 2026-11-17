@@ -2,12 +2,12 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 from datetime import timedelta
 
-from odoo.addons.account.tests.common import AccountTestInvoicingCommon
-from odoo.exceptions import UserError
-from odoo.fields import Domain
-from odoo.tests import Form, HttpCase, tagged
-from odoo.tools import mute_logger
-from odoo import Command, fields
+from weth.addons.account.tests.common import AccountTestInvoicingCommon
+from weth.exceptions import UserError
+from weth.fields import Domain
+from weth.tests import Form, HttpCase, tagged
+from weth.tools import mute_logger
+from weth import Command, fields
 
 
 class TestPurchaseToInvoiceCommon(AccountTestInvoicingCommon, HttpCase):
@@ -343,7 +343,7 @@ class TestPurchaseToInvoice(TestPurchaseToInvoiceCommon):
             purchase_orders.append(po)
 
         move_form = Form(self.env['account.move'].with_context(default_move_type='in_invoice'))
-        with mute_logger('odoo.tests.form.onchange'):  # Mute "x PO lines added to the bill" notification
+        with mute_logger('weth.tests.form.onchange'):  # Mute "x PO lines added to the bill" notification
             move_form.purchase_vendor_bill_id = PurchaseBillUnion.browse(-purchase_orders[0].id)
             move_form.purchase_vendor_bill_id = PurchaseBillUnion.browse(-purchase_orders[1].id)
         move = move_form.save()
@@ -386,7 +386,7 @@ class TestPurchaseToInvoice(TestPurchaseToInvoiceCommon):
         po.order_line.qty_received = 12
 
         move_form = Form(self.env['account.move'].with_context(default_move_type='in_invoice'))
-        with mute_logger('odoo.tests.form.onchange'):  # Mute "x PO lines added to the bill" notification
+        with mute_logger('weth.tests.form.onchange'):  # Mute "x PO lines added to the bill" notification
             move_form.purchase_vendor_bill_id = self.env['purchase.bill.union'].browse(-po.id)
         move = move_form.save()
 
@@ -571,7 +571,7 @@ class TestPurchaseToInvoice(TestPurchaseToInvoiceCommon):
 
         move_form = Form(self.env['account.move'].with_context(default_move_type='in_invoice'))
         PurchaseBillUnion = self.env['purchase.bill.union']
-        with mute_logger('odoo.tests.form.onchange'):  # Mute "x PO lines added to the bill" notification
+        with mute_logger('weth.tests.form.onchange'):  # Mute "x PO lines added to the bill" notification
             move_form.purchase_vendor_bill_id = PurchaseBillUnion.browse(-purchase_orders[0].id)
             move_form.purchase_vendor_bill_id = PurchaseBillUnion.browse(-purchase_orders[1].id)
             move_form.purchase_vendor_bill_id = PurchaseBillUnion.browse(-purchase_orders[2].id)
@@ -802,7 +802,7 @@ class TestPurchaseToInvoice(TestPurchaseToInvoiceCommon):
         purchase_order.order_line.qty_received = 12
 
         move_form = Form(self.env['account.move'].with_context(default_move_type='in_invoice'))
-        with mute_logger('odoo.tests.form.onchange'):  # Mute "x PO lines added to the bill" notification
+        with mute_logger('weth.tests.form.onchange'):  # Mute "x PO lines added to the bill" notification
             move_form.purchase_vendor_bill_id = self.env['purchase.bill.union'].browse(-purchase_order.id)
         invoice = move_form.save()
 
@@ -1339,7 +1339,7 @@ class TestInvoicePurchaseMatch(TestPurchaseToInvoiceCommon):
         self.assertFalse(invoice1.invoice_user_id)
         # creating bill with Auto_complete feature
         move_form = Form(self.env['account.move'].with_context(default_move_type='in_invoice'))
-        with mute_logger('odoo.tests.form.onchange'):  # Mute "x PO lines added to the bill" notification
+        with mute_logger('weth.tests.form.onchange'):  # Mute "x PO lines added to the bill" notification
             move_form.purchase_vendor_bill_id = self.env['purchase.bill.union'].browse(-po2.id)
         invoice2 = move_form.save()
         self.assertFalse(invoice2.invoice_user_id)
@@ -1530,7 +1530,7 @@ class TestInvoicePurchaseMatch(TestPurchaseToInvoiceCommon):
             'company_id': order.company_id.id,
         })
         self.start_tour(
-            f"/odoo/action-purchase.purchase_rfq/{order.id}",
+            f"/weth/action-purchase.purchase_rfq/{order.id}",
             'purchase_order_section_duplicate_tour',
             login='admin',
         )

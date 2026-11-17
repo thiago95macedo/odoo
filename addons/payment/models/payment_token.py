@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, fields, models
-from odoo.exceptions import UserError, ValidationError
+from weth import api, fields, models
+from weth.exceptions import UserError, ValidationError
 
 
 class PaymentToken(models.Model):

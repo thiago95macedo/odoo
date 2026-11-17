@@ -2,9 +2,9 @@
 
 import json
 
-from odoo.http import Controller, request, route
-from odoo.tests import HttpCase, JsonRpcException
-from odoo.tools import file_open, mute_logger
+from weth.http import Controller, request, route
+from weth.tests import HttpCase, JsonRpcException
+from weth.tools import file_open, mute_logger
 
 
 class TestCorsLivechat(HttpCase):
@@ -105,7 +105,7 @@ class TestCorsLivechat(HttpCase):
         res.raise_for_status()
         attachment_id = json.loads(res.content)["data"]["attachment_id"]
         self.assertEqual(self.env["ir.attachment"].browse(attachment_id).res_id, data["channel_id"])
-        with mute_logger("odoo.http"), file_open("addons/web/__init__.py") as file:
+        with mute_logger("weth.http"), file_open("addons/web/__init__.py") as file:
             res = self.url_open(
                 "/im_livechat/cors/attachment/upload", upload_params, files={"ufile": file}
             )
@@ -114,7 +114,7 @@ class TestCorsLivechat(HttpCase):
     def test_body_that_is_not_an_object_is_rejected_by_the_dispatcher(self):
         self.authenticate(None, None)
         for body in ("[]", "not json"):
-            with self.subTest(body=body), mute_logger("odoo.http"):
+            with self.subTest(body=body), mute_logger("weth.http"):
                 res = self.url_open(
                     "/im_livechat/cors/init",
                     data=body,
@@ -169,7 +169,7 @@ class TestJson2GuestToken(HttpCase):
             headers={"Content-Type": "application/json"},
         )
         self.assertEqual(json.loads(res.content), guest.id)
-        with mute_logger("odoo.http"):
+        with mute_logger("weth.http"):
             res = self.url_open(
                 "/im_livechat/tests/json2_guest",
                 data="{}",

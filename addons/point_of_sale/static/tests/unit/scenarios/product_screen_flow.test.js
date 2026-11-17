@@ -1,5 +1,5 @@
-import { expect, test } from "@odoo/hoot";
-import { animationFrame, waitFor, advanceTime, press } from "@odoo/hoot-dom";
+import { expect, test } from "@weth/hoot";
+import { animationFrame, waitFor, advanceTime, press } from "@weth/hoot-dom";
 import { contains, patchWithCleanup } from "@web/../tests/web_test_helpers";
 import { localization } from "@web/core/l10n/localization";
 import { session } from "@web/session";

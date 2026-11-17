@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @weth-module **/
 import { registry } from "@web/core/registry";
 import { buildM2OFieldDescription, Many2OneField } from "@web/views/fields/many2one/many2one_field";
 

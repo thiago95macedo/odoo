@@ -1,9 +1,9 @@
 import io
 from collections import defaultdict
 
-from odoo import api, fields, models
-from odoo.tools import format_date, pdf
-from odoo.tools.pdf import DependencyError, OdooPdfFileReader, OdooPdfFileWriter, PdfReadError
+from weth import api, fields, models
+from weth.tools import format_date, pdf
+from weth.tools.pdf import DependencyError, OdooPdfFileReader, OdooPdfFileWriter, PdfReadError
 
 
 class IrActionsReport(models.Model):
@@ -107,7 +107,7 @@ class IrActionsReport(models.Model):
     def _hr_expense_get_general_info(self, expenses, payment_mode_str):
         """ Helper method to collect all of the required data for the footer of the report
 
-        :param :class:`~odoo.addons.hr_expense.models.hr_expense.HrExpense` expenses: The expenses to sum up
+        :param :class:`~weth.addons.hr_expense.models.hr_expense.HrExpense` expenses: The expenses to sum up
         :param str payment_mode_str: User-facing string for the expenses payment mode
         :return Footer data
         :rtype: dict

@@ -1,7 +1,7 @@
 import logging
 
-from odoo.http import Controller, route
-from odoo.http.router import dispatch_rpc
+from weth.http import Controller, route
+from weth.http.router import dispatch_rpc
 
 from . import RPC_DEPRECATION_NOTICE, _check_request
 

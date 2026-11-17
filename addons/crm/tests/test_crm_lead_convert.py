@@ -1,9 +1,9 @@
 from itertools import product
 
-from odoo import SUPERUSER_ID
-from odoo.addons.crm.tests import common as crm_common
-from odoo.fields import Datetime
-from odoo.tests import tagged, users
+from weth import SUPERUSER_ID
+from weth.addons.crm.tests import common as crm_common
+from weth.fields import Datetime
+from weth.tests import tagged, users
 
 
 @tagged('lead_manage')

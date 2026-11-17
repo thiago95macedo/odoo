@@ -1,4 +1,4 @@
-import { Component, onMounted, onWillDestroy, signal, useEffect, useProps, t } from "@odoo/owl";
+import { Component, onMounted, onWillDestroy, signal, useEffect, useProps, t } from "@weth/owl";
 import { cookie } from "@web/core/browser/cookie";
 
 export class IframeInput extends Component {

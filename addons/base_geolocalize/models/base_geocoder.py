@@ -2,9 +2,9 @@
 import logging
 import time
 
-from odoo import api, fields, models, modules, tools, _
-from odoo.exceptions import UserError
-from odoo.http import request
+from weth import api, fields, models, modules, tools, _
+from weth.exceptions import UserError
+from weth.http import request
 
 
 _logger = logging.getLogger(__name__)

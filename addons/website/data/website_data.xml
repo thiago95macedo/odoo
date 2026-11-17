@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
     <!-- Group multi website -->
     <record id="group_multi_website" model="res.groups">
         <field name="name">Multi-website</field>
@@ -595,4 +595,4 @@
             <field name="sequence" type="int">10</field>
         </record>
     </data>
-</odoo>
+</weth>

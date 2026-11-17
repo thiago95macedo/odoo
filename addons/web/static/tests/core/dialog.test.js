@@ -10,8 +10,8 @@ import {
     queryOne,
     resize,
     test,
-} from "@odoo/hoot";
-import { Component, onMounted, proxy, useProps, xml } from "@odoo/owl";
+} from "@weth/hoot";
+import { Component, onMounted, proxy, useProps, xml } from "@weth/owl";
 import {
     assignDialogTestEnv,
     contains,
@@ -218,7 +218,7 @@ test("click on the button x triggers the close and dismiss defined by a Child co
         setup() {
             this.env.dialogData.close = () => expect.step("close");
             this.env.dialogData.dismiss = () => expect.step("dismiss");
-            this.env.dialogData.scrollToOrigin = () => {};
+            this.env.dialogData.scrollToOrigin = () => { };
         }
     }
     class Parent extends Component {

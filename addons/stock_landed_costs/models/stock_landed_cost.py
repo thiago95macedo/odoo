@@ -3,8 +3,8 @@
 
 from collections import defaultdict
 
-from odoo import _, api, fields, models
-from odoo.exceptions import UserError
+from weth import _, api, fields, models
+from weth.exceptions import UserError
 
 
 SPLIT_METHOD = [

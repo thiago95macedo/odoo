@@ -2,11 +2,11 @@
 
 from markupsafe import Markup
 
-from odoo import api, fields, models
-from odoo.fields import Command
-from odoo.http import request
+from weth import api, fields, models
+from weth.fields import Command
+from weth.http import request
 
-from odoo.addons.mail.tools.discuss import Store
+from weth.addons.mail.tools.discuss import Store
 
 
 class ResUsers(models.Model):

@@ -1,4 +1,4 @@
-import { Component, onWillStart, useProps } from "@odoo/owl";
+import { Component, onWillStart, useProps } from "@weth/owl";
 import { Dropdown } from "@web/core/dropdown/dropdown";
 import { DropdownItem } from "@web/core/dropdown/dropdown_item";
 import { registry } from "@web/core/registry";

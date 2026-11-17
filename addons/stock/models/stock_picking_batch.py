@@ -2,11 +2,11 @@
 
 from markupsafe import Markup
 
-from odoo import api, fields, models, _
-from odoo.exceptions import UserError
-from odoo.fields import Domain
+from weth import api, fields, models, _
+from weth.exceptions import UserError
+from weth.fields import Domain
 
-from odoo.addons.stock.models.stock_move import PROCUREMENT_PRIORITIES
+from weth.addons.stock.models.stock_move import PROCUREMENT_PRIORITIES
 
 
 class StockPickingBatch(models.Model):
@@ -348,7 +348,7 @@ class StockPickingBatch(models.Model):
                 'message': '%s',
                 'links': [{
                     'label': target_batch.name,
-                    'url': f"/odoo/action-stock.stock_picking_batch_action/{target_batch.id}",
+                    'url': f"/weth/action-stock.stock_picking_batch_action/{target_batch.id}",
                 }],
                 'sticky': False,
                 'next': {'type': 'ir.actions.act_window_close'},

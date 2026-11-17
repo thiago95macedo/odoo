@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.tests.common import TransactionCase
-from odoo.tests import tagged, Form
-from odoo import Command
+from weth.tests.common import TransactionCase
+from weth.tests import tagged, Form
+from weth import Command
 
 
 @tagged('at_install', '-post_install')  # LEGACY at_install

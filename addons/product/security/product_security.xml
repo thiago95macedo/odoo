@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
 
     <record model="res.groups.privilege" id="res_groups_privilege_product">
         <field name="name">Products</field>
@@ -32,4 +32,4 @@
     <record id="group_show_uom_price" model="res.groups">
         <field name="name">UOM price display</field>
     </record>
-</odoo>
+</weth>

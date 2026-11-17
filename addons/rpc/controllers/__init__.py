@@ -1,5 +1,5 @@
-import odoo.release
-from odoo.http import request, route
+import weth.release
+from weth.http import request, route
 
 from . import json2
 
@@ -24,6 +24,6 @@ class RPC(XMLRPC, JSONRPC):
     @route(['/web/version', '/json/version'], type='http', auth='none', readonly=True)
     def version(self):
         return request.make_json_response({
-            'version_info': odoo.release.version_info,
-            'version': odoo.release.version,
+            'version_info': weth.release.version_info,
+            'version': weth.release.version,
         })

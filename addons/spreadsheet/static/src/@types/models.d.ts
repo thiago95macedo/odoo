@@ -1,5 +1,5 @@
 declare module "@spreadsheet" {
-    import { Model } from "@odoo/o-spreadsheet";
+    import { Model } from "@weth/o-spreadsheet";
 
     export interface OdooSpreadsheetModel extends Model {
         getters: OdooGetters;
@@ -7,7 +7,7 @@ declare module "@spreadsheet" {
     }
 
     export interface OdooSpreadsheetModelConstructor {
-        new (
+        new(
             data: object,
             config: Partial<Model["config"]>,
             revisions: object[]

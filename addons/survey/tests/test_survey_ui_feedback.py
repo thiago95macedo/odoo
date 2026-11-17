@@ -1,11 +1,11 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-import odoo.tests
-from odoo import Command
-from odoo.addons.base.tests.common import HttpCaseWithUserDemo
+import weth.tests
+from weth import Command
+from weth.addons.base.tests.common import HttpCaseWithUserDemo
 
 
-@odoo.tests.common.tagged('post_install', '-at_install')
+@weth.tests.common.tagged('post_install', '-at_install')
 class TestUiFeedback(HttpCaseWithUserDemo):
 
     def setUp(self):

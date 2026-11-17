@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.base.tests.common import HttpCaseWithUserDemo
-from odoo.tests.common import tagged
+from weth.addons.base.tests.common import HttpCaseWithUserDemo
+from weth.tests.common import tagged
 
 
 @tagged("-at_install", "post_install")
@@ -89,7 +89,7 @@ class WebManifestRoutesTest(HttpCaseWithUserDemo):
         """
         This route returns the offline page
         """
-        response = self.url_open("/odoo/offline")
+        response = self.url_open("/weth/offline")
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.headers["Content-Type"], "text/html; charset=utf-8")
 

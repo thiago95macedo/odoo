@@ -7,7 +7,7 @@ registry.category("web_tour.tours").add("im_livechat_session_history_open", {
         {
             trigger: ".o_switch_view[data-tooltip='List']",
             async run() {
-                const busService = odoo.__WOWL_DEBUG__.root.env.services.bus_service;
+                const busService = weth.__WOWL_DEBUG__.root.env.services.bus_service;
                 patch(busService, {
                     addChannel(channel) {
                         document.body.classList.add(`o-bus-channel-${channel}`);
@@ -29,7 +29,7 @@ registry.category("web_tour.tours").add("im_livechat_session_history_open", {
             trigger: ".o-mail-Message-content:contains('Test Channel 2 Msg')",
             async run({ waitFor }) {
                 firstChannelId =
-                    odoo.__WOWL_DEBUG__.root.env.services.action.currentController.state.resId;
+                    weth.__WOWL_DEBUG__.root.env.services.action.currentController.state.resId;
                 await waitFor(`body.o-bus-channel-discuss\\.channel_${firstChannelId}`, {
                     timeout: 3000,
                 });
@@ -46,7 +46,7 @@ registry.category("web_tour.tours").add("im_livechat_session_history_open", {
                     timeout: 3000,
                 });
                 const channelId =
-                    odoo.__WOWL_DEBUG__.root.env.services.action.currentController.state.resId;
+                    weth.__WOWL_DEBUG__.root.env.services.action.currentController.state.resId;
                 await waitFor(`body.o-bus-channel-discuss\\.channel_${channelId}`, {
                     trimeout: 3000,
                 });

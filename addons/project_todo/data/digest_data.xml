@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<odoo>
+<weth>
     <data>
         <record id="digest_tip_project_todo_0" model="digest.tip">
             <field name="name">Tip: Create to-dos from anywhere</field>
@@ -19,4 +19,4 @@
             </field>
         </record>
     </data>
-</odoo>
+</weth>

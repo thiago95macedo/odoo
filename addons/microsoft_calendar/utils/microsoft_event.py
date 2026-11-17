@@ -4,8 +4,8 @@ import json
 from collections import abc
 from typing import Iterator, Mapping
 
-from odoo.tools import email_normalize
-from odoo.tools.misc import frozendict
+from weth.tools import email_normalize
+from weth.tools.misc import frozendict
 
 
 class MicrosoftEvent(abc.Set):

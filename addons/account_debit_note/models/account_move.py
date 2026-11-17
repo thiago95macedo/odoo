@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import models, fields, api
-from odoo.tools import SQL
+from weth import models, fields, api
+from weth.tools import SQL
 
 
 class AccountMove(models.Model):

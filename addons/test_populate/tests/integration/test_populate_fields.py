@@ -1,5 +1,5 @@
-from odoo.addons.populate import start_populate
-from odoo.addons.test_populate.tests.common import PopulateTestCase
+from weth.addons.populate import start_populate
+from weth.addons.test_populate.tests.common import PopulateTestCase
 
 
 class TestFieldGeneration(PopulateTestCase):

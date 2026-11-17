@@ -133,7 +133,7 @@ export class DebuggingToolsDialog extends Component {
                 <div class="alert alert-info" t-else="">
                     For security reasons, the password generation is disabled when the IoT Box
                     is connected to a DB. You can still reset it from the IoT Box record in 
-                    <a class="alert-link" t-att-href="this.store.base().server_status + '/odoo/iot?debug=1'" target="_blank">your database</a>.
+                    <a class="alert-link" t-att-href="this.store.base().server_status + '/weth/iot?debug=1'" target="_blank">your database</a>.
                 </div>
             </t>
             <t t-set-slot="footer">

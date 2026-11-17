@@ -1,7 +1,7 @@
-import { expect, test } from "@odoo/hoot";
-import { queryAllTexts } from "@odoo/hoot-dom";
-import { animationFrame } from "@odoo/hoot-mock";
-import { Component, useProps, xml } from "@odoo/owl";
+import { expect, test } from "@weth/hoot";
+import { queryAllTexts } from "@weth/hoot-dom";
+import { animationFrame } from "@weth/hoot-mock";
+import { Component, useProps, xml } from "@weth/owl";
 import { setupInteractionWhiteList, startInteractions } from "./helpers";
 import { registry } from "@web/core/registry";
 

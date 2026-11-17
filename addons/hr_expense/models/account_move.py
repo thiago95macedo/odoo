@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
-from odoo import Command, models, fields, api, _
-from odoo.exceptions import ValidationError
-from odoo.tools.misc import frozendict
+from weth import Command, models, fields, api, _
+from weth.exceptions import ValidationError
+from weth.tools.misc import frozendict
 
 
 class AccountMove(models.Model):

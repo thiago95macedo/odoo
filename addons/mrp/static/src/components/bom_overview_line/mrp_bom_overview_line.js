@@ -1,7 +1,7 @@
 import { _t } from "@web/core/l10n/translation";
 import { useService } from "@web/core/utils/hooks";
 import { formatFloat, formatFloatTime, formatMonetary } from "@web/views/fields/formatters";
-import { Component, useProps, t } from "@odoo/owl";
+import { Component, useProps, t } from "@weth/owl";
 
 export class BomOverviewLine extends Component {
     static template = "mrp.BomOverviewLine";
@@ -15,7 +15,7 @@ export class BomOverviewLine extends Component {
         currentWarehouseId: t.number().optional(),
         data: t.object(),
         precision: t.number(),
-        toggleFolded: t.function().optional(() => () => {}),
+        toggleFolded: t.function().optional(() => () => { }),
     });
 
     setup() {
@@ -73,12 +73,12 @@ export class BomOverviewLine extends Component {
             type: "ir.actions.act_window",
             res_model: "product.document",
             domain: ['|',
-                '&',["res_model", "=", "product.product"],["res_id", "in", [this.data.product_id]],
-                '&',["res_model", "=", "product.template"],["res_id", "in", [this.data.product_template_id]]],
+                '&', ["res_model", "=", "product.product"], ["res_id", "in", [this.data.product_id]],
+                '&', ["res_model", "=", "product.template"], ["res_id", "in", [this.data.product_template_id]]],
             views: [[false, "kanban"], [false, "list"], [false, "form"]],
             view_mode: "kanban,list,form",
             target: "current",
-            context:{
+            context: {
                 'bom_id': true,
                 'default_res_id': this.data.product_id,
                 'default_res_model': "product.product"
@@ -151,13 +151,13 @@ export class BomOverviewLine extends Component {
     }
 
     get statusBackgroundClass() {
-        if(this.data.availability_state == "available" || this.data.components_available && this.data.producible_qty){
+        if (this.data.availability_state == "available" || this.data.components_available && this.data.producible_qty) {
             return "text-bg-success";
         }
-        if(this.data.availability_state == "estimated") {
+        if (this.data.availability_state == "estimated") {
             return "text-bg-dark";
         }
-        if(this.data.availability_state == "expected") {
+        if (this.data.availability_state == "expected") {
             return "text-bg-warning";
         }
         return "text-bg-danger";

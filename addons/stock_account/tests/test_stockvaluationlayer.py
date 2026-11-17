@@ -3,12 +3,12 @@
 from datetime import timedelta
 from freezegun import freeze_time
 
-from odoo import fields
-from odoo.addons.account.tests.common import AccountTestInvoicingCommon
-from odoo.addons.stock_account.tests.common import TestStockValuationCommon
-from odoo.exceptions import ValidationError
-from odoo.tests import Form, tagged
-from odoo import Command
+from weth import fields
+from weth.addons.account.tests.common import AccountTestInvoicingCommon
+from weth.addons.stock_account.tests.common import TestStockValuationCommon
+from weth.exceptions import ValidationError
+from weth.tests import Form, tagged
+from weth import Command
 
 
 class TestStockValuationStandard(TestStockValuationCommon):

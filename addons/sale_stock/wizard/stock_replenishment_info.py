@@ -1,4 +1,4 @@
-from odoo import fields, models, api
+from weth import fields, models, api
 
 
 class StockReplenishmentInfo(models.TransientModel):

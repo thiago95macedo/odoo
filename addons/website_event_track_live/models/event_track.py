@@ -3,7 +3,7 @@
 
 import re
 
-from odoo import api, fields, models
+from weth import api, fields, models
 
 
 class EventTrack(models.Model):

@@ -1,5 +1,5 @@
 import { useSubEnv } from "@web/owl2/utils";
-import { Component, proxy, useProps, t } from "@odoo/owl";
+import { Component, proxy, useProps, t } from "@weth/owl";
 import { Dropdown } from "@web/core/dropdown/dropdown";
 import { DropdownItem } from "@web/core/dropdown/dropdown_item";
 import { useDropdownCloser, useDropdownState } from "@web/core/dropdown/dropdown_hooks";

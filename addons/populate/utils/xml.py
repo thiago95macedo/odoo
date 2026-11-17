@@ -5,7 +5,7 @@ from typing import TYPE_CHECKING
 
 from lxml import etree
 
-from odoo.tools import str2bool, template_inheritance
+from weth.tools import str2bool, template_inheritance
 
 if TYPE_CHECKING:
     from collections.abc import Callable, Iterable

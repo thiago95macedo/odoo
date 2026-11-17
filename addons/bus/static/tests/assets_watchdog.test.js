@@ -1,5 +1,5 @@
-import { describe, expect, test } from "@odoo/hoot";
-import { runAllTimers, waitFor } from "@odoo/hoot-dom";
+import { describe, expect, test } from "@weth/hoot";
+import { runAllTimers, waitFor } from "@weth/hoot-dom";
 import { contains, getService, MockServer, mountWithCleanup } from "@web/../tests/web_test_helpers";
 import { location } from "@web/core/browser/browser";
 import { WebClient } from "@web/webclient/webclient";

@@ -1,6 +1,6 @@
-import { expect, test } from "@odoo/hoot";
-import { queryAll, queryAllTexts } from "@odoo/hoot-dom";
-import { runAllTimers } from "@odoo/hoot-mock";
+import { expect, test } from "@weth/hoot";
+import { queryAll, queryAllTexts } from "@weth/hoot-dom";
+import { runAllTimers } from "@weth/hoot-mock";
 
 import {
     clickFieldDropdown,

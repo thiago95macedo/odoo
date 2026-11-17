@@ -2,14 +2,14 @@
 
 import datetime
 
-from odoo import Command, fields
-from odoo.exceptions import UserError
-from odoo.tests import common, Form, TransactionCase, tagged
-from odoo.tools import float_compare, mute_logger
+from weth import Command, fields
+from weth.exceptions import UserError
+from weth.tests import common, Form, TransactionCase, tagged
+from weth.tools import float_compare, mute_logger
 
-from odoo.addons.mail.tests.common import mail_new_test_user
-from odoo.addons.sale.tests.common import TestSaleCommon
-from odoo.addons.stock_account.tests.test_anglo_saxon_valuation_reconciliation_common import (
+from weth.addons.mail.tests.common import mail_new_test_user
+from weth.addons.sale.tests.common import TestSaleCommon
+from weth.addons.stock_account.tests.test_anglo_saxon_valuation_reconciliation_common import (
     ValuationReconciliationTestCommon,
 )
 
@@ -974,7 +974,7 @@ class TestSaleMrpFlow(TestSaleMrpFlowCommon):
         for move in backorder_4.move_ids:
             self.assertEqual(move.product_qty, 1)
 
-    @mute_logger('odoo.tests.common.onchange')
+    @mute_logger('weth.tests.common.onchange')
     def test_05_mrp_sale_kit_availability(self):
         """
         Check that the 'Not enough inventory' warning message shows correct
@@ -1177,7 +1177,7 @@ class TestSaleMrpFlow(TestSaleMrpFlowCommon):
         # All kits should be delivered
         self.assertEqual(order_line.qty_delivered, 10)
 
-    @mute_logger('odoo.tests.common.onchange')
+    @mute_logger('weth.tests.common.onchange')
     def test_07_kit_availability_mixed_uom(self):
         """
         Check that the 'Not enough inventory' warning message displays correct

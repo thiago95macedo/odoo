@@ -32,7 +32,7 @@ import {
 import { renderToElement } from "@web/core/utils/render";
 import { url } from "@web/core/utils/urls";
 
-import { markup } from "@odoo/owl";
+import { markup } from "@weth/owl";
 import { emojiLoader } from "@web/core/emoji_picker/emoji_loader";
 import { discussComponentRegistry } from "./discuss_component_registry";
 
@@ -504,9 +504,9 @@ export class Message extends Record {
     get canToggleBookmark() {
         return Boolean(
             !this.is_transient &&
-                !this.isPending &&
-                this.store.self_user?.share === false &&
-                this.persistent
+            !this.isPending &&
+            this.store.self_user?.share === false &&
+            this.persistent
         );
     }
 
@@ -582,10 +582,10 @@ export class Message extends Record {
     get canAddReaction() {
         return Boolean(
             !this.is_transient &&
-                !this.isPending &&
-                this.thread?.can_react &&
-                !this.thread.isTransient &&
-                this.thread.has_mail_thread
+            !this.isPending &&
+            this.thread?.can_react &&
+            !this.thread.isTransient &&
+            this.thread.has_mail_thread
         );
     }
 
@@ -744,7 +744,7 @@ export class Message extends Record {
 
     /**
      * @param {Object} owner
-     * @param {import("@odoo/owl").Signal<HTMLElement>} [rootRef]
+     * @param {import("@weth/owl").Signal<HTMLElement>} [rootRef]
      */
     showDeleteConfirm(owner, rootRef) {
         this.store.env.services.dialog.add(

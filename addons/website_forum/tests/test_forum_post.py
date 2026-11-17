@@ -1,7 +1,7 @@
-from odoo import fields, Command
-from odoo.exceptions import UserError
+from weth import fields, Command
+from weth.exceptions import UserError
 
-from odoo.addons.website_forum.tests.common import KARMA, TestForumCommon
+from weth.addons.website_forum.tests.common import KARMA, TestForumCommon
 
 
 class TestForumPost(TestForumCommon):

@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.mail.tests.common import mail_new_test_user
-from odoo.addons.project.tests.test_project_base import TestProjectCommon
-from odoo import Command
-from odoo.exceptions import AccessError, ValidationError
-from odoo.tests import Form
-from odoo.tests.common import tagged, users
-from odoo.tools import mute_logger
+from weth.addons.mail.tests.common import mail_new_test_user
+from weth.addons.project.tests.test_project_base import TestProjectCommon
+from weth import Command
+from weth.exceptions import AccessError, ValidationError
+from weth.tests import Form
+from weth.tests.common import tagged, users
+from weth.tools import mute_logger
 
 class TestAccessRights(TestProjectCommon):
     def setUp(self):
@@ -276,7 +276,7 @@ class TestProjectPortalCommon(TestProjectCommon):
 
 class TestPortalProject(TestProjectPortalCommon):
 
-    @mute_logger('odoo.addons.base.models.ir_access')
+    @mute_logger('weth.addons.base.models.ir_access')
     def test_employee_project_access_rights(self):
         pigs = self.project_pigs
 
@@ -298,7 +298,7 @@ class TestPortalProject(TestProjectPortalCommon):
             'project_id': pigs.id})
         tmp_task.with_user(self.user_projectuser).unlink()
 
-    @mute_logger('odoo.addons.base.models.ir_access')
+    @mute_logger('weth.addons.base.models.ir_access')
     def test_favorite_project_access_rights(self):
         pigs = self.project_pigs.with_user(self.user_projectuser)
 
@@ -307,7 +307,7 @@ class TestPortalProject(TestProjectPortalCommon):
         # we can write on is_favorite
         pigs.write({'is_favorite': True})
 
-    @mute_logger('odoo.addons.base.ir.ir_model')
+    @mute_logger('weth.addons.base.ir.ir_model')
     def test_team_members_project_access_rights(self):
         pigs = self.project_pigs
         pigs.write({'privacy_visibility': 'followers'})

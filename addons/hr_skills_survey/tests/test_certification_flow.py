@@ -4,10 +4,10 @@ from dateutil.relativedelta import relativedelta
 from freezegun import freeze_time
 from markupsafe import Markup
 
-from odoo import Command, fields
-from odoo.addons.survey.tests import common
-from odoo.tests import tagged
-from odoo.tests.common import HttpCase
+from weth import Command, fields
+from weth.addons.survey.tests import common
+from weth.tests import tagged
+from weth.tests.common import HttpCase
 
 
 @tagged('-at_install', 'post_install', 'functional')

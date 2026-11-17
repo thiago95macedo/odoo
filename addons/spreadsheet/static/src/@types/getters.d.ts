@@ -1,4 +1,4 @@
-import { CorePlugin, Model, UID } from "@odoo/o-spreadsheet";
+import { CorePlugin, Model, UID } from "@weth/o-spreadsheet";
 import { ChartOdooLinkPlugin, OdooChartCorePlugin, OdooChartCoreViewPlugin } from "@spreadsheet/chart";
 import { CurrencyPlugin } from "@spreadsheet/currency/plugins/currency";
 import { AccountingPlugin } from "addons/spreadsheet_account/static/src/plugins/accounting_plugin";
@@ -47,7 +47,7 @@ type GetterNames<Plugin extends { getters: readonly string[] }> = Plugin["getter
  * //   getCellValue: () => ...,
  * // }
  */
-type PluginGetters<Plugin extends { new (...args: unknown[]): any; getters: readonly string[] }> =
+type PluginGetters<Plugin extends { new(...args: unknown[]): any; getters: readonly string[] }> =
     Pick<InstanceType<Plugin>, GetterNames<Plugin>>;
 
 declare module "@spreadsheet" {
@@ -55,20 +55,20 @@ declare module "@spreadsheet" {
      * Add getters from custom plugins defined in odoo
      */
 
-    interface OdooCoreGetters extends CoreGetters {}
-    interface OdooCoreGetters extends PluginGetters<typeof GlobalFiltersCorePlugin> {}
-    interface OdooCoreGetters extends PluginGetters<typeof ListCorePlugin> {}
-    interface OdooCoreGetters extends PluginGetters<typeof OdooChartCorePlugin> {}
-    interface OdooCoreGetters extends PluginGetters<typeof ChartOdooLinkPlugin> {}
-    interface OdooCoreGetters extends PluginGetters<typeof IrMenuPlugin> {}
-    interface OdooCoreGetters extends PluginGetters<typeof PivotOdooCorePlugin> {}
-    interface OdooCoreGetters extends PluginGetters<typeof PivotCoreGlobalFilterPlugin> {}
+    interface OdooCoreGetters extends CoreGetters { }
+    interface OdooCoreGetters extends PluginGetters<typeof GlobalFiltersCorePlugin> { }
+    interface OdooCoreGetters extends PluginGetters<typeof ListCorePlugin> { }
+    interface OdooCoreGetters extends PluginGetters<typeof OdooChartCorePlugin> { }
+    interface OdooCoreGetters extends PluginGetters<typeof ChartOdooLinkPlugin> { }
+    interface OdooCoreGetters extends PluginGetters<typeof IrMenuPlugin> { }
+    interface OdooCoreGetters extends PluginGetters<typeof PivotOdooCorePlugin> { }
+    interface OdooCoreGetters extends PluginGetters<typeof PivotCoreGlobalFilterPlugin> { }
 
-    interface OdooGetters extends Getters {}
-    interface OdooGetters extends OdooCoreGetters {}
-    interface OdooGetters extends PluginGetters<typeof GlobalFiltersCoreViewPlugin> {}
-    interface OdooGetters extends PluginGetters<typeof ListCoreViewPlugin> {}
-    interface OdooGetters extends PluginGetters<typeof OdooChartCoreViewPlugin> {}
-    interface OdooGetters extends PluginGetters<typeof CurrencyPlugin> {}
-    interface OdooGetters extends PluginGetters<typeof AccountingPlugin> {}
+    interface OdooGetters extends Getters { }
+    interface OdooGetters extends OdooCoreGetters { }
+    interface OdooGetters extends PluginGetters<typeof GlobalFiltersCoreViewPlugin> { }
+    interface OdooGetters extends PluginGetters<typeof ListCoreViewPlugin> { }
+    interface OdooGetters extends PluginGetters<typeof OdooChartCoreViewPlugin> { }
+    interface OdooGetters extends PluginGetters<typeof CurrencyPlugin> { }
+    interface OdooGetters extends PluginGetters<typeof AccountingPlugin> { }
 }

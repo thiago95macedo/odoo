@@ -2,10 +2,10 @@ import logging
 
 from random import randint
 from datetime import datetime
-from odoo import fields, tools
-from odoo.fields import Command
-from odoo.tests import Form
-from odoo.addons.account.tests.common import AccountTestInvoicingCommon
+from weth import fields, tools
+from weth.fields import Command
+from weth.tests import Form
+from weth.addons.account.tests.common import AccountTestInvoicingCommon
 
 
 _logger = logging.getLogger(__name__)

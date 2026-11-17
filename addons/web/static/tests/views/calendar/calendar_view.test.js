@@ -1,4 +1,4 @@
-import { beforeEach, expect, test } from "@odoo/hoot";
+import { beforeEach, expect, test } from "@weth/hoot";
 import {
     advanceTime,
     animationFrame,
@@ -12,9 +12,9 @@ import {
     queryRect,
     resize,
     runAllTimers,
-} from "@odoo/hoot-dom";
-import { mockDate, mockTimeZone, mockTouch } from "@odoo/hoot-mock";
-import { Component, onMounted, onPatched, onWillStart, xml } from "@odoo/owl";
+} from "@weth/hoot-dom";
+import { mockDate, mockTimeZone, mockTouch } from "@weth/hoot-mock";
+import { Component, onMounted, onPatched, onWillStart, xml } from "@weth/owl";
 import {
     MockServer,
     contains,

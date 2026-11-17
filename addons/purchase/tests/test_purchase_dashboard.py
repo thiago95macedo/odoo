@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 from datetime import timedelta
-from odoo.addons.account.tests.common import AccountTestInvoicingCommon
-from odoo.addons.mail.tests.common import MailCase
-from odoo.tests import tagged, Form, new_test_user
-from odoo.tools import mute_logger, format_amount
-from odoo import fields
+from weth.addons.account.tests.common import AccountTestInvoicingCommon
+from weth.addons.mail.tests.common import MailCase
+from weth.tests import tagged, Form, new_test_user
+from weth.tools import mute_logger, format_amount
+from weth import fields
 
 @tagged('-at_install', 'post_install')
 class TestPurchaseDashboard(AccountTestInvoicingCommon, MailCase):
@@ -33,7 +33,7 @@ class TestPurchaseDashboard(AccountTestInvoicingCommon, MailCase):
         # OVERRIDE
         return {}
 
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_purchase_dashboard(self):
         ''' Test purchase dashboard values with multiple users.
         '''

@@ -1,9 +1,9 @@
-from odoo.addons.mail.tests.common import MailCommon
-from odoo.addons.project.tests.test_project_base import TestProjectCommon
-from odoo.addons.test_mail.data.test_mail_data import MAIL_TEMPLATE
-from odoo.tests import tagged, users, new_test_user
-from odoo.tools import formataddr, mute_logger
-from odoo.fields import Command
+from weth.addons.mail.tests.common import MailCommon
+from weth.addons.project.tests.test_project_base import TestProjectCommon
+from weth.addons.test_mail.data.test_mail_data import MAIL_TEMPLATE
+from weth.tests import tagged, users, new_test_user
+from weth.tools import formataddr, mute_logger
+from weth.fields import Command
 
 
 @tagged('post_install', '-at_install', 'mail_flow', 'mail_tools')
@@ -59,7 +59,7 @@ class TestProjectMailFeatures(TestProjectCommon, MailCommon):
 
     def setUp(self):
         super().setUp()
-        with mute_logger('odoo.addons.mail.models.mail_thread'):
+        with mute_logger('weth.addons.mail.models.mail_thread'):
             self.test_task = self.format_and_process(
                 MAIL_TEMPLATE, self.user_portal.email_formatted,
                 self.project_followers_alias.alias_full_name,
@@ -635,7 +635,7 @@ Content-Type: text/html;
         self.assertIn("Forwarded message", task.description, "The forwarded email header should be present.")
         self.assertIn("This is the forwarded task content.", task.description, "The forwarded email content should be present.")
 
-    @mute_logger('odoo.addons.mail.models.mail_thread')
+    @mute_logger('weth.addons.mail.models.mail_thread')
     def test_task_creation_from_mail(self):
         """ This test checks a `default_` key passed in the context with an invalid field doesn't prevent the task
             creation.
@@ -681,7 +681,7 @@ Content-Type: text/html;
             "Internal user should get an act_url instead of act_window",
         )
         self.assertIn(
-            f'/odoo/project/{self.project_pigs.id}/tasks/{task_internal.id}',
+            f'/weth/project/{self.project_pigs.id}/tasks/{task_internal.id}',
             action['url'],
             "URL should contain project and task IDs",
         )
@@ -718,7 +718,7 @@ Content-Type: text/html;
             "Internal user should get an act_url instead of act_window",
         )
         self.assertIn(
-            f'/odoo/all-tasks/{task_private.id}',
+            f'/weth/all-tasks/{task_private.id}',
             action['url'],
             "URL should point to the all-tasks route",
         )

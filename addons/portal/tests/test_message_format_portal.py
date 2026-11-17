@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.tools import mute_logger
-from odoo.tests import common, tagged
+from weth.tools import mute_logger
+from weth.tests import common, tagged
 
 
 @tagged('mail_message')
 @tagged('at_install', '-post_install')  # LEGACY at_install
 class TestMessageFormatPortal(common.TransactionCase):
 
-    @mute_logger('odoo.models.unlink')
+    @mute_logger('weth.models.unlink')
     def test_portal_message_format(self):
         """ Test the specific message formatting for the portal.
         Notably the flag that tells if the message is of subtype 'note'. """

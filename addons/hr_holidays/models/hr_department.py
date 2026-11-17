@@ -3,8 +3,8 @@
 from datetime import datetime, timezone
 from dateutil.relativedelta import relativedelta
 
-from odoo import fields, models
-from odoo.fields import Domain
+from weth import fields, models
+from weth.fields import Domain
 
 import ast
 

@@ -46,7 +46,7 @@ export function extractUnmappedAttachmentsIds(content) {
  * @typedef {{
  *      id: "DOCUMENTS" | "ICONS" | "IMAGES" | "VIDEOS";
  *      title: import("plugins").LazyTranslatedString;
- *      Component: import("@odoo/owl").Component;
+ *      Component: import("@weth/owl").Component;
  *      sequence: number;
  *  }[]} media_dialog_extra_tabs
  */
@@ -282,7 +282,7 @@ export class MediaPlugin extends Plugin {
                 ((resModel === "ir.ui.view" && field === "arch") || type === "html")
             ), // @todo @phoenix: should be removed and moved to config.mediaModalParams
             media: params.node,
-            onAttachmentChange: this.config.onAttachmentChange || (() => {}),
+            onAttachmentChange: this.config.onAttachmentChange || (() => { }),
             noImages: !this.config.allowImage,
             extraTabs: this.getResource("media_dialog_extra_tabs"),
             pendingAttachments: this.config.getPendingAttachmentsIds

@@ -1,7 +1,7 @@
 import { Dropdown } from "@web/core/dropdown/dropdown";
 import { DropdownItem } from "@web/core/dropdown/dropdown_item";
 import { useService } from "@web/core/utils/hooks";
-import { Component, onWillStart, t, useProps } from "@odoo/owl";
+import { Component, onWillStart, t, useProps } from "@weth/owl";
 
 export class ForecastedWarehouseFilter extends Component {
     static template = "stock.ForecastedWarehouseFilter";
@@ -23,11 +23,11 @@ export class ForecastedWarehouseFilter extends Component {
         this.displayWarehouseFilter = (this.warehouses.length > 1);
     }
 
-    _onSelected(id){
+    _onSelected(id) {
         this.props.setWarehouseInContext(Number(id));
     }
 
-    get activeWarehouse(){
+    get activeWarehouse() {
         return this.context.warehouse_id ? this.warehouses.find((w) => w.id == this.context.warehouse_id) : this.warehouses[0];
     }
 

@@ -1,4 +1,4 @@
-/** @odoo-module */
+/** @weth-module */
 
 import { Callbacks, HootError, TestReporting, stringify } from "../hoot_utils";
 import { Job } from "./job";

@@ -1,9 +1,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, models
-from odoo.tools.misc import str2bool
+from weth import api, models
+from weth.tools.misc import str2bool
 
-from odoo.addons.sale import const
+from weth.addons.sale import const
 
 
 class IrConfigParameter(models.Model):

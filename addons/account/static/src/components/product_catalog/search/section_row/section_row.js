@@ -1,4 +1,4 @@
-import { Component, onMounted, onPatched, signal, t, useProps } from "@odoo/owl";
+import { Component, onMounted, onPatched, signal, t, useProps } from "@weth/owl";
 import { Dropdown } from "@web/core/dropdown/dropdown";
 import { DropdownItem } from "@web/core/dropdown/dropdown_item";
 import { getActiveHotkey } from "@web/core/hotkeys/hotkey_utils";

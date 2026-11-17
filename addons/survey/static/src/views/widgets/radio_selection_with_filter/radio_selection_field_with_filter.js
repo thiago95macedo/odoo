@@ -1,4 +1,4 @@
-import { useProps, t } from "@odoo/owl";
+import { useProps, t } from "@weth/owl";
 import { RadioField, radioField, radioFieldProps } from "@web/views/fields/radio/radio_field";
 import { _t } from "@web/core/l10n/translation";
 import { registry } from "@web/core/registry";

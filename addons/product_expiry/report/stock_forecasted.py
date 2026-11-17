@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 from datetime import date
 
-from odoo import models
-from odoo.tools import format_date
+from weth import models
+from weth.tools import format_date
 
 
 class StockForecasted_Product_Product(models.AbstractModel):

@@ -3,7 +3,7 @@ from __future__ import annotations
 from typing import TYPE_CHECKING, cast
 
 if TYPE_CHECKING:
-    from odoo import fields
+    from weth import fields
 
 from .generator import Generator
 

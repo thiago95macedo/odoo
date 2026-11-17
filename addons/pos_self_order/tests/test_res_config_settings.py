@@ -1,11 +1,11 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-import odoo.tests
+import weth.tests
 
-from odoo.addons.pos_self_order.tests.self_order_common_test import SelfOrderCommonTest
+from weth.addons.pos_self_order.tests.self_order_common_test import SelfOrderCommonTest
 
 
-@odoo.tests.tagged("post_install", "-at_install")
+@weth.tests.tagged("post_install", "-at_install")
 class TestSelfOrderSettings(SelfOrderCommonTest):
     def test_self_order_qr_generation(self):
 

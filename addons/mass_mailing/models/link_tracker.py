@@ -3,7 +3,7 @@
 
 from markupsafe import Markup
 
-from odoo import api, fields, models, _
+from weth import api, fields, models, _
 
 
 class LinkTracker(models.Model):

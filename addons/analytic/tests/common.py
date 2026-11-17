@@ -1,5 +1,5 @@
-from odoo.addons.base.tests.common import BaseCommon
-from odoo.tests.common import new_test_user
+from weth.addons.base.tests.common import BaseCommon
+from weth.tests.common import new_test_user
 
 
 class AnalyticCommon(BaseCommon):

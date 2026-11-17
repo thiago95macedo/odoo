@@ -9,7 +9,7 @@ import {
     useEffect,
     useListener,
     useProps,
-} from "@odoo/owl";
+} from "@weth/owl";
 
 import { Dialog } from "@web/core/dialog/dialog";
 import { emojiLoader, useLoadEmoji } from "@web/core/emoji_picker/emoji_loader";

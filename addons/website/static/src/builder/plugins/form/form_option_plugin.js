@@ -1,4 +1,4 @@
-import { proxy } from "@odoo/owl";
+import { proxy } from "@weth/owl";
 import { registry } from "@web/core/registry";
 import { Cache } from "@web/core/utils/cache";
 import { Plugin } from "@html_editor/plugin";
@@ -144,12 +144,12 @@ export class FormOptionPlugin extends Plugin {
                 const fieldName = getFieldName(el);
                 return model
                     ? _t(
-                          'The field "%(fieldName)s" is mandatory for the action "%(actionName)s".',
-                          { fieldName, actionName: model.website_form_label }
-                      )
+                        'The field "%(fieldName)s" is mandatory for the action "%(actionName)s".',
+                        { fieldName, actionName: model.website_form_label }
+                    )
                     : _t("The field “%(fieldName)s” is mandatory for the selected action.", {
-                          fieldName,
-                      });
+                        fieldName,
+                    });
             }
         },
         builder_actions: {
@@ -736,7 +736,7 @@ export class FormOptionPlugin extends Plugin {
                         [idField, displayNameField]
                     );
                     if (!isValid(fieldEl)) {
-                        return new Promise(() => {});
+                        return new Promise(() => { });
                     }
                     for (const record of records) {
                         conditionValueList.push({
@@ -763,7 +763,7 @@ export class FormOptionPlugin extends Plugin {
                                 inputsInDependencyContainer.length === 1
                                     ? el.value
                                     : dependencyContainerEl.querySelector(`label[for="${el.id}"]`)
-                                          .textContent,
+                                        .textContent,
                         });
                     }
                     if (!inputContainerEl.dataset.visibilityCondition) {
@@ -798,7 +798,7 @@ export class FormOptionPlugin extends Plugin {
 
         const existingFields = await existingFieldsProm;
         if (!isValid(fieldEl)) {
-            return new Promise(() => {});
+            return new Promise(() => { });
         }
 
         const currentFieldName = getFieldName(fieldEl);
@@ -823,8 +823,8 @@ export class FormOptionPlugin extends Plugin {
             const [optionText, checkType] = selectEl
                 ? [_t("Option List"), "exclusive_boolean"]
                 : type === "selection"
-                ? [_t("Radio Button List"), "exclusive_boolean"]
-                : [_t("Checkbox List"), "boolean"];
+                    ? [_t("Radio Button List"), "exclusive_boolean"]
+                    : [_t("Checkbox List"), "boolean"];
             const defaults = [...fieldEl.querySelectorAll("[checked], [selected]")].map((el) =>
                 isSmallInteger(el.value) ? parseInt(el.value) : el.value
             );
@@ -1242,7 +1242,7 @@ export class PromptSaveRedirectAction extends BuilderAction {
     }
     apply({ params: { mainParam } }) {
         const redirectToAction = (action) => {
-            redirect(`/odoo/action-${encodeURIComponent(action)}`);
+            redirect(`/weth/action-${encodeURIComponent(action)}`);
         };
         new Promise((resolve) => {
             const message = _t("You are about to be redirected. Your changes will be saved.");

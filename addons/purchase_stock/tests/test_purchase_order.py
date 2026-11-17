@@ -2,11 +2,11 @@
 import re
 from datetime import datetime, timedelta
 
-from odoo import Command, fields
-from odoo.tools import DEFAULT_SERVER_DATETIME_FORMAT
-from odoo.addons.stock_account.tests.test_anglo_saxon_valuation_reconciliation_common import ValuationReconciliationTestCommon
-from odoo.tests import Form, tagged, freeze_time
-from odoo.tools import mute_logger
+from weth import Command, fields
+from weth.tools import DEFAULT_SERVER_DATETIME_FORMAT
+from weth.addons.stock_account.tests.test_anglo_saxon_valuation_reconciliation_common import ValuationReconciliationTestCommon
+from weth.tests import Form, tagged, freeze_time
+from weth.tools import mute_logger
 
 
 @freeze_time("2021-01-14 09:12:15")
@@ -74,7 +74,7 @@ class TestPurchaseOrder(ValuationReconciliationTestCommon):
 
         move_form = Form(self.env['account.move'].with_context(default_move_type='in_invoice'))
         move_form.partner_id = self.partner_a
-        with mute_logger('odoo.tests.form.onchange'):  # Mute "x PO lines added to the bill" notification
+        with mute_logger('weth.tests.form.onchange'):  # Mute "x PO lines added to the bill" notification
             move_form.purchase_vendor_bill_id = self.env['purchase.bill.union'].browse(-self.po.id)
         self.invoice = move_form.save()
 
@@ -109,7 +109,7 @@ class TestPurchaseOrder(ValuationReconciliationTestCommon):
         move_form = Form(self.env['account.move'].with_context(default_move_type='in_invoice'))
         move_form.invoice_date = move_form.date
         move_form.partner_id = self.partner_a
-        with mute_logger('odoo.tests.form.onchange'):  # Mute "x PO lines added to the bill" notification
+        with mute_logger('weth.tests.form.onchange'):  # Mute "x PO lines added to the bill" notification
             move_form.purchase_vendor_bill_id = self.env['purchase.bill.union'].browse(-self.po.id)
         self.invoice = move_form.save()
         self.invoice.action_post()
@@ -142,7 +142,7 @@ class TestPurchaseOrder(ValuationReconciliationTestCommon):
         # <field name="purchase_vendor_bill_id" nolabel="1"
         #         invisible="state != 'draft' or move_type != 'in_invoice'"
         move_form._view['modifiers']['purchase_id']['invisible'] = 'False'
-        with mute_logger('odoo.tests.form.onchange'):  # Mute "x PO lines added to the bill" notification
+        with mute_logger('weth.tests.form.onchange'):  # Mute "x PO lines added to the bill" notification
             move_form.purchase_id = self.po
         self.invoice = move_form.save()
         move_form = Form(self.invoice)
@@ -751,7 +751,7 @@ class TestPurchaseOrder(ValuationReconciliationTestCommon):
         picking.button_validate()
 
         move_form = Form(self.env['account.move'].with_context(default_move_type='in_invoice'))
-        with mute_logger('odoo.tests.form.onchange'):  # Mute "x PO lines added to the bill" notification
+        with mute_logger('weth.tests.form.onchange'):  # Mute "x PO lines added to the bill" notification
             move_form.purchase_vendor_bill_id = self.env['purchase.bill.union'].browse(-po.id)
         invoice = move_form.save()
 

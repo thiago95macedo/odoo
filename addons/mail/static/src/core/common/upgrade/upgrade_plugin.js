@@ -2,7 +2,7 @@ import { registry } from "@web/core/registry";
 import { upgradeFrom } from "./upgrade_helpers";
 import { getCurrentLocalStorageVersion, LocalStorageEntry } from "@mail/utils/common/local_storage";
 import { parseVersion } from "@mail/utils/common/misc";
-import { Plugin, usePlugin } from "@odoo/owl";
+import { Plugin, usePlugin } from "@weth/owl";
 import { services } from "@web/core/services";
 
 export class DiscussUpgradePlugin extends Plugin {

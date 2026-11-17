@@ -1,4 +1,4 @@
-import { proxy } from "@odoo/owl";
+import { proxy } from "@weth/owl";
 import { BuilderAction } from "@html_builder/core/builder_action";
 import { Plugin } from "@html_editor/plugin";
 import { ConfirmationDialog } from "@web/core/confirmation_dialog/confirmation_dialog";
@@ -224,7 +224,7 @@ export class ProductsRibbonOptionPlugin extends Plugin {
         );
         if (this.ribbonsObject[ribbonId]) {
             const ribbonIndex = this.ribbons.findIndex(ribbon => ribbon.id === ribbonId);
-            if (ribbonIndex !== -1 ) {
+            if (ribbonIndex !== -1) {
                 this.ribbons.splice(ribbonIndex, 1);
             }
             delete this.ribbonsObject[ribbonId];
@@ -350,7 +350,7 @@ export class ProductsRibbonOptionPlugin extends Plugin {
 export class SetRibbonAction extends BuilderAction {
     static id = 'setRibbon';
     static dependencies = ['productsRibbonOptionPlugin'];
-    setup(){
+    setup() {
         this.ribbonOptions = this.dependencies.productsRibbonOptionPlugin
     }
     isApplied({ editingElement, value }) {
@@ -488,14 +488,14 @@ export class ModifyRibbonAction extends BuilderAction {
                 : ribbonEl.dataset.templateRibbonId
         );
         const previousRibbon = this.ribbonOptions.getRibbonsObject()[ribbonId];
-        this.ribbonOptions.setRibbonObject(ribbonId, {...previousRibbon, [setting]: value});
-        this.ribbonOptions.setRibbon(ribbonId, {...previousRibbon, [setting]: value});
+        this.ribbonOptions.setRibbonObject(ribbonId, { ...previousRibbon, [setting]: value });
+        this.ribbonOptions.setRibbon(ribbonId, { ...previousRibbon, [setting]: value });
         const res = await this.ribbonOptions._setRibbon(
             editingElement,
             { ...previousRibbon, [setting]: value },
             !isPreviewMode,
         );
-        if(isPreviewMode){
+        if (isPreviewMode) {
             this.ribbonOptions.setRibbonObject(ribbonId, previousRibbon)
             this.ribbonOptions.setRibbon(ribbonId, previousRibbon)
         }

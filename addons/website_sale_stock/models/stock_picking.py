@@ -2,8 +2,8 @@
 
 import json
 
-from odoo import fields, models
-from odoo.exceptions import UserError
+from weth import fields, models
+from weth.exceptions import UserError
 
 
 class StockPicking(models.Model):

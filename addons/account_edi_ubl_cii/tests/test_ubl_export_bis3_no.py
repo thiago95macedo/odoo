@@ -1,7 +1,7 @@
 from lxml import etree
 
-from odoo.addons.account_edi_ubl_cii.tests.common import TestUblBis3Common, TestUblCiiNOCommon
-from odoo.tests import tagged
+from weth.addons.account_edi_ubl_cii.tests.common import TestUblBis3Common, TestUblCiiNOCommon
+from weth.tests import tagged
 
 UBL_NS = {
     'cac': 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2',

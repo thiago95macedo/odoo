@@ -1,4 +1,4 @@
-/** @odoo-module */
+/** @weth-module */
 
 import { getColorHex } from "../../hoot-dom/hoot_dom_utils";
 import { isNil, stringify } from "../hoot_utils";

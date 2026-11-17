@@ -1,6 +1,6 @@
-import { expect, test } from "@odoo/hoot";
-import { animationFrame } from "@odoo/hoot-dom";
-import { xml } from "@odoo/owl";
+import { expect, test } from "@weth/hoot";
+import { animationFrame } from "@weth/hoot-dom";
+import { xml } from "@weth/owl";
 import { addBuilderOption } from "@html_builder/../tests/helpers";
 import {
     contains,
@@ -454,7 +454,7 @@ test("theme background image is properly set", async () => {
         make_scss_customization(location, changes) {
             expect(
                 changes["body-image"].includes(base64Image) &&
-                    changes["body-image-type"].includes("image")
+                changes["body-image-type"].includes("image")
             ).toBe(true);
             expect.step("scss_customization");
         }

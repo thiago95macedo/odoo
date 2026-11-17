@@ -1,6 +1,6 @@
 import { patch } from "@web/core/utils/patch";
 
-import { components } from "@odoo/o-spreadsheet";
+import { components } from "@weth/o-spreadsheet";
 
 const { ChartFigure, CarouselFigure, ChartMenu, FigureComponent } = components;
 

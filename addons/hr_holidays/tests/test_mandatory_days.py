@@ -4,9 +4,9 @@
 from datetime import datetime
 from freezegun import freeze_time
 
-from odoo import tests
-from odoo.tests import Form, new_test_user, TransactionCase
-from odoo.exceptions import ValidationError
+from weth import tests
+from weth.tests import Form, new_test_user, TransactionCase
+from weth.exceptions import ValidationError
 
 
 @tests.tagged('access_rights', 'post_install', '-at_install')

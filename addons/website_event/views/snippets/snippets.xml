@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<odoo>
+<weth>
 
 <template id="remove_external_snippets" inherit_id="website.external_snippets">
     <xpath expr="//t[@t-install='website_event']" position="replace"/>
@@ -31,4 +31,4 @@ old `s_speaker_bio` snippet. That snippet disappeared by mistake from version
 kept for compatibility, but it might be removed in a future refactoring though.
 -->
 
-</odoo>
+</weth>

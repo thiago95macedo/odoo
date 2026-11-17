@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import Command
-from odoo.addons.mail.tests.common import MailCommon, mail_new_test_user
-from odoo.tests.common import HttpCase
+from weth import Command
+from weth.addons.mail.tests.common import MailCommon, mail_new_test_user
+from weth.tests.common import HttpCase
 
 
 class TestResRole(MailCommon, HttpCase):

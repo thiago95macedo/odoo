@@ -1,6 +1,6 @@
-/** @odoo-module */
+/** @weth-module */
 
-import { effect, signal, t } from "@odoo/owl";
+import { effect, signal, t } from "@weth/owl";
 import { getAllColors, getPreferredColorScheme } from "../../hoot-dom/hoot_dom_utils";
 import { STORAGE, storageGet, storageSet } from "../hoot_utils";
 

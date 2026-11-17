@@ -3,7 +3,7 @@ import { registry } from '@web/core/registry';
 import { _t } from '@web/core/l10n/translation';
 import { rpc } from '@web/core/network/rpc';
 import { setElementContent } from '@web/core/utils/html';
-import { markup } from '@odoo/owl';
+import { markup } from '@weth/owl';
 import wSaleUtils from '@website_sale/js/website_sale_utils';
 
 export class Checkout extends Interaction {
@@ -12,7 +12,7 @@ export class Checkout extends Interaction {
         // Addresses
         '.card': { 't-on-click': this.changeAddress },
         // Cancel the address change to allow the redirect to the edit page to take place.
-        '.js_edit_address': { 't-on-click.stop': () => {} },
+        '.js_edit_address': { 't-on-click.stop': () => { } },
         '#use_delivery_as_billing': { 't-on-change': this.toggleBillingAddressRow },
         // Delivery methods
         '[name="o_delivery_radio"]': { 't-on-click': this.selectDeliveryMethod },
@@ -209,7 +209,7 @@ export class Checkout extends Interaction {
      * @private
      * @return {boolean}
      */
-    _canEnableMainButton(){
+    _canEnableMainButton() {
         return this._isDeliveryMethodReady() && this._isBillingAddressSelected();
     }
 
@@ -328,7 +328,7 @@ export class Checkout extends Interaction {
      * @param {HTMLInputElement} radio - The radio button linked to the delivery method.
      * @param {Boolean} disable - Whether the radio should be disabled.
      */
-    _toggleDeliveryMethodRadio(radio, disable=false) {
+    _toggleDeliveryMethodRadio(radio, disable = false) {
         const deliveryPriceBadge = this._getDeliveryPriceBadge(radio);
         radio.disabled = disable;
         if (disable) {
@@ -434,7 +434,7 @@ export class Checkout extends Interaction {
      * @return {Object} The delivery rate data.
      */
     async _getDeliveryRate(radio) {
-        return await rpc('/shop/get_delivery_rate', {'dm_id': radio.dataset.dmId});
+        return await rpc('/shop/get_delivery_rate', { 'dm_id': radio.dataset.dmId });
     }
 
     /**
@@ -445,7 +445,7 @@ export class Checkout extends Interaction {
      * @return {Object} The result values.
      */
     async _setDeliveryMethod(dmId) {
-        return await rpc('/shop/set_delivery_method', {'dm_id': dmId});
+        return await rpc('/shop/set_delivery_method', { 'dm_id': dmId });
     }
 
     // #=== GETTERS & SETTERS ===#
@@ -515,7 +515,7 @@ export class Checkout extends Interaction {
      *
      * @returns {Element} The selected radio button element.
      */
-    _getSelectedDeliveryRadio(){
+    _getSelectedDeliveryRadio() {
         return this.el.querySelector('input[name="o_delivery_radio"]:checked');
     }
 

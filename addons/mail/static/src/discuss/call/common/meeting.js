@@ -5,7 +5,7 @@ import { Call } from "@mail/discuss/call/common/call";
 import { CallActionList } from "@mail/discuss/call/common/call_action_list";
 import { useMessageScrolling } from "@mail/utils/common/hooks";
 
-import { Component, onMounted, onWillUnmount, types, useProps } from "@odoo/owl";
+import { Component, onMounted, onWillUnmount, types, useProps } from "@weth/owl";
 
 import { Dropdown } from "@web/core/dropdown/dropdown";
 import { user } from "@web/core/user";
@@ -80,10 +80,10 @@ export class Meeting extends Component {
     get showInviteBanner() {
         return Boolean(
             this.channel &&
-                !this.rtc.isPipMode &&
-                this.channel.channel_type !== "chat" &&
-                !this.rtc.isMeetingReadyBannerDismissed &&
-                this.channel.rtc_session_ids.length <= 1
+            !this.rtc.isPipMode &&
+            this.channel.channel_type !== "chat" &&
+            !this.rtc.isMeetingReadyBannerDismissed &&
+            this.channel.rtc_session_ids.length <= 1
         );
     }
 

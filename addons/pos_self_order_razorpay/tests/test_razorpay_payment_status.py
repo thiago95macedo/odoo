@@ -5,10 +5,10 @@ from itertools import count
 from unittest.mock import patch
 from uuid import uuid4
 
-from odoo import Command, fields
-from odoo.addons.point_of_sale.tests.test_frontend import TestPointOfSaleHttpCommon
-from odoo.addons.pos_razorpay.models.razorpay_pos_request import RazorpayPosRequest
-from odoo.tests.common import tagged
+from weth import Command, fields
+from weth.addons.point_of_sale.tests.test_frontend import TestPointOfSaleHttpCommon
+from weth.addons.pos_razorpay.models.razorpay_pos_request import RazorpayPosRequest
+from weth.tests.common import tagged
 
 
 @tagged("post_install_l10n", "post_install", "-at_install")

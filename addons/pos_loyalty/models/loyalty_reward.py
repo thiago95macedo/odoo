@@ -3,8 +3,8 @@
 import json
 import math
 
-from odoo import api, models
-from odoo.fields import Domain
+from weth import api, models
+from weth.fields import Domain
 
 
 class LoyaltyReward(models.Model):

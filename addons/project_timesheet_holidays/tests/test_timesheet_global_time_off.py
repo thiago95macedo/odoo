@@ -5,9 +5,9 @@ from collections import defaultdict
 from datetime import datetime, timedelta
 from freezegun import freeze_time
 
-from odoo import Command
-from odoo.tests import tagged, common
-from odoo.exceptions import UserError
+from weth import Command
+from weth.tests import tagged, common
+from weth.exceptions import UserError
 
 
 class TestTimesheetGlobalTimeOff(common.TransactionCase):

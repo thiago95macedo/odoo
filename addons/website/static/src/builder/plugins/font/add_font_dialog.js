@@ -1,5 +1,5 @@
 import { rpc } from "@web/core/network/rpc";
-import { Component, proxy, signal, useProps, t } from "@odoo/owl";
+import { Component, proxy, signal, useProps, t } from "@weth/owl";
 import { _t } from "@web/core/l10n/translation";
 import { useService } from "@web/core/utils/hooks";
 import { AutoComplete } from "@web/core/autocomplete/autocomplete";
@@ -295,8 +295,8 @@ export class AddFontDialog extends Component {
             try {
                 const result = await fetch(
                     "https://fonts.googleapis.com/css?family=" +
-                        encodeURIComponent(font) +
-                        ":100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i",
+                    encodeURIComponent(font) +
+                    ":100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i",
                     { method: "HEAD" }
                 );
                 // Google fonts server returns a 400 status code if family is not valid.

@@ -1,4 +1,4 @@
-<odoo>
+<weth>
     <record id="account_journal_dashboard_kanban_view_inherit_expense" model="ir.ui.view">
         <field name="name">account.journal.dashboard.kanban.inherit.expense</field>
         <field name="model">account.journal</field>
@@ -20,4 +20,4 @@
             </xpath>
         </field>
     </record>
-</odoo>
+</weth>

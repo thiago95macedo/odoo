@@ -1,6 +1,6 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import models, api
+from weth import models, api
 
 
 class IrModel(models.Model):

@@ -1,6 +1,6 @@
 import { redo, undo } from "@html_editor/../tests/_helpers/user_actions";
-import { expect, test } from "@odoo/hoot";
-import { queryOne, waitFor } from "@odoo/hoot-dom";
+import { expect, test } from "@weth/hoot";
+import { queryOne, waitFor } from "@weth/hoot-dom";
 import { contains, onRpc } from "@web/../tests/web_test_helpers";
 import {
     defineWebsiteModels,

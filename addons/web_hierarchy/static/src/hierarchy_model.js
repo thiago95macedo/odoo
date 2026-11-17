@@ -1,4 +1,4 @@
-import { toRaw } from "@odoo/owl";
+import { toRaw } from "@weth/owl";
 import { Domain } from "@web/core/domain";
 import { _t } from "@web/core/l10n/translation";
 import { KeepLast, Mutex } from "@web/core/utils/concurrency";

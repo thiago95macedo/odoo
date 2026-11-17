@@ -1,7 +1,7 @@
 import { startInteractions, setupInteractionWhiteList } from "@web/../tests/public/helpers";
 
-import { describe, expect, test } from "@odoo/hoot";
-import { hover, leave } from "@odoo/hoot-dom";
+import { describe, expect, test } from "@weth/hoot";
+import { hover, leave } from "@weth/hoot-dom";
 
 setupInteractionWhiteList("website.hoverable_dropdown");
 

@@ -1,4 +1,4 @@
-import { test, expect } from "@odoo/hoot";
+import { test, expect } from "@weth/hoot";
 import { mountWithCleanup } from "@web/../tests/web_test_helpers";
 import {
     setupPosEnv,
@@ -8,7 +8,7 @@ import {
 } from "@point_of_sale/../tests/unit/utils";
 import { definePosModels } from "@point_of_sale/../tests/unit/data/generate_model_definitions";
 import { PaymentScreenPaymentLines } from "@point_of_sale/app/screens/payment_screen/payment_lines/payment_lines";
-import { proxy } from "@odoo/owl";
+import { proxy } from "@weth/owl";
 
 definePosModels();
 
@@ -19,13 +19,13 @@ test("getPaymentActionState", async () => {
     const paymentline = createPaymentLine(store, order, card, { payment_status: "done" });
     const props = proxy({
         paymentLines: [paymentline],
-        deleteLine: () => {},
-        selectLine: () => {},
-        sendForceDone: () => {},
-        sendForceCancel: () => {},
-        sendPaymentCancel: () => {},
-        sendPaymentRequest: () => {},
-        updateSelectedPaymentline: () => {},
+        deleteLine: () => { },
+        selectLine: () => { },
+        sendForceDone: () => { },
+        sendForceCancel: () => { },
+        sendPaymentCancel: () => { },
+        sendPaymentRequest: () => { },
+        updateSelectedPaymentline: () => { },
         isRefundOrder: false,
     });
     const comp = await mountWithCleanup(PaymentScreenPaymentLines, { props });

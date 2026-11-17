@@ -1,4 +1,4 @@
-/** @odoo-module */
+/** @weth-module */
 
 import {
     advanceTime,
@@ -10,7 +10,7 @@ import {
     test,
     tick,
     waitUntil,
-} from "@odoo/hoot";
+} from "@weth/hoot";
 import { _discardTimers, _getDefaultWaitTimeout } from "@web/../lib/hoot-dom/helpers/time";
 import { parseUrl } from "../local_helpers";
 

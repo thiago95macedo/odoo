@@ -3,9 +3,9 @@ import logging
 import time
 from datetime import date, timedelta
 
-from odoo.exceptions import UserError
-from odoo.tests import warmup
-from odoo.tests.common import TransactionCase
+from weth.exceptions import UserError
+from weth.tests import warmup
+from weth.tests.common import TransactionCase
 
 _logger = logging.getLogger(__name__)
 

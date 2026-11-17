@@ -1,5 +1,5 @@
-from odoo import api, Command
-from odoo.tests.common import tagged, HttpCase
+from weth import api, Command
+from weth.tests.common import tagged, HttpCase
 
 
 @tagged('at_install', '-post_install')  # LEGACY at_install

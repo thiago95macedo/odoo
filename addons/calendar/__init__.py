@@ -1,5 +1,5 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
-from odoo.tools import split_every
+from weth.tools import split_every
 
 from . import controllers
 from . import models

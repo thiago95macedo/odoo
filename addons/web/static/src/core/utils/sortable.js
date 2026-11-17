@@ -12,7 +12,7 @@ import { pick } from "@web/core/utils/objects";
  *
  * MANDATORY
  *
- * @property {import("@odoo/owl").Signal<HTMLElement> | (() => HTMLElement)} ref
+ * @property {import("@weth/owl").Signal<HTMLElement> | (() => HTMLElement)} ref
  * @property {string} elements defines sortable elements
  *
  * OPTIONAL

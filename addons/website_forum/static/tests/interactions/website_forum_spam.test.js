@@ -1,5 +1,5 @@
-import { describe, expect, test } from "@odoo/hoot";
-import { advanceTime, click, edit, fill, queryAll, tick } from "@odoo/hoot-dom";
+import { describe, expect, test } from "@weth/hoot";
+import { advanceTime, click, edit, fill, queryAll, tick } from "@weth/hoot-dom";
 import { startInteractions, setupInteractionWhiteList } from "@web/../tests/public/helpers";
 import { onRpc } from "@web/../tests/web_test_helpers";
 
@@ -46,7 +46,7 @@ test("keep last spam input search", async () => {
     await edit("hello");
     await advanceTime(201); // debounced
     expect.verifySteps([]);
-    def.resolve([{ content: "<div>hello</div>"}]);
+    def.resolve([{ content: "<div>hello</div>" }]);
     await tick();
     expect.verifySteps(["rpc"]);
     expect(".post_spam").toHaveText("hello");

@@ -1,6 +1,6 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import models
+from weth import models
 
 
 class ReportMrpReport_Mo_Overview(models.AbstractModel):

@@ -3,11 +3,11 @@
 
 import werkzeug.urls
 
-from odoo import http
-from odoo.addons.website.models.ir_http import sitemap_qs2dom
-from odoo.addons.website_google_map.controllers.main import GoogleMap
-from odoo.tools.translate import _, LazyTranslate
-from odoo.http import request
+from weth import http
+from weth.addons.website.models.ir_http import sitemap_qs2dom
+from weth.addons.website_google_map.controllers.main import GoogleMap
+from weth.tools.translate import _, LazyTranslate
+from weth.http import request
 
 _lt = LazyTranslate(__name__)
 

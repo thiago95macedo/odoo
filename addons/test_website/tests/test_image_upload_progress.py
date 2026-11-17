@@ -1,16 +1,16 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.html_editor.controllers.main import HTML_Editor
-from odoo.addons.web_unsplash.controllers.main import Web_Unsplash
+from weth.addons.html_editor.controllers.main import HTML_Editor
+from weth.addons.web_unsplash.controllers.main import Web_Unsplash
 
-import odoo.tests
+import weth.tests
 
-from odoo import http
+from weth import http
 
 
-@odoo.tests.common.tagged('post_install', '-at_install')
-class TestImageUploadProgress(odoo.tests.HttpCase):
+@weth.tests.common.tagged('post_install', '-at_install')
+class TestImageUploadProgress(weth.tests.HttpCase):
 
     def test_01_image_upload_progress(self):
         self.start_tour(self.env['website'].get_client_action_url('/test_image_progress', True), 'test_image_upload_progress', login="admin")

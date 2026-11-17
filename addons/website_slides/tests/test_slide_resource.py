@@ -3,12 +3,12 @@
 from psycopg2 import IntegrityError
 from werkzeug.urls import url_unquote_plus
 
-from odoo.addons.base.tests.files import PNG_RAW
-from odoo.addons.website_slides.tests import common
-from odoo.exceptions import ValidationError
-from odoo.tests import tagged, HttpCase
-from odoo.tests.common import users
-from odoo.tools import BinaryBytes, mute_logger
+from weth.addons.base.tests.files import PNG_RAW
+from weth.addons.website_slides.tests import common
+from weth.exceptions import ValidationError
+from weth.tests import tagged, HttpCase
+from weth.tests.common import users
+from weth.tools import BinaryBytes, mute_logger
 
 
 class TestResources(common.SlidesCase, HttpCase):

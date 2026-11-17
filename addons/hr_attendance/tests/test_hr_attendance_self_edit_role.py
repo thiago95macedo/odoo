@@ -1,7 +1,7 @@
-from odoo.tests.common import TransactionCase, tagged
-from odoo.exceptions import AccessError
+from weth.tests.common import TransactionCase, tagged
+from weth.exceptions import AccessError
 from datetime import date, datetime
-from odoo.tests import new_test_user
+from weth.tests import new_test_user
 
 
 @tagged('hr_attendance_self_edit_role')

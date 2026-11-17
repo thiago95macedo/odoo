@@ -1,10 +1,10 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-import odoo.tests
+import weth.tests
 
 
-@odoo.tests.tagged('-at_install', 'post_install')
-class TestWebsiteFieldSanitize(odoo.tests.HttpCase):
+@weth.tests.tagged('-at_install', 'post_install')
+class TestWebsiteFieldSanitize(weth.tests.HttpCase):
     def test_sanitize_video_iframe(self):
         item_id = self.env['test.model'].search([], limit=1).ensure_one().id
         self.env['res.users'].create({

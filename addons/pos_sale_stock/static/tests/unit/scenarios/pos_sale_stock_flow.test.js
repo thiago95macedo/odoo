@@ -1,5 +1,5 @@
-import { expect, test } from "@odoo/hoot";
-import { animationFrame, click, waitFor } from "@odoo/hoot-dom";
+import { expect, test } from "@weth/hoot";
+import { animationFrame, click, waitFor } from "@weth/hoot-dom";
 import { contains } from "@web/../tests/web_test_helpers";
 import { setupAndMountPosApp } from "@point_of_sale/../tests/unit/utils";
 import { definePosStockModels } from "@pos_stock/../tests/unit/data/generate_model_definitions";

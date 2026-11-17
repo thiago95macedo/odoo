@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<odoo>
+<weth>
 
     <record id="return_reason_wrong_item" model="return.reason">
         <field name="name">Received the wrong item</field>
@@ -22,4 +22,4 @@
         <field name="sequence">50</field>
     </record>
 
-</odoo>
+</weth>

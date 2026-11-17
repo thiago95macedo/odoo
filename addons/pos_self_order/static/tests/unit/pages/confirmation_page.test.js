@@ -1,5 +1,5 @@
-import { describe, expect, test } from "@odoo/hoot";
-import { animationFrame } from "@odoo/hoot-dom";
+import { describe, expect, test } from "@weth/hoot";
+import { animationFrame } from "@weth/hoot-dom";
 import { mountWithCleanup } from "@web/../tests/web_test_helpers";
 import { patch } from "@web/core/utils/patch";
 import { location } from "@web/core/browser/browser";

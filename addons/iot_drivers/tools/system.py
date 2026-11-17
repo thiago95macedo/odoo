@@ -14,7 +14,7 @@ from platform import release, system
 
 import netifaces
 
-from odoo import release as odoo_release
+from weth import release as odoo_release
 
 _logger = logging.getLogger(__name__)
 
@@ -89,7 +89,7 @@ def pip(*args):
 @cache
 def get_version(detailed_version=False):
     if IS_RPI:
-        with open('/var/odoo/iotbox_version', encoding='utf-8') as f:
+        with open('/var/weth/iotbox_version', encoding='utf-8') as f:
             image_version = f.readline().strip()
     elif IS_WINDOWS:
         version_path = path_file('VERSION')
@@ -113,34 +113,34 @@ def get_version(detailed_version=False):
 
 
 def update_conf(values: dict, section: str = "iot.box"):
-    """Update odoo.conf with the given key and value.
+    """Update weth.conf with the given key and value.
 
     :param values: key-value pairs to update the config with.
     :param section: The section to update the key-value pairs in (Default: `iot.box`).
     """
-    _logger.debug("Updating odoo.conf with values: %s", values)
+    _logger.debug("Updating weth.conf with values: %s", values)
     conf = get_conf()
 
     if not conf.has_section(section):
-        _logger.debug("Creating new section '%s' in odoo.conf", section)
+        _logger.debug("Creating new section '%s' in weth.conf", section)
         conf.add_section(section)
 
     for key, value in values.items():
         conf.set(section, key, value) if value else conf.remove_option(section, key)
 
-    with open(path_file("odoo.conf"), "w", encoding='utf-8') as f:
+    with open(path_file("weth.conf"), "w", encoding='utf-8') as f:
         conf.write(f)
 
 
 def get_conf(key: str | None = None, section: str = "iot.box"):
-    """Get the value of the given key from odoo.conf, or the full config if no key is provided.
+    """Get the value of the given key from weth.conf, or the full config if no key is provided.
 
     :param key: The key to get the value of.
     :param section: The section to get the key from (Default: `iot.box`).
     :return: The value of the key provided or `None` if it doesn't exist, or full conf object if no key is provided.
     """
     conf = configparser.RawConfigParser()
-    conf.read(path_file("odoo.conf"))
+    conf.read(path_file("weth.conf"))
 
     return conf.get(section, key, fallback=None) if key else conf  # Return the key's value or the configparser object
 

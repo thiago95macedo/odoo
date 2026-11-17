@@ -1,4 +1,4 @@
-<odoo>
+<weth>
     <data noupdate="1">
         <record model="discuss.channel" id="mail.illusorium">
             <field name="name">Illusorium</field>
@@ -43,4 +43,4 @@
             <field name="new_message_separator" eval="ref('mail.illusorium_message_2') + 1"/>
         </record>
     </data>
-</odoo>
+</weth>

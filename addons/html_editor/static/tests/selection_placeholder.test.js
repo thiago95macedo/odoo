@@ -1,7 +1,7 @@
-import { expect, test } from "@odoo/hoot";
+import { expect, test } from "@weth/hoot";
 import { testEditor } from "./_helpers/editor";
 import { unformat } from "./_helpers/format";
-import { animationFrame, press, tick } from "@odoo/hoot-dom";
+import { animationFrame, press, tick } from "@weth/hoot-dom";
 import {
     ensureDistinctHistoryCommit,
     insertText,
@@ -587,8 +587,8 @@ test("a selection placeholder is restored after deletion from within", async () 
             await pressArrowKey(editor, "ArrowUp");
             expect(getContent(editor.editable)).toBe(
                 `<p data-selection-placeholder="" o-we-hint-text='Type "/" for commands' class="o-we-hint o-horizontal-caret">[]<br></p>` +
-                    `<div class="o_table_wrapper"><table><tbody><tr><td>a</td></tr></tbody></table></div>` +
-                    '<p data-selection-placeholder="" style="margin: -9px 0px 8px;"><br></p>',
+                `<div class="o_table_wrapper"><table><tbody><tr><td>a</td></tr></tbody></table></div>` +
+                '<p data-selection-placeholder="" style="margin: -9px 0px 8px;"><br></p>',
                 { message: "The top placeholder was selected." }
             );
             await press("Delete");

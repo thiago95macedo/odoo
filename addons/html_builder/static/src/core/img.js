@@ -8,7 +8,7 @@ import {
     signal,
     t,
     xml,
-} from "@odoo/owl";
+} from "@weth/owl";
 import { Cache } from "@web/core/utils/cache";
 
 const svgCache = new Cache(async (src) => {

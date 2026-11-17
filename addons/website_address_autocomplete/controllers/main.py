@@ -1,5 +1,5 @@
 
-from odoo.addons.google_address_autocomplete.controllers.google_address_autocomplete import AutoCompleteController
+from weth.addons.google_address_autocomplete.controllers.google_address_autocomplete import AutoCompleteController
 
 
 class WebsiteAddressAutoCompleteController(AutoCompleteController):

@@ -1,5 +1,5 @@
 import { useSubEnv } from "@web/owl2/utils";
-import { EventBus, t } from "@odoo/owl";
+import { EventBus, t } from "@weth/owl";
 
 import { x2ManyCommands } from "@web/core/orm_plugin";
 import { useService } from "@web/core/utils/hooks";

@@ -1,7 +1,7 @@
 import { fields, makeStore, Record, Store } from "@mail/model/export";
 import { defineMailModels, start as start2 } from "@mail/../tests/mail_test_helpers";
 
-import { afterEach, beforeEach, expect, test } from "@odoo/hoot";
+import { afterEach, beforeEach, expect, test } from "@weth/hoot";
 
 import { registry } from "@web/core/registry";
 import { getService, mockService } from "@web/../tests/web_test_helpers";

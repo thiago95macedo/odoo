@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
 
     <template id="authorization_error" name="Authorization Error">
         <!-- Variables description:
@@ -20,4 +20,4 @@
         </t>
     </template>
 
-</odoo>
+</weth>

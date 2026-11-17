@@ -1,4 +1,4 @@
-import { t, useEffect, useProps } from "@odoo/owl";
+import { t, useEffect, useProps } from "@weth/owl";
 import {
     accountProductField,
     AccountProductField,
@@ -106,9 +106,9 @@ export class SaleOrderLineProductField extends AccountProductField {
     get configurationButtonHelp() {
         return "";
     }
-    _onProductTemplateUpdate() {}
-    _onProductUpdate() {}
-    onEditConfiguration() {}
+    _onProductTemplateUpdate() { }
+    _onProductUpdate() { }
+    onEditConfiguration() { }
 }
 
 // for enabling configurators and combos

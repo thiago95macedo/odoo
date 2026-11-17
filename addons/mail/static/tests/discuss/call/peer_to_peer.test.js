@@ -1,6 +1,6 @@
-import { describe, expect } from "@odoo/hoot";
-import { waitUntil } from "@odoo/hoot-dom";
-import { advanceTime } from "@odoo/hoot-mock";
+import { describe, expect } from "@weth/hoot";
+import { waitUntil } from "@weth/hoot-dom";
+import { advanceTime } from "@weth/hoot-mock";
 import { browser } from "@web/core/browser/browser";
 import { onRpc, mountWebClient } from "@web/../tests/web_test_helpers";
 import { defineMailModels, mockGetMedia, onlineTest } from "@mail/../tests/mail_test_helpers";

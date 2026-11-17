@@ -6,9 +6,9 @@ import {
 } from "@html_builder/../tests/helpers";
 import { BuilderAction } from "@html_builder/core/builder_action";
 import { HistoryPlugin } from "@html_editor/core/history_plugin";
-import { expect, test, describe } from "@odoo/hoot";
-import { advanceTime, animationFrame, click, edit, fill, freezeTime, press } from "@odoo/hoot-dom";
-import { xml } from "@odoo/owl";
+import { expect, test, describe } from "@weth/hoot";
+import { advanceTime, animationFrame, click, edit, fill, freezeTime, press } from "@weth/hoot-dom";
+import { xml } from "@weth/owl";
 import { contains, patchWithCleanup } from "@web/../tests/web_test_helpers";
 
 describe.current.tags("desktop");

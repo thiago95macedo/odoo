@@ -1,4 +1,4 @@
-import { onWillStart } from "@odoo/owl";
+import { onWillStart } from "@weth/owl";
 import { user } from "@web/core/user";
 import { RottingColumnProgress } from "@mail/js/rotting_mixin/rotting_column_progress";
 import { _t } from "@web/core/l10n/translation";

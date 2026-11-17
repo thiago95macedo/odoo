@@ -1,10 +1,10 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.exceptions import UserError, ValidationError
-from odoo.http import request, route
+from weth.exceptions import UserError, ValidationError
+from weth.http import request, route
 
-from odoo.addons.payment import utils as payment_utils
-from odoo.addons.website_sale.controllers.main import WebsiteSale
+from weth.addons.payment import utils as payment_utils
+from weth.addons.website_sale.controllers.main import WebsiteSale
 
 
 class Delivery(WebsiteSale):

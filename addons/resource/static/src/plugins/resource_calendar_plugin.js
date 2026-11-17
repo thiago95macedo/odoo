@@ -1,4 +1,4 @@
-import { Plugin, signal, t, useConfig } from "@odoo/owl";
+import { Plugin, signal, t, useConfig } from "@weth/owl";
 import { useEnv } from "@web/owl2/utils";
 
 export class ResourceCalendarPlugin extends Plugin {

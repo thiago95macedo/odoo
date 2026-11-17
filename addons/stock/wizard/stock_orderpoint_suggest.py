@@ -1,5 +1,5 @@
-from odoo import fields, models
-from odoo.tools.float_utils import float_round
+from weth import fields, models
+from weth.tools.float_utils import float_round
 
 
 class StockOrderpointSuggest(models.TransientModel):

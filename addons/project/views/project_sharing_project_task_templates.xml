@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
     <template id="project_sharing_portal" name="Project Sharing View Embed">
         <t t-set="head_project_sharing">
             <script type="text/javascript">
-                odoo.__session_info__ = <t t-out="json.dumps(session_info)"/>;
+                weth.__session_info__ = <t t-out="json.dumps(session_info)"/>;
                 // Prevent the menu_service to load anything. In an ideal world, Project Sharing assets would only contain
                 // what is genuinely necessary, and not the whole backend.
-                odoo.loadMenusPromise = Promise.resolve();
+                weth.loadMenusPromise = Promise.resolve();
             </script>
             <base target="_parent"/>
             <t t-call-assets="project.webclient"/>
@@ -21,4 +21,4 @@
             head="head"
             body_classname.f="o_web_client o_project_sharing"/>
     </template>
-</odoo>
+</weth>

@@ -7,18 +7,18 @@ from urllib3.util import parse_url
 from werkzeug.test import EnvironBuilder
 from werkzeug.urls import url_encode
 
-from odoo import tests
-from odoo.tests.common import MockHTTPClient
-from odoo.tools.misc import mute_logger, submap
-from odoo.addons.website.controllers.main import Website
-from odoo.addons.website.controllers.backend import WebsiteBackend
-from odoo.addons.http_routing.tests.common import MockRequest
+from weth import tests
+from weth.tests.common import MockHTTPClient
+from weth.tools.misc import mute_logger, submap
+from weth.addons.website.controllers.main import Website
+from weth.addons.website.controllers.backend import WebsiteBackend
+from weth.addons.http_routing.tests.common import MockRequest
 
 
 @tests.tagged('post_install', '-at_install')
 class TestControllers(tests.HttpCase):
 
-    @mute_logger('odoo.addons.http_routing.models.ir_http', 'odoo.http')
+    @mute_logger('weth.addons.http_routing.models.ir_http', 'weth.http')
     def test_last_created_pages_autocompletion(self):
         self.authenticate("admin", "admin")
         Page = self.env['website.page']
@@ -72,7 +72,7 @@ class TestControllers(tests.HttpCase):
             resp = self.url_open(f'/@{url}')
             backend_params = url_encode(dict(path=url))
             self.assertURLEqual(
-                resp.url, f'/odoo/action-website.website_preview?{backend_params}',
+                resp.url, f'/weth/action-website.website_preview?{backend_params}',
                 "Internal user should have landed in the backend")
 
     def test_03_website_image(self):

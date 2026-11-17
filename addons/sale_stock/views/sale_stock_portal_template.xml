@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
 
     <template id="sale_order_portal_template" inherit_id="sale.sale_order_portal_template">
         <div id="print_invoice_sidebar_button" position="after">
@@ -109,4 +109,4 @@
         </div>
     </template>
 
-</odoo>
+</weth>

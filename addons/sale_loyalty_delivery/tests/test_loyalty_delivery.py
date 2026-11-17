@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.exceptions import ValidationError
-from odoo.fields import Command
-from odoo.tests import Form, common
+from weth.exceptions import ValidationError
+from weth.fields import Command
+from weth.tests import Form, common
 
 
 @common.tagged("post_install", "-at_install")

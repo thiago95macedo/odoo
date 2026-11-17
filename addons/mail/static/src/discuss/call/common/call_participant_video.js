@@ -1,4 +1,4 @@
-import { Component, signal, status, t, useEffect, useListener, useProps } from "@odoo/owl";
+import { Component, signal, status, t, useEffect, useListener, useProps } from "@weth/owl";
 import { useService } from "@web/core/utils/hooks";
 
 export class CallParticipantVideo extends Component {

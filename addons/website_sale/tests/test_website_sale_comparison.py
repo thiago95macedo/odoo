@@ -5,8 +5,8 @@ from collections import OrderedDict
 
 from lxml import etree
 
-from odoo.fields import Command
-from odoo.tests import HttpCase, tagged
+from weth.fields import Command
+from weth.tests import HttpCase, tagged
 
 _logger = logging.getLogger(__name__)
 

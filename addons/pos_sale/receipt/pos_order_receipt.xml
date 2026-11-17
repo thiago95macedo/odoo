@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<odoo>
+<weth>
     <data>
         <template id="pos_sale.pos_orderline_receipt_information" inherit_id="point_of_sale.pos_orderline_receipt_information">
             <div name="product-name" position="replace">
@@ -20,4 +20,4 @@
             </div>
         </template>
     </data>
-</odoo>
+</weth>

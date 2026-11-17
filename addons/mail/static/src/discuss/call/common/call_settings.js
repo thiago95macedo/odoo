@@ -1,4 +1,4 @@
-import { Component, onWillStart, t, useListener, usePlugin, useProps, xml } from "@odoo/owl";
+import { Component, onWillStart, t, useListener, usePlugin, useProps, xml } from "@weth/owl";
 
 import { _t } from "@web/core/l10n/translation";
 import { browser } from "@web/core/browser/browser";

@@ -1,8 +1,8 @@
 # # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.exceptions import UserError
-from odoo.tests.common import TransactionCase, tagged
+from weth.exceptions import UserError
+from weth.tests.common import TransactionCase, tagged
 
 
 @tagged('post_install', '-at_install', 'privacy')

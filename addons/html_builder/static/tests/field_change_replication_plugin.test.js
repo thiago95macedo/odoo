@@ -2,8 +2,8 @@ import { setupHTMLBuilder } from "@html_builder/../tests/helpers";
 import { undo } from "@html_editor/../tests/_helpers/user_actions";
 import { setSelection } from "@html_editor/../tests/_helpers/selection";
 import { execCommand } from "@html_editor/../tests/_helpers/userCommands";
-import { describe, expect, test } from "@odoo/hoot";
-import { queryOne } from "@odoo/hoot-dom";
+import { describe, expect, test } from "@weth/hoot";
+import { queryOne } from "@weth/hoot-dom";
 import { contains, onRpc } from "@web/../tests/web_test_helpers";
 
 describe.current.tags("desktop");

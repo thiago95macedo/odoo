@@ -1,6 +1,6 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
-from odoo.tests import HttpCase, tagged
-from odoo.addons.mail.tests.common import MailCommon, mail_new_test_user
+from weth.tests import HttpCase, tagged
+from weth.addons.mail.tests.common import MailCommon, mail_new_test_user
 
 
 @tagged("discuss_action")
@@ -18,14 +18,14 @@ class TestDiscussAction(HttpCase, MailCommon):
         channel_a = self.env["discuss.channel"].with_user(bob_user).create({"name": "Channel A"})
         self.env["discuss.channel"].with_user(bob_user).create({"name": "Channel B"})
         self.start_tour(
-            f"/odoo/discuss?active_id=discuss.channel_{channel_a.id}",
+            f"/weth/discuss?active_id=discuss.channel_{channel_a.id}",
             "discuss_go_back_to_thread_from_breadcrumbs.js",
             login="bob_user",
         )
 
     def test_group_form_save_without_name(self):
         self.start_tour(
-            f"/odoo/discuss.channel/{self.group.id}",
+            f"/weth/discuss.channel/{self.group.id}",
             "discuss_group_form_save_without_name.js",
             login="alice_user",
         )
@@ -41,7 +41,7 @@ class TestDiscussAction(HttpCase, MailCommon):
         self._reset_bus()
         channel_member._rtc_join_call()
         self.start_tour(
-            f"/odoo/{channel.id}/action-mail.action_discuss?call=accept",
+            f"/weth/{channel.id}/action-mail.action_discuss?call=accept",
             "discuss_channel_call_action.js",
             login=invited_user.login,
         )

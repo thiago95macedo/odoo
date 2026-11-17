@@ -2,7 +2,7 @@ import { DiscussAvatar } from "@mail/core/common/discuss_avatar";
 import { ActionPanel } from "@mail/discuss/core/common/action_panel";
 import { ChannelActionDialog } from "@mail/discuss/core/common/channel_action_dialog";
 
-import { Component, onWillStart, proxy, signal, t, useProps } from "@odoo/owl";
+import { Component, onWillStart, proxy, signal, t, useProps } from "@weth/owl";
 
 import { useSequential } from "@mail/utils/common/hooks";
 import { ConfirmationDialog } from "@web/core/confirmation_dialog/confirmation_dialog";
@@ -183,7 +183,7 @@ export class ChannelInvitation extends Component {
             body: _t(
                 "You're about to create a new invite link. The current link will no longer grant guests access to the channel. Do you want to proceed?"
             ),
-            cancel: () => {},
+            cancel: () => { },
             confirmLabel: _t("Generate"),
             confirm: () =>
                 this.orm.call("discuss.channel", "action_reset_invitation_uuid", [

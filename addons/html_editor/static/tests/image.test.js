@@ -1,4 +1,4 @@
-import { expect, mockFetch, test } from "@odoo/hoot";
+import { expect, mockFetch, test } from "@weth/hoot";
 import {
     click,
     dblclick,
@@ -6,8 +6,8 @@ import {
     waitFor,
     manuallyDispatchProgrammaticEvent,
     queryAll,
-} from "@odoo/hoot-dom";
-import { animationFrame } from "@odoo/hoot-mock";
+} from "@weth/hoot-dom";
+import { animationFrame } from "@weth/hoot-mock";
 import { contains } from "@web/../tests/web_test_helpers";
 import { base64Img, setupEditor } from "./_helpers/editor";
 import { getContent, moveSelectionOutsideEditor } from "./_helpers/selection";

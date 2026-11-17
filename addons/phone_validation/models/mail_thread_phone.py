@@ -2,10 +2,10 @@
 
 import re
 
-from odoo import api, fields, models, _
-from odoo.exceptions import AccessError, UserError
-from odoo.fields import Domain
-from odoo.tools.sql import SQL, create_index, make_identifier
+from weth import api, fields, models, _
+from weth.exceptions import AccessError, UserError
+from weth.fields import Domain
+from weth.tools.sql import SQL, create_index, make_identifier
 
 PHONE_REGEX_PATTERN = r'[\s\\./\(\)\-]'
 

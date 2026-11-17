@@ -1,4 +1,4 @@
-import { beforeEach, expect, runAllTimers, test } from "@odoo/hoot";
+import { beforeEach, expect, runAllTimers, test } from "@weth/hoot";
 import { mountWithCleanup, onRpc } from "@web/../tests/web_test_helpers";
 import { CustomerDisplay } from "@point_of_sale/customer_display/customer_display";
 import { definePosModels } from "../data/generate_model_definitions";

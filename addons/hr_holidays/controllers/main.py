@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.mail.controllers.mail import MailController
-from odoo import http
+from weth.addons.mail.controllers.mail import MailController
+from weth import http
 
 
 class HrHolidaysController(http.Controller):

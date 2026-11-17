@@ -1,4 +1,4 @@
-from odoo.tests import HttpCase, tagged, users
+from weth.tests import HttpCase, tagged, users
 
 @tagged('post_install', '-at_install')
 class TestTimeOffGraphViewTour(HttpCase):

@@ -1,4 +1,4 @@
-import { test, expect } from "@odoo/hoot";
+import { test, expect } from "@weth/hoot";
 import {
     press,
     click,
@@ -6,8 +6,8 @@ import {
     queryOne,
     hover,
     manuallyDispatchProgrammaticEvent,
-} from "@odoo/hoot-dom";
-import { Component, proxy, t, useProps, xml } from "@odoo/owl";
+} from "@weth/hoot-dom";
+import { Component, proxy, t, useProps, xml } from "@weth/owl";
 import { defineStyle, mountWithCleanup } from "@web/../tests/web_test_helpers";
 import { ColorPicker, DEFAULT_COLORS } from "@html_editor/components/color_picker/color_picker";
 import { CustomColorPicker } from "@html_editor/components/color_picker/custom_color_picker/custom_color_picker";
@@ -21,7 +21,7 @@ test("basic rendering", async () => {
                 selectedColor: "",
                 defaultTab: "",
             },
-            applyColor() {},
+            applyColor() { },
         },
     });
     expect(".o_font_color_selector").toHaveCount(1);
@@ -41,7 +41,7 @@ test("basic rendering with selected color", async () => {
                 selectedColor: "#B5D6A5",
                 defaultTab: "",
             },
-            applyColor() {},
+            applyColor() { },
         },
     });
     expect(".o_font_color_selector").toHaveCount(1);
@@ -60,7 +60,7 @@ test("keyboard navigation", async () => {
                 selectedColor: "",
                 defaultTab: "",
             },
-            applyColor() {},
+            applyColor() { },
         },
     });
     // select the first color
@@ -170,7 +170,7 @@ test("should trigger color preview callbacks only once when hovering button havi
                 selectedColor: "#B5D6A5",
                 defaultTab: "test",
             },
-            applyColor() {},
+            applyColor() { },
             applyColorPreview() {
                 pointerHoverCounter++;
             },
@@ -203,7 +203,7 @@ test("colorpicker inside the builder are linked to the builder theme colors", as
                 selectedColor: "",
                 defaultTab: "",
             },
-            applyColor() {},
+            applyColor() { },
             cssVarColorPrefix: "xyz-",
         },
     });
@@ -237,7 +237,7 @@ test("colorpicker outside the builder are not linked to the builder theme colors
                 selectedColor: "",
                 defaultTab: "",
             },
-            applyColor() {},
+            applyColor() { },
         },
     });
     const getButtonColor = (sel) => getComputedStyle(queryOne(sel)).backgroundColor;
@@ -339,7 +339,7 @@ test("can register an extra tab", async () => {
                 selectedColor: "#FF0000",
                 defaultTab: "",
             },
-            applyColor() {},
+            applyColor() { },
             enabledTabs: ["solid", "custom", "extra"],
         },
     });
@@ -363,7 +363,7 @@ test("should mark default color as selected when it is selected", async () => {
                 selectedColor: "#212527",
                 defaultTab: "custom",
             },
-            applyColor() {},
+            applyColor() { },
         },
     });
     expect(".o_color_button[data-color='900']").toHaveClass("selected");

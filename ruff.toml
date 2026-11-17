@@ -86,6 +86,6 @@ ignore = [
 [lint.isort]
 # https://www.weth.com.br/documentation/latest/contributing/development/coding_guidelines.html#imports
 section-order = ["future", "standard-library", "third-party", "first-party", "local-folder"]
-known-first-party = ["odoo"]
-known-local-folder = ["odoo.addons"]
+known-first-party = ["weth"]
+known-local-folder = ["weth.addons"]
 

@@ -5,14 +5,14 @@ from dateutil.parser import parse
 from markupsafe import Markup
 from requests import HTTPError
 
-from odoo.addons.google_account.models.google_service import TIMEOUT
-from odoo.addons.google_calendar.models.google_sync import after_commit, google_calendar_token
-from odoo.addons.google_calendar.utils.google_event import GoogleEvent
-from odoo.addons.google_calendar.utils.google_calendar_service import GoogleCalendarService
+from weth.addons.google_account.models.google_service import TIMEOUT
+from weth.addons.google_calendar.models.google_sync import after_commit, google_calendar_token
+from weth.addons.google_calendar.utils.google_event import GoogleEvent
+from weth.addons.google_calendar.utils.google_calendar_service import GoogleCalendarService
 
-from odoo import _, api, fields, models
-from odoo.fields import Domain
-from odoo.tools import email_normalize
+from weth import _, api, fields, models
+from weth.fields import Domain
+from weth.tools import email_normalize
 
 
 _logger = logging.getLogger(__name__)

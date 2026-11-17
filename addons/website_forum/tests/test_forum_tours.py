@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.gamification.tests.common import HttpCaseGamification
-from odoo.tests import tagged
+from weth.addons.gamification.tests.common import HttpCaseGamification
+from weth.tests import tagged
 
 
 @tagged('post_install', '-at_install')

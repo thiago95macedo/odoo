@@ -1,4 +1,4 @@
-import { markRaw } from "@odoo/owl";
+import { markRaw } from "@weth/owl";
 import { ATTR_SYM, MANY_SYM, ONE_SYM } from "./misc";
 
 export class ModelInternal {

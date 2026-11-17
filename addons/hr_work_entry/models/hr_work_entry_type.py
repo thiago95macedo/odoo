@@ -2,8 +2,8 @@
 
 from uuid import uuid4
 
-from odoo import api, fields, models
-from odoo.exceptions import UserError, ValidationError
+from weth import api, fields, models
+from weth.exceptions import UserError, ValidationError
 
 
 class HrWorkEntryType(models.Model):

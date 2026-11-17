@@ -2,10 +2,10 @@
 
 from datetime import datetime, timedelta
 
-from odoo.tests import TransactionCase, tagged
+from weth.tests import TransactionCase, tagged
 
-from odoo.addons.http_routing.tests.common import MockRequest
-from odoo.addons.website_event_booth.controllers.event_booth import WebsiteEventBoothController
+from weth.addons.http_routing.tests.common import MockRequest
+from weth.addons.website_event_booth.controllers.event_booth import WebsiteEventBoothController
 
 
 @tagged("post_install", "-at_install")

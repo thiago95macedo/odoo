@@ -1,4 +1,4 @@
-import { Component, signal, usePlugin } from "@odoo/owl";
+import { Component, signal, usePlugin } from "@weth/owl";
 import { registry } from "@web/core/registry";
 import { _t } from "@web/core/l10n/translation";
 import { NotificationPlugin } from "@web/core/notifications/notification_plugin";

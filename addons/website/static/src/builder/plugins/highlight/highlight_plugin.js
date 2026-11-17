@@ -5,7 +5,7 @@ import { isTextNode } from "@html_editor/utils/dom_info";
 import { closestElement, descendants } from "@html_editor/utils/dom_traversal";
 import { nodeSize } from "@html_editor/utils/position";
 import { withSequence } from "@html_editor/utils/resource";
-import { Component, proxy, signal, xml, useProps, t } from "@odoo/owl";
+import { Component, proxy, signal, xml, useProps, t } from "@weth/owl";
 import { _t } from "@web/core/l10n/translation";
 import { usePopover } from "@web/core/popover/popover_hook";
 import { registry } from "@web/core/registry";

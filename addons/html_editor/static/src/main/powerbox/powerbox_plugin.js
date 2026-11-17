@@ -1,4 +1,4 @@
-import { proxy } from "@odoo/owl";
+import { proxy } from "@weth/owl";
 import { Plugin } from "@html_editor/plugin";
 import { _t } from "@web/core/l10n/translation";
 import { rotate } from "@web/core/utils/arrays";
@@ -184,7 +184,7 @@ export class PowerboxPlugin extends Plugin {
      * @param {Function} [params.onApplyCommand=() => {}]
      * @param {Function} [params.onClose=() => {}]
      */
-    openPowerbox({ commands, categories, onApplyCommand = () => {}, onClose = () => {} } = {}) {
+    openPowerbox({ commands, categories, onApplyCommand = () => { }, onClose = () => { } } = {}) {
         this.closePowerbox();
         if (!commands.length) {
             return;

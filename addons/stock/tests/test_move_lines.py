@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import Command
-from odoo.addons.stock.tests.common import TestStockCommon
-from odoo.exceptions import UserError, ValidationError
-from odoo.tests import tagged, Form
+from weth import Command
+from weth.addons.stock.tests.common import TestStockCommon
+from weth.exceptions import UserError, ValidationError
+from weth.tests import tagged, Form
 
 
 class TestStockMoveLine(TestStockCommon):

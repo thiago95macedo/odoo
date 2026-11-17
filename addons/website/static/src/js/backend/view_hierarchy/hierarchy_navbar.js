@@ -1,6 +1,6 @@
 import { Dropdown } from "@web/core/dropdown/dropdown";
 import { DropdownItem } from "@web/core/dropdown/dropdown_item";
-import { Component, proxy, signal, useProps, t } from "@odoo/owl";
+import { Component, proxy, signal, useProps, t } from "@weth/owl";
 
 export class HierarchyNavbar extends Component {
     static template = "website.hierarchy_navbar";

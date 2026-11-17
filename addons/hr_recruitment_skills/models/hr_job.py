@@ -2,7 +2,7 @@ from ast import literal_eval
 
 from markupsafe import Markup
 
-from odoo import api, fields, models
+from weth import api, fields, models
 
 
 class HrJob(models.Model):

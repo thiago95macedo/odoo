@@ -1,12 +1,12 @@
-import { test, expect, mockTouch } from "@odoo/hoot";
+import { test, expect, mockTouch } from "@weth/hoot";
 import {
     manuallyDispatchProgrammaticEvent,
     pointerDown,
     pointerUp,
     queryAll,
     queryOne,
-} from "@odoo/hoot-dom";
-import { advanceTime, animationFrame } from "@odoo/hoot-mock";
+} from "@weth/hoot-dom";
+import { advanceTime, animationFrame } from "@weth/hoot-mock";
 import {
     contains,
     mountWithCleanup,

@@ -2,9 +2,9 @@
 
 from collections import defaultdict
 
-from odoo import api, fields, models, Command
-from odoo.fields import Domain
-from odoo.tools.sql import SQL
+from weth import api, fields, models, Command
+from weth.fields import Domain
+from weth.tools.sql import SQL
 
 
 class StockRoute(models.Model):

@@ -5,9 +5,9 @@ import re
 from collections import defaultdict
 import itertools
 
-from odoo import api, fields, models
-from odoo.fields import Domain
-from odoo.http import request
+from weth import api, fields, models
+from weth.fields import Domain
+from weth.http import request
 
 
 class UtmMixin(models.AbstractModel):

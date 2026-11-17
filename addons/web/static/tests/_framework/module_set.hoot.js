@@ -10,7 +10,7 @@ import {
     watchAddedNodes,
     watchKeys,
     watchListeners,
-} from "@odoo/hoot";
+} from "@weth/hoot";
 
 import { mockAssetsFactory } from "./mock_assets.hoot";
 import { mockBrowserFactory } from "./mock_browser.hoot";
@@ -164,8 +164,7 @@ async function fetchDependencies(addons) {
             },
             (error) => {
                 const reason = new Error(
-                    `could not fetch the dependencies of ${addonsToFetch.join(", ")}: ${
-                        error.message
+                    `could not fetch the dependencies of ${addonsToFetch.join(", ")}: ${error.message
                     }`
                 );
                 for (const addon of addonsToFetch) {
@@ -405,8 +404,8 @@ class ModuleSetLoader extends loader.constructor {
         this.modules = new Map(loader.modules);
         this.moduleSet = moduleSet;
 
-        odoo.define = this.define.bind(this);
-        odoo.loader = this;
+        weth.define = this.define.bind(this);
+        weth.loader = this;
     }
 
     /**
@@ -432,8 +431,8 @@ class ModuleSetLoader extends loader.constructor {
         // (like mutation records).
         await delay();
 
-        odoo.define = define;
-        odoo.loader = loader;
+        weth.define = define;
+        weth.loader = loader;
 
         while (this.cleanups.length) {
             this.cleanups.pop()();
@@ -459,7 +458,7 @@ class ModuleSetLoader extends loader.constructor {
 
     setup() {
         this.cleanups.push(
-            watchKeys(window.odoo),
+            watchKeys(window.weth),
             watchKeys(window, ALLOWED_GLOBAL_KEYS),
             watchListeners(window),
             watchAddedNodes(window)
@@ -518,7 +517,7 @@ const ALLOWED_GLOBAL_KEYS = [
 ];
 const AUTO_INCLUDED_ADDONS = {
     /**
-     * spreadsheet addons defines a module that does not starts with `@spreadsheet` but `@odoo` (`@odoo/o-spreadsheet)
+     * spreadsheet addons defines a module that does not starts with `@spreadsheet` but `@odoo` (`@weth/o-spreadsheet)
      * To ensure that this module is loaded, we have to include `odoo` in the dependencies
      */
     spreadsheet: ["odoo"],
@@ -527,7 +526,7 @@ const AUTO_INCLUDED_ADDONS = {
      */
     web_enterprise: ["web_gantt", "web_grid", "web_map"],
 };
-const CSRF_TOKEN = odoo.csrf_token;
+const CSRF_TOKEN = weth.csrf_token;
 const DEFAULT_ADDONS = ["base", "web"];
 const MODULE_MOCKS_BY_NAME = new Map([
     // Fixed modules

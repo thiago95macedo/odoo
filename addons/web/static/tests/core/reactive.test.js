@@ -1,5 +1,5 @@
-import { after, describe, expect, microTick, test } from "@odoo/hoot";
-import { EventBus, effect, proxy } from "@odoo/owl";
+import { after, describe, expect, microTick, test } from "@weth/hoot";
+import { EventBus, effect, proxy } from "@weth/owl";
 import { Reactive } from "@web/core/utils/reactive";
 
 describe.current.tags("headless");

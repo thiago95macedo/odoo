@@ -1,4 +1,4 @@
-import { registries } from "@odoo/o-spreadsheet";
+import { registries } from "@weth/o-spreadsheet";
 
 import { IrMenuPlugin } from "./ir_ui_menu_plugin";
 

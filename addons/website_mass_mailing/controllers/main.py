@@ -3,10 +3,10 @@
 
 import werkzeug.exceptions
 
-from odoo import tools, _
-from odoo.exceptions import UserError
-from odoo.http import route, request
-from odoo.addons.mass_mailing.controllers import main
+from weth import tools, _
+from weth.exceptions import UserError
+from weth.http import route, request
+from weth.addons.mass_mailing.controllers import main
 
 
 class MassMailController(main.MassMailController):

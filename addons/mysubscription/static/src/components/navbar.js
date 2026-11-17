@@ -1,4 +1,4 @@
-import { useProps, t } from "@odoo/owl";
+import { useProps, t } from "@weth/owl";
 import { NavBar } from "@web/webclient/navbar/navbar";
 import { _t } from "@web/core/l10n/translation";
 

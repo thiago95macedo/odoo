@@ -1,6 +1,6 @@
 import { FormRenderer } from "@web/views/form/form_renderer";
 import { patch } from "@web/core/utils/patch";
-import { onMounted } from "@odoo/owl";
+import { onMounted } from "@weth/owl";
 
 patch(FormRenderer.prototype, {
     setup() {

@@ -3,11 +3,11 @@
 from collections import defaultdict
 from datetime import timedelta
 
-from odoo import api, fields, models, _, Command
-from odoo.fields import Domain
-from odoo.tools import OrderedSet
-from odoo.tools.sql import SQL
-from odoo.exceptions import UserError, ValidationError
+from weth import api, fields, models, _, Command
+from weth.fields import Domain
+from weth.tools import OrderedSet
+from weth.tools.sql import SQL
+from weth.exceptions import UserError, ValidationError
 
 VALUATION_DICT = {
     'value': 0,

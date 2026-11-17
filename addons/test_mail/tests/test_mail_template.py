@@ -5,10 +5,10 @@ import datetime
 from freezegun import freeze_time
 from unittest.mock import patch
 
-from odoo.addons.mail.tests.common import MailCommon
-from odoo.addons.test_mail.tests.common import TestRecipients
-from odoo.tests import tagged, users, warmup
-from odoo.tools import mute_logger, safe_eval
+from weth.addons.mail.tests.common import MailCommon
+from weth.addons.test_mail.tests.common import TestRecipients
+from weth.tests import tagged, users, warmup
+from weth.tools import mute_logger, safe_eval
 
 
 class TestMailTemplateCommon(MailCommon, TestRecipients):
@@ -99,7 +99,7 @@ class TestMailTemplate(TestMailTemplateCommon):
         self.assertTrue(test_template_lang.has_mail_server)
         self.assertTrue(test_template_ticket_mc.has_mail_server)
 
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     @users('employee')
     def test_template_schedule_email(self):
         """ Test scheduling email sending from template. """
@@ -139,7 +139,7 @@ class TestMailTemplate(TestMailTemplateCommon):
         self.assertFalse(mail.scheduled_date)
         self.assertEqual(mail.state, 'outgoing')
 
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_template_send_mail_body(self):
         """ Test that the body and body_html is set correctly in 'mail.mail'
         when sending an email from mail.template """
@@ -150,7 +150,7 @@ class TestMailTemplate(TestMailTemplateCommon):
         self.assertEqual(mail.body_html, body_result)
         self.assertEqual(mail.body, body_result)
 
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_template_send_mail_body_empty_record(self):
         """ Test that the body and body_html is set correctly in 'mail.mail'
         when sending an email from mail.template """
@@ -219,7 +219,7 @@ class TestMailTemplateLanguages(TestMailTemplateCommon):
         # we don't use mock_mail_gateway thus want to mock smtp to test the stack
         self._mock_smtplib_connection()
 
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     @warmup
     def test_template_send_email(self):
         """ Test 'send_email' on template on a given record, used notably as
@@ -237,7 +237,7 @@ class TestMailTemplateLanguages(TestMailTemplateCommon):
         self.assertEqual(mail.recipient_ids, self.partner_2 | self.user_admin.partner_id)
         self.assertEqual(mail.subject, f'EnglishSubject for {self.test_record.name}')
 
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     @warmup
     def test_template_send_email_nolayout(self):
         """ Test without layout, just to check impact """
@@ -255,7 +255,7 @@ class TestMailTemplateLanguages(TestMailTemplateCommon):
         self.assertEqual(mail.recipient_ids, self.partner_2 | self.user_admin.partner_id)
         self.assertEqual(mail.subject, f'EnglishSubject for {self.test_record.name}')
 
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     @warmup
     def test_template_send_email_batch(self):
         """ Test 'send_email' on template in batch """
@@ -277,7 +277,7 @@ class TestMailTemplateLanguages(TestMailTemplateCommon):
             else:
                 self.assertEqual(mail.subject, f'SpanishSubject for {record.name}')
 
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     @warmup
     def test_template_send_email_wreport(self):
         """ Test 'send_email' on template on a given record, used notably as
@@ -295,7 +295,7 @@ class TestMailTemplateLanguages(TestMailTemplateCommon):
         self.assertEqual(mail.recipient_ids, self.partner_2 | self.user_admin.partner_id)
         self.assertEqual(mail.subject, f'EnglishSubject for {self.test_record.name}')
 
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     @warmup
     def test_template_send_email_wreport_batch(self):
         """ Test 'send_email' on template in batch with dynamic reports """
@@ -333,7 +333,7 @@ class TestMailTemplateLanguages(TestMailTemplateCommon):
                 self.assertEqual(mail.body_html,
                          f'<body><p>SpanishBody for {record.name}</p> Spanish Layout para Spanish Model Description</body>')
 
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_template_send_email_wreport_batch_scalability(self):
         """ Test 'send_email' on template in batch, using configuration parameter
         for batch rendering. """
@@ -376,7 +376,7 @@ class TestMailTemplateLanguages(TestMailTemplateCommon):
                     else:
                         self.assertEqual(mail.subject, f'SpanishSubject for {record.name}')
 
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_template_translation_lang(self):
         """ Test template rendering using lang defined directly on the record """
         test_record = self.test_record.with_env(self.env)
@@ -391,7 +391,7 @@ class TestMailTemplateLanguages(TestMailTemplateCommon):
                          f'<body><p>SpanishBody for {self.test_record.name}</p> Spanish Layout para Spanish Model Description</body>')
         self.assertEqual(mail.subject, f'SpanishSubject for {self.test_record.name}')
 
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     @warmup
     def test_template_translation_partner_lang(self):
         """ Test template rendering using lang defined on a sub-record aka
@@ -450,7 +450,7 @@ class TestMailRenderLayoutTemplateLang(MailCommon):
             'email_notification_subtitles_highlight_index': 1,
         }
 
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_template_translation_partner_lang_subtitles(self):
         """Test that subtitles are rendered in the correct language using template.send_mail_batch."""
         test_records = self.test_records.with_env(self.env)

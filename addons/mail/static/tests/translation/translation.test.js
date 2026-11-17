@@ -8,9 +8,9 @@ import {
     start,
     startServer,
 } from "@mail/../tests/mail_test_helpers";
-import { expect, test } from "@odoo/hoot";
-import { pointerDown, waitFor, waitForNone } from "@odoo/hoot-dom";
-import { advanceTime, mockTouch, mockUserAgent } from "@odoo/hoot-mock";
+import { expect, test } from "@weth/hoot";
+import { pointerDown, waitFor, waitForNone } from "@weth/hoot-dom";
+import { advanceTime, mockTouch, mockUserAgent } from "@weth/hoot-mock";
 import { serverState } from "@web/../tests/web_test_helpers";
 
 defineMailModels();

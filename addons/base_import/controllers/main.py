@@ -2,9 +2,9 @@
 
 import json
 
-from odoo import http
-from odoo.http import request
-from odoo.tools import BinaryBytes
+from weth import http
+from weth.http import request
+from weth.tools import BinaryBytes
 
 
 class ImportController(http.Controller):

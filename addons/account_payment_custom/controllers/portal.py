@@ -1,6 +1,6 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.account_payment.controllers.portal import PortalAccount as AccountPaymentPortal
+from weth.addons.account_payment.controllers.portal import PortalAccount as AccountPaymentPortal
 
 
 class Portal(AccountPaymentPortal):

@@ -4,7 +4,7 @@ import { addEmptyGranularity } from "@spreadsheet/pivot/pivot_helpers";
 import { getBasicPivotArch, getPyEnv } from "@spreadsheet/../tests/helpers/data";
 import { createModelWithDataSource } from "@spreadsheet/../tests/helpers/model";
 import { waitForDataLoaded } from "@spreadsheet/helpers/model";
-import { constants } from "@odoo/o-spreadsheet";
+import { constants } from "@weth/o-spreadsheet";
 
 const { PIVOT_INSERT_TABLE_STYLE_ID } = constants;
 

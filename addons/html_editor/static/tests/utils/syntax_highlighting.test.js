@@ -1,5 +1,5 @@
 import { getPreValue } from "@html_editor/others/embedded_components/core/syntax_highlighting/syntax_highlighting_utils";
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@weth/hoot";
 import { insertTestHtml } from "../_helpers/editor";
 
 describe("getPreValue", () => {

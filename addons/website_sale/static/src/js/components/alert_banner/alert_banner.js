@@ -1,4 +1,4 @@
-import { Component, useProps, t } from "@odoo/owl";
+import { Component, useProps, t } from "@weth/owl";
 import { registry } from "@web/core/registry";
 
 export class AlertBanner extends Component {

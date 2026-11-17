@@ -1,5 +1,5 @@
 import { BaseWorker } from "@bus/workers/base_worker";
-import { mockWorker } from "@odoo/hoot";
+import { mockWorker } from "@weth/hoot";
 import { MockServer, patchWithCleanup } from "@web/../tests/web_test_helpers";
 
 /**

@@ -1,12 +1,12 @@
 from datetime import timedelta
 
-from odoo import exceptions, tools
-from odoo.addons.crm.tests.common import TestCrmCommon
-from odoo.addons.mail.tests.common import mail_new_test_user
-from odoo.fields import Date
-from odoo.tests import Form, tagged, users
-from odoo.tests.common import TransactionCase
-from odoo.tools import mute_logger
+from weth import exceptions, tools
+from weth.addons.crm.tests.common import TestCrmCommon
+from weth.addons.mail.tests.common import mail_new_test_user
+from weth.fields import Date
+from weth.tests import Form, tagged, users
+from weth.tests.common import TransactionCase
+from weth.tools import mute_logger
 
 
 class CrmPlsCommon(TransactionCase):
@@ -982,7 +982,7 @@ class TestLeadLost(TestCrmCommon):
             )
 
     @users('user_sales_salesman')
-    @mute_logger('odoo.addons.base.models')
+    @mute_logger('weth.addons.base.models')
     def test_lead_lost_crm_rights(self):
         """ Test ACLs of lost reasons management and usage """
         lead = self.lead_1.with_user(self.env.user)

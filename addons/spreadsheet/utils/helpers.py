@@ -1,6 +1,6 @@
 from functools import wraps
 
-from odoo.exceptions import UserError
+from weth.exceptions import UserError
 
 DEFAULT_COLUMN_WIDTH = 150   # pixels, default width of a column
 MIN_COLUMNS = 26             # minimum number of columns (A-Z)

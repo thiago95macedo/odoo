@@ -9,9 +9,9 @@ import {
     startServer,
     waitStoreFetch,
 } from "@mail/../tests/mail_test_helpers";
-import { animationFrame, describe, expect, test } from "@odoo/hoot";
-import { rightClick } from "@odoo/hoot-dom";
-import { mockDate } from "@odoo/hoot-mock";
+import { animationFrame, describe, expect, test } from "@weth/hoot";
+import { rightClick } from "@weth/hoot-dom";
+import { mockDate } from "@weth/hoot-mock";
 
 import { Command, getService, onRpc, serverState, withUser } from "@web/../tests/web_test_helpers";
 

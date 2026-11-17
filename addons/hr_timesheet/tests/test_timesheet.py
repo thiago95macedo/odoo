@@ -4,10 +4,10 @@ from freezegun import freeze_time
 from unittest.mock import patch
 from datetime import timedelta
 
-from odoo import fields
-from odoo.fields import Command
-from odoo.tests import tagged, Form, TransactionCase, new_test_user
-from odoo.exceptions import AccessError, RedirectWarning, UserError, ValidationError
+from weth import fields
+from weth.fields import Command
+from weth.tests import tagged, Form, TransactionCase, new_test_user
+from weth.exceptions import AccessError, RedirectWarning, UserError, ValidationError
 
 
 class TestCommonTimesheet(TransactionCase):

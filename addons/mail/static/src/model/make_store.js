@@ -11,7 +11,7 @@ import { Record } from "./record";
 import { StoreInternal } from "./store_internal";
 import { ModelInternal } from "./model_internal";
 
-import { onWillDestroy, signal, useApp } from "@odoo/owl";
+import { onWillDestroy, signal, useApp } from "@weth/owl";
 
 /** @returns {import("models").Store} */
 export function makeStore(env, { localRegistry } = {}) {
@@ -38,7 +38,7 @@ export function makeStore(env, { localRegistry } = {}) {
             );
         }
         const Model = {
-            [OgClass.getName()]: class extends OgClass {},
+            [OgClass.getName()]: class extends OgClass { },
         }[OgClass.getName()];
         Model._ = new ModelInternal();
         // `records` stays a property: business code reads it all over mail and enterprise.

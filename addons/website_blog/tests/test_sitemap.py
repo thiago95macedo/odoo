@@ -1,9 +1,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
-import odoo.tests
-from odoo.tests import HttpCase
+import weth.tests
+from weth.tests import HttpCase
 
 
-@odoo.tests.common.tagged('post_install', '-at_install')
+@weth.tests.common.tagged('post_install', '-at_install')
 class TestSitemap(HttpCase):
 
     def setUp(self):

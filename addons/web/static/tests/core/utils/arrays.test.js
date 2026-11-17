@@ -1,4 +1,4 @@
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@weth/hoot";
 
 import {
     cartesian,
@@ -228,9 +228,9 @@ describe("shallowEqual", () => {
         expect(shallowEqual([arr], [arr])).toBe(true);
         expect(shallowEqual([["x", "y", "z"]], [["x", "y", "z"]])).not.toBe(true);
 
-        const fn = () => {};
+        const fn = () => { };
         expect(shallowEqual([fn], [fn])).toBe(true);
-        expect(shallowEqual([() => {}], [() => {}])).not.toBe(true);
+        expect(shallowEqual([() => { }], [() => { }])).not.toBe(true);
     });
 });
 

@@ -1,4 +1,4 @@
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@weth/hoot";
 
 import { startInteractions, setupInteractionWhiteList } from "@web/../tests/public/helpers";
 

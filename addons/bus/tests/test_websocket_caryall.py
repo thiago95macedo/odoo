@@ -16,14 +16,14 @@ try:
 except ImportError:
     ws = None
 
-from odoo.api import Environment
-from odoo.tests import mute_logger, new_test_user
+from weth.api import Environment
+from weth.tests import mute_logger, new_test_user
 
-from odoo.addons.bus import websocket as websocket_module
-from odoo.addons.bus.bus_dispatcher import BusDispatcher, ChannelTopic, dispatch
-from odoo.addons.bus.models.ir_websocket import IrWebsocket
-from odoo.addons.bus.tests.common import WebsocketCase
-from odoo.addons.bus.websocket import (
+from weth.addons.bus import websocket as websocket_module
+from weth.addons.bus.bus_dispatcher import BusDispatcher, ChannelTopic, dispatch
+from weth.addons.bus.models.ir_websocket import IrWebsocket
+from weth.addons.bus.tests.common import WebsocketCase
+from weth.addons.bus.websocket import (
     CloseCode,
     PollablePriorityQueue,
     Websocket,
@@ -150,7 +150,7 @@ class TestWebsocketCaryall(WebsocketCase):
                 },
             )
 
-    @mute_logger("odoo.addons.bus.models.ir_websocket")
+    @mute_logger("weth.addons.bus.models.ir_websocket")
     def test_subscribe_non_integer_last(self):
         with patch.object(
             BusDispatcher,
@@ -217,12 +217,12 @@ class TestWebsocketCaryall(WebsocketCase):
 
     def test_no_cursor_when_no_callback_for_lifecycle_event(self):
         with patch.object(Websocket, '_Websocket__event_callbacks', defaultdict(set)):
-            with patch('odoo.addons.bus.websocket.acquire_cursor') as mock:
+            with patch('weth.addons.bus.websocket.acquire_cursor') as mock:
                 self.websocket_connect()
                 self.assertFalse(mock.called)
 
     def test_trigger_on_websocket_closed(self):
-        with patch('odoo.addons.bus.models.ir_websocket.IrWebsocket._on_websocket_closed') as mock:
+        with patch('weth.addons.bus.models.ir_websocket.IrWebsocket._on_websocket_closed') as mock:
             ws = self.websocket_connect()
             ws.close(CloseCode.CLEAN)
             self.wait_remaining_websocket_connections()
@@ -236,7 +236,7 @@ class TestWebsocketCaryall(WebsocketCase):
             with (
                 patch.object(PollablePriorityQueue, "put_nowait", side_effect=Full),
                 patch(
-                    "odoo.addons.bus.models.ir_websocket.IrWebsocket._on_websocket_closed",
+                    "weth.addons.bus.models.ir_websocket.IrWebsocket._on_websocket_closed",
                 ) as mock,
             ):
                 channel._bus_send("notif_type", "message")
@@ -261,9 +261,9 @@ class TestWebsocketCaryall(WebsocketCase):
         new_env_mock = MagicMock()
         new_env_mock.return_value.__getitem__.return_value._on_websocket_closed = slow_on_closed
         with (
-            patch('odoo.addons.bus.websocket._close_semaphore', BoundedSemaphore(2)),
-            patch('odoo.addons.bus.websocket.acquire_cursor', MagicMock()),
-            patch('odoo.addons.bus.websocket.new_env', new_env_mock),
+            patch('weth.addons.bus.websocket._close_semaphore', BoundedSemaphore(2)),
+            patch('weth.addons.bus.websocket.acquire_cursor', MagicMock()),
+            patch('weth.addons.bus.websocket.new_env', new_env_mock),
         ):
             websockets = [self.websocket_connect() for _ in range(6)]
             for ws in websockets:
@@ -334,7 +334,7 @@ class TestWebsocketCaryall(WebsocketCase):
         with self.assertRaises(ws._exceptions.WebSocketTimeoutException):
             websocket.recv()
 
-    @patch('odoo.addons.bus.tools.misc.db_connect')
+    @patch('weth.addons.bus.tools.misc.db_connect')
     def test_propagates_caller_pool_error(self, mock_db_connect):
         fake_cursor = MagicMock()
         cr_ctx_manager = mock_db_connect.return_value.cursor.return_value

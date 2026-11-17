@@ -10,11 +10,11 @@ from zoneinfo import ZoneInfo
 from dateutil.relativedelta import relativedelta
 from dateutil.rrule import DAILY, rrule
 
-from odoo import api, fields, models
-from odoo.exceptions import ValidationError
-from odoo.tools.date_utils import float_to_time, sum_intervals
-from odoo.tools.float_utils import float_compare
-from odoo.tools.intervals import Intervals, invert_intervals
+from weth import api, fields, models
+from weth.exceptions import ValidationError
+from weth.tools.date_utils import float_to_time, sum_intervals
+from weth.tools.float_utils import float_compare
+from weth.tools.intervals import Intervals, invert_intervals
 
 
 # single interval shape used throughout the pipeline, excess, and output stages.

@@ -3,15 +3,15 @@
 
 from datetime import datetime, timedelta, time
 
-from odoo import Command
-from odoo.addons.base.tests.common import HttpCaseWithUserDemo, HttpCaseWithUserPortal
-from odoo.addons.base.tests.test_ir_cron import CronMixinCase
-from odoo.addons.event.tests.common import EventCase
-from odoo.addons.event_crm.tests.common import EventCrmCase
-from odoo.addons.mail.tests.common import mail_new_test_user, MailCase
-from odoo.addons.sales_team.tests.common import TestSalesCommon
-from odoo.addons.sms.tests.common import SMSCase
-from odoo.addons.website.tests.test_website_visitor import MockVisitor
+from weth import Command
+from weth.addons.base.tests.common import HttpCaseWithUserDemo, HttpCaseWithUserPortal
+from weth.addons.base.tests.test_ir_cron import CronMixinCase
+from weth.addons.event.tests.common import EventCase
+from weth.addons.event_crm.tests.common import EventCrmCase
+from weth.addons.mail.tests.common import mail_new_test_user, MailCase
+from weth.addons.sales_team.tests.common import TestSalesCommon
+from weth.addons.sms.tests.common import SMSCase
+from weth.addons.website.tests.test_website_visitor import MockVisitor
 
 
 class TestEventFullCommon(EventCrmCase, TestSalesCommon, MockVisitor, HttpCaseWithUserPortal):

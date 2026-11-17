@@ -2,11 +2,11 @@
 
 from freezegun import freeze_time
 
-from odoo.fields import Command
-from odoo.tests import Form, tagged
-from odoo.tools import float_compare
+from weth.fields import Command
+from weth.tests import Form, tagged
+from weth.tools import float_compare
 
-from odoo.addons.delivery.tests.common import DeliveryCommon
+from weth.addons.delivery.tests.common import DeliveryCommon
 
 
 @tagged("post_install", "-at_install")

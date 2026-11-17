@@ -3,9 +3,9 @@
 
 from datetime import datetime, timedelta
 
-from odoo import fields, tools
-from odoo.addons.crm.tests.common import TestCrmCommon
-from odoo.addons.event.tests.common import EventCase
+from weth import fields, tools
+from weth.addons.crm.tests.common import TestCrmCommon
+from weth.addons.event.tests.common import EventCase
 
 
 class EventCrmCase(TestCrmCommon, EventCase):

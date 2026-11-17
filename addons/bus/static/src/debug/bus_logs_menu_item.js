@@ -1,4 +1,4 @@
-import { Component, signal, usePlugin } from "@odoo/owl";
+import { Component, signal, usePlugin } from "@weth/owl";
 
 import { ConfirmationDialog } from "@web/core/confirmation_dialog/confirmation_dialog";
 import { DropdownItem } from "@web/core/dropdown/dropdown_item";
@@ -32,7 +32,7 @@ export class BusLogsMenuItem extends Component {
             ),
             title: _t("You're about to download the bus logs"),
             confirm: () => this.bus.downloadLogs(),
-            cancel() {},
+            cancel() { },
             confirmLabel: _t("Download"),
         });
     }

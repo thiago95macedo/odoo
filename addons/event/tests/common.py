@@ -1,6 +1,6 @@
-from odoo import Command, fields
-from odoo.addons.mail.tests.common import mail_new_test_user
-from odoo.tests import common
+from weth import Command, fields
+from weth.addons.mail.tests.common import mail_new_test_user
+from weth.tests import common
 
 
 class EventCase(common.TransactionCase):

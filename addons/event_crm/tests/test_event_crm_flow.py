@@ -3,10 +3,10 @@
 
 from unittest.mock import patch
 
-from odoo.addons.base.tests.test_ir_cron import CronMixinCase
-from odoo.addons.event_crm.tests.common import TestEventCrmCommon
-from odoo.tests import tagged
-from odoo.tests.common import users
+from weth.addons.base.tests.test_ir_cron import CronMixinCase
+from weth.addons.event_crm.tests.common import TestEventCrmCommon
+from weth.tests import tagged
+from weth.tests.common import users
 
 
 @tagged('event_crm')
@@ -32,7 +32,7 @@ class TestEventCrmFlow(TestEventCrmCommon, CronMixinCase):
         self.assertEqual(self.event_customer.phone, '0485112233')
 
     @users('user_eventmanager')
-    @patch('odoo.addons.event_crm.models.event_lead_request.EventLeadRequest._REGISTRATIONS_BATCH_SIZE', 4)
+    @patch('weth.addons.event_crm.models.event_lead_request.EventLeadRequest._REGISTRATIONS_BATCH_SIZE', 4)
     def test_action_generate_leads(self):
         """ Test that the action to manually generate leads on an event works in batch as expected. """
         LeadRequestSudo = self.env['event.lead.request'].sudo()

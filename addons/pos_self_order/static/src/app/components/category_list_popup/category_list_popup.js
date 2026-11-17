@@ -1,4 +1,4 @@
-import { Component, useProps, signal, t, useListener } from "@odoo/owl";
+import { Component, useProps, signal, t, useListener } from "@weth/owl";
 import { useScrollShadow } from "../../utils/scroll_shadow_hook";
 
 export class CategoryListPopup extends Component {

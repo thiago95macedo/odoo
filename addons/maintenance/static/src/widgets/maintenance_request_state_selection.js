@@ -1,4 +1,4 @@
-import { useProps, t } from "@odoo/owl";
+import { useProps, t } from "@weth/owl";
 import { registry } from "@web/core/registry";
 import { useService } from "@web/core/utils/hooks";
 import { standardFieldProps } from "@web/views/fields/standard_field_props";

@@ -10,7 +10,7 @@ import {
     status,
     t,
     useListener,
-} from "@odoo/owl";
+} from "@weth/owl";
 import { isBrowserFirefox } from "@web/core/browser/feature_detection";
 import { getActiveHotkey } from "@web/core/hotkeys/hotkey_utils";
 import { _t } from "@web/core/l10n/translation";
@@ -32,7 +32,7 @@ import {
 } from "@website/components/dialog/dark_palette_utils";
 import { onceAllImagesLoaded } from "@website/utils/images";
 
-const NO_OP = () => {};
+const NO_OP = () => { };
 
 function isMobileView() {
     return uiUtils.getSize() < SIZES.MD;
@@ -440,7 +440,7 @@ class AddPageTemplates extends Component {
         // website id having been forced.
         await this.env.getCssLinkEls();
         if (status(this) === "destroyed") {
-            return new Promise(() => {});
+            return new Promise(() => { });
         }
 
         if (this.pages) {
@@ -562,7 +562,7 @@ export class AddPageDialog extends Component {
             add_menu: addMenu || "",
 
             website_id: this.props.websiteId,
-            csrf_token: odoo.csrf_token,
+            csrf_token: weth.csrf_token,
             page_title: pageTitle,
         });
         if (data.view_id) {

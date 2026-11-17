@@ -13,9 +13,9 @@ import {
     triggerHotkey,
 } from "@mail/../tests/mail_test_helpers";
 import { htmlInsertText } from "@mail/../tests/mail_test_helpers_html";
-import { beforeEach, expect, describe, test } from "@odoo/hoot";
-import { animationFrame } from "@odoo/hoot-mock";
-import { onWillUpdateProps } from "@odoo/owl";
+import { beforeEach, expect, describe, test } from "@weth/hoot";
+import { animationFrame } from "@weth/hoot-mock";
+import { onWillUpdateProps } from "@weth/owl";
 import {
     Command,
     getService,
@@ -28,7 +28,7 @@ import {
 import { Composer, MENTION_AMOUNT_WARNING } from "@mail/core/common/composer";
 import { DiscussAvatar } from "@mail/core/common/discuss_avatar";
 import { NavigableList } from "@mail/core/common/navigable_list";
-import { press } from "@odoo/hoot-dom";
+import { press } from "@weth/hoot-dom";
 import { rpc } from "@web/core/network/rpc";
 import { range } from "@web/core/utils/numbers";
 

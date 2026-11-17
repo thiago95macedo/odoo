@@ -1,6 +1,6 @@
-from odoo.addons.account.tests.common import AccountTestInvoicingCommon
-from odoo.tests import Form, tagged
-from odoo.fields import Command
+from weth.addons.account.tests.common import AccountTestInvoicingCommon
+from weth.tests import Form, tagged
+from weth.fields import Command
 
 @tagged('post_install', '-at_install')
 class TestAccountMoveDuplicate(AccountTestInvoicingCommon):

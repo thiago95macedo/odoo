@@ -1,7 +1,7 @@
 import { Plugin } from "@html_editor/plugin";
 import { registry } from "@web/core/registry";
 import { DataAttributeAction } from "@html_builder/core/core_builder_action_plugin";
-import { effect } from "@odoo/owl";
+import { effect } from "@weth/owl";
 
 class DataAttributeChangeAction extends DataAttributeAction {
     static id = "dataAttributeChangeAction";

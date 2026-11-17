@@ -1,9 +1,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.tests import tagged
-from odoo.tools import mute_logger
+from weth.tests import tagged
+from weth.tools import mute_logger
 
-from odoo.addons.delivery.tests.cash_on_delivery_common import CashOnDeliveryCommon
+from weth.addons.delivery.tests.cash_on_delivery_common import CashOnDeliveryCommon
 
 
 @tagged("post_install", "-at_install")
@@ -14,7 +14,7 @@ class TestCODPaymentTransaction(CashOnDeliveryCommon):
         self._disable_post_process_patcher()
         order = self.sale_order
         self._create_cod_transaction()
-        with mute_logger("odoo.addons.sale.models.payment_transaction"):
+        with mute_logger("weth.addons.sale.models.payment_transaction"):
             self._run_post_processing()
 
         self.assertEqual(order.state, "sale")
@@ -24,7 +24,7 @@ class TestCODPaymentTransaction(CashOnDeliveryCommon):
         self._disable_post_process_patcher()
         order = self.sale_order
         tx = self._create_cod_transaction()
-        with mute_logger("odoo.addons.sale.models.payment_transaction"):
+        with mute_logger("weth.addons.sale.models.payment_transaction"):
             self._run_post_processing()
 
         self.assertEqual(tx.state, "pending")

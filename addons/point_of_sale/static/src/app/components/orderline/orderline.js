@@ -1,4 +1,4 @@
-import { Component, useProps, signal, t } from "@odoo/owl";
+import { Component, useProps, signal, t } from "@weth/owl";
 import { useTimedPress } from "@point_of_sale/app/utils/use_timed_press";
 import { formatCurrency } from "@web/core/currency";
 import { BadgeTag } from "@web/core/tags_list/badge_tag";
@@ -13,8 +13,8 @@ export class Orderline extends Component {
         showTaxGroupLabels: t.boolean().optional(false),
         showTaxGroup: t.boolean().optional(false),
         mode: t.string().optional("display"), // display, split
-        onClick: t.function().optional(() => () => {}),
-        onLongPress: t.function().optional(() => () => {}),
+        onClick: t.function().optional(() => () => { }),
+        onLongPress: t.function().optional(() => () => { }),
         toRefund: t.number().optional(),
     });
 
@@ -94,9 +94,8 @@ export class Orderline extends Component {
             line.price_type !== "original" &&
             !line.combo_parent_id &&
             !line.isServiceFeeLine();
-        const priceUnit = `${line.currencyDisplayPriceUnit} / ${
-            line.product_id?.uom_id?.name || ""
-        }`;
+        const priceUnit = `${line.currencyDisplayPriceUnit} / ${line.product_id?.uom_id?.name || ""
+            }`;
         return {
             name: line.orderDisplayProductName.name,
             attributeString:

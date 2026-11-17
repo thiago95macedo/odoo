@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 import functools
 
-from odoo import _
-from odoo.exceptions import AccessError
-from odoo.http import Controller, route, request, Response
-from odoo.http.session import authenticate
+from weth import _
+from weth.exceptions import AccessError
+from weth.http import Controller, route, request, Response
+from weth.http.session import authenticate
 
 
 class ImportModule(Controller):

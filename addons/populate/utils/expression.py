@@ -4,9 +4,9 @@ from contextlib import contextmanager
 from itertools import chain
 from types import MappingProxyType
 
-from odoo.models import BaseModel
-from odoo.tools import BinaryBytes
-from odoo.tools.safe_eval import _BUILTINS as _SAFE_EVAL_BUILTINS
+from weth.models import BaseModel
+from weth.tools import BinaryBytes
+from weth.tools.safe_eval import _BUILTINS as _SAFE_EVAL_BUILTINS
 
 _ALLOWED_EVAL_ARG_TYPES = (
     type(None),

@@ -1,4 +1,4 @@
-import { Component } from "@odoo/owl";
+import { Component } from "@weth/owl";
 import { DropdownItem } from "@web/core/dropdown/dropdown_item";
 import { registry } from "@web/core/registry";
 import { user } from "@web/core/user";

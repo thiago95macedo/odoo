@@ -1,7 +1,7 @@
 import { _t } from "@web/core/l10n/translation";
 import { registry } from "@web/core/registry";
 import { renderToMarkup } from '@web/core/utils/render';
-import { markup } from "@odoo/owl";
+import { markup } from "@weth/owl";
 
 const greenBullet = markup`<span class="o_status d-inline-block o_status_green"></span>`;
 const orangeBullet = markup`<span class="o_status d-inline-block text-warning"></span>`;
@@ -12,7 +12,7 @@ const exampleData = {
     applyExamplesText: _t("Use This For My Project"),
     allowedGroupBys: ['stage_id'],
     foldField: "fold",
-    examples:[{
+    examples: [{
         name: _t('Software Development'),
         columns: [_t('Backlog'), _t('Specifications'), _t('Development'), _t('Tests')],
         foldedColumns: [_t('Delivered')],

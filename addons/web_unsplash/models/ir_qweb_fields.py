@@ -1,6 +1,6 @@
 from werkzeug import urls
 
-from odoo import models, api
+from weth import models, api
 
 
 class IrQwebFieldImage(models.AbstractModel):

@@ -1,4 +1,4 @@
-import * as spreadsheet from "@odoo/o-spreadsheet";
+import * as spreadsheet from "@weth/o-spreadsheet";
 
 import { GlobalFiltersUIPlugin } from "./plugins/global_filters_ui_plugin";
 import { GlobalFiltersCorePlugin } from "./plugins/global_filters_core_plugin";

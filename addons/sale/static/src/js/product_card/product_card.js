@@ -1,4 +1,4 @@
-import { Component, t, useProps } from '@odoo/owl';
+import { Component, t, useProps } from '@weth/owl';
 import { BadgeExtraPrice } from '../badge_extra_price/badge_extra_price';
 import { ProductProduct } from '../models/product_product';
 

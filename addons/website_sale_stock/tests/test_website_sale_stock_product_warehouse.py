@@ -1,12 +1,12 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import Command
-from odoo.tests import HttpCase, tagged
+from weth import Command
+from weth.tests import HttpCase, tagged
 
-from odoo.addons.product.tests.test_product_attribute_value_config import (
+from weth.addons.product.tests.test_product_attribute_value_config import (
     TestProductAttributeValueCommon,
 )
-from odoo.addons.website_sale_stock.tests.common import WebsiteSaleStockCommon
+from weth.addons.website_sale_stock.tests.common import WebsiteSaleStockCommon
 
 
 @tagged("post_install", "-at_install")

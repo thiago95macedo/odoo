@@ -5,7 +5,7 @@ import { HeaderTemplateChoice } from "./header_template_option";
 import { HeaderTopOptions } from "./header_top_options";
 import { WebsiteConfigAction } from "../../customize_website_plugin";
 
-/** @typedef {import("@odoo/owl").Component} Component */
+/** @typedef {import("@weth/owl").Component} Component */
 
 /**
  * @typedef { Object } HeaderOptionShared

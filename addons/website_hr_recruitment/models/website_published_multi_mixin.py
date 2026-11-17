@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.exceptions import UserError
+from weth.exceptions import UserError
 
-from odoo.addons.website.models.mixins import WebsitePublishedMixin
+from weth.addons.website.models.mixins import WebsitePublishedMixin
 
 
 class WebsitePublishedMultiMixin(WebsitePublishedMixin):

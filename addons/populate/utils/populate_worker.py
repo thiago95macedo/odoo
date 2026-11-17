@@ -2,7 +2,7 @@
 
 This module is intentionally imported as top-level ``populate_worker`` by the
 parent process. Spawned workers must import their initializer before it runs, so
-the initializer cannot live behind ``odoo.addons.populate``: that namespace may
+the initializer cannot live behind ``weth.addons.populate``: that namespace may
 only be available after Odoo's addons' path is initialized.
 """
 
@@ -13,7 +13,7 @@ import multiprocessing as mp
 import os
 import signal
 
-_worker_logger = logging.getLogger('odoo.addons.populate.worker')
+_worker_logger = logging.getLogger('weth.addons.populate.worker')
 
 
 def initialize(dbname: str, options: dict):
@@ -21,12 +21,12 @@ def initialize(dbname: str, options: dict):
 
     The parent passes this function directly to ``ProcessPoolExecutor``. It must
     therefore be importable in a fresh Python process without relying on
-    ``odoo.addons.populate``. Once imported, it restores the parent Odoo config,
+    ``weth.addons.populate``. Once imported, it restores the parent Odoo config,
     initializes the addons' path, and loads the registry so regular populate job
     execution can safely import and use addon code.
     """
-    from odoo.modules.registry import Registry  # noqa: PLC0415
-    from odoo.tools import config, mute_logger  # noqa: PLC0415
+    from weth.modules.registry import Registry  # noqa: PLC0415
+    from weth.tools import config, mute_logger  # noqa: PLC0415
 
     # Only 'spawn' is supported. With 'fork', the child inherits the
     # parent's PostgreSQL connection pools (shared socket fds), and
@@ -46,7 +46,7 @@ def initialize(dbname: str, options: dict):
     config.options = config.options.new_child(options)
     config.parse_config(setup_logging=True)
 
-    with mute_logger('odoo.registry', 'odoo.modules.loading'):
+    with mute_logger('weth.registry', 'weth.modules.loading'):
         Registry(dbname)
 
     _worker_logger.info("Worker (%s) alive", os.getpid())

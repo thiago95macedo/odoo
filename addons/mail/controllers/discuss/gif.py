@@ -6,7 +6,7 @@ import urllib3
 import werkzeug.urls
 from werkzeug.exceptions import BadRequest
 
-from odoo.http import request, route, Controller
+from weth.http import request, route, Controller
 
 TENOR_CONTENT_FILTER = "medium"
 TENOR_GIF_LIMIT = 8

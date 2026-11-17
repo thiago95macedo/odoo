@@ -1,8 +1,8 @@
 import { setupEditor } from "@html_editor/../tests/_helpers/editor";
 import { insertText } from "@html_editor/../tests/_helpers/user_actions";
 import { expectElementCount } from "@html_editor/../tests/_helpers/ui_expectations";
-import { expect, test } from "@odoo/hoot";
-import { animationFrame, click, press, waitFor } from "@odoo/hoot-dom";
+import { expect, test } from "@weth/hoot";
+import { animationFrame, click, press, waitFor } from "@weth/hoot-dom";
 import { contains, onRpc, makeTestApp, getMockEnv, mountWithCleanup, defineModels, models } from "@web/../tests/web_test_helpers";
 import { CustomMediaDialog } from "@html_editor/fields/x2many_field/custom_media_dialog";
 
@@ -97,18 +97,18 @@ test("Unsplash images are processed correctly in CustomMediaDialog", async () =>
     let savePayload;
     await makeTestApp();
     const env = getMockEnv();
-    env.dialogData = { close: () => {}, isActive: true, scrollToOrigin: () => {} },
-    await mountWithCleanup(CustomMediaDialog, {
-        env,
-        props: {
-            resModel: "product.product",
-            resId: 1,
-            close: () => {},
-            save: () => {},
-            imageSave: (attachments) => { savePayload = attachments; },
-            document: document,
-        },
-    });
+    env.dialogData = { close: () => { }, isActive: true, scrollToOrigin: () => { } },
+        await mountWithCleanup(CustomMediaDialog, {
+            env,
+            props: {
+                resModel: "product.product",
+                resId: 1,
+                close: () => { },
+                save: () => { },
+                imageSave: (attachments) => { savePayload = attachments; },
+                document: document,
+            },
+        });
     contains("input.o_we_search").edit("Logo");
     await fetchDef.promise;
     await waitFor("img[title='Logo']");

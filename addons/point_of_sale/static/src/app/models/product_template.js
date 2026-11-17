@@ -1,5 +1,5 @@
 import { registry } from "@web/core/registry";
-import { markup } from "@odoo/owl";
+import { markup } from "@weth/owl";
 import { ProductTemplateAccounting } from "./accounting/product_template_accounting";
 import { normalize } from "@web/core/l10n/utils";
 
@@ -21,7 +21,7 @@ export class ProductTemplate extends ProductTemplateAccounting {
         this.onUpdate();
     }
 
-    async _onScaleNotAvailable() {}
+    async _onScaleNotAvailable() { }
 
     isConfigurable() {
         return (

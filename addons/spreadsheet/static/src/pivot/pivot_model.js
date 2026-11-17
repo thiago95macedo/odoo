@@ -4,7 +4,7 @@ import { _t } from "@web/core/l10n/translation";
 import { Domain } from "@web/core/domain";
 import { PivotModel } from "@web/views/pivot/pivot_model";
 
-import { helpers, constants, EvaluationError, SpreadsheetPivotTable } from "@odoo/o-spreadsheet";
+import { helpers, constants, EvaluationError, SpreadsheetPivotTable } from "@weth/o-spreadsheet";
 import { parseGroupField } from "./pivot_helpers";
 import { localeCompare } from "@web/core/l10n/utils";
 
@@ -13,10 +13,10 @@ const { toNormalizedPivotValue, toNumber, isDateOrDatetimeField, pivotTimeAdapte
 const { DEFAULT_LOCALE } = constants;
 
 /**
- * @typedef {import("@odoo/o-spreadsheet").PivotTableColumn} PivotTableColumn
- * @typedef {import("@odoo/o-spreadsheet").PivotTableRow} PivotTableRow
- * @typedef {import("@odoo/o-spreadsheet").PivotDomain} PivotDomain
- * @typedef {import("@odoo/o-spreadsheet").PivotMeasure} PivotMeasure
+ * @typedef {import("@weth/o-spreadsheet").PivotTableColumn} PivotTableColumn
+ * @typedef {import("@weth/o-spreadsheet").PivotTableRow} PivotTableRow
+ * @typedef {import("@weth/o-spreadsheet").PivotDomain} PivotDomain
+ * @typedef {import("@weth/o-spreadsheet").PivotMeasure} PivotMeasure
  */
 
 export const NO_RECORD_AT_THIS_POSITION = "__NO_RECORD_AT_THIS_POSITION__";
@@ -360,7 +360,7 @@ export class OdooPivotModel extends PivotModel {
     }
 
     /**
-     * @param {import("@odoo/o-spreadsheet").PivotDimension} dimension
+     * @param {import("@weth/o-spreadsheet").PivotDimension} dimension
      * @returns {{ value: string | number | boolean, label: string }[]}
      */
     getPossibleFieldValues(dimension) {

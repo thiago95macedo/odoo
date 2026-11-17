@@ -6,7 +6,7 @@ import {
     signal,
     useListener,
     usePlugin,
-} from "@odoo/owl";
+} from "@weth/owl";
 import { browser } from "@web/core/browser/browser";
 import { Crypto, CRYPTO_ALGO } from "@web/core/crypto";
 import { DebugModePlugin } from "@web/core/debug_mode_plugin";
@@ -25,12 +25,12 @@ const IS_READY = Symbol("ready");
 
 class FakeIndexedDB {
     // used in non secure context to disable the offline features as data can't be encrypted
-    invalidate() {}
+    invalidate() { }
     read() {
         return Promise.resolve({});
     }
-    write() {}
-    delete() {}
+    write() { }
+    delete() { }
     getAllKeys() {
         return Promise.resolve([]);
     }
@@ -312,9 +312,9 @@ export class OfflinePlugin extends Plugin {
         const _searchFn = !normalizeSearch
             ? () => true
             : async (value) => {
-                  const decryptedValue = normalize(await this._crypto.decrypt(value));
-                  return decryptedValue.includes(normalizeSearch);
-              };
+                const decryptedValue = normalize(await this._crypto.decrypt(value));
+                return decryptedValue.includes(normalizeSearch);
+            };
         const tableName = OfflinePlugin.MANY2X_TABLE_PREFIX + resModel;
         const res = await this._idb.search(tableName, _searchFn);
         return this._decryptAndFormat(res);

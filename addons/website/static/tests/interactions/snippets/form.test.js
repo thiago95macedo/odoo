@@ -1,6 +1,6 @@
 import { setupInteractionWhiteList, startInteractions } from "@web/../tests/public/helpers";
 
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@weth/hoot";
 import {
     animationFrame,
     clear,
@@ -10,8 +10,8 @@ import {
     select,
     setInputFiles,
     edit,
-} from "@odoo/hoot-dom";
-import { advanceTime, mockDate, runAllTimers } from "@odoo/hoot-mock";
+} from "@weth/hoot-dom";
+import { advanceTime, mockDate, runAllTimers } from "@weth/hoot-mock";
 
 import { contains, onRpc } from "@web/../tests/web_test_helpers";
 
@@ -258,9 +258,8 @@ function createFileUploadForm(maxFiles = 1) {
                                         <div class="o_files_zone row gx-1"></div>
                                         <input type="file" class="form-control s_website_form_input"
                                             name="File Upload" required id="o3xe8o85w0ct"
-                                           ${
-                                               maxFiles > 1 ? "multiple" : ""
-                                           } data-max-files-number="${maxFiles}" data-max-file-size="64">
+                                           ${maxFiles > 1 ? "multiple" : ""
+        } data-max-files-number="${maxFiles}" data-max-file-size="64">
                                     </div>
                                 </div>
                             </div>

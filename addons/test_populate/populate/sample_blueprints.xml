@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
     <record id="sample_supplier_blueprint" model="populate.blueprint">
         <field name="name">Sample Supplier Data</field>
         <field name="definition_xml" type="xml">
@@ -299,4 +299,4 @@
             </create>
         </field>
     </record>
-</odoo>
+</weth>

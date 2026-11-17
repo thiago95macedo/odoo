@@ -1,10 +1,10 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 from datetime import datetime, timedelta
 
-from odoo import Command
-from odoo.addons.mrp.tests.common import TestMrpCommon
-from odoo.tests import Form
-from odoo.tests.common import TransactionCase, freeze_time
+from weth import Command
+from weth.addons.mrp.tests.common import TestMrpCommon
+from weth.tests import Form
+from weth.tests.common import TransactionCase, freeze_time
 
 
 class TestMrpProductionBackorder(TestMrpCommon):

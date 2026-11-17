@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, fields, models, _
-from odoo.tools import SQL
-from odoo.exceptions import UserError
+from weth import api, fields, models, _
+from weth.tools import SQL
+from weth.exceptions import UserError
 
 
 class AccountAnalyticDistributionModel(models.Model):

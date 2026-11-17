@@ -1,6 +1,6 @@
 import { addBuilderOption, setupHTMLBuilder } from "@html_builder/../tests/helpers";
 import { refreshSublevelLines } from "@html_builder/core/building_blocks/builder_row";
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@weth/hoot";
 import {
     advanceTime,
     animationFrame,
@@ -10,8 +10,8 @@ import {
     queryAllTexts,
     queryOne,
     waitFor,
-} from "@odoo/hoot-dom";
-import { xml } from "@odoo/owl";
+} from "@weth/hoot-dom";
+import { xml } from "@weth/owl";
 import { contains, defineStyle } from "@web/../tests/web_test_helpers";
 import { OPEN_DELAY } from "@web/core/tooltip/tooltip_service";
 
@@ -148,13 +148,11 @@ const collapseOptionTemplate = ({
     observeCollapseContent = false,
 } = {}) => xml`
         <BuilderRow label="'Test Collapse'" expand="${expand}" observeCollapseContent="${observeCollapseContent}">
-            <BuilderButton classAction="'a'" ${
-                dependency ? "id=\"'test_opt'\"" : ""
-            }>A</BuilderButton>
+            <BuilderButton classAction="'a'" ${dependency ? "id=\"'test_opt'\"" : ""
+    }>A</BuilderButton>
             <t t-set-slot="collapse">
-                <BuilderRow level="1" label="'B'" ${
-                    dependency ? "t-if=\"this.isActiveItem('test_opt')\"" : ""
-                }>
+                <BuilderRow level="1" label="'B'" ${dependency ? "t-if=\"this.isActiveItem('test_opt')\"" : ""
+    }>
                     <BuilderButton classAction="'b'">B</BuilderButton>
                 </BuilderRow>
             </t>

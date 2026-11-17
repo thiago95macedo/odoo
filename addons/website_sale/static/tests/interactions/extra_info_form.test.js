@@ -1,5 +1,5 @@
-import { describe, expect, test } from "@odoo/hoot";
-import { click } from "@odoo/hoot-dom";
+import { describe, expect, test } from "@weth/hoot";
+import { click } from "@weth/hoot-dom";
 import { onRpc } from "@web/../tests/web_test_helpers";
 import { setupInteractionWhiteList, startInteractions } from "@web/../tests/public/helpers";
 

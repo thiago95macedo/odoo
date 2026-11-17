@@ -1,4 +1,4 @@
-import { test, expect } from "@odoo/hoot";
+import { test, expect } from "@weth/hoot";
 import { mountWithCleanup, onRpc, patchWithCleanup } from "@web/../tests/web_test_helpers";
 import { setupPosEnv, getFilledOrder } from "@point_of_sale/../tests/unit/utils";
 import { definePosModels } from "@point_of_sale/../tests/unit/data/generate_model_definitions";
@@ -57,7 +57,7 @@ test("The payment screen opens for an order without lines", async () => {
     const store = await setupPosEnv();
     const order = store.addNewOrder({ table_id: store.models["restaurant.table"].get(2) });
     patchWithCleanup(store.deviceSync, {
-        readDataFromServer: async () => {},
+        readDataFromServer: async () => { },
     });
     const notifications = patchNotifications(store);
     const comp = await mountWithCleanup(PaymentScreen, { props: { orderUuid: order.uuid } });

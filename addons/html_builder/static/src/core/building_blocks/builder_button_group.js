@@ -1,4 +1,4 @@
-import { Component, signal, t, useProps } from "@odoo/owl";
+import { Component, signal, t, useProps } from "@weth/owl";
 import {
     basicContainerBuilderComponentProps,
     useVisibilityObserver,

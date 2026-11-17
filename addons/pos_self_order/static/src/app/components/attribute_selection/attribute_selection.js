@@ -1,4 +1,4 @@
-import { Component, proxy, useProps, t, signal } from "@odoo/owl";
+import { Component, proxy, useProps, t, signal } from "@weth/owl";
 import { useSelfOrder } from "@pos_self_order/app/services/self_order_service";
 import { AttributeSelectionHelper } from "./attribute_selection_helper";
 import { ProductTemplate } from "@point_of_sale/app/models/product_template";

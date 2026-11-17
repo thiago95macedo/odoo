@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, Command, fields, models, _
-from odoo.exceptions import ValidationError, UserError
-from odoo.tools import split_every
+from weth import api, Command, fields, models, _
+from weth.exceptions import ValidationError, UserError
+from weth.tools import split_every
 
 
 class StockWarehouse(models.Model):

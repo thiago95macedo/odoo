@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
 
     <template id="website_sale.wizard_checkout" name="Wizard Checkout">
         <t t-call="website.step_wizard" wizard_step="website._get_checkout_breadcrumb_steps(website_sale_order)"/>
@@ -581,4 +581,4 @@
         />
     </template>
 
-</odoo>
+</weth>

@@ -3,13 +3,13 @@ from unittest.mock import Mock, patch
 
 import ldap
 
-from odoo.exceptions import AccessDenied
-from odoo.http import request_var
-from odoo.http.requestlib import HTTPRequest, Request
-from odoo.http.session import Session, get_default_session
-from odoo.tests import Form, tagged, users
+from weth.exceptions import AccessDenied
+from weth.http import request_var
+from weth.http.requestlib import HTTPRequest, Request
+from weth.http.session import Session, get_default_session
+from weth.tests import Form, tagged, users
 
-from odoo.addons.base.tests.common import HttpCaseWithUserDemo
+from weth.addons.base.tests.common import HttpCaseWithUserDemo
 
 
 @tagged("-at_install", "post_install")
@@ -164,7 +164,7 @@ class TestAuthLDAP(HttpCaseWithUserDemo):
         with Form(self.env["change.password.own"]) as form:
             form.new_password = "bar"
             form.confirm_password = "bar"
-        with self.assertLogs("odoo.addons.base.models.res_users") as log_catcher:
+        with self.assertLogs("weth.addons.base.models.res_users") as log_catcher:
             form.record.change_password()
 
         self.assertIn("LDAP password change for 'demo'", log_catcher.output[0])
@@ -254,7 +254,7 @@ class TestAuthLDAP(HttpCaseWithUserDemo):
                 with form.user_ids.edit(index) as form_line:
                     self.assertEqual(form_line.user_login, user.login)
                     form_line.new_passwd = new_password
-        with self.assertLogs("odoo.addons.base.models.res_users") as log_catcher:
+        with self.assertLogs("weth.addons.base.models.res_users") as log_catcher:
             form.record.change_password_button()
 
         self.assertIn("LDAP password change for 'demo'", log_catcher.output[0])

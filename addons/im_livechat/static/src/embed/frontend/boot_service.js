@@ -1,7 +1,7 @@
 import { makeRoot, makeShadow } from "@im_livechat/embed/common/boot_helpers";
 import { canLoadLivechat } from "@im_livechat/embed/common/misc";
 import { LivechatRoot } from "@im_livechat/embed/frontend/livechat_root";
-import { onWillDestroy, useApp } from "@odoo/owl";
+import { onWillDestroy, useApp } from "@weth/owl";
 import { registry } from "@web/core/registry";
 
 export const livechatBootService = {

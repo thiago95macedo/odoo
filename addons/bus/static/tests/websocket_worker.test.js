@@ -1,6 +1,6 @@
 import { getWebSocketWorker } from "@bus/../tests/mock_websocket";
-import { advanceTime, describe, expect, test } from "@odoo/hoot";
-import { runAllTimers } from "@odoo/hoot-dom";
+import { advanceTime, describe, expect, test } from "@weth/hoot";
+import { runAllTimers } from "@weth/hoot-dom";
 import { makeMockServer, MockServer, patchWithCleanup } from "@web/../tests/web_test_helpers";
 
 import { WEBSOCKET_CLOSE_CODES, WebsocketWorker } from "@bus/workers/websocket_worker";

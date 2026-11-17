@@ -1,4 +1,4 @@
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@weth/hoot";
 import { WebSerialDevice } from "../src/web_serial_device";
 import { FakeSerialPort } from "./fake_serial_port";
 

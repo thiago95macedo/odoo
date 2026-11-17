@@ -1,7 +1,7 @@
-import { expect, test } from "@odoo/hoot";
-import { click } from "@odoo/hoot-dom";
-import { animationFrame } from "@odoo/hoot-mock";
-import { Component, proxy, xml } from "@odoo/owl";
+import { expect, test } from "@weth/hoot";
+import { click } from "@weth/hoot-dom";
+import { animationFrame } from "@weth/hoot-mock";
+import { Component, proxy, xml } from "@weth/owl";
 import { mountWithCleanup } from "@web/../tests/web_test_helpers";
 import { TagsList } from "@web/core/tags_list/tags_list";
 

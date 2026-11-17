@@ -12,7 +12,7 @@ import {
     signal,
     t,
     usePlugin,
-} from "@odoo/owl";
+} from "@weth/owl";
 import { _t } from "@web/core/l10n/translation";
 import { user } from "@web/core/user";
 import { HtmlViewer } from "@html_editor/components/html_viewer/html_viewer";

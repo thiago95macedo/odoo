@@ -1,4 +1,4 @@
-import { beforeEach, describe, expect, test, waitUntil } from "@odoo/hoot";
+import { beforeEach, describe, expect, test, waitUntil } from "@weth/hoot";
 import { patchWithCleanup } from "@web/../tests/web_test_helpers";
 import { GloryService } from "@pos_glory_cash/glory_service";
 import { SocketIoService } from "@pos_glory_cash/utils/socket_io";
@@ -63,7 +63,7 @@ beforeEach(() => {
 
 describe("on connecting", () => {
     test("checks credentials", async () => {
-        const gloryService = new GloryService(() => {});
+        const gloryService = new GloryService(() => { });
         gloryService.connect("mockIp");
 
         expect(sentMessages).toHaveLength(1);
@@ -71,7 +71,7 @@ describe("on connecting", () => {
     });
 
     test("retrieves device settings", async () => {
-        const gloryService = new GloryService(() => {});
+        const gloryService = new GloryService(() => { });
         gloryService.socketIo._respondToMessageWith("check credential", ["credential ok"]);
         gloryService.socketIo._respondToMessageWith("getFunctionSetting", [
             "sendFunctionSetting",
@@ -86,7 +86,7 @@ describe("on connecting", () => {
     });
 
     test("sets date and time", async () => {
-        const gloryService = new GloryService(() => {});
+        const gloryService = new GloryService(() => { });
         gloryService.socketIo._respondToMessageWith("check credential", ["credential ok"]);
         gloryService.socketIo._respondToMessageWith("getFunctionSetting", [
             "sendFunctionSetting",
@@ -100,7 +100,7 @@ describe("on connecting", () => {
     });
 
     test("retrieves device status", async () => {
-        const gloryService = new GloryService(() => {});
+        const gloryService = new GloryService(() => { });
         gloryService.socketIo._respondToMessageWith("check credential", ["credential ok"]);
         gloryService.socketIo._respondToMessageWith("getFunctionSetting", [
             "sendFunctionSetting",
@@ -123,7 +123,7 @@ describe("on connecting", () => {
     });
 
     test("retrieves initial inventory", async () => {
-        const gloryService = new GloryService(() => {});
+        const gloryService = new GloryService(() => { });
         gloryService.socketIo._respondToMessageWith("check credential", ["credential ok"]);
         gloryService.socketIo._respondToMessageWith("getFunctionSetting", [
             "sendFunctionSetting",

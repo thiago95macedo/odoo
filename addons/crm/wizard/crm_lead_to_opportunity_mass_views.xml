@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<odoo>
+<weth>
     <record id="view_crm_lead2opportunity_partner_mass" model="ir.ui.view">
         <field name="name">crm.lead2opportunity.partner.mass.form</field>
         <field name="model">crm.lead2opportunity.partner.mass</field>
@@ -67,4 +67,4 @@
         <field name="target">new</field>
         <field name="context">{'dialog_size' : 'large'}</field>
     </record>
-</odoo>
+</weth>

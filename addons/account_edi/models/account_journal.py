@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, models, fields, _
-from odoo.exceptions import UserError
+from weth import api, models, fields, _
+from weth.exceptions import UserError
 
 from collections import defaultdict
 

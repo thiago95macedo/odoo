@@ -1,10 +1,10 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.exceptions import AccessError, MissingError, ValidationError
-from odoo.http import request, route
+from weth.exceptions import AccessError, MissingError, ValidationError
+from weth.http import request, route
 
-from odoo.addons.sale.controllers import portal as sale_portal
-from odoo.addons.website_sale.controllers.cart import Cart
+from weth.addons.sale.controllers import portal as sale_portal
+from weth.addons.website_sale.controllers.cart import Cart
 
 
 class CustomerPortal(sale_portal.CustomerPortal):

@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, models
-from odoo.http import request
+from weth import api, models
+from weth.http import request
 
 
 class IrUiMenu(models.Model):

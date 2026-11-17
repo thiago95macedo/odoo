@@ -1,10 +1,10 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import fields
-from odoo.addons.im_livechat.tests import chatbot_common
-from odoo.exceptions import ValidationError
-from odoo.tests.common import new_test_user
-from odoo.addons.im_livechat.tests.common import TestGetOperatorCommon
+from weth import fields
+from weth.addons.im_livechat.tests import chatbot_common
+from weth.exceptions import ValidationError
+from weth.tests.common import new_test_user
+from weth.addons.im_livechat.tests.common import TestGetOperatorCommon
 
 
 class TestLivechatMemberHistory(TestGetOperatorCommon, chatbot_common.ChatbotCase):

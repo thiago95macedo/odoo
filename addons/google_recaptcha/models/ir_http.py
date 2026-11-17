@@ -3,9 +3,9 @@
 import logging
 import requests
 
-from odoo import api, models, _
-from odoo.http import request
-from odoo.exceptions import UserError, ValidationError
+from weth import api, models, _
+from weth.http import request
+from weth.exceptions import UserError, ValidationError
 
 logger = logging.getLogger(__name__)
 

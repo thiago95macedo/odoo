@@ -1,9 +1,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.exceptions import AccessError, MissingError
-from odoo.http import request, route
+from weth.exceptions import AccessError, MissingError
+from weth.http import request, route
 
-from odoo.addons.sale.controllers import portal as sale_portal
+from weth.addons.sale.controllers import portal as sale_portal
 
 
 class CustomerPortal(sale_portal.CustomerPortal):

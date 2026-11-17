@@ -1,9 +1,9 @@
 from datetime import timedelta
 
-from odoo import api, fields, models, _
-from odoo.exceptions import UserError
-from odoo.fields import Command, Domain
-from odoo.tools import SQL
+from weth import api, fields, models, _
+from weth.exceptions import UserError
+from weth.fields import Command, Domain
+from weth.tools import SQL
 
 
 class AccountSecureEntriesWizard(models.TransientModel):

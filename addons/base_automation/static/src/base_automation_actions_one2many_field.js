@@ -1,5 +1,5 @@
 import { render, useLayoutEffect } from "@web/owl2/utils";
-import { Component, signal, useListener, useProps } from "@odoo/owl";
+import { Component, signal, useListener, useProps } from "@weth/owl";
 import { _t } from "@web/core/l10n/translation";
 import { registry } from "@web/core/registry";
 import { useThrottleForAnimation } from "@web/core/utils/timing";
@@ -68,7 +68,7 @@ class ActionsOne2ManyField extends Component {
         const initialHiddenActionsCount = this.hiddenActionsCount;
         this.hiddenActionsCount = overflowingActionId
             ? this.currentActions.length -
-              this.currentActions.findIndex((action) => action.id === overflowingActionId)
+            this.currentActions.findIndex((action) => action.id === overflowingActionId)
             : 0;
         if (initialHiddenActionsCount !== this.hiddenActionsCount) {
             // Render only if hidden actions count has changed.

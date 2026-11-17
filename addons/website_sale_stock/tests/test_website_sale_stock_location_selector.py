@@ -2,13 +2,13 @@
 
 from unittest.mock import patch
 
-from odoo.exceptions import AccessError
-from odoo.fields import Command
-from odoo.tests import tagged
+from weth.exceptions import AccessError
+from weth.fields import Command
+from weth.tests import tagged
 
-from odoo.addons.website_sale.tests.common import WebsiteSaleCommon
-from odoo.addons.website_sale_stock.controllers.location_selector import LocationSelector
-from odoo.addons.website_sale_stock.models.delivery_carrier import DeliveryCarrier
+from weth.addons.website_sale.tests.common import WebsiteSaleCommon
+from weth.addons.website_sale_stock.controllers.location_selector import LocationSelector
+from weth.addons.website_sale_stock.models.delivery_carrier import DeliveryCarrier
 
 
 @tagged("post_install", "-at_install")

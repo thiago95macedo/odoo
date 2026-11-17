@@ -1,5 +1,5 @@
-from odoo import models
-from odoo.tools import float_compare, float_is_zero, float_round
+from weth import models
+from weth.tools import float_compare, float_is_zero, float_round
 
 
 class AccountAnalyticPlan(models.Model):

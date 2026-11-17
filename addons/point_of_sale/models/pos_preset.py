@@ -1,8 +1,8 @@
 from collections import defaultdict
 from datetime import timedelta
 
-from odoo import _, api, fields, models
-from odoo.exceptions import UserError, ValidationError
+from weth import _, api, fields, models
+from weth.exceptions import UserError, ValidationError
 
 
 class PosPreset(models.Model):

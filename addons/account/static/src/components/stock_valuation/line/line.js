@@ -1,4 +1,4 @@
-import { Component, useProps, proxy, t } from "@odoo/owl";
+import { Component, useProps, proxy, t } from "@weth/owl";
 import { _t } from "@web/core/l10n/translation";
 
 
@@ -21,7 +21,7 @@ export class StockValuationReportLine extends Component {
 
     // Getters -----------------------------------------------------------------
     get accounts() {
-        if (! this.hasSublines) { return []; }
+        if (!this.hasSublines) { return []; }
         return this.constructor.getLineAccounts(this.props.sublines);
     }
 

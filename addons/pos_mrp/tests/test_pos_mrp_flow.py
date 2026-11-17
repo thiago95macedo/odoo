@@ -1,10 +1,10 @@
-import odoo
+import weth
 
-from odoo.addons.pos_mrp.tests.common import CommonPosMrpTest
-from odoo import Command, fields
+from weth.addons.pos_mrp.tests.common import CommonPosMrpTest
+from weth import Command, fields
 
 
-@odoo.tests.tagged('post_install', '-at_install')
+@weth.tests.tagged('post_install', '-at_install')
 class TestPosMrp(CommonPosMrpTest):
     _test_user_groups = None  # FIXME list needed groups
 

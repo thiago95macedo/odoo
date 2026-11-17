@@ -24,8 +24,8 @@ import {
     waitStoreFetch,
     MENU_ACTIVE_IDS,
 } from "@mail/../tests/mail_test_helpers";
-import { describe, expect, test, waitFor } from "@odoo/hoot";
-import { mockDate, tick } from "@odoo/hoot-mock";
+import { describe, expect, test, waitFor } from "@weth/hoot";
+import { mockDate, tick } from "@weth/hoot-mock";
 import {
     Command,
     contains as webContains,
@@ -582,7 +582,7 @@ test("chat window should open when receiving a new DM", async () => {
     await assertChatBubbleAndWindowImStatus("DemoUser", 1);
 });
 
-test("chat window should not open when receiving a new DM from odoobot", async () => {
+test("chat window should not open when receiving a new DM from wethbot", async () => {
     mockDate("2023-01-03 12:00:00"); // so that it's after last interest (mock server is in 2019 by default!)
     const pyEnv = await startServer();
     const userId = pyEnv["res.users"].create({ partner_id: serverState.odoobotId });

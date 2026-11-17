@@ -1,7 +1,7 @@
 import { browser } from "@web/core/browser/browser";
 import { registry } from "@web/core/registry";
 import { session } from "@web/session";
-import { Plugin, signal, usePlugin } from "@odoo/owl";
+import { Plugin, signal, usePlugin } from "@weth/owl";
 import { BusParametersPlugin } from "@bus/bus_parameters_plugin";
 import { services } from "@web/core/services";
 
@@ -26,8 +26,8 @@ export class WorkerPlugin extends Plugin {
         if (!session.bus_info && session.websocket_worker_version) {
             console.warn(
                 "'session.websocket_worker_version' is deprecated. Bus consumers should provide " +
-                    "'bus_info' instead, including the 'last_id' to start from, to ensure that no notifications " +
-                    "are missed between page load and subscription."
+                "'bus_info' instead, including the 'last_id' to start from, to ensure that no notifications " +
+                "are missed between page load and subscription."
             );
             session.bus_info = { worker_version: session.websocket_worker_version };
         }
@@ -41,9 +41,8 @@ export class WorkerPlugin extends Plugin {
             return;
         }
         this._state.set(WORKER_STATE.INITIALIZING);
-        let workerURL = `${this.params.serverURL()}/bus/websocket_worker_bundle?v=${
-            session.bus_info.worker_version
-        }`;
+        let workerURL = `${this.params.serverURL()}/bus/websocket_worker_bundle?v=${session.bus_info.worker_version
+            }`;
         if (this.params.serverURL() !== window.origin) {
             // Worker service can be loaded from a different origin than the
             // bundle URL. The Worker expects an URL from this origin, give

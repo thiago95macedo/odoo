@@ -1,10 +1,10 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.fields import Command
-from odoo.tests import Form, HttpCase, tagged
+from weth.fields import Command
+from weth.tests import Form, HttpCase, tagged
 
-from odoo.addons.website_event_sale.tests.common import TestWebsiteEventSaleCommon
-from odoo.addons.website_sale.controllers.main import WebsiteSale as CheckoutController
+from weth.addons.website_event_sale.tests.common import TestWebsiteEventSaleCommon
+from weth.addons.website_sale.controllers.main import WebsiteSale as CheckoutController
 
 
 @tagged('post_install', '-at_install')

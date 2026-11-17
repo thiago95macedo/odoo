@@ -1,5 +1,5 @@
 import { useActionInfo, useSelectableLtrRtlComponent } from "@html_builder/core/utils";
-import { Component, proxy, t, useEffect, useProps } from "@odoo/owl";
+import { Component, proxy, t, useEffect, useProps } from "@weth/owl";
 
 /**
  * @abstract

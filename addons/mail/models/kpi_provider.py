@@ -1,6 +1,6 @@
 import re
 
-from odoo import api, models
+from weth import api, models
 
 
 class KpiProvider(models.AbstractModel):

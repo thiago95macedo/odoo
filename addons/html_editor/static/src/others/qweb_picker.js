@@ -1,4 +1,4 @@
-import { Component, proxy, t, useProps } from "@odoo/owl";
+import { Component, proxy, t, useProps } from "@weth/owl";
 
 export class QWebPicker extends Component {
     static template = "html_editor.QWebPicker";

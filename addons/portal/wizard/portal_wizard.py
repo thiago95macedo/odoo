@@ -2,11 +2,11 @@
 
 import logging
 
-from odoo.tools.translate import _, LazyTranslate
-from odoo.tools import email_normalize
-from odoo.exceptions import UserError
+from weth.tools.translate import _, LazyTranslate
+from weth.tools import email_normalize
+from weth.exceptions import UserError
 
-from odoo import api, fields, models, Command
+from weth import api, fields, models, Command
 
 
 _logger = logging.getLogger(__name__)

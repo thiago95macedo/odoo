@@ -15,11 +15,11 @@ import lxml.html
 from lxml import etree
 from markupsafe import Markup
 
-from odoo import api, fields, models, modules
-from odoo.exceptions import UserError
-from odoo.http import request
-from odoo.http.session import session_store, update_session_token
-from odoo.tools import config, find_in_path, parse_version, split_every
+from weth import api, fields, models, modules
+from weth.exceptions import UserError
+from weth.http import request
+from weth.http.session import session_store, update_session_token
+from weth.tools import config, find_in_path, parse_version, split_every
 
 _logger = logging.getLogger(__name__)
 

@@ -1,9 +1,9 @@
 from unittest.mock import patch
 
-from odoo.addons.point_of_sale.tests.test_frontend import TestPointOfSaleHttpCommon
-from odoo.addons.account.tests.common import AccountTestInvoicingCommon
-from odoo.tests import Command
-from odoo.tests.common import tagged
+from weth.addons.point_of_sale.tests.test_frontend import TestPointOfSaleHttpCommon
+from weth.addons.account.tests.common import AccountTestInvoicingCommon
+from weth.tests import Command
+from weth.tests.common import tagged
 
 
 @tagged("post_install", "-at_install")
@@ -56,5 +56,5 @@ class TestSelfOrderKioskQFPay(TestPointOfSaleHttpCommon, AccountTestInvoicingCom
         self.pos_config.with_user(self.pos_user).open_ui()
         self.pos_config.current_session_id.set_opening_control(0, "")
         self_route = self.pos_config._get_self_order_route()
-        with patch('odoo.addons.pos_qfpay.controllers.main.consteq', lambda a, b: True):
+        with patch('weth.addons.pos_qfpay.controllers.main.consteq', lambda a, b: True):
             self.start_tour(self_route, "kiosk_qfpay_order")

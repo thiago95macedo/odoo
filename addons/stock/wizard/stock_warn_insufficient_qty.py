@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, fields, models
-from odoo.tools.misc import clean_context
+from weth import api, fields, models
+from weth.tools.misc import clean_context
 
 
 class StockWarnInsufficientQty(models.AbstractModel):

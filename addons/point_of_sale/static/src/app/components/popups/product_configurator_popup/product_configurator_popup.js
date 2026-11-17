@@ -1,5 +1,5 @@
 import { Dialog } from "@web/core/dialog/dialog";
-import { Component, proxy, useProps, t } from "@odoo/owl";
+import { Component, proxy, useProps, t } from "@weth/owl";
 import { usePos } from "@point_of_sale/app/hooks/pos_hook";
 import { ProductInfoBanner } from "@point_of_sale/app/components/product_info_banner/product_info_banner";
 import { ProductTemplateAttributeLine } from "@point_of_sale/app/models/product_template_attribute_line";
@@ -170,8 +170,8 @@ export class ProductConfiguratorPopup extends Component {
                 combination.forEach((value) => {
                     const forceVariant = this.props.forceVariantValue
                         ? Object.values(this.props.forceVariantValue).find(
-                              (att) => att.attribute_line_id.id == value.attribute_line_id.id
-                          )
+                            (att) => att.attribute_line_id.id == value.attribute_line_id.id
+                        )
                         : false;
                     this.state.attributes[value.attribute_line_id.id].selected =
                         forceVariant || value;

@@ -2,8 +2,8 @@
 
 import threading
 
-from odoo import api, models, tools, _
-from odoo.exceptions import ValidationError
+from weth import api, models, tools, _
+from weth.exceptions import ValidationError
 
 
 class ProductProduct(models.Model):

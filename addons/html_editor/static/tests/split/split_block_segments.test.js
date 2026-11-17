@@ -1,4 +1,4 @@
-import { describe, test, tick } from "@odoo/hoot";
+import { describe, test, tick } from "@weth/hoot";
 import { testEditor } from "../_helpers/editor";
 import { unformat } from "../_helpers/format";
 

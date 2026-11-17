@@ -1,4 +1,4 @@
-import { Component, markup, onMounted, onWillStart, proxy, useProps } from "@odoo/owl";
+import { Component, markup, onMounted, onWillStart, proxy, useProps } from "@weth/owl";
 import { _t } from "@web/core/l10n/translation";
 import { download } from "@web/core/network/download";
 import { registry } from "@web/core/registry";
@@ -56,7 +56,7 @@ export class ProductPricelistReport extends Component {
             } else {
                 this.state.selectedPricelist = pastState.selectedPricelist || this.pricelists[0];
             }
-            if(this.noProducts){
+            if (this.noProducts) {
                 await this.onClickAddProducts();
             }
             this.renderHtml();
@@ -140,7 +140,7 @@ export class ProductPricelistReport extends Component {
             return
         }
         let html = await this.orm.call(
-            "report.product.report_pricelist", "get_html", [], {data: this.reportParams}
+            "report.product.report_pricelist", "get_html", [], { data: this.reportParams }
         );
         this.state.html = markup(html);
     }

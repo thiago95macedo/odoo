@@ -1,7 +1,7 @@
 from random import randint
 
-from odoo.addons.point_of_sale.tests.common import TestPoSCommon, CommonPosTest
-from odoo.addons.stock_account.tests.test_anglo_saxon_valuation_reconciliation_common import ValuationReconciliationTestCommon
+from weth.addons.point_of_sale.tests.common import TestPoSCommon, CommonPosTest
+from weth.addons.stock_account.tests.test_anglo_saxon_valuation_reconciliation_common import ValuationReconciliationTestCommon
 
 
 def archive_products(env):

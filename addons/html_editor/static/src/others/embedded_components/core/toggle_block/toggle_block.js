@@ -3,7 +3,7 @@ import {
     getEmbeddedProps,
     useEditableDescendants,
 } from "@html_editor/others/embedded_component_utils";
-import { Component, onMounted, onPatched, proxy, t, useListener, useProps } from "@odoo/owl";
+import { Component, onMounted, onPatched, proxy, t, useListener, useProps } from "@weth/owl";
 import { browser } from "@web/core/browser/browser";
 
 const sessionStorage = browser.sessionStorage;
@@ -20,7 +20,7 @@ export class EmbeddedToggleBlockComponent extends Component {
         this.state = proxy({
             showContent: sessionStorage.getItem(this.toggleStorageKey) === "true",
         });
-        this.neutralRestoreSelection = () => {};
+        this.neutralRestoreSelection = () => { };
         this.restoreSelection = this.neutralRestoreSelection;
         useListener(this.props.host, "forceToggle", this.onToggle.bind(this));
         const restoreSelection = () => {

@@ -1,7 +1,7 @@
-import { animationFrame } from "@odoo/hoot-mock";
+import { animationFrame } from "@weth/hoot-mock";
 import { LoadableDataSource } from "@spreadsheet/data_sources/data_source";
 import { makeServerError } from "@web/../tests/web_test_helpers";
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@weth/hoot";
 import { defineSpreadsheetActions, defineSpreadsheetModels } from "../helpers/data";
 
 describe.current.tags("headless");

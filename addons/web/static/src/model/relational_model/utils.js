@@ -1,4 +1,4 @@
-import { markup, onWillStart, t, useEffect, useProps } from "@odoo/owl";
+import { markup, onWillStart, t, useEffect, useProps } from "@weth/owl";
 import { evalPartialContext, makeContext } from "@web/core/context";
 import { Domain } from "@web/core/domain";
 import {
@@ -530,14 +530,14 @@ export function parseServerValue(field, value) {
         case "properties": {
             return value
                 ? value.map((property) => {
-                      if (property.value !== undefined) {
-                          property.value = parseServerValue(property, property.value ?? false);
-                      }
-                      if (property.default !== undefined) {
-                          property.default = parseServerValue(property, property.default ?? false);
-                      }
-                      return property;
-                  })
+                    if (property.value !== undefined) {
+                        property.value = parseServerValue(property, property.value ?? false);
+                    }
+                    if (property.default !== undefined) {
+                        property.default = parseServerValue(property, property.default ?? false);
+                    }
+                    return property;
+                })
                 : [];
         }
     }

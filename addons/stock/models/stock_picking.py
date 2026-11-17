@@ -5,13 +5,13 @@ from datetime import date, timedelta, UTC
 from collections import defaultdict
 from markupsafe import Markup
 
-from odoo import _, api, fields, models, modules
-from odoo.addons.stock.models.stock_move import PROCUREMENT_PRIORITIES
-from odoo.addons.web.controllers.utils import clean_action
-from odoo.exceptions import UserError
-from odoo.fields import Domain, Command
-from odoo.tools import format_datetime, format_date, groupby, OrderedSet
-from odoo.tools.float_utils import float_compare, float_is_zero
+from weth import _, api, fields, models, modules
+from weth.addons.stock.models.stock_move import PROCUREMENT_PRIORITIES
+from weth.addons.web.controllers.utils import clean_action
+from weth.exceptions import UserError
+from weth.fields import Domain, Command
+from weth.tools import format_datetime, format_date, groupby, OrderedSet
+from weth.tools.float_utils import float_compare, float_is_zero
 
 
 class StockPicking(models.Model):

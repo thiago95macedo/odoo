@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import fields, models, _
-from odoo.addons.im_livechat.models.discuss_channel import is_livechat_channel
-from odoo.addons.mail.tools.discuss import Store
+from weth import fields, models, _
+from weth.addons.im_livechat.models.discuss_channel import is_livechat_channel
+from weth.addons.mail.tools.discuss import Store
 from datetime import datetime, timedelta
 
 

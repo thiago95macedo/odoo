@@ -3,7 +3,7 @@
 from datetime import datetime, timedelta, UTC
 from zoneinfo import ZoneInfo
 
-from odoo import api, models
+from weth import api, models
 
 
 class ResourceCalendarLeaves(models.Model):

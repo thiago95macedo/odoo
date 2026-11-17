@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import Command
-from odoo.addons.account.tests.test_account_move_line_tax_details import TestAccountTaxDetailsReport
-from odoo.tests import tagged
+from weth import Command
+from weth.addons.account.tests.test_account_move_line_tax_details import TestAccountTaxDetailsReport
+from weth.tests import tagged
 
 
 @tagged('post_install', '-at_install')

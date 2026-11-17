@@ -1,4 +1,4 @@
-import { Component, onWillStart, markup, t, useProps } from "@odoo/owl";
+import { Component, onWillStart, markup, t, useProps } from "@weth/owl";
 import { Dialog } from "@web/core/dialog/dialog";
 import { rpc } from "@web/core/network/rpc";
 import { formatDuration, deserializeDateTime } from "@web/core/l10n/dates";

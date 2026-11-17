@@ -5,7 +5,7 @@ import { useService, useAutofocus } from "@web/core/utils/hooks";
 import { registry } from "@web/core/registry";
 import { parseInteger } from "@web/views/fields/parsers";
 import { getId } from "@web/model/relational_model/utils";
-import { Component, onMounted, onWillStart, signal, t, useProps } from "@odoo/owl";
+import { Component, onMounted, onWillStart, signal, t, useProps } from "@weth/owl";
 import { standardWidgetProps } from "@web/views/widgets/standard_widget_props";
 import { user } from "@web/core/user";
 

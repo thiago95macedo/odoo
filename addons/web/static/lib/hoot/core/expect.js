@@ -1,6 +1,6 @@
-/** @odoo-module */
+/** @weth-module */
 
-import { signal, t, untrack, validateType } from "@odoo/owl";
+import { signal, t, untrack, validateType } from "@weth/owl";
 import {
     _getNodeAttribute,
     _getNodeRect,
@@ -92,10 +92,10 @@ import { Test } from "./test";
  *
  * @typedef {string | number | RegExp} StrictMatcherType
  *
- * @typedef {import("@odoo/hoot-dom").Dimensions} Dimensions
+ * @typedef {import("@weth/hoot-dom").Dimensions} Dimensions
  * @typedef {import("@web/../lib/hoot-dom/hoot_dom_utils").InteractionDetails} InteractionDetails
  * @typedef {import("@web/../lib/hoot-dom/hoot_dom_utils").InteractionType} InteractionType
- * @typedef {import("@odoo/hoot-dom").Target} Target
+ * @typedef {import("@weth/hoot-dom").Target} Target
  */
 
 /**
@@ -1725,9 +1725,8 @@ export class Matcher {
                 ],
                 onFail: () => [
                     this._received,
-                    r`${
-                        isAsync ? "rejected" : "threw"
-                    } a value that did not match the given matcher`,
+                    r`${isAsync ? "rejected" : "threw"
+                        } a value that did not match the given matcher`,
                 ],
                 getFailedDetails: () =>
                     detailsFromEntries([
@@ -2183,7 +2182,7 @@ export class Matcher {
      * @example
      *  expect("p").toHaveText("lorem ipsum dolor sit amet");
      * @example
-     *  expect("header h1").toHaveText(/odoo/i);
+     *  expect("header h1").toHaveText(/weth/i);
      */
     toHaveText(text, options) {
         this._assertArguments(arguments, [
@@ -2368,7 +2367,7 @@ export class Matcher {
         const isAsync = this._flags & (FLAGS.rejects | FLAGS.resolves);
         if (this._flags & FLAGS.error) {
             // Prevent further assertions in error state
-            return isAsync ? new Promise(() => {}) : undefined;
+            return isAsync ? new Promise(() => { }) : undefined;
         }
         if (isAsync) {
             return Promise.resolve(this._received).then(

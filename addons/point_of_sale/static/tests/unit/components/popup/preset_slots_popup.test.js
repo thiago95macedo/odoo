@@ -1,4 +1,4 @@
-import { test, expect, mockDate } from "@odoo/hoot";
+import { test, expect, mockDate } from "@weth/hoot";
 import { mountWithCleanup } from "@web/../tests/web_test_helpers";
 import { PresetSlotsPopup } from "@point_of_sale/app/components/popups/preset_slots_popup/preset_slots_popup";
 import { setupPosEnv } from "@point_of_sale/../tests/unit/utils";
@@ -13,8 +13,8 @@ test("PresetSlotsPopup", async () => {
 
     await mountWithCleanup(PresetSlotsPopup, {
         props: {
-            close: () => {},
-            getPayload: () => {},
+            close: () => { },
+            getPayload: () => { },
         },
     });
 
@@ -41,8 +41,8 @@ test("PresetSlotsPopupDateTime", async () => {
     store.addNewOrder({ preset_id: store.models["pos.preset"].get(2) });
     await mountWithCleanup(PresetSlotsPopup, {
         props: {
-            close: () => {},
-            getPayload: () => {},
+            close: () => { },
+            getPayload: () => { },
         },
     });
 

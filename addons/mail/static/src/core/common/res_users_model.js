@@ -25,7 +25,7 @@ export class ResUsers extends ImStatusMixin {
     share;
     /** @type {boolean} */
     active;
-    /** @type {ReturnType<import("@odoo/owl").markup>|string|undefined} */
+    /** @type {ReturnType<import("@weth/owl").markup>|string|undefined} */
     signature = fields.Html(undefined);
 
     get avatarUrl() {

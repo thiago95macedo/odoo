@@ -1,8 +1,8 @@
 import { render } from "@web/owl2/utils";
-import { expect, test, getFixture } from "@odoo/hoot";
-import { press, queryAll, queryAllAttributes, queryAllTexts, queryOne } from "@odoo/hoot-dom";
-import { animationFrame, mockDate, mockTimeZone, runAllTimers } from "@odoo/hoot-mock";
-import { Component, proxy, xml } from "@odoo/owl";
+import { expect, test, getFixture } from "@weth/hoot";
+import { press, queryAll, queryAllAttributes, queryAllTexts, queryOne } from "@weth/hoot-dom";
+import { animationFrame, mockDate, mockTimeZone, runAllTimers } from "@weth/hoot-mock";
+import { Component, proxy, xml } from "@weth/owl";
 
 import { getPickerCell } from "@web/../tests/core/datetime/datetime_test_helpers";
 import {
@@ -249,7 +249,7 @@ test("building a domain with an invalid path (3)", async () => {
         string: "User",
         relation: "users",
     });
-    defineModels([class Users extends models.Model {}]);
+    defineModels([class Users extends models.Model { }]);
     await makeDomainSelector({
         domain: `[(bloup, "=", "abc")]`,
         update(domain) {
@@ -637,7 +637,7 @@ test("default condition depends on available fields", async () => {
         string: "User",
         relation: "users",
     });
-    defineModels([class Users extends models.Model {}]);
+    defineModels([class Users extends models.Model { }]);
     await makeDomainSelector({
         update(domain) {
             expect.step(domain);
@@ -1163,7 +1163,7 @@ test("support properties (mode readonly)", async () => {
             date_format: "%d|%m|%Y",
         },
     });
-    onRpc(() => {});
+    onRpc(() => { });
     const toTest = [
         {
             domain: `[("properties.xphone_prop_1", "=", False)]`,

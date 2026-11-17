@@ -7,13 +7,13 @@ from uuid import uuid4
 
 from babel.dates import format_date
 
-import odoo.release
-from odoo import SUPERUSER_ID, Command, _, api, fields, models, tools
-from odoo.exceptions import AccessError, UserError, ValidationError
-from odoo.fields import Domain
-from odoo.http import request
-from odoo.tools import SQL, convert
-from odoo.tools.misc import get_lang
+import weth.release
+from weth import SUPERUSER_ID, Command, _, api, fields, models, tools
+from weth.exceptions import AccessError, UserError, ValidationError
+from weth.fields import Domain
+from weth.http import request
+from weth.tools import SQL, convert
+from weth.tools.misc import get_lang
 
 DEFAULT_LIMIT_LOAD_PRODUCT = 5000
 DEFAULT_LIMIT_LOAD_PARTNER = 100
@@ -337,9 +337,9 @@ class PosConfig(models.Model):
 
         record = read_records[0]
         record['_server_version'] = {
-            'server_version': odoo.release.version,
-            'server_version_info': odoo.release.version_info,
-            'server_serie': odoo.release.serie,
+            'server_version': weth.release.version,
+            'server_version_info': weth.release.version_info,
+            'server_serie': weth.release.serie,
         }
         record['_base_url'] = config.get_base_url()
         record['_data_server_date'] = self.env.context.get('pos_last_server_date') or self.env.cr.now()

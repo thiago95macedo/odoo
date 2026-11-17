@@ -2,10 +2,10 @@ import io
 
 from PIL import Image as PilImage
 
-from odoo.tests import TransactionCase
-from odoo.tools.binary import BinaryBytes
+from weth.tests import TransactionCase
+from weth.tools.binary import BinaryBytes
 
-from odoo.addons.populate.generators import Binary, Image
+from weth.addons.populate.generators import Binary, Image
 
 
 class TestBinaryGenerator(TransactionCase):

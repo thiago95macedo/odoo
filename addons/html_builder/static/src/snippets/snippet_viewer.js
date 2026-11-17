@@ -1,4 +1,4 @@
-import { Component, markup, signal, useProps, t } from "@odoo/owl";
+import { Component, markup, signal, useProps, t } from "@weth/owl";
 import { useMatrixKeyNavigation } from "@html_builder/utils/keyboard_navigation";
 import { getActiveHotkey } from "@web/core/hotkeys/hotkey_utils";
 import { localization } from "@web/core/l10n/localization";
@@ -100,7 +100,7 @@ export class SnippetViewer extends Component {
             confirm: (inputValue) => {
                 this.props.snippetModel.renameCustomSnippet(snippet, inputValue);
             },
-            cancel: () => {},
+            cancel: () => { },
         });
     }
 

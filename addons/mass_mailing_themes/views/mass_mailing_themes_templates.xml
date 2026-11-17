@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
     <!-- Add themes in editor -->
     <template id="email_designer_themes" inherit_id="mass_mailing.email_designer_themes">
         <xpath expr="." position="inside">
@@ -2155,4 +2155,4 @@
             </div>
         </section>
     </template>
-</odoo>
+</weth>

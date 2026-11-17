@@ -7,17 +7,17 @@ import re
 from collections import defaultdict
 from psycopg2 import errors as pgerrors
 
-from odoo import _, api, fields, models
-from odoo.exceptions import AccessError, UserError, ValidationError
-from odoo.fields import Domain
-from odoo.tools import SQL, unique
-from odoo.tools.partner_identifiers import (
+from weth import _, api, fields, models
+from weth.exceptions import AccessError, UserError, ValidationError
+from weth.fields import Domain
+from weth.tools import SQL, unique
+from weth.tools.partner_identifiers import (
     get_tin_metadata_of_country,
     is_identifier_void,
 )
 
-from odoo.addons.account.models.account_move import BYPASS_LOCK_CHECK
-from odoo.addons.base.models.res_partner import _ref_vat
+from weth.addons.account.models.account_move import BYPASS_LOCK_CHECK
+from weth.addons.base.models.res_partner import _ref_vat
 
 _logger = logging.getLogger(__name__)
 

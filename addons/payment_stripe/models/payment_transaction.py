@@ -2,15 +2,15 @@
 
 from werkzeug.urls import url_encode
 
-from odoo import api, fields, models
-from odoo.exceptions import ValidationError
-from odoo.tools.urls import urljoin as url_join
+from weth import api, fields, models
+from weth.exceptions import ValidationError
+from weth.tools.urls import urljoin as url_join
 
-from odoo.addons.payment import utils as payment_utils
-from odoo.addons.payment.logging import get_payment_logger
-from odoo.addons.payment_stripe import const
-from odoo.addons.payment_stripe import utils as stripe_utils
-from odoo.addons.payment_stripe.controllers.main import StripeController
+from weth.addons.payment import utils as payment_utils
+from weth.addons.payment.logging import get_payment_logger
+from weth.addons.payment_stripe import const
+from weth.addons.payment_stripe import utils as stripe_utils
+from weth.addons.payment_stripe.controllers.main import StripeController
 
 _logger = get_payment_logger(__name__, const.SENSITIVE_KEYS)
 

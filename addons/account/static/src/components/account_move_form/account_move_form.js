@@ -1,4 +1,4 @@
-import { useProps, t } from "@odoo/owl";
+import { useProps, t } from "@weth/owl";
 import { registry } from "@web/core/registry";
 import { createElement, append } from "@web/core/utils/xml";
 import { Notebook, notebookProps } from "@web/core/notebook/notebook";
@@ -8,7 +8,7 @@ import { FormRenderer } from "@web/views/form/form_renderer";
 import { FormController } from '@web/views/form/form_controller';
 import { useService } from "@web/core/utils/hooks";
 import { deleteConfirmationMessage } from "@web/core/confirmation_dialog/confirmation_dialog";
-import {_t} from "@web/core/l10n/translation";
+import { _t } from "@web/core/l10n/translation";
 
 
 export class AccountMoveFormController extends FormController {

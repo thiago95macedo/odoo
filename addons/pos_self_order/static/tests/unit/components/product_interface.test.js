@@ -1,6 +1,6 @@
-import { test, expect } from "@odoo/hoot";
-import { animationFrame, click } from "@odoo/hoot-dom";
-import { Component, useProps, xml } from "@odoo/owl";
+import { test, expect } from "@weth/hoot";
+import { animationFrame, click } from "@weth/hoot-dom";
+import { Component, useProps, xml } from "@weth/owl";
 import { mountWithCleanup } from "@web/../tests/web_test_helpers";
 import { ProductInterface } from "@pos_self_order/app/components/product_interface/product_interface";
 import { setupSelfPosEnv } from "../utils";

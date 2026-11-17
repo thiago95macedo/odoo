@@ -22,7 +22,7 @@ import {
     proxy,
     t,
     usePlugin,
-} from "@odoo/owl";
+} from "@weth/owl";
 import {
     BACKSPACE,
     Numpad,
@@ -502,7 +502,7 @@ export class TicketScreen extends Component {
         this.setSelectedOrder(this.pos.getOrder());
     }
 
-    postRefund(destinationOrder) {}
+    postRefund(destinationOrder) { }
 
     setPartnerToRefundOrder(partner, destinationOrder) {
         if (partner && !destinationOrder.getPartner()) {
@@ -554,12 +554,12 @@ export class TicketScreen extends Component {
             this.state.filter === "SYNCED"
                 ? orderModel.filter((o) => this.isOrderDoneOrPaid(o))
                 : this.state.filter === "CANCELLED"
-                ? orderModel.filter((o) => this.isOrderCancelled(o))
-                : orderModel.filter(
-                      (o) =>
-                          (!this.isOrderDoneOrPaid(o) && !this.isOrderCancelled(o)) ||
-                          o.getScreenData().name == "TipScreen"
-                  );
+                    ? orderModel.filter((o) => this.isOrderCancelled(o))
+                    : orderModel.filter(
+                        (o) =>
+                            (!this.isOrderDoneOrPaid(o) && !this.isOrderCancelled(o)) ||
+                            o.getScreenData().name == "TipScreen"
+                    );
 
         if (
             this.state.filter &&
@@ -1021,7 +1021,7 @@ export class TicketScreen extends Component {
                 if (
                     order &&
                     parseDateTime(orderInfo[1], { tz: "UTC" }).setZone("local").ts >
-                        order.date_order.ts
+                    order.date_order.ts
                 ) {
                     return true;
                 }
@@ -1123,6 +1123,6 @@ export class TicketScreen extends Component {
 registry.category("pos_pages").add("TicketScreen", {
     name: "TicketScreen",
     component: TicketScreen,
-    route: `/pos/ui/${odoo.pos_config_id}/ticket`,
+    route: `/pos/ui/${weth.pos_config_id}/ticket`,
     params: {},
 });

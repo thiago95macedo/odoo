@@ -18,17 +18,17 @@ from collections.abc import Sequence
 import chardet
 from markupsafe import Markup, escape
 
-from odoo import api, fields, models
-from odoo.exceptions import UserError
-from odoo.tools import (
+from weth import api, fields, models
+from weth.exceptions import UserError
+from weth.tools import (
     DEFAULT_SERVER_DATE_FORMAT,
     DEFAULT_SERVER_DATETIME_FORMAT,
     config,
     html_sanitize,
 )
-from odoo.tools.image import ImageProcess
-from odoo.tools.mimetypes import guess_mimetype
-from odoo.tools.translate import _
+from weth.tools.image import ImageProcess
+from weth.tools.mimetypes import guess_mimetype
+from weth.tools.translate import _
 
 FIELDS_RECURSION_LIMIT = 3
 ERROR_PREVIEW_BYTES = 200

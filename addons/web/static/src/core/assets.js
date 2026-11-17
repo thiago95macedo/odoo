@@ -1,4 +1,4 @@
-import { whenReady } from "@odoo/owl";
+import { whenReady } from "@weth/owl";
 import { session } from "@web/session";
 
 /**
@@ -85,7 +85,7 @@ export function loadCSS() {
     return assets.loadCSS(...arguments);
 }
 
-export class AssetsLoadingError extends Error {}
+export class AssetsLoadingError extends Error { }
 
 /**
  * This export is done only in order to modify the behavior of the exported

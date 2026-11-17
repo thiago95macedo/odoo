@@ -3,9 +3,9 @@
 import unittest
 from datetime import date, datetime, timedelta
 
-from odoo.exceptions import ValidationError
-from odoo.tests import tagged
-from odoo.tests.common import TransactionCase, freeze_time
+from weth.exceptions import ValidationError
+from weth.tests import tagged
+from weth.tests.common import TransactionCase, freeze_time
 
 
 @tagged('-at_install', 'post_install', 'work_entry_pipeline', 'time_rule_pipeline')

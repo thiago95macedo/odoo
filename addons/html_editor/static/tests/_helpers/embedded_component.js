@@ -5,7 +5,7 @@ import {
     useEditableDescendants,
     useEmbeddedState,
 } from "@html_editor/others/embedded_component_utils";
-import { Component, computed, signal, t, useProps, xml } from "@odoo/owl";
+import { Component, computed, signal, t, useProps, xml } from "@weth/owl";
 
 export class Counter extends Component {
     static template = xml`

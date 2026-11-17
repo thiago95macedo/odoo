@@ -1,5 +1,5 @@
 import { getSectionRecords } from "@account/components/section_and_note_fields_backend/section_and_note_fields_backend";
-import { onWillStart, onWillUpdateProps, proxy } from "@odoo/owl";
+import { onWillStart, onWillUpdateProps, proxy } from "@weth/owl";
 import {
     SaleOrderLineListRenderer,
     SaleOrderLineOne2Many,
@@ -239,7 +239,7 @@ patch(SaleOrderLineListRenderer.prototype, {
      * Override to set the default `product_uom_qty` to 0 for new lines created under an optional
      * section.
      */
-    add(params){
+    add(params) {
         params.context = this.getCreateContext(params);
         super.add(params);
     },

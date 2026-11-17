@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
 
     <template id="address_form_fields" inherit_id="portal.address_form_fields">
         <option name="city_options" position="attributes">
@@ -66,4 +66,4 @@
         </div>
     </template>
 
-</odoo>
+</weth>

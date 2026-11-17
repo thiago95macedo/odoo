@@ -1,6 +1,6 @@
-import { describe, expect, test } from "@odoo/hoot";
-import { click, edit, press, queryAllTexts, queryFirst } from "@odoo/hoot-dom";
-import { animationFrame, runAllTimers } from "@odoo/hoot-mock";
+import { describe, expect, test } from "@weth/hoot";
+import { click, edit, press, queryAllTexts, queryFirst } from "@weth/hoot-dom";
+import { animationFrame, runAllTimers } from "@weth/hoot-mock";
 import {
     clickSave,
     contains,

@@ -1,4 +1,4 @@
-import { Component, useProps, t } from "@odoo/owl";
+import { Component, useProps, t } from "@weth/owl";
 import { registry } from "@web/core/registry";
 import { percentPieField } from "@web/views/fields/percent_pie/percent_pie_field";
 import { standardFieldProps } from "@web/views/fields/standard_field_props";

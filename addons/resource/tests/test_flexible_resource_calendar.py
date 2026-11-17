@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 from datetime import datetime, date, UTC
 
-from odoo.tests.common import tagged, TransactionCase
-from odoo.tools.intervals import Intervals
+from weth.tests.common import tagged, TransactionCase
+from weth.tools.intervals import Intervals
 
 
 @tagged('at_install', '-post_install')  # LEGACY at_install

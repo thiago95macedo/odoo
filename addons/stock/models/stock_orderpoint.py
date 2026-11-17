@@ -8,13 +8,13 @@ from zoneinfo import ZoneInfo
 from dateutil.relativedelta import relativedelta
 from psycopg2 import OperationalError
 
-from odoo import SUPERUSER_ID, _, api, fields, models
-from odoo.addons.stock.models.stock_rule import ProcurementException
-from odoo.exceptions import RedirectWarning, UserError, ValidationError
-from odoo.modules.registry import Registry
-from odoo.fields import Domain
-from odoo.sql_db import BaseCursor
-from odoo.tools import float_compare, frozendict, split_every, format_date
+from weth import SUPERUSER_ID, _, api, fields, models
+from weth.addons.stock.models.stock_rule import ProcurementException
+from weth.exceptions import RedirectWarning, UserError, ValidationError
+from weth.modules.registry import Registry
+from weth.fields import Domain
+from weth.sql_db import BaseCursor
+from weth.tools import float_compare, frozendict, split_every, format_date
 
 _logger = logging.getLogger(__name__)
 
@@ -679,7 +679,7 @@ class StockWarehouseOrderpoint(models.Model):
                     'message': '%s',
                     'links': [{
                         'label': move.picking_id.name,
-                        'url': f'/odoo/action-stock.stock_picking_action_picking_type/{move.picking_id.id}'
+                        'url': f'/weth/action-stock.stock_picking_action_picking_type/{move.picking_id.id}'
                     }],
                     'sticky': False,
                     'next': {'type': 'ir.actions.act_window_close'},

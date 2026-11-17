@@ -1,6 +1,6 @@
 import { registry } from "@web/core/registry";
 import { rpc } from "@web/core/network/rpc";
-import { markup, EventBus } from "@odoo/owl";
+import { markup, EventBus } from "@weth/owl";
 
 const websiteSlidesService = {
     dependencies: [],
@@ -67,10 +67,10 @@ const websiteSlidesService = {
                 requestedAccess: undefined,
             },
         };
-        let beforeJoin = async () => {};
+        let beforeJoin = async () => { };
         let afterJoin = async () => document.location.reload();
-        let afterTogglingCompletion = () => {};
-        let collapseNextCategoryCallback = () => {};
+        let afterTogglingCompletion = () => { };
+        let collapseNextCategoryCallback = () => { };
         return {
             data,
             bus: new EventBus(),

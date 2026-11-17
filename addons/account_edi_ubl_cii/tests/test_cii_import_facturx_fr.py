@@ -1,6 +1,6 @@
-from odoo import fields
-from odoo.addons.account_edi_ubl_cii.tests.common import TestCiiFacturXCommon, TestUblCiiFRCommon
-from odoo.tests import tagged
+from weth import fields
+from weth.addons.account_edi_ubl_cii.tests.common import TestCiiFacturXCommon, TestUblCiiFRCommon
+from weth.tests import tagged
 
 
 @tagged('post_install_l10n', 'post_install', '-at_install')

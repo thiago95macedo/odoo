@@ -1,7 +1,7 @@
 import json
-from odoo.tests import tagged, Form, TransactionCase
-from odoo.exceptions import ValidationError
-from odoo.tools import BinaryBytes
+from weth.tests import tagged, Form, TransactionCase
+from weth.exceptions import ValidationError
+from weth.tools import BinaryBytes
 
 
 @tagged('at_install', '-post_install')  # LEGACY at_install

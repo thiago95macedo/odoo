@@ -1,5 +1,5 @@
-import { markRaw, proxy } from "@odoo/owl";
-import { Model } from "@odoo/o-spreadsheet";
+import { markRaw, proxy } from "@weth/owl";
+import { Model } from "@weth/o-spreadsheet";
 import { registry } from "@web/core/registry";
 import { OdooDataProvider } from "@spreadsheet/data_sources/odoo_data_provider";
 import { createDefaultCurrency } from "@spreadsheet/currency/helpers";
@@ -161,9 +161,9 @@ export class DashboardLoader {
 
         return favoriteDashboards.length
             ? [
-                  { id: "favorites", name: _t("FAVORITES"), dashboards: favoriteDashboards },
-                  ...dashboardGroups,
-              ]
+                { id: "favorites", name: _t("FAVORITES"), dashboards: favoriteDashboards },
+                ...dashboardGroups,
+            ]
             : dashboardGroups;
     }
 

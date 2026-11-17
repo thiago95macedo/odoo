@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
 
 <template id="s_duo_images" name="Duo Images">
     <section class="s_duo_images pt32 pb32">
@@ -16,4 +16,4 @@
     </section>
 </template>
 
-</odoo>
+</weth>

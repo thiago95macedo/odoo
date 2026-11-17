@@ -1,4 +1,4 @@
-import { onMounted, onWillUnmount } from "@odoo/owl";
+import { onMounted, onWillUnmount } from "@weth/owl";
 
 /**
  * `useTimedPress` — A hook to detect and respond to different press durations on a DOM element.

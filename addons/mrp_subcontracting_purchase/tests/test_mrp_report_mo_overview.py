@@ -1,6 +1,6 @@
-from odoo import Command
-from odoo.tests import Form
-from odoo.addons.stock.tests.common import TestStockCommon
+from weth import Command
+from weth.tests import Form
+from weth.addons.stock.tests.common import TestStockCommon
 
 
 class TestMrpReportMoOverview(TestStockCommon):

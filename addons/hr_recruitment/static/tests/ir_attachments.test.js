@@ -6,8 +6,8 @@ import {
     start,
     startServer,
 } from "@mail/../tests/mail_test_helpers";
-import { expect, test } from "@odoo/hoot";
-import { animationFrame } from "@odoo/hoot-mock";
+import { expect, test } from "@weth/hoot";
+import { animationFrame } from "@weth/hoot-mock";
 import { defineModels } from "@web/../tests/web_test_helpers";
 import { HrApplicant } from "./mock_server/mock_models/hr_applicant";
 

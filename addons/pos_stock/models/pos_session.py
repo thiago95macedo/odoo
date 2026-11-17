@@ -1,8 +1,8 @@
 from collections import defaultdict
 
-from odoo import Command, _, api, fields, models
-from odoo.tools import float_compare, split_every
-from odoo.tools.constants import IN_MAX
+from weth import Command, _, api, fields, models
+from weth.tools import float_compare, split_every
+from weth.tools.constants import IN_MAX
 
 
 class PosSession(models.Model):

@@ -1,4 +1,4 @@
-import { Component, onWillStart, onWillUpdateProps, proxy, t, useProps } from "@odoo/owl";
+import { Component, onWillStart, onWillUpdateProps, proxy, t, useProps } from "@weth/owl";
 import { usePopover } from "@web/core/popover/popover_hook";
 import { KeepLast } from "@web/core/utils/concurrency";
 import { useService } from "@web/core/utils/hooks";
@@ -18,7 +18,7 @@ export class ModelFieldSelector extends Component {
         readProperty: t.boolean().optional(),
         showSearchInput: t.boolean().optional(true),
         isDebugMode: t.boolean().optional(false),
-        update: t.function().optional(() => () => {}),
+        update: t.function().optional(() => () => { }),
         filter: t.function().optional(),
         sort: t.function().optional(),
         followRelation: t.or([t.boolean(), t.function()]).optional(true),

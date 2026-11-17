@@ -4,13 +4,13 @@ from collections import Counter, defaultdict
 from ast import literal_eval
 from operator import itemgetter
 
-from odoo import _, api, fields, models
-from odoo.addons.web.controllers.utils import clean_action
-from odoo.exceptions import UserError, ValidationError
-from odoo.fields import Command, Domain
-from odoo.tools import OrderedSet, format_date, groupby
-from odoo.tools.float_utils import float_compare, float_is_zero, float_round
-from odoo.tools.misc import clean_context
+from weth import _, api, fields, models
+from weth.addons.web.controllers.utils import clean_action
+from weth.exceptions import UserError, ValidationError
+from weth.fields import Command, Domain
+from weth.tools import OrderedSet, format_date, groupby
+from weth.tools.float_utils import float_compare, float_is_zero, float_round
+from weth.tools.misc import clean_context
 
 
 class StockMoveLine(models.Model):
@@ -1462,7 +1462,7 @@ class StockMoveLine(models.Model):
                 'message': '%s',
                 'links': [{
                     'label': wave.name,
-                    'url': f'/odoo/batch-transfers/{wave.id}',
+                    'url': f'/weth/batch-transfers/{wave.id}',
                 }],
                 'sticky': False,
                 'next': {'type': 'ir.actions.act_window_close'},

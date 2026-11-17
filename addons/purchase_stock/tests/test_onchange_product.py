@@ -3,9 +3,9 @@
 
 from datetime import datetime
 
-from odoo import fields
-from odoo.tests import tagged, Form, TransactionCase
-from odoo.tools import DEFAULT_SERVER_DATETIME_FORMAT
+from weth import fields
+from weth.tests import tagged, Form, TransactionCase
+from weth.tools import DEFAULT_SERVER_DATETIME_FORMAT
 
 
 @tagged('at_install', '-post_install')  # LEGACY at_install

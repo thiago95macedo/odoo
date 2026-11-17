@@ -5,8 +5,8 @@ import {
     beforeEach,
     getCurrent,
     registerDebugInfo,
-} from "@odoo/hoot";
-import { App, Scope } from "@odoo/owl";
+} from "@weth/hoot";
+import { App, Scope } from "@weth/owl";
 import { startRouter } from "@web/core/browser/router";
 import { appTranslateFn } from "@web/core/l10n/translation";
 import { OfflinePlugin } from "@web/core/offline/offline_plugin";
@@ -32,14 +32,14 @@ import { MockServer, makeMockServer, onRpc } from "./mock_server/mock_server";
 // Internals
 //-----------------------------------------------------------------------------
 
-class TestScope extends Scope {}
+class TestScope extends Scope { }
 
 class TestApp extends App {
     test = true;
     scope = new TestScope(this);
 
     destroy() {
-        this.scope.finalize(() => {});
+        this.scope.finalize(() => { });
         super.destroy();
     }
 }
@@ -100,9 +100,9 @@ beforeEach(() => {
 export function assignDialogTestEnv(dialogData) {
     assignTestEnv({
         dialogData: {
-            close: () => {},
+            close: () => { },
             isActive: true,
-            scrollToOrigin: () => {},
+            scrollToOrigin: () => { },
             ...dialogData,
         },
     });

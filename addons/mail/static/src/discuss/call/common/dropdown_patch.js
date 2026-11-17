@@ -1,4 +1,4 @@
-import { t } from "@odoo/owl";
+import { t } from "@weth/owl";
 
 import { Dropdown, dropdownProps } from "@web/core/dropdown/dropdown";
 import { patch } from "@web/core/utils/patch";

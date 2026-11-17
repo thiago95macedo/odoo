@@ -1,5 +1,5 @@
-import { expect, test } from "@odoo/hoot";
-import { click } from "@odoo/hoot-dom";
+import { expect, test } from "@weth/hoot";
+import { click } from "@weth/hoot-dom";
 import { defineModels, fields, models, mountWithCleanup } from "@web/../tests/web_test_helpers";
 import { DEFAULT_DATE, FAKE_FIELDS } from "./calendar_test_helpers";
 
@@ -82,7 +82,7 @@ const DEFAULT_MODEL = {
     canEdit: true,
     canDelete: true,
     isDateHidden: false,
-    load() {},
+    load() { },
     meta: {
         fields: FAKE_FIELDS,
         context: {},
@@ -91,9 +91,9 @@ const DEFAULT_MODEL = {
 };
 
 const FAKE_PROPS = {
-    openRecord() {},
-    deleteRecord() {},
-    close() {},
+    openRecord() { },
+    deleteRecord() { },
+    close() { },
 };
 
 async function start({ arch, model = DEFAULT_MODEL, record = FAKE_RECORD, ...props } = {}) {

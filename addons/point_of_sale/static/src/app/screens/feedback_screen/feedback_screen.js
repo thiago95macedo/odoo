@@ -1,4 +1,4 @@
-import { Component, onMounted, onWillStart, onWillUnmount, signal, useProps, t } from "@odoo/owl";
+import { Component, onMounted, onWillStart, onWillUnmount, signal, useProps, t } from "@weth/owl";
 import { FeedbackPaymentSummary } from "@point_of_sale/app/components/feedback_payment_summary/feedback_payment_summary";
 import { PrintPopup } from "@point_of_sale/app/components/popups/print_popup/print_popup";
 import { SendReceiptPopup } from "@point_of_sale/app/components/popups/send_receipt_popup/send_receipt_popup";
@@ -136,6 +136,6 @@ export class FeedbackScreen extends Component {
 registry.category("pos_pages").add("FeedbackScreen", {
     name: "FeedbackScreen",
     component: FeedbackScreen,
-    route: `/pos/ui/${odoo.pos_config_id}/resume/{string:orderUuid}`,
+    route: `/pos/ui/${weth.pos_config_id}/resume/{string:orderUuid}`,
     params: {},
 });

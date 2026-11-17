@@ -7,11 +7,11 @@ from zoneinfo import ZoneInfo
 from dateutil import rrule
 from dateutil.relativedelta import relativedelta
 
-from odoo import api, fields, models, _
-from odoo.exceptions import UserError
-from odoo.tools.misc import clean_context
+from weth import api, fields, models, _
+from weth.exceptions import UserError
+from weth.tools.misc import clean_context
 
-from odoo.addons.base.models.res_partner import _tz_get
+from weth.addons.base.models.res_partner import _tz_get
 
 
 MAX_RECURRENT_EVENT = 720

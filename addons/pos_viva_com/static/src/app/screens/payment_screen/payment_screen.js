@@ -1,6 +1,6 @@
 import { PaymentScreen } from "@point_of_sale/app/screens/payment_screen/payment_screen";
 import { patch } from "@web/core/utils/patch";
-import { onMounted, onWillStart } from "@odoo/owl";
+import { onMounted, onWillStart } from "@weth/owl";
 import { useVivaApp } from "../../hooks/use_viva_app";
 import { ConfirmationDialog } from "@web/core/confirmation_dialog/confirmation_dialog";
 import { _t } from "@web/core/l10n/translation";

@@ -1,4 +1,4 @@
-import { beforeEach, expect, test } from "@odoo/hoot";
+import { beforeEach, expect, test } from "@weth/hoot";
 import {
     keyDown,
     keyUp,
@@ -8,8 +8,8 @@ import {
     queryFirst,
     queryOne,
     scroll,
-} from "@odoo/hoot-dom";
-import { animationFrame } from "@odoo/hoot-mock";
+} from "@weth/hoot-dom";
+import { animationFrame } from "@weth/hoot-mock";
 import {
     clickKanbanLoadMore,
     contains,

@@ -1,9 +1,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import Command, fields
-from odoo.exceptions import UserError
-from odoo.tests import Form
-from odoo.tests.common import TransactionCase
+from weth import Command, fields
+from weth.exceptions import UserError
+from weth.tests import Form
+from weth.tests.common import TransactionCase
 
 
 class TestBatchPicking(TransactionCase):

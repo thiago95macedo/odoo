@@ -3,7 +3,7 @@
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
 
-from odoo.addons.hr_holidays.tests.common import TestHrHolidaysCommon
+from weth.addons.hr_holidays.tests.common import TestHrHolidaysCommon
 
 
 class TestTimeoffEvent(TestHrHolidaysCommon):

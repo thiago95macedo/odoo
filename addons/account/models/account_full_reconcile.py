@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from psycopg2 import sql
 
-from odoo import api, fields, models, Command
+from weth import api, fields, models, Command
 
 
 class AccountFullReconcile(models.Model):

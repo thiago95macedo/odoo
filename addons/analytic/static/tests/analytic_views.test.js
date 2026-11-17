@@ -1,4 +1,4 @@
-import { beforeEach, expect, test } from "@odoo/hoot";
+import { beforeEach, expect, test } from "@weth/hoot";
 import { contains, makeMockServer, mountView } from "@web/../tests/web_test_helpers";
 import { defineAnalyticModels } from "./analytic_test_helpers";
 
@@ -29,12 +29,12 @@ beforeEach(async () => {
         { plan_id: us, name: "Los Angeles" },
     ])
     env["account.analytic.line"].create([
-        { x_plan1_id: accounts[0], x_plan1_id_1: eu, x_plan1_id_2: be, analytic_distribution: {[accounts[0]]: 100}, amount: 1 },
-        { x_plan1_id: accounts[1], x_plan1_id_1: eu, x_plan1_id_2: be, analytic_distribution: {[accounts[1]]: 100}, amount: 10 },
-        { x_plan1_id: accounts[2], x_plan1_id_1: eu, x_plan1_id_2: fr, analytic_distribution: {[accounts[2]]: 100}, amount: 100 },
-        { x_plan1_id: accounts[3], x_plan1_id_1: eu, x_plan1_id_2: fr, analytic_distribution: {[accounts[3]]: 100}, amount: 1000 },
-        { x_plan1_id: accounts[4], x_plan1_id_1: am, x_plan1_id_2: us, analytic_distribution: {[accounts[4]]: 100}, amount: 10000 },
-        { x_plan1_id: accounts[5], x_plan1_id_1: am, x_plan1_id_2: us, analytic_distribution: {[accounts[5]]: 100}, amount: 100000 },
+        { x_plan1_id: accounts[0], x_plan1_id_1: eu, x_plan1_id_2: be, analytic_distribution: { [accounts[0]]: 100 }, amount: 1 },
+        { x_plan1_id: accounts[1], x_plan1_id_1: eu, x_plan1_id_2: be, analytic_distribution: { [accounts[1]]: 100 }, amount: 10 },
+        { x_plan1_id: accounts[2], x_plan1_id_1: eu, x_plan1_id_2: fr, analytic_distribution: { [accounts[2]]: 100 }, amount: 100 },
+        { x_plan1_id: accounts[3], x_plan1_id_1: eu, x_plan1_id_2: fr, analytic_distribution: { [accounts[3]]: 100 }, amount: 1000 },
+        { x_plan1_id: accounts[4], x_plan1_id_1: am, x_plan1_id_2: us, analytic_distribution: { [accounts[4]]: 100 }, amount: 10000 },
+        { x_plan1_id: accounts[5], x_plan1_id_1: am, x_plan1_id_2: us, analytic_distribution: { [accounts[5]]: 100 }, amount: 100000 },
     ]);
 });
 

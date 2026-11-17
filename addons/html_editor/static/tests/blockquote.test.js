@@ -1,5 +1,5 @@
-import { describe, expect, test } from "@odoo/hoot";
-import { waitFor, waitForNone, press, manuallyDispatchProgrammaticEvent } from "@odoo/hoot-dom";
+import { describe, expect, test } from "@weth/hoot";
+import { waitFor, waitForNone, press, manuallyDispatchProgrammaticEvent } from "@weth/hoot-dom";
 import { setupEditor, testEditor } from "./_helpers/editor";
 import { getContent } from "./_helpers/selection";
 import { insertText, splitBlock } from "./_helpers/user_actions";

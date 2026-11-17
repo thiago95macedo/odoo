@@ -25,19 +25,19 @@ from werkzeug.datastructures import ImmutableMultiDict, MultiDict
 from werkzeug.exceptions import BadRequest, HTTPException, ServiceUnavailable
 from werkzeug.local import LocalProxy
 
-import odoo
-from odoo import api, modules
-from odoo.http.requestlib import Request
-from odoo.http.response import Response
-from odoo.http.retrying import retrying
-from odoo.http.session import (
+import weth
+from weth import api, modules
+from weth.http.requestlib import Request
+from weth.http.response import Response
+from weth.http.retrying import retrying
+from weth.http.session import (
     SessionExpiredException,
     get_default_session,
     session_store,
 )
-from odoo.modules.registry import Registry
-from odoo.service.server import CommonServer
-from odoo.tools import config
+from weth.modules.registry import Registry
+from weth.service.server import CommonServer
+from weth.tools import config
 
 from .bus_dispatcher import dispatch
 from .session_helpers import new_env
@@ -183,7 +183,7 @@ _websocket_instances = WeakSet()
 
 
 # Bound websocket termination to prevent thundering herd on mass disconnect.
-_maxconn = (config["db_maxconn_gevent"] if odoo.evented else 0) or config["db_maxconn"]
+_maxconn = (config["db_maxconn_gevent"] if weth.evented else 0) or config["db_maxconn"]
 _close_semaphore = threading.BoundedSemaphore(max(_maxconn // 8, 1))
 
 
@@ -219,7 +219,7 @@ class Websocket:
         # Websocket start up
         self.__selector = (
             selectors.PollSelector()
-            if odoo.evented and hasattr(selectors, 'PollSelector')
+            if weth.evented and hasattr(selectors, 'PollSelector')
             else selectors.DefaultSelector()
         )
         self.__selector.register(self.__socket, selectors.EVENT_READ)
@@ -847,7 +847,7 @@ class WebsocketConnectionHandler:
         try:
             response = cls._get_handshake_response(request.httprequest.headers)
             socket = request.httprequest._HTTPRequest__environ['socket']
-            trailing_data = request.httprequest._HTTPRequest__environ.get('odoo.trailing_data', lambda: (b'', False))
+            trailing_data = request.httprequest._HTTPRequest__environ.get('weth.trailing_data', lambda: (b'', False))
             session, db, httprequest = (public_session or request.session), request.db, request.httprequest
             response.call_on_close(
                 lambda: cls._serve_forever(

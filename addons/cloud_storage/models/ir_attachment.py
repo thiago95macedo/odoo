@@ -5,9 +5,9 @@ import uuid
 
 import requests
 
-from odoo import _, fields, models
-from odoo.exceptions import UserError, ValidationError
-from odoo.http.stream import Stream
+from weth import _, fields, models
+from weth.exceptions import UserError, ValidationError
+from weth.http.stream import Stream
 
 _logger = logging.getLogger(__name__)
 

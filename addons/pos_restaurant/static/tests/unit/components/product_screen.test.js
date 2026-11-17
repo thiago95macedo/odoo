@@ -1,6 +1,6 @@
-import { describe, test, expect, advanceTime } from "@odoo/hoot";
-import { click, waitFor, resize } from "@odoo/hoot-dom";
-import { animationFrame } from "@odoo/hoot-mock";
+import { describe, test, expect, advanceTime } from "@weth/hoot";
+import { click, waitFor, resize } from "@weth/hoot-dom";
+import { animationFrame } from "@weth/hoot-mock";
 import { contains, mountWithCleanup } from "@web/../tests/web_test_helpers";
 import {
     setupPosEnv,

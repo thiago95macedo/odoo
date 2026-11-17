@@ -6,12 +6,12 @@ from zoneinfo import ZoneInfo
 
 from dateutil.relativedelta import relativedelta
 
-from odoo import _, api, fields, models
-from odoo.exceptions import ValidationError
-from odoo.addons.resource.models.utils import HOURS_PER_DAY
-from odoo.addons.mail.tools.discuss import Store
-from odoo.tools import OrderedSet, float_round
-from odoo.tools.intervals import Intervals
+from weth import _, api, fields, models
+from weth.exceptions import ValidationError
+from weth.addons.resource.models.utils import HOURS_PER_DAY
+from weth.addons.mail.tools.discuss import Store
+from weth.tools import OrderedSet, float_round
+from weth.tools.intervals import Intervals
 
 
 class HrEmployee(models.Model):

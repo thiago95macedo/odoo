@@ -3,10 +3,10 @@ import json
 from unittest.mock import patch
 from uuid import uuid4
 
-import odoo.tests
+import weth.tests
 
-from odoo import Command
-from odoo.addons.pos_self_order.tests.self_order_common_test import SelfOrderCommonTest
+from weth import Command
+from weth.addons.pos_self_order.tests.self_order_common_test import SelfOrderCommonTest
 
 
 class SelfPartnerValidationChecks:
@@ -172,11 +172,11 @@ class SelfPartnerValidationChecks:
         return self.env["pos.order"].browse(order_id)
 
 
-@odoo.tests.tagged("post_install", "-at_install")
+@weth.tests.tagged("post_install", "-at_install")
 class TestSelfPartnerValidationMobile(SelfPartnerValidationChecks, SelfOrderCommonTest):
     SELF_ORDERING_MODE = "mobile"
 
 
-@odoo.tests.tagged("post_install", "-at_install")
+@weth.tests.tagged("post_install", "-at_install")
 class TestSelfPartnerValidationKiosk(SelfPartnerValidationChecks, SelfOrderCommonTest):
     SELF_ORDERING_MODE = "kiosk"

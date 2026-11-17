@@ -5,12 +5,12 @@ from collections import OrderedDict
 
 import werkzeug
 
-from odoo import api, fields, models
-from odoo.exceptions import MissingError
-from odoo.modules import Manifest
-from odoo.tools import SQL, split_every
-from odoo.tools.constants import IN_MAX
-from odoo.tools.translate import StoredTranslations
+from weth import api, fields, models
+from weth.exceptions import MissingError
+from weth.modules import Manifest
+from weth.tools import SQL, split_every
+from weth.tools.constants import IN_MAX
+from weth.tools.translate import StoredTranslations
 
 _logger = logging.getLogger(__name__)
 

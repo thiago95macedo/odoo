@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.website_forum.tests.common import TestForumCommon
-from odoo.tests import tagged
+from weth.addons.website_forum.tests.common import TestForumCommon
+from weth.tests import tagged
 
 
 @tagged('post_install', '-at_install')

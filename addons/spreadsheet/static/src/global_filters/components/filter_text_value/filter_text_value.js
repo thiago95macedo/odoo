@@ -1,6 +1,6 @@
 /** @ts-check */
 
-import { Component, signal, t, untrack, useProps } from "@odoo/owl";
+import { Component, signal, t, untrack, useProps } from "@weth/owl";
 import { AutoComplete } from "@web/core/autocomplete/autocomplete";
 import { BadgeTag } from "@web/core/tags_list/badge_tag";
 import { useLayoutEffect } from "@web/owl2/utils";

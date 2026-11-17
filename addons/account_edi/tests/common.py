@@ -1,5 +1,5 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
-from odoo.addons.account.tests.common import AccountTestInvoicingCommon
+from weth.addons.account.tests.common import AccountTestInvoicingCommon
 
 from contextlib import contextmanager
 from functools import wraps
@@ -74,7 +74,7 @@ class AccountEdiTestCommon(AccountTestInvoicingCommon):
 
     @contextmanager
     def with_custom_method(self, method_name, method_content):
-        path = f'odoo.addons.account_edi.models.account_edi_format.AccountEdiFormat.{method_name}'
+        path = f'weth.addons.account_edi.models.account_edi_format.AccountEdiFormat.{method_name}'
         with patch(path, new=method_content, create=not hasattr(self.env['account.edi.format'], method_name)):
             yield
 
@@ -85,11 +85,11 @@ class AccountEdiTestCommon(AccountTestInvoicingCommon):
                  _check_move_configuration_method=_mocked_check_move_configuration_success,
                  ):
 
-        with patch('odoo.addons.account_edi.models.account_edi_format.AccountEdiFormat._needs_web_services',
+        with patch('weth.addons.account_edi.models.account_edi_format.AccountEdiFormat._needs_web_services',
                    new=_needs_web_services_method), \
-             patch('odoo.addons.account_edi.models.account_edi_format.AccountEdiFormat._check_move_configuration',
+             patch('weth.addons.account_edi.models.account_edi_format.AccountEdiFormat._check_move_configuration',
                    new=_check_move_configuration_method), \
-             patch('odoo.addons.account_edi.models.account_edi_format.AccountEdiFormat._get_move_applicability',
+             patch('weth.addons.account_edi.models.account_edi_format.AccountEdiFormat._get_move_applicability',
                    new=_get_move_applicability_method):
 
             yield

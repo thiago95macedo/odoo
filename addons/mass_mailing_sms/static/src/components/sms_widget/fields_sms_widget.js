@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @weth-module **/
 
 import { _t } from "@web/core/l10n/translation";
 import { useService } from "@web/core/utils/hooks";
@@ -6,7 +6,7 @@ import { patch } from "@web/core/utils/patch";
 
 import { SmsCharCounter } from "@sms/components/sms_widget/sms_char_counter";
 
-import { onWillStart } from "@odoo/owl";
+import { onWillStart } from "@weth/owl";
 
 const TEXT_URL_REGEX = /https?:\/\/([\w@:%+&~#=/-]|[.,][^\s](?!$))+(?:\?(?:[^\s.,]|[.,][^\s](?!$))+)?/g;  // from tools.mail.TEXT_URL_REGEX
 

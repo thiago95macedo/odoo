@@ -1,4 +1,4 @@
-import { markRaw, EventBus } from "@odoo/owl";
+import { markRaw, EventBus } from "@weth/owl";
 import { Plugin } from "../plugin";
 import { EditorOverlay } from "./overlay";
 

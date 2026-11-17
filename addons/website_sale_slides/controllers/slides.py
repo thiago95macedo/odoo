@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.website_slides.controllers.main import WebsiteSlides
-from odoo.http import request, route
-from odoo.tools import format_amount
+from weth.addons.website_slides.controllers.main import WebsiteSlides
+from weth.http import request, route
+from weth.tools import format_amount
 
 
 class WebsiteSaleSlides(WebsiteSlides):

@@ -1,4 +1,4 @@
-import { proxy } from "@odoo/owl";
+import { proxy } from "@weth/owl";
 import { Plugin } from "@html_editor/plugin";
 import { unwrapContents } from "@html_editor/utils/dom";
 import { childNodeIndex, DIRECTIONS, nodeSize } from "@html_editor/utils/position";
@@ -189,7 +189,7 @@ export class TextEffectPlugin extends Plugin {
         const selectedTextEffects = this.getSelectedTextEffects();
         const element =
             selectedTextEffects.length === 1 &&
-            this.isSelectionWithinTextEffect(selectedTextEffects[0])
+                this.isSelectionWithinTextEffect(selectedTextEffects[0])
                 ? selectedTextEffects[0]
                 : undefined;
         return {
@@ -377,17 +377,17 @@ export class TextEffectPlugin extends Plugin {
         this.dependencies.selection.setSelection(
             direction === DIRECTIONS.RIGHT
                 ? {
-                      anchorNode: selectionStart[0],
-                      anchorOffset: selectionStart[1],
-                      focusNode: selectionEnd[0],
-                      focusOffset: selectionEnd[1],
-                  }
+                    anchorNode: selectionStart[0],
+                    anchorOffset: selectionStart[1],
+                    focusNode: selectionEnd[0],
+                    focusOffset: selectionEnd[1],
+                }
                 : {
-                      anchorNode: selectionEnd[0],
-                      anchorOffset: selectionEnd[1],
-                      focusNode: selectionStart[0],
-                      focusOffset: selectionStart[1],
-                  }
+                    anchorNode: selectionEnd[0],
+                    anchorOffset: selectionEnd[1],
+                    focusNode: selectionStart[0],
+                    focusOffset: selectionStart[1],
+                }
         );
         return { element: span, didRemoveOtherTextEffect };
     }

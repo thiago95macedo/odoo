@@ -2,17 +2,17 @@
 
 from werkzeug.exceptions import NotFound
 
-from odoo import fields
-from odoo.exceptions import UserError
-from odoo.http import request, route
-from odoo.tools import consteq
-from odoo.tools.image import image_data_uri
+from weth import fields
+from weth.exceptions import UserError
+from weth.http import request, route
+from weth.tools import consteq
+from weth.tools.image import image_data_uri
 
-from odoo.addons.payment import utils as payment_utils
-from odoo.addons.payment.controllers.portal import PaymentPortal
-from odoo.addons.sale.controllers.portal import CustomerPortal
-from odoo.addons.website_sale.controllers.main import WebsiteSale
-from odoo.addons.website_sale.models.website import CART_SESSION_CACHE_KEY
+from weth.addons.payment import utils as payment_utils
+from weth.addons.payment.controllers.portal import PaymentPortal
+from weth.addons.sale.controllers.portal import CustomerPortal
+from weth.addons.website_sale.controllers.main import WebsiteSale
+from weth.addons.website_sale.models.website import CART_SESSION_CACHE_KEY
 
 
 class Cart(PaymentPortal):

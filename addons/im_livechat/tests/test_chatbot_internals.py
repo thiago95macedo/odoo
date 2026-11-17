@@ -2,15 +2,15 @@
 
 from freezegun import freeze_time
 
-from odoo import Command, fields
-from odoo.exceptions import ValidationError
+from weth import Command, fields
+from weth.exceptions import ValidationError
 
-from odoo.addons.im_livechat.tests import chatbot_common
-from odoo.addons.bus.tests.common import BusResult
-from odoo.tests.common import JsonRpcException, new_test_user
-from odoo.tools.misc import mute_logger
-from odoo.addons.mail.tests.common import MailCommon
-from odoo.addons.mail.tools.discuss import Store
+from weth.addons.im_livechat.tests import chatbot_common
+from weth.addons.bus.tests.common import BusResult
+from weth.tests.common import JsonRpcException, new_test_user
+from weth.tools.misc import mute_logger
+from weth.addons.mail.tests.common import MailCommon
+from weth.addons.mail.tools.discuss import Store
 
 
 class ChatbotCase(MailCommon, chatbot_common.ChatbotCase):
@@ -65,7 +65,7 @@ class ChatbotCase(MailCommon, chatbot_common.ChatbotCase):
         )
         self.assertEqual(discuss_channel.chatbot_current_step_id, self.step_email)
 
-        with self.assertRaises(JsonRpcException, msg='odoo.exceptions.ValidationError'), mute_logger("odoo.http"):
+        with self.assertRaises(JsonRpcException, msg='weth.exceptions.ValidationError'), mute_logger("weth.http"):
             self._post_answer_and_trigger_next_step(discuss_channel, email="test")
 
         self._post_answer_and_trigger_next_step(discuss_channel, email="test@example.com")
@@ -73,7 +73,7 @@ class ChatbotCase(MailCommon, chatbot_common.ChatbotCase):
 
         self.make_jsonrpc_request("/chatbot/step/trigger", {"channel_id": discuss_channel.id})
         self.assertEqual(discuss_channel.chatbot_current_step_id, self.step_phone)
-        with self.assertRaises(JsonRpcException, msg="odoo.exceptions.ValidationError"), mute_logger("odoo.http"):
+        with self.assertRaises(JsonRpcException, msg="weth.exceptions.ValidationError"), mute_logger("weth.http"):
             self._post_answer_and_trigger_next_step(discuss_channel, phone="123")
         self._post_answer_and_trigger_next_step(discuss_channel, phone="+919876543210")
         self.assertEqual(discuss_channel.chatbot_current_step_id, self.step_phone_validated)
@@ -537,7 +537,7 @@ class ChatbotCase(MailCommon, chatbot_common.ChatbotCase):
             },
         ])
         action = self.env.ref('im_livechat.chatbot_script_action')
-        self.start_tour(f"/odoo/action-{action.id}", 'change_chatbot_step_type', login='admin')
+        self.start_tour(f"/weth/action-{action.id}", 'change_chatbot_step_type', login='admin')
         self.assertFalse(step.answer_ids, "Answers were not cleared after step_type was changed.")
         self.assertFalse(step_2.triggering_answer_ids, "Step 2 still has stale triggering answers.")
         self.assertFalse(step_3.triggering_answer_ids, "Step 3 still has stale triggering answers.")
@@ -608,7 +608,7 @@ class ChatbotCase(MailCommon, chatbot_common.ChatbotCase):
         for i in range(100):
             discuss_channel.sudo().message_post(body=f"filler {i}", message_type="comment")
         self.start_tour(
-            f"/odoo/discuss?active_id={discuss_channel.id}",
+            f"/weth/discuss?active_id={discuss_channel.id}",
             "im_livechat_info_panel_tour",
             login=operator.login,
         )

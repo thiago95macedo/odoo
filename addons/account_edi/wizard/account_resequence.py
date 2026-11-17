@@ -1,5 +1,5 @@
-from odoo import _, models
-from odoo.exceptions import UserError
+from weth import _, models
+from weth.exceptions import UserError
 
 
 class AccountResequenceWizard(models.TransientModel):

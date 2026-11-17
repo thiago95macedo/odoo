@@ -2,13 +2,13 @@
 
 import logging
 
-from odoo.fields import Domain
-from odoo.http import request, route
-from odoo.tools import html2plaintext, email_normalize
-from odoo.tools.misc import formatLang
-from odoo.tools.image import image_data_uri
+from weth.fields import Domain
+from weth.http import request, route
+from weth.tools import html2plaintext, email_normalize
+from weth.tools.misc import formatLang
+from weth.tools.image import image_data_uri
 
-from odoo.addons.mail_plugin.controllers import mail_plugin
+from weth.addons.mail_plugin.controllers import mail_plugin
 
 _logger = logging.getLogger(__name__)
 

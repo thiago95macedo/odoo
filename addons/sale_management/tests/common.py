@@ -1,6 +1,6 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.sale.tests.common import SaleCommon
+from weth.addons.sale.tests.common import SaleCommon
 
 
 class SaleManagementCommon(SaleCommon):

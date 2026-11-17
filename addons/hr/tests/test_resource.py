@@ -4,12 +4,12 @@
 from datetime import datetime, date, UTC
 from zoneinfo import ZoneInfo
 
-from odoo.tools.intervals import Intervals
-from odoo.fields import Date
-from odoo.tools.date_utils import sum_intervals
+from weth.tools.intervals import Intervals
+from weth.fields import Date
+from weth.tools.date_utils import sum_intervals
 
-from odoo.tests import tagged
-from odoo.tests.common import freeze_time
+from weth.tests import tagged
+from weth.tests.common import freeze_time
 
 from .common import TestHrCommon
 
@@ -108,7 +108,7 @@ class TestResource(TestHrCommon):
         user = self.env['res.users'].create([{
             'name': 'Test user',
             'login': 'test',
-            'email': 'test@odoo.perso',
+            'email': 'test@weth.perso',
             'phone': '+32488990011',
         }])
         department = self.env['hr.department'].create([{
@@ -124,7 +124,7 @@ class TestResource(TestHrCommon):
             'user_id': user.id,
             'job_title': 'Tester',
             'department_id': department.id,
-            'work_email': 'test@odoo.pro',
+            'work_email': 'test@weth.pro',
             'work_phone': '+32800100100',
             'resource_id': resource.id,
         }])

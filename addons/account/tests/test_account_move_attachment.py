@@ -1,4 +1,4 @@
-from odoo.tests import tagged, HttpCase
+from weth.tests import tagged, HttpCase
 
 
 @tagged("-at_install", "post_install")

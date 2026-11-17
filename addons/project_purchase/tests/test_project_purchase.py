@@ -1,10 +1,10 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import Command
-from odoo.tests import Form
+from weth import Command
+from weth.tests import Form
 
-from odoo.addons.purchase.tests.test_purchase_invoice import TestPurchaseToInvoiceCommon
-from odoo.addons.account.tests.common import AccountTestInvoicingCommon
+from weth.addons.purchase.tests.test_purchase_invoice import TestPurchaseToInvoiceCommon
+from weth.addons.account.tests.common import AccountTestInvoicingCommon
 
 
 class TestProjectPurchase(TestPurchaseToInvoiceCommon, AccountTestInvoicingCommon):

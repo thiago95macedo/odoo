@@ -1,7 +1,7 @@
 import { Base } from "../models/related_models";
 import { RAW_SYMBOL } from "../models/related_models/utils";
 import { WithLazyGetterTrap } from "../../lazy_getter";
-import { toRaw } from "@odoo/owl";
+import { toRaw } from "@weth/owl";
 
 // https://www.mattzeunert.com/2016/02/19/custom-chrome-devtools-object-formatters.html
 
@@ -56,10 +56,10 @@ function modelFormatter() {
         header(obj) {
             return obj.constructor?.name === "Model" && obj.models
                 ? createSubObjectBlock(
-                      `Model(${obj.name})`,
-                      { name: obj.name, fields: toRaw(obj.fields) },
-                      ""
-                  )
+                    `Model(${obj.name})`,
+                    { name: obj.name, fields: toRaw(obj.fields) },
+                    ""
+                )
                 : null;
         },
         hasBody: () => false,

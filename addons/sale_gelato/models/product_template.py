@@ -1,10 +1,10 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, fields, models
-from odoo.exceptions import UserError
-from odoo.fields import Command, Domain
+from weth import api, fields, models
+from weth.exceptions import UserError
+from weth.fields import Command, Domain
 
-from odoo.addons.sale_gelato import utils
+from weth.addons.sale_gelato import utils
 
 
 class ProductTemplate(models.Model):

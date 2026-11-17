@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, fields, models, tools
+from weth import api, fields, models, tools
 
-from odoo.addons.hr.models.hr_employee_location import DAYS
+from weth.addons.hr.models.hr_employee_location import DAYS
 
 
 class HomeworkLocationWizard(models.TransientModel):

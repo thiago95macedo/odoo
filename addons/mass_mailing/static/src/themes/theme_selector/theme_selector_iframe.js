@@ -11,7 +11,7 @@ import {
     usePlugin,
     useProps,
     useScope,
-} from "@odoo/owl";
+} from "@weth/owl";
 import { isBrowserSafari } from "@web/core/browser/feature_detection";
 import { localization } from "@web/core/l10n/localization";
 import { ORM } from "@web/core/orm_plugin";

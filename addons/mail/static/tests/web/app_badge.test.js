@@ -1,6 +1,6 @@
 import { defineMailModels, start } from "@mail/../tests/mail_test_helpers";
-import { describe, expect, test } from "@odoo/hoot";
-import { animationFrame } from "@odoo/hoot-mock";
+import { describe, expect, test } from "@weth/hoot";
+import { animationFrame } from "@weth/hoot-mock";
 import { getService, patchWithCleanup } from "@web/../tests/web_test_helpers";
 
 describe.current.tags("desktop");
@@ -10,7 +10,7 @@ defineMailModels();
 function mockIdbKeyval() {
     const values = new Map();
     patchWithCleanup(window.idbKeyval, {
-        Store: class {},
+        Store: class { },
         async get(key) {
             return values.get(key);
         },

@@ -1,5 +1,5 @@
-import { expect, test } from "@odoo/hoot";
-import { markup } from "@odoo/owl";
+import { expect, test } from "@weth/hoot";
+import { markup } from "@weth/owl";
 import { setupEditor, testEditor } from "./_helpers/editor";
 import { fixInvalidHTML } from "@html_editor/utils/sanitize";
 

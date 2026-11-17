@@ -1,4 +1,4 @@
-import { test } from "@odoo/hoot";
+import { test } from "@weth/hoot";
 import { setupPosEnv } from "../utils";
 import { definePosModels } from "../data/generate_model_definitions";
 import { expectTipTicket, renderTipReceipt } from "../receipt_utils";

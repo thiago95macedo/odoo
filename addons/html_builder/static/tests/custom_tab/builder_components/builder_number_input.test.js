@@ -5,7 +5,7 @@ import {
     editBuilderRangeValue,
 } from "@html_builder/../tests/helpers";
 import { BuilderAction } from "@html_builder/core/builder_action";
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@weth/hoot";
 import {
     advanceTime,
     animationFrame,
@@ -15,8 +15,8 @@ import {
     freezeTime,
     press,
     queryFirst,
-} from "@odoo/hoot-dom";
-import { xml } from "@odoo/owl";
+} from "@weth/hoot-dom";
+import { xml } from "@weth/owl";
 import { contains, defineModels, models } from "@web/../tests/web_test_helpers";
 
 describe.current.tags("desktop");
@@ -1142,7 +1142,7 @@ describe("sanitized values", () => {
     test("should save font with full precision in rem and display to correct value in px", async () => {
         class WebEditorAssets extends models.Model {
             _name = "web_editor.assets";
-            make_scss_customization() {}
+            make_scss_customization() { }
         }
         defineModels([WebEditorAssets]);
         addBuilderOption({

@@ -46,7 +46,7 @@ patch(PosTicketPrinterPlugin.prototype, {
         let receipts;
         try {
             ({ receipts } = await rpc(`/pos-self-order/kiosk/change-receipt/${order.id}`, {
-                access_token: odoo.access_token,
+                access_token: weth.access_token,
                 order_access_token: order.access_token,
             }));
         } catch {

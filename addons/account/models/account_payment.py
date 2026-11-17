@@ -1,7 +1,7 @@
 from itertools import zip_longest
-from odoo import models, fields, api, _, Command
-from odoo.exceptions import UserError, ValidationError
-from odoo.tools import SQL
+from weth import models, fields, api, _, Command
+from weth.exceptions import UserError, ValidationError
+from weth.tools import SQL
 
 
 class AccountPayment(models.Model):

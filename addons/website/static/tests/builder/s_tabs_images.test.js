@@ -1,6 +1,6 @@
 import { setSelection } from "@html_editor/../tests/_helpers/selection";
-import { expect, test } from "@odoo/hoot";
-import { manuallyDispatchProgrammaticEvent, queryOne } from "@odoo/hoot-dom";
+import { expect, test } from "@weth/hoot";
+import { manuallyDispatchProgrammaticEvent, queryOne } from "@weth/hoot-dom";
 import { defineWebsiteModels, setupWebsiteBuilderWithSnippet } from "./website_helpers";
 
 defineWebsiteModels();

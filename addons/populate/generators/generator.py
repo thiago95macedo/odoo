@@ -8,19 +8,19 @@ from functools import partial
 from random import Random
 from typing import TYPE_CHECKING, ClassVar, final
 
-from odoo.fields import Domain, Field
-from odoo.tools import find_circular_dependency, frozendict, str2bool, topological_sort
-from odoo.tools.lru import LRU
+from weth.fields import Domain, Field
+from weth.tools import find_circular_dependency, frozendict, str2bool, topological_sort
+from weth.tools.lru import LRU
 
 from ..utils.distributions import Distribution, UniformDistribution
 from ..utils.orm import get_ref_domain
-from odoo.addons.populate.utils.distributions import WeightedDistribution
+from weth.addons.populate.utils.distributions import WeightedDistribution
 
 if TYPE_CHECKING:
     from collections.abc import Callable, Collection, Iterable
     from typing import Any
 
-    from odoo.api import DomainType, Environment, ValuesType
+    from weth.api import DomainType, Environment, ValuesType
 
     from ..models.job import Job
     from ..models.session import Session

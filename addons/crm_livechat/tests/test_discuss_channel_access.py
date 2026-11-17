@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.exceptions import AccessError
-from odoo.tests.common import HttpCase, new_test_user
+from weth.exceptions import AccessError
+from weth.tests.common import HttpCase, new_test_user
 
 
 class TestDiscussChannelAccess(HttpCase):

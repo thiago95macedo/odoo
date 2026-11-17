@@ -2,12 +2,12 @@
 
 from datetime import UTC
 
-from odoo import fields
-from odoo.tests.common import HttpCase
+from weth import fields
+from weth.tests.common import HttpCase
 
-from odoo.addons.bus.tests.common import BusResult
-from odoo.addons.mail.tests.common import MailCommon
-from odoo.addons.mail.tools import discuss, jwt
+from weth.addons.bus.tests.common import BusResult
+from weth.addons.mail.tests.common import MailCommon
+from weth.addons.mail.tools import discuss, jwt
 
 
 class TestCloudStorageRtc(MailCommon, HttpCase):
@@ -137,7 +137,7 @@ class TestCloudStorageRtc(MailCommon, HttpCase):
                 content="Your meeting recording is available in WETH.",
             )
             self.assertIn(
-                f"/odoo/discuss.call.history/{self.call_history.id}",
+                f"/weth/discuss.call.history/{self.call_history.id}",
                 mail.body_html,
             )
             self.assertEqual(self._new_mails, mail)

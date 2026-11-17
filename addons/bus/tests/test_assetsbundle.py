@@ -1,9 +1,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
-import odoo.tests
+import weth.tests
 
 
-@odoo.tests.tagged('post_install', '-at_install', 'assets_bundle')
-class BusWebTests(odoo.tests.HttpCase):
+@weth.tests.tagged('post_install', '-at_install', 'assets_bundle')
+class BusWebTests(weth.tests.HttpCase):
 
     def test_bundle_sends_bus(self):
         """Test that asset bundle changes emit bus notifications.

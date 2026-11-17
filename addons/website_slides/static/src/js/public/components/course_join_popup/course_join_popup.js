@@ -1,4 +1,4 @@
-import { Component, t, useProps } from "@odoo/owl";
+import { Component, t, useProps } from "@weth/owl";
 
 export class SlidesCourseJoinPopup extends Component {
     static template = "slide.course.join.popupContent";

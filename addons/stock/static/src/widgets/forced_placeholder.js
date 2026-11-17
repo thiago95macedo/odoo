@@ -1,4 +1,4 @@
-import { Component, useProps, t } from "@odoo/owl";
+import { Component, useProps, t } from "@weth/owl";
 import { registry } from "@web/core/registry";
 import { computeM2OProps, Many2One, many2OneProps } from "@web/views/fields/many2one/many2one";
 import { buildM2OFieldDescription } from "@web/views/fields/many2one/many2one_field";

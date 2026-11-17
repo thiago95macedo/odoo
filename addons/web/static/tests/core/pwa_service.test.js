@@ -1,4 +1,4 @@
-import { describe, expect, getFixture, test } from "@odoo/hoot";
+import { describe, expect, getFixture, test } from "@weth/hoot";
 import { getService, makeTestApp, onRpc } from "@web/../tests/web_test_helpers";
 import { browser } from "@web/core/browser/browser";
 import { patch } from "@web/core/utils/patch";

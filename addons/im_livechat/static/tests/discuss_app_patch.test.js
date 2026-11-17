@@ -9,7 +9,7 @@ import {
     MENU_ACTIVE_IDS,
 } from "@mail/../tests/mail_test_helpers";
 import { withGuest } from "@mail/../tests/mock_server/mail_mock_server";
-import { describe, mockDate, test } from "@odoo/hoot";
+import { describe, mockDate, test } from "@weth/hoot";
 import { Command, serverState } from "@web/../tests/web_test_helpers";
 
 import { rpc } from "@web/core/network/rpc";

@@ -3,10 +3,10 @@
 
 import re
 
-from odoo.addons.mail.tests.common import MailCommon
-from odoo.exceptions import AccessError
-from odoo.tests import Form, HttpCase, tagged, users
-from odoo.tools import mute_logger
+from weth.addons.mail.tests.common import MailCommon
+from weth.exceptions import AccessError
+from weth.tests import Form, HttpCase, tagged, users
+from weth.tools import mute_logger
 
 
 @tagged('mail_composer')
@@ -74,7 +74,7 @@ class TestMailComposerForm(TestMailComposer):
             }
         ])
 
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     @users('employee')
     def test_composer_default_recipients(self):
         """ Test usage of a private partner in composer, as default value """
@@ -105,7 +105,7 @@ class TestMailComposerForm(TestMailComposer):
         self.assertEqual(message.partner_ids, partner_classic)
         self.assertEqual(message.subject, f'{test_record.name}')
 
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     @users('employee')
     def test_composer_default_recipients_private(self):
         """ Test usage of a private partner in composer, as default value """
@@ -138,7 +138,7 @@ class TestMailComposerForm(TestMailComposer):
         self.assertEqual(message.partner_ids, partner_private + partner_classic)
         self.assertEqual(message.subject, f'{test_record.name}')
 
-    @mute_logger('odoo.addons.base.models.ir_access', 'odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.base.models.ir_access', 'weth.addons.mail.models.mail_mail')
     @users('employee')
     def test_composer_default_recipients_private_norights(self):
         """ Test usage of a private partner in composer when not having the
@@ -160,7 +160,7 @@ class TestMailComposerForm(TestMailComposer):
         msg = form.save()
         self.assertEqual(partner_classic, msg.sudo().partner_ids, 'partner_private must not be saved')
 
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     @users('employee')
     def test_composer_template_change_recipients_update(self):
         """Check that recipients only change when coming or going to a template with specific recipients."""
@@ -203,7 +203,7 @@ class TestMailComposerForm(TestMailComposer):
                 composer_form.template_id = new_template or self.env['mail.template']
                 self.assertEqual(sorted(composer_form.partner_ids.ids), sorted(expected_partners.ids if expected_partners else []))
 
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     @users('employee')
     def test_composer_template_recipients_private(self):
         """ Test usage of a private partner in composer, coming from template
@@ -282,7 +282,7 @@ class TestMailComposerRendering(TestMailComposer):
             'We must preserve (mso) comments in email html'
         )
 
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     @users('employee')
     def test_mail_mass_mode_compose_with_mso(self):
         composer = self.env['mail.compose.message'].with_context({
@@ -360,7 +360,7 @@ class TestMailComposerUI(MailCommon, HttpCase):
         partner.message_subscribe(partner_ids=[self.user_admin.partner_id.id])
         with self.mock_mail_app():
             self.start_tour(
-                f"/odoo/res.partner/{partner.id}",
+                f"/weth/res.partner/{partner.id}",
                 "mail/static/tests/tours/mail_composer_test_tour.js",
                 login=self.user_employee.login
             )
@@ -421,20 +421,20 @@ class TestMailComposerUI(MailCommon, HttpCase):
         partner.message_subscribe(partner_ids=[self.user_admin.partner_id.id])
         with self.mock_mail_app():
             self.start_tour(
-                f"/odoo/res.partner/{partner.id}",
+                f"/weth/res.partner/{partner.id}",
                 "mail/static/tests/tours/mail_html_composer_test_tour.js",
                 login=self.user_employee.login,
             )
 
     def test_send_attachment_without_body(self):
-        self.start_tour("/odoo/discuss", "create_thread_for_attachment_without_body",login="admin")
+        self.start_tour("/weth/discuss", "create_thread_for_attachment_without_body",login="admin")
 
     def test_mail_composer_autosave_tour(self):
         partner = self.env["res.partner"].create(
             {"name": "Jane", "email": "jane@example.com"})
         with self.mock_mail_app():
             self.start_tour(
-                f"/odoo/res.partner/{partner.id}",
+                f"/weth/res.partner/{partner.id}",
                 "mail/static/tests/tours/mail_composer_autosave_tour.js",
                 login=self.user_employee.login
             )

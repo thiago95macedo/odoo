@@ -1,4 +1,4 @@
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@weth/hoot";
 import { DataServiceOptions } from "@point_of_sale/app/models/data_service_options";
 import { PosOrder } from "@point_of_sale/app/models/pos_order";
 import "@pos_event/app/models/data_service_options";

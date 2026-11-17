@@ -1,11 +1,11 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, fields, models
+from weth import api, fields, models
 
 # Import the payment provider modules with aliases to avoid circular import errors.
 try:
-    import odoo.addons.payment_mercado_pago as mercado_pago
-    import odoo.addons.payment_stripe as stripe
+    import weth.addons.payment_mercado_pago as mercado_pago
+    import weth.addons.payment_stripe as stripe
 except ModuleNotFoundError:
     mercado_pago = None
     stripe = None

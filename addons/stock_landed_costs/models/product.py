@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import fields, models, _
-from odoo.addons.stock_landed_costs.models.stock_landed_cost import SPLIT_METHOD
-from odoo.exceptions import UserError
+from weth import fields, models, _
+from weth.addons.stock_landed_costs.models.stock_landed_cost import SPLIT_METHOD
+from weth.exceptions import UserError
 
 
 class ProductTemplate(models.Model):

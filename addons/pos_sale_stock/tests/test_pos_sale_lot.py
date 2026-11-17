@@ -1,11 +1,11 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-import odoo
-from odoo import fields
-from odoo.addons.pos_stock.tests.common import CommonPosStockTest
+import weth
+from weth import fields
+from weth.addons.pos_stock.tests.common import CommonPosStockTest
 
 
-@odoo.tests.tagged('post_install', '-at_install')
+@weth.tests.tagged('post_install', '-at_install')
 class TestPointOfSaleFlow(CommonPosStockTest):
     _test_user_groups = None  # FIXME list needed groups
 

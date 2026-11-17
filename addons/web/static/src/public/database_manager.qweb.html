@@ -53,7 +53,7 @@
 
                         <t t-foreach="databases" t-as="db">
                             <div class="list-group-item d-flex align-items-center">
-                                <a t-attf-href="/odoo?db={{ db }}" class="d-block flex-grow-1">
+                                <a t-attf-href="/weth?db={{ db }}" class="d-block flex-grow-1">
                                     <t t-if="db in incompatible_databases">
                                         <i class="icon oi float-end text-warning" data-icon="warning"
                                             title="Este banco de dados pode não ser compatível"></i>

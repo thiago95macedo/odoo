@@ -6,7 +6,7 @@ import {
     press,
     test,
     waitFor,
-} from "@odoo/hoot";
+} from "@weth/hoot";
 import { preloadBundle } from "@web/../tests/web_test_helpers";
 import { setupEditor } from "./_helpers/editor";
 import { unformat } from "./_helpers/format";

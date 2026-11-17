@@ -3,10 +3,10 @@ from unittest.mock import MagicMock, patch
 
 from freezegun import freeze_time
 
-from odoo.exceptions import UserError
-from odoo.tests import tagged
-from odoo.tests.common import TransactionCase
-from odoo.tools import verify_hash_signed
+from weth.exceptions import UserError
+from weth.tests import tagged
+from weth.tests.common import TransactionCase
+from weth.tools import verify_hash_signed
 
 
 @tagged('post_install', '-at_install')
@@ -36,7 +36,7 @@ class TestPosSafaricom(TransactionCase):
         })
 
         # Mock the URL registration to avoid external HTTP calls during setup
-        with patch('odoo.addons.pos_safaricom.models.pos_payment_method.PosPaymentMethod.lipa_na_mpesa_register_urls'):
+        with patch('weth.addons.pos_safaricom.models.pos_payment_method.PosPaymentMethod.lipa_na_mpesa_register_urls'):
             # Create Lipa na M-PESA payment method
             cls.lipa_na_mpesa = cls.env['pos.payment.method'].create({
                 'name': 'Lipa na M-PESA',
@@ -83,7 +83,7 @@ class TestPosSafaricom(TransactionCase):
         self.assertIn('Consumer Key and Consumer Secret are required', str(context.exception))
 
     @patch('requests.post')
-    @patch('odoo.addons.pos_safaricom.models.pos_payment_method.PosPaymentMethod._get_bearer_token')
+    @patch('weth.addons.pos_safaricom.models.pos_payment_method.PosPaymentMethod._get_bearer_token')
     def test_mpesa_express_payment_request(self, mock_bearer, mock_post):
         """Test M-PESA Express STK Push payment request"""
         mock_bearer.return_value = 'test_access_token'
@@ -118,7 +118,7 @@ class TestPosSafaricom(TransactionCase):
         self.assertEqual(payload['PhoneNumber'], '254712345678')
 
     @patch('requests.post')
-    @patch('odoo.addons.pos_safaricom.models.pos_payment_method.PosPaymentMethod._get_bearer_token')
+    @patch('weth.addons.pos_safaricom.models.pos_payment_method.PosPaymentMethod._get_bearer_token')
     def test_generate_qr_code(self, mock_bearer, mock_post):
         """Test QR code generation for Lipa na M-PESA"""
         mock_bearer.return_value = 'test_access_token'
@@ -147,7 +147,7 @@ class TestPosSafaricom(TransactionCase):
         self.assertEqual(payload['RefNo'], 'ORDER-001')
 
     @patch('requests.post')
-    @patch('odoo.addons.pos_safaricom.models.pos_payment_method.PosPaymentMethod._get_bearer_token')
+    @patch('weth.addons.pos_safaricom.models.pos_payment_method.PosPaymentMethod._get_bearer_token')
     def test_lipa_na_mpesa_register_urls_payload_does_not_expire(self, mock_bearer, mock_post):
         """Test the registered C2B URLs still work long after the registration"""
         mock_bearer.return_value = 'test_access_token'

@@ -1,8 +1,8 @@
 import { toRawValue } from "@mail/utils/common/local_storage";
 import { defineMailModels, start as start2 } from "@mail/../tests/mail_test_helpers";
-import { after, afterEach, beforeEach, describe, expect, test, tick } from "@odoo/hoot";
-import { advanceTime, animationFrame } from "@odoo/hoot-mock";
-import { Component, immediateEffect, markup, proxy, toRaw, xml } from "@odoo/owl";
+import { after, afterEach, beforeEach, describe, expect, test, tick } from "@weth/hoot";
+import { advanceTime, animationFrame } from "@weth/hoot-mock";
+import { Component, immediateEffect, markup, proxy, toRaw, xml } from "@weth/owl";
 import {
     getService,
     mockService,
@@ -1193,7 +1193,7 @@ test("Record lists methods are bound to the record list", async () => {
 });
 
 test("setup() has precedence over instance class field definition", async () => {
-    class Test extends Record {}
+    class Test extends Record { }
     Test.register(localRegistry);
     (class Test2 extends Test {
         x = false;

@@ -1,9 +1,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, fields, models
-from odoo.tools import format_datetime
+from weth import api, fields, models
+from weth.tools import format_datetime
 
-from odoo.addons.mail.tools.discuss import Store
+from weth.addons.mail.tools.discuss import Store
 
 
 class DiscussCallHistory(models.Model):

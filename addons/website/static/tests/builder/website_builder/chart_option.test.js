@@ -1,10 +1,10 @@
-import { describe, expect, test, advanceTime, manuallyDispatchProgrammaticEvent } from "@odoo/hoot";
+import { describe, expect, test, advanceTime, manuallyDispatchProgrammaticEvent } from "@weth/hoot";
 import {
     defineWebsiteModels,
     setupWebsiteBuilder,
 } from "@website/../tests/builder/website_helpers";
 import { contains } from "@web/../tests/web_test_helpers";
-import { animationFrame, press, queryFirst } from "@odoo/hoot-dom";
+import { animationFrame, press, queryFirst } from "@weth/hoot-dom";
 
 defineWebsiteModels();
 

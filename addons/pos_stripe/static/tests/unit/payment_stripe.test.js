@@ -1,4 +1,4 @@
-import { beforeEach, expect, test, waitUntil } from "@odoo/hoot";
+import { beforeEach, expect, test, waitUntil } from "@weth/hoot";
 import { mountWithCleanup, onRpc, patchWithCleanup } from "@web/../tests/web_test_helpers";
 import { getFilledOrder, setupPosEnv } from "@point_of_sale/../tests/unit/utils";
 import { definePosModels } from "@point_of_sale/../tests/unit/data/generate_model_definitions";
@@ -72,9 +72,9 @@ const payWithStripe = async ({ tipAfterPayment }) => {
 const mountTipScreen = async (store, order) => {
     await store.syncAllOrders();
     store.config.tip_percentage_3 = 25;
-    patchWithCleanup(TipScreen.prototype, { async printTipReceipt() {} });
+    patchWithCleanup(TipScreen.prototype, { async printTipReceipt() { } });
     return mountWithCleanup(TipScreen, {
-        props: { orderUuid: order.uuid, finalizeValidation: async () => {} },
+        props: { orderUuid: order.uuid, finalizeValidation: async () => { } },
     });
 };
 

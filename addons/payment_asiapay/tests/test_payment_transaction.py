@@ -4,13 +4,13 @@ from unittest.mock import patch
 
 from freezegun import freeze_time
 
-from odoo.fields import Command
-from odoo.tests import tagged
-from odoo.tools import mute_logger
+from weth.fields import Command
+from weth.tests import tagged
+from weth.tools import mute_logger
 
-from odoo.addons.payment.tests.http_common import PaymentHttpCommon
-from odoo.addons.payment_asiapay import const
-from odoo.addons.payment_asiapay.tests.common import AsiaPayCommon
+from weth.addons.payment.tests.http_common import PaymentHttpCommon
+from weth.addons.payment_asiapay import const
+from weth.addons.payment_asiapay.tests.common import AsiaPayCommon
 
 
 @tagged("post_install", "-at_install")
@@ -62,7 +62,7 @@ class TestPaymentTransaction(AsiaPayCommon, PaymentHttpCommon):
         """Test that the rendered values are conform to the transaction fields."""
         tx = self._create_transaction(flow="redirect")
         with patch(
-            "odoo.addons.payment_asiapay.models.payment_provider.PaymentProvider"
+            "weth.addons.payment_asiapay.models.payment_provider.PaymentProvider"
             "._asiapay_calculate_signature",
             return_value="dummy_signature",
         ):
@@ -89,7 +89,7 @@ class TestPaymentTransaction(AsiaPayCommon, PaymentHttpCommon):
                 },
             )
 
-    @mute_logger("odoo.addons.payment.models.payment_transaction")
+    @mute_logger("weth.addons.payment.models.payment_transaction")
     def test_no_input_missing_from_redirect_form(self):
         """Test that no key is omitted from the rendering values."""
         tx = self._create_transaction(flow="redirect")

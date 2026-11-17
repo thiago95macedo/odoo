@@ -2,14 +2,14 @@ from ast import literal_eval
 from unittest.mock import patch
 from typing import NamedTuple
 
-from odoo.tools import hash_sign
-from odoo.addons.account.tests.common import AccountTestInvoicingCommon
-from odoo.addons.account.models.account_payment_method import AccountPaymentMethod
-from odoo.addons.mail.tests.common import MailCommon
-from odoo.tests import Form, tagged, HttpCase, new_test_user
-from odoo.addons.test_mail.data.test_mail_data import MAIL_EML_ATTACHMENT
-from odoo.exceptions import UserError, ValidationError
-from odoo import fields, Command
+from weth.tools import hash_sign
+from weth.addons.account.tests.common import AccountTestInvoicingCommon
+from weth.addons.account.models.account_payment_method import AccountPaymentMethod
+from weth.addons.mail.tests.common import MailCommon
+from weth.tests import Form, tagged, HttpCase, new_test_user
+from weth.addons.test_mail.data.test_mail_data import MAIL_EML_ATTACHMENT
+from weth.exceptions import UserError, ValidationError
+from weth import fields, Command
 
 
 @tagged('post_install', '-at_install')
@@ -296,7 +296,7 @@ class TestAccountJournal(AccountTestInvoicingCommon, HttpCase):
         })
         invoice.action_post()
 
-        with patch('odoo.addons.mail.models.mail_template.MailTemplate.send_mail') as mock_send_mail:
+        with patch('weth.addons.mail.models.mail_template.MailTemplate.send_mail') as mock_send_mail:
             journal.with_context(einvoice_notification_author_id=sender_partner.id)._notify_invoice_subscribers(invoice)
 
             sent_emails_to = []

@@ -1,4 +1,4 @@
-<odoo>
+<weth>
     <record model="res.groups.privilege" id="res_groups_privilege_time_off">
         <field name="name">Time Off</field>
         <field name="sequence">10</field>
@@ -43,4 +43,4 @@
         <field name="implied_ids" eval="[(4, ref('hr_holidays.group_hr_holidays_employee'))]"/>
     </record>
 
-    </odoo>
+    </weth>

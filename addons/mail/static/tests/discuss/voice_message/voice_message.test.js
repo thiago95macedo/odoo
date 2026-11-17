@@ -8,7 +8,7 @@ import {
     start,
     startServer,
 } from "@mail/../tests/mail_test_helpers";
-import { describe, globals, mockDate, test, waitFor } from "@odoo/hoot";
+import { describe, globals, mockDate, test, waitFor } from "@weth/hoot";
 import { Command, serverState } from "@web/../tests/web_test_helpers";
 
 import { Mp3Encoder } from "@mail/discuss/voice_message/common/mp3_encoder";
@@ -24,7 +24,7 @@ test("make voice message in chat", async () => {
     const file = new File([new Uint8Array(25000)], "test.mp3", { type: "audio/mp3" });
     const { promise: voicePlayerDrawn, resolve: resolveVoicePlayerDrawn } = Promise.withResolvers();
     patch(Mp3Encoder.prototype, {
-        encode() {},
+        encode() { },
         finish() {
             return Array(500).map(() => new Int8Array());
         },
@@ -52,7 +52,7 @@ test("make voice message in chat", async () => {
     patch(AudioContext.prototype, {
         resume() {
             // Simulate a long delay for 'resume' to resolve
-            return new Promise(() => {});
+            return new Promise(() => { });
         },
     });
     const pyEnv = await startServer();

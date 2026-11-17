@@ -2,21 +2,21 @@
 import uuid
 from unittest.mock import patch
 
-from odoo import fields
-from odoo.fields import Command
-from odoo.tools import mute_logger
-from odoo.addons.account.tests.common import AccountTestInvoicingCommon
-from odoo.addons.point_of_sale.tests.test_frontend import TestPointOfSaleHttpCommon
-from odoo.addons.mail.tests.common import mail_new_test_user
-from odoo.addons.pos_online_payment.tests.online_payment_common import OnlinePaymentCommon
-from odoo.addons.account.models.account_payment_method import AccountPaymentMethod
-from odoo.addons.point_of_sale.tests.common import archive_products
-from odoo.exceptions import UserError
+from weth import fields
+from weth.fields import Command
+from weth.tools import mute_logger
+from weth.addons.account.tests.common import AccountTestInvoicingCommon
+from weth.addons.point_of_sale.tests.test_frontend import TestPointOfSaleHttpCommon
+from weth.addons.mail.tests.common import mail_new_test_user
+from weth.addons.pos_online_payment.tests.online_payment_common import OnlinePaymentCommon
+from weth.addons.account.models.account_payment_method import AccountPaymentMethod
+from weth.addons.point_of_sale.tests.common import archive_products
+from weth.exceptions import UserError
 
-import odoo.tests
+import weth.tests
 
 
-@odoo.tests.tagged('post_install', '-at_install', 'is_tour')
+@weth.tests.tagged('post_install', '-at_install', 'is_tour')
 class TestUi(TestPointOfSaleHttpCommon, OnlinePaymentCommon):
 
     _test_user_groups = None  # FIXME list needed groups
@@ -270,7 +270,7 @@ class TestUi(TestPointOfSaleHttpCommon, OnlinePaymentCommon):
     def test_invalid_access_token(self):
         order = self._open_session_fake_cashier_unpaid_order()
 
-        with mute_logger('odoo.http'): # Mutes "The provided order or access token is invalid." online payment portal error.
+        with mute_logger('weth.http'): # Mutes "The provided order or access token is invalid." online payment portal error.
             self.assertRaises(AssertionError, self._fake_open_pos_order_pay_page, order.id, order.access_token[:-1])
             self.assertRaises(AssertionError, self._fake_open_pos_order_pay_page, order.id, '')
 

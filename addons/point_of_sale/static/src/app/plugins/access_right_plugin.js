@@ -1,4 +1,4 @@
-import { Plugin, usePlugin, signal } from "@odoo/owl";
+import { Plugin, usePlugin, signal } from "@weth/owl";
 import { NotificationPlugin } from "@web/core/notifications/notification_plugin";
 import { DialogPlugin } from "@web/core/dialog/dialog_plugin";
 import { PosRouterPlugin } from "@point_of_sale/app/plugins/pos_router_plugin";
@@ -50,11 +50,11 @@ export class PosAccessRightPlugin extends Plugin {
     }
 
     get config() {
-        return this.data.models["pos.config"].get(odoo.pos_config_id);
+        return this.data.models["pos.config"].get(weth.pos_config_id);
     }
 
     get session() {
-        return this.data.models["pos.session"].get(odoo.pos_session_id);
+        return this.data.models["pos.session"].get(weth.pos_session_id);
     }
 
     /**

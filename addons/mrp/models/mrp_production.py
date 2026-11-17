@@ -9,14 +9,14 @@ from ast import literal_eval
 from collections import defaultdict
 from dateutil.relativedelta import relativedelta
 
-from odoo import api, fields, models, _
-from odoo.addons.web.controllers.utils import clean_action
-from odoo.exceptions import UserError, ValidationError
-from odoo.fields import Command, Domain
-from odoo.tools import float_is_zero, SQL, format_datetime
-from odoo.tools.misc import OrderedSet, format_date, groupby as tools_groupby, topological_sort
+from weth import api, fields, models, _
+from weth.addons.web.controllers.utils import clean_action
+from weth.exceptions import UserError, ValidationError
+from weth.fields import Command, Domain
+from weth.tools import float_is_zero, SQL, format_datetime
+from weth.tools.misc import OrderedSet, format_date, groupby as tools_groupby, topological_sort
 
-from odoo.addons.stock.models.stock_move import PROCUREMENT_PRIORITIES
+from weth.addons.stock.models.stock_move import PROCUREMENT_PRIORITIES
 
 SIZE_BACK_ORDER_NUMERING = 3
 

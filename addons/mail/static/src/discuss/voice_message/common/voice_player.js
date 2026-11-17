@@ -8,7 +8,7 @@ import {
     types,
     useOnChange,
     useProps,
-} from "@odoo/owl";
+} from "@weth/owl";
 import { browser } from "@web/core/browser/browser";
 import { useService } from "@web/core/utils/hooks";
 import { url } from "@web/core/utils/urls";

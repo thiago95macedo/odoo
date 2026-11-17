@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
     <data noupdate="1">
         <!-- Comment subtypes -->
         <record id="mt_comment_new" model="mail.message.subtype">
@@ -60,4 +60,4 @@
             <field name="relation_field">forum_id</field>
         </record>
     </data>
-</odoo>
+</weth>

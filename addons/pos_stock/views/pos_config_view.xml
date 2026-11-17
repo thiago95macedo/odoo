@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
 
     <record id="view_pos_config_search" model="ir.ui.view">
         <field name="name">pos.config.view.search.inherit.pos.stock</field>
@@ -12,4 +12,4 @@
         </field>
     </record>
 
-</odoo>
+</weth>

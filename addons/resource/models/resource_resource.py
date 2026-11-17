@@ -8,11 +8,11 @@ from zoneinfo import ZoneInfo
 
 from dateutil.relativedelta import relativedelta, weekdays
 
-from odoo import api, fields, models
-from odoo.addons.base.models.res_partner import _tz_get
-from odoo.tools import get_lang, babel_locale_parse
-from odoo.tools.intervals import Intervals
-from odoo.tools.date_utils import localized, sum_intervals, to_timezone, weeknumber
+from weth import api, fields, models
+from weth.addons.base.models.res_partner import _tz_get
+from weth.tools import get_lang, babel_locale_parse
+from weth.tools.intervals import Intervals
+from weth.tools.date_utils import localized, sum_intervals, to_timezone, weeknumber
 
 
 class ResourceResource(models.Model):

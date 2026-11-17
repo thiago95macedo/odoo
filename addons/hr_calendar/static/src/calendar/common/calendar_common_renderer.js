@@ -1,17 +1,17 @@
 import { AttendeeCalendarCommonRenderer } from "@calendar/views/attendee_calendar/common/attendee_calendar_common_renderer";
 import { user } from "@web/core/user";
 import { patch } from "@web/core/utils/patch";
-import { onPatched, t } from "@odoo/owl";
+import { onPatched, t } from "@weth/owl";
 import { calendarRendererProps } from "@web/views/calendar/calendar_renderer";
 import { calendarCommonRendererProps } from "@web/views/calendar/calendar_common/calendar_common_renderer";
 
 const { DateTime } = luxon;
 
 patch(AttendeeCalendarCommonRenderer.prototype, {
-	setup() {
-		super.setup(...arguments);
+    setup() {
+        super.setup(...arguments);
         let previousBusinessHours;
-		onPatched(() => {
+        onPatched(() => {
             const businessHours = this.props.model.workingHours;
             if (businessHours !== previousBusinessHours) {
                 previousBusinessHours = businessHours;
@@ -21,14 +21,14 @@ patch(AttendeeCalendarCommonRenderer.prototype, {
             // As it doesn't redraw the header when the event's data changes
             this.fc().render();
         });
-	},
-	get options() {
-		return {
+    },
+    get options() {
+        return {
             ...super.options,
-			businessHours: this.props.model.workingHours,
+            businessHours: this.props.model.workingHours,
         };
-	},
-	handleWorkLocationClick(target, date) {
+    },
+    handleWorkLocationClick(target, date) {
         let worklocations = this.props.model.worklocations[date.toISODate()];
         const worklocationSet = worklocations && Object.keys(worklocations).length > 0;
         const actionElement = target.closest('.o_worklocation_action');
@@ -48,7 +48,7 @@ patch(AttendeeCalendarCommonRenderer.prototype, {
         }
         return this.props.openWorkLocationWizard(date);
     },
-    onDateClick(info){
+    onDateClick(info) {
         if (info.jsEvent && info.jsEvent.target.closest(".o_worklocation_btn")) {
             const date = DateTime.fromJSDate(info.date);
             this.handleWorkLocationClick(info.jsEvent.target, date);
@@ -61,19 +61,19 @@ patch(AttendeeCalendarCommonRenderer.prototype, {
         let showLine = this.props.model.scale === "week";
         let worklocation = this.props.model.worklocations[parsedDate];
         if (!worklocation) {
-            return {...super.headerTemplateProps(date), showLine, userFilterActive: this.props.model.data.userFilterActive};
+            return { ...super.headerTemplateProps(date), showLine, userFilterActive: this.props.model.data.userFilterActive };
         }
         const multiCalendar = this.props.model.multiCalendar;
         const workLocationSetForCurrentUser =
             multiCalendar && worklocation ?
-            Object.keys(worklocation).some(key => worklocation[key].some(wlItem => wlItem.userId === user.userId)
-            ) : worklocation?.userId === user.userId;
+                Object.keys(worklocation).some(key => worklocation[key].some(wlItem => wlItem.userId === user.userId)
+                ) : worklocation?.userId === user.userId;
 
         let displayedWorkLocation = worklocation ? (JSON.parse(JSON.stringify(worklocation))) : {};
         // do not display the work locations of the current user if the user filter is not active
         if (!this.props.model.data.userFilterActive) {
             if (multiCalendar) {
-                for (let wl in worklocation){
+                for (let wl in worklocation) {
                     displayedWorkLocation[wl] = worklocation[wl].filter(wlItem => wlItem.userId !== user.userId);
                 }
                 displayedWorkLocation = Object.fromEntries(Object.entries(displayedWorkLocation).filter(([_, wlItems]) => wlItems.length !== 0));
@@ -85,7 +85,7 @@ patch(AttendeeCalendarCommonRenderer.prototype, {
 
         return {
             ...super.headerTemplateProps(date),
-            worklocation : displayedWorkLocation,
+            worklocation: displayedWorkLocation,
             workLocationSetForCurrentUser,
             multiCalendar,
             showLine,

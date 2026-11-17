@@ -2,10 +2,10 @@
 
 import json
 
-from odoo.tests.common import BaseCase
-from odoo.tools import file_open
+from weth.tests.common import BaseCase
+from weth.tools import file_open
 
-from odoo.addons.web.icons import ICONS
+from weth.addons.web.icons import ICONS
 
 
 class TestIcons(BaseCase):

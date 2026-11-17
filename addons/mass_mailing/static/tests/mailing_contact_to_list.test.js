@@ -1,6 +1,6 @@
 import { defineMailModels } from "@mail/../tests/mail_test_helpers";
-import { beforeEach, expect, test, waitFor } from "@odoo/hoot";
-import { Component, onMounted, t, useProps, xml } from "@odoo/owl";
+import { beforeEach, expect, test, waitFor } from "@weth/hoot";
+import { Component, onMounted, t, useProps, xml } from "@weth/owl";
 import {
     defineActions,
     defineModels,

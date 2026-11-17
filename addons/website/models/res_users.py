@@ -1,9 +1,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 import logging
 
-from odoo import api, fields, models, _, Command
-from odoo.exceptions import ValidationError
-from odoo.http import request
+from weth import api, fields, models, _, Command
+from weth.exceptions import ValidationError
+from weth.http import request
 
 _logger = logging.getLogger(__name__)
 

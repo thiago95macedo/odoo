@@ -5,7 +5,7 @@ import {
 } from "@html_builder/../tests/helpers";
 import { Plugin } from "@html_editor/plugin";
 import { withSequence } from "@html_editor/utils/resource";
-import { expect, test } from "@odoo/hoot";
+import { expect, test } from "@weth/hoot";
 import { contains } from "@web/../tests/web_test_helpers";
 import {
     addPlugin,

@@ -3,9 +3,9 @@
 
 import psycopg2
 
-from odoo.addons.website_slides.tests import common as slides_common
-from odoo.tests.common import tagged, users
-from odoo.tools import mute_logger
+from weth.addons.website_slides.tests import common as slides_common
+from weth.tests.common import tagged, users
+from weth.tools import mute_logger
 
 
 class TestSlideInternals(slides_common.SlidesCase):
@@ -46,7 +46,7 @@ class TestSlideInternals(slides_common.SlidesCase):
         after_unlink = self.category2.completion_time
         self.assertEqual(after_unlink, self.slide_4.completion_time)
 
-    @mute_logger('odoo.sql_db')
+    @mute_logger('weth.sql_db')
     @users('user_manager')
     def test_slide_create_vote_constraint(self):
         # test vote value must be 1, 0 and -1.

@@ -9,7 +9,7 @@ import {
     t,
     toRaw,
     useProps,
-} from "@odoo/owl";
+} from "@weth/owl";
 import { useEnv } from "@web/owl2/utils";
 
 /**
@@ -51,8 +51,8 @@ import { useEnv } from "@web/owl2/utils";
  * synchronously clear the host's children just before the component's rendered
  * HTML is inserted (i.e., just before the original `fiber.complete` runs).
  *
- * @param {import("@odoo/owl").App} app
- * @param {typeof import("@odoo/owl").Component} Component
+ * @param {import("@weth/owl").App} app
+ * @param {typeof import("@weth/owl").Component} Component
  * @param {HTMLElement} host
  * @param {Object} props
  * @param {Object} env
@@ -167,7 +167,7 @@ export function useEditableDescendants() {
      * (from the template through `t-ref="this.editableDescendantRefs.<name>"`, or
      * from the loop below) creates the signal the first time that name is asked
      * for, and returns the same one on every later read.
-     * @type {Record<string, import("@odoo/owl").Signal<HTMLElement>>}
+     * @type {Record<string, import("@weth/owl").Signal<HTMLElement>>}
      */
     const refs = new Proxy(
         {},

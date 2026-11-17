@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import fields, models, tools
-from odoo.tools import SQL
+from weth import fields, models, tools
+from weth.tools import SQL
 
 
 class CrmActivityReport(models.Model):

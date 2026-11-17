@@ -1,11 +1,11 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.fields import Command
-from odoo.tests import new_test_user
-from odoo.tests.common import TransactionCase
+from weth.fields import Command
+from weth.tests import new_test_user
+from weth.tests.common import TransactionCase
 
-from odoo.addons.bus.tests.common import BusResult
-from odoo.addons.im_livechat.tests.common import TestImLivechatCommon
+from weth.addons.bus.tests.common import BusResult
+from weth.addons.im_livechat.tests.common import TestImLivechatCommon
 
 
 class TestLiveChatResUsersSessionLogin(TestImLivechatCommon):

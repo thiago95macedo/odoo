@@ -2,43 +2,43 @@
 
 from unittest.mock import patch
 
-from odoo.tests import tagged
-from odoo.tools import mute_logger
+from weth.tests import tagged
+from weth.tools import mute_logger
 
-from odoo.addons.payment.tests.http_common import PaymentHttpCommon
-from odoo.addons.payment_asiapay.controllers.main import AsiaPayController
-from odoo.addons.payment_asiapay.tests.common import AsiaPayCommon
+from weth.addons.payment.tests.http_common import PaymentHttpCommon
+from weth.addons.payment_asiapay.controllers.main import AsiaPayController
+from weth.addons.payment_asiapay.tests.common import AsiaPayCommon
 
 
 @tagged("post_install", "-at_install")
 class TestProcessingFlows(AsiaPayCommon, PaymentHttpCommon):
-    @mute_logger("odoo.addons.payment_asiapay.controllers.main")
+    @mute_logger("weth.addons.payment_asiapay.controllers.main")
     def test_webhook_notification_triggers_processing(self):
         """Test that receiving a valid webhook notification triggers the processing of the
         payment data."""
         self._create_transaction("redirect")
         url = self._build_url(AsiaPayController._webhook_url)
         with (
-            patch("odoo.addons.payment.utils.verify_signature"),
+            patch("weth.addons.payment.utils.verify_signature"),
             patch(
-                "odoo.addons.payment_asiapay.models.payment_provider.PaymentProvider"
+                "weth.addons.payment_asiapay.models.payment_provider.PaymentProvider"
                 "._asiapay_calculate_signature"
             ),
             patch(
-                "odoo.addons.payment.models.payment_transaction.PaymentTransaction._record"
+                "weth.addons.payment.models.payment_transaction.PaymentTransaction._record"
             ) as record_mock,
         ):
             self._make_http_post_request(url, data=self.webhook_payment_data)
         self.assertEqual(record_mock.call_count, 1)
 
-    @mute_logger("odoo.addons.payment_asiapay.controllers.main")
+    @mute_logger("weth.addons.payment_asiapay.controllers.main")
     def test_webhook_notification_triggers_signature_check(self):
         self._create_transaction("redirect")
         url = self._build_url(AsiaPayController._webhook_url)
         with (
-            patch("odoo.addons.payment.utils.verify_signature") as signature_check_mock,
+            patch("weth.addons.payment.utils.verify_signature") as signature_check_mock,
             patch(
-                "odoo.addons.payment_asiapay.models.payment_provider.PaymentProvider"
+                "weth.addons.payment_asiapay.models.payment_provider.PaymentProvider"
                 "._asiapay_calculate_signature"
             ),
         ):

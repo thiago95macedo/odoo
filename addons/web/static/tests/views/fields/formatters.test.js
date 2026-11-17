@@ -1,7 +1,7 @@
-import { beforeEach, describe, expect, test } from "@odoo/hoot";
+import { beforeEach, describe, expect, test } from "@weth/hoot";
 import { allowTranslations, patchWithCleanup } from "@web/../tests/web_test_helpers";
 
-import { markup } from "@odoo/owl";
+import { markup } from "@weth/owl";
 import { currencies } from "@web/core/currency";
 import { localization } from "@web/core/l10n/localization";
 import {
@@ -263,7 +263,7 @@ test("formatFloatTime special cases", () => {
 });
 
 test("formatBinary", () => {
-    expect(formatBinary({filename: "", size: 6})).toBe("6 Bytes");
-    expect(formatBinary({filename: "toto", size: 6})).toBe("toto");
-    expect(formatBinary({content: "aGVsbG8="})).toBe("(file)");
+    expect(formatBinary({ filename: "", size: 6 })).toBe("6 Bytes");
+    expect(formatBinary({ filename: "toto", size: 6 })).toBe("toto");
+    expect(formatBinary({ content: "aGVsbG8=" })).toBe("(file)");
 });

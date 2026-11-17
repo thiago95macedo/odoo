@@ -3,20 +3,20 @@ import { ResUsers } from "@hr_holidays/../tests/mock_server/mock_models/res_user
 import { defineHrHolidaysModels } from "@hr_holidays/../tests/hr_holidays_test_helpers";
 import { mountView, onRpc, patchWithCleanup } from "@web/../tests/web_test_helpers";
 import { clickDate } from "@web/../tests/views/calendar/calendar_test_helpers";
-import { describe, test } from "@odoo/hoot";
-import { mockDate } from "@odoo/hoot-mock";
-import { click, waitFor } from "@odoo/hoot-dom";
+import { describe, test } from "@weth/hoot";
+import { mockDate } from "@weth/hoot-mock";
+import { click, waitFor } from "@weth/hoot-dom";
 import { user } from "@web/core/user";
 
 describe.current.tags("desktop");
 defineHrHolidaysModels();
 
-test("Test request creator buttons", async() => {
+test("Test request creator buttons", async () => {
     mockDate("2024-01-03 12:00:00", 0);
     patchWithCleanup(user, { userId: 100 });
 
     HrLeave._views = {
-         "form,hr_leave_view_form_dashboard_new_time_off": `
+        "form,hr_leave_view_form_dashboard_new_time_off": `
             <form>
                 <field name="state"/>
                 <field name="work_entry_type_id"/>
@@ -46,15 +46,15 @@ test("Test request creator buttons", async() => {
     onRpc("get_mandatory_days", () => ({}));
     onRpc("get_unusual_days", () => ({}));
     onRpc("get_allocation_data_request", () => ({}));
-    onRpc("get_special_days_data", () => ({bankHolidays: [], mandatoryDays: []}));
+    onRpc("get_special_days_data", () => ({ bankHolidays: [], mandatoryDays: [] }));
     onRpc("hr.employee", "get_time_off_dashboard_data", () => (
-        {has_accrual_allocation: true, allocation_data: {}, allocations_number: ""}
+        { has_accrual_allocation: true, allocation_data: {}, allocations_number: "" }
     ));
 
     await mountView({
-            type: "calendar",
-            resModel: "hr.leave",
-            arch: `
+        type: "calendar",
+        resModel: "hr.leave",
+        arch: `
             <calendar js_class="time_off_calendar_dashboard"
                     string="Time Off Request"
                     form_view_id="hr_leave_view_form_dashboard_new_time_off"
@@ -72,8 +72,8 @@ test("Test request creator buttons", async() => {
                 <field name="is_hatched" invisible="1" />
                 <field name="is_striked" invisible="1"/>
             </calendar>`,
-            context: user.context
-        });
+        context: user.context
+    });
     await clickDate("2024-01-09");
     await click(".o_cw_popover_link");
     await waitFor("button:contains(Delete Time Off)");

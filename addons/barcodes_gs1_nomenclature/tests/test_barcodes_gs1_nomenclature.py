@@ -1,6 +1,6 @@
-from odoo.exceptions import ValidationError
-from odoo.fields import Domain
-from odoo.tests.common import tagged, TransactionCase
+from weth.exceptions import ValidationError
+from weth.fields import Domain
+from weth.tests.common import tagged, TransactionCase
 
 
 @tagged('at_install', '-post_install')  # LEGACY at_install

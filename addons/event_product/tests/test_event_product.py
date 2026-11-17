@@ -1,7 +1,7 @@
-from odoo.exceptions import ValidationError
-from odoo.tests import Form, tagged
+from weth.exceptions import ValidationError
+from weth.tests import Form, tagged
 
-from odoo.addons.event_product.tests.common import TestEventProductCommon
+from weth.addons.event_product.tests.common import TestEventProductCommon
 
 
 @tagged('post_install', '-at_install')

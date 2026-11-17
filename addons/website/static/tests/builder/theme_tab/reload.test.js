@@ -1,4 +1,4 @@
-import { expect, queryOne, test, waitFor } from "@odoo/hoot";
+import { expect, queryOne, test, waitFor } from "@weth/hoot";
 import { contains, onRpc } from "@web/../tests/web_test_helpers";
 import { defineWebsiteModels, setupWebsiteBuilder } from "../website_helpers";
 
@@ -9,7 +9,7 @@ test("reload from 'theme' tab should stay on 'theme'", async () => {
         expect.step("save");
         return true;
     });
-    onRpc("/website/theme_customize_data", () => {});
+    onRpc("/website/theme_customize_data", () => { });
     await setupWebsiteBuilder(`<div class="test">b</div>`);
     queryOne(":iframe .test").dataset.applied = "1";
     expect(":iframe .test").toHaveAttribute("data-applied");
@@ -34,7 +34,7 @@ test("hide invisible element after reload from 'theme' tab should stay on 'theme
         expect.step("save");
         return true;
     });
-    onRpc("/website/theme_customize_data", () => {});
+    onRpc("/website/theme_customize_data", () => { });
     await setupWebsiteBuilder(
         `<div class="s_invisible_el o_snippet_invisible" data-name="Invisible Element"></div>`
     );

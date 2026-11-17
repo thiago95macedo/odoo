@@ -3,8 +3,8 @@
 from collections import defaultdict
 from dateutil import relativedelta
 
-from odoo import api, Command, fields, models, _
-from odoo.fields import Domain
+from weth import api, Command, fields, models, _
+from weth.fields import Domain
 
 
 class StockPicking(models.Model):
@@ -320,7 +320,7 @@ class StockWarehouseOrderpoint(models.Model):
                     'message': '%s',
                     'links': [{
                         'label': order.display_name,
-                        'url': f'/odoo/action-purchase.action_rfq_form/{order.id}',
+                        'url': f'/weth/action-purchase.action_rfq_form/{order.id}',
                     }],
                     'sticky': False,
                     'next': {'type': 'ir.actions.act_window_close'},

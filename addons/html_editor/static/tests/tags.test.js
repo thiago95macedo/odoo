@@ -1,9 +1,9 @@
-import { describe, expect, test } from "@odoo/hoot";
-import { press, queryFirst } from "@odoo/hoot-dom";
+import { describe, expect, test } from "@weth/hoot";
+import { press, queryFirst } from "@weth/hoot-dom";
 import { setupEditor, testEditor } from "./_helpers/editor";
 import { getContent, setSelection } from "./_helpers/selection";
 import { insertSpace, insertText, tripleClick, undo } from "./_helpers/user_actions";
-import { animationFrame } from "@odoo/hoot-mock";
+import { animationFrame } from "@weth/hoot-mock";
 import { defineStyle } from "@web/../tests/web_test_helpers";
 
 function setTag(tagName) {

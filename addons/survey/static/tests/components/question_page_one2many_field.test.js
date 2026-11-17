@@ -1,4 +1,4 @@
-import { expect, test } from "@odoo/hoot";
+import { expect, test } from "@weth/hoot";
 import {
     contains,
     defineModels,
@@ -9,7 +9,7 @@ import {
     onRpc,
 } from "@web/../tests/web_test_helpers";
 import { defineMailModels } from "@mail/../tests/mail_test_helpers";
-import { animationFrame, press, queryAll, queryOne } from "@odoo/hoot-dom";
+import { animationFrame, press, queryAll, queryOne } from "@weth/hoot-dom";
 
 class Survey extends models.Model {
     question_and_page_ids = fields.One2many({ relation: "survey_question" });

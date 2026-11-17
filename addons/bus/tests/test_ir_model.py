@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-import odoo
-from odoo.tests import HttpCase
+import weth
+from weth.tests import HttpCase
 
 
-@odoo.tests.tagged('-at_install', 'post_install')
+@weth.tests.tagged('-at_install', 'post_install')
 class TestGetModelDefinitions(HttpCase):
     def test_access_cr(self):
         """ Checks that get_model_definitions does not return anything else than models """

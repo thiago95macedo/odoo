@@ -1,4 +1,4 @@
-/** @odoo-module alias=@odoo/hoot-dom default=false */
+/** @weth-module alias=@weth/hoot-dom default=false */
 
 import * as dom from "./helpers/dom";
 import * as events from "./helpers/events";

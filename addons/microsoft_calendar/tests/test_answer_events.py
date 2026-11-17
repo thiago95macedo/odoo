@@ -3,11 +3,11 @@
 from unittest.mock import patch, ANY
 from datetime import datetime, timedelta
 
-from odoo.addons.microsoft_calendar.utils.microsoft_calendar import MicrosoftCalendarService
-from odoo.addons.microsoft_calendar.utils.microsoft_event import MicrosoftEvent
-from odoo.addons.microsoft_calendar.models.res_users import ResUsers
-from odoo.addons.microsoft_calendar.tests.common import TestCommon, mock_get_token, _modified_date_in_the_future, patch_api
-from odoo.tests import tagged, users
+from weth.addons.microsoft_calendar.utils.microsoft_calendar import MicrosoftCalendarService
+from weth.addons.microsoft_calendar.utils.microsoft_event import MicrosoftEvent
+from weth.addons.microsoft_calendar.models.res_users import ResUsers
+from weth.addons.microsoft_calendar.tests.common import TestCommon, mock_get_token, _modified_date_in_the_future, patch_api
+from weth.tests import tagged, users
 
 import json
 from freezegun import freeze_time

@@ -1,10 +1,10 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, fields, models
-from odoo.exceptions import ValidationError
-from odoo.tools import BinaryBytes
-from odoo.tools.image import ImageProcess
-from odoo.tools.translate import _
+from weth import api, fields, models
+from weth.exceptions import ValidationError
+from weth.tools import BinaryBytes
+from weth.tools.image import ImageProcess
+from weth.tools.translate import _
 
 
 class Website(models.Model):

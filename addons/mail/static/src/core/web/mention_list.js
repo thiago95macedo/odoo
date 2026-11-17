@@ -1,5 +1,5 @@
 import { _t } from "@web/core/l10n/translation";
-import { Component, t, useListener, useProps } from "@odoo/owl";
+import { Component, t, useListener, useProps } from "@weth/owl";
 import { isMobileOS } from "@web/core/browser/feature_detection";
 import { useService } from "@web/core/utils/hooks";
 
@@ -21,7 +21,7 @@ export class MentionList extends Component {
         this.orm = useService("orm");
         this.store = useService("mail.store");
         this.props = useProps({
-            close: t.function([]).optional(() => {}),
+            close: t.function([]).optional(() => { }),
             composerType: t.string(),
             onSelect: t.function([t.instanceOf(Event), optionType(this.store)]),
             thread: t.instanceOf(this.store["mail.thread"]).optional(),

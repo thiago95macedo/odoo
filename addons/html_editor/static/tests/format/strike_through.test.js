@@ -1,6 +1,6 @@
-import { expect, test } from "@odoo/hoot";
-import { tick } from "@odoo/hoot-mock";
-import { press } from "@odoo/hoot-dom";
+import { expect, test } from "@weth/hoot";
+import { tick } from "@weth/hoot-mock";
+import { press } from "@weth/hoot-dom";
 import { patchWithCleanup } from "@web/../tests/web_test_helpers";
 import { setupEditor, testEditor } from "../_helpers/editor";
 import { getContent } from "../_helpers/selection";
@@ -258,7 +258,7 @@ test("should change strikethrough active state when changing selection", async (
 test("should not add history commit for strikethrough on collapsed selection", async () => {
     const { editor, el } = await setupEditor("<p>abcd[]</p>");
 
-    patchWithCleanup(console, { warn: () => {} });
+    patchWithCleanup(console, { warn: () => { } });
 
     // Collapsed formatting shortcuts (e.g. Ctrl+5) shouldn’t create a history
     // commit. The empty inline tag is temporary: auto-cleaned if unused. We want

@@ -1,5 +1,5 @@
 import { BuilderNumberInputBase } from "@html_builder/core/building_blocks/builder_number_input_base";
-import { Component, proxy, signal, t, useEffect, useProps } from "@odoo/owl";
+import { Component, proxy, signal, t, useEffect, useProps } from "@weth/owl";
 import {
     basicContainerBuilderComponentProps,
     useBuilderComponent,

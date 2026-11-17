@@ -1,5 +1,5 @@
-import { beforeEach, describe, expect, test } from "@odoo/hoot";
-import { queryFirst } from "@odoo/hoot-dom";
+import { beforeEach, describe, expect, test } from "@weth/hoot";
+import { queryFirst } from "@weth/hoot-dom";
 import { defineModels, mountView } from "@web/../tests/web_test_helpers";
 import { defineProjectModels } from "@project/../tests/project_models";
 import { ProductProduct, ProjectMilestone, SaleOrderLine } from "./project_task_model"

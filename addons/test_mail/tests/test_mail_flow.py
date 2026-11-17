@@ -1,8 +1,8 @@
-from odoo.addons.mail.tests.common import mail_new_test_user, MailCommon
-from odoo.addons.test_mail.data.test_mail_data import MAIL_TEMPLATE, MAIL_TEMPLATE_SHORT
-from odoo.addons.test_mail.tests.common import TestRecipients
-from odoo.tools.mail import formataddr
-from odoo.tests import tagged
+from weth.addons.mail.tests.common import mail_new_test_user, MailCommon
+from weth.addons.test_mail.data.test_mail_data import MAIL_TEMPLATE, MAIL_TEMPLATE_SHORT
+from weth.addons.test_mail.tests.common import TestRecipients
+from weth.tools.mail import formataddr
+from weth.tests import tagged
 
 
 @tagged('mail_gateway', 'mail_flow', 'post_install', '-at_install')

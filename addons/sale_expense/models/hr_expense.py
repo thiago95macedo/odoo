@@ -1,6 +1,6 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import Command, api, fields, models
+from weth import Command, api, fields, models
 
 
 class HrExpense(models.Model):

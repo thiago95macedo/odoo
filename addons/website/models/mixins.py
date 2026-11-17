@@ -4,17 +4,17 @@ import re
 import urllib.parse
 from datetime import UTC, date, datetime
 
-from odoo import _, api, fields, models
-from odoo.exceptions import AccessError, UserError
-from odoo.fields import Domain
-from odoo.http import request
-from odoo.models import Query
-from odoo.tools import split_every
-from odoo.tools.json import scriptsafe as json_safe
-from odoo.tools.sql import SQL, escape_like_value
-from odoo.tools.urls import urljoin as url_join
+from weth import _, api, fields, models
+from weth.exceptions import AccessError, UserError
+from weth.fields import Domain
+from weth.http import request
+from weth.models import Query
+from weth.tools import split_every
+from weth.tools.json import scriptsafe as json_safe
+from weth.tools.sql import SQL, escape_like_value
+from weth.tools.urls import urljoin as url_join
 
-from odoo.addons.website.tools import text_from_html
+from weth.addons.website.tools import text_from_html
 
 
 class WebsiteSeoMetadata(models.AbstractModel):
@@ -481,7 +481,7 @@ class WebsitePublishedMixin(models.AbstractModel):
         """Yield every stored model defining a ``publish_on`` field.
 
         Yields:
-            odoo.models.BaseModel: Stored models that define a 'publish_on'
+            weth.models.BaseModel: Stored models that define a 'publish_on'
                 field and expose at least the 'id' and 'is_published' fields.
         """
         field_records = (

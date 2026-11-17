@@ -1,6 +1,6 @@
-import { describe, expect, getFixture, queryOne, test } from "@odoo/hoot";
-import { hover, click } from "@odoo/hoot-dom";
-import { animationFrame, tick } from "@odoo/hoot-mock";
+import { describe, expect, getFixture, queryOne, test } from "@weth/hoot";
+import { hover, click } from "@weth/hoot-dom";
+import { animationFrame, tick } from "@weth/hoot-mock";
 import { contains } from "@web/../tests/web_test_helpers";
 import { base64Img, setupEditor } from "./_helpers/editor";
 import { getContent } from "./_helpers/selection";

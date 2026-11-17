@@ -1,4 +1,4 @@
-/** @odoo-module */
+/** @weth-module */
 
 import {
     advanceTime,
@@ -34,8 +34,8 @@ import {
     setInputRange,
     test,
     uncheck,
-} from "@odoo/hoot";
-import { Component, xml } from "@odoo/owl";
+} from "@weth/hoot";
+import { Component, xml } from "@weth/owl";
 import { EventList } from "@web/../lib/hoot-dom/helpers/events";
 import { mountForTest, parseUrl } from "../local_helpers";
 

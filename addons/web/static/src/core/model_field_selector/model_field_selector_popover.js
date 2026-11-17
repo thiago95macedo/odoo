@@ -1,5 +1,5 @@
 import { onWillRender } from "@web/owl2/utils";
-import { Component, onWillStart, proxy, signal, t, useEffect, useProps } from "@odoo/owl";
+import { Component, onWillStart, proxy, signal, t, useEffect, useProps } from "@weth/owl";
 import { _t } from "@web/core/l10n/translation";
 import { sortBy } from "@web/core/utils/arrays";
 import { KeepLast } from "@web/core/utils/concurrency";
@@ -143,7 +143,7 @@ export class ModelFieldSelectorPopover extends Component {
             if (followRelation instanceof Function) {
                 this._followRelation = followRelation;
             } else if (followRelation) {
-                this._followRelation = () => {};
+                this._followRelation = () => { };
             } else {
                 this._followRelation = () => false;
             }

@@ -3,8 +3,8 @@ import {
     setupInteractionWhiteList,
 } from "@web/../tests/public/helpers";
 
-import { describe, expect, test } from "@odoo/hoot";
-import { advanceTime, queryOne } from "@odoo/hoot-dom";
+import { describe, expect, test } from "@weth/hoot";
+import { advanceTime, queryOne } from "@weth/hoot-dom";
 
 setupInteractionWhiteList("account_payment.portal_invoice_page_payment");
 
@@ -24,7 +24,7 @@ test("portal_invoice_page_payment is started with #portal_pay", async () => {
                 <div class="alert alert-info alert-dismissible fade show d-print-none css_editable_mode_hidden">
                     <div class="text-center">
                         This is a preview of the customer portal.
-                        <a class="alert-link" href="/odoo/action-account.action_move_out_invoice_type/2"><i class="oi me-1" data-icon="east"></i>Back to edit mode</a>
+                        <a class="alert-link" href="/weth/action-account.action_move_out_invoice_type/2"><i class="oi me-1" data-icon="east"></i>Back to edit mode</a>
                     </div>
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" data-oe-model="ir.ui.view" data-oe-id="540" data-oe-field="arch" data-oe-xpath="/t[1]/button[1]"></button>
                 </div>
@@ -113,7 +113,7 @@ test("portal_invoice_page_payment is started with #portal_pay", async () => {
                                                                 </p>
                                                                 <a
                                                                     name="activate_payment_provider"
-                                                                    href="/odoo/action-payment.action_start_payment_onboarding"
+                                                                    href="/weth/action-payment.action_start_payment_onboarding"
                                                                     role="button"
                                                                     class="btn btn-primary me-2 d-none"
                                                                     data-oe-model="ir.ui.view"
@@ -123,7 +123,7 @@ test("portal_invoice_page_payment is started with #portal_pay", async () => {
                                                                  >
                                                                      CONNECT <t t-out="onboarding_provider.upper()"/>
                                                                 </a>
-                                                                <a role="button" type="action" class="btn-link alert-warning me-2" href="/odoo/action-payment.action_payment_provider" data-oe-model="ir.ui.view" data-oe-id="612" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[2]/a[3]">
+                                                                <a role="button" type="action" class="btn-link alert-warning me-2" href="/weth/action-payment.action_payment_provider" data-oe-model="ir.ui.view" data-oe-id="612" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[2]/a[3]">
                                                                 <strong><i class="oi" data-icon="east"></i> Payment Providers</strong>
                                                                 </a>
                                                             </div>

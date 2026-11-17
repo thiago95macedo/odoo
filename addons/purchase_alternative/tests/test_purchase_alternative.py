@@ -1,12 +1,12 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.purchase_alternative.tests.common import TestPurchaseAlternativeCommon
-from odoo import Command, fields
-from odoo.tests import Form
+from weth.addons.purchase_alternative.tests.common import TestPurchaseAlternativeCommon
+from weth import Command, fields
+from weth.tests import Form
 
 from datetime import timedelta
 
-from odoo.tests.common import tagged
+from weth.tests.common import tagged
 
 
 @tagged('post_install', '-at_install')

@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.http import route
+from weth.http import route
 
-from odoo.addons.mail.controllers.webclient import WebclientController
+from weth.addons.mail.controllers.webclient import WebclientController
 
 
 class WebClient(WebclientController):

@@ -1,4 +1,4 @@
-import { Plugin } from "@odoo/owl";
+import { Plugin } from "@weth/owl";
 import { services } from "@web/core/services";
 
 export class DebugModePlugin extends Plugin {
@@ -19,7 +19,7 @@ export class DebugModePlugin extends Plugin {
     }
 
     toString() {
-        return odoo.debug || "";
+        return weth.debug || "";
     }
 }
 services.add(DebugModePlugin);

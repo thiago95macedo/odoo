@@ -15,7 +15,7 @@ import { RecordingDialog } from "@mail/discuss/call/common/recording_dialog";
 import { attClassObjectToString } from "@mail/utils/common/format";
 import { MicrophoneWarning } from "@mail/discuss/call/common/microphone_warning";
 import { TalkingAudioBars } from "@mail/discuss/call/common/talking_audio_bars";
-import { Component, useEffect } from "@odoo/owl";
+import { Component, useEffect } from "@weth/owl";
 import { usePopover } from "@web/core/popover/popover_hook";
 
 export const callActionsRegistry = registry.category("discuss.call/actions");
@@ -141,8 +141,8 @@ export const cameraOnAction = {
         store.rtc?.isRemote
             ? _t("Camera is unavailable outside the call tab.")
             : store.rtc.selfSession?.is_camera_on
-            ? _t("Turn camera off")
-            : _t("Turn camera on"),
+                ? _t("Turn camera off")
+                : _t("Turn camera on"),
     isActive: ({ store }) => store.rtc.selfSession?.is_camera_on,
     icon: "videocam",
     onSelected: ({ action, owner, store }) =>
@@ -221,8 +221,8 @@ registerCallAction("share-screen", {
         store.rtc?.isRemote
             ? _t("Screen sharing is unavailable outside the call tab.")
             : store.rtc.selfSession?.is_screen_sharing_on
-            ? _t("Stop Sharing Screen")
-            : _t("Share Screen"),
+                ? _t("Stop Sharing Screen")
+                : _t("Share Screen"),
     isActive: ({ store }) => store.rtc.selfSession?.is_screen_sharing_on,
     icon: "desktop_windows",
     onSelected: ({ owner, store }) => store.rtc.toggleVideo("screen", { env: owner.env }),

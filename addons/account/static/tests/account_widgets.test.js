@@ -1,5 +1,5 @@
-import { describe, expect, test } from "@odoo/hoot";
-import { setInputFiles } from "@odoo/hoot-dom";
+import { describe, expect, test } from "@weth/hoot";
+import { setInputFiles } from "@weth/hoot-dom";
 import {
     contains,
     defineModels,

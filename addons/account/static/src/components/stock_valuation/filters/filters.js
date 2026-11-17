@@ -1,5 +1,5 @@
 import { render } from "@web/owl2/utils";
-import { Component, signal } from "@odoo/owl";
+import { Component, signal } from "@weth/owl";
 import { useDateTimePicker } from "@web/core/datetime/datetime_picker_hook";
 import { formatDate } from "@web/core/l10n/dates";
 

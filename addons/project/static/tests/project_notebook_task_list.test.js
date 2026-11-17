@@ -1,6 +1,6 @@
-import { beforeEach, expect, describe, test } from "@odoo/hoot";
-import { click } from "@odoo/hoot-dom";
-import { animationFrame } from "@odoo/hoot-mock";
+import { beforeEach, expect, describe, test } from "@weth/hoot";
+import { click } from "@weth/hoot-dom";
+import { animationFrame } from "@weth/hoot-mock";
 import { mountView } from "@web/../tests/web_test_helpers";
 
 import { defineProjectModels, ProjectProject, ProjectTask } from "./project_models";
@@ -12,7 +12,7 @@ describe.current.tags("desktop");
 beforeEach(() => {
     ProjectProject._records = [
         {
-            id:5,
+            id: 5,
             name: "Project One"
         },
     ];
@@ -26,7 +26,7 @@ beforeEach(() => {
             closed_depend_on_count: 1,
             subtask_count: 4,
             child_ids: [2, 3, 4, 7],
-            depend_on_ids: [5,6],
+            depend_on_ids: [5, 6],
             state: '04_waiting_normal',
         },
         {

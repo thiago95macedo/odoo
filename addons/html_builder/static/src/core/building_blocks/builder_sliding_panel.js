@@ -1,4 +1,4 @@
-import { Component, onMounted, onWillUnmount, proxy, signal, t, useProps } from "@odoo/owl";
+import { Component, onMounted, onWillUnmount, proxy, signal, t, useProps } from "@weth/owl";
 import { useHotkey } from "@web/core/hotkeys/hotkey_hook";
 import { BuilderComponent } from "./builder_component";
 import { BuilderRow } from "./builder_row";

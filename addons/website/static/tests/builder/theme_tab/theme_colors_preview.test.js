@@ -1,5 +1,5 @@
-import { expect, test } from "@odoo/hoot";
-import { animationFrame, waitForNone } from "@odoo/hoot-dom";
+import { expect, test } from "@weth/hoot";
+import { animationFrame, waitForNone } from "@weth/hoot-dom";
 import {
     defineWebsiteModels,
     setupWebsiteBuilder,

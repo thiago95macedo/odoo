@@ -1,6 +1,6 @@
-import { expect } from "@odoo/hoot";
-import { click, edit, queryAll, queryAllTexts, queryFirst, queryText } from "@odoo/hoot-dom";
-import { animationFrame } from "@odoo/hoot-mock";
+import { expect } from "@weth/hoot";
+import { click, edit, queryAll, queryAllTexts, queryFirst, queryText } from "@weth/hoot-dom";
+import { animationFrame } from "@weth/hoot-mock";
 import { isSmall } from "@web/../tests/web_test_helpers";
 
 const { DateTime } = luxon;
@@ -73,9 +73,8 @@ export function assertDateTimePicker(expectedParams) {
         const cellEls = queryAll(`.o_date_picker:nth-child(${i + 1}) .o_date_item_cell`);
         const pickerRows = cells.length;
         expect(cellEls.length).toBe(pickerRows * PICKER_COLS, {
-            message: `picker should have ${
-                pickerRows * PICKER_COLS
-            } cells (${pickerRows} rows and ${PICKER_COLS} columns)`,
+            message: `picker should have ${pickerRows * PICKER_COLS
+                } cells (${pickerRows} rows and ${PICKER_COLS} columns)`,
         });
 
         if (daysOfWeek) {
@@ -140,8 +139,7 @@ export function assertDateTimePicker(expectedParams) {
  */
 export function getPickerCell(expr, inBounds = false) {
     const cells = queryAll(
-        `.o_datetime_picker .o_date_item_cell${
-            inBounds ? ":not(.o_out_of_range)" : ""
+        `.o_datetime_picker .o_date_item_cell${inBounds ? ":not(.o_out_of_range)" : ""
         }:contains("/^${expr}$/")`
     );
     return cells.length === 1 ? cells[0] : cells;

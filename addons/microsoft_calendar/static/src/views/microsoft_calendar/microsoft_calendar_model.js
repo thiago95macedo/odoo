@@ -1,4 +1,4 @@
-import { proxy } from "@odoo/owl";
+import { proxy } from "@weth/owl";
 import { AttendeeCalendarModel } from "@calendar/views/attendee_calendar/attendee_calendar_model";
 import { rpc } from "@web/core/network/rpc";
 import { patch } from "@web/core/utils/patch";
@@ -43,7 +43,7 @@ patch(AttendeeCalendarModel.prototype, {
         if (this.isAlive()) {
             return super.updateData(...arguments);
         }
-        return new Promise(() => {});
+        return new Promise(() => { });
     },
 
     async syncMicrosoftCalendar(silent = false) {

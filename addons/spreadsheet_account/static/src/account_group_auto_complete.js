@@ -1,6 +1,6 @@
 import { _t } from "@web/core/l10n/translation";
 
-import { registries, tokenColors, helpers } from "@odoo/o-spreadsheet";
+import { registries, tokenColors, helpers } from "@weth/o-spreadsheet";
 
 const { insertTokenAfterLeftParenthesis } = helpers;
 

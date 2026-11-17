@@ -1,6 +1,6 @@
 /** @ts-check */
-import { describe, expect, test } from "@odoo/hoot";
-import { animationFrame, mockDate } from "@odoo/hoot-mock";
+import { describe, expect, test } from "@weth/hoot";
+import { animationFrame, mockDate } from "@weth/hoot-mock";
 import { defineSpreadsheetModels } from "@spreadsheet/../tests/helpers/data";
 import { createModelWithDataSource } from "@spreadsheet/../tests/helpers/model";
 

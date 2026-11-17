@@ -1,6 +1,6 @@
-import { beforeEach, describe, test } from "@odoo/hoot";
-import { animationFrame, waitFor } from "@odoo/hoot-dom";
-import { tick } from "@odoo/hoot-mock";
+import { beforeEach, describe, test } from "@weth/hoot";
+import { animationFrame, waitFor } from "@weth/hoot-dom";
+import { tick } from "@weth/hoot-mock";
 import { testEditor } from "../_helpers/editor";
 import { insertText, splitBlock } from "../_helpers/user_actions";
 import { unformat } from "../_helpers/format";

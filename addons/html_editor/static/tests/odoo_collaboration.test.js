@@ -4,9 +4,9 @@ import { COLLABORATION_PLUGINS } from "@html_editor/plugin_sets";
 import { normalizeHTML } from "@html_editor/utils/html";
 import { htmlReplaceAll } from "@web/core/utils/html";
 import { Wysiwyg } from "@html_editor/wysiwyg";
-import { beforeEach, describe, expect, test } from "@odoo/hoot";
-import { advanceTime, animationFrame, tick, waitUntil } from "@odoo/hoot-dom";
-import { Component, markup, t, useProps, xml } from "@odoo/owl";
+import { beforeEach, describe, expect, test } from "@weth/hoot";
+import { advanceTime, animationFrame, tick, waitUntil } from "@weth/hoot-dom";
+import { Component, markup, t, useProps, xml } from "@weth/owl";
 import { mountWithCleanup, onRpc } from "@web/../tests/web_test_helpers";
 import { Mutex } from "@web/core/utils/concurrency";
 import { patch } from "@web/core/utils/patch";
@@ -157,12 +157,12 @@ class Wysiwygs extends Component {
     }
     getConfig({ peerId, content }) {
         const busService = {
-            subscribe() {},
-            unsubscribe() {},
-            addEventListener: () => {},
-            removeEventListener: () => {},
-            addChannel: () => {},
-            deleteChannel: () => {},
+            subscribe() { },
+            unsubscribe() { },
+            addEventListener: () => { },
+            removeEventListener: () => { },
+            addChannel: () => { },
+            deleteChannel: () => { },
         };
         return {
             Plugins: [...TEST_PLUGINS, ...COLLABORATION_PLUGINS],

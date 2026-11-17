@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import _, api, fields, models, tools
-from odoo.exceptions import UserError, ValidationError
-from odoo.fields import Command
+from weth import _, api, fields, models, tools
+from weth.exceptions import UserError, ValidationError
+from weth.fields import Command
 
 
 class ProductTemplateAttributeLine(models.Model):
@@ -178,7 +178,7 @@ class ProductTemplateAttributeLine(models.Model):
         ptal_to_archive = self.env['product.template.attribute.line']
         for ptal in self:
             try:
-                with self.env.cr.savepoint(), tools.mute_logger('odoo.sql_db'):
+                with self.env.cr.savepoint(), tools.mute_logger('weth.sql_db'):
                     super(ProductTemplateAttributeLine, ptal).unlink()
             except Exception:
                 # We catch all kind of exceptions to be sure that the operation

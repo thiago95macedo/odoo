@@ -1,4 +1,4 @@
-import { after } from "@odoo/hoot";
+import { after } from "@weth/hoot";
 import {
     loadLanguages,
     translatedTerms,

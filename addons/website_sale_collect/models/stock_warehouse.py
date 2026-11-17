@@ -3,10 +3,10 @@
 from datetime import UTC, datetime, timedelta
 from zoneinfo import ZoneInfo
 
-from odoo import fields, models
-from odoo.tools.misc import OrderedSet, format_duration
+from weth import fields, models
+from weth.tools.misc import OrderedSet, format_duration
 
-from odoo.addons.website_sale_collect import const
+from weth.addons.website_sale_collect import const
 
 
 class StockWarehouse(models.Model):

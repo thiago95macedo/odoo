@@ -2,10 +2,10 @@
 
 from freezegun import freeze_time
 
-from odoo.fields import Command
-from odoo.tests import tagged
+from weth.fields import Command
+from weth.tests import tagged
 
-from odoo.addons.sale.tests.common import SaleCommon
+from weth.addons.sale.tests.common import SaleCommon
 
 
 @tagged("post_install", "-at_install")

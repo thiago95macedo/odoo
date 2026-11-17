@@ -2,9 +2,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
 import json
-from odoo.exceptions import AccessError
-from odoo.tests.common import tagged, HttpCase, new_test_user
-from odoo.tools.misc import mute_logger
+from weth.exceptions import AccessError
+from weth.tests.common import tagged, HttpCase, new_test_user
+from weth.tools.misc import mute_logger
 
 
 class TestAttachmentController(HttpCase):
@@ -46,7 +46,7 @@ class TestAttachmentController(HttpCase):
         self.assertTrue(result, "No attachment fetched")
         self.assertEqual(result.id, attachment.id)
 
-    @mute_logger('odoo.http')
+    @mute_logger('weth.http')
     def test_03_portal_attachment(self):
         post = self.env['forum.post'].create({
             "name": "Forum Post Test",

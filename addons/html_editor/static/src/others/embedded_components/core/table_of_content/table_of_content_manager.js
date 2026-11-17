@@ -1,10 +1,10 @@
 import { headingTags } from "@html_editor/utils/dom_info";
-import { batched, proxy } from "@odoo/owl";
+import { batched, proxy } from "@weth/owl";
 import { closestScrollableY, scrollTo } from "@web/core/utils/scrolling";
 
 export class TableOfContentManager {
     /**
-     * @param {import("@odoo/owl").Signal<HTMLElement> | (() => HTMLElement)} containerRef
+     * @param {import("@weth/owl").Signal<HTMLElement> | (() => HTMLElement)} containerRef
      */
     constructor(containerRef) {
         this.containerRef = containerRef;

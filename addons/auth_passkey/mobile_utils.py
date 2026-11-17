@@ -4,7 +4,7 @@ import binascii
 
 def _get_app_sha256_cert_fingerprints():
     return [
-        ("com.odoo.mobile", [
+        ("com.weth.mobile", [
             "D6:73:20:02:CA:2D:01:C9:FD:FC:94:73:5A:D0:73:CF:2C:36:10:29:1F:4B:F7:5D:91:C2:1D:37:B2:18:E8:91",
         ]),
     ]

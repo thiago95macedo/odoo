@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
     <template id="report_lot_label_expiry" inherit_id="stock.lot_barcode_4x12_label">
         <xpath expr="//div[hasclass('o_label_name_block')]" position="after">
             <div class="o_label_meta_block">
@@ -58,4 +58,4 @@
             </t>
         </xpath>
     </template>
-</odoo>
+</weth>

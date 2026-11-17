@@ -1,5 +1,5 @@
 from uuid import uuid4
-from odoo import api, fields, models
+from weth import api, fields, models
 
 
 class ProductAttribute(models.Model):

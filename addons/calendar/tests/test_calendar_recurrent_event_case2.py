@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.tests import tagged, common
-from odoo.addons.calendar.models.calendar_recurrence import MAX_RECURRENT_EVENT
+from weth.tests import tagged, common
+from weth.addons.calendar.models.calendar_recurrence import MAX_RECURRENT_EVENT
 
 
 @tagged('at_install', '-post_install')  # LEGACY at_install

@@ -1,4 +1,4 @@
-<odoo>
+<weth>
     <record id="view_pos_printer_form" model="ir.ui.view">
         <field name="name">Printers</field>
         <field name="model">pos.printer</field>
@@ -105,4 +105,4 @@
         parent="point_of_sale.menu_point_config_product"
         action="action_pos_printer_form"
         sequence="3" />
-</odoo>
+</weth>

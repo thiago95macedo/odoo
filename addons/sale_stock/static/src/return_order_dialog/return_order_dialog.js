@@ -1,4 +1,4 @@
-import { Component, onWillStart, proxy, t, useProps } from "@odoo/owl";
+import { Component, onWillStart, proxy, t, useProps } from "@weth/owl";
 import { Dialog } from "@web/core/dialog/dialog";
 import { WarningDialog } from "@web/core/errors/error_dialogs";
 import { useService } from "@web/core/utils/hooks";
@@ -127,7 +127,7 @@ export class ReturnOrderDialog extends Component {
             return_reason_id: this.state.returnReasonId,
         }
         const query = new URLSearchParams(params).toString();
-        window.open(`${ this.orderReturnData.download_label_url }?${ query }`, "_blank");
+        window.open(`${this.orderReturnData.download_label_url}?${query}`, "_blank");
     }
 
 

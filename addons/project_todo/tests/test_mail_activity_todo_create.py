@@ -2,7 +2,7 @@
 
 import datetime
 from markupsafe import Markup
-from odoo.tests.common import tagged, TransactionCase
+from weth.tests.common import tagged, TransactionCase
 
 
 class TestMailActivityTodo(TransactionCase):

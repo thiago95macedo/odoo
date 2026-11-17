@@ -1,11 +1,11 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
-from odoo import Command, fields
-from odoo.tests import Form, tagged
-from odoo.tools.float_utils import float_round, float_compare
+from weth import Command, fields
+from weth.tests import Form, tagged
+from weth.tools.float_utils import float_round, float_compare
 
-from odoo.addons.mrp_account.tests.common import TestBomPriceCommon
-from odoo.addons.mrp_subcontracting.tests.common import TestMrpSubcontractingCommon
-from odoo.addons.stock_account.tests.common import TestStockValuationCommon
+from weth.addons.mrp_account.tests.common import TestBomPriceCommon
+from weth.addons.mrp_subcontracting.tests.common import TestMrpSubcontractingCommon
+from weth.addons.stock_account.tests.common import TestStockValuationCommon
 
 
 @tagged('post_install', '-at_install')

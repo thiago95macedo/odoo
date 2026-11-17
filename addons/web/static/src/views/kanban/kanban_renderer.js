@@ -7,7 +7,7 @@ import {
     t,
     useListener,
     useProps,
-} from "@odoo/owl";
+} from "@weth/owl";
 import { ConfirmationDialog } from "@web/core/confirmation_dialog/confirmation_dialog";
 import { Dropdown } from "@web/core/dropdown/dropdown";
 import { DropdownItem } from "@web/core/dropdown/dropdown_item";
@@ -55,7 +55,7 @@ export const kanbanRendererProps = {
     readonly: t.any().optional(),
     forceGlobalClick: t.any().optional(),
     noContentHelp: t.any().optional(),
-    scrollTop: t.any().optional(() => () => {}),
+    scrollTop: t.any().optional(() => () => { }),
     canQuickCreate: t.any().optional(),
     quickCreateState: t.any().optional(),
     progressBarState: t.any().optional(),
@@ -349,9 +349,9 @@ export class KanbanRenderer extends Component {
         const indexToCheck = this.getResequenceOrderIndex();
         return Boolean(
             recordsDraggable &&
-                (isGrouped ||
-                    (handleField &&
-                        (!orderBy[indexToCheck] || orderBy[indexToCheck].name === handleField)))
+            (isGrouped ||
+                (handleField &&
+                    (!orderBy[indexToCheck] || orderBy[indexToCheck].name === handleField)))
         );
     }
 
@@ -480,7 +480,7 @@ export class KanbanRenderer extends Component {
                 body: _t("Are you sure that you want to archive this record?"),
                 confirmLabel: _t("Archive"),
                 confirm: () => record.archive(),
-                cancel: () => {},
+                cancel: () => { },
             });
         } else {
             return record.unarchive();

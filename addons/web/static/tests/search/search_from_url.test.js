@@ -1,5 +1,5 @@
-import { beforeEach, expect, test, waitFor, fill } from "@odoo/hoot";
-import { animationFrame, press, queryAllTexts } from "@odoo/hoot-dom";
+import { beforeEach, expect, test, waitFor, fill } from "@weth/hoot";
+import { animationFrame, press, queryAllTexts } from "@weth/hoot-dom";
 import {
     contains,
     defineModels,
@@ -418,8 +418,8 @@ test("hotkey sharing copies simple domain + groupBy to clipboard", async () => {
 
     expect(clipboardWrites[0].split("?domain=")[1]).toBe(
         encodeURIComponent('[("state", "=", "draft")]') +
-            "&groupBy=" +
-            encodeURIComponent('["state"]')
+        "&groupBy=" +
+        encodeURIComponent('["state"]')
     );
 });
 
@@ -457,10 +457,10 @@ test("hotkey sharing copies complex search to clipboard", async () => {
 
     expect(clipboardWrites[0].split("?domain=")[1]).toBe(
         encodeURIComponent(`["|", ("state", "=", "draft"), ("partner_id", "ilike", "%Juan%")]`) +
-            "&groupBy=" +
-            encodeURIComponent('["partner_id"]') +
-            "&orderBy=" +
-            encodeURIComponent('[{"name":"__count","asc":false}]')
+        "&groupBy=" +
+        encodeURIComponent('["partner_id"]') +
+        "&orderBy=" +
+        encodeURIComponent('[{"name":"__count","asc":false}]')
     );
 });
 

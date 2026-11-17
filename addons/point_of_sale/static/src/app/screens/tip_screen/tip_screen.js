@@ -3,7 +3,7 @@ import { registry } from "@web/core/registry";
 import { AlertDialog } from "@web/core/confirmation_dialog/confirmation_dialog";
 import { usePos } from "@point_of_sale/app/hooks/pos_hook";
 import { useService } from "@web/core/utils/hooks";
-import { Component, onMounted, useProps, t } from "@odoo/owl";
+import { Component, onMounted, useProps, t } from "@weth/owl";
 import { ask } from "@point_of_sale/app/utils/make_awaitable_dialog";
 import { useRouterParamsChecker } from "@point_of_sale/app/hooks/pos_router_hook";
 import { PriceFormatter } from "@point_of_sale/app/components/price_formatter/price_formatter";
@@ -176,9 +176,9 @@ export class TipScreen extends Component {
 registry.category("pos_pages").add("TipScreen", {
     name: "TipScreen",
     component: TipScreen,
-    route: `/pos/ui/${odoo.pos_config_id}/tipping/{string:orderUuid}`,
+    route: `/pos/ui/${weth.pos_config_id}/tipping/{string:orderUuid}`,
     params: {
         orderUuid: true,
-        orderFinalized: odoo.is_restaurant || false,
+        orderFinalized: weth.is_restaurant || false,
     },
 });

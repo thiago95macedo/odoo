@@ -1,5 +1,5 @@
-import { animationFrame, expect, test } from "@odoo/hoot";
-import { delay, click, queryOne } from "@odoo/hoot-dom";
+import { animationFrame, expect, test } from "@weth/hoot";
+import { delay, click, queryOne } from "@weth/hoot-dom";
 import {
     defineModels,
     fields,

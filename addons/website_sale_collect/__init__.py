@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
 from . import controllers, models, utils
-from odoo.addons.payment import reset_payment_provider, setup_provider
+from weth.addons.payment import reset_payment_provider, setup_provider
 
 
 def post_init_hook(env):

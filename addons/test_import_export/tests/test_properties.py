@@ -1,8 +1,8 @@
 import json
 
-from odoo.tests import new_test_user
-from odoo.tests.common import tagged, RecordCapturer, HttpCase
-from odoo.tools import BinaryBytes
+from weth.tests import new_test_user
+from weth.tests.common import tagged, RecordCapturer, HttpCase
+from weth.tools import BinaryBytes
 
 
 @tagged('at_install', '-post_install')  # LEGACY at_install

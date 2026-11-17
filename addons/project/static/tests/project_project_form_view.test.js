@@ -1,5 +1,5 @@
-import { expect, test, beforeEach } from "@odoo/hoot";
-import { click, queryAllTexts, waitFor } from "@odoo/hoot-dom";
+import { expect, test, beforeEach } from "@weth/hoot";
+import { click, queryAllTexts, waitFor } from "@weth/hoot-dom";
 import {
     mountView,
     contains,

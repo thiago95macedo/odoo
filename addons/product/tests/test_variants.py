@@ -8,12 +8,12 @@ from unittest.mock import patch
 
 from PIL import Image
 
-from odoo.exceptions import UserError
-from odoo.fields import Command
-from odoo.tests import Form, TransactionCase, tagged
-from odoo.tools import BinaryBytes, mute_logger
+from weth.exceptions import UserError
+from weth.fields import Command
+from weth.tests import Form, TransactionCase, tagged
+from weth.tools import BinaryBytes, mute_logger
 
-from odoo.addons.product.tests.common import ProductVariantsCommon
+from weth.addons.product.tests.common import ProductVariantsCommon
 
 
 @tagged('post_install', '-at_install')
@@ -425,7 +425,7 @@ class TestVariants(ProductVariantsCommon):
         # list_price (1) + size_M extra (2) + Brand extra (5) = 8.
         self.assertEqual(variant_m.lst_price, 8.0)
 
-    @mute_logger('odoo.models.unlink')
+    @mute_logger('weth.models.unlink')
     def test_archive_variant(self):
         template = self.env['product.template'].create({
             'name': 'template'
@@ -452,7 +452,7 @@ class TestVariants(ProductVariantsCommon):
         self.assertTrue(variant_1.active)
         self.assertTrue(template.active)
 
-    @mute_logger('odoo.models.unlink')
+    @mute_logger('weth.models.unlink')
     def test_template_barcode(self):
         template = self.env['product.template'].create({
             'name': 'template',
@@ -498,7 +498,7 @@ class TestVariants(ProductVariantsCommon):
 
         self.assertEqual(template.barcode, 'other_v2_barcode')
 
-    @mute_logger('odoo.models.unlink')
+    @mute_logger('weth.models.unlink')
     def test_archive_all_variants(self):
         template = self.env['product.template'].create({
             'name': 'template'
@@ -770,7 +770,7 @@ class TestVariantsNoCreate(ProductVariantsCommon):
             {self.color_attribute_red, self.color_attribute_blue},
         )
 
-    @mute_logger('odoo.models.unlink')
+    @mute_logger('weth.models.unlink')
     def test_update_mixed_mono(self):
         """ modify a product with regular and 'nocreate' attributes """
         template = self.env['product.template'].create({
@@ -819,7 +819,7 @@ class TestVariantsNoCreate(ProductVariantsCommon):
             {self.color_attribute_red, self.color_attribute_blue},
         )
 
-    @mute_logger('odoo.models.unlink')
+    @mute_logger('weth.models.unlink')
     def test_update_mixed_multi(self):
         """ modify a product with regular and 'nocreate' attributes """
         template = self.env['product.template'].create({
@@ -1186,7 +1186,7 @@ class TestVariantsArchive(ProductVariantsCommon):
             cls.ptav_size_m = cls.ptal_size.product_template_value_ids[1]
         return res
 
-    @mute_logger('odoo.models.unlink')
+    @mute_logger('weth.models.unlink')
     def test_01_update_variant_unlink(self):
         """Variants are not used anywhere, so removing an attribute line would
            unlink the variants and create new ones. Nothing too fancy here.
@@ -1207,7 +1207,7 @@ class TestVariantsArchive(ProductVariantsCommon):
         self._assert_2color_x_2size()
         self.assertFalse(self.template.product_variant_ids & variants_2x2)
 
-    @mute_logger('odoo.models.unlink')
+    @mute_logger('weth.models.unlink')
     def test_02_update_variant_archive_1_value(self):
         """We do the same operations on the template as in the previous test,
            except we simulate that the variants can't be unlinked.
@@ -1317,7 +1317,7 @@ class TestVariantsArchive(ProductVariantsCommon):
         self.assertEqual(archived_variants, variants_2x2)
         self._assert_2color_x_2size(archived_variants)
 
-    @mute_logger('odoo.models.unlink')
+    @mute_logger('weth.models.unlink')
     def test_03_update_variant_archive_3_value(self):
         self._remove_ptal_size()
         self._add_ptal_size_s()
@@ -1436,7 +1436,7 @@ class TestVariantsArchive(ProductVariantsCommon):
         name_searched = self.env['product.template'].name_search(name='cima')
         self.assertIn(template.id, [ng[0] for ng in name_searched])
 
-    @mute_logger('odoo.models.unlink')
+    @mute_logger('weth.models.unlink')
     def test_uom_update_variant(self):
         """ Changing the uom on the template do not behave the same
         as changing on the product product."""
@@ -1455,7 +1455,7 @@ class TestVariantsArchive(ProductVariantsCommon):
         variant_form.uom_id = units
         variant_form.save()
 
-    @mute_logger('odoo.models.unlink')
+    @mute_logger('weth.models.unlink')
     def test_dynamic_attributes_archiving(self):
         Product = self.env['product.product']
         ProductAttribute = self.env['product.attribute']
@@ -1708,7 +1708,7 @@ class TestVariantsArchive(ProductVariantsCommon):
         })
         self.assertEqual(variant.product_tmpl_id.list_price, lst_price)
 
-    @mute_logger('odoo.models.unlink')
+    @mute_logger('weth.models.unlink')
     def test_unlink_and_archive_multiple_variants(self):
         """
         Test unlinking multiple variants in various scenarios
@@ -1743,7 +1743,7 @@ class TestVariantsArchive(ProductVariantsCommon):
         (multiple_archived + multiple_active).unlink()
         self.assertFalse(products.exists())
 
-    @mute_logger('odoo.models.unlink')
+    @mute_logger('weth.models.unlink')
     def test_add_attribute_to_archived_template(self):
         template = self.env['product.template'].create({
             'name': 'Test Product',
@@ -1911,7 +1911,7 @@ class TestVariantsExclusion(ProductVariantsCommon):
         cls.smartphone_256 = get_ptav(cls.smartphone, cls.storage_attr_value_256)
         cls.smartphone_128 = get_ptav(cls.smartphone, cls.storage_attr_value_128)
 
-    @mute_logger('odoo.models.unlink')
+    @mute_logger('weth.models.unlink')
     def test_variants_1_exclusion(self):
         # Create one exclusion for Smartphone S
         self.smartphone_s.write({
@@ -1925,7 +1925,7 @@ class TestVariantsExclusion(ProductVariantsCommon):
         })
         self.assertEqual(len(self.smartphone.product_variant_ids), 4, 'With no exclusion, the smartphone should have 4 active different variants')
 
-    @mute_logger('odoo.models.unlink')
+    @mute_logger('weth.models.unlink')
     def test_variants_2_exclusions_same_line(self):
         # Create two exclusions for Smartphone S on the same line
         self.smartphone_s.write({
@@ -1948,7 +1948,7 @@ class TestVariantsExclusion(ProductVariantsCommon):
         })
         self.assertEqual(len(self.smartphone.product_variant_ids), 4, 'With no exclusion, the smartphone should have 4 active different variants')
 
-    @mute_logger('odoo.models.unlink')
+    @mute_logger('weth.models.unlink')
     def test_variants_2_exclusions_different_lines(self):
         # add 1 exclusion
         self.smartphone_s.write({
@@ -1967,7 +1967,7 @@ class TestVariantsExclusion(ProductVariantsCommon):
         })
         self.assertEqual(len(self.smartphone.product_variant_ids), 3, 'With one exclusion, the smartphone should have 3 active different variants')
 
-    @mute_logger('odoo.models.unlink')
+    @mute_logger('weth.models.unlink')
     def test_dynamic_variants_unarchive(self):
         """ Make sure that exclusions creation, update & delete are correctly handled.
 
@@ -2002,7 +2002,7 @@ class TestVariantsExclusion(ProductVariantsCommon):
 
         # Removing one option will archive one variant
         with patch(
-            'odoo.addons.product.models.product_product.ProductProduct._filter_to_unlink',
+            'weth.addons.product.models.product_product.ProductProduct._filter_to_unlink',
             lambda products: products.filtered(
                 lambda pp: pp.product_tmpl_id.id != product_template.id
             ),

@@ -1,5 +1,5 @@
-from odoo import fields, models, _
-from odoo.tools.mail import parse_contact_from_email
+from weth import fields, models, _
+from weth.tools.mail import parse_contact_from_email
 
 
 class MailTestTLead(models.Model):

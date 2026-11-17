@@ -5,8 +5,8 @@ import {
 } from "@html_builder/../tests/helpers";
 import { BaseOptionComponent } from "@html_builder/core/base_option_component";
 import { BuilderAction } from "@html_builder/core/builder_action";
-import { describe, expect, test } from "@odoo/hoot";
-import { signal, xml } from "@odoo/owl";
+import { describe, expect, test } from "@weth/hoot";
+import { signal, xml } from "@weth/owl";
 import { contains } from "@web/../tests/web_test_helpers";
 
 describe.current.tags("desktop");

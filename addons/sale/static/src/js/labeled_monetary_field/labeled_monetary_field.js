@@ -5,7 +5,7 @@ import {
     monetaryField,
     monetaryFieldProps
 } from "@web/views/fields/monetary/monetary_field";
-import { t, useProps } from "@odoo/owl";
+import { t, useProps } from "@weth/owl";
 
 export class LabeledMonetaryField extends MonetaryField {
     static template = "sale.LabeledMonetaryField";

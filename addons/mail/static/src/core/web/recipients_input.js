@@ -12,7 +12,7 @@ import { useTagNavigation } from "@web/core/record_selectors/tag_navigation_hook
 import { uniqueId } from "@web/core/utils/functions";
 import { RecipientTag, useRecipientChecker } from "./recipient_tag";
 
-import { Component, computed, signal, types, useProps } from "@odoo/owl";
+import { Component, computed, signal, types, useProps } from "@weth/owl";
 
 export class RecipientsInput extends Component {
     static template = "mail.RecipientsInput";
@@ -98,10 +98,10 @@ export class RecipientsInput extends Component {
                         ...matches.map((match) => ({
                             label: match.display_name
                                 ? highlightText(
-                                      term,
-                                      odoomark(match.__formatted_display_name),
-                                      "fw-bolder text-primary"
-                                  )
+                                    term,
+                                    odoomark(match.__formatted_display_name),
+                                    "fw-bolder text-primary"
+                                )
                                 : _t("Unnamed"),
                             onSelect: () => {
                                 this.insertAdditionalRecipient({
@@ -178,16 +178,15 @@ export class RecipientsInput extends Component {
             this.props.thread.recipientsCount === 1
                 ? _t("1 Follower")
                 : _t("%(followersCount)s Followers", {
-                      followersCount: this.props.thread.recipientsCount,
-                  });
+                    followersCount: this.props.thread.recipientsCount,
+                });
         return {
             color: 4,
             text,
             tooltip: this.props.thread.recipients
                 .map(
                     (f) =>
-                        `${this.props.thread.getPersonaName(f.partner_id) || _t("Unnamed")} ${
-                            f.partner_id.email ? "<" + f.partner_id.email + ">" : ""
+                        `${this.props.thread.getPersonaName(f.partner_id) || _t("Unnamed")} ${f.partner_id.email ? "<" + f.partner_id.email + ">" : ""
                         }`
                 )
                 .join("\n"),
@@ -198,9 +197,8 @@ export class RecipientsInput extends Component {
     getTagsFromMailThread() {
         const tags = [];
         const createTagForRecipient = (recipient, recipientField) => {
-            const tooltip = `${recipient.name || recipient.display_name || _t("Unnamed")} ${
-                recipient.email ? "<" + recipient.email + ">" : ""
-            }`;
+            const tooltip = `${recipient.name || recipient.display_name || _t("Unnamed")} ${recipient.email ? "<" + recipient.email + ">" : ""
+                }`;
             tooltip.trim();
             tags.push({
                 id: uniqueId("tag_"),

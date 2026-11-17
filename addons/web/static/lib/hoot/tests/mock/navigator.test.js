@@ -1,6 +1,6 @@
-/** @odoo-module */
+/** @weth-module */
 
-import { describe, expect, mockSendBeacon, mockTouch, mockVibrate, test } from "@odoo/hoot";
+import { describe, expect, mockSendBeacon, mockTouch, mockVibrate, test } from "@weth/hoot";
 import { parseUrl } from "../local_helpers";
 
 /**

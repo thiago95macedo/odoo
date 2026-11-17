@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, fields, models, _
-from odoo.fields import Domain
+from weth import api, fields, models, _
+from weth.fields import Domain
 
 
 class CalendarAlarm(models.Model):

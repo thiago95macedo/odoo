@@ -1,7 +1,7 @@
 import { EDITABLE_MEDIA_CLASS } from "@html_editor/utils/dom_info";
-import { describe, expect, test } from "@odoo/hoot";
-import { click, dblclick, press, waitFor, waitForNone } from "@odoo/hoot-dom";
-import { animationFrame, tick } from "@odoo/hoot-mock";
+import { describe, expect, test } from "@weth/hoot";
+import { click, dblclick, press, waitFor, waitForNone } from "@weth/hoot-dom";
+import { animationFrame, tick } from "@weth/hoot-mock";
 import { onRpc, patchWithCleanup } from "@web/../tests/web_test_helpers";
 import { cleanHints } from "../_helpers/dispatch";
 import { base64Img, setupEditor, testEditor } from "../_helpers/editor";

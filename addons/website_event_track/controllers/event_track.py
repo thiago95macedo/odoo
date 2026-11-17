@@ -10,12 +10,12 @@ from zoneinfo import ZoneInfo
 import babel.dates
 from werkzeug.exceptions import Forbidden, NotFound
 
-from odoo import _, fields, http, tools
-from odoo.fields import Domain
-from odoo.http import request
-from odoo.http.stream import content_disposition
-from odoo.tools import BinaryBytes, is_html_empty, plaintext2html
-from odoo.tools.misc import babel_locale_parse
+from weth import _, fields, http, tools
+from weth.fields import Domain
+from weth.http import request
+from weth.http.stream import content_disposition
+from weth.tools import BinaryBytes, is_html_empty, plaintext2html
+from weth.tools.misc import babel_locale_parse
 
 
 class EventTrackController(http.Controller):

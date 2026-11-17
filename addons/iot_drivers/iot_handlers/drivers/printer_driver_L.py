@@ -7,11 +7,11 @@ import logging
 import netifaces as ni
 import time
 
-from odoo.addons.iot_drivers.connection_manager import connection_manager
-from odoo.addons.iot_drivers.iot_handlers.drivers.printer_driver_base import PrinterDriverBase
-from odoo.addons.iot_drivers.iot_handlers.interfaces.printer_interface_L import PrinterInterface
-from odoo.addons.iot_drivers.tools import helpers, system, wifi
-from odoo.addons.iot_drivers.tools.system import IOT_IDENTIFIER
+from weth.addons.iot_drivers.connection_manager import connection_manager
+from weth.addons.iot_drivers.iot_handlers.drivers.printer_driver_base import PrinterDriverBase
+from weth.addons.iot_drivers.iot_handlers.interfaces.printer_interface_L import PrinterInterface
+from weth.addons.iot_drivers.tools import helpers, system, wifi
+from weth.addons.iot_drivers.tools.system import IOT_IDENTIFIER
 
 _logger = logging.getLogger(__name__)
 

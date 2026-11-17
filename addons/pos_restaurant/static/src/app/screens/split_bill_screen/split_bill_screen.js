@@ -1,4 +1,4 @@
-import { Component, onWillDestroy, useProps, proxy, t } from "@odoo/owl";
+import { Component, onWillDestroy, useProps, proxy, t } from "@weth/owl";
 import { OrderDisplay } from "@point_of_sale/app/components/order_display/order_display";
 import { Orderline } from "@point_of_sale/app/components/orderline/orderline";
 import { PriceFormatter } from "@point_of_sale/app/components/price_formatter/price_formatter";
@@ -162,8 +162,8 @@ export class SplitBillScreen extends Component {
         });
         const prepOrder = originalOrder.prep_order_ids?.length
             ? this.pos.models["pos.prep.order"].create({
-                  pos_order_id: newOrder,
-              })
+                pos_order_id: newOrder,
+            })
             : null;
         newOrder.setPricelist(originalOrder.pricelist_id);
         newOrder.floating_order_name = newOrderName;
@@ -305,7 +305,7 @@ export class SplitBillScreen extends Component {
 registry.category("pos_pages").add("SplitBillScreen", {
     name: "SplitBillScreen",
     component: SplitBillScreen,
-    route: `/pos/ui/${odoo.pos_config_id}/splitting/{string:orderUuid}`,
+    route: `/pos/ui/${weth.pos_config_id}/splitting/{string:orderUuid}`,
     params: {
         orderUuid: true,
         orderFinalized: false,

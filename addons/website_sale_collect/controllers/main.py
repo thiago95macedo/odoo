@@ -2,11 +2,11 @@
 
 import json
 
-from odoo.fields import Date
-from odoo.http import request
+from weth.fields import Date
+from weth.http import request
 
-from odoo.addons.website_sale.controllers.main import WebsiteSale
-from odoo.addons.website_sale_collect.models.website import CLICK_AND_COLLECT_SESSION_CACHE_KEY
+from weth.addons.website_sale.controllers.main import WebsiteSale
+from weth.addons.website_sale_collect.models.website import CLICK_AND_COLLECT_SESSION_CACHE_KEY
 
 
 class WebsiteSaleCollect(WebsiteSale):

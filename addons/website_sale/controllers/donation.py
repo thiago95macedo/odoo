@@ -1,4 +1,4 @@
-from odoo import http
+from weth import http
 
 
 class WebsiteSaleDonation(http.Controller):

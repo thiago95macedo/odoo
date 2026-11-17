@@ -1,5 +1,5 @@
-from odoo.addons.account_edi_ubl_cii.tests.test_ubl_import_bis3_invoice_be import TestUblImportBis3InvoiceBE
-from odoo.tests import tagged
+from weth.addons.account_edi_ubl_cii.tests.test_ubl_import_bis3_invoice_be import TestUblImportBis3InvoiceBE
+from weth.tests import tagged
 
 from freezegun import freeze_time
 

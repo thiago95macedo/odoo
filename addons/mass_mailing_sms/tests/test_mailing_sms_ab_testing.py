@@ -3,9 +3,9 @@
 
 from datetime import datetime
 
-from odoo.addons.mass_mailing_sms.tests.common import MassSMSCommon
-from odoo.addons.mass_mailing.tests.test_mailing_ab_testing import TestMailingABTestingCommon
-from odoo.tests import tagged
+from weth.addons.mass_mailing_sms.tests.common import MassSMSCommon
+from weth.addons.mass_mailing.tests.test_mailing_ab_testing import TestMailingABTestingCommon
+from weth.tests import tagged
 
 
 @tagged('post_install', '-at_install')

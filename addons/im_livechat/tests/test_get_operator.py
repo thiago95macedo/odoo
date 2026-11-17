@@ -3,10 +3,10 @@
 from datetime import timedelta
 from unittest.mock import patch
 
-from odoo import Command, fields
-from odoo.addons.im_livechat.tests.common import TestGetOperatorCommon
-from odoo.addons.mail.tests.common import MailCommon
-from odoo.tests.common import users
+from weth import Command, fields
+from weth.addons.im_livechat.tests.common import TestGetOperatorCommon
+from weth.addons.mail.tests.common import MailCommon
+from weth.tests.common import users
 
 
 class TestGetOperator(MailCommon, TestGetOperatorCommon):

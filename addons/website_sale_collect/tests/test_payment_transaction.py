@@ -1,9 +1,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.tests import HttpCase, tagged
-from odoo.tools import mute_logger
+from weth.tests import HttpCase, tagged
+from weth.tools import mute_logger
 
-from odoo.addons.website_sale_collect.tests.common import ClickAndCollectCommon
+from weth.addons.website_sale_collect.tests.common import ClickAndCollectCommon
 
 
 @tagged("post_install", "-at_install")
@@ -20,7 +20,7 @@ class TestOnSitePaymentTransaction(HttpCase, ClickAndCollectCommon):
             provider_id=self.provider.id,
             payment_method_id=self.provider.payment_method_ids.id,
         )
-        with mute_logger("odoo.addons.sale.models.payment_transaction"):
+        with mute_logger("weth.addons.sale.models.payment_transaction"):
             self._run_post_processing()
 
         self.assertEqual(order.state, "sale")

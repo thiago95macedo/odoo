@@ -1,7 +1,7 @@
 import { defineMailModels } from "@mail/../tests/mail_test_helpers";
-import { describe, expect, test } from "@odoo/hoot";
-import { click } from "@odoo/hoot-dom";
-import { animationFrame } from "@odoo/hoot-mock";
+import { describe, expect, test } from "@weth/hoot";
+import { click } from "@weth/hoot-dom";
+import { animationFrame } from "@weth/hoot-mock";
 import {
     defineModels,
     editSelectMenu,

@@ -1,9 +1,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import Command
-from odoo.tests import HttpCase
-from odoo.addons.website_livechat.tests.common import TestLivechatCommon
-from odoo.addons.im_livechat.tests.chatbot_common import ChatbotCase
+from weth import Command
+from weth.tests import HttpCase
+from weth.addons.website_livechat.tests.common import TestLivechatCommon
+from weth.addons.im_livechat.tests.chatbot_common import ChatbotCase
 
 
 class TestFwOperator(ChatbotCase, HttpCase, TestLivechatCommon):

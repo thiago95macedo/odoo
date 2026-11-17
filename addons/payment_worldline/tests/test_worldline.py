@@ -2,26 +2,26 @@
 
 from unittest.mock import patch
 
-from odoo.tests import tagged
-from odoo.tools import mute_logger
+from weth.tests import tagged
+from weth.tools import mute_logger
 
-from odoo.addons.payment.tests.http_common import PaymentHttpCommon
-from odoo.addons.payment_worldline.controllers.main import WorldlineController
-from odoo.addons.payment_worldline.tests.common import WorldlineCommon
+from weth.addons.payment.tests.http_common import PaymentHttpCommon
+from weth.addons.payment_worldline.controllers.main import WorldlineController
+from weth.addons.payment_worldline.tests.common import WorldlineCommon
 
 
 @tagged("post_install", "-at_install")
 class WorldlineTest(WorldlineCommon, PaymentHttpCommon):
-    @mute_logger("odoo.addons.payment_worldline.controllers.main")
+    @mute_logger("weth.addons.payment_worldline.controllers.main")
     def _webhook_notification_flow(self, payload):
         """Send a notification to the webhook, ignore the signature, and check the response."""
         url = self._build_url(WorldlineController._webhook_url)
-        with patch("odoo.addons.payment.utils.verify_signature"):
+        with patch("weth.addons.payment.utils.verify_signature"):
             response = self._make_json_request(url, data=payload)
         self.assertEqual(response.json(), "", msg="The webhook should always respond ''.")
         self._run_processing()
 
-    @mute_logger("odoo.addons.payment_worldline.controllers.main")
+    @mute_logger("weth.addons.payment_worldline.controllers.main")
     def test_webhook_notification_confirms_transaction(self):
         """Test the processing of a webhook notification."""
         self._disable_process_patcher()
@@ -32,7 +32,7 @@ class WorldlineTest(WorldlineCommon, PaymentHttpCommon):
         self.assertEqual(tx.state, "done")
         self.assertEqual(tx.provider_reference, "1234567890")
 
-    @mute_logger("odoo.addons.payment_worldline.controllers.main")
+    @mute_logger("weth.addons.payment_worldline.controllers.main")
     def test_webhook_notification_creates_token(self):
         """Test the processing of a webhook notification when creating a token."""
         self._disable_process_patcher()
@@ -45,7 +45,7 @@ class WorldlineTest(WorldlineCommon, PaymentHttpCommon):
         self.assertEqual(tx.token_id.provider_ref, "whateverToken")
         self.assertEqual(tx.token_id.payment_details, "4242")
 
-    @mute_logger("odoo.addons.payment_worldline.controllers.main")
+    @mute_logger("weth.addons.payment_worldline.controllers.main")
     def test_failed_webhook_notification_set_tx_as_error_1(self):
         """Test the processing of a webhook notification for a failed transaction."""
         self._disable_process_patcher()
@@ -55,7 +55,7 @@ class WorldlineTest(WorldlineCommon, PaymentHttpCommon):
         self.assertEqual(tx.state, "error")
         self.assertEqual(tx.state_message, "Transaction declined with error code 30511001.")
 
-    @mute_logger("odoo.addons.payment_worldline.controllers.main")
+    @mute_logger("weth.addons.payment_worldline.controllers.main")
     def test_failed_webhook_notification_set_tx_as_error_2(self):
         """Test the processing of a webhook notification for a failed transaction."""
         self._disable_process_patcher()
@@ -65,7 +65,7 @@ class WorldlineTest(WorldlineCommon, PaymentHttpCommon):
         self.assertEqual(tx.state, "error")
         self.assertEqual(tx.state_message, "Transaction declined with error code 30331001.")
 
-    @mute_logger("odoo.addons.payment_worldline.controllers.main")
+    @mute_logger("weth.addons.payment_worldline.controllers.main")
     def test_failed_webhook_notification_set_tx_as_cancel(self):
         """Test the processing of a webhook notification for a cancelled transaction."""
         self._disable_process_patcher()

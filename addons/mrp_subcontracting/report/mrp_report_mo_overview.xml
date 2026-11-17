@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<odoo>
+<weth>
 
     <template id="mrp_subcontracting.mo_overview_content" inherit_id="mrp.mo_overview_content">
         <xpath expr="//th[@name='th_mrp_mo_free_to_use']" position="after">
@@ -32,4 +32,4 @@
         </xpath>
     </template>
 
-</odoo>
+</weth>

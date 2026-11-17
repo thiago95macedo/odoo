@@ -3,10 +3,10 @@
 
 import re
 
-from odoo import Command
+from weth import Command
 from .common import TestCommonSaleTimesheet
-from odoo.tests import tagged, Form
-from odoo.tools.safe_eval import expr_eval
+from weth.tests import tagged, Form
+from weth.tools.safe_eval import expr_eval
 
 
 @tagged('post_install', '-at_install')

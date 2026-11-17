@@ -2,10 +2,10 @@
 
 from unittest.mock import patch
 
-from odoo.tests import tagged
-from odoo.tools import mute_logger
+from weth.tests import tagged
+from weth.tools import mute_logger
 
-from odoo.addons.payment.tests.common import PaymentCommon
+from weth.addons.payment.tests.common import PaymentCommon
 
 
 @tagged("-at_install", "post_install")
@@ -92,7 +92,7 @@ class TestPaymentData(PaymentCommon):
             self._run_processing()
         self.assertEqual(rollback_mock.call_count, 1)
 
-    @mute_logger("odoo.addons.payment.models.payment_data")
+    @mute_logger("weth.addons.payment.models.payment_data")
     def test_processing_cron_releases_locks_when_processing_fails(self):
         self.process_mock.side_effect = Exception
         with patch.object(self.IrCron, "_rollback_progress") as rollback_mock:
@@ -109,13 +109,13 @@ class TestPaymentData(PaymentCommon):
         self._run_processing()
         self.assertFalse(self.payment_data.exists())
 
-    @mute_logger("odoo.addons.payment.models.payment_data")
+    @mute_logger("weth.addons.payment.models.payment_data")
     def test_processing_cron_flags_payment_data_when_processing_fails(self):
         self.process_mock.side_effect = Exception
         self._run_processing()
         self.assertTrue(self.payment_data.errored)
 
-    @mute_logger("odoo.addons.payment.models.payment_data")
+    @mute_logger("weth.addons.payment.models.payment_data")
     def test_processing_cron_preserves_processing_when_post_processing_fails(self):
         self.post_process_mock.side_effect = Exception
         self._run_processing()
@@ -136,7 +136,7 @@ class TestPaymentData(PaymentCommon):
         self._run_processing()
         self.assertFalse(self.post_process_mock.call_args.args[0])
 
-    @mute_logger("odoo.addons.payment.models.payment_data")
+    @mute_logger("weth.addons.payment.models.payment_data")
     def test_processing_cron_defers_to_cron_when_post_processing_fails(self):
         post_processing_cron = self.env.ref("payment.post_processing_cron")
         post_processing_cron.active = True  # Allow triggering the cron
@@ -151,13 +151,13 @@ class TestPaymentData(PaymentCommon):
         self.assertEqual(new_trigger_count, trigger_count + 1)
         self.assertFalse(self.tx.is_post_processed)  # Post-processing is left to the cron
 
-    @mute_logger("odoo.addons.payment.models.payment_data")
+    @mute_logger("weth.addons.payment.models.payment_data")
     def test_processing_cron_notifies_client_on_post_processing_success(self):
         with patch.object(self.PaymentTransaction, "_notify_status") as notify_status_mock:
             self._run_processing()
         self.assertEqual(notify_status_mock.call_count, 1)
 
-    @mute_logger("odoo.addons.payment.models.payment_data")
+    @mute_logger("weth.addons.payment.models.payment_data")
     def test_processing_cron_notifies_client_on_post_processing_failure(self):
         self.post_process_mock.side_effect = Exception
         with patch.object(self.PaymentTransaction, "_notify_status") as notify_status_mock:

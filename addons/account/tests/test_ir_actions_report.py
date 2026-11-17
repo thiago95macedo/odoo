@@ -1,13 +1,13 @@
 import io
 import re
 
-from odoo.addons.account.tests.common import AccountTestInvoicingCommon
-from odoo.addons.base.tests.files import PDF_RAW
-from odoo.exceptions import RedirectWarning
-from odoo.tools import BinaryBytes, pdf
-from odoo.tests import tagged
-from odoo.tools import file_open, mute_logger
-from odoo.tools.pdf import PdfFileReader, PdfFileWriter
+from weth.addons.account.tests.common import AccountTestInvoicingCommon
+from weth.addons.base.tests.files import PDF_RAW
+from weth.exceptions import RedirectWarning
+from weth.tools import BinaryBytes, pdf
+from weth.tests import tagged
+from weth.tools import file_open, mute_logger
+from weth.tools.pdf import PdfFileReader, PdfFileWriter
 
 
 @tagged('post_install', '-at_install')
@@ -46,7 +46,7 @@ class TestIrActionsReport(AccountTestInvoicingCommon):
         self.assertTrue(test_record_report, "The PDF should have been generated")
 
     # Document synchronization being enabled, avoid a warning when computing the number of page of the corrupted pdf.
-    @mute_logger('odoo.addons.documents.models.documents_document')
+    @mute_logger('weth.addons.documents.models.documents_document')
     def test_download_with_encrypted_pdf(self):
         """
         Same as test_download_one_corrupted_pdf
@@ -106,7 +106,7 @@ class TestIrActionsReport(AccountTestInvoicingCommon):
     def test_print_original_bill_with_image_attachment(self):
         bill = self._create_invoice(move_type='in_invoice', post=True)
         bill.message_main_attachment_id = self.env['ir.attachment'].create({
-            'raw': file_open('base/tests/odoo.jpg', 'rb').read(),
+            'raw': file_open('base/tests/weth.jpg', 'rb').read(),
             'name': 'bill.jpg',
             'mimetype': 'image/jpeg',
         })

@@ -1,10 +1,10 @@
-import odoo
+import weth
 
-from odoo import fields, tools
-from odoo.addons.point_of_sale.tests.common import TestPoSCommon
+from weth import fields, tools
+from weth.addons.point_of_sale.tests.common import TestPoSCommon
 
 
-@odoo.tests.tagged('post_install', '-at_install')
+@weth.tests.tagged('post_install', '-at_install')
 class TestPoSOtherCurrencyConfig(TestPoSCommon):
     """ Test PoS with basic configuration
     """

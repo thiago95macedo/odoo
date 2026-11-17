@@ -1,4 +1,4 @@
-import { test, expect, describe } from "@odoo/hoot";
+import { test, expect, describe } from "@weth/hoot";
 import { MockServer } from "@web/../tests/web_test_helpers";
 import { patch } from "@web/core/utils/patch";
 import { getFilledOrder, setupPosEnv } from "../utils";
@@ -124,7 +124,7 @@ describe("data_service", () => {
         let addedListeners = 0;
         patch(bus, {
             addChannel(channel) {
-                if (channel === odoo.access_token) {
+                if (channel === weth.access_token) {
                     expect.step("addChannel");
                 }
                 return super.addChannel(...arguments);

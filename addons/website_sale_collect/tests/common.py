@@ -1,9 +1,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.fields import Command
+from weth.fields import Command
 
-from odoo.addons.payment_custom.tests.common import PaymentCustomCommon
-from odoo.addons.website_sale_stock.tests.common import WebsiteSaleStockCommon
+from weth.addons.payment_custom.tests.common import PaymentCustomCommon
+from weth.addons.website_sale_stock.tests.common import WebsiteSaleStockCommon
 
 
 class ClickAndCollectCommon(PaymentCustomCommon, WebsiteSaleStockCommon):

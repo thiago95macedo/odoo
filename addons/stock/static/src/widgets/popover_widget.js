@@ -1,4 +1,4 @@
-import { Component, computed, t, useProps } from "@odoo/owl";
+import { Component, computed, t, useProps } from "@weth/owl";
 import { usePopover } from "@web/core/popover/popover_hook";
 import { registry } from "@web/core/registry";
 import { standardFieldProps } from "@web/views/fields/standard_field_props";

@@ -1,5 +1,5 @@
-from odoo import Command
-from odoo.tests import tagged, TransactionCase
+from weth import Command
+from weth.tests import tagged, TransactionCase
 
 
 @tagged('post_install', '-at_install')

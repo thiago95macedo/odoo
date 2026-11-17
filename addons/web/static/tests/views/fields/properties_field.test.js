@@ -13,11 +13,11 @@ import {
     runAllTimers,
     test,
     waitFor,
-} from "@odoo/hoot";
+} from "@weth/hoot";
 import { PropertiesField } from "@web/views/fields/properties/properties_field";
 import { many2XAutocompleteProps } from "@web/views/fields/relational_utils";
 import { SelectCreateDialog } from "@web/views/view_dialogs/select_create_dialog";
-import { t } from "@odoo/owl";
+import { t } from "@weth/owl";
 import { WebClient } from "@web/webclient/webclient";
 
 import { editTime, getPickerCell } from "@web/../tests/core/datetime/datetime_test_helpers";
@@ -618,8 +618,7 @@ test("properties: selection", async () => {
 
     const getOptionDraggableElement = (index) =>
         queryFirst(
-            `.o_field_property_selection_option:nth-child(${
-                index + 1
+            `.o_field_property_selection_option:nth-child(${index + 1
             }) .o_field_property_selection_drag`
         );
 
@@ -3326,7 +3325,7 @@ test("properties: Create a property with an onchange methods", async () => {
         record.properties = {};
     }
     ResCompany._records[0].definitions = [];
-    Partner._onChanges.properties = () => {};
+    Partner._onChanges.properties = () => { };
     onRpc("onchange", async () => {
         expect.step("on_change_called");
         await new Promise((resolve) => setTimeout(resolve, 100));

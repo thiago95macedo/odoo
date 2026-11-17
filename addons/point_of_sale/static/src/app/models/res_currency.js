@@ -6,7 +6,7 @@ export class ResCurrency extends numbers.AbstractNumbers {
     static pythonModel = "res.currency";
 
     get config() {
-        return this.models["pos.config"].get(odoo.pos_config_id);
+        return this.models["pos.config"].get(weth.pos_config_id);
     }
 
     get defaultCurrency() {

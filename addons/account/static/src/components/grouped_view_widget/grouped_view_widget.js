@@ -1,5 +1,5 @@
 import { registry } from "@web/core/registry";
-import { Component, t, useProps } from "@odoo/owl";
+import { Component, t, useProps } from "@weth/owl";
 import { standardFieldProps } from "@web/views/fields/standard_field_props";
 
 class ListItem extends Component {

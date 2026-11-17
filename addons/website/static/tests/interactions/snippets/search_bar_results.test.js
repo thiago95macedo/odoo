@@ -1,5 +1,5 @@
-import { describe, expect, test } from "@odoo/hoot";
-import { press, queryAll, queryOne } from "@odoo/hoot-dom";
+import { describe, expect, test } from "@weth/hoot";
+import { press, queryAll, queryOne } from "@weth/hoot-dom";
 import { startInteractions, setupInteractionWhiteList } from "@web/../tests/public/helpers";
 
 setupInteractionWhiteList("website.search_bar_results");

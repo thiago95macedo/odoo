@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import fields, models, tools, Command, _
-from odoo.tools.misc import clean_context
+from weth import fields, models, tools, Command, _
+from weth.tools.misc import clean_context
 
 
 class MailingContactImport(models.TransientModel):

@@ -6,12 +6,12 @@ from zoneinfo import ZoneInfo
 from dateutil.relativedelta import relativedelta
 from freezegun import freeze_time
 
-from odoo import exceptions, fields, tests
-from odoo.addons.mail.models.mail_activity import MailActivity
-from odoo.addons.mail.tests.common import mail_new_test_user
-from odoo.addons.test_mail.tests.test_mail_activity import TestActivityCommon
-from odoo.tests import tagged, users
-from odoo.tools import mute_logger
+from weth import exceptions, fields, tests
+from weth.addons.mail.models.mail_activity import MailActivity
+from weth.addons.mail.tests.common import mail_new_test_user
+from weth.addons.test_mail.tests.test_mail_activity import TestActivityCommon
+from weth.tests import tagged, users
+from weth.tools import mute_logger
 
 
 @tagged('mail_activity', 'mail_activity_mixin')
@@ -37,7 +37,7 @@ class TestActivityMixin(TestActivityCommon):
 
         cls.activity_type = cls.env['mail.activity.type'].search([], limit=1).ensure_one()
 
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_activity_mixin(self):
         self.user_employee.tz = self.user_admin.tz
         with self.with_user('employee'):
@@ -129,7 +129,7 @@ class TestActivityMixin(TestActivityCommon):
             self.assertFalse(self.test_record.activity_state)
             self.assertFalse(act2.exists())
 
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_activity_mixin_not_only_automated(self):
 
         # Schedule activity and create manual activity
@@ -180,7 +180,7 @@ class TestActivityMixin(TestActivityCommon):
         self.assertFalse(auto_act.exists())
         self.assertFalse(man_act.exists())
 
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_activity_mixin_archive(self):
         rec = self.test_record.with_user(self.user_employee)
         new_act = rec.activity_schedule(
@@ -195,7 +195,7 @@ class TestActivityMixin(TestActivityCommon):
         self.assertEqual(rec.active, True)
         self.assertEqual(rec.activity_ids, new_act)
 
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_activity_mixin_archive_user(self):
         """
         Test when archiving an user, we unlink all his related activities
@@ -237,7 +237,7 @@ class TestActivityMixin(TestActivityCommon):
         activities = self.env['mail.activity'].search([('user_id', 'in', archived_users.ids)])
         self.assertFalse(activities, "Activities of archived users should be deleted.")
 
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_activity_mixin_reschedule_user(self):
         rec = self.test_record.with_user(self.user_employee)
         rec.activity_schedule(
@@ -359,7 +359,7 @@ class TestActivityMixin(TestActivityCommon):
         records = self.env['mail.test.activity'].search([('activity_exception_decoration', '!=', False)])
         self.assertEqual(records, record_warning)
 
-    @mute_logger('odoo.addons.mail.models.mail_mail', 'odoo.tests')
+    @mute_logger('weth.addons.mail.models.mail_mail', 'weth.tests')
     def test_mail_activity_mixin_search_state_basic(self):
         """Test the search method on the "activity_state".
 
@@ -469,7 +469,7 @@ class TestActivityMixin(TestActivityCommon):
                 {(e['activity_state'], e['__count']) for e in Model.formatted_read_group(**read_group_params)},
                 {('today', 2)})
 
-    @mute_logger('odoo.addons.mail.models.mail_mail', 'odoo.tests')
+    @mute_logger('weth.addons.mail.models.mail_mail', 'weth.tests')
     def test_mail_activity_mixin_search_state_different_day_but_close_time(self):
         """Test the case where there's less than 24 hours between the deadline and now_tz,
         but one day of difference (e.g. 23h 01/01/2020 & 1h 02/02/2020). So the state
@@ -583,7 +583,7 @@ class TestActivityMixin(TestActivityCommon):
                 found = self.env['mail.test.activity'].with_context(**context).search(domain)
                 self.assertEqual(found, expected, msg=msg)
 
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_activity_plans_ids_search_semantics_single(self):
         """
         Test the search semantics of computed field `activity_plans_ids`:
@@ -658,7 +658,7 @@ class TestActivityMixin(TestActivityCommon):
         self.assertIn(record_without_plan, records_without_plan)
         self.assertIn(record_without_plan, records_without_plan_1)
 
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_my_activity_flow_employee(self):
         Activity = self.env['mail.activity']
         date_today = date.today()
@@ -694,7 +694,7 @@ class TestActivityMixin(TestActivityCommon):
             ])
             self.assertFalse(record, "Should not find record if the only late activity is done")
 
-    @mute_logger('odoo.addons.mail.models.mail_activity_mixin')
+    @mute_logger('weth.addons.mail.models.mail_activity_mixin')
     def test_activity_schedule_create_vals_inconsistent_type_falls_back(self):
         """An activity type restricted to another model must be replaced by the model default type."""
         fallback_type = self.env['mail.activity.type'].create({

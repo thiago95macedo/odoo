@@ -1,4 +1,4 @@
-import * as spreadsheet from "@odoo/o-spreadsheet";
+import * as spreadsheet from "@weth/o-spreadsheet";
 const { inverseCommandRegistry, otRegistry } = spreadsheet.registries;
 
 function identity(cmd) {

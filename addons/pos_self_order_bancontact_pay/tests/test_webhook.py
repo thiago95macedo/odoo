@@ -1,7 +1,7 @@
-from odoo import Command
-from odoo.tests.common import tagged
+from weth import Command
+from weth.tests.common import tagged
 
-from odoo.addons.pos_bancontact_pay.tests.test_webhook import TestWebhook
+from weth.addons.pos_bancontact_pay.tests.test_webhook import TestWebhook
 
 
 @tagged("post_install", "-at_install")

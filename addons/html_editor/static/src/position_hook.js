@@ -1,4 +1,4 @@
-import { useOnChange } from "@odoo/owl";
+import { useOnChange } from "@weth/owl";
 import { ancestors } from "@html_editor/utils/dom_traversal";
 import { couldBeScrollableX, couldBeScrollableY } from "@web/core/utils/scrolling";
 import { throttleForAnimation } from "@web/core/utils/timing";

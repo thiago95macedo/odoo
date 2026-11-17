@@ -12,7 +12,7 @@ export class UpgradeSelectionField extends SelectionField {
     setup() {
         super.setup();
         this.dialogService = useService("dialog");
-        this.isEnterprise = odoo.info && odoo.info.isEnterprise;
+        this.isEnterprise = weth.info && weth.info.isEnterprise;
     }
 
     async onChange(newValue) {

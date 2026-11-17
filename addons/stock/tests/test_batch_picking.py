@@ -2,12 +2,12 @@
 
 from datetime import datetime, timedelta
 
-from odoo import Command, fields
-from odoo.exceptions import UserError
-from odoo.tests import Form, HttpCase, tagged
-from odoo.tools import float_round
+from weth import Command, fields
+from weth.exceptions import UserError
+from weth.tests import Form, HttpCase, tagged
+from weth.tools import float_round
 
-from odoo.addons.stock.tests.common import TestStockBatchCommon
+from weth.addons.stock.tests.common import TestStockBatchCommon
 
 
 class TestBatchPicking(TestStockBatchCommon):
@@ -1334,7 +1334,7 @@ class TestBatchPickingSynchronization(HttpCase):
         })
 
         action_id = self.env.ref('stock.stock_picking_batch_menu').action
-        url = f'/odoo/action-{action_id.id}/{batch.id}'
+        url = f'/weth/action-{action_id.id}/{batch.id}'
         self.start_tour(url, "test_stock_picking_batch_sm_to_sml_synchronization", login="admin", timeout=100)
         self.assertEqual(batch.picking_ids.move_ids.quantity, 7)
         self.assertEqual(batch.picking_ids.move_ids.move_line_ids.quantity, 7)

@@ -7,7 +7,7 @@ import {
     mockDate,
     test,
     tick,
-} from "@odoo/hoot";
+} from "@weth/hoot";
 import { patchWithCleanup } from "@web/../tests/web_test_helpers";
 import { startRouter } from "@web/core/browser/router";
 import { isRPCCacheDisabled, RPCCache } from "@web/core/network/rpc_cache";

@@ -4,11 +4,11 @@ from datetime import datetime, timezone
 from freezegun import freeze_time
 from unittest.mock import patch
 
-from odoo.addons.google_calendar.models.res_users import ResUsers
-from odoo.addons.google_calendar.tests.test_sync_common import TestSyncGoogle, patch_api
-from odoo.addons.google_calendar.utils.google_event import GoogleEvent
-from odoo.addons.mail.tests.common import MailCommon
-from odoo.tests import tagged
+from weth.addons.google_calendar.models.res_users import ResUsers
+from weth.addons.google_calendar.tests.test_sync_common import TestSyncGoogle, patch_api
+from weth.addons.google_calendar.utils.google_event import GoogleEvent
+from weth.addons.mail.tests.common import MailCommon
+from weth.tests import tagged
 
 from .test_token_access import TestTokenAccess
 

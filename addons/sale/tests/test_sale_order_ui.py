@@ -1,9 +1,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.fields import Command
-from odoo.tests import HttpCase, tagged
+from weth.fields import Command
+from weth.tests import HttpCase, tagged
 
-from odoo.addons.product.tests.common import ProductVariantsCommon
+from weth.addons.product.tests.common import ProductVariantsCommon
 
 
 @tagged("post_install", "-at_install")
@@ -28,7 +28,7 @@ class TestSaleOrderUI(HttpCase, ProductVariantsCommon):
         })
 
         self.start_tour(
-            f"/odoo/sales/{so.id}",
+            f"/weth/sales/{so.id}",
             "sale_order_keep_uom_on_variant_wizard_quantity_change",
             login=self.env.user.login,
         )

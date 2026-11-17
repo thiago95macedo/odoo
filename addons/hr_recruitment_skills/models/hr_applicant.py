@@ -2,7 +2,7 @@
 
 from ast import literal_eval
 
-from odoo import Command, api, fields, models
+from weth import Command, api, fields, models
 
 
 class HrApplicant(models.Model):

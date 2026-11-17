@@ -1,6 +1,6 @@
-import { beforeEach, describe, expect, test } from "@odoo/hoot";
+import { beforeEach, describe, expect, test } from "@weth/hoot";
 import { getContent, setSelection } from "./_helpers/selection";
-import { animationFrame, click, press, queryOne, waitFor } from "@odoo/hoot-dom";
+import { animationFrame, click, press, queryOne, waitFor } from "@weth/hoot-dom";
 import { ensureDistinctHistoryCommit, insertText, insertSpace } from "./_helpers/user_actions";
 import {
     compareHighlightedContent,
@@ -107,8 +107,8 @@ test("starting edition with a pre activates syntax highlighting (with dataset va
             await compareHighlightedContent(
                 getContent(editor.editable),
                 '<p data-selection-placeholder=""><br></p>' +
-                    highlightedPre({ value: "Hello world!", language: "javascript" }) +
-                    '<p data-selection-placeholder="" style="margin: -9px 0px 8px;"><br></p>',
+                highlightedPre({ value: "Hello world!", language: "javascript" }) +
+                '<p data-selection-placeholder="" style="margin: -9px 0px 8px;"><br></p>',
                 "Undo should have done nothing.",
                 editor
             );
@@ -117,12 +117,12 @@ test("starting edition with a pre activates syntax highlighting (with dataset va
             await compareHighlightedContent(
                 getContent(editor.editable),
                 '<p data-selection-placeholder=""><br></p>' +
-                    highlightedPre({
-                        value: "Hello world!a",
-                        language: "javascript",
-                        textareaRange: 13, // "Hello world!a[]"
-                    }) +
-                    '<p data-selection-placeholder="" style="margin: -9px 0px 8px;"><br></p>',
+                highlightedPre({
+                    value: "Hello world!a",
+                    language: "javascript",
+                    textareaRange: 13, // "Hello world!a[]"
+                }) +
+                '<p data-selection-placeholder="" style="margin: -9px 0px 8px;"><br></p>',
                 "Should have written at the end of the textarea.",
                 editor
             );
@@ -148,8 +148,8 @@ test("inserting a code block activates syntax highlighting plugin, typing trigge
             await compareHighlightedContent(
                 getContent(editor.editable),
                 '<p data-selection-placeholder=""><br></p>' +
-                    highlightedPre({ value: "abc", textareaRange: 3 }) +
-                    '<p data-selection-placeholder="" style="margin: -9px 0px 8px;"><br></p>',
+                highlightedPre({ value: "abc", textareaRange: 3 }) +
+                '<p data-selection-placeholder="" style="margin: -9px 0px 8px;"><br></p>',
                 "The syntax highlighting wrapper was inserted, the paragraph's content is its value and the selection in at the end of the textarea.",
                 editor
             );
@@ -223,8 +223,8 @@ test("inserting text and undo after an empty code block activates the syntax hig
             await compareHighlightedContent(
                 getContent(editor.editable),
                 '<p data-selection-placeholder=""><br></p>' +
-                    highlightedPre({ value: "", textareaRange: 0 }) +
-                    '<p data-selection-placeholder="" style="margin: -9px 0px 8px;"><br></p>',
+                highlightedPre({ value: "", textareaRange: 0 }) +
+                '<p data-selection-placeholder="" style="margin: -9px 0px 8px;"><br></p>',
                 editor
             );
             const p = document.querySelector("p");
@@ -427,11 +427,11 @@ test("shift+tab in code block outdents the current line", async () => {
             await compareHighlightedContent(
                 getContent(editor.editable),
                 '<p data-selection-placeholder=""><br></p>' +
-                    highlightedPre({
-                        value: "    some\n   co    de\n    for you",
-                        textareaRange: 18, // "    some\n   co    []de\n    for you"
-                    }) +
-                    '<p data-selection-placeholder="" style="margin: -9px 0px 8px;"><br></p>',
+                highlightedPre({
+                    value: "    some\n   co    de\n    for you",
+                    textareaRange: 18, // "    some\n   co    []de\n    for you"
+                }) +
+                '<p data-selection-placeholder="" style="margin: -9px 0px 8px;"><br></p>',
                 "The content was outdented a first time.",
                 editor
             );
@@ -466,11 +466,11 @@ test("shift+tab in selection in code block outdents each selected line", async (
             await compareHighlightedContent(
                 getContent(editor.editable),
                 '<p data-selection-placeholder=""><br></p>' +
-                    highlightedPre({
-                        value: "a\nb c\n d",
-                        textareaRange: [1, 7], // "a[\nb c\n ]d"
-                    }) +
-                    '<p data-selection-placeholder="" style="margin: -9px 0px 8px;"><br></p>',
+                highlightedPre({
+                    value: "a\nb c\n d",
+                    textareaRange: [1, 7], // "a[\nb c\n ]d"
+                }) +
+                '<p data-selection-placeholder="" style="margin: -9px 0px 8px;"><br></p>',
                 "The content was outdented a first time.",
                 editor
             );
@@ -1332,10 +1332,10 @@ test("should focus textarea when creating new code block inside a new list", asy
     await compareHighlightedContent(
         getContent(editor.editable),
         "<ol><li>" +
-            '<p data-selection-placeholder=""><br></p>' +
-            highlightedPre({ value: "", textareaRange: 0 }) +
-            '<p data-selection-placeholder="" style="margin: -9px 0px 8px;"><br></p>' +
-            "</li></ol>",
+        '<p data-selection-placeholder=""><br></p>' +
+        highlightedPre({ value: "", textareaRange: 0 }) +
+        '<p data-selection-placeholder="" style="margin: -9px 0px 8px;"><br></p>' +
+        "</li></ol>",
         "The syntax highlighting wrapper was inserted, and the selection is inside the textarea.",
         editor
     );
@@ -1364,8 +1364,8 @@ test("should toggle code wrapping via the code toolbar", async () => {
             await compareHighlightedContent(
                 getContent(editor.editable),
                 '<p data-selection-placeholder=""><br></p>' +
-                    highlightedPre({ value: "some code", textareaRange: 9, codeWrap: true }) +
-                    '<p data-selection-placeholder="" style="margin: -9px 0px 8px;"><br></p>',
+                highlightedPre({ value: "some code", textareaRange: 9, codeWrap: true }) +
+                '<p data-selection-placeholder="" style="margin: -9px 0px 8px;"><br></p>',
                 "Code block should be wrapped after clicking the wrap button in the code toolbar",
                 editor
             );
@@ -1442,11 +1442,11 @@ test("should convert selected text to syntax highlighting", async () => {
     await compareHighlightedContent(
         getContent(editor.editable),
         '<p data-selection-placeholder=""><br></p>' +
-            highlightedPre({
-                value: "a\nb\nc",
-                textareaRange: 5,
-            }) +
-            '<p data-selection-placeholder="" style="margin: -9px 0px 8px;"><br></p>',
+        highlightedPre({
+            value: "a\nb\nc",
+            textareaRange: 5,
+        }) +
+        '<p data-selection-placeholder="" style="margin: -9px 0px 8px;"><br></p>',
         "Selected content converted to syntax highlighting",
         editor
     );
@@ -1481,9 +1481,9 @@ test("should convert complex selected text to quote", async () => {
         getContent(editor.editable),
         unformat(
             "<p>[a</p>" +
-                highlightedPre({ value: "b" }) +
-                "<p>c</p>" +
-                "<ul><li><p>d]</p></li></ul>"
+            highlightedPre({ value: "b" }) +
+            "<p>c</p>" +
+            "<ul><li><p>d]</p></li></ul>"
         ),
         "Initial code block is highlighted",
         editor

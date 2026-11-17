@@ -1,4 +1,4 @@
-import { Component, proxy, t, useOnChange, useProps } from "@odoo/owl";
+import { Component, proxy, t, useOnChange, useProps } from "@weth/owl";
 import { useBus } from "@web/core/utils/hooks";
 import { MoOverviewLine } from "../mo_overview_line/mrp_mo_overview_line";
 import { MoOverviewOperationsBlock } from "../mo_overview_operations_block/mrp_mo_overview_operations_block";

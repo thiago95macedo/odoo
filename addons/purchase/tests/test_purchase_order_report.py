@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
-from odoo.addons.account.tests.common import AccountTestInvoicingCommon
-from odoo.fields import Command
-from odoo.tests import Form, tagged
-from odoo.tools import mute_logger
+from weth.addons.account.tests.common import AccountTestInvoicingCommon
+from weth.fields import Command
+from weth.tests import Form, tagged
+from weth.tools import mute_logger
 
 from datetime import datetime, timedelta
 
@@ -82,7 +82,7 @@ class TestPurchaseOrderReport(AccountTestInvoicingCommon):
         #                 ...
         #             )""")
         #     ...
-        with mute_logger('odoo.tests.form.onchange'):  # Mute "x PO lines added to the bill" notification
+        with mute_logger('weth.tests.form.onchange'):  # Mute "x PO lines added to the bill" notification
             f.purchase_vendor_bill_id = self.env['purchase.bill.union'].browse(-po.id)
         invoice = f.save()
         invoice.action_post()

@@ -14,7 +14,7 @@ import { CallSettings } from "@mail/discuss/call/common/call_settings";
 import { parseRawValue, toRawValue } from "@mail/utils/common/local_storage";
 import { Settings } from "@mail/core/common/settings_model";
 import { makeRecordFieldLocalId } from "@mail/model/misc";
-import { describe, keyDown, mockDate, test, expect } from "@odoo/hoot";
+import { describe, keyDown, mockDate, test, expect } from "@weth/hoot";
 import { getService, mountWithCleanup, patchWithCleanup } from "@web/../tests/web_test_helpers";
 
 import { browser } from "@web/core/browser/browser";

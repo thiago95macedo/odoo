@@ -8,14 +8,14 @@ from dateutil.relativedelta import relativedelta
 from werkzeug.exceptions import Forbidden
 from werkzeug.urls import url_encode
 
-from odoo import api, fields, models
-from odoo.exceptions import UserError, ValidationError
-from odoo.tools.urls import urljoin as url_join
+from weth import api, fields, models
+from weth.exceptions import UserError, ValidationError
+from weth.tools.urls import urljoin as url_join
 
-from odoo.addons.payment import utils as payment_utils
-from odoo.addons.payment.logging import get_payment_logger
-from odoo.addons.payment_razorpay import const
-from odoo.addons.payment_razorpay.controllers.main import RazorpayController
+from weth.addons.payment import utils as payment_utils
+from weth.addons.payment.logging import get_payment_logger
+from weth.addons.payment_razorpay import const
+from weth.addons.payment_razorpay.controllers.main import RazorpayController
 
 _logger = get_payment_logger(__name__)
 
@@ -424,7 +424,7 @@ class PaymentTransaction(models.Model):
                 and entity_data.get("token_id")
                 and self.provider_id.allow_tokenization
             ):
-                # In case the tokenization was requested on provider side not from odoo form.
+                # In case the tokenization was requested on provider side not from weth form.
                 self.tokenize = True
             self._set_done()
         elif entity_status in const.PAYMENT_STATUS_MAPPING["error"]:

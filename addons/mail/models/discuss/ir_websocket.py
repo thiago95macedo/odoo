@@ -2,8 +2,8 @@
 
 import re
 
-from odoo import models
-from odoo.tools.misc import verify_limited_field_access_token
+from weth import models
+from weth.tools.misc import verify_limited_field_access_token
 
 
 class IrWebsocket(models.AbstractModel):

@@ -1,9 +1,9 @@
-import { beforeEach, expect, test } from "@odoo/hoot";
-import { queryAllTexts, queryFirst } from "@odoo/hoot-dom";
-import { advanceFrame, animationFrame, disableAnimations } from "@odoo/hoot-mock";
+import { beforeEach, expect, test } from "@weth/hoot";
+import { queryAllTexts, queryFirst } from "@weth/hoot-dom";
+import { advanceFrame, animationFrame, disableAnimations } from "@weth/hoot-mock";
 import { contains, mountWithCleanup } from "@web/../tests/web_test_helpers";
 
-import { Component, proxy, signal, xml } from "@odoo/owl";
+import { Component, proxy, signal, xml } from "@weth/owl";
 import { useSortable } from "@web/core/utils/sortable_owl";
 
 beforeEach(disableAnimations);

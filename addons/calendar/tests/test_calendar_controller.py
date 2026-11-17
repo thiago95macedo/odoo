@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 from datetime import datetime
 
-from odoo.tests.common import HttpCase, new_test_user, tagged
+from weth.tests.common import HttpCase, new_test_user, tagged
 
 
 @tagged("post_install", "-at_install")

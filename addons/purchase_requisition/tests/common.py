@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from odoo.tests import common
+from weth.tests import common
 
 
 class TestPurchaseRequisitionCommon(common.TransactionCase):

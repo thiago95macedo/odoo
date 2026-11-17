@@ -9,10 +9,10 @@ import werkzeug
 
 from unittest.mock import patch
 
-from odoo.tools import email_normalize, mail
-from odoo.addons.link_tracker.tests.common import MockLinkTracker
-from odoo.addons.mail.tests.common import MailCase, MailCommon, mail_new_test_user
-from odoo.tests import RecordCapturer
+from weth.tools import email_normalize, mail
+from weth.addons.link_tracker.tests.common import MockLinkTracker
+from weth.addons.mail.tests.common import MailCase, MailCommon, mail_new_test_user
+from weth.tests import RecordCapturer
 
 
 class MassMailCase(MailCase, MockLinkTracker):
@@ -544,9 +544,9 @@ class MailingContactToListCommon(MassMailCommon):
         with (
             RecordCapturer(self.env['mailing.contact']) as capture,
             assert_query(query_count),
-            patch('odoo.orm.models.INSERT_BATCH_SIZE', self.MOCK_ORM_BATCH_SIZE),
-            patch('odoo.orm.models.UPDATE_BATCH_SIZE', self.MOCK_ORM_BATCH_SIZE),
-            patch('odoo.addons.mass_mailing.models.mailing_contact.MAX_FROM_PARTNERS', self.MAX_FROM_PARTNERS),
+            patch('weth.orm.models.INSERT_BATCH_SIZE', self.MOCK_ORM_BATCH_SIZE),
+            patch('weth.orm.models.UPDATE_BATCH_SIZE', self.MOCK_ORM_BATCH_SIZE),
+            patch('weth.addons.mass_mailing.models.mailing_contact.MAX_FROM_PARTNERS', self.MAX_FROM_PARTNERS),
         ):
             result = self.env['mailing.contact']._from_partners(partners)
         return result, capture.records

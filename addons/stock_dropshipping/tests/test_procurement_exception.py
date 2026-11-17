@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.tests import tagged, common, Form
+from weth.tests import tagged, common, Form
 
 
 class TestProcurementException(common.TransactionCase):

@@ -1,5 +1,5 @@
-import { expect, test } from "@odoo/hoot";
-import { waitFor } from "@odoo/hoot-dom";
+import { expect, test } from "@weth/hoot";
+import { waitFor } from "@weth/hoot-dom";
 import {
     contains,
     getService,
@@ -14,7 +14,7 @@ import { CalendarQuickCreate } from "@web/views/calendar/quick_create/calendar_q
 const FAKE_PROPS = {
     model: FAKE_MODEL,
     record: {},
-    editRecord() {},
+    editRecord() { },
 };
 
 /**

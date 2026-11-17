@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
     <record id="action_picking_type_list" model="ir.actions.act_window">
         <field name="name">Operations Types</field>
         <field name="res_model">stock.picking.type</field>
@@ -360,4 +360,4 @@
         <field name="state">code</field>
         <field name="code">action = env['stock.picking.type.label.layout']._process_picking_type_labels(records, 'zpl')</field>
     </record>
-</odoo>
+</weth>

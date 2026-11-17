@@ -1,4 +1,4 @@
-import { untrack } from "@odoo/owl";
+import { untrack } from "@weth/owl";
 import { clamp } from "@web/core/utils/numbers";
 import { omit } from "@web/core/utils/objects";
 import { closestScrollableX, closestScrollableY } from "@web/core/utils/scrolling";
@@ -60,11 +60,11 @@ function pointerInsideElementOffset(pointer, elementRect) {
  * @property {Record<string, any>} [defaultParams]
  * Setup hooks
  * @property {{
- *  addListener: typeof import("@odoo/owl")["useListener"];
- *  setup: typeof import("@odoo/owl")["useLayoutEffect"];
- *  teardown: typeof import("@odoo/owl")["onWillUnmount"];
+ *  addListener: typeof import("@weth/owl")["useListener"];
+ *  setup: typeof import("@weth/owl")["useLayoutEffect"];
+ *  teardown: typeof import("@weth/owl")["onWillUnmount"];
  *  throttle: typeof import("./timing")["useThrottleForAnimation"];
- *  wrapState: typeof import("@odoo/owl")["reactive"];
+ *  wrapState: typeof import("@weth/owl")["reactive"];
  * }} setupHooks
  * Build hooks
  * @property {(params: DraggableBuildHandlerParams) => any} onComputeParams
@@ -555,7 +555,7 @@ export function makeDraggableHook(hookParams) {
                 return (
                     !ctx.tolerance ||
                     Math.hypot(pointer.x - initialPosition.x, pointer.y - initialPosition.y) >=
-                        ctx.tolerance
+                    ctx.tolerance
                 );
             };
 
@@ -1168,7 +1168,7 @@ export function makeDraggableHook(hookParams) {
                     // be fired. Note that we DO NOT want to prevent touchstart
                     // events since they're responsible of the native swipe
                     // scrolling.
-                    addListener(el, "touchstart", () => {}, {
+                    addListener(el, "touchstart", () => { }, {
                         passive: false,
                         noAddedStyle: true,
                     });

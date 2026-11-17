@@ -1,6 +1,6 @@
-/** @odoo-module */
+/** @weth-module */
 
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@weth/hoot";
 import { parseUrl } from "../local_helpers";
 
 import { Suite } from "../../core/suite";
@@ -8,7 +8,7 @@ import { Test } from "../../core/test";
 
 function disableHighlighting() {
     if (!window.Prism) {
-        return () => {};
+        return () => { };
     }
     const { highlight } = window.Prism;
     window.Prism.highlight = (text) => text;

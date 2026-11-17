@@ -3,15 +3,15 @@ import re
 from requests import Response
 from unittest.mock import patch
 
-import odoo
-from odoo.tools.misc import file_open
-from odoo.addons.base.tests.common import HttpCaseWithUserDemo
-from odoo.addons.cloud_storage.tests.tools import filter_by_expected
-from odoo.addons.cloud_storage_azure.tests.test_cloud_storage_azure import TestCloudStorageAzureCommon
-from odoo.addons.mail.tests.common import MailCommon
+import weth
+from weth.tools.misc import file_open
+from weth.addons.base.tests.common import HttpCaseWithUserDemo
+from weth.addons.cloud_storage.tests.tools import filter_by_expected
+from weth.addons.cloud_storage_azure.tests.test_cloud_storage_azure import TestCloudStorageAzureCommon
+from weth.addons.mail.tests.common import MailCommon
 
 
-@odoo.tests.tagged("-at_install", "post_install", "mail_controller")
+@weth.tests.tagged("-at_install", "post_install", "mail_controller")
 class TestCloudStorageAttachmentController(HttpCaseWithUserDemo, TestCloudStorageAzureCommon, MailCommon):
     def test_cloud_storage_azure_attachment_upload(self):
         """Test uploading an attachment with azure cloud storage."""
@@ -30,7 +30,7 @@ class TestCloudStorageAttachmentController(HttpCaseWithUserDemo, TestCloudStorag
             return response
 
         with patch(
-            "odoo.addons.cloud_storage_azure.utils.cloud_storage_azure_utils.requests.post", post
+            "weth.addons.cloud_storage_azure.utils.cloud_storage_azure_utils.requests.post", post
         ):
             with file_open("addons/web/__init__.py") as file:
                 res = self.url_open(
@@ -61,7 +61,7 @@ class TestCloudStorageAttachmentController(HttpCaseWithUserDemo, TestCloudStorag
                             "ir.attachment": self._filter_attachments_fields(
                                 {
                                     "checksum": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
-                                    "create_date": odoo.fields.Datetime.to_string(
+                                    "create_date": weth.fields.Datetime.to_string(
                                         attachment.create_date
                                     ),
                                     "file_size": 0,

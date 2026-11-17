@@ -2,9 +2,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
 
-from odoo.addons.website_slides.tests.common import SlidesCase
-from odoo.exceptions import ValidationError
-from odoo.tests.common import tagged, users
+from weth.addons.website_slides.tests.common import SlidesCase
+from weth.exceptions import ValidationError
+from weth.tests.common import tagged, users
 
 
 class TestSurvey(SlidesCase):

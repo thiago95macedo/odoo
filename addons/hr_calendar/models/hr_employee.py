@@ -2,10 +2,10 @@
 
 from collections import defaultdict
 
-from odoo import models
-from odoo.tools import DEFAULT_SERVER_DATE_FORMAT
+from weth import models
+from weth.tools import DEFAULT_SERVER_DATE_FORMAT
 
-from odoo.addons.hr.models.hr_employee_location import DAYS
+from weth.addons.hr.models.hr_employee_location import DAYS
 
 
 class HrEmployee(models.Model):

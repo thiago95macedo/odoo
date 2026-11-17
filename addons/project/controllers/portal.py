@@ -5,14 +5,14 @@ from collections import OrderedDict
 from operator import itemgetter
 from markupsafe import Markup
 
-from odoo import http, _
-from odoo.exceptions import AccessError, MissingError, UserError
-from odoo.fields import Domain
-from odoo.http import request
-from odoo.tools import groupby as groupbyelem, consteq
-from odoo.tools.misc import hmac
+from weth import http, _
+from weth.exceptions import AccessError, MissingError, UserError
+from weth.fields import Domain
+from weth.http import request
+from weth.tools import groupby as groupbyelem, consteq
+from weth.tools.misc import hmac
 
-from odoo.addons.portal.controllers.portal import CustomerPortal, pager as portal_pager
+from weth.addons.portal.controllers.portal import CustomerPortal, pager as portal_pager
 
 
 class ProjectCustomerPortal(CustomerPortal):

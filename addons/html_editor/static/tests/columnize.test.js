@@ -1,6 +1,6 @@
-import { describe, expect, test } from "@odoo/hoot";
-import { press, queryAllTexts, tick } from "@odoo/hoot-dom";
-import { animationFrame } from "@odoo/hoot-mock";
+import { describe, expect, test } from "@weth/hoot";
+import { press, queryAllTexts, tick } from "@weth/hoot-dom";
+import { animationFrame } from "@weth/hoot-mock";
 import { setupEditor, testEditor } from "./_helpers/editor";
 import { getContent, setSelection } from "./_helpers/selection";
 import { insertText, redo, undo } from "./_helpers/user_actions";
@@ -82,7 +82,7 @@ describe("2 columns", () => {
             contentBefore: "<p>[]abcd</p>",
             stepFunction: columnize(2),
             contentAfterEdit:
-            /* eslint-disable */
+                /* eslint-disable */
                 columsDuringEditContainer(
                     columnDuringEdit(6, "<p>[]abcd</p>") +
                     columnDuringEdit(6, `<p o-we-hint-text="Empty column" class="o-we-hint"><br></p>`)
@@ -100,8 +100,8 @@ describe("2 columns", () => {
         await testEditor({
             contentBefore: columnsContainer(
                 column(4, "<p>abcd</p>") +
-                    column(4, "<h1>e[]f</h1>") +
-                    column(4, "<ul><li>gh</li></ul>")
+                column(4, "<h1>e[]f</h1>") +
+                column(4, "<ul><li>gh</li></ul>")
             ),
             stepFunction: columnize(2),
             contentAfter: columnsContainer(
@@ -114,9 +114,9 @@ describe("2 columns", () => {
         await testEditor({
             contentBefore: columnsContainer(
                 column(3, "<p>abcd</p>") +
-                    column(3, "<h1>ef</h1>") +
-                    column(3, "<ul><li>gh</li></ul>") +
-                    column(3, "<p>i[]j</p>")
+                column(3, "<h1>ef</h1>") +
+                column(3, "<ul><li>gh</li></ul>") +
+                column(3, "<p>i[]j</p>")
             ),
             stepFunction: columnize(2),
             contentAfter: columnsContainer(
@@ -129,9 +129,9 @@ describe("2 columns", () => {
         await testEditor({
             contentBefore: columnsContainer(
                 column(3, "<p>abcd</p>") +
-                    column(3, "<h1>ef</h1>") +
-                    column(3, "<p>[]<br></p>") +
-                    column(3, "<p><br></p>")
+                column(3, "<h1>ef</h1>") +
+                column(3, "<p>[]<br></p>") +
+                column(3, "<p><br></p>")
             ),
             stepFunction: columnize(2),
             contentAfter: columnsContainer(column(6, "<p>abcd</p>") + column(6, "<h1>ef[]</h1>")),
@@ -142,9 +142,9 @@ describe("2 columns", () => {
         await testEditor({
             contentBefore: columnsContainer(
                 column(3, "<p>ab</p>") +
-                    column(3, "<p>cd</p>") +
-                    column(3, "<p>ef</p><p><br></p><p>g[]h</p>") +
-                    column(3, "<p><br></p>")
+                column(3, "<p>cd</p>") +
+                column(3, "<p>ef</p><p><br></p><p>g[]h</p>") +
+                column(3, "<p><br></p>")
             ),
             stepFunction: columnize(2),
             contentAfter: columnsContainer(
@@ -223,8 +223,8 @@ describe("3 columns", () => {
             stepFunction: columnize(3),
             contentAfter: columnsContainer(
                 column(4, "<p>abcd</p>") +
-                    column(4, "<h1>ef</h1><ul><li>g[]h</li></ul>") +
-                    column(4, "<p><br></p>")
+                column(4, "<h1>ef</h1><ul><li>g[]h</li></ul>") +
+                column(4, "<p><br></p>")
             ),
         });
     });
@@ -233,15 +233,15 @@ describe("3 columns", () => {
         await testEditor({
             contentBefore: columnsContainer(
                 column(3, "<p>abcd</p>") +
-                    column(3, "<h1>e[]f</h1>") +
-                    column(3, "<ul><li>gh</li></ul>") +
-                    column(3, "<p>ij</p>")
+                column(3, "<h1>e[]f</h1>") +
+                column(3, "<ul><li>gh</li></ul>") +
+                column(3, "<p>ij</p>")
             ),
             stepFunction: columnize(3),
             contentAfter: columnsContainer(
                 column(4, "<p>abcd</p>") +
-                    column(4, "<h1>e[]f</h1>") +
-                    column(4, "<ul><li>gh</li></ul><p>ij</p>")
+                column(4, "<h1>e[]f</h1>") +
+                column(4, "<ul><li>gh</li></ul><p>ij</p>")
             ),
         });
     });
@@ -272,16 +272,16 @@ describe("4 columns", () => {
         await testEditor({
             contentBefore: columnsContainer(
                 column(3, "<p>abcd</p>") +
-                    column(3, "<p><br></p>") +
-                    column(3, "<p><br></p>") +
-                    column(3, "<p>[]<br></p>")
+                column(3, "<p><br></p>") +
+                column(3, "<p><br></p>") +
+                column(3, "<p>[]<br></p>")
             ),
             stepFunction: columnize(4),
             contentAfter: columnsContainer(
                 column(3, "<p>abcd</p>") +
-                    column(3, "<p><br></p>") +
-                    column(3, "<p><br></p>") +
-                    column(3, "<p>[]<br></p>")
+                column(3, "<p><br></p>") +
+                column(3, "<p><br></p>") +
+                column(3, "<p>[]<br></p>")
             ),
         });
     });
@@ -292,9 +292,9 @@ describe("4 columns", () => {
             stepFunction: columnize(4),
             contentAfter: columnsContainer(
                 column(3, "<p>abcd[]</p>") +
-                    column(3, "<p><br></p>") +
-                    column(3, "<p><br></p>") +
-                    column(3, "<p><br></p>")
+                column(3, "<p><br></p>") +
+                column(3, "<p><br></p>") +
+                column(3, "<p><br></p>")
             ),
         });
     });
@@ -307,9 +307,9 @@ describe("4 columns", () => {
             stepFunction: columnize(4),
             contentAfter: columnsContainer(
                 column(3, "<p>abcd</p>") +
-                    column(3, "<h1>[]ef</h1><ul><li>gh</li></ul>") +
-                    column(3, "<p><br></p>") +
-                    column(3, "<p><br></p>")
+                column(3, "<h1>[]ef</h1><ul><li>gh</li></ul>") +
+                column(3, "<p><br></p>") +
+                column(3, "<p><br></p>")
             ),
         });
     });
@@ -318,15 +318,15 @@ describe("4 columns", () => {
         await testEditor({
             contentBefore: columnsContainer(
                 column(4, "<p>abcd</p>") +
-                    column(4, "<h1>ef[]</h1>") +
-                    column(4, "<ul><li>gh</li></ul><p>ij</p>")
+                column(4, "<h1>ef[]</h1>") +
+                column(4, "<ul><li>gh</li></ul><p>ij</p>")
             ),
             stepFunction: columnize(4),
             contentAfter: columnsContainer(
                 column(3, "<p>abcd</p>") +
-                    column(3, "<h1>ef[]</h1>") +
-                    column(3, "<ul><li>gh</li></ul><p>ij</p>") +
-                    column(3, "<p><br></p>")
+                column(3, "<h1>ef[]</h1>") +
+                column(3, "<ul><li>gh</li></ul><p>ij</p>") +
+                column(3, "<p><br></p>")
             ),
         });
     });
@@ -375,8 +375,8 @@ describe("remove columns", () => {
         await testEditor({
             contentBefore: columnsContainer(
                 column(4, "<p>abcd</p>") +
-                    column(4, "<h1>ef[]</h1>") +
-                    column(4, "<ul><li>gh</li></ul><p>ij</p>")
+                column(4, "<h1>ef[]</h1>") +
+                column(4, "<ul><li>gh</li></ul><p>ij</p>")
             ),
             stepFunction: columnize(0),
             contentAfter: "<p>abcd</p><h1>ef[]</h1><ul><li>gh</li></ul><p>ij</p>",
@@ -387,9 +387,9 @@ describe("remove columns", () => {
         await testEditor({
             contentBefore: columnsContainer(
                 column(3, "<p>abcd</p>") +
-                    column(3, "<h1>ef</h1>") +
-                    column(3, "<ul><li>gh</li></ul><p>ij</p>") +
-                    column(3, "<p>[]<br></p>")
+                column(3, "<h1>ef</h1>") +
+                column(3, "<ul><li>gh</li></ul><p>ij</p>") +
+                column(3, "<p>[]<br></p>")
             ),
             stepFunction: columnize(0),
             contentAfter: "<p>abcd</p><h1>ef</h1><ul><li>gh</li></ul><p>ij[]</p>",
@@ -400,9 +400,9 @@ describe("remove columns", () => {
         await testEditor({
             contentBefore: columnsContainer(
                 column(3, "<p><br></p>") +
-                    column(3, "<p><br></p>") +
-                    column(3, "<p><br></p>") +
-                    column(3, "<p>[]<br></p>")
+                column(3, "<p><br></p>") +
+                column(3, "<p><br></p>") +
+                column(3, "<p>[]<br></p>")
             ),
             stepFunction: columnize(0),
             contentAfter: "<p>[]<br></p>",
@@ -413,9 +413,9 @@ describe("remove columns", () => {
         await testEditor({
             contentBefore: columnsContainer(
                 column(3, "<p>ab</p>") +
-                    column(3, "<p>cd</p>") +
-                    column(3, "<p>ef</p><p><br></p><p>g[]h</p>") +
-                    column(3, "<p><br></p>")
+                column(3, "<p>cd</p>") +
+                column(3, "<p>ef</p><p><br></p><p>g[]h</p>") +
+                column(3, "<p><br></p>")
             ),
             stepFunction: columnize(0),
             contentAfter: "<p>ab</p><p>cd</p><p>ef</p><p><br></p><p>g[]h</p>",

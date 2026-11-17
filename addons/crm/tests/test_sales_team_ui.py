@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import tests
-from odoo.tests import HttpCase
-from odoo.tests.common import users
-from odoo.addons.sales_team.tests.common import SalesTeamCommon
+from weth import tests
+from weth.tests import HttpCase
+from weth.tests.common import users
+from weth.addons.sales_team.tests.common import SalesTeamCommon
 
 
 @tests.tagged('post_install', '-at_install')

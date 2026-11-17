@@ -13,9 +13,9 @@ import {
     startServer,
     waitStoreFetch,
 } from "@mail/../tests/mail_test_helpers";
-import { animationFrame, expect, mockUserAgent, test } from "@odoo/hoot";
-import { press } from "@odoo/hoot-dom";
-import { tick } from "@odoo/hoot-mock";
+import { animationFrame, expect, mockUserAgent, test } from "@weth/hoot";
+import { press } from "@weth/hoot-dom";
+import { tick } from "@weth/hoot-mock";
 import { serverState } from "@web/../tests/web_test_helpers";
 
 import { HIGHLIGHT_CLASS } from "@mail/core/common/message_search_hook";

@@ -1,6 +1,6 @@
 import { registry } from "@web/core/registry";
 import { usePos } from "@point_of_sale/app/hooks/pos_hook";
-import { Component, useProps, t } from "@odoo/owl";
+import { Component, useProps, t } from "@weth/owl";
 import { useService } from "@web/core/utils/hooks";
 import { useTime } from "@point_of_sale/app/hooks/time_hook";
 import { _t } from "@web/core/l10n/translation";
@@ -57,6 +57,6 @@ export class LoginScreen extends Component {
 registry.category("pos_pages").add("LoginScreen", {
     name: "LoginScreen",
     component: LoginScreen,
-    route: `/pos/ui/${odoo.pos_config_id}/login`,
+    route: `/pos/ui/${weth.pos_config_id}/login`,
     params: {},
 });

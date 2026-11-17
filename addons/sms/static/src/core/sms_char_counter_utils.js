@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @weth-module **/
 
 export const GSM7_MAX_CHAR = 160;
 export const GSM7_CONCATENATED_MAX_CHAR = 153;

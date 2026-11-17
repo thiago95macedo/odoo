@@ -1,4 +1,4 @@
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@weth/hoot";
 import { setupEditor, testEditor } from "../_helpers/editor";
 import { unformat } from "../_helpers/format";
 import {
@@ -19,8 +19,8 @@ import {
     queryAll,
     queryOne,
     waitFor,
-} from "@odoo/hoot-dom";
-import { advanceTime, animationFrame, tick } from "@odoo/hoot-mock";
+} from "@weth/hoot-dom";
+import { advanceTime, animationFrame, tick } from "@weth/hoot-mock";
 import { nodeSize } from "@html_editor/utils/position";
 
 function expectContentToBe(el, html) {

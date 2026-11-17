@@ -1,5 +1,5 @@
 import { AttachmentList } from "@mail/core/common/attachment_list";
-import { useOnChange } from "@odoo/owl";
+import { useOnChange } from "@weth/owl";
 import { patch } from "@web/core/utils/patch";
 
 patch(AttachmentList.prototype, {

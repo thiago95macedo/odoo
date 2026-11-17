@@ -1,5 +1,5 @@
-import { expect, test } from "@odoo/hoot";
-import { animationFrame } from "@odoo/hoot-mock";
+import { expect, test } from "@weth/hoot";
+import { animationFrame } from "@weth/hoot-mock";
 import { setSelection } from "@html_editor/../tests/_helpers/selection";
 import { bold, setColor } from "@html_editor/../tests/_helpers/user_actions";
 import {

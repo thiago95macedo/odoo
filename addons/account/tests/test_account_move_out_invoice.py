@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 # pylint: disable=bad-whitespace
-from odoo.addons.account.tests.common import AccountTestInvoicingCommon
-from odoo.tests import Form, tagged
-from odoo import fields, Command
-from odoo.exceptions import UserError, ValidationError
+from weth.addons.account.tests.common import AccountTestInvoicingCommon
+from weth.tests import Form, tagged
+from weth import fields, Command
+from weth.exceptions import UserError, ValidationError
 
 from collections import defaultdict
 from unittest.mock import patch
@@ -4224,7 +4224,7 @@ class TestAccountMoveOutInvoiceOnchanges(AccountTestInvoicingCommon):
 
         with (
             self.enter_registry_test_mode(),
-            patch('odoo.addons.base.models.ir_cron.IrCron._reschedule_asap') as reschedule_asap,
+            patch('weth.addons.base.models.ir_cron.IrCron._reschedule_asap') as reschedule_asap,
         ):
             self.env.ref('account.ir_cron_auto_post_draft_entry').method_direct_trigger()
             # No retries for batches with failed moves

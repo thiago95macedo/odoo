@@ -3,9 +3,9 @@
 
 import base64
 
-from odoo.addons.website_event.controllers.main import WebsiteEventController
-from odoo.http import request
-from odoo.tools import plaintext2html
+from weth.addons.website_event.controllers.main import WebsiteEventController
+from weth.http import request
+from weth.tools import plaintext2html
 
 
 class WebsiteEventBoothController(WebsiteEventController):

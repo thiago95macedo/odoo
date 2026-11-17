@@ -4,12 +4,12 @@ from datetime import datetime, timedelta
 from dateutil.relativedelta import relativedelta
 from collections import defaultdict
 
-from odoo import Command, _, api, fields, models
-from odoo.fields import Domain
-from odoo.exceptions import UserError, ValidationError
-from odoo.tools import float_is_zero, float_round
-from odoo.tools.date_utils import sum_intervals
-from odoo.tools.intervals import Intervals
+from weth import Command, _, api, fields, models
+from weth.fields import Domain
+from weth.exceptions import UserError, ValidationError
+from weth.tools import float_is_zero, float_round
+from weth.tools.date_utils import sum_intervals
+from weth.tools.intervals import Intervals
 
 
 class MrpWorkorder(models.Model):

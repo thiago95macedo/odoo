@@ -3,7 +3,7 @@ import { _t } from "@web/core/l10n/translation";
 import { formatFloat } from "../formatters";
 import { standardFieldProps } from "../standard_field_props";
 
-import { Component, t, useProps } from "@odoo/owl";
+import { Component, t, useProps } from "@weth/owl";
 
 export const percentPieFieldProps = {
     ...standardFieldProps,

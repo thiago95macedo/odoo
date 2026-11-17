@@ -632,7 +632,7 @@ var owl = (() => {
   function makeForEachObserver(target, atom) {
     return function forEach(forEachCb, thisArg) {
       onReadTargetKey(target, KEYCHANGES);
-      target.forEach(function(val, key, targetObj) {
+      target.forEach(function (val, key, targetObj) {
         onReadTargetKey(target, key);
         forEachCb.call(
           thisArg,
@@ -1768,7 +1768,7 @@ ${issueStrings}`);
   }
   function makeListener(handler) {
     const attachedDuring = currentEvent?.deref();
-    return function(ev) {
+    return function (ev) {
       if (ev === attachedDuring) {
         return;
       }
@@ -1978,7 +1978,7 @@ ${issueStrings}`);
     }
   }
   function createAttrUpdater(attr) {
-    return function(value) {
+    return function (value) {
       setAttribute.call(this, attr, value);
     };
   }
@@ -2255,13 +2255,13 @@ ${issueStrings}`);
     throw new OwlError("Cannot mount component: the target is not a valid DOM element");
   }
   function whenReady(fn) {
-    return new Promise(function(resolve) {
+    return new Promise(function (resolve) {
       if (document.readyState !== "loading") {
         resolve(true);
       } else {
         document.addEventListener("DOMContentLoaded", resolve, false);
       }
-    }).then(fn || function() {
+    }).then(fn || function () {
     });
   }
   function createEventHandler(rawEvent) {
@@ -3348,7 +3348,7 @@ ${issueStrings}`);
           let idx = handler.length - 2;
           let origFn = handler[idx];
           const self = this;
-          handler[idx] = function(ctx, ev) {
+          handler[idx] = function (ctx, ev) {
             const target = ev.target;
             let currentNode = self.child.firstNode();
             const afterNode = self.afterNode;
@@ -3401,7 +3401,7 @@ ${issueStrings}`);
         return this.child.toString();
       }
     }
-    return function(child, handlers) {
+    return function (child, handlers) {
       return new VCatcher(child, handlers);
     };
   }
@@ -4228,7 +4228,7 @@ ${issueStrings}`);
     if (hasSlotsProp) {
       arePropsDifferent = (_1, _2) => true;
     } else if (hasDynamicPropList) {
-      arePropsDifferent = function(props1, props2) {
+      arePropsDifferent = function (props1, props2) {
         for (let k in props1) {
           if (props1[k] !== props2[k]) {
             return true;
@@ -4239,7 +4239,7 @@ ${issueStrings}`);
     } else if (hasNoProp) {
       arePropsDifferent = (_1, _2) => false;
     } else {
-      arePropsDifferent = function(props1, props2) {
+      arePropsDifferent = function (props1, props2) {
         for (let p of propList) {
           if (props1[p] !== props2[p]) {
             return true;
@@ -4435,7 +4435,7 @@ ${issueStrings}`);
         const isFn = typeof rawTemplate === "function" && !(rawTemplate instanceof Element);
         const templateFn = isFn ? rawTemplate : this._compileTemplate(name, rawTemplate);
         const templates = this.templates;
-        this.templates[cacheKey] = function(context, parent) {
+        this.templates[cacheKey] = function (context, parent) {
           return templates[cacheKey].call(this, context, parent);
         };
         const template = templateFn(this, bdom, this.runtimeUtils);
@@ -5061,7 +5061,7 @@ ${issueStrings}`);
     version: App.version,
     date: "2026-10-19T09:38:55.520Z",
     hash: "7e1f64ac",
-    url: "https://github.com/odoo/owl"
+    url: "https://github.com/weth/owl"
   };
 
   // ../owl-compiler/dist/owl-compiler.es.js
@@ -5087,7 +5087,7 @@ ${issueStrings}`);
     ")": "RIGHT_PAREN"
   });
   var OPERATORS = "...,.,===,==,+,!==,!=,!,||,&&,>=,>,<=,<,?,-,*,/,%,typeof ,=>,=,;,in ,new ,|,&,^,~".split(",");
-  var tokenizeString = function(expr) {
+  var tokenizeString = function (expr) {
     let s = expr[0];
     let start = s;
     if (s !== "'" && s !== '"' && s !== "`") {
@@ -5125,7 +5125,7 @@ ${issueStrings}`);
     }
     return { type: "VALUE", value: s };
   };
-  var tokenizeNumber = function(expr) {
+  var tokenizeNumber = function (expr) {
     let s = expr[0];
     if (s && s.match(/[0-9]/)) {
       let i = 1;
@@ -5138,7 +5138,7 @@ ${issueStrings}`);
       return false;
     }
   };
-  var tokenizeSymbol = function(expr) {
+  var tokenizeSymbol = function (expr) {
     let s = expr[0];
     if (s && s.match(/[a-zA-Z_\$]/)) {
       let i = 1;
@@ -5154,14 +5154,14 @@ ${issueStrings}`);
       return false;
     }
   };
-  var tokenizeStatic = function(expr) {
+  var tokenizeStatic = function (expr) {
     const char = expr[0];
     if (char && char in STATIC_TOKEN_MAP) {
       return { type: STATIC_TOKEN_MAP[char], value: char };
     }
     return false;
   };
-  var tokenizeOperator = function(expr) {
+  var tokenizeOperator = function (expr) {
     for (let op of OPERATORS) {
       if (expr.startsWith(op)) {
         return { type: "OPERATOR", value: op };
@@ -6005,7 +6005,7 @@ ${"-".repeat(columnIndex - 1)}^`;
             "t-if cannot stay at the same level as t-foreach when using t-elif or t-else"
           );
         }
-        if (["t-if", "t-elif", "t-else"].map(nattr).reduce(function(a, b) {
+        if (["t-if", "t-elif", "t-else"].map(nattr).reduce(function (a, b) {
           return a + b;
         }) > 1) {
           throw new OwlError("Only one conditional branching directive is allowed per node");
@@ -7235,4 +7235,4 @@ ${code}
   return __toCommonJS(index_exports);
 })();
 
-owl = {...owl};
+owl = { ...owl };

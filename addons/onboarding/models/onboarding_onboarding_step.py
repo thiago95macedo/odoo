@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import _, api, Command, fields, models
-from odoo.addons.onboarding.models.onboarding_progress import ONBOARDING_PROGRESS_STATES
-from odoo.exceptions import ValidationError
+from weth import _, api, Command, fields, models
+from weth.addons.onboarding.models.onboarding_progress import ONBOARDING_PROGRESS_STATES
+from weth.exceptions import ValidationError
 
 
 class OnboardingOnboardingStep(models.Model):

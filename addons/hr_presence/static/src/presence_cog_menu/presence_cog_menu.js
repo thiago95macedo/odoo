@@ -1,7 +1,7 @@
 import { Dropdown } from "@web/core/dropdown/dropdown";
 import { DropdownItem } from "@web/core/dropdown/dropdown_item";
 import { registry } from "@web/core/registry";
-import { Component, onWillStart, t, useProps } from "@odoo/owl";
+import { Component, onWillStart, t, useProps } from "@weth/owl";
 import { getActionRecords, getPresenceActionItems } from "../views/hooks";
 import { useService } from "@web/core/utils/hooks";
 
@@ -41,7 +41,7 @@ export class PresenceCogMenu extends Component {
 
         // Inject the fetched ID(s) and model into the action's context so the backend knows which record(s) to process.
         if (activeIds.length > 0) {
-            options.additionalContext = { 
+            options.additionalContext = {
                 active_id: activeIds[0],
                 active_ids: activeIds,
                 active_model: "hr.employee",

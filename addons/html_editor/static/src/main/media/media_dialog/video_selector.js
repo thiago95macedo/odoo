@@ -11,7 +11,7 @@ import {
     proxy,
     signal,
     t,
-} from "@odoo/owl";
+} from "@weth/owl";
 import { Switch } from "@html_editor/components/switch/switch";
 import { closestElement } from "@html_editor/utils/dom_traversal";
 
@@ -99,7 +99,7 @@ class VideoFilePreview extends Component {
                 }
                 videoEl.muted = muted;
                 if (autoplay) {
-                    videoEl.play().catch(() => {});
+                    videoEl.play().catch(() => { });
                 } else {
                     videoEl.pause();
                 }

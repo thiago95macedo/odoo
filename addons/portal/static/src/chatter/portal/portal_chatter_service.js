@@ -1,5 +1,5 @@
 import { loadCssFromBundle } from "@mail/utils/common/misc";
-import { onWillDestroy, useApp } from "@odoo/owl";
+import { onWillDestroy, useApp } from "@weth/owl";
 import { PortalChatter } from "@portal/chatter/portal/portal_chatter";
 import { registry } from "@web/core/registry";
 import { session } from "@web/session";
@@ -10,7 +10,7 @@ export class PortalChatterService {
     }
 
     app = useApp();
-    /** @type {import("@odoo/owl").Root<PortalChatter> | null} */
+    /** @type {import("@weth/owl").Root<PortalChatter> | null} */
     root = null;
 
     setup(env, services) {
@@ -33,7 +33,7 @@ export class PortalChatterService {
             resModel: chatterEl.getAttribute("data-res_model"),
             composer: Boolean(
                 parseInt(chatterEl.getAttribute("data-allow_composer")) &&
-                    (chatterEl.getAttribute("data-token") || !session.is_public)
+                (chatterEl.getAttribute("data-token") || !session.is_public)
             ),
             twoColumns: chatterEl.getAttribute("data-two_columns") === "true" ? true : false,
             displayRating: chatterEl.getAttribute("data-display_rating") === "True" ? true : false,
@@ -68,7 +68,7 @@ export class PortalChatterService {
             thread_id: props.resId,
             thread_model: props.resModel,
         });
-        odoo.portalChatterReady.resolve(true);
+        weth.portalChatterReady.resolve(true);
     }
 }
 

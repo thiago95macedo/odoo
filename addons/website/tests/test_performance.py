@@ -1,14 +1,14 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 import collections
 import logging
-from odoo.addons.base.tests.common import HttpCaseWithUserPortal, HttpCaseWithUserDemo
-from odoo.addons.base.tests.files import PNG_RAW
+from weth.addons.base.tests.common import HttpCaseWithUserPortal, HttpCaseWithUserDemo
+from weth.addons.base.tests.files import PNG_RAW
 
 from contextlib import closing
 
-from odoo.sql_db import categorize_query
-from odoo.tools import BinaryBytes, mute_logger
-from odoo.tests.common import tagged
+from weth.sql_db import categorize_query
+from weth.tools import BinaryBytes, mute_logger
+from weth.tests.common import tagged
 
 
 _logger = logging.getLogger(__name__)
@@ -121,7 +121,7 @@ class TestStandardPerformance(UtilPerf):
         super().setUpClass()
         cls.env.ref('base.user_admin').image_1920 = BinaryBytes(PNG_RAW)
 
-    @mute_logger('odoo.http')
+    @mute_logger('weth.http')
     def test_10_perf_sql_img_controller(self):
         self.authenticate('demo', 'demo')
         # not published user, get the not found image placeholder
@@ -130,7 +130,7 @@ class TestStandardPerformance(UtilPerf):
         url = f'/web/image/res.users/{user_id}/image_256'
         self.assertEqual(self._get_url_hot_query(url), 5)
 
-    @mute_logger('odoo.http')
+    @mute_logger('weth.http')
     def test_11_perf_sql_img_controller(self):
         self.authenticate('demo', 'demo')
         self.env.ref('base.user_admin').sudo().website_published = True
@@ -143,7 +143,7 @@ class TestStandardPerformance(UtilPerf):
         }
         self._check_url_hot_query(url, 4, select_tables_perf)
 
-    @mute_logger('odoo.http')
+    @mute_logger('weth.http')
     def test_20_perf_sql_img_controller_bis(self):
         website_id = self.ref('base.default_website')
         url = f'/web/image/website/{website_id}/favicon'
@@ -307,7 +307,7 @@ class TestWebsitePerformance(TestWebsitePerformanceCommon):
 
 @tagged('-at_install', 'post_install')
 class TestWebsitePerformancePost(UtilPerf):
-    @mute_logger('odoo.http')
+    @mute_logger('weth.http')
     def test_50_perf_sql_web_assets(self):
         # assets route /web/assets/..
         assets_url = self.env['ir.qweb']._get_asset_bundle('web.assets_frontend_lazy', css=False, js=True).get_links()[0]

@@ -7,7 +7,7 @@ import {
     t,
     usePlugin,
     useProps,
-} from "@odoo/owl";
+} from "@weth/owl";
 import { CheckBox } from "@web/core/checkbox/checkbox";
 import { DebugModePlugin } from "@web/core/debug_mode_plugin";
 import { Domain } from "@web/core/domain";
@@ -208,8 +208,8 @@ export class PropertyDefinition extends Component {
                 tooltip: isEnabled
                     ? ""
                     : _t(
-                          "Not possible to create monetary field because there is no currency on current model."
-                      ),
+                        "Not possible to create monetary field because there is no currency on current model."
+                    ),
                 value,
             };
         });

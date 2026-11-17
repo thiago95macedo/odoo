@@ -22,7 +22,7 @@ import {
     useApp,
     useEffect,
     useProps,
-} from "@odoo/owl";
+} from "@weth/owl";
 import wUtils from "@website/js/utils";
 
 // This replaces \b, because accents(e.g. à, é) are not seen as word boundaries.
@@ -927,9 +927,8 @@ export class SeoChecks extends Component {
             .filter(Boolean);
         const seen = new Set();
         links = links.filter((item) => {
-            const key = `${item.link}::${item.res_model || ""}::${item.res_id || ""}::${
-                item.field || ""
-            }`;
+            const key = `${item.link}::${item.res_model || ""}::${item.res_id || ""}::${item.field || ""
+                }`;
             if (seen.has(key)) {
                 return false;
             }

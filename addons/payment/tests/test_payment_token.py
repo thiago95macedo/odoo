@@ -4,17 +4,17 @@ from datetime import date
 
 from freezegun import freeze_time
 
-from odoo.exceptions import AccessError, UserError, ValidationError
-from odoo.tests import tagged
-from odoo.tools import SQL, mute_logger
+from weth.exceptions import AccessError, UserError, ValidationError
+from weth.tests import tagged
+from weth.tools import SQL, mute_logger
 
-from odoo.addons.payment.tests.common import PaymentCommon
+from weth.addons.payment.tests.common import PaymentCommon
 
 
 @tagged("-at_install", "post_install")
 class TestPaymentToken(PaymentCommon):
 
-    @mute_logger('odoo.addons.base.models.ir_access')
+    @mute_logger('weth.addons.base.models.ir_access')
     def test_users_have_no_access_to_other_users_tokens(self):
         users = [self.public_user, self.portal_user, self.internal_user]
         token = self._create_token(partner_id=self.admin_partner.id)

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<odoo>
+<weth>
     <data>
         <template id="pos_stock.pos_orderline_receipt_information" inherit_id="point_of_sale.pos_orderline_receipt_information">
             <div name="extra-info" position="before">
@@ -19,4 +19,4 @@
             </xpath>
         </template>
     </data>
-</odoo>
+</weth>

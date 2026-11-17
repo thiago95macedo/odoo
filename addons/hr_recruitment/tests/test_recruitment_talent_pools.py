@@ -1,9 +1,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import Command
-from odoo.fields import Domain
-from odoo.tests import Form, tagged, TransactionCase
-from odoo.exceptions import UserError, ValidationError
+from weth import Command
+from weth.fields import Domain
+from weth.tests import Form, tagged, TransactionCase
+from weth.exceptions import UserError, ValidationError
 
 
 @tagged("recruitment")

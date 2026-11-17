@@ -1,4 +1,4 @@
-import { test, describe, expect } from "@odoo/hoot";
+import { test, describe, expect } from "@weth/hoot";
 import { convertRawToDate, convertDateToRaw } from "@point_of_sale/app/models/related_models/utils";
 const { DateTime } = luxon;
 

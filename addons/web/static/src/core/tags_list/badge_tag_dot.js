@@ -1,4 +1,4 @@
-import { t } from "@odoo/owl";
+import { t } from "@weth/owl";
 import { BadgeTag } from "./badge_tag";
 
 export class BadgeTagDot extends BadgeTag {

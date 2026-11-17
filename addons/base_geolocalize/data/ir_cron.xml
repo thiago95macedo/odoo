@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<odoo>
+<weth>
     <data>
         <record id="ir_cron_geolocalize_required_partners" model="ir.cron">
             <field name="name">Geolocalize Partners</field>
@@ -11,4 +11,4 @@
             <field name="interval_type">months</field>
         </record>
     </data>
-</odoo>
+</weth>

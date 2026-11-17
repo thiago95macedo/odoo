@@ -4,9 +4,9 @@
 # Please note that these reports are not multi-currency !!!
 #
 
-from odoo import fields, models
-from odoo.models import TableSQL
-from odoo.tools.sql import SQL
+from weth import fields, models
+from weth.models import TableSQL
+from weth.tools.sql import SQL
 
 
 class PurchaseReport(models.Model):

@@ -8,11 +8,11 @@ from lxml import etree
 from markupsafe import Markup
 from struct import error as StructError
 
-from odoo import api, models, modules
-from odoo.exceptions import RedirectWarning
-from odoo.tools import BinaryBytes, BinaryValue, groupby
-from odoo.tools.mimetypes import guess_mimetype
-from odoo.tools.pdf import OdooPdfFileReader, PdfReadError
+from weth import api, models, modules
+from weth.exceptions import RedirectWarning
+from weth.tools import BinaryBytes, BinaryValue, groupby
+from weth.tools.mimetypes import guess_mimetype
+from weth.tools.pdf import OdooPdfFileReader, PdfReadError
 
 _logger = logging.getLogger(__name__)
 

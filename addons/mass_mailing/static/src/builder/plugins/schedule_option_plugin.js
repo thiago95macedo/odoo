@@ -1,7 +1,7 @@
 import { AddProductOption } from "@html_builder/plugins/add_product_option";
 import { registry } from "@web/core/registry";
 import { _t } from "@web/core/l10n/translation";
-import { useProps, t } from "@odoo/owl";
+import { useProps, t } from "@weth/owl";
 
 export class ScheduleAddProductOption extends AddProductOption {
     static id = "schedule_add_product_option";

@@ -4,7 +4,7 @@ import { Thread } from "@mail/core/common/thread";
 import { ActionPanel } from "@mail/discuss/core/common/action_panel";
 import { Typing } from "@mail/discuss/typing/common/typing";
 
-import { Component, proxy, signal, types, useProps } from "@odoo/owl";
+import { Component, proxy, signal, types, useProps } from "@weth/owl";
 
 import { isMobileOS } from "@web/core/browser/feature_detection";
 import { useService } from "@web/core/utils/hooks";

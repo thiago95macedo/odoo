@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.tests.common import HttpCase
-from odoo.tools import mute_logger, file_open
+from weth.tests.common import HttpCase
+from weth.tools import mute_logger, file_open
 
 
 class TestUploadAttachment(HttpCase):
@@ -22,7 +22,7 @@ class TestUploadAttachment(HttpCase):
         self.make_jsonrpc_request(
             "/im_livechat/visitor_leave_session", {"channel_id": data["channel_id"]}
         )
-        with mute_logger("odoo.http"), file_open("addons/web/__init__.py") as file:
+        with mute_logger("weth.http"), file_open("addons/web/__init__.py") as file:
             response = self.url_open(
                 "/mail/attachment/upload",
                 {

@@ -1,4 +1,4 @@
-import { Component, providePlugins, useProps } from "@odoo/owl";
+import { Component, providePlugins, useProps } from "@weth/owl";
 import { ResourceCalendarPlugin } from "@resource/plugins/resource_calendar_plugin";
 import "@resource/views/resource_calendar_attendance_calendar/resource_calendar_attendance_calendar_view";
 import { _t } from "@web/core/l10n/translation";

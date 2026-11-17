@@ -1,4 +1,4 @@
-import { queryOne, waitUntil } from "@odoo/hoot-dom";
+import { queryOne, waitUntil } from "@weth/hoot-dom";
 
 /**
  * Waits for and returns an `<input>` inside an iframe once it has a value.

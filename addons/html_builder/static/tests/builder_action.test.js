@@ -7,9 +7,9 @@ import { Builder } from "@html_builder/builder";
 import { BaseOptionComponent } from "@html_builder/core/base_option_component";
 import { BuilderAction } from "@html_builder/core/builder_action";
 import { SavePlugin } from "@html_builder/core/save_plugin";
-import { beforeEach, describe, expect, test } from "@odoo/hoot";
-import { advanceTime, animationFrame, tick } from "@odoo/hoot-dom";
-import { signal, xml } from "@odoo/owl";
+import { beforeEach, describe, expect, test } from "@weth/hoot";
+import { advanceTime, animationFrame, tick } from "@weth/hoot-dom";
+import { signal, xml } from "@weth/owl";
 import {
     contains,
     defineModels,
@@ -82,7 +82,7 @@ test("Prepare is triggered on props updated", async () => {
             await prepareDeferred?.promise;
             expect.step("prepare");
         }
-        apply() {}
+        apply() { }
     }
     addBuilderAction({
         CustomAction,
@@ -122,7 +122,7 @@ test("prepare is triggered before getValue(useInputBuilderComponent)", async () 
             expect.step("getValue");
             return false;
         }
-        apply() {}
+        apply() { }
     }
     addBuilderAction({
         CustomAction,

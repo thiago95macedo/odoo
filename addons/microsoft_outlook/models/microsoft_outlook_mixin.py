@@ -8,10 +8,10 @@ import requests
 
 from werkzeug.urls import url_encode
 
-from odoo import _, api, fields, models, release
-from odoo.exceptions import AccessError, UserError
-from odoo.tools import hmac, email_normalize
-from odoo.tools.urls import urljoin as url_join
+from weth import _, api, fields, models, release
+from weth.exceptions import AccessError, UserError
+from weth.tools import hmac, email_normalize
+from weth.tools.urls import urljoin as url_join
 
 _logger = logging.getLogger(__name__)
 

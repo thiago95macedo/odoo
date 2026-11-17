@@ -3,10 +3,10 @@ import logging
 
 from requests import HTTPError
 
-from odoo import http
-from odoo.http import request
-from odoo.addons.google_calendar.utils.google_calendar_service import GoogleCalendarService
-from odoo.addons.calendar.controllers.main import CalendarController
+from weth import http
+from weth.http import request
+from weth.addons.google_calendar.utils.google_calendar_service import GoogleCalendarService
+from weth.addons.calendar.controllers.main import CalendarController
 
 _logger = logging.getLogger(__name__)
 

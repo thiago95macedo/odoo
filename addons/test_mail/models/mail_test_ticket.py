@@ -1,7 +1,7 @@
 import ast
 
-from odoo import api, fields, models, _
-from odoo.tools import email_normalize
+from weth import api, fields, models, _
+from weth.tools import email_normalize
 
 
 class MailTestTicket(models.Model):

@@ -4,15 +4,15 @@ from functools import wraps
 from markupsafe import Markup
 from unittest.mock import patch
 
-from odoo import Command, fields, tests
-from odoo.addons.im_livechat.controllers.chatbot import (
+from weth import Command, fields, tests
+from weth.addons.im_livechat.controllers.chatbot import (
     LivechatChatbotScriptController as LivechatChatbotController,
 )
-from odoo.addons.im_livechat.tests.chatbot_common import ChatbotCase
-from odoo.addons.website_livechat.tests.common import TestLivechatCommon as TestWebsiteLivechatCommon
-from odoo.addons.im_livechat.tests.common import TestGetOperatorCommon
-from odoo.tools import html2plaintext
-from odoo.tools.misc import mute_logger
+from weth.addons.im_livechat.tests.chatbot_common import ChatbotCase
+from weth.addons.website_livechat.tests.common import TestLivechatCommon as TestWebsiteLivechatCommon
+from weth.addons.im_livechat.tests.common import TestGetOperatorCommon
+from weth.tools import html2plaintext
+from weth.tools.misc import mute_logger
 
 
 @tests.tagged("is_tour")
@@ -403,7 +403,7 @@ class TestLivechatChatbotUI(TestLivechatChatbotUICommon):
         tests.new_test_user(self.env, login="portal_user", groups="base.group_portal")
         self.start_tour("/", "website_livechat.chatbot_restart_on_feedback_tour", login="portal_user")
 
-    @mute_logger("odoo.http")
+    @mute_logger("weth.http")
     def test_chatbot_stop_when_agent_joins(self):
         chatbot_script = self.env["chatbot.script"].create({"title": "Test User Input Bot"})
         _, email_step, _ = self.env["chatbot.script.step"].create([

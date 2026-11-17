@@ -1,6 +1,6 @@
 import { BackgroundOption } from "@html_builder/plugins/background_option/background_option";
 import { registry } from "@web/core/registry";
-import { t } from "@odoo/owl";
+import { t } from "@weth/owl";
 
 export class MailingBackgroundOption extends BackgroundOption {
     static id = "mailing_background_option";

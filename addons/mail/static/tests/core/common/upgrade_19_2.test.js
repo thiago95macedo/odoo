@@ -2,7 +2,7 @@ import { defineMailModels, start } from "@mail/../tests/mail_test_helpers";
 import { makeRecordFieldLocalId } from "@mail/model/misc";
 import { Store } from "@mail/model/store";
 import { toRawValue } from "@mail/utils/common/local_storage";
-import { describe, expect, mockPermission, test } from "@odoo/hoot";
+import { describe, expect, mockPermission, test } from "@weth/hoot";
 import { getService } from "@web/../tests/web_test_helpers";
 
 describe.current.tags("desktop");

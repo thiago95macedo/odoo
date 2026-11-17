@@ -1,5 +1,5 @@
-import { animationFrame } from "@odoo/hoot-mock";
-import { Model, stores } from "@odoo/o-spreadsheet";
+import { animationFrame } from "@weth/hoot-mock";
+import { Model, stores } from "@weth/o-spreadsheet";
 import { OdooDataProvider } from "@spreadsheet/data_sources/odoo_data_provider";
 import {
     defineActions,
@@ -12,7 +12,7 @@ import {
 } from "@web/../tests/web_test_helpers";
 import { setCellContent } from "./commands";
 import { addRecordsFromServerData, addViewsFromServerData } from "./data";
-import { markRaw } from "@odoo/owl";
+import { markRaw } from "@weth/owl";
 
 /**
  * @typedef {import("@spreadsheet/../tests/helpers/data").ServerData} ServerData

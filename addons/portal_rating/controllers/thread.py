@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.fields import Domain
+from weth.fields import Domain
 
-from odoo.addons.portal.controllers.thread import PortalWebClientController
+from weth.addons.portal.controllers.thread import PortalWebClientController
 
 
 class PortalRatingThreadController(PortalWebClientController):

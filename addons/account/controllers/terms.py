@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import http, _
-from odoo.http import request
+from weth import http, _
+from weth.http import request
 
 
 def sitemap_terms(env, rule, qs):

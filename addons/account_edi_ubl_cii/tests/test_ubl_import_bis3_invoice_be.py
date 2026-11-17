@@ -1,13 +1,13 @@
 from unittest.mock import patch
-from odoo import fields
+from weth import fields
 
 from freezegun import freeze_time
 from lxml import etree
 
-from odoo.tests import tagged
-from odoo.tools.misc import file_open
+from weth.tests import tagged
+from weth.tools.misc import file_open
 
-from odoo.addons.account_edi_ubl_cii.tests.common import TestUblBis3Common, TestUblCiiBECommon
+from weth.addons.account_edi_ubl_cii.tests.common import TestUblBis3Common, TestUblCiiBECommon
 
 
 @tagged('post_install_l10n', 'post_install', '-at_install')

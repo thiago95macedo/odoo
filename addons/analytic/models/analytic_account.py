@@ -3,9 +3,9 @@
 
 from collections import defaultdict
 import itertools
-from odoo import api, fields, models, _
-from odoo.exceptions import UserError, RedirectWarning
-from odoo.tools import groupby, SQL
+from weth import api, fields, models, _
+from weth.exceptions import UserError, RedirectWarning
+from weth.tools import groupby, SQL
 
 
 class AccountAnalyticAccount(models.Model):

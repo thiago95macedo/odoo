@@ -1,4 +1,4 @@
-import { describe, expect, test, afterEach, beforeEach } from "@odoo/hoot";
+import { describe, expect, test, afterEach, beforeEach } from "@weth/hoot";
 import { MultiTabSharedWorkerPlugin } from "@bus/multi_tab_shared_worker_plugin";
 import { getService, makeTestApp, patchWithCleanup } from "@web/../tests/web_test_helpers";
 import { browser } from "@web/core/browser/browser";

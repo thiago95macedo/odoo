@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.tests import Form, TransactionCase, tagged
+from weth.tests import Form, TransactionCase, tagged
 
 @tagged('-at_install', 'post_install')
 class TestFormCreate(TransactionCase):

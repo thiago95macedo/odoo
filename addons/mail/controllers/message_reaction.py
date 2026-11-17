@@ -2,9 +2,9 @@
 
 from werkzeug.exceptions import NotFound
 
-from odoo.http import request
-from odoo.addons.mail.controllers.thread import ThreadController
-from odoo.addons.mail.tools.discuss import mail_route, Store
+from weth.http import request
+from weth.addons.mail.controllers.thread import ThreadController
+from weth.addons.mail.tools.discuss import mail_route, Store
 
 
 class MessageReactionController(ThreadController):

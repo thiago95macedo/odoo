@@ -10,7 +10,7 @@ import {
     t,
     useListener,
     usePlugin,
-} from "@odoo/owl";
+} from "@weth/owl";
 import { BootstrapInstance } from "@web/core/utils/bootstrap_plugin";
 
 export class ImagePositionOverlay extends Component {
@@ -81,9 +81,9 @@ export class ImagePositionOverlay extends Component {
             }
         });
 
-        this.reloadSavePoint = () => {};
+        this.reloadSavePoint = () => { };
         onMounted(() => {
-            this.reloadSavePoint = this.props.history?.makeSavePoint() ?? (() => {});
+            this.reloadSavePoint = this.props.history?.makeSavePoint() ?? (() => { });
             this.dimensionOverlay();
             this.props.targetEl.classList.add("o_we_image_positioning");
             this.refreshTooltip();

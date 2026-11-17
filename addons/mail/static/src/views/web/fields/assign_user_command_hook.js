@@ -1,4 +1,4 @@
-import { useProps } from "@odoo/owl";
+import { useProps } from "@weth/owl";
 import { useCommand } from "@web/core/commands/command_hook";
 import { Domain } from "@web/core/domain";
 import { _t } from "@web/core/l10n/translation";

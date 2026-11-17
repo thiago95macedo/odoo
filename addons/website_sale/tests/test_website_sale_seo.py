@@ -1,10 +1,10 @@
 from lxml import html
 
-from odoo.fields import Command
-from odoo.tests import HttpCase
+from weth.fields import Command
+from weth.tests import HttpCase
 
-from odoo.addons.website.tests.common import set_url_code
-from odoo.addons.website_sale.tests.common import WebsiteSaleCommon
+from weth.addons.website.tests.common import set_url_code
+from weth.addons.website_sale.tests.common import WebsiteSaleCommon
 
 
 class WebsiteSaleSEO(HttpCase, WebsiteSaleCommon):

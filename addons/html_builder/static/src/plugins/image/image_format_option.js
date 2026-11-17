@@ -3,7 +3,7 @@ import { useDomState } from "@html_builder/core/utils";
 import { getMimetypeBeforeShape } from "@html_builder/utils/image";
 import { isImageSupportedForProcessing } from "@html_editor/main/media/image_post_process_plugin";
 import { getImageSrc } from "@html_editor/utils/image";
-import { useProps, t } from "@odoo/owl";
+import { useProps, t } from "@weth/owl";
 import { clamp } from "@web/core/utils/numbers";
 
 export class ImageFormatOption extends BaseOptionComponent {

@@ -2,9 +2,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
 from datetime import timedelta
-from odoo import http, Command, fields
-from odoo.http import request
-from odoo.addons.mail.tools.discuss import Store
+from weth import http, Command, fields
+from weth.http import request
+from weth.addons.mail.tools.discuss import Store
 
 
 class WebsiteLivechatChatbotScriptController(http.Controller):

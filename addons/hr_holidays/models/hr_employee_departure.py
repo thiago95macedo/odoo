@@ -2,7 +2,7 @@
 
 from datetime import timedelta
 
-from odoo import models
+from weth import models
 
 
 class HrEmployeeDeparture(models.Model):

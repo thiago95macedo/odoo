@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
     <!-- These are shells to allow for assigning printers -->
     <data>
         <template id="report_shipping_labels"/>
@@ -21,4 +21,4 @@
             <field name="binding_type">report</field>
         </record>
     </data>
-</odoo>
+</weth>

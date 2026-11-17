@@ -1,5 +1,5 @@
-import { describe, expect, test } from "@odoo/hoot";
-import { animationFrame } from "@odoo/hoot-mock";
+import { describe, expect, test } from "@weth/hoot";
+import { animationFrame } from "@weth/hoot-mock";
 
 import { WebClient } from "@web/webclient/webclient";
 import { clickOnDataset, setupChartJsForTests } from "@web/../tests/views/graph/graph_test_helpers";

@@ -1,11 +1,11 @@
 import logging
 
-from odoo.addons.account.tests.common import AccountTestInvoicingCommon, AccountTestInvoicingHttpCommon
-from odoo.addons.mail.tests.common import MailCase
-from odoo.api import SUPERUSER_ID
-from odoo.exceptions import UserError
-from odoo.fields import Command
-from odoo.tests import tagged, new_test_user
+from weth.addons.account.tests.common import AccountTestInvoicingCommon, AccountTestInvoicingHttpCommon
+from weth.addons.mail.tests.common import MailCase
+from weth.api import SUPERUSER_ID
+from weth.exceptions import UserError
+from weth.fields import Command
+from weth.tests import tagged, new_test_user
 
 _logger = logging.getLogger(__name__)
 

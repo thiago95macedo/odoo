@@ -8,7 +8,7 @@
  */
 import { createElementFromContent, getInnerHtml, getOuterHtml } from "@mail/utils/common/html";
 
-import { htmlEscape, markup } from "@odoo/owl";
+import { htmlEscape, markup } from "@weth/owl";
 
 import { router } from "@web/core/browser/router";
 import { emojiLoader } from "@web/core/emoji_picker/emoji_loader";
@@ -635,7 +635,7 @@ const QUALIFIED_TEXT = r`(?![#*\d])\p{Emoji}\uFE0F`;
 const EMOJI = r`(?:${SUBDIVISION_FLAG}|${KEYCAP}|${EMOJI_WITH_SKIN_TONE}|${EMOJI_PRESENTATION}|${QUALIFIED_TEXT})`;
 export const EMOJI_REGEX = new RegExp(
     r`\p{Regional_Indicator}{2}|` + // Regional Indicator pairs (e.g., 🇧🇪)
-        r`${EMOJI}(?:\u200D${EMOJI})*`, // Zero Width Joiner sequences (e.g., 👨‍👩‍👧‍👦)
+    r`${EMOJI}(?:\u200D${EMOJI})*`, // Zero Width Joiner sequences (e.g., 👨‍👩‍👧‍👦)
     "gu"
 );
 

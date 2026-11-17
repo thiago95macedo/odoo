@@ -1,14 +1,14 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-import odoo
+import weth
 
-from odoo import Command
-from odoo.tests import new_test_user
-from odoo.addons.pos_hr.tests.test_frontend import TestPosHrHttpCommon
-from odoo.addons.point_of_sale.tests.test_res_config_settings import TestConfigureShops
+from weth import Command
+from weth.tests import new_test_user
+from weth.addons.pos_hr.tests.test_frontend import TestPosHrHttpCommon
+from weth.addons.point_of_sale.tests.test_res_config_settings import TestConfigureShops
 
 
-@odoo.tests.tagged('post_install', '-at_install')
+@weth.tests.tagged('post_install', '-at_install')
 class TestConfigureShopsPoSHR(TestPosHrHttpCommon, TestConfigureShops):
     _test_user_groups = None  # FIXME list needed groups
 

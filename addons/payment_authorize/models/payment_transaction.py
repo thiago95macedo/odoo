@@ -2,13 +2,13 @@
 
 import pprint
 
-from odoo import api, models
-from odoo.exceptions import ValidationError
+from weth import api, models
+from weth.exceptions import ValidationError
 
-from odoo.addons.payment import utils as payment_utils
-from odoo.addons.payment.logging import get_payment_logger
-from odoo.addons.payment_authorize import const
-from odoo.addons.payment_authorize.models.authorize_request import AuthorizeAPI
+from weth.addons.payment import utils as payment_utils
+from weth.addons.payment.logging import get_payment_logger
+from weth.addons.payment_authorize import const
+from weth.addons.payment_authorize.models.authorize_request import AuthorizeAPI
 
 _logger = get_payment_logger(__name__)
 

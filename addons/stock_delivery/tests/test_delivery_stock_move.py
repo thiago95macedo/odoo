@@ -2,11 +2,11 @@
 
 import datetime
 
-from odoo import fields
-from odoo.fields import Command
-from odoo.tests import Form, freeze_time, tagged
+from weth import fields
+from weth.fields import Command
+from weth.tests import Form, freeze_time, tagged
 
-from odoo.addons.sale.tests.common import TestSaleCommon
+from weth.addons.sale.tests.common import TestSaleCommon
 
 
 @tagged('post_install', '-at_install')

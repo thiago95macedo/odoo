@@ -2,9 +2,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 from freezegun import freeze_time
 
-from odoo import Command
-from odoo.exceptions import ValidationError
-from odoo.tests import tagged, TransactionCase, new_test_user
+from weth import Command
+from weth.exceptions import ValidationError
+from weth.tests import tagged, TransactionCase, new_test_user
 
 
 class StockGenerateCommon(TransactionCase):

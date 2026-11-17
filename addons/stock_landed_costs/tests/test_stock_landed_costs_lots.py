@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.stock_account.tests.test_lot_valuation import TestLotValuation
-from odoo.tests import tagged, Form
-from odoo.fields import Command
+from weth.addons.stock_account.tests.test_lot_valuation import TestLotValuation
+from weth.tests import tagged, Form
+from weth.fields import Command
 
 
 @tagged('post_install', '-at_install')

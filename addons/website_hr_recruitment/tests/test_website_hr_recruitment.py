@@ -3,17 +3,17 @@
 
 import json
 
-from odoo.api import Environment
-import odoo.tests
-from odoo.tools import html2plaintext
+from weth.api import Environment
+import weth.tests
+from weth.tools import html2plaintext
 import unittest
-from odoo.tests.common import new_test_user
+from weth.tests.common import new_test_user
 
-from odoo.addons.http_routing.tests.common import MockRequest
-from odoo.addons.website_hr_recruitment.controllers.main import WebsiteHrRecruitment
+from weth.addons.http_routing.tests.common import MockRequest
+from weth.addons.website_hr_recruitment.controllers.main import WebsiteHrRecruitment
 
-@odoo.tests.tagged('post_install', '-at_install')
-class TestWebsiteHrRecruitmentForm(odoo.tests.HttpCase):
+@weth.tests.tagged('post_install', '-at_install')
+class TestWebsiteHrRecruitmentForm(weth.tests.HttpCase):
     def test_tour(self):
         department = self.env['hr.department'].create({'name': 'guru team'})
         job_guru = self.env['hr.job'].create({
@@ -29,7 +29,7 @@ class TestWebsiteHrRecruitmentForm(odoo.tests.HttpCase):
 
         self.start_tour(self.env['website'].get_client_action_url('/jobs'), 'website_hr_recruitment_tour_edit_form', login='admin')
 
-        with odoo.tests.RecordCapturer(self.env['hr.applicant']) as capt:
+        with weth.tests.RecordCapturer(self.env['hr.applicant']) as capt:
             self.start_tour("/jobs", 'website_hr_recruitment_tour')
 
         # check result
@@ -146,7 +146,7 @@ class TestWebsiteHrRecruitmentForm(odoo.tests.HttpCase):
         self.assertEqual(applicant.partner_name, 'Impersonated User')
         self.assertEqual(internal_user.name, 'Internal User')
 
-    @odoo.tests.users('admin')
+    @weth.tests.users('admin')
     def test_interview_invite_url_with_multi_website(self):
         if self.env['ir.module.module']._get('appointment_hr_recruitment').state != 'installed':
             self.skipTest('`appointment_hr_recruitment` module not installed')

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
     <data noupdate="1">
         <record id="decimal_percentage_analytic" model="decimal.precision">
             <field name="name">Percentage Analytic</field>
@@ -16,4 +16,4 @@
         </record>
         <function model="ir.config_parameter" name="set_int" eval="('analytic.project_plan', ref('analytic_plan_projects'))"/>
     </data>
-</odoo>
+</weth>

@@ -1,10 +1,10 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
-from odoo import models, fields, api
-from odoo.exceptions import UserError, ValidationError
-from odoo.tools.partner_identifiers import validation_error_message
+from weth import models, fields, api
+from weth.exceptions import UserError, ValidationError
+from weth.tools.partner_identifiers import validation_error_message
 
-from odoo.addons.account.models.company import PEPPOL_DEFAULT_COUNTRIES
-from odoo.addons.account_edi_ubl_cii.tools.partner_identifiers import (
+from weth.addons.account.models.company import PEPPOL_DEFAULT_COUNTRIES
+from weth.addons.account_edi_ubl_cii.tools.partner_identifiers import (
     CORNER_CASE_IDENTIFIERS_METADATA,
     DEPRECATED_ELECTRONIC_ADDRESS_SCHEMES_CODELIST,
     ELECTRONIC_ADDRESS_SCHEMES_CODELIST,

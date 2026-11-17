@@ -1,6 +1,6 @@
 import { mailModels } from "@mail/../tests/mail_test_helpers";
-import { before, expect, getFixture, test } from "@odoo/hoot";
-import { advanceTime, queryOne } from "@odoo/hoot-dom";
+import { before, expect, getFixture, test } from "@weth/hoot";
+import { advanceTime, queryOne } from "@weth/hoot-dom";
 import {
     contains,
     defineModels,

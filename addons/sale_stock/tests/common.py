@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.fields import Command
-from odoo.addons.product.tests.common import ProductVariantsCommon
-from odoo.addons.sale.tests.common import TestSaleCommon
+from weth.fields import Command
+from weth.addons.product.tests.common import ProductVariantsCommon
+from weth.addons.sale.tests.common import TestSaleCommon
 
 
 class TestSaleStockCommon(TestSaleCommon, ProductVariantsCommon):

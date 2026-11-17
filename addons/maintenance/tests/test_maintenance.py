@@ -3,11 +3,11 @@
 
 import time
 
-from odoo.tests import Form
-from odoo.tests.common import tagged, TransactionCase
-from odoo import fields
+from weth.tests import Form
+from weth.tests.common import tagged, TransactionCase
+from weth import fields
 from datetime import timedelta
-from odoo.exceptions import ValidationError
+from weth.exceptions import ValidationError
 
 
 class TestEquipmentCommon(TransactionCase):

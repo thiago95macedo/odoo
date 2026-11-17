@@ -1,9 +1,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.tests import tagged
-from odoo.tests.common import HttpCase
+from weth.tests import tagged
+from weth.tests.common import HttpCase
 
-from odoo.addons.website_sale_collect.tests.common import ClickAndCollectCommon
+from weth.addons.website_sale_collect.tests.common import ClickAndCollectCommon
 
 
 @tagged("post_install", "-at_install")

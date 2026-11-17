@@ -2,10 +2,10 @@
 from dateutil.relativedelta import relativedelta
 from lxml.builder import E
 
-from odoo import api, fields, models, _
-from odoo.tools import date_utils
-from odoo.exceptions import ValidationError
-from odoo.fields import Domain
+from weth import api, fields, models, _
+from weth.tools import date_utils
+from weth.exceptions import ValidationError
+from weth.fields import Domain
 
 
 class AnalyticPlanFieldsMixin(models.AbstractModel):

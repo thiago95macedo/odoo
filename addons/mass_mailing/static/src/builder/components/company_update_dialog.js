@@ -1,4 +1,4 @@
-import { Component, onWillStart, useProps, proxy, t } from "@odoo/owl";
+import { Component, onWillStart, useProps, proxy, t } from "@weth/owl";
 import { Dialog } from "@web/core/dialog/dialog";
 import { _t } from "@web/core/l10n/translation";
 import { useService } from "@web/core/utils/hooks";
@@ -38,7 +38,7 @@ export const FIELD_NAMES = [
         displayName: _t("Instagram Account"),
         iconClass: "oi_instagram",
         name: "social_instagram",
-        placeholder: "https://www.instagram.com/explore/tags/odoo/",
+        placeholder: "https://www.instagram.com/explore/tags/weth/",
     },
     {
         displayName: _t("Tiktok Account"),
@@ -59,8 +59,8 @@ export class ResCompanyUpdateDialog extends Component {
     static components = { Dialog };
     props = useProps({
         close: t.function(),
-        onRecordSaved: t.function().optional(() => () => {}),
-        onCancel: t.function().optional(() => () => {}),
+        onRecordSaved: t.function().optional(() => () => { }),
+        onCancel: t.function().optional(() => () => { }),
         resId: t.number(),
     });
 

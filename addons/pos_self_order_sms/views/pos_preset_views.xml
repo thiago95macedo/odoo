@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<odoo>
+<weth>
     <record id="view_pos_preset_form_inherit_pos_self_order_sms" model="ir.ui.view">
         <field name="name">pos.preset.form.inherit.pos.self.order.sms</field>
         <field name="model">pos.preset</field>
@@ -10,4 +10,4 @@
             </xpath>
         </field>
     </record>
-</odoo>
+</weth>

@@ -2,9 +2,9 @@ from datetime import date, datetime, UTC
 
 from freezegun import freeze_time
 
-from odoo.tests import tagged
+from weth.tests import tagged
 
-from odoo.addons.test_resource.tests.common import TestResourceCommon
+from weth.addons.test_resource.tests.common import TestResourceCommon
 
 
 @tagged('at_install', '-post_install')  # LEGACY at_install

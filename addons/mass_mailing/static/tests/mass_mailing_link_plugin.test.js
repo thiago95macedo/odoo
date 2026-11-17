@@ -1,6 +1,6 @@
-import { expect, test } from "@odoo/hoot";
+import { expect, test } from "@weth/hoot";
 import { setupEditor } from "@html_editor/../tests/_helpers/editor";
-import { click, waitFor } from "@odoo/hoot-dom";
+import { click, waitFor } from "@weth/hoot-dom";
 import { contains } from "@web/../tests/web_test_helpers";
 import { defineMailModels } from "@mail/../tests/mail_test_helpers";
 import { MassMailingLinkPlugin } from "../src/editor/plugins/mass_mailing_link_plugin";

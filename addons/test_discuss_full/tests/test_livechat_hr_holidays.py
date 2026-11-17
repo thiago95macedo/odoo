@@ -2,9 +2,9 @@
 
 from dateutil.relativedelta import relativedelta
 
-from odoo import Command, fields
-from odoo.tests.common import HttpCase
-from odoo.addons.mail.tests.common import MailCommon
+from weth import Command, fields
+from weth.tests.common import HttpCase
+from weth.addons.mail.tests.common import MailCommon
 
 
 class TestLivechatHrHolidays(HttpCase, MailCommon):

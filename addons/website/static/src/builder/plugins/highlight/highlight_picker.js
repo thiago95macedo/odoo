@@ -1,4 +1,4 @@
-import { onMounted, Component, onWillDestroy, signal, useProps, t } from "@odoo/owl";
+import { onMounted, Component, onWillDestroy, signal, useProps, t } from "@weth/owl";
 import {
     applyTextHighlight,
     textHighlightFactory,

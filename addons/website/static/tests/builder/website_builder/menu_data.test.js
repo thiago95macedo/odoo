@@ -1,5 +1,5 @@
-import { describe, expect, test, beforeEach, animationFrame } from "@odoo/hoot";
-import { waitFor, waitForNone, click, queryOne } from "@odoo/hoot-dom";
+import { describe, expect, test, beforeEach, animationFrame } from "@weth/hoot";
+import { waitFor, waitForNone, click, queryOne } from "@weth/hoot-dom";
 import {
     defineWebsiteModels,
     setupWebsiteBuilder,

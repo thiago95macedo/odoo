@@ -1,7 +1,7 @@
 from unittest.mock import patch
 
-from odoo.exceptions import AccessError
-from odoo.tests import TransactionCase, tagged, users
+from weth.exceptions import AccessError
+from weth.tests import TransactionCase, tagged, users
 
 
 @tagged('at_install', '-post_install')

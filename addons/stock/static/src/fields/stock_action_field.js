@@ -1,4 +1,4 @@
-import { Component, useProps, t } from "@odoo/owl";
+import { Component, useProps, t } from "@weth/owl";
 
 import { _t } from "@web/core/l10n/translation";
 import { evaluateExpr } from "@web/core/py_js/py";
@@ -34,16 +34,16 @@ class StockActionField extends Component {
         this.orm = useService("orm");
         this.fieldType = this.props.record.fields[this.props.name].type;
     }
-    
-    extractProps () {
+
+    extractProps() {
         const keysToRemove = ["actionName", "actionContext", "disabled", "muteEmpty"];
         return Object.fromEntries(
-         Object.entries(this.props).filter(([prop]) => !keysToRemove.includes(prop))
-       );
+            Object.entries(this.props).filter(([prop]) => !keysToRemove.includes(prop))
+        );
     }
 
     get disabled() {
-         return this.props.disabled ? evaluateExpr(this.props.disabled, this.props.record.evalContext) : false;
+        return this.props.disabled ? evaluateExpr(this.props.disabled, this.props.record.evalContext) : false;
     }
 
     _onClick(ev) {
@@ -88,7 +88,7 @@ const stockActionField = {
             muteEmpty: options.mute_empty,
             actionContext: context,
         }
-        let props = {...action_props}
+        let props = { ...action_props }
         if (fieldType === "monetary") {
             props = { ...action_props, ...monetaryField.extractProps(...args) };
         } else if (fieldType === "float") {

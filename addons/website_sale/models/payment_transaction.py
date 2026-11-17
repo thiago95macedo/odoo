@@ -4,7 +4,7 @@ from urllib.parse import urlencode
 
 from markupsafe import Markup
 
-from odoo import models
+from weth import models
 
 
 class PaymentTransaction(models.Model):

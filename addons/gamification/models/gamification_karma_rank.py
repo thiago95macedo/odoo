@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
-from odoo import api, fields, models
-from odoo.tools.translate import html_translate
+from weth import api, fields, models
+from weth.tools.translate import html_translate
 
 
 class GamificationKarmaRank(models.Model):

@@ -1,5 +1,5 @@
 import { defineCrmLivechatModels } from "@crm_livechat/../tests/crm_livechat_test_helpers";
-import { describe, test } from "@odoo/hoot";
+import { describe, test } from "@weth/hoot";
 import {
     click,
     contains,

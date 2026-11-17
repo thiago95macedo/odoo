@@ -1,11 +1,11 @@
-import { describe, expect, test } from "@odoo/hoot";
-import { click, queryAll, queryFirst } from "@odoo/hoot-dom";
+import { describe, expect, test } from "@weth/hoot";
+import { click, queryAll, queryFirst } from "@weth/hoot-dom";
 import { createDashboardActionWithData } from "@spreadsheet_dashboard/../tests/helpers/dashboard_action";
 import { defineSpreadsheetDashboardModels } from "@spreadsheet_dashboard/../tests/helpers/data";
 import { Partner } from "@spreadsheet/../tests/helpers/data";
 import { getCellIcons } from "@spreadsheet/../tests/helpers/getters";
 import { fields } from "@web/../tests/web_test_helpers";
-import { animationFrame } from "@odoo/hoot-mock";
+import { animationFrame } from "@weth/hoot-mock";
 
 describe.current.tags("desktop");
 defineSpreadsheetDashboardModels();

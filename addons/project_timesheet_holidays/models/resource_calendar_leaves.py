@@ -3,7 +3,7 @@
 from collections import defaultdict
 from datetime import UTC
 
-from odoo import api, fields, models, _
+from weth import api, fields, models, _
 
 
 class ResourceCalendarLeaves(models.Model):

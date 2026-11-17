@@ -5,8 +5,8 @@ from zoneinfo import ZoneInfo
 
 from dateutil.relativedelta import relativedelta
 
-from odoo.tests.common import tagged
-from odoo.addons.hr_work_entry.tests.common import TestWorkEntryBase
+from weth.tests.common import tagged
+from weth.addons.hr_work_entry.tests.common import TestWorkEntryBase
 
 
 @tagged('work_entry')

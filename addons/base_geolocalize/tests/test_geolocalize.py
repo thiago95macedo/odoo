@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
-from odoo.tests import tagged, TransactionCase
-from odoo.exceptions import UserError
+from weth.tests import tagged, TransactionCase
+from weth.exceptions import UserError
 from unittest.mock import patch
 
-import odoo.tests
+import weth.tests
 
 
-@odoo.tests.tagged('external', '-standard')
+@weth.tests.tagged('external', '-standard')
 @tagged('at_install', '-post_install')  # LEGACY at_install
 class TestGeoLocalize(TransactionCase):
 
@@ -37,7 +37,7 @@ class TestGeoLocalize(TransactionCase):
         self.assertFalse(test_partner.date_localization)
 
 
-@odoo.tests.tagged('-at_install', 'post_install')
+@weth.tests.tagged('-at_install', 'post_install')
 class TestPartnerGeoLocalization(TransactionCase):
 
     def test_geo_localization_notification(self):

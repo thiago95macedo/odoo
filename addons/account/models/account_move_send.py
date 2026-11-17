@@ -3,10 +3,10 @@ from collections import defaultdict
 
 from markupsafe import Markup
 
-from odoo import Command, _, api, models, modules, tools
-from odoo.exceptions import UserError, ValidationError
+from weth import Command, _, api, models, modules, tools
+from weth.exceptions import UserError, ValidationError
 
-from odoo.addons.account.tools import after_commit
+from weth.addons.account.tools import after_commit
 
 _logger = logging.getLogger(__name__)
 

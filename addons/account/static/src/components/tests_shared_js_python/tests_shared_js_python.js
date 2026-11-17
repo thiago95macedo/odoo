@@ -3,7 +3,7 @@ import { registry } from "@web/core/registry";
 
 import { accountTaxHelpers } from "@account/helpers/account_tax";
 
-import { Component, proxy, t, useProps } from "@odoo/owl";
+import { Component, proxy, t, useProps } from "@weth/owl";
 
 export class TestsSharedJsPython extends Component {
     static template = "account.TestsSharedJsPython";
@@ -44,13 +44,13 @@ export class TestsSharedJsPython extends Component {
                     params.taxes,
                     results.results.total_excluded / params.quantity,
                     params.quantity,
-                    {...kwargs, special_mode: "total_excluded"}
+                    { ...kwargs, special_mode: "total_excluded" }
                 );
                 results.total_included_results = accountTaxHelpers.get_tax_details(
                     params.taxes,
                     results.results.total_included / params.quantity,
                     params.quantity,
-                    {...kwargs, special_mode: "total_included"}
+                    { ...kwargs, special_mode: "total_included" }
                 );
             }
             return results;
@@ -62,7 +62,7 @@ export class TestsSharedJsPython extends Component {
                     params.product,
                     params.original_taxes,
                     params.new_taxes,
-                    { product_uom: params.product_uom}
+                    { product_uom: params.product_uom }
                 )
             }
         }
@@ -72,9 +72,9 @@ export class TestsSharedJsPython extends Component {
                 document.lines,
                 document.currency,
                 document.company,
-                {cash_rounding: document.cash_rounding}
+                { cash_rounding: document.cash_rounding }
             );
-            return {tax_totals: taxTotals, soft_checking: params.soft_checking};
+            return { tax_totals: taxTotals, soft_checking: params.soft_checking };
         }
         if (params.test === "global_discount") {
             const document = this.populateDocument(params.document);
@@ -92,9 +92,9 @@ export class TestsSharedJsPython extends Component {
                 document.lines,
                 document.currency,
                 document.company,
-                {cash_rounding: document.cash_rounding}
+                { cash_rounding: document.cash_rounding }
             );
-            return {tax_totals: taxTotals, soft_checking: params.soft_checking};
+            return { tax_totals: taxTotals, soft_checking: params.soft_checking };
         }
         if (params.test === "down_payment") {
             const document = this.populateDocument(params.document);
@@ -112,7 +112,7 @@ export class TestsSharedJsPython extends Component {
                 document.lines,
                 document.currency,
                 document.company,
-                {cash_rounding: document.cash_rounding}
+                { cash_rounding: document.cash_rounding }
             );
             return {
                 tax_totals: taxTotals,

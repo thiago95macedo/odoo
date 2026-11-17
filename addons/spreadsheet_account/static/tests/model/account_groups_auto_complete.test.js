@@ -1,6 +1,6 @@
-import { describe, expect, test } from "@odoo/hoot";
-import { animationFrame } from "@odoo/hoot-mock";
-import { stores } from "@odoo/o-spreadsheet";
+import { describe, expect, test } from "@weth/hoot";
+import { animationFrame } from "@weth/hoot-mock";
+import { stores } from "@weth/o-spreadsheet";
 import { defineSpreadsheetModels } from "@spreadsheet/../tests/helpers/data";
 import { makeStore } from "@spreadsheet/../tests/helpers/stores";
 

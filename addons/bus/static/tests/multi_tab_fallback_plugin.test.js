@@ -1,4 +1,4 @@
-import { describe, expect, test, after } from "@odoo/hoot";
+import { describe, expect, test, after } from "@weth/hoot";
 import { MultiTabFallbackPlugin } from "@bus/multi_tab_fallback_plugin";
 import { getService, makeTestApp, patchWithCleanup } from "@web/../tests/web_test_helpers";
 import { browser } from "@web/core/browser/browser";

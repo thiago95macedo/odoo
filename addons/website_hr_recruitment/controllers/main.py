@@ -3,11 +3,11 @@
 from collections import defaultdict, OrderedDict
 from functools import partial
 
-from odoo import http, _
-from odoo.addons.website.controllers.form import WebsiteForm
-from odoo.fields import Domain
-from odoo.http import request
-from odoo.tools.translate import LazyTranslate
+from weth import http, _
+from weth.addons.website.controllers.form import WebsiteForm
+from weth.fields import Domain
+from weth.http import request
+from weth.tools.translate import LazyTranslate
 
 _lt = LazyTranslate(__name__)
 

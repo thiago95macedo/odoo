@@ -1,5 +1,5 @@
-import { expect, test } from "@odoo/hoot";
-import { advanceTime, click, press } from "@odoo/hoot-dom";
+import { expect, test } from "@weth/hoot";
+import { advanceTime, click, press } from "@weth/hoot-dom";
 import { setupEditor, testEditor } from "./_helpers/editor";
 import {
     deleteBackward,
@@ -9,7 +9,7 @@ import {
     splitBlock,
 } from "./_helpers/user_actions";
 import { getContent } from "./_helpers/selection";
-import { animationFrame } from "@odoo/hoot-mock";
+import { animationFrame } from "@weth/hoot-mock";
 import { expectElementCount } from "./_helpers/ui_expectations";
 
 /**

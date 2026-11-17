@@ -1,5 +1,5 @@
-import { expect, test } from "@odoo/hoot";
-import { click, waitFor } from "@odoo/hoot-dom";
+import { expect, test } from "@weth/hoot";
+import { click, waitFor } from "@weth/hoot-dom";
 import { defineModels, fields, models, mountView } from "@web/../tests/web_test_helpers";
 import { defineWebsiteSlidesModels } from "@website_slides/../tests/website_slides_test_helpers";
 

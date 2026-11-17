@@ -6,7 +6,7 @@ import werkzeug
 from lxml import etree
 from unittest.mock import patch
 
-from odoo.tests import common
+from weth.tests import common
 
 
 class MockLinkTracker(common.BaseCase):
@@ -17,7 +17,7 @@ class MockLinkTracker(common.BaseCase):
         def _get_title_from_url(url):
             return "Test_TITLE"
 
-        link_tracker_title_patch = patch('odoo.addons.link_tracker.models.link_tracker.LinkTracker._get_title_from_url', wraps=_get_title_from_url)
+        link_tracker_title_patch = patch('weth.addons.link_tracker.models.link_tracker.LinkTracker._get_title_from_url', wraps=_get_title_from_url)
         self.startPatcher(link_tracker_title_patch)
 
     def _get_href_from_anchor_id(self, body, anchor_id):

@@ -1,6 +1,6 @@
 //@ts-check
 
-import { EvaluationError, CellErrorType } from "@odoo/o-spreadsheet";
+import { EvaluationError, CellErrorType } from "@weth/o-spreadsheet";
 import { RPCError } from "@web/core/network/rpc";
 import { KeepLast } from "@web/core/utils/concurrency";
 import {

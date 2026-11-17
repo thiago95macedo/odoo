@@ -1,5 +1,5 @@
 import { fields, Record } from "@mail/model/export";
-import { markRaw } from "@odoo/owl";
+import { markRaw } from "@weth/owl";
 
 import { _t } from "@web/core/l10n/translation";
 

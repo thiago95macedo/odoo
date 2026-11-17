@@ -1,7 +1,7 @@
 import { useBus } from "@web/core/utils/hooks";
 import { BomOverviewLine } from "../bom_overview_line/mrp_bom_overview_line";
 import { BomOverviewExtraBlock } from "../bom_overview_extra_block/mrp_bom_overview_extra_block";
-import { Component, onWillUnmount, proxy, t, useOnChange, useProps } from "@odoo/owl";
+import { Component, onWillUnmount, proxy, t, useOnChange, useProps } from "@weth/owl";
 
 export class BomOverviewComponentsBlock extends Component {
     static template = "mrp.BomOverviewComponentsBlock";
@@ -20,7 +20,7 @@ export class BomOverviewComponentsBlock extends Component {
     });
 
     setup() {
-        const childFoldstate = this.childIds.reduce((prev, curr) => ({ ...prev, [curr]: !this.props.unfoldAll}), {});
+        const childFoldstate = this.childIds.reduce((prev, curr) => ({ ...prev, [curr]: !this.props.unfoldAll }), {});
         this.state = proxy({
             ...childFoldstate,
             unfoldAll: this.props.unfoldAll || false,
@@ -92,7 +92,7 @@ export class BomOverviewComponentsBlock extends Component {
         return data.components && data.components.length > 0;
     }
 
-    getIdentifier(data, type=null) {
+    getIdentifier(data, type = null) {
         return `${type ? type : data.type}_${data.index}`;
     }
 }

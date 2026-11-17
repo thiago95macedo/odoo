@@ -1,4 +1,4 @@
-import { Component, computed, signal, toRaw, types, useProps } from "@odoo/owl";
+import { Component, computed, signal, toRaw, types, useProps } from "@weth/owl";
 
 import { _t } from "@web/core/l10n/translation";
 import { useService } from "@web/core/utils/hooks";
@@ -66,23 +66,23 @@ export class CallActionList extends Component {
                 const moreActions = [...pipActions, ...filtered.slice(maxQuickActions)];
                 const newGroup = moreActions?.length
                     ? [
-                          ...quickActions,
-                          this.callActions.more(
-                              this.callActionsParams,
-                              {
-                                  actions: moreActions,
-                                  dropdownMenuClass: attClassObjectToString({
-                                      "m-0 mb-1 overflow-x-hidden": true,
-                                      "o-discuss-CallActionList-menu": Boolean(
-                                          this.env.inMeetingView
-                                      ),
-                                  }),
-                                  dropdownPosition: "top-end",
-                                  name: this.MORE,
-                              },
-                              sequenceGroup
-                          ),
-                      ]
+                        ...quickActions,
+                        this.callActions.more(
+                            this.callActionsParams,
+                            {
+                                actions: moreActions,
+                                dropdownMenuClass: attClassObjectToString({
+                                    "m-0 mb-1 overflow-x-hidden": true,
+                                    "o-discuss-CallActionList-menu": Boolean(
+                                        this.env.inMeetingView
+                                    ),
+                                }),
+                                dropdownPosition: "top-end",
+                                name: this.MORE,
+                            },
+                            sequenceGroup
+                        ),
+                    ]
                     : quickActions;
                 if (sequenceGroup >= 300 && disconnectGroupIndex === -1) {
                     disconnectGroupIndex = group2.length;
@@ -163,21 +163,21 @@ export class CallActionList extends Component {
         moreGroups.push(...(this.props.extraMoreActionGroups ?? []));
         const moreGroup = moreGroups.length
             ? [
-                  this.callActions.more(
-                      this.callActionsParams,
-                      {
-                          actions: moreGroups,
-                          dropdownMenuClass: attClassObjectToString({
-                              "m-0 mb-1 overflow-x-hidden": true,
-                              "o-discuss-CallActionList-menu": Boolean(this.env.inMeetingView),
-                          }),
-                          dropdownPosition: "top-end",
-                          id: "small-screen-more",
-                          name: this.MORE,
-                      },
-                      "small-screen-more"
-                  ),
-              ]
+                this.callActions.more(
+                    this.callActionsParams,
+                    {
+                        actions: moreGroups,
+                        dropdownMenuClass: attClassObjectToString({
+                            "m-0 mb-1 overflow-x-hidden": true,
+                            "o-discuss-CallActionList-menu": Boolean(this.env.inMeetingView),
+                        }),
+                        dropdownPosition: "top-end",
+                        id: "small-screen-more",
+                        name: this.MORE,
+                    },
+                    "small-screen-more"
+                ),
+            ]
             : [];
         return [...barGroups, moreGroup, joinLeave].filter((group) => group.length);
     }

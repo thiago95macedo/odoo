@@ -1,11 +1,11 @@
 import base64
 import logging
 
-from odoo import api, models, _
-from odoo.exceptions import UserError
-from odoo.fields import Domain
+from weth import api, models, _
+from weth.exceptions import UserError
+from weth.fields import Domain
 
-from odoo.addons.printer.models.ir_actions_report import thermal_printer_format
+from weth.addons.printer.models.ir_actions_report import thermal_printer_format
 
 _logger = logging.getLogger(__name__)
 

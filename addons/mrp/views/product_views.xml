@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
     <data>
         <!-- Product Template -->
         <record id="view_mrp_product_template_form_inherited" model="ir.ui.view">
@@ -137,4 +137,4 @@
             <field name="domain">[('is_storable', '=', True), ('is_kits','=', False)]</field>
         </record>
     </data>
-</odoo>
+</weth>

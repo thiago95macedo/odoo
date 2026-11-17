@@ -1,5 +1,5 @@
-from odoo.addons.mail.tests.common_controllers import MailControllerReactionCommon
-from odoo.tests import tagged
+from weth.addons.mail.tests.common_controllers import MailControllerReactionCommon
+from weth.tests import tagged
 
 
 @tagged("mail_controller")

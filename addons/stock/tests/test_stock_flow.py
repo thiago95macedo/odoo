@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 
-from odoo.addons.stock.tests.common import TestStockCommon
-from odoo.exceptions import ValidationError
-from odoo.tests import Form, HttpCase, tagged
-from odoo.tests.common import users
-from odoo.tools import mute_logger, float_round
-from odoo import Command, fields
+from weth.addons.stock.tests.common import TestStockCommon
+from weth.exceptions import ValidationError
+from weth.tests import Form, HttpCase, tagged
+from weth.tests.common import users
+from weth.tools import mute_logger, float_round
+from weth import Command, fields
 
 
 @tagged('at_install', '-post_install')  # LEGACY at_install Fails in post install
@@ -46,7 +46,7 @@ class TestStockFlow(TestStockCommon):
         cls.SDozA = cls.ProductObj.create({'name': 'SuperDozon-A', 'is_storable': True, 'uom_id': cls.uom_sdozen.id})
         cls.UnitA = cls.ProductObj.create({'name': 'Unit-A', 'is_storable': True})
 
-    @mute_logger('odoo.addons.base.models.ir_access', 'odoo.models')
+    @mute_logger('weth.addons.base.models.ir_access', 'weth.models')
     def test_00_picking_create_and_transfer_quantity(self):
         """ Basic stock operation on incoming and outgoing shipment. """
         LotObj = self.env['stock.lot']

@@ -15,7 +15,7 @@ import {
     signal,
     useProps,
     useScope,
-} from "@odoo/owl";
+} from "@weth/owl";
 
 /**
  * @typedef {import("@web/env").OdooEnv} OdooEnv
@@ -64,12 +64,12 @@ export class Model {
      * @param {SearchParams} params
      * @param {Services} services
      */
-    setup(/* params, services */) {}
+    setup(/* params, services */) { }
 
     /**
      * @param {Partial<SearchParams>} _params
      */
-    async load(_params) {}
+    async load(_params) { }
 
     /**
      * This function is meant to be overriden by models that want to implement

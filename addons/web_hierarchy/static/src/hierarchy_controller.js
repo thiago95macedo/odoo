@@ -1,4 +1,4 @@
-import { Component, signal, t, useProps } from "@odoo/owl";
+import { Component, signal, t, useProps } from "@weth/owl";
 
 import { useModel } from "@web/model/model";
 import { addFieldDependencies, extractFieldsFromArchInfo } from "@web/model/relational_model/utils";
@@ -73,7 +73,7 @@ export class HierarchyController extends Component {
         this.props.selectRecord(node.resId, { activeIds, newWindow });
     }
 
-    async beforeExecuteActionButton(clickParams) {}
+    async beforeExecuteActionButton(clickParams) { }
 
-    async afterExecuteActionButton(clickParams) {}
+    async afterExecuteActionButton(clickParams) { }
 }

@@ -35,7 +35,7 @@ import {
     t,
     useEffect,
     useProps,
-} from "@odoo/owl";
+} from "@weth/owl";
 import { OfflinePlugin } from "@web/core/offline/offline_plugin";
 import { QuickCreateState } from "./kanban_record_quick_create";
 
@@ -69,8 +69,8 @@ export class KanbanController extends Component {
         Renderer: t.function(),
         buttonTemplate: t.string(),
         archInfo: t.object(),
-        createRecord: t.function().optional(() => () => {}),
-        selectRecord: t.function().optional(() => () => {}),
+        createRecord: t.function().optional(() => () => { }),
+        selectRecord: t.function().optional(() => () => { }),
     });
 
     rootRef = signal.ref();
@@ -230,8 +230,8 @@ export class KanbanController extends Component {
             "active" in this.props.fields
                 ? !this.props.fields.active.readonly
                 : "x_active" in this.props.fields
-                ? !this.props.fields.x_active.readonly
-                : false;
+                    ? !this.props.fields.x_active.readonly
+                    : false;
         useSubEnv({ model: this.model });
         this.exportRecords = useExportRecords(this.env, this.props.context, () =>
             this.getExportableFields()
@@ -424,7 +424,7 @@ export class KanbanController extends Component {
         };
     }
 
-    async beforeUnload() {}
+    async beforeUnload() { }
 
     async beforeLeave() {
         // wait for potential pending write operations (e.g. records being moved)
@@ -545,9 +545,9 @@ export class KanbanController extends Component {
         }
     }
 
-    async beforeExecuteActionButton(clickParams) {}
+    async beforeExecuteActionButton(clickParams) { }
 
-    async afterExecuteActionButton(clickParams) {}
+    async afterExecuteActionButton(clickParams) { }
 
     scrollTop() {
         this.rootRef().querySelector(".o_content").scrollTo({ top: 0 });

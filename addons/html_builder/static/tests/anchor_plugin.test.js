@@ -4,8 +4,8 @@ import {
     setupHTMLBuilder,
 } from "@html_builder/../tests/helpers";
 import { Plugin } from "@html_editor/plugin";
-import { expect, test } from "@odoo/hoot";
-import { xml } from "@odoo/owl";
+import { expect, test } from "@weth/hoot";
+import { xml } from "@weth/owl";
 import { contains } from "@web/../tests/web_test_helpers";
 
 test("Should show anchor button based on resource selectors", async () => {

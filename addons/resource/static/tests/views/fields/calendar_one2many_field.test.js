@@ -1,6 +1,6 @@
 import { animationFrame, beforeEach, click, expect, mockDate, test } from "@web/../lib/hoot/hoot";
-import { disableAnimations } from "@odoo/hoot-mock";
-import { waitFor } from "@odoo/hoot-dom";
+import { disableAnimations } from "@weth/hoot-mock";
+import { waitFor } from "@weth/hoot-dom";
 import { mountView } from "@web/../tests/_framework/view_test_helpers";
 import { defineResourceModels } from "../../resource_test_helpers";
 

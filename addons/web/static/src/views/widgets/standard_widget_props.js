@@ -1,4 +1,4 @@
-import { t } from "@odoo/owl";
+import { t } from "@weth/owl";
 
 export const standardWidgetProps = {
     readonly: t.boolean().optional(),

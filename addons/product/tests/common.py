@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.fields import Command
+from weth.fields import Command
 
-from odoo.addons.uom.tests.common import UomCommon
+from weth.addons.uom.tests.common import UomCommon
 
 
 class ProductCommon(UomCommon):

@@ -9,7 +9,7 @@ import {
     startServer,
     triggerHotkey,
 } from "@mail/../tests/mail_test_helpers";
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@weth/hoot";
 import { registry } from "@web/core/registry";
 import { getOrigin } from "@web/core/utils/urls";
 
@@ -275,9 +275,9 @@ test("avatar card preview", async () => {
         {
             start() {
                 return {
-                    registerToImStatus() {},
-                    unregisterFromImStatus() {},
-                    updateBusPresence() {},
+                    registerToImStatus() { },
+                    unregisterFromImStatus() { },
+                    updateBusPresence() { },
                 };
             },
         },
@@ -323,9 +323,9 @@ test("avatar card preview (partner_id field)", async () => {
         {
             start() {
                 return {
-                    registerToImStatus() {},
-                    unregisterFromImStatus() {},
-                    updateBusPresence() {},
+                    registerToImStatus() { },
+                    unregisterFromImStatus() { },
+                    updateBusPresence() { },
                 };
             },
         },

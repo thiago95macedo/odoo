@@ -5,9 +5,9 @@ from gi.repository import GLib
 from gatt import Device
 import logging
 
-from odoo.addons.iot_drivers.iot_handlers.interfaces.bluetooth_interface_L import BTInterface, bluetooth_devices
-from odoo.addons.iot_drivers.driver import Driver
-from odoo.addons.iot_drivers.event_manager import event_manager
+from weth.addons.iot_drivers.iot_handlers.interfaces.bluetooth_interface_L import BTInterface, bluetooth_devices
+from weth.addons.iot_drivers.driver import Driver
+from weth.addons.iot_drivers.event_manager import event_manager
 
 _logger = logging.getLogger(__name__)
 

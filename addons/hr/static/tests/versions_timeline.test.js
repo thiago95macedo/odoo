@@ -1,5 +1,5 @@
-import { expect, test } from "@odoo/hoot";
-import { queryAllTexts, waitFor } from "@odoo/hoot-dom";
+import { expect, test } from "@weth/hoot";
+import { queryAllTexts, waitFor } from "@weth/hoot-dom";
 import {
     defineActions,
     getService,

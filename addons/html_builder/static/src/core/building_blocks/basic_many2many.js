@@ -1,4 +1,4 @@
-import { Component, t, useProps } from "@odoo/owl";
+import { Component, t, useProps } from "@weth/owl";
 import { basicContainerBuilderComponentProps } from "../utils";
 import { SelectMany2X } from "./select_many2x";
 

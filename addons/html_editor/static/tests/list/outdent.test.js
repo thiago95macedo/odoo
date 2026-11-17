@@ -1,4 +1,4 @@
-import { describe, expect, test, before } from "@odoo/hoot";
+import { describe, expect, test, before } from "@weth/hoot";
 import { setupEditor, testEditor } from "../_helpers/editor";
 import { unformat } from "../_helpers/format";
 import { bold, deleteBackward, keydownShiftTab } from "../_helpers/user_actions";

@@ -13,7 +13,7 @@ import {
 } from "@mail/../tests/mail_test_helpers";
 import { getService } from "@web/../tests/web_test_helpers";
 
-import { describe, test } from "@odoo/hoot";
+import { describe, test } from "@weth/hoot";
 
 describe.current.tags("desktop");
 defineMailModels();

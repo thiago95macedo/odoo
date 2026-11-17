@@ -2,9 +2,9 @@
 
 import pprint
 
-from odoo.http import Controller, request, route
+from weth.http import Controller, request, route
 
-from odoo.addons.payment.logging import get_payment_logger
+from weth.addons.payment.logging import get_payment_logger
 
 _logger = get_payment_logger(__name__)
 

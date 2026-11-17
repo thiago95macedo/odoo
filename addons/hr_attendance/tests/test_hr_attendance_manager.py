@@ -1,9 +1,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import Command
-from odoo.exceptions import AccessError
-from odoo.tests import new_test_user
-from odoo.tests.common import TransactionCase, tagged
+from weth import Command
+from weth.exceptions import AccessError
+from weth.tests import new_test_user
+from weth.tests.common import TransactionCase, tagged
 
 
 @tagged('post_install', '-at_install')

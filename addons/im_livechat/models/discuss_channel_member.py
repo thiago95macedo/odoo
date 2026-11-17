@@ -2,9 +2,9 @@
 
 from datetime import datetime, timedelta
 
-from odoo import api, models, fields
-from odoo.fields import Domain
-from odoo.addons.mail.tools.discuss import Store
+from weth import api, models, fields
+from weth.fields import Domain
+from weth.addons.mail.tools.discuss import Store
 
 
 class DiscussChannelMember(models.Model):

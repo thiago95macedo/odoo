@@ -1,4 +1,4 @@
-import { registries } from "@odoo/o-spreadsheet";
+import { registries } from "@weth/o-spreadsheet";
 import { OdooEvaluationPlugin } from "@spreadsheet/plugins";
 import { toServerDateString } from "@spreadsheet/helpers/helpers";
 import { computeFormatFromCurrency } from "../helpers";

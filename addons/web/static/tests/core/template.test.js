@@ -1,5 +1,5 @@
-import { after, expect, test } from "@odoo/hoot";
-import { Component, signal, xml } from "@odoo/owl";
+import { after, expect, test } from "@weth/hoot";
+import { Component, signal, xml } from "@weth/owl";
 import { mountWithCleanup, patchTranslations } from "@web/../tests/web_test_helpers";
 import { registerTemplate, registerTemplateExtension, setUrlFilters } from "@web/core/templates";
 

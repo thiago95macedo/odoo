@@ -10,14 +10,14 @@ import requests
 
 from PIL import Image
 
-from odoo.exceptions import ValidationError
-from odoo.fields import Command
-from odoo.tests import HttpCase, tagged
-from odoo.tools import BinaryBytes, mute_logger
+from weth.exceptions import ValidationError
+from weth.fields import Command
+from weth.tests import HttpCase, tagged
+from weth.tools import BinaryBytes, mute_logger
 
-from odoo.addons.http_routing.tests.common import MockRequest
-from odoo.addons.website.tests.common import HttpCaseWithWebsiteUser
-from odoo.addons.website_sale.controllers.main import WebsiteSale
+from weth.addons.http_routing.tests.common import MockRequest
+from weth.addons.website.tests.common import HttpCaseWithWebsiteUser
+from weth.addons.website_sale.controllers.main import WebsiteSale
 
 _logger = logging.getLogger(__name__)
 
@@ -237,7 +237,7 @@ class TestProductPictureController(HttpCase):
             self.env["product.image"].invalidate_model()
             self.assertListEqual(self._get_product_image_data(), [i1, i2, i3, i4, i5, i6])
 
-    @mute_logger("odoo.addons.html_editor.models.ir_qweb_fields")
+    @mute_logger("weth.addons.html_editor.models.ir_qweb_fields")
     def test_extra_images_from_remote_urls(self):
         url_attachments = self.env["ir.attachment"].create([
             {"name": "image.png", "public": True, "url": url}

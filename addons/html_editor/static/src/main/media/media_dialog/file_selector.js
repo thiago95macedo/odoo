@@ -8,7 +8,7 @@ import { KeepLast } from "@web/core/utils/concurrency";
 import { user } from "@web/core/user";
 import { useDebounced } from "@web/core/utils/timing";
 import { SearchMedia } from "./search_media";
-import { Component, onWillStart, proxy, signal, t, useListener, useProps, xml } from "@odoo/owl";
+import { Component, onWillStart, proxy, signal, t, useListener, useProps, xml } from "@weth/owl";
 
 export const IMAGE_MIMETYPES = [
     "image/jpg",
@@ -109,7 +109,7 @@ export class Attachment extends Component {
             body: _t("Are you sure you want to delete this file?"),
             confirmLabel: _t("Delete"),
             confirmClass: "btn-danger",
-            cancel: () => {},
+            cancel: () => { },
             confirm: async () => {
                 const prevented = await rpc("/html_editor/attachment/remove", {
                     ids: [this.props.id],

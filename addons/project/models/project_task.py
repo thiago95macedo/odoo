@@ -6,14 +6,14 @@ from collections import defaultdict
 from datetime import timedelta, datetime, time, UTC
 from random import shuffle
 
-from odoo import api, fields, models, tools, SUPERUSER_ID, _
-from odoo.fields import Command, Date, Domain
-from odoo.addons.rating.models import rating_data
-from odoo.addons.html_editor.tools import handle_history_divergence
-from odoo.exceptions import UserError, ValidationError, AccessError
-from odoo.tools import format_list, SQL, LazyTranslate
-from odoo.addons.project.controllers.project_sharing_chatter import ProjectSharingChatter
-from odoo.addons.mail.tools.discuss import Store
+from weth import api, fields, models, tools, SUPERUSER_ID, _
+from weth.fields import Command, Date, Domain
+from weth.addons.rating.models import rating_data
+from weth.addons.html_editor.tools import handle_history_divergence
+from weth.exceptions import UserError, ValidationError, AccessError
+from weth.tools import format_list, SQL, LazyTranslate
+from weth.addons.project.controllers.project_sharing_chatter import ProjectSharingChatter
+from weth.addons.mail.tools.discuss import Store
 
 _lt = LazyTranslate(__name__)
 
@@ -2162,12 +2162,12 @@ class ProjectTask(models.Model):
             if self.project_id:
                 return {
                     'type': 'ir.actions.act_url',
-                    'url': f'/odoo/project/{self.project_id.id}/tasks/{self.id}',
+                    'url': f'/weth/project/{self.project_id.id}/tasks/{self.id}',
                     'target': 'self',
                 }
             return {
                 "type": "ir.actions.act_url",
-                "url": f'/odoo/all-tasks/{self.id}',
+                "url": f'/weth/all-tasks/{self.id}',
                 "target": "self",
             }
         if (
@@ -2241,7 +2241,7 @@ class ProjectTask(models.Model):
         menu_id = self.env.ref('project.menu_project_management_all_tasks').id
         return {
             'type': 'ir.actions.act_url',
-            'url': f"/odoo/{self.project_id.id}/action-project.act_project_project_2_project_task_all/{self.id}?menu_id={menu_id}",
+            'url': f"/weth/{self.project_id.id}/action-project.act_project_project_2_project_task_all/{self.id}?menu_id={menu_id}",
             'target': 'new',
         }
 

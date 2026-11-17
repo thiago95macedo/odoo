@@ -1,5 +1,5 @@
-from odoo.addons.website_slides.tests.common import SlidesCase
-from odoo.tests import tagged
+from weth.addons.website_slides.tests.common import SlidesCase
+from weth.tests import tagged
 
 
 class TestSlidesMail(SlidesCase):

@@ -1,5 +1,5 @@
 import { AvatarTag, avatarTagProps } from "@web/core/tags_list/avatar_tag";
-import { t, useProps } from "@odoo/owl";
+import { t, useProps } from "@weth/owl";
 import { ConnectionLostError } from "@web/core/network/rpc";
 import {
     Many2ManyTagsAvatarUserField,

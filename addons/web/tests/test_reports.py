@@ -2,19 +2,19 @@ import io
 import tempfile
 from unittest.mock import Mock, patch
 
-import odoo.tests
-from odoo.exceptions import UserError
-from odoo.http.session import session_store
-from odoo.tests import no_retry, tagged
-from odoo.tools import mute_logger
-from odoo.tools.pdf import PdfReader
+import weth.tests
+from weth.exceptions import UserError
+from weth.http.session import session_store
+from weth.tests import no_retry, tagged
+from weth.tools import mute_logger
+from weth.tools.pdf import PdfReader
 
-from odoo.addons.base.tests.files import PNG_RAW
-from odoo.addons.http_routing.tests.common import MockRequest
+from weth.addons.base.tests.files import PNG_RAW
+from weth.addons.http_routing.tests.common import MockRequest
 
 
 @tagged('at_install', '-post_install')  # LEGACY at_install
-class TestReports(odoo.tests.HttpCase):
+class TestReports(weth.tests.HttpCase):
     def test_report_session_cookie(self):
         """ Asserts wkhtmltopdf forwards the user session when requesting resources to Odoo, such as images,
         and that the resource is correctly returned as expected.
@@ -141,7 +141,7 @@ class TestReports(odoo.tests.HttpCase):
             "the font loaded, but its ligatures were not applied",
         )
 
-    @mute_logger('odoo.addons.base_report_wkhtmltox.models.ir_actions_report')
+    @mute_logger('weth.addons.base_report_wkhtmltox.models.ir_actions_report')
     @no_retry
     def test_report_error_cleanup(self):
         admin = self.env.ref('base.user_admin')

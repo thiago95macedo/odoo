@@ -3,8 +3,8 @@
 
 import logging
 
-from odoo.tests import HttpCase, tagged
-from odoo.addons.hr.tests.test_utils import get_admin_employee
+from weth.tests import HttpCase, tagged
+from weth.addons.hr.tests.test_utils import get_admin_employee
 
 _logger = logging.getLogger(__name__)
 

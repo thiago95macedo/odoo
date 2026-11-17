@@ -1,20 +1,20 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-import odoo.tests
-from odoo import Command
-from odoo.addons.pos_online_payment.tests.online_payment_common import OnlinePaymentCommon
-from odoo.addons.pos_restaurant.tests.test_frontend import TestFrontendCommon
-from odoo.addons.pos_self_order.tests.self_order_common_test import SelfOrderCommonTest
+import weth.tests
+from weth import Command
+from weth.addons.pos_online_payment.tests.online_payment_common import OnlinePaymentCommon
+from weth.addons.pos_restaurant.tests.test_frontend import TestFrontendCommon
+from weth.addons.pos_self_order.tests.self_order_common_test import SelfOrderCommonTest
 from unittest.mock import patch
-from odoo.addons.http_routing.models import ir_http
-from odoo.addons.pos_online_payment.controllers.payment_portal import PaymentPortal
+from weth.addons.http_routing.models import ir_http
+from weth.addons.pos_online_payment.controllers.payment_portal import PaymentPortal
 
-@odoo.tests.tagged("post_install", "-at_install")
+@weth.tests.tagged("post_install", "-at_install")
 class TestSelfOrderFrontendMobile(SelfOrderCommonTest):
     pass
 
-@odoo.tests.tagged("post_install", "-at_install")
+@weth.tests.tagged("post_install", "-at_install")
 class TestUi(TestFrontendCommon, OnlinePaymentCommon):
     _test_user_groups = None  # FIXME list needed groups
 

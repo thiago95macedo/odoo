@@ -5,10 +5,10 @@ import json
 from contextlib import contextmanager
 from unittest.mock import patch
 
-from odoo.addons.mail.tests.common import mail_new_test_user
-from odoo.http import request
-from odoo.tests.common import HttpCase
-from odoo import SUPERUSER_ID
+from weth.addons.mail.tests.common import mail_new_test_user
+from weth.http import request
+from weth.tests.common import HttpCase
+from weth import SUPERUSER_ID
 
 
 @contextmanager
@@ -23,7 +23,7 @@ def mock_auth_method_outlook(login):
         request.update_env(user=request.env['res.users'].with_user(SUPERUSER_ID).search([('login', '=', login)], limit=1))
 
     with patch(
-            'odoo.addons.mail_plugin.models.ir_http.IrHttp'
+            'weth.addons.mail_plugin.models.ir_http.IrHttp'
             '._auth_method_outlook',
             new=patched_auth_method_outlook):
         yield

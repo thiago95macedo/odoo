@@ -76,7 +76,7 @@ export function changeOption(
     const noPalette = allowPalette
         ? ""
         : !document.querySelector(".o_popover .o_font_color_selector") &&
-          ".o-tab-content > [role='tabpanel']";
+        ".o-tab-content > [role='tabpanel']";
     const option_block = `${noPalette} [data-container-title='${blockName}']`;
     return {
         trigger: `${option_block} ${actionId}, ${option_block} [data-action-id="${actionId}"]`,
@@ -420,7 +420,7 @@ export function unfoldOptionsGroup(name) {
 }
 
 export function getClientActionUrl(path, edition) {
-    let url = `/odoo/action-website.website_preview`;
+    let url = `/weth/action-website.website_preview`;
     if (path) {
         url += `?path=${encodeURIComponent(path)}`;
     }
@@ -517,7 +517,7 @@ export function registerBackendAndFrontendTour(name, options, steps) {
     if (typeof steps !== "function") {
         throw new Error(`tour.steps has to be a function that returns TourStep[]`);
     }
-    if (window.location.pathname === "/odoo") {
+    if (window.location.pathname === "/weth") {
         return registerWebsitePreviewTour(name, options, () => {
             const newSteps = [];
             for (const step of steps()) {
@@ -655,8 +655,7 @@ export function openLinkPopup({
     remove = false,
 } = {}) {
     const linkPopoverTrigger = (label, url) =>
-        `.o-we-linkpopover .o_we_link_preview:has(.o_we_url_link${
-            label ? `:contains(${label})` : ""
+        `.o-we-linkpopover .o_we_link_preview:has(.o_we_url_link${label ? `:contains(${label})` : ""
         }[href='${url}'])`;
     const steps = [
         {

@@ -1,6 +1,6 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.tools import frozendict
+from weth.tools import frozendict
 from types import MappingProxyType
 
 # Routes for ECPay redirection and webhook.

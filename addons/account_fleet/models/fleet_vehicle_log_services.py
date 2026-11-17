@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import Command, _, api, fields, models
-from odoo.exceptions import UserError
+from weth import Command, _, api, fields, models
+from weth.exceptions import UserError
 
 
 class FleetVehicleLogServices(models.Model):

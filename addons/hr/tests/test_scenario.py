@@ -1,6 +1,6 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.tests.common import tagged, TransactionCase
+from weth.tests.common import tagged, TransactionCase
 
 
 class TestHrScenario(TransactionCase):

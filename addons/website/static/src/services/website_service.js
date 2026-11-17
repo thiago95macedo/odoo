@@ -6,7 +6,7 @@ import { isVisible } from "@web/core/utils/ui";
 
 import { FullscreenIndication } from "../components/fullscreen_indication/fullscreen_indication";
 import { WebsiteLoader } from "../components/website_loader/website_loader";
-import { EventBus, proxy } from "@odoo/owl";
+import { EventBus, proxy } from "@weth/owl";
 
 const websiteSystrayRegistry = registry.category("website_systray");
 
@@ -402,7 +402,7 @@ export const websiteService = {
                         // Precaution in case the util is simply removed without
                         // adapting this method: not critical, we can restore
                         // later and use the fallback until the fix is made.
-                        .catch(() => {});
+                        .catch(() => { });
                 }
                 await modelNamesProm;
                 return modelNames[model] || _t("Data");

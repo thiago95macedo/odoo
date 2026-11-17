@@ -2,9 +2,9 @@
 
 from datetime import datetime
 
-from odoo import Command
-from odoo.tests import new_test_user, tagged
-from odoo.tests.common import HttpCase, TransactionCase
+from weth import Command
+from weth.tests import new_test_user, tagged
+from weth.tests.common import HttpCase, TransactionCase
 
 
 class HrHolidaysOvertimeCommon(TransactionCase):

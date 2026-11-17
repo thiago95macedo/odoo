@@ -1,5 +1,5 @@
-import { expect, test } from "@odoo/hoot";
-import { Component, xml } from "@odoo/owl";
+import { expect, test } from "@weth/hoot";
+import { Component, xml } from "@weth/owl";
 import { patchWithCleanup } from "@web/../tests/web_test_helpers";
 
 import { registry } from "@web/core/registry";

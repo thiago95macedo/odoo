@@ -1,6 +1,6 @@
-import { expect, test } from "@odoo/hoot";
-import { check, queryFirst, uncheck } from "@odoo/hoot-dom";
-import { Component, xml, proxy } from "@odoo/owl";
+import { expect, test } from "@weth/hoot";
+import { check, queryFirst, uncheck } from "@weth/hoot-dom";
+import { Component, xml, proxy } from "@weth/owl";
 import { contains, defineParams, mountWithCleanup } from "@web/../tests/web_test_helpers";
 
 import { CheckBox } from "@web/core/checkbox/checkbox";

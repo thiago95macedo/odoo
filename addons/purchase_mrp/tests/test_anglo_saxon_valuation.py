@@ -1,8 +1,8 @@
-from odoo.exceptions import UserError
-from odoo.fields import Command, Date
-from odoo.tools import float_is_zero, mute_logger
-from odoo.tests import Form, tagged
-from odoo.addons.stock_account.tests.common import TestStockValuationCommon
+from weth.exceptions import UserError
+from weth.fields import Command, Date
+from weth.tools import float_is_zero, mute_logger
+from weth.tests import Form, tagged
+from weth.addons.stock_account.tests.common import TestStockValuationCommon
 
 
 @tagged('post_install', '-at_install')
@@ -149,7 +149,7 @@ class TestAngloSaxonValuationPurchaseMRP(TestStockValuationCommon):
         self.assertEqual(delivery.move_ids.filtered(lambda m: m.product_id == component01).value, -25)
         self.assertEqual(delivery.move_ids.filtered(lambda m: m.product_id == component02).value, -75)
 
-        with mute_logger('odoo.tests.form.onchange'):
+        with mute_logger('weth.tests.form.onchange'):
             with Form(bom_kit) as kit_form:
                 with kit_form.bom_line_ids.edit(0) as line:
                     line.cost_share = 30
@@ -566,7 +566,7 @@ class TestAngloSaxonValuationPurchaseMRP(TestStockValuationCommon):
 
         move_form = Form(self.env['account.move'].with_context(default_move_type='in_invoice'))
         move_form.partner_id = purchase_orders[0].partner_id
-        with mute_logger('odoo.tests.form.onchange'):  # Mute "x PO lines added to the bill" notification
+        with mute_logger('weth.tests.form.onchange'):  # Mute "x PO lines added to the bill" notification
             move_form.purchase_vendor_bill_id = self.env['purchase.bill.union'].browse(-purchase_orders[0].id)
         move_form.invoice_date = Date.today()
         move = move_form.save()

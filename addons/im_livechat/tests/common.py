@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import Command, fields
-from odoo.tests.common import HttpCase, new_test_user
-from odoo.addons.bus.tests.common import BusCase
+from weth import Command, fields
+from weth.tests.common import HttpCase, new_test_user
+from weth.addons.bus.tests.common import BusCase
 
 
 class TestImLivechatCommon(HttpCase, BusCase):

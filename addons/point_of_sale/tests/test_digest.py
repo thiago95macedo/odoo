@@ -1,10 +1,10 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.point_of_sale.tests.common import CommonPosTest
+from weth.addons.point_of_sale.tests.common import CommonPosTest
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
-from odoo.tools import mute_logger
-from odoo.tests import tagged
+from weth.tools import mute_logger
+from weth.tests import tagged
 
 
 @tagged('post_install', '-at_install')
@@ -13,7 +13,7 @@ class TestAccountDigest(CommonPosTest):
     _test_user_groups = None  # FIXME list needed groups
 
     @classmethod
-    @mute_logger('odoo.models.unlink')
+    @mute_logger('weth.models.unlink')
     def setUpClass(cls):
         super().setUpClass()
         context = {

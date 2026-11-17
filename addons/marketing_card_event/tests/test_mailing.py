@@ -1,8 +1,8 @@
 import lxml.html
 
-from odoo.tests import Form, users
+from weth.tests import Form, users
 
-from odoo.addons.marketing_card.tests.common import MarketingCardCommon
+from weth.addons.marketing_card.tests.common import MarketingCardCommon
 
 
 class TestMarketingCardEventMailing(MarketingCardCommon):

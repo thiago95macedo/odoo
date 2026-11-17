@@ -1,15 +1,15 @@
 import base64
 import math
 
-from odoo import http
-from odoo.addons.google_address_autocomplete.controllers.google_address_autocomplete import AutoCompleteController
-from odoo.fields import Domain
-from odoo.http import request
-from odoo.http.stream import content_disposition
-from odoo.service.model import call_kw
+from weth import http
+from weth.addons.google_address_autocomplete.controllers.google_address_autocomplete import AutoCompleteController
+from weth.fields import Domain
+from weth.http import request
+from weth.http.stream import content_disposition
+from weth.service.model import call_kw
 from werkzeug.exceptions import Forbidden, NotFound, BadRequest, Unauthorized
-from odoo.exceptions import MissingError, UserError
-from odoo.tools import consteq
+from weth.exceptions import MissingError, UserError
+from weth.tools import consteq
 
 
 def _haversine_distance(lat1, long1, lat2, long2):

@@ -1,8 +1,8 @@
-import { expect, test } from "@odoo/hoot";
+import { expect, test } from "@weth/hoot";
 import { setupEditor } from "../_helpers/editor";
 import { unformat } from "../_helpers/format";
 import { expectElementCount } from "../_helpers/ui_expectations";
-import { hover, manuallyDispatchProgrammaticEvent, waitFor } from "@odoo/hoot-dom";
+import { hover, manuallyDispatchProgrammaticEvent, waitFor } from "@weth/hoot-dom";
 import { getContent } from "../_helpers/selection";
 import { redo, undo } from "../_helpers/user_actions";
 import { delay } from "@web/core/utils/concurrency";

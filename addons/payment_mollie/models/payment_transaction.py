@@ -1,14 +1,14 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, models
-from odoo.exceptions import ValidationError
-from odoo.tools import urls
+from weth import api, models
+from weth.exceptions import ValidationError
+from weth.tools import urls
 
-from odoo.addons.payment import utils as payment_utils
-from odoo.addons.payment.const import CURRENCY_MINOR_UNITS
-from odoo.addons.payment.logging import get_payment_logger
-from odoo.addons.payment_mollie import const
-from odoo.addons.payment_mollie.controllers.main import MollieController
+from weth.addons.payment import utils as payment_utils
+from weth.addons.payment.const import CURRENCY_MINOR_UNITS
+from weth.addons.payment.logging import get_payment_logger
+from weth.addons.payment_mollie import const
+from weth.addons.payment_mollie.controllers.main import MollieController
 
 _logger = get_payment_logger(__name__)
 

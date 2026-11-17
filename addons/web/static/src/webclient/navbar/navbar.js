@@ -9,7 +9,7 @@ import {
     useListener,
     usePlugin,
     useScope,
-} from "@odoo/owl";
+} from "@weth/owl";
 import { DebugModePlugin } from "@web/core/debug_mode_plugin";
 import { Dropdown } from "@web/core/dropdown/dropdown";
 import { DropdownGroup } from "@web/core/dropdown/dropdown_group";
@@ -28,7 +28,7 @@ const getBoundingClientRect = Element.prototype.getBoundingClientRect;
 
 const SWIPE_ACTIVATION_THRESHOLD = 100;
 
-export class MenuDropdown extends Dropdown {}
+export class MenuDropdown extends Dropdown { }
 
 export class NavBar extends Component {
     static template = "web.NavBar";
@@ -137,7 +137,7 @@ export class NavBar extends Component {
 
     // This dummy setter is only here to prevent conflicts between the
     // Enterprise NavBar extension and the Website NavBar patch.
-    set currentAppSections(_) {}
+    set currentAppSections(_) { }
 
     get isScopedApp() {
         return this.pwa.isScopedApp;
@@ -155,7 +155,7 @@ export class NavBar extends Component {
 
     // This dummy setter is only here to prevent conflicts between the
     // Enterprise NavBar extension and the Website NavBar patch.
-    set systrayItems(_) {}
+    set systrayItems(_) { }
 
     /**
      * Adapt will check the available width for the app sections to get displayed.
@@ -254,7 +254,7 @@ export class NavBar extends Component {
     }
 
     getMenuItemHref(payload) {
-        const url = `/odoo/${payload.actionPath || "action-" + payload.actionID}`;
+        const url = `/weth/${payload.actionPath || "action-" + payload.actionID}`;
         const mode = this.debugMode.toString();
         if (mode) {
             return `${url}?debug=${mode}`;

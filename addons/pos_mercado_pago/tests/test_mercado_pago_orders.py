@@ -1,9 +1,9 @@
 from unittest.mock import patch
 
-from odoo.tests import TransactionCase, tagged
+from weth.tests import TransactionCase, tagged
 
-from odoo.addons.pos_mercado_pago.models.mercado_pago_pos_request import MercadoPagoPosRequest
-from odoo.addons.pos_mercado_pago.models.pos_payment_method import PosPaymentMethod
+from weth.addons.pos_mercado_pago.models.mercado_pago_pos_request import MercadoPagoPosRequest
+from weth.addons.pos_mercado_pago.models.pos_payment_method import PosPaymentMethod
 
 
 @tagged('post_install', '-at_install')

@@ -1,5 +1,5 @@
 import { OdooViewsDataSource } from "@spreadsheet/data_sources/odoo_views_data_source";
-import { EvaluationError } from "@odoo/o-spreadsheet";
+import { EvaluationError } from "@weth/o-spreadsheet";
 import { _t } from "@web/core/l10n/translation";
 import {
     formatDateTime,
@@ -9,7 +9,7 @@ import {
 } from "@web/core/l10n/dates";
 import { orderByToString } from "@web/search/utils/order_by";
 
-import * as spreadsheet from "@odoo/o-spreadsheet";
+import * as spreadsheet from "@weth/o-spreadsheet";
 import { LOADING_ERROR } from "@spreadsheet/data_sources/data_source";
 import { getFullFieldStringFromPath } from "../data_sources/data_source";
 

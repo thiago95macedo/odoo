@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<odoo>
+<weth>
     <record id="certificate_certificate_view_form" model="ir.ui.view">
         <field name="name">certificate.certificate.form</field>
         <field name="model">certificate.certificate</field>
@@ -63,4 +63,4 @@
             </search>
         </field>
     </record>
-</odoo>
+</weth>

@@ -3,14 +3,14 @@
 from markupsafe import Markup
 from werkzeug.exceptions import NotFound
 
-from odoo import fields, http
-from odoo.exceptions import AccessError
-from odoo.fields import Domain
-from odoo.http import request
+from weth import fields, http
+from weth.exceptions import AccessError
+from weth.fields import Domain
+from weth.http import request
 
-from odoo.addons.mail.controllers.webclient import WebclientController
-from odoo.addons.mail.tools.discuss import Store, mail_route
-from odoo.addons.mail.tools.store_handler import store_handler
+from weth.addons.mail.controllers.webclient import WebclientController
+from weth.addons.mail.tools.discuss import Store, mail_route
+from weth.addons.mail.tools.store_handler import store_handler
 
 
 class DiscussChannelWebclientController(WebclientController):

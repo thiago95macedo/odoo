@@ -1,5 +1,5 @@
 import { getEmbeddedProps } from "@html_editor/others/embedded_component_utils";
-import { Component, signal, t, useProps } from "@odoo/owl";
+import { Component, signal, t, useProps } from "@weth/owl";
 import { PLATFORMS } from "@html_editor/main/media/media_dialog/video_selector";
 import { VideoFile } from "@html_editor/main/media/video/providers/video_file";
 

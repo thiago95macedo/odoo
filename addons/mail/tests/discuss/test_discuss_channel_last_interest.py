@@ -3,8 +3,8 @@
 from datetime import timedelta
 from unittest.mock import patch
 
-from odoo import fields, tools
-from odoo.addons.mail.tests.common import MailCommon
+from weth import fields, tools
+from weth.addons.mail.tests.common import MailCommon
 
 
 class TestChannelLastInterestDt(MailCommon):

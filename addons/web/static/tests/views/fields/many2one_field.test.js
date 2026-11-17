@@ -1,4 +1,4 @@
-import { describe, expect, getFixture, test } from "@odoo/hoot";
+import { describe, expect, getFixture, test } from "@weth/hoot";
 import { OfflinePlugin } from "@web/core/offline/offline_plugin";
 import {
     click,
@@ -8,9 +8,9 @@ import {
     queryAllTexts,
     queryOne,
     scroll,
-} from "@odoo/hoot-dom";
-import { animationFrame, runAllTimers } from "@odoo/hoot-mock";
-import { Component, useProps, xml } from "@odoo/owl";
+} from "@weth/hoot-dom";
+import { animationFrame, runAllTimers } from "@weth/hoot-mock";
+import { Component, useProps, xml } from "@weth/owl";
 import {
     clickFieldDropdown,
     clickFieldDropdownItem,
@@ -214,7 +214,7 @@ test("many2ones in form views", async () => {
         doAction(params) {
             expect(params.res_id).toBe(17);
         },
-        loadState() {},
+        loadState() { },
     });
 
     Partner._views = {
@@ -1175,8 +1175,8 @@ test("many2one in non edit mode (with value)", async () => {
     });
 
     expect("a.o_form_uri").toHaveCount(2);
-    expect("div[name=res_trululu] a.o_form_uri").toHaveAttribute("href", "/odoo/res.partner/1");
-    expect("div[name=trululu] a.o_form_uri").toHaveAttribute("href", "/odoo/m-partner/4");
+    expect("div[name=res_trululu] a.o_form_uri").toHaveAttribute("href", "/weth/res.partner/1");
+    expect("div[name=trululu] a.o_form_uri").toHaveAttribute("href", "/weth/m-partner/4");
 });
 
 test("many2one in non edit mode (without value)", async () => {
@@ -1777,7 +1777,7 @@ test("list in form: quick create then add a new line directly", async () => {
     // wait for the name_create to return before trying to save the line.
     expect.assertions(8);
     Partner._onChanges = {
-        trululu: () => {},
+        trululu: () => { },
     };
 
     const def = Promise.withResolvers();
@@ -3074,7 +3074,7 @@ test("pressing ENTER on a 'no_quick_create' many2one should open a M2ODialog", a
 
 test("select a value by pressing TAB on a many2one with onchange", async () => {
     Partner._onChanges = {
-        trululu: () => {},
+        trululu: () => { },
     };
 
     const def = Promise.withResolvers();
@@ -3981,7 +3981,7 @@ test("external_button opens a new tab when middle clicked or ctrl+click", async 
             }
             super.doAction(params);
         },
-        loadState() {},
+        loadState() { },
     });
     Partner._views = {
         form: '<form><field name="trululu"/></form>',
@@ -4226,7 +4226,7 @@ test("skip name search optimization", async () => {
         getDomain() {
             return [];
         }
-        update() {}
+        update() { }
     }
     await mountWithCleanup(Parent);
     onRpc("web_name_search", () => expect.step("web_name_search"));

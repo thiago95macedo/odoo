@@ -1,7 +1,7 @@
 /*global L*/
 
 import { useLayoutEffect } from "@web/owl2/utils";
-import { Component, onMounted, onWillUnmount, signal, t, useProps } from "@odoo/owl";
+import { Component, onMounted, onWillUnmount, signal, t, useProps } from "@weth/owl";
 import { renderToString } from '@web/core/utils/render';
 
 export class Map extends Component {

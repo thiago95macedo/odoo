@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import fields, models, _
-from odoo.exceptions import UserError
+from weth import fields, models, _
+from weth.exceptions import UserError
 
 
 class StockPickingToBatch(models.TransientModel):
@@ -44,7 +44,7 @@ class StockPickingToBatch(models.TransientModel):
                 'message': '%s',
                 'links': [{
                     'label': batch.name,
-                    'url': f'/odoo/action-stock.stock_picking_batch_action/{batch.id}',
+                    'url': f'/weth/action-stock.stock_picking_batch_action/{batch.id}',
                 }],
                 'sticky': False,
                 'next': {'type': 'ir.actions.act_window_close'},

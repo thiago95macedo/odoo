@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
 
     <template
         id="website_sale.s_dynamic_snippet_product_grid_template"
@@ -81,4 +81,4 @@
     <!-- Multi record snippets (coming soon...) -->
     <!-- Single record snippets (coming soon...) -->
 
-</odoo>
+</weth>

@@ -2,9 +2,9 @@
 
 from dateutil.relativedelta import relativedelta
 
-from odoo import fields, models
-from odoo.fields import Domain
-from odoo.tools import html2plaintext
+from weth import fields, models
+from weth.fields import Domain
+from weth.tools import html2plaintext
 
 
 class SurveyUser_Input(models.Model):

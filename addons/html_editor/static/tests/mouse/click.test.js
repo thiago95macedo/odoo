@@ -1,7 +1,7 @@
 import { leftPos, rightPos } from "@html_editor/utils/position";
-import { expect, test } from "@odoo/hoot";
-import { animationFrame, pointerDown, pointerUp, waitForNone } from "@odoo/hoot-dom";
-import { tick } from "@odoo/hoot-mock";
+import { expect, test } from "@weth/hoot";
+import { animationFrame, pointerDown, pointerUp, waitForNone } from "@weth/hoot-dom";
+import { tick } from "@weth/hoot-mock";
 import { setupEditor, testEditor } from "../_helpers/editor";
 import { getContent, setSelection } from "../_helpers/selection";
 import { unformat } from "../_helpers/format";

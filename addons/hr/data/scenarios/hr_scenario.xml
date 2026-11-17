@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
     <data noupdate="1">
         <!-- Department -->
         <record id="dep_rd" model="hr.department" forcecreate="1">
@@ -177,4 +177,4 @@
             <field name="employee_type_id" eval="ref('hr.contract_type_employee', raise_if_not_found=False)"/>
         </record>
     </data>
-</odoo>
+</weth>

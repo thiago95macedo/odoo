@@ -1,5 +1,5 @@
-import { describe, expect, test } from "@odoo/hoot";
-import { animationFrame, press } from "@odoo/hoot-dom";
+import { describe, expect, test } from "@weth/hoot";
+import { animationFrame, press } from "@weth/hoot-dom";
 import { patchWithCleanup } from "@web/../tests/web_test_helpers";
 import { base64Img, setupEditor, testEditor } from "./_helpers/editor";
 import { insertSpace, insertText } from "./_helpers/user_actions";
@@ -132,7 +132,7 @@ describe("inline code", () => {
                 editor.document.getSelection().anchorNode.before(document.createTextNode("a"));
 
                 /** @todo fix warnings */
-                patchWithCleanup(console, { warn: () => {} });
+                patchWithCleanup(console, { warn: () => { } });
 
                 await insertText(editor, "`");
             },
@@ -150,7 +150,7 @@ describe("inline code", () => {
                 editor.document.getSelection().anchorNode.after(document.createTextNode("d"));
 
                 /** @todo fix warnings */
-                patchWithCleanup(console, { warn: () => {} });
+                patchWithCleanup(console, { warn: () => { } });
 
                 await insertText(editor, "`");
             },
@@ -169,7 +169,7 @@ describe("inline code", () => {
                 editor.document.getSelection().anchorNode.after(document.createTextNode("e"));
 
                 /** @todo fix warnings */
-                patchWithCleanup(console, { warn: () => {} });
+                patchWithCleanup(console, { warn: () => { } });
 
                 await insertText(editor, "`");
             },
@@ -187,7 +187,7 @@ describe("inline code", () => {
                 editor.document.getSelection().anchorNode.before(document.createTextNode("`"));
 
                 /** @todo fix warnings */
-                patchWithCleanup(console, { warn: () => {} });
+                patchWithCleanup(console, { warn: () => { } });
 
                 await insertText(editor, "`");
             },
@@ -205,7 +205,7 @@ describe("inline code", () => {
                 editor.document.getSelection().anchorNode.after(document.createTextNode("`"));
 
                 /** @todo fix warnings */
-                patchWithCleanup(console, { warn: () => {} });
+                patchWithCleanup(console, { warn: () => { } });
 
                 await insertText(editor, "`");
             },

@@ -5,11 +5,11 @@ import hashlib
 import hmac
 from wsgiref.handlers import format_date_time
 
-from odoo import fields, models
-from odoo.fields import Datetime
+from weth import fields, models
+from weth.fields import Datetime
 
-from odoo.addons.payment.logging import get_payment_logger
-from odoo.addons.payment_worldline import const
+from weth.addons.payment.logging import get_payment_logger
+from weth.addons.payment_worldline import const
 
 _logger = get_payment_logger(__name__)
 

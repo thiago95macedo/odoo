@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
     <data noupdate="1">
         <!--
             Note that the default website may change and the fields listed below
@@ -18,4 +18,4 @@
             <field name="sequence" type="int">50</field>
         </record>
     </data>
-</odoo>
+</weth>

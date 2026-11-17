@@ -1,4 +1,4 @@
-import { expect, test } from "@odoo/hoot";
+import { expect, test } from "@weth/hoot";
 import {
     defineModels,
     getService,
@@ -12,7 +12,7 @@ import { rpcBus } from "@web/core/network/rpc";
 class Company extends models.Model {
     _name = "res.company";
 }
-class Notacompany extends models.Model {}
+class Notacompany extends models.Model { }
 
 defineModels([Company, Notacompany]);
 

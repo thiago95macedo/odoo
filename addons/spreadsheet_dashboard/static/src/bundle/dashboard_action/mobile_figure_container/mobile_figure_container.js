@@ -1,4 +1,4 @@
-import * as spreadsheet from "@odoo/o-spreadsheet";
+import * as spreadsheet from "@weth/o-spreadsheet";
 import {
     Component,
     onMounted,
@@ -7,7 +7,7 @@ import {
     signal,
     t,
     useProps,
-} from "@odoo/owl";
+} from "@weth/owl";
 import { render, useSubEnv } from "@web/owl2/utils";
 
 const { registries, stores, constants, helpers, owlPlugins } = spreadsheet;
@@ -50,7 +50,7 @@ export class MobileFigureContainer extends Component {
         useSubEnv({
             model: this.props.spreadsheetModel,
             isDashboard: () => this.props.spreadsheetModel.getters.isDashboard(),
-            openSidePanel: () => {},
+            openSidePanel: () => { },
             isMobile: isMobileOS,
         });
     }

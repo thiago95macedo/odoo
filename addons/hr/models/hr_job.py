@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, fields, models
-from odoo.addons.html_editor.tools import handle_history_divergence
+from weth import api, fields, models
+from weth.addons.html_editor.tools import handle_history_divergence
 
 
 class HrJob(models.Model):

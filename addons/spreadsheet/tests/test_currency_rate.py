@@ -1,7 +1,7 @@
 from freezegun import freeze_time
 
-from odoo import fields
-from odoo.tests.common import TransactionCase
+from weth import fields
+from weth.tests.common import TransactionCase
 
 CURRENT_USD = 1.5
 CURRENT_EUR = 1

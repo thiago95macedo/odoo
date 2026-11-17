@@ -1,8 +1,8 @@
 from datetime import datetime
 
-from odoo.tests import tagged
+from weth.tests import tagged
 
-from odoo.addons.hr_holidays.tests.common import TestHrHolidaysCommon
+from weth.addons.hr_holidays.tests.common import TestHrHolidaysCommon
 
 
 class TestDashboard(TestHrHolidaysCommon):

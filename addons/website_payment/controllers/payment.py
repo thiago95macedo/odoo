@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.http import route
+from weth.http import route
 
-from odoo.addons.account_payment.controllers import payment as account_payment
+from weth.addons.account_payment.controllers import payment as account_payment
 
 
 class PaymentPortal(account_payment.PaymentPortal):

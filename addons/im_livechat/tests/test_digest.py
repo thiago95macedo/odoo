@@ -2,17 +2,17 @@
 
 import datetime
 
-from odoo import fields
-from odoo.tests.common import new_test_user
-from odoo.tools import mute_logger
+from weth import fields
+from weth.tests.common import new_test_user
+from weth.tools import mute_logger
 
-from odoo.addons.digest.tests.common import TestDigestCommon
+from weth.addons.digest.tests.common import TestDigestCommon
 
 
 class TestLiveChatDigest(TestDigestCommon):
 
     @classmethod
-    @mute_logger('odoo.models.unlink')
+    @mute_logger('weth.models.unlink')
     def setUpClass(cls):
         super().setUpClass()
         other_user = new_test_user(cls.env, "Other User")

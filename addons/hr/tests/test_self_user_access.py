@@ -5,10 +5,10 @@ from collections import OrderedDict
 from itertools import chain
 from lxml import etree
 
-from odoo import Command
-from odoo.addons.hr.tests.common import TestHrCommon
-from odoo.tests import new_test_user, tagged, Form
-from odoo.exceptions import AccessError
+from weth import Command
+from weth.addons.hr.tests.common import TestHrCommon
+from weth.tests import new_test_user, tagged, Form
+from weth.exceptions import AccessError
 
 @tagged('post_install', '-at_install')
 class TestSelfAccessPreferences(TestHrCommon):

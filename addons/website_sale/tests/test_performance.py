@@ -2,12 +2,12 @@
 
 from collections import defaultdict
 
-from odoo.fields import Command
-from odoo.tests.common import warmup
+from weth.fields import Command
+from weth.tests.common import warmup
 
-from odoo.addons.product.tests.common import ProductVariantsCommon
-from odoo.addons.website.tests.test_performance import UtilPerf
-from odoo.addons.website_sale.tests.common import WebsiteSaleCommon
+from weth.addons.product.tests.common import ProductVariantsCommon
+from weth.addons.website.tests.test_performance import UtilPerf
+from weth.addons.website_sale.tests.common import WebsiteSaleCommon
 
 
 class TestWebsiteSalePerformanceNoPricelist(WebsiteSaleCommon, UtilPerf, ProductVariantsCommon):

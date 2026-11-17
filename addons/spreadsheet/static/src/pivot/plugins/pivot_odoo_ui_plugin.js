@@ -1,5 +1,5 @@
 import { OdooUIPlugin } from "@spreadsheet/plugins";
-import { helpers } from "@odoo/o-spreadsheet";
+import { helpers } from "@weth/o-spreadsheet";
 
 const { UNDO_REDO_PIVOT_COMMANDS } = helpers;
 UNDO_REDO_PIVOT_COMMANDS.push("UPDATE_ODOO_PIVOT_DOMAIN");

@@ -1,9 +1,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import fields, models, tools
-from odoo.tools import SQL
+from weth import fields, models, tools
+from weth.tools import SQL
 
-from odoo.addons.rating.models.rating_data import RATING_LIMIT_MIN
+from weth.addons.rating.models.rating_data import RATING_LIMIT_MIN
 
 
 class ReportProjectTaskUser(models.Model):

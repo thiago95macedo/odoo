@@ -1,4 +1,4 @@
-from odoo import api, fields, models
+from weth import api, fields, models
 
 CACHE_INVALIDATE_FIELDS = ("lock_timeout", "lock_timeout_mfa", "lock_timeout_inactivity", "lock_timeout_inactivity_mfa")
 
@@ -216,7 +216,7 @@ class ResGroups(models.Model):
             ("lock_timeout_inactivity", "lock_timeout_inactivity_mfa"),
         ]:
             # `with_context({})` because
-            # - Same reasons than https://github.com/odoo/odoo/commit/7a0255665714f2c0129d04d4a3f14a3137c159f1
+            # - Same reasons than https://github.com/weth/odoo/commit/7a0255665714f2c0129d04d4a3f14a3137c159f1
             # - As this method is decorated with `@ormcache('self._ids')`, it cannot depend on the context
             values = [(g[key], g[mfa_key]) for g in self.with_context({}).all_implied_ids if g[key]]
             min_non_mfa = min((timeout for timeout, mfa in values if not mfa), default=None)

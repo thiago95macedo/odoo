@@ -1,4 +1,4 @@
-<odoo>
+<weth>
   <record id="act_report_xml_view_printer" model="ir.ui.view">
     <field name="name">ir.actions.report.printer</field>
     <field name="model">ir.actions.report</field>
@@ -12,4 +12,4 @@
       </field>
     </field>
   </record>
-</odoo>
+</weth>

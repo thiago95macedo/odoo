@@ -13,7 +13,7 @@ import {
     untrack,
     useOnChange,
     useProps,
-} from "@odoo/owl";
+} from "@weth/owl";
 
 function formatMinutes(value) {
     if (value === false) {

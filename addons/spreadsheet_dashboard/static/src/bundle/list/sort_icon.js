@@ -1,4 +1,4 @@
-import { registries, constants, getCaretUpSvg, getCaretDownSvg } from "@odoo/o-spreadsheet";
+import { registries, constants, getCaretUpSvg, getCaretDownSvg } from "@weth/o-spreadsheet";
 
 const { iconsOnCellRegistry } = registries;
 const { GRID_ICON_EDGE_LENGTH, GRID_ICON_MARGIN } = constants;

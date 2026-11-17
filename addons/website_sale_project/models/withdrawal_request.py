@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import fields, models
+from weth import fields, models
 
-from odoo.addons.base.models.ir_qweb_fields import nl2br_enclose
+from weth.addons.base.models.ir_qweb_fields import nl2br_enclose
 
 
 class WithdrawalRequest(models.Model):

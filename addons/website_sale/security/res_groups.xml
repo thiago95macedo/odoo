@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo noupdate="1">
+<weth noupdate="1">
 
     <!-- Feature groups -->
     <record id="group_product_price_comparison" model="res.groups">
@@ -31,4 +31,4 @@
         ]"/>
     </record>
 
-</odoo>
+</weth>

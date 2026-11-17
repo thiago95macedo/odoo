@@ -1,6 +1,6 @@
 import { ActionHelper } from "@web/views/action_helper";
 import { user } from "@web/core/user";
-import { Component, onWillStart, proxy, t, useProps } from "@odoo/owl";
+import { Component, onWillStart, proxy, t, useProps } from "@weth/owl";
 import { _t } from "@web/core/l10n/translation";
 import { useService } from "@web/core/utils/hooks";
 

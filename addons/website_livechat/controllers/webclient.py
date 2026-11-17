@@ -1,8 +1,8 @@
-from odoo import Command
-from odoo.http import request
+from weth import Command
+from weth.http import request
 
-from odoo.addons.mail.controllers.webclient import WebclientController
-from odoo.addons.mail.tools.discuss import Store
+from weth.addons.mail.controllers.webclient import WebclientController
+from weth.addons.mail.tools.discuss import Store
 
 
 class WebClient(WebclientController):

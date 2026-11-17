@@ -26,7 +26,7 @@ import {
     tick,
     waitFor,
     waitForNone,
-} from "@odoo/hoot";
+} from "@weth/hoot";
 import {
     contains,
     defineModels,
@@ -2097,7 +2097,7 @@ describe("toolbar open and close on user interaction", () => {
             const { el } = await setupEditor("<p>[test]</p>");
 
             /** @todo fix warnings */
-            patchWithCleanup(console, { warn: () => {} });
+            patchWithCleanup(console, { warn: () => { } });
 
             await waitFor(".o-we-toolbar");
 

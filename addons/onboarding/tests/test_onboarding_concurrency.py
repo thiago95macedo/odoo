@@ -6,10 +6,10 @@ from concurrent.futures import ThreadPoolExecutor
 
 import psycopg2.errors
 
-from odoo import api
-from odoo.modules.registry import Registry
-from odoo.tests.common import get_db_name, tagged, BaseCase
-from odoo.tools import mute_logger
+from weth import api
+from weth.modules.registry import Registry
+from weth.tests.common import get_db_name, tagged, BaseCase
+from weth.tools import mute_logger
 
 
 @tagged('-standard', '-at_install', 'post_install')
@@ -40,7 +40,7 @@ class TestOnboardingConcurrency(BaseCase):
                 ('onboarding_id', '=', cls.onboarding_id)
             ]).unlink()
 
-    @mute_logger('odoo.sql_db')
+    @mute_logger('weth.sql_db')
     def test_concurrent_create_progress(self):
         barrier = threading.Barrier(2)
 

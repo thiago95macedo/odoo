@@ -7,20 +7,20 @@ import re
 from werkzeug import urls
 from werkzeug.exceptions import Forbidden
 
-from odoo import SUPERUSER_ID, _, http
-from odoo.exceptions import (
+from weth import SUPERUSER_ID, _, http
+from weth.exceptions import (
     AccessDenied,
     AccessError,
     MissingError,
     UserError,
     ValidationError,
 )
-from odoo.http import Controller, request, route
-from odoo.http.session import logout
-from odoo.http.stream import content_disposition
-from odoo.tools import clean_context, consteq, single_email_re, str2bool
-from odoo.tools.partner_identifiers import validation_error_message
-from odoo.tools.translate import LazyTranslate
+from weth.http import Controller, request, route
+from weth.http.session import logout
+from weth.http.stream import content_disposition
+from weth.tools import clean_context, consteq, single_email_re, str2bool
+from weth.tools.partner_identifiers import validation_error_message
+from weth.tools.translate import LazyTranslate
 
 _lt = LazyTranslate(__name__)
 

@@ -1,4 +1,4 @@
-import { Component, signal, t, useProps, xml, proxy } from "@odoo/owl";
+import { Component, signal, t, useProps, xml, proxy } from "@weth/owl";
 import { browser } from "@web/core/browser/browser";
 
 export class DocErrorDialog extends Component {

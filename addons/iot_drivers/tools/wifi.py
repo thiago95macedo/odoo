@@ -160,7 +160,7 @@ def reconnect(ssid=None, password=None, force_update=False):
     :return: True if reconnected successfully
     """
     if not force_update:
-        timer = time.time() + 10  # Required on boot: wait 10 sec (see: https://github.com/odoo/odoo/pull/187862)
+        timer = time.time() + 10  # Required on boot: wait 10 sec (see: https://github.com/weth/odoo/pull/187862)
         while time.time() < timer:
             if system.get_ip():
                 if is_access_point():

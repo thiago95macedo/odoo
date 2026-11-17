@@ -1,4 +1,4 @@
-import { Component, computed, onMounted, onPatched, proxy, signal, t, useProps } from "@odoo/owl";
+import { Component, computed, onMounted, onPatched, proxy, signal, t, useProps } from "@weth/owl";
 import { hasTouch } from "@web/core/browser/feature_detection";
 import { Dropdown } from "@web/core/dropdown/dropdown";
 import { useDropdownState } from "@web/core/dropdown/dropdown_hooks";
@@ -71,10 +71,10 @@ export const selectMenuProps = {
     value: t.any().optional(),
     multiSelect: t.boolean().optional(false),
     onInput: t.function().optional(),
-    onSelect: t.function().optional(() => () => {}),
-    onNavigated: t.function().optional(() => () => {}),
-    onOpened: t.function().optional(() => () => {}),
-    onClosed: t.function().optional(() => () => {}),
+    onSelect: t.function().optional(() => () => { }),
+    onNavigated: t.function().optional(() => () => { }),
+    onOpened: t.function().optional(() => () => { }),
+    onClosed: t.function().optional(() => () => { }),
     slots: t.object().optional(),
     disabled: t.boolean().optional(false),
     fillSearchWithSelection: t.boolean().optional(true),
@@ -455,10 +455,10 @@ export class SelectMenu extends Component {
                     enabled: choice.enabled ?? true,
                     label: choice.label
                         ? highlightText(
-                              searchString,
-                              odoomark(choice.label),
-                              "o_filtered_text fw-bold"
-                          )
+                            searchString,
+                            odoomark(choice.label),
+                            "o_filtered_text fw-bold"
+                        )
                         : choice.value,
                     value: choice.value,
                 }))

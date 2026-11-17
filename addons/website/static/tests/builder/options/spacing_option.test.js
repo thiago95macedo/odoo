@@ -1,5 +1,5 @@
-import { expect, test } from "@odoo/hoot";
-import { edit, manuallyDispatchProgrammaticEvent, queryOne } from "@odoo/hoot-dom";
+import { expect, test } from "@weth/hoot";
+import { edit, manuallyDispatchProgrammaticEvent, queryOne } from "@weth/hoot-dom";
 import { contains, onRpc } from "@web/../tests/web_test_helpers";
 import {
     defineWebsiteModels,

@@ -1,5 +1,5 @@
-from odoo import _, api, models, tools, modules
-from odoo.exceptions import ValidationError
+from weth import _, api, models, tools, modules
+from weth.exceptions import ValidationError
 
 
 class ResCompany(models.Model):

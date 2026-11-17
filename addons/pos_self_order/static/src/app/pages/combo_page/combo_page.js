@@ -1,5 +1,5 @@
 import { useSubEnv } from "@web/owl2/utils";
-import { Component, proxy, useProps, t } from "@odoo/owl";
+import { Component, proxy, useProps, t } from "@weth/owl";
 import { useSelfOrder } from "@pos_self_order/app/services/self_order_service";
 import { useService } from "@web/core/utils/hooks";
 import { AttributeSelectionHelper } from "@pos_self_order/app/components/attribute_selection/attribute_selection_helper";
@@ -542,9 +542,9 @@ export class ComboPage extends Component {
                                 .map((attrValue) => {
                                     const customValue = attrValue.is_custom
                                         ? selectedValues.getCustomValue(
-                                              attrValue.attribute_id,
-                                              attrValue
-                                          )?.custom_value
+                                            attrValue.attribute_id,
+                                            attrValue
+                                        )?.custom_value
                                         : null;
                                     return customValue
                                         ? `${attrValue.name}: ${customValue}`

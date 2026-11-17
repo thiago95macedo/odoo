@@ -6,7 +6,7 @@ import {
     useInputBuilderComponent,
 } from "@html_builder/core/utils";
 import { normalizeLinkUrlInput } from "@html_editor/main/link/utils";
-import { Component, signal, t, useProps } from "@odoo/owl";
+import { Component, signal, t, useProps } from "@weth/owl";
 import { textInputBasePassthroughProps } from "./builder_input_base";
 
 export class BuilderUrlPicker extends Component {

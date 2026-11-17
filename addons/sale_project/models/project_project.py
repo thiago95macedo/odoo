@@ -2,12 +2,12 @@
 
 import ast
 
-from odoo import api, fields, models
-from odoo.fields import Domain
-from odoo.models import Query
-from odoo.tools import SQL, OrderedSet
-from odoo.tools.misc import unquote
-from odoo.tools.translate import _
+from weth import api, fields, models
+from weth.fields import Domain
+from weth.models import Query
+from weth.tools import SQL, OrderedSet
+from weth.tools.misc import unquote
+from weth.tools.translate import _
 
 
 class ProjectProject(models.Model):

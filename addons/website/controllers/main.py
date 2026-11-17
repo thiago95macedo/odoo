@@ -21,30 +21,30 @@ from lxml import etree, html
 from markupsafe import escape as markup_escape
 from werkzeug.exceptions import NotFound
 
-from odoo import _, fields, http, models, release, tools
-from odoo.exceptions import AccessError, UserError
-from odoo.fields import Domain
-from odoo.http import request
-from odoo.http.router import serve_ir_http
-from odoo.http.session import SessionExpiredException
-from odoo.http.stream import STATIC_CACHE_LONG
-from odoo.tools import OrderedSet, py_to_js_locale
-from odoo.tools import html_escape as escape
-from odoo.tools.image import hex_to_rgb
-from odoo.tools.json import scriptsafe as json
-from odoo.tools.mimetypes import guess_mimetype
-from odoo.tools.misc import file_open
-from odoo.tools.sql import escape_like_value
-from odoo.tools.translate import LazyTranslate, TRANSLATED_ELEMENTS
+from weth import _, fields, http, models, release, tools
+from weth.exceptions import AccessError, UserError
+from weth.fields import Domain
+from weth.http import request
+from weth.http.router import serve_ir_http
+from weth.http.session import SessionExpiredException
+from weth.http.stream import STATIC_CACHE_LONG
+from weth.tools import OrderedSet, py_to_js_locale
+from weth.tools import html_escape as escape
+from weth.tools.image import hex_to_rgb
+from weth.tools.json import scriptsafe as json
+from weth.tools.mimetypes import guess_mimetype
+from weth.tools.misc import file_open
+from weth.tools.sql import escape_like_value
+from weth.tools.translate import LazyTranslate, TRANSLATED_ELEMENTS
 
-from odoo.addons.base.models.ir_http import EXTENSION_TO_WEB_MIMETYPES
-from odoo.addons.portal.controllers.portal import pager as portal_pager
-from odoo.addons.portal.controllers.web import Home
-from odoo.addons.web.controllers.binary import Binary
-from odoo.addons.web.controllers.session import Session
-from odoo.addons.html_editor.controllers.svg_utils import get_shape_svg, make_shaped_image
-from odoo.addons.html_editor.models.ir_attachment import SUPPORTED_IMAGE_MIMETYPES
-from odoo.addons.website.tools import adapt_dark_palette_content, get_base_domain
+from weth.addons.base.models.ir_http import EXTENSION_TO_WEB_MIMETYPES
+from weth.addons.portal.controllers.portal import pager as portal_pager
+from weth.addons.portal.controllers.web import Home
+from weth.addons.web.controllers.binary import Binary
+from weth.addons.web.controllers.session import Session
+from weth.addons.html_editor.controllers.svg_utils import get_shape_svg, make_shaped_image
+from weth.addons.html_editor.models.ir_attachment import SUPPORTED_IMAGE_MIMETYPES
+from weth.addons.website.tools import adapt_dark_palette_content, get_base_domain
 
 _lt = LazyTranslate(__name__)
 logger = logging.getLogger(__name__)
@@ -316,7 +316,7 @@ class Website(Home):
         """
         if not redirect and request.params.get('login_success'):
             if request.env['res.users'].browse(uid)._is_internal():
-                redirect = '/odoo?' + request.httprequest.query_string.decode()
+                redirect = '/weth?' + request.httprequest.query_string.decode()
             else:
                 redirect = '/my'
         return super()._login_redirect(uid, redirect=redirect)
@@ -508,7 +508,7 @@ class Website(Home):
             return request.redirect('/')
         if request.env.lang != self.env.website.default_lang_id.code:
             return request.redirect('/%s%s' % (self.env.website.default_lang_id.url_code, request.httprequest.path))
-        action_url = f"/odoo/action-website.website_configurator?menu_id={request.env.ref('website.menu_website_configuration').id}"
+        action_url = f"/weth/action-website.website_configurator?menu_id={request.env.ref('website.menu_website_configuration').id}"
         if step > 1:
             action_url += '&step=' + str(step)
         return request.redirect(action_url)
@@ -1456,7 +1456,7 @@ class Website(Home):
 
         if redirect:
             if ext_special_case:  # redirect non html pages to backend to edit
-                return request.redirect(f"/odoo/ir.ui.view/{page.get('view_id')}")
+                return request.redirect(f"/weth/ir.ui.view/{page.get('view_id')}")
             return request.redirect(request.env['website'].get_client_action_url(url, True))
 
         if ext_special_case:

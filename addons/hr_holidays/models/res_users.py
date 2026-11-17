@@ -1,9 +1,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, fields, models, Command
-from odoo.tools import format_date
-from odoo.addons.hr.models.res_users import related_employee_field
-from odoo.addons.mail.tools.discuss import Store
+from weth import api, fields, models, Command
+from weth.tools import format_date
+from weth.addons.hr.models.res_users import related_employee_field
+from weth.addons.mail.tools.discuss import Store
 
 
 class ResUsers(models.Model):

@@ -4,9 +4,9 @@ import {
     setupHTMLBuilder,
 } from "@html_builder/../tests/helpers";
 import { BuilderAction } from "@html_builder/core/builder_action";
-import { describe, expect, test } from "@odoo/hoot";
-import { animationFrame } from "@odoo/hoot-mock";
-import { xml } from "@odoo/owl";
+import { describe, expect, test } from "@weth/hoot";
+import { animationFrame } from "@weth/hoot-mock";
+import { xml } from "@weth/owl";
 import { contains, defineModels, fields, models, onRpc } from "@web/../tests/web_test_helpers";
 import { delay } from "@web/core/utils/concurrency";
 

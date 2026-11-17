@@ -1,4 +1,4 @@
-import { Component, t, useProps } from "@odoo/owl";
+import { Component, t, useProps } from "@weth/owl";
 
 export class DashboardFacet extends Component {
     static template = "spreadsheet_dashboard.DashboardFacet";

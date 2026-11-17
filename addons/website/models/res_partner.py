@@ -2,7 +2,7 @@
 
 import werkzeug.urls
 
-from odoo import models, fields, api
+from weth import models, fields, api
 
 
 class ResPartner(models.Model):

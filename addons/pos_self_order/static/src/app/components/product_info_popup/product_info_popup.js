@@ -1,4 +1,4 @@
-import { Component, proxy, signal, useListener, useProps, t } from "@odoo/owl";
+import { Component, proxy, signal, useListener, useProps, t } from "@weth/owl";
 import { useScrollShadow } from "../../utils/scroll_shadow_hook";
 import { ProductTemplate } from "@point_of_sale/app/models/product_template";
 import { ProductProduct } from "@point_of_sale/app/models/product_product";

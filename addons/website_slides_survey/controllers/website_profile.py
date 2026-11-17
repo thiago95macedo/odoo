@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.fields import Domain
-from odoo.http import request
-from odoo.addons.website_profile.controllers.main import WebsiteProfile
+from weth.fields import Domain
+from weth.http import request
+from weth.addons.website_profile.controllers.main import WebsiteProfile
 
 
 class WebsiteSlidesSurvey(WebsiteProfile):

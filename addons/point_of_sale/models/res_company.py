@@ -1,6 +1,6 @@
-from odoo import api, models, fields, _
-from odoo.exceptions import ValidationError
-from odoo.fields import Domain
+from weth import api, models, fields, _
+from weth.exceptions import ValidationError
+from weth.fields import Domain
 
 
 class ResCompany(models.Model):

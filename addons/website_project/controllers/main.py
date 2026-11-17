@@ -1,11 +1,11 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.http import request
+from weth.http import request
 
-from odoo import _
-from odoo.addons.base.models.ir_qweb_fields import nl2br, nl2br_enclose
-from odoo.addons.website.controllers import form
-from odoo.tools import html2plaintext
+from weth import _
+from weth.addons.base.models.ir_qweb_fields import nl2br, nl2br_enclose
+from weth.addons.website.controllers import form
+from weth.tools import html2plaintext
 
 
 class WebsiteForm(form.WebsiteForm):

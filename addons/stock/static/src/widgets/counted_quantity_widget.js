@@ -1,4 +1,4 @@
-import { proxy, useEffect } from "@odoo/owl";
+import { proxy, useEffect } from "@weth/owl";
 import { FloatField, floatField } from "@web/views/fields/float/float_field";
 import { registry } from "@web/core/registry";
 import { getActiveHotkey } from "@web/core/hotkeys/hotkey_utils";
@@ -27,11 +27,11 @@ export class CountedQuantityWidgetField extends FloatField {
         });
     }
 
-    updateValue(ev){
+    updateValue(ev) {
         try {
             const val = this.parse(ev.target.value);
             this.props.record.update({ [this.props.name]: val, inventory_quantity_set: true });
-        } catch {} // ignore since it will be handled later
+        } catch { } // ignore since it will be handled later
     }
 
     onInput(ev) {

@@ -1,4 +1,4 @@
-import { Component, useProps, proxy, t } from "@odoo/owl";
+import { Component, useProps, proxy, t } from "@weth/owl";
 import { useBus } from "@web/core/utils/hooks";
 import { formatFloatTime, formatMonetary } from "@web/views/fields/formatters";
 import { MoOverviewLine } from "../mo_overview_line/mrp_mo_overview_line";

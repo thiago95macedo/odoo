@@ -3,11 +3,11 @@
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
 
-from odoo import api, fields, models
-from odoo.fields import Domain
-from odoo.tools import formatLang
-from odoo.tools.float_utils import float_round
-from odoo.exceptions import UserError
+from weth import api, fields, models
+from weth.fields import Domain
+from weth.tools import formatLang
+from weth.tools.float_utils import float_round
+from weth.exceptions import UserError
 
 
 class ProductTemplate(models.Model):

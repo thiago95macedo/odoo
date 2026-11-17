@@ -1,6 +1,6 @@
-import { beforeEach, expect, test } from "@odoo/hoot";
-import { click } from "@odoo/hoot-dom";
-import { animationFrame } from "@odoo/hoot-mock";
+import { beforeEach, expect, test } from "@weth/hoot";
+import { click } from "@weth/hoot-dom";
+import { animationFrame } from "@weth/hoot-mock";
 
 import { mountView, onRpc } from "@web/../tests/web_test_helpers";
 

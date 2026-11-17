@@ -1,5 +1,5 @@
-import { describe, expect, test } from "@odoo/hoot";
-import { Model } from "@odoo/o-spreadsheet";
+import { describe, expect, test } from "@weth/hoot";
+import { Model } from "@weth/o-spreadsheet";
 import { defineSpreadsheetModels } from "@spreadsheet/../tests/helpers/data";
 import { makeSpreadsheetMockEnv } from "@spreadsheet/../tests/helpers/model";
 

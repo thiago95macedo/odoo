@@ -2,7 +2,7 @@ import { PortalChatter } from "@portal/chatter/portal/portal_chatter";
 import { PortalRatingPlugin } from "@portal_rating/chatter/portal/portal_rating_plugin";
 
 import { patch } from "@web/core/utils/patch";
-import { providePlugins, t, usePlugin, useProps } from "@odoo/owl";
+import { providePlugins, t, usePlugin, useProps } from "@weth/owl";
 
 patch(PortalChatter.prototype, {
     setup() {

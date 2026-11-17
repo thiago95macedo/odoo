@@ -1,4 +1,4 @@
-import { proxy } from "@odoo/owl";
+import { proxy } from "@weth/owl";
 import { _t } from "@web/core/l10n/translation";
 import { registry } from "@web/core/registry";
 import { user } from "@web/core/user";
@@ -546,9 +546,9 @@ export class BaseImportModel {
                         this._addMessage("danger", [
                             error.rows.from === error.rows.to
                                 ? _t('Error at row %(row)s: "%(error)s"', {
-                                      row: error.record,
-                                      error: error.message,
-                                  })
+                                    row: error.record,
+                                    error: error.message,
+                                })
                                 : _t("%s at multiple rows", error.message),
                         ]);
                     }

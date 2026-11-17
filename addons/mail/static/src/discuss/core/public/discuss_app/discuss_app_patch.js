@@ -1,5 +1,5 @@
 import { Discuss } from "@mail/core/public_web/discuss_app/discuss_app";
-import { useOnChange } from "@odoo/owl";
+import { useOnChange } from "@weth/owl";
 import { useService } from "@web/core/utils/hooks";
 import { patch } from "@web/core/utils/patch";
 

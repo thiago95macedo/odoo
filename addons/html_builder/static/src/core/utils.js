@@ -11,7 +11,7 @@ import {
     useEffect,
     useListener,
     useScope,
-} from "@odoo/owl";
+} from "@weth/owl";
 import { localization } from "@web/core/l10n/localization";
 import { useService } from "@web/core/utils/hooks";
 import { useDebounced } from "@web/core/utils/timing";
@@ -445,7 +445,7 @@ export function useSelectableComponent(props, { onItemChange } = {}) {
  * @param {DefaultBuilderProps} props
  * @param {{ getLabel?: () => any }} [options]
  */
-export function useSelectableItemComponent(props, { getLabel = () => {} } = {}) {
+export function useSelectableItemComponent(props, { getLabel = () => { } } = {}) {
     const { operation, isApplied, getActions, priority, clean, onReady } =
         useClickableBuilderComponent(props);
     const env = useEnv();
@@ -537,7 +537,7 @@ export function useSelectableItemComponent(props, { getLabel = () => {} } = {}) 
 export function useSelectableLtrRtlComponent({
     ltrRtlMapping,
     isLabelLinkedToContent,
-    getItemState = () => {},
+    getItemState = () => { },
 }) {
     const env = useEnv();
     if (ltrRtlMapping && env.selectableContext) {
@@ -762,7 +762,7 @@ export function useClickableBuilderComponent(props) {
     };
 
     if (!hasPreview(props, getAllActions)) {
-        operation.preview = () => {};
+        operation.preview = () => { };
     }
 
     function clean(nextApplySpecs, isPreviewing) {
@@ -1197,7 +1197,7 @@ export function useInputBuilderComponent(
 }
 
 /**
- * @param {import("@odoo/owl").Signal<HTMLElement>} ref
+ * @param {import("@weth/owl").Signal<HTMLElement>} ref
  */
 export function useApplyVisibility(ref) {
     /**
@@ -1210,7 +1210,7 @@ export function useApplyVisibility(ref) {
 }
 
 /**
- * @param {import("@odoo/owl").Signal<HTMLElement>} contentRef
+ * @param {import("@weth/owl").Signal<HTMLElement>} contentRef
  * @param {(hasContent: boolean) => any} callback
  */
 export function useVisibilityObserver(contentRef, callback) {
@@ -1245,7 +1245,7 @@ export function useVisibilityObserver(contentRef, callback) {
 }
 
 /**
- * @param {import("@odoo/owl").Signal<HTMLInputElement>} ref
+ * @param {import("@weth/owl").Signal<HTMLInputElement>} ref
  * @param {(value: string) => string} commit
  */
 export function useInputDebouncedCommit(ref, commit) {

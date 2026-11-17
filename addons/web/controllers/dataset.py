@@ -3,9 +3,9 @@ import threading
 
 from werkzeug.exceptions import NotFound
 
-from odoo import http
-from odoo.http import request
-from odoo.service.model import call_kw
+from weth import http
+from weth.http import request
+from weth.service.model import call_kw
 
 from .utils import clean_action
 

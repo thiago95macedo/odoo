@@ -1,10 +1,10 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.http import request, route
-from odoo.http.session import SessionExpiredException
+from weth.http import request, route
+from weth.http.session import SessionExpiredException
 
-from odoo.addons.bus.controllers.websocket import WebsocketController
-from odoo.addons.mail.tools.discuss import add_guest_to_context
+from weth.addons.bus.controllers.websocket import WebsocketController
+from weth.addons.mail.tools.discuss import add_guest_to_context
 
 
 class WebsocketControllerPresence(WebsocketController):

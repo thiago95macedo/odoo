@@ -2,7 +2,7 @@
 
 from random import randint
 
-from odoo import fields, models
+from weth import fields, models
 
 
 class HrJobTag(models.Model):

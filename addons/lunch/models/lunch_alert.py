@@ -4,12 +4,12 @@ from datetime import datetime, timedelta, UTC
 from textwrap import dedent
 from zoneinfo import ZoneInfo
 
-from odoo import api, fields, models, _
-from odoo.fields import Domain
+from weth import api, fields, models, _
+from weth.fields import Domain
 
-from odoo.tools.date_utils import float_to_time
+from weth.tools.date_utils import float_to_time
 
-from odoo.addons.base.models.res_partner import _tz_get
+from weth.addons.base.models.res_partner import _tz_get
 
 _logger = logging.getLogger(__name__)
 WEEKDAY_TO_NAME = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun']

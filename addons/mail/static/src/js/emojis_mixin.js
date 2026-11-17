@@ -1,4 +1,4 @@
-import { markup } from "@odoo/owl";
+import { markup } from "@weth/owl";
 import { htmlReplace, htmlReplaceAll } from "@web/core/utils/html";
 import { EMOJI_REGEX } from "@mail/utils/common/format";
 

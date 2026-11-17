@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.payment import utils as payment_utils
-from odoo.addons.payment.tests.common import PaymentCommon
-from odoo.addons.payment_stripe import const
+from weth.addons.payment import utils as payment_utils
+from weth.addons.payment.tests.common import PaymentCommon
+from weth.addons.payment_stripe import const
 
 
 class StripeCommon(PaymentCommon):

@@ -2,8 +2,8 @@
 from datetime import datetime, time
 from dateutil.relativedelta import relativedelta
 
-from odoo import fields, models, _, api, Command
-from odoo.exceptions import UserError
+from weth import fields, models, _, api, Command
+from weth.exceptions import UserError
 
 
 class MrpAccountWipAccountingLine(models.TransientModel):

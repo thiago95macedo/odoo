@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
         <!--  MAILING !-->
         <record model="ir.ui.view" id="view_mail_mass_mailing_search">
             <field name="name">mailing.mailing.search</field>
@@ -635,4 +635,4 @@
                 </p>
             </field>
         </record>
-</odoo>
+</weth>

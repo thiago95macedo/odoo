@@ -1,4 +1,4 @@
-import { animationFrame, click, waitFor, waitUntil } from "@odoo/hoot-dom";
+import { animationFrame, click, waitFor, waitUntil } from "@weth/hoot-dom";
 import { contains } from "@web/../tests/web_test_helpers";
 import { removeFacet } from "@web/../tests/_framework/search_test_helpers";
 import {

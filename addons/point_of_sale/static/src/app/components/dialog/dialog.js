@@ -1,4 +1,4 @@
-import { t } from "@odoo/owl";
+import { t } from "@weth/owl";
 import { Dialog, dialogProps } from "@web/core/dialog/dialog";
 import { patch } from "@web/core/utils/patch";
 

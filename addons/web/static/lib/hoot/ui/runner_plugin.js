@@ -1,6 +1,6 @@
-/** @odoo-module */
+/** @weth-module */
 
-import { Plugin, t, useConfig, usePlugin } from "@odoo/owl";
+import { Plugin, t, useConfig, usePlugin } from "@weth/owl";
 import { Runner } from "../core/runner";
 
 //-----------------------------------------------------------------------------

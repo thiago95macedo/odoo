@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, fields, models, _
-from odoo.addons.base.models.res_partner import _tz_get
-from odoo.modules.db import country_timezones as _country_timezones
+from weth import api, fields, models, _
+from weth.addons.base.models.res_partner import _tz_get
+from weth.modules.db import country_timezones as _country_timezones
 
 
 class ResCompany(models.Model):

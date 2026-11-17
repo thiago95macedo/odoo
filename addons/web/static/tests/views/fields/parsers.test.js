@@ -1,4 +1,4 @@
-import { beforeEach, expect, test } from "@odoo/hoot";
+import { beforeEach, expect, test } from "@weth/hoot";
 import { clearMemoizeCaches } from "@web/core/utils/functions";
 import { makeTestApp, patchWithCleanup } from "@web/../tests/web_test_helpers";
 

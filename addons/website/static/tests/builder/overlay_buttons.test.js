@@ -1,9 +1,9 @@
 import { undo } from "@html_editor/../tests/_helpers/user_actions";
 import { Plugin } from "@html_editor/plugin";
 import { setContent, setSelection } from "@html_editor/../tests/_helpers/selection";
-import { advanceTime, animationFrame, expect, test } from "@odoo/hoot";
-import { queryOne, tick, waitFor } from "@odoo/hoot-dom";
-import { xml } from "@odoo/owl";
+import { advanceTime, animationFrame, expect, test } from "@weth/hoot";
+import { queryOne, tick, waitFor } from "@weth/hoot-dom";
+import { xml } from "@weth/owl";
 import { contains } from "@web/../tests/web_test_helpers";
 import { addBuilderOption } from "@html_builder/../tests/helpers";
 import {

@@ -2,10 +2,10 @@
 
 import contextlib
 
-from odoo import _, models, fields, api
-from odoo.exceptions import AccessError, UserError
-from odoo.tools.misc import limited_field_access_token, verify_limited_field_access_token
-from odoo.addons.mail.tools.discuss import Store
+from weth import _, models, fields, api
+from weth.exceptions import AccessError, UserError
+from weth.tools.misc import limited_field_access_token, verify_limited_field_access_token
+from weth.addons.mail.tools.discuss import Store
 
 
 class IrAttachment(models.Model):

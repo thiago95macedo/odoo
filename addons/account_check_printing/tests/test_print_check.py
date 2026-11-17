@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-from odoo.addons.account.tests.common import AccountTestInvoicingCommon
-from odoo.addons.account_check_printing.models.account_payment import INV_LINES_PER_STUB
-from odoo.tests import tagged
-from odoo.tools.misc import NON_BREAKING_SPACE
-from odoo import Command
-from odoo.exceptions import ValidationError
+from weth.addons.account.tests.common import AccountTestInvoicingCommon
+from weth.addons.account_check_printing.models.account_payment import INV_LINES_PER_STUB
+from weth.tests import tagged
+from weth.tools.misc import NON_BREAKING_SPACE
+from weth import Command
+from weth.exceptions import ValidationError
 
 import math
 

@@ -2,8 +2,8 @@
 
 from markupsafe import Markup
 
-from odoo import fields, models, _
-from odoo.tools import html2plaintext
+from weth import fields, models, _
+from weth.tools import html2plaintext
 
 
 class SlideChannelPartner(models.Model):

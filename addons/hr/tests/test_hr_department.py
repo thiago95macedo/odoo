@@ -1,5 +1,5 @@
-from odoo.addons.hr.tests.test_multi_company import TestMultiCompany
-from odoo.tests import tagged
+from weth.addons.hr.tests.test_multi_company import TestMultiCompany
+from weth.tests import tagged
 
 
 class TestHrDepartment(TestMultiCompany):

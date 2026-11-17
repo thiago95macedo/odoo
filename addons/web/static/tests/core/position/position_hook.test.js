@@ -9,8 +9,8 @@ import {
     resize,
     scroll,
     test,
-} from "@odoo/hoot";
-import { Component, onMounted, signal, xml } from "@odoo/owl";
+} from "@weth/hoot";
+import { Component, onMounted, signal, xml } from "@weth/owl";
 import {
     defineParams,
     defineStyle,

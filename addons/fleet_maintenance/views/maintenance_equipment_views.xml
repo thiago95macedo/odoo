@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
     <record id="maintenance_equipment_view_form_inherit_fleet" model="ir.ui.view">
         <field name="name">maintenance.equipment.view.form.inherit.fleet</field>
         <field name="model">maintenance.equipment</field>
@@ -62,4 +62,4 @@
             </xpath>
         </field>
     </record>
-</odoo>
+</weth>

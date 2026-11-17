@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import fields
-from odoo.tests import Form, tagged
+from weth import fields
+from weth.tests import Form, tagged
 from dateutil.relativedelta import relativedelta
 
 from .test_project_base import TestProjectCommon

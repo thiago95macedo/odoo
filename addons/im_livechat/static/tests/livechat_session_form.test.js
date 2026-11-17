@@ -1,7 +1,7 @@
 import { defineLivechatModels } from "@im_livechat/../tests/livechat_test_helpers";
 import { contains, listenStoreFetch, waitStoreFetch, start, startServer } from "@mail/../tests/mail_test_helpers";
 import { mail_store } from "@mail/../tests/mock_server/mail_mock_server";
-import { describe, test } from "@odoo/hoot";
+import { describe, test } from "@weth/hoot";
 
 import { MockServer, mountView } from "@web/../tests/web_test_helpers";
 

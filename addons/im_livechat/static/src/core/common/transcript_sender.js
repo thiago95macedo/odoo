@@ -1,6 +1,6 @@
 import { useLayoutEffect } from "@web/owl2/utils";
 import { isValidEmail } from "@im_livechat/core/common/misc";
-import { Component, onWillUpdateProps, proxy, t, useProps } from "@odoo/owl";
+import { Component, onWillUpdateProps, proxy, t, useProps } from "@weth/owl";
 import { rpc } from "@web/core/network/rpc";
 import { useService } from "@web/core/utils/hooks";
 

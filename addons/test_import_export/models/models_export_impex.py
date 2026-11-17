@@ -1,5 +1,5 @@
-from odoo import _, api, fields, models
-from odoo.exceptions import ValidationError
+from weth import _, api, fields, models
+from weth.exceptions import ValidationError
 
 
 def generic_compute_display_name(self):

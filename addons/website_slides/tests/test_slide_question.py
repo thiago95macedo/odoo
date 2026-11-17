@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
-from odoo import Command
+from weth import Command
 
-from odoo.addons.website_slides.tests import common as slides_common
-from odoo.tests.common import tagged, users
+from weth.addons.website_slides.tests import common as slides_common
+from weth.tests.common import tagged, users
 
 
 class TestSlideQuestionManagement(slides_common.SlidesCase):

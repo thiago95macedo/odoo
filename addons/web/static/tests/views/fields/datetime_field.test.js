@@ -1,4 +1,4 @@
-import { after, expect, queryFirst, test } from "@odoo/hoot";
+import { after, expect, queryFirst, test } from "@weth/hoot";
 import {
     click,
     edit,
@@ -7,8 +7,8 @@ import {
     queryAllTexts,
     queryRect,
     resize,
-} from "@odoo/hoot-dom";
-import { animationFrame, mockTimeZone } from "@odoo/hoot-mock";
+} from "@weth/hoot-dom";
+import { animationFrame, mockTimeZone } from "@weth/hoot-mock";
 import {
     editTime,
     getPickerCell,
@@ -121,7 +121,7 @@ test("DatetimeField in form view", async () => {
 test("DatetimeField only triggers fieldChange when a day is picked and when an hour/minute is selected", async () => {
     mockTimeZone(+2);
 
-    Partner._onChanges.datetime = () => {};
+    Partner._onChanges.datetime = () => { };
 
     onRpc("onchange", () => expect.step("onchange"));
 

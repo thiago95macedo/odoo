@@ -1,6 +1,6 @@
 import { propSignal } from "@mail/utils/common/hooks";
 
-import { Component, onMounted, onWillUnmount, signal, t, useOnChange } from "@odoo/owl";
+import { Component, onMounted, onWillUnmount, signal, t, useOnChange } from "@weth/owl";
 
 import { useService } from "@web/core/utils/hooks";
 import { hidePDFJSButtons } from "@web/core/utils/pdfjs";
@@ -55,7 +55,7 @@ class AbstractAttachmentView extends Component {
         return !this.isMobileOS;
     }
 
-    onClickPopout() {}
+    onClickPopout() { }
 }
 
 /*
@@ -71,7 +71,7 @@ export class PopoutAttachmentView extends AbstractAttachmentView {
  * and re-renders in place when the thread changes.
  *
  * @param {Object} signals
- * @param {import("@odoo/owl").Signal<import("models").Thread>} signals.thread
+ * @param {import("@weth/owl").Signal<import("models").Thread>} signals.thread
  */
 export function usePopoutAttachment({ thread }) {
     const uiService = useService("ui");

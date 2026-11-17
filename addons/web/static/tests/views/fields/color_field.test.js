@@ -1,4 +1,4 @@
-import { expect, test } from "@odoo/hoot";
+import { expect, test } from "@weth/hoot";
 import {
     contains,
     defineModels,
@@ -50,7 +50,7 @@ class User extends models.Model {
 defineModels([Color, User]);
 
 test("field contains a color input", async () => {
-    Color._onChanges.hex_color = () => {};
+    Color._onChanges.hex_color = () => { };
     await mountView({ type: "form", resModel: "color", resId: 1 });
 
     onRpc("onchange", ({ args }) => {

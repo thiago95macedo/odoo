@@ -1,6 +1,6 @@
 import { startInteractions, setupInteractionWhiteList } from "@web/../tests/public/helpers";
 
-import { beforeEach, describe, expect, test } from "@odoo/hoot";
+import { beforeEach, describe, expect, test } from "@weth/hoot";
 import {
     animationFrame,
     click,
@@ -11,8 +11,8 @@ import {
     press,
     queryOne,
     tick,
-} from "@odoo/hoot-dom";
-import { advanceTime } from "@odoo/hoot-mock";
+} from "@weth/hoot-dom";
+import { advanceTime } from "@weth/hoot-mock";
 
 import { location } from "@web/core/browser/browser";
 import { cookie } from "@web/core/browser/cookie";
@@ -57,9 +57,8 @@ function getPopupTemplate(options = {}) {
     return `
         <div class="s_popup o_snippet_invisible" data-vcss="001" data-snippet="s_popup"
              data-name="Popup" id="sPopup" data-invisible="1">
-            <div class="modal fade s_popup_middle modal_shown ${
-                backdrop ? "" : "s_popup_no_backdrop"
-            }"
+            <div class="modal fade s_popup_middle modal_shown ${backdrop ? "" : "s_popup_no_backdrop"
+        }"
                  id="${modalId}"
                  style="background-color: var(--black-50) !important; display: none;"
                  data-show-after="${showAfter}"
@@ -73,11 +72,10 @@ function getPopupTemplate(options = {}) {
                  role="dialog">
                 <div class="modal-dialog d-flex">
                     <div class="modal-content oe_structure">
-                        ${
-                            closeButton
-                                ? '<button class="s_popup_close js_close_popup border-0 p-0 o_we_no_overlay o_not_editable" aria-label="Close">×</button>'
-                                : ""
-                        }
+                        ${closeButton
+            ? '<button class="s_popup_close js_close_popup border-0 p-0 o_we_no_overlay o_not_editable" aria-label="Close">×</button>'
+            : ""
+        }
                         <section>
                             ${content}
                             <a href="#" class="btn btn-primary ${extraPrimaryBtnClasses}">Primary button</a>

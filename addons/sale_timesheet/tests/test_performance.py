@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.sale_timesheet.tests.test_sale_timesheet import TestSaleTimesheet
-from odoo.tests import tagged
-from odoo.fields import Command
+from weth.addons.sale_timesheet.tests.test_sale_timesheet import TestSaleTimesheet
+from weth.tests import tagged
+from weth.fields import Command
 
 
 @tagged('post_install', '-at_install')

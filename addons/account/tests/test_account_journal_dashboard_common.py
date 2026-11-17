@@ -1,8 +1,8 @@
-from odoo.addons.account.tests.common import AccountTestInvoicingCommon
+from weth.addons.account.tests.common import AccountTestInvoicingCommon
 
-from odoo import Command
-from odoo.tests import tagged
-from odoo.tools.misc import format_amount
+from weth import Command
+from weth.tests import tagged
+from weth.tools.misc import format_amount
 
 
 @tagged('post_install', '-at_install')

@@ -1,9 +1,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.fields import Command
-from odoo.tests import tagged
+from weth.fields import Command
+from weth.tests import tagged
 
-from odoo.addons.website_sale_collect.tests.common import ClickAndCollectCommon
+from weth.addons.website_sale_collect.tests.common import ClickAndCollectCommon
 
 
 @tagged("post_install", "-at_install")

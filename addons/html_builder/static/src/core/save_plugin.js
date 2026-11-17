@@ -117,7 +117,7 @@ export class SavePlugin extends Plugin {
             await this._save(groupedElements);
             skipAfterSaveHandlers = await shouldSkipAfterSaveHandlers();
         } catch (error) {
-            if (error.exceptionName === "odoo.exceptions.ValidationError") {
+            if (error.exceptionName === "weth.exceptions.ValidationError") {
                 this.services.notification.add(_t("Previous values restored."), {
                     title: _t("One or more fields were not valid"),
                     type: "warning",

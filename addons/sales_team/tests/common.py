@@ -1,9 +1,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.tests import TransactionCase
+from weth.tests import TransactionCase
 
-from odoo.addons.base.tests.common import BaseCommon
-from odoo.addons.mail.tests.common import mail_new_test_user
+from weth.addons.base.tests.common import BaseCommon
+from weth.addons.mail.tests.common import mail_new_test_user
 
 
 class SalesTeamCommon(BaseCommon):

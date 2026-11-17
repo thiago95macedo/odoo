@@ -1,4 +1,4 @@
-import { useProps, proxy, t } from "@odoo/owl";
+import { useProps, proxy, t } from "@weth/owl";
 import {
     ConfirmationDialog,
     confirmationDialogProps,

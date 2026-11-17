@@ -1,4 +1,4 @@
-import { expect, test } from "@odoo/hoot";
+import { expect, test } from "@weth/hoot";
 import { registerPythonTemplate } from "@point_of_sale/app/utils/convert_python_template";
 import { getTemplate } from "@web/core/templates";
 

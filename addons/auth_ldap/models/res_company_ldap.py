@@ -6,9 +6,9 @@ import logging
 import time
 from ldap.filter import filter_format
 
-from odoo import _, fields, models, tools
-from odoo.exceptions import AccessDenied
-from odoo.http import request
+from weth import _, fields, models, tools
+from weth.exceptions import AccessDenied
+from weth.http import request
 
 _logger = logging.getLogger(__name__)
 

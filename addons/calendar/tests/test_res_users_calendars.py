@@ -1,5 +1,5 @@
-from odoo.tests.common import TransactionCase, new_test_user, tagged
-from odoo.exceptions import AccessError
+from weth.tests.common import TransactionCase, new_test_user, tagged
+from weth.exceptions import AccessError
 
 
 @tagged("post_install", "-at_install")

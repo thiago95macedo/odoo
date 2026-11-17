@@ -1,4 +1,4 @@
-from odoo.tests import TransactionCase, loaded_demo_data, tagged
+from weth.tests import TransactionCase, loaded_demo_data, tagged
 
 
 @tagged("post_install", "-at_install")

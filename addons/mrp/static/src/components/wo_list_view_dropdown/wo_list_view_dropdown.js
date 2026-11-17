@@ -1,4 +1,4 @@
-import { useProps, t } from "@odoo/owl";
+import { useProps, t } from "@weth/owl";
 import { Dropdown } from "@web/core/dropdown/dropdown";
 import { DropdownItem } from "@web/core/dropdown/dropdown_item";
 import { registry } from "@web/core/registry";
@@ -31,7 +31,7 @@ export class MOListViewDropdown extends BadgeField {
         };
     }
 
-    async reload(){
+    async reload() {
         await this.props.record.load();
         await this.env.model.root.load();
         this.env.model.notify();
@@ -54,7 +54,7 @@ export class MOListViewDropdown extends BadgeField {
     }
 
     async callOrm(functionName, args, ids = undefined) {
-        if (!ids){
+        if (!ids) {
             ids = this.props.record.model.root.selection?.map((element) => element.evalContext.id);
         }
         // if no records selected, take the current clicked one

@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-from odoo import api, fields, models, _
-from odoo.exceptions import ValidationError
-from odoo.tools import SQL
+from weth import api, fields, models, _
+from weth.exceptions import ValidationError
+from weth.tools import SQL
 
 
 class AccountAnalyticLine(models.Model):

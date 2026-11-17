@@ -3,13 +3,13 @@
 
 from ast import literal_eval
 
-from odoo.addons.phone_validation.tools import phone_validation
-from odoo.addons.sms_twilio.tests.common import MockSmsTwilioApi
-from odoo.addons.test_mass_mailing.tests.common import TestMassSMSCommon
-from odoo import exceptions
-from odoo.tests import tagged
-from odoo.tests.common import users
-from odoo.tools import mute_logger
+from weth.addons.phone_validation.tools import phone_validation
+from weth.addons.sms_twilio.tests.common import MockSmsTwilioApi
+from weth.addons.test_mass_mailing.tests.common import TestMassSMSCommon
+from weth import exceptions
+from weth.tests import tagged
+from weth.tests.common import users
+from weth.tools import mute_logger
 
 
 @tagged('mass_mailing', 'mass_mailing_sms')
@@ -283,7 +283,7 @@ class TestMassSMSInternals(TestMassSMSCommon):
 @tagged('mass_mailing', 'mass_mailing_sms', 'mailing_test')
 class TestMassSMSTest(TestMassSMSCommon):
 
-    @mute_logger('odoo.addons.mail.models.mail_render_mixin')
+    @mute_logger('weth.addons.mail.models.mail_render_mixin')
     def test_mass_sms_test_button(self):
         mailing = self.env['mailing.mailing'].create({
             'subject': 'Subject {{ object.name }}',
@@ -352,7 +352,7 @@ class TestMassSMS(TestMassSMSCommon):
         )
 
     @users('user_marketing')
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_mass_sms_partner_only(self):
         """ Check sending SMS marketing on models having only a partner_id fields
         set is working. """
@@ -412,7 +412,7 @@ class TestMassSMS(TestMassSMSCommon):
         )
 
     @users('user_marketing')
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_mass_sms_partner_only_m2m(self):
         """ Check sending SMS marketing on models having only a m2m to partners
         is currently not suppored. """
@@ -432,7 +432,7 @@ class TestMassSMS(TestMassSMSCommon):
 
 
     @users('user_marketing')
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_mass_sms_w_opt_out(self):
         mailing = self.env['mailing.mailing'].browse(self.mailing_sms.ids)
         recipients = self._create_mailing_sms_test_records(model='mail.test.sms.bl.optout', count=5)

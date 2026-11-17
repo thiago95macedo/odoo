@@ -5,8 +5,8 @@ import {
     getInnerContent,
 } from "@html_builder/../tests/helpers";
 import { Plugin } from "@html_editor/plugin";
-import { expect, test } from "@odoo/hoot";
-import { animationFrame } from "@odoo/hoot-dom";
+import { expect, test } from "@weth/hoot";
+import { animationFrame } from "@weth/hoot-dom";
 import { contains, onRpc } from "@web/../tests/web_test_helpers";
 import {
     addPlugin,

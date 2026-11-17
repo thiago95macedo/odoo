@@ -1,6 +1,6 @@
 import { LunchKanbanRenderer } from "@lunch/views/kanban";
 import { defineMailModels, mailModels } from "@mail/../tests/mail_test_helpers";
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@weth/hoot";
 import {
     contains,
     defineModels,

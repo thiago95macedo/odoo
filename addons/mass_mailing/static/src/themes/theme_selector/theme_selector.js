@@ -8,7 +8,7 @@ import {
     t,
     useProps,
     useScope,
-} from "@odoo/owl";
+} from "@weth/owl";
 import { useService } from "@web/core/utils/hooks";
 import { closestScrollableY } from "@web/core/utils/scrolling";
 import { useThrottleForAnimation } from "@web/core/utils/timing";
@@ -25,7 +25,7 @@ export class ThemeSelector extends Component {
     props = useProps({
         config: t.object(),
         iframeRef: t.signal(),
-        /** @type {import("@odoo/owl").AsyncComputed<Record<string, any>[]>} */
+        /** @type {import("@weth/owl").AsyncComputed<Record<string, any>[]>} */
         templates: t.function(),
     });
 

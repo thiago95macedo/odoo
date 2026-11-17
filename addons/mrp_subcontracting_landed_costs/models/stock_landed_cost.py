@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import models
-from odoo.tools import OrderedSet
+from weth import models
+from weth.tools import OrderedSet
 
 
 class StockLandedCost(models.Model):

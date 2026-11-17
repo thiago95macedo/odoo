@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # pylint: disable=bad-whitespace
-from odoo.addons.account.tests.common import AccountTestInvoicingCommon
-from odoo.tests import Form, tagged
-from odoo import fields, Command
+from weth.addons.account.tests.common import AccountTestInvoicingCommon
+from weth.tests import Form, tagged
+from weth import fields, Command
 
 from collections import defaultdict
 

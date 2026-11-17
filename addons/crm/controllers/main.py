@@ -2,8 +2,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 import logging
 
-from odoo.addons.mail.controllers.mail import MailController
-from odoo import http
+from weth.addons.mail.controllers.mail import MailController
+from weth import http
 
 _logger = logging.getLogger(__name__)
 

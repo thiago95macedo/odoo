@@ -1,6 +1,6 @@
-import { expect, getFixture, test } from "@odoo/hoot";
-import { queryAllAttributes, queryAllTexts, queryFirst, click, middleClick } from "@odoo/hoot-dom";
-import { animationFrame } from "@odoo/hoot-mock";
+import { expect, getFixture, test } from "@weth/hoot";
+import { queryAllAttributes, queryAllTexts, queryFirst, click, middleClick } from "@weth/hoot-dom";
+import { animationFrame } from "@weth/hoot-mock";
 import {
     contains,
     defineModels,

@@ -9,15 +9,15 @@ from zoneinfo import ZoneInfo
 from dateutil.relativedelta import relativedelta
 from urllib.parse import urlparse
 
-from odoo import _, api, Command, fields, models, tools
-from odoo.addons.base.models.res_partner import _tz_get
-from odoo.exceptions import ValidationError
-from odoo.fields import Datetime, Domain
-from odoo.models import Query
-from odoo.tools import format_date, frozendict
-from odoo.tools.mail import is_html_empty, html_to_inner_content
-from odoo.tools.misc import formatLang
-from odoo.tools.translate import html_translate
+from weth import _, api, Command, fields, models, tools
+from weth.addons.base.models.res_partner import _tz_get
+from weth.exceptions import ValidationError
+from weth.fields import Datetime, Domain
+from weth.models import Query
+from weth.tools import format_date, frozendict
+from weth.tools.mail import is_html_empty, html_to_inner_content
+from weth.tools.misc import formatLang
+from weth.tools.translate import html_translate
 
 _logger = logging.getLogger(__name__)
 
@@ -50,7 +50,7 @@ class EventEvent(models.Model):
         return result
 
     def get_kiosk_url(self):
-        return self.get_base_url() + "/odoo/registration-desk"
+        return self.get_base_url() + "/weth/registration-desk"
 
     def _get_default_stage_id(self):
         return self.env['event.stage'].search([], limit=1)

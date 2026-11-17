@@ -1,4 +1,4 @@
-import { signal } from "@odoo/owl";
+import { signal } from "@weth/owl";
 import { useEmojiPicker } from "@web/core/emoji_picker/emoji_picker";
 
 /*

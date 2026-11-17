@@ -4,10 +4,10 @@ from datetime import date
 import calendar
 from dateutil.relativedelta import relativedelta
 
-from odoo import models, api, _
-from odoo.fields import Domain
-from odoo.tools import date_utils
-from odoo.addons.spreadsheet.utils.helpers import spreadsheet_safe_batch
+from weth import models, api, _
+from weth.fields import Domain
+from weth.tools import date_utils
+from weth.addons.spreadsheet.utils.helpers import spreadsheet_safe_batch
 
 
 class AccountAccount(models.Model):

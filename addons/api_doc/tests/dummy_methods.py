@@ -1,6 +1,6 @@
 from typing import Self
 
-from odoo import api, models
+from weth import api, models
 
 
 class DummyMethods:

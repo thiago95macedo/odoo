@@ -1,4 +1,4 @@
-<odoo>
+<weth>
 <data>
 
     <record model="res.groups.privilege" id="res_groups_privilege_purchase">
@@ -37,4 +37,4 @@
     </record>
 
     </data>
-</odoo>
+</weth>

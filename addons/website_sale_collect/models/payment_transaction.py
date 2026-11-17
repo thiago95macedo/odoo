@@ -2,8 +2,8 @@
 
 from markupsafe import Markup
 
-from odoo import models
-from odoo.tools.misc import format_date
+from weth import models
+from weth.tools.misc import format_date
 
 
 class PaymentTransaction(models.Model):

@@ -1,4 +1,4 @@
-import { usePlugin, providePlugins } from "@odoo/owl";
+import { usePlugin, providePlugins } from "@weth/owl";
 import { KanbanController } from "@web/views/kanban/kanban_controller";
 import { TimeOffPlugin } from "../time_off_plugin";
 

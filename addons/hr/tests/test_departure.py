@@ -5,12 +5,12 @@ from datetime import date, datetime
 from dateutil.relativedelta import relativedelta
 from freezegun import freeze_time
 
-from odoo import Command
-from odoo.exceptions import ValidationError
+from weth import Command
+from weth.exceptions import ValidationError
 
-from odoo.addons.hr.tests.common import TestHrCommon
-from odoo.addons.mail.tests.common import MailCase
-from odoo.tests import Form
+from weth.addons.hr.tests.common import TestHrCommon
+from weth.addons.mail.tests.common import MailCase
+from weth.tests import Form
 
 
 class TestDeparture(MailCase, TestHrCommon):

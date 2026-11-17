@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import _, api, fields, models
-from odoo.exceptions import UserError
-from odoo.fields import Domain
-from odoo.tools import email_normalize
+from weth import _, api, fields, models
+from weth.exceptions import UserError
+from weth.fields import Domain
+from weth.tools import email_normalize
 
 
 class IrMail_Server(models.Model):

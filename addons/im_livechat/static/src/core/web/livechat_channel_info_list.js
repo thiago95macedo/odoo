@@ -4,7 +4,7 @@ import { ExpertiseTagsAutocomplete } from "@im_livechat/core/web/expertise_tags_
 import { ActionPanel } from "@mail/discuss/core/common/action_panel";
 import { prettifyMessageContent } from "@mail/utils/common/format";
 
-import { Component, t, useEffect, useProps } from "@odoo/owl";
+import { Component, t, useEffect, useProps } from "@weth/owl";
 
 import { startUrl } from "@web/core/browser/router";
 import { rpc } from "@web/core/network/rpc";

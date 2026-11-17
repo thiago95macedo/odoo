@@ -1,5 +1,5 @@
 import { _t } from "@web/core/l10n/translation";
-import * as spreadsheet from "@odoo/o-spreadsheet";
+import * as spreadsheet from "@weth/o-spreadsheet";
 import { AccountingPlugin } from "./plugins/accounting_plugin";
 import { getFirstAccountFunction, hasAccountingFormula } from "./utils";
 import { parseAccountingDate } from "./accounting_functions";

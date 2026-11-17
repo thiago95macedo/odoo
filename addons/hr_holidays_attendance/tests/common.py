@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
 from dateutil.relativedelta import relativedelta
-from odoo.fields import Date
-from odoo.tests import TransactionCase
+from weth.fields import Date
+from weth.tests import TransactionCase
 
 
 class HrWorkEntryAttendanceCommon(TransactionCase):

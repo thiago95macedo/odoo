@@ -1,4 +1,4 @@
-import { onWillDestroy } from "@odoo/owl";
+import { onWillDestroy } from "@weth/owl";
 import { useService } from "@web/core/utils/hooks";
 
 export function useBarcodeReader(callbackMap, exclusive = false) {

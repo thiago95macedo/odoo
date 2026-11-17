@@ -2,7 +2,7 @@ import { DateTimeInput } from "@web/core/datetime/datetime_input";
 import { Dialog } from "@web/core/dialog/dialog";
 import { today } from "@web/core/l10n/dates";
 
-import { Component, proxy, types, useProps } from "@odoo/owl";
+import { Component, proxy, types, useProps } from "@weth/owl";
 
 export class ScheduledDateDialog extends Component {
     static template = "mail.ScheduledDateDialog";

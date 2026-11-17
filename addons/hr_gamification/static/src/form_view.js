@@ -1,6 +1,6 @@
 import { patch } from "@web/core/utils/patch";
 import { EmployeeFormRenderer } from "@hr/views/form_view";
-import { onMounted } from "@odoo/owl";
+import { onMounted } from "@weth/owl";
 
 patch(EmployeeFormRenderer.prototype, {
     setup() {
@@ -25,7 +25,7 @@ patch(EmployeeFormRenderer.prototype, {
                         setTimeout(() => {
                             userBadge.classList.remove('user-badge-lift');
                         }, 2000);
-                    },100);
+                    }, 100);
                 }
             }
         });

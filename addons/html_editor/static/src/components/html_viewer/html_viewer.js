@@ -17,7 +17,7 @@ import {
     useApp,
     useEffect,
     useProps,
-} from "@odoo/owl";
+} from "@weth/owl";
 import { getBundle } from "@web/core/assets";
 import { location } from "@web/core/browser/browser";
 import { memoize } from "@web/core/utils/functions";

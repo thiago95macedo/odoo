@@ -1,5 +1,5 @@
-import { expect, test } from "@odoo/hoot";
-import { xml } from "@odoo/owl";
+import { expect, test } from "@weth/hoot";
+import { xml } from "@weth/owl";
 import { contains } from "@web/../tests/web_test_helpers";
 import {
     defineWebsiteModels,

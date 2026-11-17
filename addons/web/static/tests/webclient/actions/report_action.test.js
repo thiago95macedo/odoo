@@ -1,6 +1,6 @@
-import { afterEach, expect, queryOne, test } from "@odoo/hoot";
-import { animationFrame, runAllTimers } from "@odoo/hoot-mock";
-import { waitFor } from "@odoo/hoot-dom";
+import { afterEach, expect, queryOne, test } from "@weth/hoot";
+import { animationFrame, runAllTimers } from "@weth/hoot-mock";
+import { waitFor } from "@weth/hoot-dom";
 import {
     contains,
     defineActions,

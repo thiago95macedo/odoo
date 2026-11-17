@@ -6,8 +6,8 @@ import pprint
 
 from werkzeug.exceptions import Forbidden
 
-from odoo import SUPERUSER_ID
-from odoo.http import Controller, request, route
+from weth import SUPERUSER_ID
+from weth.http import Controller, request, route
 
 _logger = logging.getLogger(__name__)
 
@@ -23,7 +23,7 @@ class GelatoController(Controller):
         codes.
 
         :return: An empty response to acknowledge the notification.
-        :rtype: odoo.http.Response
+        :rtype: weth.http.Response
         """
         event_data = request.get_json_data()
         _logger.info("Webhook notification received from Gelato:\n%s", pprint.pformat(event_data))

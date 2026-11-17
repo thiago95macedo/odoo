@@ -7,11 +7,11 @@
 # a pipe alias in your mail server to use it, postfix uses a syntax that looks
 # like:
 #
-# email@address: "|/home/odoo/src/odoo-mail.py"
+# email@address: "|/home/weth/src/odoo-mail.py"
 #
 # while exim uses a syntax that looks like:
 #
-# *: |/home/odoo/src/odoo-mail.py
+# *: |/home/weth/src/odoo-mail.py
 
 # Dev Note exit codes should comply with https://www.unix.com/man-page/freebsd/3/sysexits/
 # see http://www.postfix.org/aliases.5.html, output may end up in bounce mails
@@ -61,7 +61,7 @@ def postfix_exit(exit_code=EX_SOFTWARE, message=None, debug=False):
 
 def main():
     op = OptionParser(usage='usage: %prog [options]', version='%prog v1.3')
-    op.add_option("-d", "--database", dest="database", help="Odoo database name (default: %default)", default='odoo')
+    op.add_option("-d", "--database", dest="database", help="Odoo database name (default: %default)", default='weth')
     op.add_option("-u", "--userid", dest="userid", help="Odoo user id to connect with (default: %default)", default=1, type=int)
     op.add_option("-p", "--password", dest="password", help="Odoo user password (default: %default)", default='admin')
     op.add_option("--host", dest="host", help="Odoo host (default: %default)", default='localhost')

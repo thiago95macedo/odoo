@@ -2,10 +2,10 @@
 
 from lxml import html
 
-from odoo import fields
-from odoo.tools import format_datetime
+from weth import fields
+from weth.tools import format_datetime
 
-from odoo.addons.mail.tests.common import MailCommon
+from weth.addons.mail.tests.common import MailCommon
 
 
 class TestCallRecording(MailCommon):
@@ -96,7 +96,7 @@ class TestCallRecording(MailCommon):
             self.assertEqual(len(recording_link), 1)
             self.assertEqual(
                 recording_link[0].get("href"),
-                f"{artifact.get_base_url()}/odoo/discuss.call.history/{artifact.discuss_call_history_id.id}",
+                f"{artifact.get_base_url()}/weth/discuss.call.history/{artifact.discuss_call_history_id.id}",
             )
 
     def test_recording_email_requires_starter_and_media(self):

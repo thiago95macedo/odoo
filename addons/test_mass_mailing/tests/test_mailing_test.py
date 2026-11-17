@@ -2,11 +2,11 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 import lxml.html
 
-from odoo.addons.sms_twilio.tests.common import MockSmsTwilioApi
-from odoo.addons.test_mass_mailing.tests.common import TestMassMailCommon
-from odoo.addons.test_mass_mailing.tests.common import TestMassSMSCommon
-from odoo.tests.common import users, tagged
-from odoo.tools import mute_logger
+from weth.addons.sms_twilio.tests.common import MockSmsTwilioApi
+from weth.addons.test_mass_mailing.tests.common import TestMassMailCommon
+from weth.addons.test_mass_mailing.tests.common import TestMassSMSCommon
+from weth.tests.common import users, tagged
+from weth.tools import mute_logger
 
 
 @tagged('mailing_manage')
@@ -33,7 +33,7 @@ class TestMailingTest(TestMassMailCommon):
         })
 
     @users('user_marketing')
-    @mute_logger('odoo.addons.mail.models.mail_render_mixin')
+    @mute_logger('weth.addons.mail.models.mail_render_mixin')
     def test_mailing_test_button(self):
         mailing = self.test_mailing_bl.with_env(self.env)
         model = mailing.mailing_model_real
@@ -78,7 +78,7 @@ class TestMailingTest(TestMassMailCommon):
             mailing_test.send_mail_test()
 
     @users('user_marketing')
-    @mute_logger('odoo.addons.mail.models.mail_render_mixin')
+    @mute_logger('weth.addons.mail.models.mail_render_mixin')
     def test_mailing_test_button_links(self):
         """This tests that the link provided by the View in Browser snippet is correctly replaced
         when sending a test mailing while the Unsubscribe button's link isn't, to preserve the testing route

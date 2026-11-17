@@ -1,9 +1,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.fields import Domain
-from odoo.http import request
+from weth.fields import Domain
+from weth.http import request
 
-from odoo.addons.project.controllers.portal import CustomerPortal
+from weth.addons.project.controllers.portal import CustomerPortal
 
 
 class ProjectCustomerPortal(CustomerPortal):

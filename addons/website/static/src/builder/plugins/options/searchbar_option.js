@@ -1,6 +1,6 @@
 import { BaseOptionComponent } from "@html_builder/core/base_option_component";
 import { useGetItemValue } from "@html_builder/core/utils";
-import { onWillStart } from "@odoo/owl";
+import { onWillStart } from "@weth/owl";
 import { registry } from "@web/core/registry";
 import { useService } from "@web/core/utils/hooks";
 

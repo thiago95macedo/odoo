@@ -16,12 +16,12 @@ import os
 from lxml import etree, html
 from textwrap import shorten
 
-from odoo import api, fields, models, _, SUPERUSER_ID, modules
-from odoo.addons.account.tools import format_structured_reference_iso
-from odoo.exceptions import UserError, ValidationError, AccessError, RedirectWarning
-from odoo.fields import Command, Domain
-from odoo.tools.misc import clean_context
-from odoo.tools import (
+from weth import api, fields, models, _, SUPERUSER_ID, modules
+from weth.addons.account.tools import format_structured_reference_iso
+from weth.exceptions import UserError, ValidationError, AccessError, RedirectWarning
+from weth.fields import Command, Domain
+from weth.tools.misc import clean_context
+from weth.tools import (
     date_utils,
     float_compare,
     float_is_zero,
@@ -36,10 +36,10 @@ from odoo.tools import (
     OrderedSet,
     SQL,
 )
-from odoo.tools.func import deprecated
-from odoo.tools.mail import email_re, email_split, is_html_empty, generate_tracking_message_id
-from odoo.tools.misc import StackMap
-from odoo.tools.safe_eval import safe_eval
+from weth.tools.func import deprecated
+from weth.tools.mail import email_re, email_split, is_html_empty, generate_tracking_message_id
+from weth.tools.misc import StackMap
+from weth.tools.safe_eval import safe_eval
 
 
 _logger = logging.getLogger(__name__)

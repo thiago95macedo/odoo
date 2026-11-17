@@ -1,5 +1,5 @@
 import { _t } from "@web/core/l10n/translation";
-import { markup, useProps, t } from "@odoo/owl";
+import { markup, useProps, t } from "@weth/owl";
 import { registry } from "@web/core/registry";
 import { extractData, Many2One, many2OneProps } from "@web/views/fields/many2one/many2one";
 import { buildM2OFieldDescription, Many2OneField } from "@web/views/fields/many2one/many2one_field";

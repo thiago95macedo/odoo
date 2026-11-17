@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
 
 <template id="email_designer_themes" groups="base.group_user">
     <t t-set="company_id" t-value="res_company"/>
@@ -29,4 +29,4 @@
 <template id="email_designer_snippets" groups="base.group_user">
     <snippets id="snippet_custom" string="Custom"/>
 </template>
-</odoo>
+</weth>

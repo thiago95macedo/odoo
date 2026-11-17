@@ -1,4 +1,4 @@
-import { expect, getFixture, queryRect, test } from "@odoo/hoot";
+import { expect, getFixture, queryRect, test } from "@weth/hoot";
 import {
     click,
     hover,
@@ -10,9 +10,9 @@ import {
     queryAllTexts,
     queryOne,
     resize,
-} from "@odoo/hoot-dom";
-import { animationFrame, runAllTimers, tick } from "@odoo/hoot-mock";
-import { Component, onMounted, onPatched, proxy, signal, t, useProps, xml } from "@odoo/owl";
+} from "@weth/hoot-dom";
+import { animationFrame, runAllTimers, tick } from "@weth/hoot-mock";
+import { Component, onMounted, onPatched, proxy, signal, t, useProps, xml } from "@weth/owl";
 
 import { getPickerCell } from "@web/../tests/core/datetime/datetime_test_helpers";
 import {
@@ -1009,8 +1009,8 @@ test("multi-level dropdown: initial open state can be true", async () => {
             this.dropdownProps = {
                 state: proxy({
                     isOpen: true,
-                    open: () => {},
-                    close: () => {},
+                    open: () => { },
+                    close: () => { },
                 }),
             };
         }
@@ -1628,7 +1628,7 @@ test("dropdown: no BottomSheet", async () => {
 });
 
 test("can be toggled with the UP/DOWN arrow keys", async () => {
-    class Parent extends SimpleDropdown {}
+    class Parent extends SimpleDropdown { }
 
     await mountWithCleanup(Parent);
 

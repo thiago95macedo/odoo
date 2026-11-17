@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
 
     <template id="external_layout_footer_content" inherit_id="web.external_layout_footer_content">
         <xpath expr="//div[contains(@t-attf-class, 'o_footer_content')]" position="attributes">
@@ -110,4 +110,4 @@
             </div>
         </xpath>
     </template>
-</odoo>
+</weth>

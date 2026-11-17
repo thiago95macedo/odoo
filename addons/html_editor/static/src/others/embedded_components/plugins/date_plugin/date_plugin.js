@@ -4,7 +4,7 @@ import { closestElement } from "@html_editor/utils/dom_traversal";
 import { getFontSizeOrClass } from "@html_editor/utils/formatting";
 import { parseHTML } from "@html_editor/utils/html";
 import { withSequence } from "@html_editor/utils/resource";
-import { proxy } from "@odoo/owl";
+import { proxy } from "@weth/owl";
 import { DateTimePickerPopover } from "@web/core/datetime/datetime_picker_popover";
 import { _t } from "@web/core/l10n/translation";
 import { renderToString } from "@web/core/utils/render";

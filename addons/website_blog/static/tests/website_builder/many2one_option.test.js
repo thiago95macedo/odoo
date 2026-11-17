@@ -1,6 +1,6 @@
 import { Builder } from "@html_builder/builder";
 import { startServer } from "@mail/../tests/mail_test_helpers";
-import { expect, test } from "@odoo/hoot";
+import { expect, test } from "@weth/hoot";
 import {
     contains,
     defineModels,
@@ -54,18 +54,16 @@ function getBlogPostMarkup(postId, pyEnv) {
         <main>
             <section id="o_wblog_post_main">
                 <div id="wrap" class="js_blog website_blog">
-                    <div class="o_wblog_post_page_cover o_record_cover_container" data-res-model="blog.post" data-res-id="${
-                        post.id
-                    }">
+                    <div class="o_wblog_post_page_cover o_record_cover_container" data-res-model="blog.post" data-res-id="${post.id
+        }">
                         <h1>${post.name}</h1>
-                        ${
-                            nextPost
-                                ? `
+                        ${nextPost
+            ? `
                                 <section id="o_wblog_post_footer" data-next-post-id="${nextPost.id}" data-is-next-post-recommended="True">
                                     ${nextPost.name}
                                 </section>`
-                                : ""
-                        }
+            : ""
+        }
                     </div>
                 </div>
             </section>

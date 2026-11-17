@@ -1,6 +1,6 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import fields, models
+from weth import fields, models
 
 # Allow promo programs to send mails upon certain triggers
 # Like : 'At creation' and 'When reaching X points'

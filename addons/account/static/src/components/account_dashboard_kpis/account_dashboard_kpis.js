@@ -1,4 +1,4 @@
-import { Component, computed, onWillStart, proxy } from "@odoo/owl";
+import { Component, computed, onWillStart, proxy } from "@weth/owl";
 import { useService } from "@web/core/utils/hooks";
 
 import { AccountDashboardKpiCard } from "./account_dashboard_kpi_card";

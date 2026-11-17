@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from odoo import models, fields, api, _
+from weth import models, fields, api, _
 from markupsafe import Markup
 
 

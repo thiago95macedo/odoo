@@ -2,10 +2,10 @@
 
 from freezegun import freeze_time
 
-from odoo import fields, _
-from odoo.addons.mail.tools.discuss import Store
-from odoo.addons.website_livechat.tests.common import TestLivechatCommon
-from odoo.tests.common import HttpCase, new_test_user
+from weth import fields, _
+from weth.addons.mail.tools.discuss import Store
+from weth.addons.website_livechat.tests.common import TestLivechatCommon
+from weth.tests.common import HttpCase, new_test_user
 
 
 class TestLivechatBasicFlowHttpCase(HttpCase, TestLivechatCommon):

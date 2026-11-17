@@ -1,9 +1,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, fields, models
-from odoo.exceptions import UserError
+from weth import api, fields, models
+from weth.exceptions import UserError
 
-from odoo.addons.payment_demo import const
+from weth.addons.payment_demo import const
 
 
 class PaymentProvider(models.Model):

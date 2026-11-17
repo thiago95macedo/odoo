@@ -1,5 +1,5 @@
-from odoo import api, Command, fields, models, _
-from odoo.exceptions import UserError, AccessError
+from weth import api, Command, fields, models, _
+from weth.exceptions import UserError, AccessError
 
 
 class CalendarCalendar(models.Model):

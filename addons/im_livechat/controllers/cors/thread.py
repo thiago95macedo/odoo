@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.http import route
+from weth.http import route
 
-from odoo.addons.mail.controllers.thread import ThreadController
+from weth.addons.mail.controllers.thread import ThreadController
 
 
 class LivechatThreadController(ThreadController):

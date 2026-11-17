@@ -1,7 +1,7 @@
 import { getInnerContent } from "@html_builder/../tests/helpers";
 import { Builder } from "@html_builder/builder";
-import { expect, test } from "@odoo/hoot";
-import { click } from "@odoo/hoot-dom";
+import { expect, test } from "@weth/hoot";
+import { click } from "@weth/hoot-dom";
 import {
     contains,
     dataURItoBlob,

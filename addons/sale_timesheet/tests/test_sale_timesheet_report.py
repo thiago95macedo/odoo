@@ -1,6 +1,6 @@
-from odoo.addons.sale_timesheet.tests.common import TestCommonSaleTimesheet
-from odoo.tests import tagged
-from odoo import Command
+from weth.addons.sale_timesheet.tests.common import TestCommonSaleTimesheet
+from weth.tests import tagged
+from weth import Command
 
 
 @tagged('post_install', '-at_install')

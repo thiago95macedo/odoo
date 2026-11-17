@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
     <template id="content_text" name="Thumbnails / Preview for text attachments">
         <html>
             <body style="background-color: #ffffff; color: #212529;">
@@ -20,4 +20,4 @@
             </body>
         </html>
     </template>
-</odoo>
+</weth>

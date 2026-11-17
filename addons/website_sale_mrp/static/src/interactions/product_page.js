@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @weth-module **/
 
 import { patch } from '@web/core/utils/patch';
 import { ProductPage } from '@website_sale/interactions/product_page';

@@ -2,10 +2,10 @@
 
 from collections import defaultdict
 
-from odoo import api, Command, fields, models, _
-from odoo.addons.mail.tools.discuss import Store
-from odoo.exceptions import UserError
-from odoo.tools import get_lang
+from weth import api, Command, fields, models, _
+from weth.addons.mail.tools.discuss import Store
+from weth.exceptions import UserError
+from weth.tools import get_lang
 
 
 class WebsiteVisitor(models.Model):

@@ -3,9 +3,9 @@
 from datetime import timedelta
 from itertools import starmap, zip_longest
 
-from odoo import api, fields, models
-from odoo.fields import Command
-from odoo.tools import is_html_empty
+from weth import api, fields, models
+from weth.fields import Command
+from weth.tools import is_html_empty
 
 
 class SaleOrder(models.Model):

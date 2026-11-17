@@ -2,9 +2,9 @@
 import json
 from dateutil.relativedelta import relativedelta
 
-from odoo import Command, _, api, fields, models
-from odoo.exceptions import UserError
-from odoo.tools import date_utils, format_date
+from weth import Command, _, api, fields, models
+from weth.exceptions import UserError
+from weth.tools import date_utils, format_date
 
 
 def ellipsis(string, size):

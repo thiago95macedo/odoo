@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, models, fields, tools
+from weth import api, models, fields, tools
 
 
 class ResCompany(models.Model):

@@ -2,9 +2,9 @@
 
 from ast import literal_eval
 
-from odoo import api, fields, models
-from odoo.exceptions import UserError
-from odoo.tools import SQL
+from weth import api, fields, models
+from weth.exceptions import UserError
+from weth.tools import SQL
 
 
 class HrEmployee(models.Model):

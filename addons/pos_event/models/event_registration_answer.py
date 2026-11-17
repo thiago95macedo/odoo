@@ -1,6 +1,6 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 from uuid import uuid4
-from odoo import api, models, fields
+from weth import api, models, fields
 
 
 class EventRegistrationAnswer(models.Model):

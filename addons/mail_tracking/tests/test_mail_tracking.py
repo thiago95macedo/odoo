@@ -1,7 +1,7 @@
-from odoo import fields
-from odoo.addons.mail.tests.common import MailCommon
-from odoo.exceptions import UserError
-from odoo.tests import tagged, users
+from weth import fields
+from weth.addons.mail.tests.common import MailCommon
+from weth.exceptions import UserError
+from weth.tests import tagged, users
 
 
 @tagged('mail_track')

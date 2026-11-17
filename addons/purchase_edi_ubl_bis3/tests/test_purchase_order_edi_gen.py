@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
-from odoo import Command
-from odoo.addons.account.tests.common import AccountTestInvoicingCommon
-from odoo.tests import tagged
-from odoo.tools import file_open
+from weth import Command
+from weth.addons.account.tests.common import AccountTestInvoicingCommon
+from weth.tests import tagged
+from weth.tools import file_open
 
 from lxml import etree
 from datetime import datetime

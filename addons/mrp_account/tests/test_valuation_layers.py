@@ -3,11 +3,11 @@
 
 from datetime import datetime
 
-from odoo.fields import Command
-from odoo.addons.mrp_account.tests.common import TestBomPriceCommon
-from odoo import fields
-from odoo.tests import Form, tagged
-from odoo.tests.common import new_test_user
+from weth.fields import Command
+from weth.addons.mrp_account.tests.common import TestBomPriceCommon
+from weth import fields
+from weth.tests import Form, tagged
+from weth.tests.common import new_test_user
 
 PRICE = 718.75 - 100  # total price minus glass
 

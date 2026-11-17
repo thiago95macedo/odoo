@@ -1,4 +1,4 @@
-import { t, useProps } from "@odoo/owl";
+import { t, useProps } from "@weth/owl";
 import { _t } from "@web/core/l10n/translation";
 import { registry } from "@web/core/registry";
 import { useService } from "@web/core/utils/hooks";
@@ -14,7 +14,7 @@ import { QuestionPageListRenderer } from "./question_page_list_renderer";
  * modal with a notification.
  */
 
-class SurveySaveError extends Error {}
+class SurveySaveError extends Error { }
 function SurveySaveErrorHandler(env, error, originalError) {
     const notification = useService("notification");
     if (originalError instanceof SurveySaveError) {

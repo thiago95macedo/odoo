@@ -2,14 +2,14 @@
 
 from dateutil.relativedelta import relativedelta
 
-import odoo
-from odoo import Command, fields
-from odoo.exceptions import UserError, ValidationError
+import weth
+from weth import Command, fields
+from weth.exceptions import UserError, ValidationError
 
-from odoo.addons.point_of_sale.tests.common import TestPoSCommon
+from weth.addons.point_of_sale.tests.common import TestPoSCommon
 
 
-@odoo.tests.tagged('post_install', '-at_install')
+@weth.tests.tagged('post_install', '-at_install')
 class TestPoSBasicConfig(TestPoSCommon):
     """ Test PoS with basic configuration
 

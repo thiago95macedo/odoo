@@ -6,7 +6,7 @@ import { useDropdownState } from "@web/core/dropdown/dropdown_hooks";
 import { _t } from "@web/core/l10n/translation";
 import { user } from "@web/core/user";
 
-import { types, useProps } from "@odoo/owl";
+import { types, useProps } from "@weth/owl";
 import { patch } from "@web/core/utils/patch";
 
 const { DateTime } = luxon;
@@ -52,8 +52,8 @@ const messagingMenuItemPatch = {
         return this.channel?.isChatChannel
             ? _t("Chat Actions")
             : this.channel
-            ? _t("Channel Actions")
-            : super.actionsTitle;
+                ? _t("Channel Actions")
+                : super.actionsTitle;
     },
     get itemName() {
         return this.channel?.thread?.displayName ?? super.itemName;
@@ -73,16 +73,16 @@ const messagingMenuItemPatch = {
         }
         const displayedMessage =
             this.channel.isChatChannel ||
-            (this.channel.channel_type === "channel" &&
-                this.channel.needactionMessages.length === 0)
+                (this.channel.channel_type === "channel" &&
+                    this.channel.needactionMessages.length === 0)
                 ? this.channel.newestPersistentOfAllMessage
                 : this.channel.sortedNeedactionMessages.at(-1);
         const swipeRight = this.channel.isUnread
             ? {
-                  action: () => this.channel.thread.markAsRead(),
-                  icon: "check_circle",
-                  bgColor: "bg-success",
-              }
+                action: () => this.channel.thread.markAsRead(),
+                icon: "check_circle",
+                bgColor: "bg-success",
+            }
             : undefined;
         return {
             thread: this.channel.thread,

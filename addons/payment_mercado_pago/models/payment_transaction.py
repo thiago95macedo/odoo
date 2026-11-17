@@ -2,15 +2,15 @@
 
 from urllib.parse import quote as url_quote
 
-from odoo import api, models
-from odoo.exceptions import ValidationError
-from odoo.tools import float_round
-from odoo.tools.urls import urljoin
+from weth import api, models
+from weth.exceptions import ValidationError
+from weth.tools import float_round
+from weth.tools.urls import urljoin
 
-from odoo.addons.payment import utils as payment_utils
-from odoo.addons.payment.const import CURRENCY_MINOR_UNITS
-from odoo.addons.payment.logging import get_payment_logger
-from odoo.addons.payment_mercado_pago import const
+from weth.addons.payment import utils as payment_utils
+from weth.addons.payment.const import CURRENCY_MINOR_UNITS
+from weth.addons.payment.logging import get_payment_logger
+from weth.addons.payment_mercado_pago import const
 
 _logger = get_payment_logger(__name__)
 

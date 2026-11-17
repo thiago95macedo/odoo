@@ -2,12 +2,12 @@
 
 from datetime import datetime, UTC
 
-from odoo.tools.date_utils import sum_intervals
-from odoo.tools.intervals import Intervals
+from weth.tools.date_utils import sum_intervals
+from weth.tools.intervals import Intervals
 
-from odoo.tests import tagged
+from weth.tests import tagged
 
-from odoo.addons.test_resource.tests.common import TestResourceCommon
+from weth.addons.test_resource.tests.common import TestResourceCommon
 
 
 @tagged('at_install', '-post_install')  # LEGACY at_install

@@ -3,9 +3,9 @@
 from markupsafe import Markup, escape_silent
 
 from lxml import etree, html
-from odoo import models
+from weth import models
 
-from odoo.addons.base.models.ir_qweb import indent_code, QwebContent
+from weth.addons.base.models.ir_qweb import indent_code, QwebContent
 
 
 class IrQweb(models.AbstractModel):

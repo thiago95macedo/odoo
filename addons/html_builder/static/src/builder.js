@@ -13,7 +13,7 @@ import {
     proxy,
     useProps,
     t,
-} from "@odoo/owl";
+} from "@weth/owl";
 import { useHotkey } from "@web/core/hotkeys/hotkey_hook";
 import { _t } from "@web/core/l10n/translation";
 import { SIZES, MEDIAS_BREAKPOINTS } from "@web/core/ui/ui_utils";
@@ -43,7 +43,7 @@ export class Builder extends Component {
     static components = { BlockTab, CustomizeTab };
     props = useProps({
         closeEditor: t.function().optional(),
-        reloadEditor: t.function().optional(() => () => {}),
+        reloadEditor: t.function().optional(() => () => { }),
         onEditorLoad: t.function().optional(),
         newInstalledModule: t.string().optional(),
         installSnippetModule: t.function().optional(),
@@ -398,9 +398,8 @@ export class Builder extends Component {
 
     updateInvisibleEls() {
         const isMobile = this.editor.config.isMobileView(this.editor.editable);
-        const invisibleSelector = `.o_snippet_invisible, ${
-            isMobile ? ".o_snippet_mobile_invisible" : ".o_snippet_desktop_invisible"
-        }`;
+        const invisibleSelector = `.o_snippet_invisible, ${isMobile ? ".o_snippet_mobile_invisible" : ".o_snippet_desktop_invisible"
+            }`;
         this.invisibleElementsPanelState.invisibleSelector = invisibleSelector;
         this.invisibleElementsPanelState.invisibleEls = [
             ...this.editor.editable.querySelectorAll(invisibleSelector),

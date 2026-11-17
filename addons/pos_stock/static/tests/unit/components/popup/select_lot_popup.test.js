@@ -1,5 +1,5 @@
-import { expect, test } from "@odoo/hoot";
-import { click } from "@odoo/hoot-dom";
+import { expect, test } from "@weth/hoot";
+import { click } from "@weth/hoot-dom";
 import { onRpc, mountWithCleanup, contains } from "@web/../tests/web_test_helpers";
 import { setupPosEnv, dialogActions } from "@point_of_sale/../tests/unit/utils";
 import { definePosStockModels } from "../../data/generate_model_definitions";

@@ -1,5 +1,5 @@
 import { rgbToHex, rgbaToHex, blendColors } from "@web/core/utils/colors";
-import { expect, getFixture, test } from "@odoo/hoot";
+import { expect, getFixture, test } from "@weth/hoot";
 
 test("should convert an rgb and rgba color to hexadecimal", async () => {
     expect(rgbToHex("rgb(0, 0, 255)")).toBe("#0000ff");

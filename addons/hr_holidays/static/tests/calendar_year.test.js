@@ -1,6 +1,6 @@
-import { describe, expect, test } from "@odoo/hoot";
-import { queryAllTexts, waitFor } from "@odoo/hoot-dom";
-import { mockDate, mockTimeZone } from "@odoo/hoot-mock";
+import { describe, expect, test } from "@weth/hoot";
+import { queryAllTexts, waitFor } from "@weth/hoot-dom";
+import { mockDate, mockTimeZone } from "@weth/hoot-mock";
 import { mountView, onRpc } from "@web/../tests/web_test_helpers";
 import { clickDate } from "@web/../tests/views/calendar/calendar_test_helpers";
 import { defineHrHolidaysModels } from "@hr_holidays/../tests/hr_holidays_test_helpers";

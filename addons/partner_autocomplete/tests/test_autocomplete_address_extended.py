@@ -1,4 +1,4 @@
-from odoo.tests import common, tagged
+from weth.tests import common, tagged
 
 
 @tagged('post_install', '-at_install')

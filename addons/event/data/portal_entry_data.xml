@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo noupdate="1">
+<weth noupdate="1">
     <record id="portal_events_client" model="portal.entry">
         <field name="name">Events</field>
         <field name="description">Access all your event tickets</field>
@@ -9,4 +9,4 @@
         <field name="category">client_category</field>
         <field name="sequence" eval="80"/>
     </record>
-</odoo>
+</weth>

@@ -1,6 +1,6 @@
-import { expect, test } from "@odoo/hoot";
-import { queryAll } from "@odoo/hoot-dom";
-import { runAllTimers } from "@odoo/hoot-mock";
+import { expect, test } from "@weth/hoot";
+import { queryAll } from "@weth/hoot-dom";
+import { runAllTimers } from "@weth/hoot-mock";
 import {
     contains,
     defineModels,
@@ -14,7 +14,7 @@ import { ModelSelector } from "@web/core/model_selector/model_selector";
 async function mountModelSelector(
     models = [],
     value = undefined,
-    onModelSelected = () => {},
+    onModelSelected = () => { },
     nbVisibleModels = undefined
 ) {
     await mountWithCleanup(ModelSelector, {
@@ -246,7 +246,7 @@ test("model_selector: autofocus", async () => {
         props: {
             models: ["model.1"],
             autofocus: true,
-            onModelSelected: () => {},
+            onModelSelected: () => { },
         },
     });
     const input = queryAll("input.o-autocomplete--input")[0];

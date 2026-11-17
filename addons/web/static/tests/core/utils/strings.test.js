@@ -1,4 +1,4 @@
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@weth/hoot";
 import { patchTranslations } from "@web/../tests/web_test_helpers";
 
 import {
@@ -12,9 +12,9 @@ import {
 import { _t as basic_t } from "@web/core/l10n/translation";
 
 function _t() {
-    odoo.translationContext = "web";
+    weth.translationContext = "web";
     const translatedTerm = basic_t(...arguments);
-    odoo.translationContext = null;
+    weth.translationContext = null;
     return translatedTerm;
 }
 

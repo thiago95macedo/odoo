@@ -4,11 +4,11 @@ from contextlib import contextmanager
 from lxml import etree
 from unittest.mock import patch
 
-from odoo.http import request
-from odoo.tests import tagged
-from odoo.tools import SQL, mute_logger
+from weth.http import request
+from weth.tests import tagged
+from weth.tools import SQL, mute_logger
 
-from odoo.addons.base.tests.common import HttpCaseWithUserDemo
+from weth.addons.base.tests.common import HttpCaseWithUserDemo
 from ..mobile_utils import _get_app_sha256_cert_fingerprints
 
 
@@ -345,7 +345,7 @@ class PasskeyTest(HttpCaseWithUserDemo):
                     self.assertEqual(passkey['passkey'].sign_count, sign_count)
 
                 # 3. Attempt a replay attack, without reseting the challenge
-                with mute_logger('odoo.http'):
+                with mute_logger('weth.http'):
                     response = self.rpc('res.users.identitycheck', 'run_check', wizard_id,
                         context={'password': json.dumps(webauthn_response)}
                     )
@@ -353,7 +353,7 @@ class PasskeyTest(HttpCaseWithUserDemo):
                 # Assert the authentication failed
                 self.assertFalse(response.get('result'))
                 self.assertTrue(response.get('error'))
-                self.assertEqual(response['error']['data']['name'], 'odoo.exceptions.UserError')
+                self.assertEqual(response['error']['data']['name'], 'weth.exceptions.UserError')
                 self.assertEqual(
                     response['error']['data']['message'],
                     'Incorrect Passkey. Please provide a valid passkey or use a different authentication method.'
@@ -367,7 +367,7 @@ class PasskeyTest(HttpCaseWithUserDemo):
                 self.url_open('/auth/passkey/start-auth', '{}', headers={"Content-Type": "application/json"})
 
                 # Write the same webauthn response
-                with mute_logger('odoo.http'):
+                with mute_logger('weth.http'):
                     response = self.rpc('res.users.identitycheck', 'run_check', wizard_id,
                         context={'password': json.dumps(webauthn_response)}
                     )
@@ -387,7 +387,7 @@ class PasskeyTest(HttpCaseWithUserDemo):
             # This block is outside the block `with self.patch_start_auth(webauthn_challenge):`
             # hence it will generate a random challenge.
             self.url_open('/auth/passkey/start-auth', '{}', headers={"Content-Type": "application/json"})
-            with mute_logger('odoo.http'):
+            with mute_logger('weth.http'):
                 response = self.rpc('res.users.identitycheck', 'run_check', wizard_id,
                     context={'password': json.dumps(webauthn_response)}
                 )

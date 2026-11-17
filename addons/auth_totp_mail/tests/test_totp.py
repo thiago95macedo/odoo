@@ -5,10 +5,10 @@ import logging
 from datetime import datetime, timedelta
 from xmlrpc.client import Fault
 
-from odoo.tests import get_db_name, tagged, HttpCase
-from odoo.tools import mute_logger
+from weth.tests import get_db_name, tagged, HttpCase
+from weth.tools import mute_logger
 
-from odoo.addons.auth_totp.tests.test_totp import TestTOTPMixin
+from weth.addons.auth_totp.tests.test_totp import TestTOTPMixin
 
 _logger = logging.getLogger(__name__)
 
@@ -34,8 +34,8 @@ class TestTOTPMail(TestTOTPMixin, HttpCase):
         # With TOTP by mail, xmlrpc using password is not expected
         with (
             self.assertRaisesRegex(Fault, r'Access Denied'),
-            self.assertLogs(logger='odoo.addons.base.models.res_users') as log_catcher,
-            mute_logger("odoo.http")
+            self.assertLogs(logger='weth.addons.base.models.res_users') as log_catcher,
+            mute_logger("weth.http")
         ):
             self.xmlrpc_object.execute_kw(db, uid, password, 'res.users', 'read', [uid, ['login']])
         self.assertIn("Invalid API key or password-based authentication", log_catcher.output[0])

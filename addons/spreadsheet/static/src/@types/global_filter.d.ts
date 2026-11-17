@@ -1,4 +1,4 @@
-import { Range, RangeData } from "@odoo/o-spreadsheet";
+import { Range, RangeData } from "@weth/o-spreadsheet";
 import { DomainListRepr } from "@web/core/domain";
 
 declare module "@spreadsheet" {
@@ -36,15 +36,15 @@ declare module "@spreadsheet" {
     export interface RelativeDateValue {
         type: "relative";
         period:
-            | "today"
-            | "yesterday"
-            | "last_7_days"
-            | "last_30_days"
-            | "last_90_days"
-            | "month_to_date"
-            | "last_month"
-            | "last_12_months"
-            | "year_to_date";
+        | "today"
+        | "yesterday"
+        | "last_7_days"
+        | "last_30_days"
+        | "last_90_days"
+        | "month_to_date"
+        | "last_month"
+        | "last_12_months"
+        | "year_to_date";
     }
 
     export interface DateRangeValue {

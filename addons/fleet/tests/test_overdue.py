@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
-from odoo.tests import tagged, common, new_test_user
-from odoo import fields
+from weth.tests import tagged, common, new_test_user
+from weth import fields
 
 
 @tagged('at_install', '-post_install')  # LEGACY at_install

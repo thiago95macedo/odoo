@@ -4,13 +4,13 @@ import base64
 from collections import OrderedDict
 from datetime import datetime
 
-from odoo import http
-from odoo.exceptions import AccessError, MissingError
-from odoo.http import request, Response
-from odoo.tools.image import image_process
-from odoo.tools.translate import _
-from odoo.addons.portal.controllers import portal
-from odoo.addons.portal.controllers.portal import pager as portal_pager
+from weth import http
+from weth.exceptions import AccessError, MissingError
+from weth.http import request, Response
+from weth.tools.image import image_process
+from weth.tools.translate import _
+from weth.addons.portal.controllers import portal
+from weth.addons.portal.controllers.portal import pager as portal_pager
 
 
 class CustomerPortal(portal.CustomerPortal):

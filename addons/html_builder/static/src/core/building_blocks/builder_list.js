@@ -2,7 +2,7 @@ import { BuilderComponent } from "@html_builder/core/building_blocks/builder_com
 import { BuilderListDialog } from "@html_builder/core/building_blocks/builder_list_dialog";
 import { useBuilderComponent, useInputBuilderComponent } from "@html_builder/core/utils";
 import { isSmallInteger } from "@html_builder/utils/utils";
-import { Component, computed, onPatched, useProps, proxy, signal, t, xml } from "@odoo/owl";
+import { Component, computed, onPatched, useProps, proxy, signal, t, xml } from "@weth/owl";
 import { _t } from "@web/core/l10n/translation";
 import { SelectMenu } from "@web/core/select_menu/select_menu";
 import { useSortable } from "@web/core/utils/sortable_owl";
@@ -13,7 +13,7 @@ import { localeCompare } from "@web/core/l10n/utils";
 /**
  * Focus the last added input item to a list container.
  *
- * @param {import("@odoo/owl").Signal<HTMLElement | null>} ref The list
+ * @param {import("@weth/owl").Signal<HTMLElement | null>} ref The list
  *  container's ref signal.
  */
 export function useAutoFocusNewItem(ref) {

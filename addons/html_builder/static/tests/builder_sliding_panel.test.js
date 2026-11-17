@@ -1,9 +1,9 @@
 import { addBuilderOption, setupHTMLBuilder } from "@html_builder/../tests/helpers";
 import { BuilderSlidingPanel } from "@html_builder/core/building_blocks/builder_sliding_panel";
 import { BaseOptionComponent } from "@html_builder/core/base_option_component";
-import { expect, test } from "@odoo/hoot";
-import { animationFrame } from "@odoo/hoot-dom";
-import { xml } from "@odoo/owl";
+import { expect, test } from "@weth/hoot";
+import { animationFrame } from "@weth/hoot-dom";
+import { xml } from "@weth/owl";
 import { contains } from "@web/../tests/web_test_helpers";
 
 test.tags("desktop");

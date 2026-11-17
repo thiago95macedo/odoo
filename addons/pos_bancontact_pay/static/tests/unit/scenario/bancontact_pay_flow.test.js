@@ -1,5 +1,5 @@
-import { expect, test } from "@odoo/hoot";
-import { waitFor, waitUntil } from "@odoo/hoot-dom";
+import { expect, test } from "@weth/hoot";
+import { waitFor, waitUntil } from "@weth/hoot-dom";
 import { definePosModels } from "@point_of_sale/../tests/unit/data/generate_model_definitions";
 import * as PosUiUtils from "@point_of_sale/../tests/unit/ui_utils";
 import * as BancontactUiUtils from "@pos_bancontact_pay/../tests/unit/ui_utils";

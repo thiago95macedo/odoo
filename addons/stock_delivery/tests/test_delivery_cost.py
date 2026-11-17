@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.exceptions import UserError
-from odoo.tests import common, Form
+from weth.exceptions import UserError
+from weth.tests import common, Form
 
 @common.tagged('post_install', '-at_install')
 class TestDeliveryCost(common.TransactionCase):

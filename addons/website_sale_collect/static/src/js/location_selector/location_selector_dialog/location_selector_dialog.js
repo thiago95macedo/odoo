@@ -1,4 +1,4 @@
-import { proxy, t } from "@odoo/owl";
+import { proxy, t } from "@weth/owl";
 import { patch } from '@web/core/utils/patch';
 import { SelectMenu } from '@web/core/select_menu/select_menu';
 import { _t } from '@web/core/l10n/translation';

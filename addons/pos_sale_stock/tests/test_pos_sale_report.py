@@ -1,7 +1,7 @@
-from odoo import fields
-from odoo.addons.pos_stock.tests.common import TestPosStockCommon
-from odoo.addons.pos_stock.tests.test_frontend import TestPosStockHttpCommon
-from odoo.addons.pos_sale.tests.test_pos_sale_report import TestPoSSaleReport
+from weth import fields
+from weth.addons.pos_stock.tests.common import TestPosStockCommon
+from weth.addons.pos_stock.tests.test_frontend import TestPosStockHttpCommon
+from weth.addons.pos_sale.tests.test_pos_sale_report import TestPoSSaleReport
 
 
 class TestPoSSaleStockReport(TestPoSSaleReport, TestPosStockCommon, TestPosStockHttpCommon):

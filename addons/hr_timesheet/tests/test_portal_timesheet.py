@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 
-from odoo.addons.mail.tests.common import mail_new_test_user
-from odoo.addons.mail.tools.discuss import Store
-from odoo.tests import tagged
+from weth.addons.mail.tests.common import mail_new_test_user
+from weth.addons.mail.tools.discuss import Store
+from weth.tests import tagged
 
-from odoo.addons.project.tests.test_project_sharing import TestProjectSharingCommon
+from weth.addons.project.tests.test_project_sharing import TestProjectSharingCommon
 
 @tagged('post_install', '-at_install')
 class TestPortalTimesheet(TestProjectSharingCommon):

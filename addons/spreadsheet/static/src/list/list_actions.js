@@ -1,13 +1,13 @@
 // @ts-check
 
-import { astToFormula, helpers } from "@odoo/o-spreadsheet";
+import { astToFormula, helpers } from "@weth/o-spreadsheet";
 import { getFirstListFunction, hasListFormula } from "./list_helpers";
 import { navigateTo } from "../actions/helpers";
 
 const { isMatrix } = helpers;
 
 /**
- * @param {import("@odoo/o-spreadsheet").CellPosition} position
+ * @param {import("@weth/o-spreadsheet").CellPosition} position
  * @param {import("@spreadsheet").SpreadsheetChildEnv} env
  * @param {boolean} newWindow
  * @returns {Promise<void>}
@@ -61,7 +61,7 @@ export const SEE_RECORD_LIST = async (position, env, newWindow) => {
 };
 
 /**
- * @param {import("@odoo/o-spreadsheet").CellPosition} position
+ * @param {import("@weth/o-spreadsheet").CellPosition} position
  * @param {import("@spreadsheet").OdooGetters} getters
  * @returns {boolean}
  */

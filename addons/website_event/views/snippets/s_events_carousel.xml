@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
 
 <template id="s_events_carousel" name="Events Carousel">
     <t t-call="website.s_dynamic_snippet_template"
@@ -13,4 +13,4 @@
     </t>
 </template>
 
-</odoo>
+</weth>

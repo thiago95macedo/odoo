@@ -4,12 +4,12 @@
 from http import HTTPStatus
 from urllib.parse import parse_qs
 
-from odoo import fields
-from odoo.addons.mail.tests.common import mail_new_test_user
-from odoo.addons.base.tests.common import HttpCaseWithUserPortal
-from odoo.addons.website_slides.tests import common
-from odoo.exceptions import AccessError
-from odoo.tests import tagged, users
+from weth import fields
+from weth.addons.mail.tests.common import mail_new_test_user
+from weth.addons.base.tests.common import HttpCaseWithUserPortal
+from weth.addons.website_slides.tests import common
+from weth.exceptions import AccessError
+from weth.tests import tagged, users
 
 @tagged('post_install', '-at_install')
 class TestAttendee(common.SlidesCase):

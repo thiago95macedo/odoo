@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<odoo>
+<weth>
     <data>
         <template id="pos_safaricom.pos_order_receipt" inherit_id="point_of_sale.pos_order_receipt">
             <xpath expr="//t[@name='payments']/tr" position="after">
@@ -10,4 +10,4 @@
             </xpath>
         </template>
     </data>
-</odoo>
+</weth>

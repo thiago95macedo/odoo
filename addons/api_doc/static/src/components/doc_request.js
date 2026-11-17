@@ -1,4 +1,4 @@
-import { Component, useProps, proxy, signal, t } from "@odoo/owl";
+import { Component, useProps, proxy, signal, t } from "@weth/owl";
 import { LANGUAGES, createRequestCode } from "@api_doc/utils/doc_code_gen";
 import { CodeEditor } from "@web/core/code_editor/code_editor";
 import { browser } from "@web/core/browser/browser";

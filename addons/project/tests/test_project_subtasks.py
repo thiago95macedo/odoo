@@ -3,11 +3,11 @@
 from lxml import etree
 from psycopg2.errors import CheckViolation
 
-from odoo import Command, _
-from odoo.addons.project.tests.test_project_base import TestProjectCommon
-from odoo.tests import Form, tagged
-from odoo.tools import mute_logger
-from odoo.exceptions import ValidationError
+from weth import Command, _
+from weth.addons.project.tests.test_project_base import TestProjectCommon
+from weth.tests import Form, tagged
+from weth.tools import mute_logger
+from weth.exceptions import ValidationError
 
 
 @tagged('-at_install', 'post_install')
@@ -72,7 +72,7 @@ class TestProjectSubtasks(TestProjectCommon):
 
             self.assertEqual(task.project_id, self.project_pigs, "The project should be assigned from the default project, form_view name : %s." % form_view.name)
 
-    @mute_logger('odoo.sql_db')
+    @mute_logger('weth.sql_db')
     def test_subtask_project(self):
         """
             1) Create a subtask

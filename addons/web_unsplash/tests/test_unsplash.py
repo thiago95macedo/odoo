@@ -1,10 +1,10 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 import base64
 
-from odoo.exceptions import ValidationError
-from odoo.tests import JsonRpcException, common
+from weth.exceptions import ValidationError
+from weth.tests import JsonRpcException, common
 
-from odoo.addons.base.tests.common import HttpCaseWithUserDemo
+from weth.addons.base.tests.common import HttpCaseWithUserDemo
 
 IMAGE_BASE64 = "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII="
 IMAGE_BYTES = base64.b64decode(IMAGE_BASE64)
@@ -84,8 +84,8 @@ class TestUnsplashHttp(HttpCaseWithUserDemo):
             self.assertEqual(self.url_open(attachment["url"]).content, IMAGE_BYTES)
 
             # Upload an unplash image on another user -> Forbidden
-            with self.assertLogs("odoo.http", level="WARNING") as log_catcher, \
-                 self.assertRaisesRegex(JsonRpcException, "odoo.exceptions.AccessError"):
+            with self.assertLogs("weth.http", level="WARNING") as log_catcher, \
+                 self.assertRaisesRegex(JsonRpcException, "weth.exceptions.AccessError"):
                 self.make_jsonrpc_request(
                     "/web_unsplash/attachment/add",
                     {
@@ -103,5 +103,5 @@ class TestUnsplashHttp(HttpCaseWithUserDemo):
 
             self.assertEqual(
                 log_catcher.output[0],
-                "WARNING:odoo.http:Sorry, you are not allowed to access this document.",
+                "WARNING:weth.http:Sorry, you are not allowed to access this document.",
             )

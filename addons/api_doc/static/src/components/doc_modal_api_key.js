@@ -1,4 +1,4 @@
-import { Component, signal, useListener } from "@odoo/owl";
+import { Component, signal, useListener } from "@weth/owl";
 
 export class ApiKeyModal extends Component {
     static template = "web.DocApiKeyModal";
@@ -31,6 +31,6 @@ export class ApiKeyModal extends Component {
     }
 
     async openAPIKeyForm() {
-        window.open(`${window.location.origin}/odoo/action-doc_api_key_wizard`, "_blank");
+        window.open(`${window.location.origin}/weth/action-doc_api_key_wizard`, "_blank");
     }
 }

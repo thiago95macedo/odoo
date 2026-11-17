@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 from uuid import uuid4
-from odoo import fields, models, api
-from odoo.tools import float_is_zero
+from weth import fields, models, api
+from weth.tools import float_is_zero
 
 
 class EventRegistration(models.Model):

@@ -1,8 +1,8 @@
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
 
-from odoo.addons.mass_mailing.tests.common import MassMailCommon
-from odoo.tests import tagged
+from weth.addons.mass_mailing.tests.common import MassMailCommon
+from weth.tests import tagged
 
 
 @tagged('mail_mail')

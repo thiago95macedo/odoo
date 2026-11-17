@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.crm_livechat.tests import test_chatbot_lead
-from odoo.addons.website.tests.test_website_visitor import MockVisitor
-from odoo.tests.common import tagged
+from weth.addons.crm_livechat.tests import test_chatbot_lead
+from weth.addons.website.tests.test_website_visitor import MockVisitor
+from weth.tests.common import tagged
 
 
 @tagged("post_install", "-at_install")

@@ -1,6 +1,6 @@
 import math
 from dateutil.relativedelta import relativedelta
-from odoo.fields import Domain, parse_field_expr
+from weth.fields import Domain, parse_field_expr
 
 # Default hour per day value. The one should
 # only be used when the one from the calendar

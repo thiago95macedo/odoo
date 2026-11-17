@@ -1,7 +1,7 @@
 import { CalendarFilterSection } from "@web/views/calendar/calendar_filter_section/calendar_filter_section";
 import { getColor } from "@web/views/calendar/utils";
 import { MultiRecordSelector, multiRecordSelectorProps } from "@web/core/record_selectors/multi_record_selector";
-import { t, useProps } from "@odoo/owl";
+import { t, useProps } from "@weth/owl";
 import { _t } from "@web/core/l10n/translation";
 import { user } from "@web/core/user";
 

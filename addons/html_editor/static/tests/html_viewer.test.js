@@ -1,8 +1,8 @@
 import { HtmlViewer } from "@html_editor/components/html_viewer/html_viewer";
-import { expect, test } from "@odoo/hoot";
-import { waitFor } from "@odoo/hoot-dom";
-import { animationFrame } from "@odoo/hoot-mock";
-import { markup } from "@odoo/owl";
+import { expect, test } from "@weth/hoot";
+import { waitFor } from "@weth/hoot-dom";
+import { animationFrame } from "@weth/hoot-mock";
+import { markup } from "@weth/owl";
 import { mountWithCleanup } from "@web/../tests/web_test_helpers";
 import { registry } from "@web/core/registry";
 import { WebClient } from "@web/webclient/webclient";

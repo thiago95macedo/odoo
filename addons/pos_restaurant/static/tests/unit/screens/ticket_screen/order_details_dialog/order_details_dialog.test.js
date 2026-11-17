@@ -1,4 +1,4 @@
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@weth/hoot";
 import { mountWithCleanup } from "@web/../tests/web_test_helpers";
 import { definePosModels } from "@point_of_sale/../tests/unit/data/generate_model_definitions";
 import { setupPosEnv } from "@point_of_sale/../tests/unit/utils";
@@ -12,7 +12,7 @@ describe("order_details_dialog.js", () => {
         const table = store.models["restaurant.table"].get(2);
         const order = store.addNewOrder({ table_id: table });
         const orderDetailsDialog = await mountWithCleanup(OrderDetailsDialog, {
-            props: { order, close: () => {}, editPayment: () => {} },
+            props: { order, close: () => { }, editPayment: () => { } },
         });
 
         expect(orderDetailsDialog.getTableInfo()?.id).toBe(2);
@@ -22,7 +22,7 @@ describe("order_details_dialog.js", () => {
         const store = await setupPosEnv();
         const order = store.addNewOrder({ table_id: false });
         const orderDetailsDialog = await mountWithCleanup(OrderDetailsDialog, {
-            props: { order, close: () => {}, editPayment: () => {} },
+            props: { order, close: () => { }, editPayment: () => { } },
         });
 
         expect(orderDetailsDialog.getTableInfo()?.id).toBe(undefined);

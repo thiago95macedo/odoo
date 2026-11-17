@@ -19,7 +19,7 @@ import {
     test,
     tick,
     waitFor,
-} from "@odoo/hoot";
+} from "@weth/hoot";
 import { OfflinePlugin } from "@web/core/offline/offline_plugin";
 import {
     Component,
@@ -32,7 +32,7 @@ import {
     useEffect,
     useProps,
     xml,
-} from "@odoo/owl";
+} from "@weth/owl";
 import {
     clickSave,
     contains,
@@ -6549,7 +6549,7 @@ test("delete the last record (without previous action)", async () => {
             </form>`,
     };
 
-    redirect("/odoo/m-partner/1");
+    redirect("/weth/m-partner/1");
     patchWithCleanup(WebClient.prototype, {
         _loadDefaultApp() {
             expect.step("__DEFAULT_ACTION__ called");

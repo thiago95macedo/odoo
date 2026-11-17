@@ -1,12 +1,12 @@
-import { expect, test } from "@odoo/hoot";
-import { tick } from "@odoo/hoot-mock";
+import { expect, test } from "@weth/hoot";
+import { tick } from "@weth/hoot-mock";
 import {
     defineWebsiteModels,
     setupWebsiteBuilder,
     setupWebsiteBuilderWithSnippet,
 } from "@website/../tests/builder/website_helpers";
 import { contains } from "@web/../tests/web_test_helpers";
-import { animationFrame, click, press, queryOne, setInputRange, waitFor } from "@odoo/hoot-dom";
+import { animationFrame, click, press, queryOne, setInputRange, waitFor } from "@weth/hoot-dom";
 import { patchDragImage } from "@website/../tests/builder/image_test_helpers";
 import { dummyBase64Img } from "@html_builder/../tests/helpers";
 import { getContent } from "@html_editor/../tests/_helpers/selection";

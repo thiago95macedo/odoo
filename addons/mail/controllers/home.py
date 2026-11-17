@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import http
-from odoo.addons.web.controllers.home import Home as WebHome
-from odoo.addons.mail.tools.discuss import add_guest_to_context
+from weth import http
+from weth.addons.web.controllers.home import Home as WebHome
+from weth.addons.mail.tools.discuss import add_guest_to_context
 
 
 class Home(WebHome):

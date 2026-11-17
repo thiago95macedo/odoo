@@ -1,5 +1,5 @@
-from odoo import _, models
-from odoo.tools.misc import format_date
+from weth import _, models
+from weth.tools.misc import format_date
 
 
 class PosOrderReceipt(models.AbstractModel):

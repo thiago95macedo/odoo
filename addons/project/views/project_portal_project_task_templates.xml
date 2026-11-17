@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
     <template id="portal_format_date" name="Portal Formatted Date">
         <t t-if="date_record.year == datetime.date.today().year">
             <span t-out="date_record" t-options='{"widget": "date", "format": "MMM d"}'/>
@@ -152,7 +152,7 @@
             <t t-set="title" t-value="task.name"/>
             <t t-set="o_portal_fullwidth_alert" groups="project.group_project_user">
                 <t t-call="portal.portal_back_in_edit_mode"
-                    backend_url="'/odoo/action-project.action_view_my_task/%s' % (task.id)"/>
+                    backend_url="'/weth/action-project.action_view_my_task/%s' % (task.id)"/>
             </t>
         </xpath>
         <xpath expr="//div[hasclass('o_portal_sidebar')]" position="inside">
@@ -303,4 +303,4 @@
         <strong t-if="task.allocated_hours > 0" class="d-none">Allocated Time:</strong>
         <span t-out="task.env['account.analytic.line']._format_portal_hours(task.allocated_hours)"/>
     </template>
-</odoo>
+</weth>

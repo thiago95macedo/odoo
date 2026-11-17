@@ -4,14 +4,14 @@
 from datetime import date, datetime, timedelta
 from unittest.mock import patch
 
-from odoo import modules
-from odoo.addons.hr_holidays.tests.common import TestHrHolidaysCommon
-from odoo.addons.mail.tests.common import mail_new_test_user
-from odoo.exceptions import ValidationError
+from weth import modules
+from weth.addons.hr_holidays.tests.common import TestHrHolidaysCommon
+from weth.addons.mail.tests.common import mail_new_test_user
+from weth.exceptions import ValidationError
 from freezegun import freeze_time
 
-from odoo.tests import tagged
-from odoo.tools import config
+from weth.tests import tagged
+from weth.tools import config
 
 @tagged('global_leaves')
 class TestGlobalLeaves(TestHrHolidaysCommon):

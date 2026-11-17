@@ -1,7 +1,7 @@
-import { expect, test } from "@odoo/hoot";
-import { queryAll, queryAllTexts, queryOne } from "@odoo/hoot-dom";
-import { animationFrame } from "@odoo/hoot-mock";
-import { Component, markup, proxy, useProps, xml } from "@odoo/owl";
+import { expect, test } from "@weth/hoot";
+import { queryAll, queryAllTexts, queryOne } from "@weth/hoot-dom";
+import { animationFrame } from "@weth/hoot-mock";
+import { Component, markup, proxy, useProps, xml } from "@weth/owl";
 import {
     contains,
     editAce,
@@ -27,28 +27,28 @@ function getDomValue() {
 function getFakeAceEditor() {
     return {
         session: {
-            on: () => {},
-            setMode: () => {},
-            setUseWorker: () => {},
-            setOptions: () => {},
-            getValue: () => {},
-            setValue: () => {},
+            on: () => { },
+            setMode: () => { },
+            setUseWorker: () => { },
+            setOptions: () => { },
+            getValue: () => { },
+            setValue: () => { },
         },
         renderer: {
-            setOptions: () => {},
+            setOptions: () => { },
             $cursorLayer: { element: { style: {} } },
         },
-        setOptions: () => {},
-        setValue: () => {},
+        setOptions: () => { },
+        setValue: () => { },
         getValue: () => "",
-        setTheme: () => {},
-        resize: () => {},
-        destroy: () => {},
-        setSession: () => {},
+        setTheme: () => { },
+        resize: () => { },
+        destroy: () => { },
+        setSession: () => { },
         getSession() {
             return this.session;
         },
-        on: () => {},
+        on: () => { },
     };
 }
 

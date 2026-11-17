@@ -2,9 +2,9 @@
 
 from datetime import timedelta
 
-from odoo import fields, Command
-from odoo.tests import tagged, Form
-from odoo.addons.purchase_stock.tests.common import PurchaseTestCommon
+from weth import fields, Command
+from weth.tests import tagged, Form
+from weth.addons.purchase_stock.tests.common import PurchaseTestCommon
 
 
 @tagged('at_install', '-post_install')  # LEGACY at_install

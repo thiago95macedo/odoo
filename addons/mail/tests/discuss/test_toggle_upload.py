@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import Command
-from odoo.tests.common import HttpCase
-from odoo.tools import file_open
+from weth import Command
+from weth.tests.common import HttpCase
+from weth.tools import file_open
 
 
 class TestToggleUpload(HttpCase):

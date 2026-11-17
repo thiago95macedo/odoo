@@ -3,7 +3,7 @@ import { useBus, useService } from "@web/core/utils/hooks";
 import { MainComponentsContainer } from "@web/core/main_components_container";
 import { useOwnDebugContext } from "@web/core/debug/debug_context";
 import { ActionContainer } from "@web/webclient/actions/action_container";
-import { Component, onMounted, proxy, useListener } from "@odoo/owl";
+import { Component, onMounted, proxy, useListener } from "@weth/owl";
 
 export class ProjectSharingWebClient extends Component {
     static components = { ActionContainer, MainComponentsContainer };

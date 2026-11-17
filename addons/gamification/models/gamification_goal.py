@@ -5,8 +5,8 @@ import ast
 import logging
 from datetime import date, datetime, timedelta
 
-from odoo import api, fields, models, _, exceptions
-from odoo.tools.safe_eval import safe_eval, time
+from weth import api, fields, models, _, exceptions
+from weth.tools.safe_eval import safe_eval, time
 
 _logger = logging.getLogger(__name__)
 

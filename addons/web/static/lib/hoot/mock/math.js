@@ -1,4 +1,4 @@
-/** @odoo-module */
+/** @weth-module */
 
 import { validateSeed } from "../hoot_utils";
 

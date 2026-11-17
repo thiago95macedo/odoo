@@ -5,14 +5,14 @@ import time
 
 from unittest.mock import ANY, Mock, patch
 
-from odoo.exceptions import UserError
-from odoo.tests.common import tagged, TransactionCase
+from weth.exceptions import UserError
+from weth.tests.common import tagged, TransactionCase
 
 
 @tagged('at_install', '-post_install')  # LEGACY at_install
 class TestFetchmailOutlook(TransactionCase):
 
-    @patch('odoo.addons.mail.models.fetchmail.OdooIMAP4_SSL')
+    @patch('weth.addons.mail.models.fetchmail.OdooIMAP4_SSL')
     def test_connect(self, mock_imap):
         """Test that the connect method will use the right
         authentication method with the right arguments.

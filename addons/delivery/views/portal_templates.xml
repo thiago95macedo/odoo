@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
 
     <template id="delivery.state_header" inherit_id="payment.state_header">
         <t t-elif="tx.state == 'pending'" position="before">
@@ -9,4 +9,4 @@
         </t>
     </template>
 
-</odoo>
+</weth>

@@ -4,9 +4,9 @@ import logging
 import math
 from itertools import zip_longest
 
-from odoo import Command, models, fields, api, _
-from odoo.exceptions import UserError, ValidationError, LockError
-from odoo.tools import consteq, hmac
+from weth import Command, models, fields, api, _
+from weth.exceptions import UserError, ValidationError, LockError
+from weth.tools import consteq, hmac
 
 _logger = logging.getLogger(__name__)
 

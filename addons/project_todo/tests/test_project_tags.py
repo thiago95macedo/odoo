@@ -1,8 +1,8 @@
 import logging
 
-from odoo.exceptions import AccessError
+from weth.exceptions import AccessError
 
-from odoo.addons.project.tests.test_project_tags import TestProjectTagsSecurity
+from weth.addons.project.tests.test_project_tags import TestProjectTagsSecurity
 
 _logger = logging.getLogger(__name__)
 

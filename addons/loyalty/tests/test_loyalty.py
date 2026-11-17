@@ -5,10 +5,10 @@ from unittest.mock import patch
 
 from psycopg2 import IntegrityError
 
-from odoo import Command, fields
-from odoo.exceptions import UserError, ValidationError
-from odoo.tests import Form, TransactionCase, tagged
-from odoo.tools import mute_logger
+from weth import Command, fields
+from weth.exceptions import UserError, ValidationError
+from weth.tests import Form, TransactionCase, tagged
+from weth.tools import mute_logger
 
 
 @tagged("post_install", "-at_install")
@@ -65,7 +65,7 @@ class TestLoyalty(TransactionCase):
 
     def test_discount_product_unlink(self):
         # Test that we can not unlink discount line product id
-        with mute_logger("odoo.sql_db"), self.assertRaises(IntegrityError):
+        with mute_logger("weth.sql_db"), self.assertRaises(IntegrityError):
             self.program.reward_ids.discount_line_product_id.unlink()
 
     def test_discount_line_product_no_default_tax(self):
@@ -122,7 +122,7 @@ class TestLoyalty(TransactionCase):
 
         partner = self.env["res.partner"].create({"name": "Test Partner"})
         with patch(
-            "odoo.addons.mail.models.mail_template.MailTemplate.send_mail", new=mock_send_mail
+            "weth.addons.mail.models.mail_template.MailTemplate.send_mail", new=mock_send_mail
         ):
             # Send mail at creation
             coupon = self.env["loyalty.card"].create({

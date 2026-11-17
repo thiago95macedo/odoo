@@ -1,4 +1,4 @@
-import { Component, proxy, types, useProps } from "@odoo/owl";
+import { Component, proxy, types, useProps } from "@weth/owl";
 import { useSelfOrder } from "@pos_self_order/app/services/self_order_service";
 import { useService } from "@web/core/utils/hooks";
 import { ProductCard } from "@pos_self_order/app/components/product_card/product_card";

@@ -4,12 +4,12 @@
 import lxml
 from datetime import datetime
 
-from odoo import http
-from odoo.addons.test_mail_full.tests.common import TestMailFullCommon
-from odoo.addons.test_mail_sms.tests.common import TestSMSRecipients
-from odoo.tests import tagged
-from odoo.tests.common import users, warmup
-from odoo.tools import mute_logger
+from weth import http
+from weth.addons.test_mail_full.tests.common import TestMailFullCommon
+from weth.addons.test_mail_sms.tests.common import TestSMSRecipients
+from weth.tests import tagged
+from weth.tests.common import users, warmup
+from weth.tools import mute_logger
 
 
 class TestRatingCommon(TestMailFullCommon, TestSMSRecipients):
@@ -41,7 +41,7 @@ class TestRatingFlow(TestRatingCommon):
             self.assertEqual(len(record_rating.message_ids), 1)
 
     @users('employee')
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_rating_prepare(self):
         for record_rating, desc in ((self.record_rating, 'With rating mixin'),
                                     (self.record_rating_thread, 'Without rating mixin')):
@@ -61,7 +61,7 @@ class TestRatingFlow(TestRatingCommon):
                 self.assertFalse(rating.rating)
 
     @users('employee')
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_rating_rating_apply(self):
         for record_rating, expected_subtype, is_rating_mixin_test in (
             (self.record_rating_thread, self.env.ref('mail.mt_comment'), False),

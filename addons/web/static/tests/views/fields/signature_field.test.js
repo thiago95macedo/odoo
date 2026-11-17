@@ -1,8 +1,8 @@
 import { NameAndSignature } from "@web/core/signature/name_and_signature";
 
-import { expect, queryOne, test } from "@odoo/hoot";
-import { animationFrame, runAllTimers } from "@odoo/hoot-mock";
-import { click, drag, edit, queryFirst, waitFor } from "@odoo/hoot-dom";
+import { expect, queryOne, test } from "@weth/hoot";
+import { animationFrame, runAllTimers } from "@weth/hoot-mock";
+import { click, drag, edit, queryFirst, waitFor } from "@weth/hoot-dom";
 import {
     clickSave,
     defineModels,
@@ -199,7 +199,7 @@ test("Set size (width and height) in node option", async () => {
 
 test("clicking save manually after changing signature should change the unique of the image src", async () => {
     Partner._fields.foo = fields.Char({
-        onChange() {},
+        onChange() { },
     });
 
     const rec = Partner._records.find((rec) => rec.id === 1);
@@ -271,7 +271,7 @@ test("save record with signature field modified by onchange", async () => {
 
     Partner._fields.foo = fields.Char({
         onChange(data) {
-            data.sign = {filename: "", content: MYB64};
+            data.sign = { filename: "", content: MYB64 };
         },
     });
 

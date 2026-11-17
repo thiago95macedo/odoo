@@ -1,5 +1,5 @@
 import { makeRecordFieldLocalId } from "@mail/model/misc";
-import { untrack } from "@odoo/owl";
+import { untrack } from "@weth/owl";
 
 import {
     LocalStorageEntry,

@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.mass_mailing.tests.common import MassMailCommon
-from odoo.addons.base.tests.test_ir_cron import CronMixinCase
-from odoo.tests.common import tagged, users
+from weth.addons.mass_mailing.tests.common import MassMailCommon
+from weth.addons.base.tests.test_ir_cron import CronMixinCase
+from weth.tests.common import tagged, users
 
 from unittest.mock import patch
 
@@ -33,7 +33,7 @@ class TestMailingRetry(MassMailCommon, CronMixinCase):
             mail_records.write({'state': 'exception', 'failure_reason': 'forced_failure'})
 
         with (
-            patch('odoo.addons.mail.models.mail_mail.MailMail._send', patched_mail_mail_send),
+            patch('weth.addons.mail.models.mail_mail.MailMail._send', patched_mail_mail_send),
             self.enter_registry_test_mode(),
         ):
             self.env.ref('mass_mailing.ir_cron_mass_mailing_queue').sudo().method_direct_trigger()

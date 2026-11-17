@@ -1,9 +1,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.http import route
-from odoo.tools.misc import format_amount
+from weth.http import route
+from weth.tools.misc import format_amount
 
-from odoo.addons.loyalty.controllers import portal as loyalty_portal
+from weth.addons.loyalty.controllers import portal as loyalty_portal
 
 
 class CustomerPortalLoyalty(loyalty_portal.CustomerPortalLoyalty):

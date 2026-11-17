@@ -1,6 +1,6 @@
 import { _t } from "@web/core/l10n/translation";
 import { BarcodeScanner } from "@barcodes/components/barcode_scanner";
-import { Component, onWillStart, usePlugin, useProps } from "@odoo/owl";
+import { Component, onWillStart, usePlugin, useProps } from "@weth/owl";
 import { isDisplayStandalone } from "@web/core/browser/feature_detection";
 import { rpc } from "@web/core/network/rpc";
 import { registry } from "@web/core/registry";
@@ -66,7 +66,7 @@ export class EventScanView extends Component {
      * @param {Object} barcode
      * @param {function} onNextScanTriggered
      */
-    async onBarcodeScanned(barcode, onNextScanTriggered = () => {}) {
+    async onBarcodeScanned(barcode, onNextScanTriggered = () => { }) {
         const result = await this.orm.call("event.registration", "register_attendee", [], {
             barcode: barcode,
             event_id: this.eventId,

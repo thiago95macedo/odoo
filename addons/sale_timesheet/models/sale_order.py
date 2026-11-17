@@ -2,10 +2,10 @@
 
 from collections import defaultdict
 
-from odoo import api, fields, models, _
-from odoo.exceptions import UserError
-from odoo.fields import Domain
-from odoo.tools import float_compare
+from weth import api, fields, models, _
+from weth.exceptions import UserError
+from weth.fields import Domain
+from weth.tools import float_compare
 
 
 class SaleOrder(models.Model):

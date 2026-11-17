@@ -1,8 +1,8 @@
-/** @odoo-module **/
+/** @weth-module **/
 
-import { expect, describe, test } from "@odoo/hoot";
-import { animationFrame, mockDate } from "@odoo/hoot-mock";
-import { click, freezeTime, queryOne } from "@odoo/hoot-dom";
+import { expect, describe, test } from "@weth/hoot";
+import { animationFrame, mockDate } from "@weth/hoot-mock";
+import { click, freezeTime, queryOne } from "@weth/hoot-dom";
 import { contains, startServer, start, openFormView, mailModels } from "@mail/../tests/mail_test_helpers";
 import { defineModels, patchWithCleanup } from "@web/../tests/web_test_helpers";
 import { CallDebrief } from "@mail/views/fields/call_debrief/call_debrief";

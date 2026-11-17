@@ -1,8 +1,8 @@
 from unittest.mock import patch
 
-from odoo.tests import tagged
+from weth.tests import tagged
 
-from odoo.addons.website_sale.tests.common import WebsiteSaleCommon
+from weth.addons.website_sale.tests.common import WebsiteSaleCommon
 
 
 @tagged("post_install", "-at_install")

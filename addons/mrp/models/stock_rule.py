@@ -4,9 +4,9 @@ from collections import defaultdict
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
 
-from odoo import api, fields, models, SUPERUSER_ID, _
-from odoo.fields import Domain, Command
-from odoo.tools import OrderedSet
+from weth import api, fields, models, SUPERUSER_ID, _
+from weth.fields import Domain, Command
+from weth.tools import OrderedSet
 
 
 class StockRule(models.Model):

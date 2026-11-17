@@ -1,4 +1,4 @@
-import { Component, props, proxy, signal, types as t } from "@odoo/owl";
+import { Component, props, proxy, signal, types as t } from "@weth/owl";
 
 export class WhiteboardPopover extends Component {
     static template = "html_editor.whiteboardPopover";

@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 import itertools
 
-from odoo import models
+from weth import models
 
 
 class ProductTemplate(models.Model):

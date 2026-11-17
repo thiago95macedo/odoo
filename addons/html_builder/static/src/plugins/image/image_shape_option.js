@@ -6,7 +6,7 @@ import { loadImageInfo } from "@html_editor/utils/image_processing";
 import { isImageSupportedForProcessing } from "@html_editor/main/media/image_post_process_plugin";
 import { getMimetypeBeforeShape } from "@html_builder/utils/image";
 import { ratioValueConverter } from "@html_builder/utils/utils";
-import { useProps, t } from "@odoo/owl";
+import { useProps, t } from "@weth/owl";
 
 export class ImageShapeOption extends BaseOptionComponent {
     static template = "html_builder.ImageShapeOption";

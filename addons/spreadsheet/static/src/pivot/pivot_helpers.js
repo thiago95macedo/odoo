@@ -1,14 +1,14 @@
 // @ts-check
 
 import { _t } from "@web/core/l10n/translation";
-import { EvaluationError, helpers } from "@odoo/o-spreadsheet";
+import { EvaluationError, helpers } from "@weth/o-spreadsheet";
 import { getFullFieldStringFromPath } from "../data_sources/data_source";
 
 const { isDateOrDatetimeField, parseDimension } = helpers;
 
 /**
- * @typedef {import("@odoo/o-spreadsheet").Token} Token
- * @typedef {import("@odoo/o-spreadsheet").Granularity} Granularity
+ * @typedef {import("@weth/o-spreadsheet").Token} Token
+ * @typedef {import("@weth/o-spreadsheet").Granularity} Granularity
  * */
 
 export const pivotFormulaRegex = /^=.*PIVOT/;

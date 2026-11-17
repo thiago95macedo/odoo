@@ -1,4 +1,4 @@
-from odoo import fields, models, Command
+from weth import fields, models, Command
 
 
 class TalentPoolAddApplicants(models.TransientModel):

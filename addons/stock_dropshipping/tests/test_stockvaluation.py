@@ -1,10 +1,10 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.fields import Command
-from odoo.tests import Form, tagged
-from odoo.tools import mute_logger
+from weth.fields import Command
+from weth.tests import Form, tagged
+from weth.tools import mute_logger
 
-from odoo.addons.stock_account.tests.test_anglo_saxon_valuation_reconciliation_common import (
+from weth.addons.stock_account.tests.test_anglo_saxon_valuation_reconciliation_common import (
     ValuationReconciliationTestCommon,
 )
 
@@ -74,7 +74,7 @@ class TestStockValuation(ValuationReconciliationTestCommon):
         # create the vendor bill
         move_form = Form(self.env['account.move'].with_context(default_move_type='in_invoice'))
         move_form.partner_id = vendor1
-        with mute_logger('odoo.tests.form.onchange'):  # Mute "x PO lines added to the bill" notification
+        with mute_logger('weth.tests.form.onchange'):  # Mute "x PO lines added to the bill" notification
             move_form.purchase_vendor_bill_id = self.env['purchase.bill.union'].browse(-self.purchase_order1.id)
         move_form.invoice_date = move_form.date
         for i in range(len(self.purchase_order1.order_line)):

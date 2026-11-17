@@ -3,7 +3,7 @@ import { MessageSeenIndicator } from "@mail/discuss/core/common/message_seen_ind
 import { useHover } from "@mail/utils/common/hooks";
 import { useSubEnv } from "@web/owl2/utils";
 
-import { Component, signal, t, useProps } from "@odoo/owl";
+import { Component, signal, t, useProps } from "@weth/owl";
 
 import { ActionSwiper, onSwipeType } from "@web/core/action_swiper/action_swiper";
 import { useService } from "@web/core/utils/hooks";

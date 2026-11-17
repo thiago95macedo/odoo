@@ -2,10 +2,10 @@
 
 from markupsafe import Markup
 
-from odoo import models
+from weth import models
 
-from odoo.addons.base.models.ir_sequence import _select_nextval
-from odoo.addons.mail.tools.discuss import Store
+from weth.addons.base.models.ir_sequence import _select_nextval
+from weth.addons.mail.tools.discuss import Store
 
 
 class BusListenerMixin(models.AbstractModel):

@@ -3,10 +3,10 @@
 
 from datetime import datetime, timedelta
 
-from odoo.addons.mass_mailing.tests.common import MassMailCommon
-from odoo.tests import Form, users, tagged
-from odoo.tools import mute_logger
-from odoo import fields
+from weth.addons.mass_mailing.tests.common import MassMailCommon
+from weth.tests import Form, users, tagged
+from weth.tools import mute_logger
+from weth import fields
 
 
 @tagged('post_install', '-at_install')
@@ -33,7 +33,7 @@ class TestMailingABTestingCommon(MassMailCommon):
 
 class TestMailingABTesting(TestMailingABTestingCommon):
 
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     @users('user_marketing')
     def test_mailing_ab_testing_auto_flow(self):
         with self.mock_mail_gateway():
@@ -62,7 +62,7 @@ class TestMailingABTesting(TestMailingABTestingCommon):
         winner_mailing = self.ab_testing_campaign.mailing_mail_ids.filtered(lambda mailing: mailing.ab_testing_pc == 100)
         self.assertEqual(winner_mailing.subject, 'A/B Testing V1')
 
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     @users('user_marketing')
     def test_mailing_ab_testing_auto_flow_cron(self):
         self.ab_testing_mailing_1.write({
@@ -145,7 +145,7 @@ class TestMailingABTesting(TestMailingABTestingCommon):
             self.ab_testing_mailing_1 + self.ab_testing_mailing_2
         )
 
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     @users('user_marketing')
     def test_mailing_ab_testing_manual_flow(self):
         self.ab_testing_mailing_1.write({
@@ -177,7 +177,7 @@ class TestMailingABTesting(TestMailingABTestingCommon):
         winner_mailing = self.ab_testing_campaign.mailing_mail_ids.filtered(lambda mailing: mailing.ab_testing_pc == 100)
         self.assertEqual(winner_mailing.subject, 'A/B Testing V2')
 
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     @users('user_marketing')
     def test_mailing_ab_testing_minimum_participants(self):
         """ Test that it should send minimum one mail(if possible) when ab_testing_pc is too small compared to the amount of targeted records."""

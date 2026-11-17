@@ -1,4 +1,4 @@
-/** @odoo-module */
+/** @weth-module */
 
 import { isInstanceOf } from "../hoot_dom_utils";
 

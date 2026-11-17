@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
     <data>
 
         <!-- MO Backorder -->
@@ -42,4 +42,4 @@
         </record>
 
     </data>
-</odoo>
+</weth>

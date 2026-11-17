@@ -2,10 +2,10 @@
 
 from PIL import Image
 
-from odoo.tests import tagged
-from odoo.tests.common import TransactionCase
-from odoo.tools import BinaryBytes
-from odoo.tools.image import binary_to_image, image_apply_opt
+from weth.tests import tagged
+from weth.tests.common import TransactionCase
+from weth.tools import BinaryBytes
+from weth.tools.image import binary_to_image, image_apply_opt
 
 
 @tagged('-post_install', 'at_install')

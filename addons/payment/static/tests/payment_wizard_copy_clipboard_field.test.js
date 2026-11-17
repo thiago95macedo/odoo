@@ -1,6 +1,6 @@
 import { defineMailModels } from "@mail/../tests/mail_test_helpers";
-import { expect, test } from "@odoo/hoot";
-import { click, edit } from "@odoo/hoot-dom";
+import { expect, test } from "@weth/hoot";
+import { click, edit } from "@weth/hoot-dom";
 import {
     defineModels,
     fields,

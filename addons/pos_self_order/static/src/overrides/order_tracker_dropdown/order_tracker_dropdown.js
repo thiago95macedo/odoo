@@ -1,4 +1,4 @@
-import { useEffect, signal, t } from "@odoo/owl";
+import { useEffect, signal, t } from "@weth/owl";
 import { patch } from "@web/core/utils/patch";
 import { OrderTrackerDropdown } from "@point_of_sale/app/components/order_tracker_dropdown/order_tracker_dropdown";
 

@@ -10,7 +10,7 @@ import {
     types,
     useEffect,
     useProps,
-} from "@odoo/owl";
+} from "@weth/owl";
 
 import { hasTouch } from "@web/core/browser/feature_detection";
 import { _t } from "@web/core/l10n/translation";
@@ -27,7 +27,7 @@ export class Poll extends Component {
         this.props = useProps({
             poll: types.instanceOf(this.store["mail.poll"]),
         });
-        /** @type {import("@odoo/owl").Signal<Element>} */
+        /** @type {import("@weth/owl").Signal<Element>} */
         this.rootRef = signal();
         this.state = proxy({
             isShowingResults: false,

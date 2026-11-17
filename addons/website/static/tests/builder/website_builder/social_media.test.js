@@ -1,4 +1,4 @@
-import { expect, test } from "@odoo/hoot";
+import { expect, test } from "@weth/hoot";
 import {
     defineWebsiteModels,
     setupWebsiteBuilderWithSnippet,
@@ -9,7 +9,7 @@ import {
     unfoldAllOptionsGroups,
     waitForEndOfOperation,
 } from "@html_builder/../tests/helpers";
-import { click, queryOne, animationFrame, edit, waitFor, press } from "@odoo/hoot-dom";
+import { click, queryOne, animationFrame, edit, waitFor, press } from "@weth/hoot-dom";
 
 defineWebsiteModels();
 

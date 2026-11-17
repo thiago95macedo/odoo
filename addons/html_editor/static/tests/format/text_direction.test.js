@@ -1,8 +1,8 @@
-import { expect, test } from "@odoo/hoot";
+import { expect, test } from "@weth/hoot";
 import { setupEditor, testEditor } from "../_helpers/editor";
 import { insertText, switchDirection } from "../_helpers/user_actions";
-import { animationFrame } from "@odoo/hoot-mock";
-import { press, queryAllTexts } from "@odoo/hoot-dom";
+import { animationFrame } from "@weth/hoot-mock";
+import { press, queryAllTexts } from "@weth/hoot-dom";
 import { getContent } from "../_helpers/selection";
 import { expectElementCount } from "../_helpers/ui_expectations";
 

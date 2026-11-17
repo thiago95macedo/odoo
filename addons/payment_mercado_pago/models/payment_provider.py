@@ -4,16 +4,16 @@ import json
 from datetime import timedelta
 from urllib.parse import urlencode
 
-from odoo import api, fields, models
-from odoo.exceptions import RedirectWarning, ValidationError
-from odoo.fields import Command
-from odoo.http import request
-from odoo.tools.urls import urljoin
+from weth import api, fields, models
+from weth.exceptions import RedirectWarning, ValidationError
+from weth.fields import Command
+from weth.http import request
+from weth.tools.urls import urljoin
 
-from odoo.addons.payment import utils as payment_utils
-from odoo.addons.payment.const import REPORT_REASONS_MAPPING
-from odoo.addons.payment.logging import get_payment_logger
-from odoo.addons.payment_mercado_pago import const
+from weth.addons.payment import utils as payment_utils
+from weth.addons.payment.const import REPORT_REASONS_MAPPING
+from weth.addons.payment.logging import get_payment_logger
+from weth.addons.payment_mercado_pago import const
 
 _logger = get_payment_logger(__name__)
 

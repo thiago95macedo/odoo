@@ -3,10 +3,10 @@ import logging
 import re
 from pathlib import Path
 
-from odoo.modules import get_module_path
-from odoo.tools import convert_file, topological_sort
+from weth.modules import get_module_path
+from weth.tools import convert_file, topological_sort
 
-_loading_logger = logging.getLogger('odoo.addons.populate')
+_loading_logger = logging.getLogger('weth.addons.populate')
 
 POPULATE_FOLDER_NAME = 'populate'
 MODULE_NAME_RE = re.compile(r'^[a-zA-Z_][a-zA-Z0-9_]*$')
@@ -48,7 +48,7 @@ def load_populate(env):
         # Allows for modules to define custom generators.
         if (populate_folder / '__init__.py').exists():
             if MODULE_NAME_RE.fullmatch(module_name):
-                populate_module = f'odoo.addons.{module_name}.{POPULATE_FOLDER_NAME}'
+                populate_module = f'weth.addons.{module_name}.{POPULATE_FOLDER_NAME}'
                 _loading_logger.info("loading %s", populate_module)
                 importlib.import_module(populate_module)
             else:

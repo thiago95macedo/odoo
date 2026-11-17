@@ -1,10 +1,10 @@
-import { animationFrame } from "@odoo/hoot-mock";
+import { animationFrame } from "@weth/hoot-mock";
 
-import * as spreadsheet from "@odoo/o-spreadsheet";
+import * as spreadsheet from "@weth/o-spreadsheet";
 import { createModelWithDataSource } from "@spreadsheet/../tests/helpers/model";
 
 /**
- * @typedef {import("@odoo/o-spreadsheet").Model} Model
+ * @typedef {import("@weth/o-spreadsheet").Model} Model
  * @typedef {import("@spreadsheet").OdooSpreadsheetModel} OdooSpreadsheetModel
  */
 

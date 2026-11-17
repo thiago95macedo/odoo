@@ -1,5 +1,5 @@
-import { expect } from "@odoo/hoot";
-import { animationFrame, waitFor, queryFirst, delay } from "@odoo/hoot-dom";
+import { expect } from "@weth/hoot";
+import { animationFrame, waitFor, queryFirst, delay } from "@weth/hoot-dom";
 import { contains } from "@web/../tests/web_test_helpers";
 import { clickBtn } from "./common";
 

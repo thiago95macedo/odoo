@@ -2,9 +2,9 @@ import logging
 
 import requests
 
-from odoo import _, api, fields, models
-from odoo.exceptions import UserError, ValidationError, AccessError
-from odoo.tools import hash_sign
+from weth import _, api, fields, models
+from weth.exceptions import UserError, ValidationError, AccessError
+from weth.tools import hash_sign
 
 _logger = logging.getLogger(__name__)
 

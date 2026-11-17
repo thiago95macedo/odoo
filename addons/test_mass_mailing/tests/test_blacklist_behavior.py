@@ -2,11 +2,11 @@
 
 import datetime
 
-from odoo.addons.mass_mailing.models.mail_thread import BLACKLIST_MAX_BOUNCED_LIMIT
-from odoo.addons.test_mass_mailing.tests import common
-from odoo.tests import tagged
-from odoo.tests.common import users
-from odoo.tools import mute_logger
+from weth.addons.mass_mailing.models.mail_thread import BLACKLIST_MAX_BOUNCED_LIMIT
+from weth.addons.test_mass_mailing.tests import common
+from weth.tests import tagged
+from weth.tests.common import users
+from weth.tools import mute_logger
 
 
 @tagged('mail_blacklist')
@@ -44,7 +44,7 @@ class TestAutoBlacklist(common.TestMassMailCommon):
         })
         self._test_mailing_bounce_w_auto_bl({'bounced_partner': bounced_partners})
 
-    @mute_logger('odoo.addons.mail.models.mail_thread')
+    @mute_logger('weth.addons.mail.models.mail_thread')
     def _test_mailing_bounce_w_auto_bl(self, bounce_base_values):
         mailing = self.mailing_bl.with_env(self.env)
         target = self.target_rec.with_env(self.env)

@@ -15,7 +15,7 @@ import {
 } from "@web/core/utils/numbers";
 import { exprToBoolean } from "@web/core/utils/strings";
 
-import { markup } from "@odoo/owl";
+import { markup } from "@weth/owl";
 import { formatCurrency } from "@web/core/currency";
 import { normalizeTimeStr } from "@web/core/l10n/time";
 
@@ -46,9 +46,8 @@ export function formatBinary(value) {
 export function formatBoolean(value) {
     return markup`
         <div class="o-checkbox d-inline-block me-2">
-            <input id="boolean_checkbox" type="checkbox" class="form-check-input" disabled ${
-                value ? "checked" : ""
-            }/>
+            <input id="boolean_checkbox" type="checkbox" class="form-check-input" disabled ${value ? "checked" : ""
+        }/>
             <label for="boolean_checkbox" class="form-check-label"/>
         </div>`;
 }

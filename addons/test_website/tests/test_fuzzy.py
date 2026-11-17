@@ -4,14 +4,14 @@
 import logging
 import psycopg2
 
-from odoo.addons.website.controllers.main import Website
-from odoo.addons.http_routing.tests.common import MockRequest
-import odoo.tests
-from odoo.tests.common import TransactionCase
+from weth.addons.website.controllers.main import Website
+from weth.addons.http_routing.tests.common import MockRequest
+import weth.tests
+from weth.tests.common import TransactionCase
 
 _logger = logging.getLogger(__name__)
 
-@odoo.tests.tagged('-at_install', 'post_install')
+@weth.tests.tagged('-at_install', 'post_install')
 class TestAutoComplete(TransactionCase):
     @classmethod
     def setUpClass(cls):

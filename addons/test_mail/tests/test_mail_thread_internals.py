@@ -3,15 +3,15 @@ from markupsafe import Markup
 from unittest.mock import patch
 from unittest.mock import DEFAULT
 
-from odoo import exceptions, tools
-from odoo.addons.bus.tests.common import BusResult
-from odoo.addons.mail.tests.common import mail_new_test_user, MailCommon
-from odoo.addons.test_mail.models.test_mail_models import MailTestSimple
-from odoo.addons.test_mail.tests.common import TestRecipients
-from odoo.addons.mail.tools.discuss import Store
-from odoo.fields import Domain
-from odoo.tests import HttpCase, Form, users, warmup, tagged
-from odoo.tools import mute_logger
+from weth import exceptions, tools
+from weth.addons.bus.tests.common import BusResult
+from weth.addons.mail.tests.common import mail_new_test_user, MailCommon
+from weth.addons.test_mail.models.test_mail_models import MailTestSimple
+from weth.addons.test_mail.tests.common import TestRecipients
+from weth.addons.mail.tools.discuss import Store
+from weth.fields import Domain
+from weth.tests import HttpCase, Form, users, warmup, tagged
+from weth.tools import mute_logger
 
 
 class ThreadRecipients(MailCommon, TestRecipients):
@@ -1211,14 +1211,14 @@ class TestChatterTweaks(ThreadRecipients):
             body='Test Body', message_type='comment', subtype_xmlid='mail.mt_comment')
         self.assertEqual(self.test_record.message_follower_ids.mapped('partner_id'), original.mapped('partner_id'))
 
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_post_no_subscribe_recipients(self):
         original = self.test_record.message_follower_ids
         self.test_record.with_user(self.user_employee).with_context({'mail_post_autofollow_author_skip': True}).message_post(
             body='Test Body', message_type='comment', subtype_xmlid='mail.mt_comment', partner_ids=[self.partner_1.id, self.partner_2.id])
         self.assertEqual(self.test_record.message_follower_ids.mapped('partner_id'), original.mapped('partner_id'))
 
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_post_subscribe_recipients(self):
         original = self.test_record.message_follower_ids
         self.test_record.with_user(self.user_employee).with_context({'mail_post_autofollow_author_skip': True, 'mail_post_autofollow': True}).message_post(
@@ -1239,7 +1239,7 @@ class TestChatterTweaks(ThreadRecipients):
         self.assertEqual(new_record.message_partner_ids, self.partner_1,
                          'Customer was found and added as follower automatically when pinged')
 
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_chatter_context_cleaning(self):
         """ Test default keys are not propagated to message creation as it may
         induce wrong values for some fields, like parent_id. """
@@ -1465,7 +1465,7 @@ class TestDiscuss(HttpCase, MailCommon, TestRecipients):
         self.test_record.unlink()
         self.assertFalse(message.exists(), "Test message should have been deleted")
 
-    @mute_logger("odoo.http")
+    @mute_logger("weth.http")
     def test_access_inbox_records(self):
         for access, name in [("admin", "Inaccessible Record"), ("internal", "Accessible Record")]:
             self.env["mail.test.access"].create(
@@ -1652,7 +1652,7 @@ class TestNoThread(MailCommon, TestRecipients):
         self.assertEqual(formatted['default_subject'], 'Just Test')
         self.assertEqual(formatted['record_name'], 'Just Test')
 
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     @users('employee')
     def test_store_notification_fields_mass_mail(self):
         """ Mass mailing is supported on non-thread models, hence a sending

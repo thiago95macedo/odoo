@@ -1,4 +1,4 @@
-import { onMounted, onPatched } from "@odoo/owl";
+import { onMounted, onPatched } from "@weth/owl";
 import { browser } from "@web/core/browser/browser";
 import { getActiveHotkey } from "@web/core/hotkeys/hotkey_utils";
 import { localization } from "@web/core/l10n/localization";
@@ -141,7 +141,7 @@ export function useMatrixKeyNavigation(
             if (
                 !matrix ||
                 matrix.flat().length !==
-                    containerEl.querySelectorAll(matrixSiblingSelector).length ||
+                containerEl.querySelectorAll(matrixSiblingSelector).length ||
                 matrix.flat().some((el) => !el.isConnected)
             ) {
                 matrix = makeElementsPositionMatrix(containerEl, matrixSiblingSelector);

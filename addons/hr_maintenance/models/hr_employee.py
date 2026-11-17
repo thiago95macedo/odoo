@@ -1,4 +1,4 @@
-from odoo import api, models, fields
+from weth import api, models, fields
 
 
 class HrEmployee(models.Model):

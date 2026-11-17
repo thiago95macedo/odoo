@@ -9,7 +9,7 @@ import {
     untrack,
     useProps,
     useEffect,
-} from "@odoo/owl";
+} from "@weth/owl";
 import { useDateTimePicker } from "@web/core/datetime/datetime_picker_hook";
 import { areDatesEqual, deserializeDate, deserializeDateTime, today } from "@web/core/l10n/dates";
 import { localization } from "@web/core/l10n/localization";
@@ -653,7 +653,7 @@ export const dateRangeField = {
         if (fieldInfo.widget === "daterange") {
             if (
                 !record.data[fieldInfo.options[END_DATE_FIELD_OPTION]] !==
-                    !record.data[fieldname] &&
+                !record.data[fieldname] &&
                 evaluateBooleanExpr(
                     record.activeFields[fieldInfo.options[END_DATE_FIELD_OPTION]]?.required,
                     record.evalContextWithVirtualIds
@@ -663,7 +663,7 @@ export const dateRangeField = {
             }
             if (
                 !record.data[fieldInfo.options[START_DATE_FIELD_OPTION]] !==
-                    !record.data[fieldname] &&
+                !record.data[fieldname] &&
                 evaluateBooleanExpr(
                     record.activeFields[fieldInfo.options[START_DATE_FIELD_OPTION]]?.required,
                     record.evalContextWithVirtualIds

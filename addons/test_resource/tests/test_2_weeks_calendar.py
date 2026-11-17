@@ -2,7 +2,7 @@
 from datetime import datetime
 from zoneinfo import ZoneInfo
 
-from odoo.tests.common import tagged, TransactionCase
+from weth.tests.common import tagged, TransactionCase
 
 
 @tagged('at_install', '-post_install')  # LEGACY at_install

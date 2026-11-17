@@ -6,13 +6,13 @@ from dateutil.relativedelta import relativedelta
 from lxml import html
 from werkzeug.urls import url_encode
 
-from odoo import SUPERUSER_ID
-from odoo.addons.base.tests.common import HttpCaseWithUserDemo
-from odoo.addons.digest.tests.common import TestDigestCommon
-from odoo.addons.mail.tests.common import MailCommon
-from odoo.tests import tagged
-from odoo.tests.common import users
-from odoo.tools import mute_logger, urls
+from weth import SUPERUSER_ID
+from weth.addons.base.tests.common import HttpCaseWithUserDemo
+from weth.addons.digest.tests.common import TestDigestCommon
+from weth.addons.mail.tests.common import MailCommon
+from weth.tests import tagged
+from weth.tests.common import users
+from weth.tools import mute_logger, urls
 
 
 @tagged('at_install', '-post_install')  # LEGACY at_install
@@ -357,7 +357,7 @@ class TestUnsubscribe(MailCommon, HttpCaseWithUserDemo):
         self.assertIn(self.user_demo, self.test_digest.user_ids)
         self.authenticate(None, None)
 
-        with mute_logger('odoo.addons.http_routing.models.ir_http'):
+        with mute_logger('weth.addons.http_routing.models.ir_http'):
             # Ensure we cannot unregister using GET method (method not allowed)
             response = self._url_unsubscribe(token=self.user_demo_unsubscribe_token, user_id=self.user_demo.id,
                                              one_click='1', method='GET')

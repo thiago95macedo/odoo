@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import Command
-from odoo.tests import Form
-from odoo.addons.sale.tests.common import TestSaleCommon
-from odoo.exceptions import ValidationError
-from odoo.tests.common import tagged
+from weth import Command
+from weth.tests import Form
+from weth.addons.sale.tests.common import TestSaleCommon
+from weth.exceptions import ValidationError
+from weth.tests.common import tagged
 from psycopg2.errors import NotNullViolation
 
 

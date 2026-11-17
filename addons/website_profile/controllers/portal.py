@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.http import request
+from weth.http import request
 
-from odoo.addons.portal.controllers.portal import CustomerPortal
+from weth.addons.portal.controllers.portal import CustomerPortal
 
 
 class CustomerPortalProfile(CustomerPortal):

@@ -1,4 +1,4 @@
-import { usePlugin } from "@odoo/owl";
+import { usePlugin } from "@weth/owl";
 import { ReCaptcha } from "@google_recaptcha/js/recaptcha";
 import { registry } from "@web/core/registry";
 import { session } from "@web/session";
@@ -20,7 +20,7 @@ export class ModalRegistration extends Interaction {
         this.bootstrap = usePlugin(BootstrapInstance);
         // dynamic get rather than import as we don't depend on this module
         if (session.turnstile_site_key) {
-            const { TurnStile } = odoo.loader.modules.get(
+            const { TurnStile } = weth.loader.modules.get(
                 "@website_cf_turnstile/interactions/turnstile"
             );
             if (TurnStile) {

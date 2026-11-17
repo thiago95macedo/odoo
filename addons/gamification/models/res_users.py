@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import _, api, fields, models
-from odoo.tools import SQL
+from weth import _, api, fields, models
+from weth.tools import SQL
 
 
 class ResUsers(models.Model):

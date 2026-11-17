@@ -5,11 +5,11 @@ from urllib.parse import parse_qs, urlparse
 
 from freezegun import freeze_time
 
-from odoo.tests import JsonRpcException, tagged
-from odoo.tools import mute_logger
+from weth.tests import JsonRpcException, tagged
+from weth.tools import mute_logger
 
-from odoo.addons.payment.controllers.portal import PaymentPortal
-from odoo.addons.payment.tests.http_common import PaymentHttpCommon
+from weth.addons.payment.controllers.portal import PaymentPortal
+from weth.addons.payment.tests.http_common import PaymentHttpCommon
 
 
 @tagged("post_install", "-at_install")
@@ -51,7 +51,7 @@ class TestFlows(PaymentHttpCommon):
             "tokenization_requested": False,
         })
 
-        with mute_logger("odoo.addons.payment.models.payment_transaction"):
+        with mute_logger("weth.addons.payment.models.payment_transaction"):
             processing_values = self._get_processing_values(**route_values)
         tx_sudo = self._get_tx(processing_values["reference"])
 
@@ -185,7 +185,7 @@ class TestFlows(PaymentHttpCommon):
             "reference_prefix": payment_context["reference_prefix"],
             "is_validation": True,
         }
-        with mute_logger("odoo.addons.payment.models.payment_transaction"):
+        with mute_logger("weth.addons.payment.models.payment_transaction"):
             processing_values = self._get_processing_values(**transaction_values)
         tx_sudo = self._get_tx(processing_values["reference"])
 
@@ -290,22 +290,22 @@ class TestFlows(PaymentHttpCommon):
         })
         # Transaction step with a wrong flow --> UserError
         with (
-            mute_logger("odoo.http"),
+            mute_logger("weth.http"),
             self.assertRaises(
                 JsonRpcException,
-                msg="odoo.exceptions.UserError: The payment should either be direct, with"
+                msg="weth.exceptions.UserError: The payment should either be direct, with"
                 " redirection, or made by a token.",
             ),
         ):
             self._portal_transaction(**transaction_values)
 
-    @mute_logger("odoo.http")
+    @mute_logger("weth.http")
     def test_transaction_route_rejects_unexpected_kwarg(self):
         route_kwargs = {
             **self._prepare_pay_values(),
             "custom_create_values": "whatever",  # This should be rejected.
         }
-        with self.assertRaises(JsonRpcException, msg="odoo.exceptions.ValidationError"):
+        with self.assertRaises(JsonRpcException, msg="weth.exceptions.ValidationError"):
             self._portal_transaction(**route_kwargs)
 
     def test_transaction_wrong_token(self):
@@ -314,10 +314,10 @@ class TestFlows(PaymentHttpCommon):
 
         # Transaction step with a wrong access token --> ValidationError
         with (
-            mute_logger("odoo.http"),
+            mute_logger("weth.http"),
             self.assertRaises(
                 JsonRpcException,
-                msg="odoo.exceptions.ValidationError: The access token is invalid.",
+                msg="weth.exceptions.ValidationError: The access token is invalid.",
             ),
         ):
             self._portal_transaction(**route_values)
@@ -348,39 +348,39 @@ class TestFlows(PaymentHttpCommon):
         self.assertEqual(payment_context["partner_id"], self.partner.id)
         self.assertEqual(payment_context["token_ids"], [])
 
-    @mute_logger("odoo.addons.payment.models.payment_transaction")
+    @mute_logger("weth.addons.payment.models.payment_transaction")
     def test_direct_payment_triggers_no_payment_request(self):
         self.authenticate(self.portal_user.login, self.portal_user.login)
         self.partner = self.portal_partner
         self.user = self.portal_user
         with patch(
-            "odoo.addons.payment.models.payment_transaction.PaymentTransaction._charge_with_token"
+            "weth.addons.payment.models.payment_transaction.PaymentTransaction._charge_with_token"
         ) as patched:
             self._portal_transaction(
                 **self._prepare_transaction_values(self.payment_method_id, None, "direct")
             )
             self.assertEqual(patched.call_count, 0)
 
-    @mute_logger("odoo.addons.payment.models.payment_transaction")
+    @mute_logger("weth.addons.payment.models.payment_transaction")
     def test_payment_with_redirect_triggers_no_payment_request(self):
         self.authenticate(self.portal_user.login, self.portal_user.login)
         self.partner = self.portal_partner
         self.user = self.portal_user
         with patch(
-            "odoo.addons.payment.models.payment_transaction.PaymentTransaction._charge_with_token"
+            "weth.addons.payment.models.payment_transaction.PaymentTransaction._charge_with_token"
         ) as patched:
             self._portal_transaction(
                 **self._prepare_transaction_values(self.payment_method_id, None, "redirect")
             )
             self.assertEqual(patched.call_count, 0)
 
-    @mute_logger("odoo.addons.payment.models.payment_transaction")
+    @mute_logger("weth.addons.payment.models.payment_transaction")
     def test_payment_by_token_triggers_exactly_one_payment_request(self):
         self.authenticate(self.portal_user.login, self.portal_user.login)
         self.partner = self.portal_partner
         self.user = self.portal_user
         with patch(
-            "odoo.addons.payment.models.payment_transaction.PaymentTransaction._charge_with_token"
+            "weth.addons.payment.models.payment_transaction.PaymentTransaction._charge_with_token"
         ) as patched:
             self._portal_transaction(
                 **self._prepare_transaction_values(None, self._create_token().id, "token")

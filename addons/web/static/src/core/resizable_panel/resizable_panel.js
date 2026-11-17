@@ -7,14 +7,14 @@ import {
     useListener,
     useOnChange,
     useProps,
-} from "@odoo/owl";
+} from "@weth/owl";
 
 function useResizable({
     containerRef,
     handleRef,
     initialWidth = 400,
     getMinWidth = () => 400,
-    onResize = () => {},
+    onResize = () => { },
     getResizeSide = () => "end",
 }) {
     const resizeableProps = useProps(resizablePanelProps);
@@ -73,7 +73,7 @@ function useResizable({
         const resizeSide = getResizeSide(resizeableProps);
         const direction =
             (docDirection === "ltr" && resizeSide === "end") ||
-            (docDirection === "rtl" && resizeSide === "start")
+                (docDirection === "rtl" && resizeSide === "start")
                 ? 1
                 : -1;
         const fixedSide = direction === 1 ? "left" : "right";
@@ -116,7 +116,7 @@ function useResizable({
 }
 
 export const resizablePanelProps = {
-    onResize: t.function().optional(() => () => {}),
+    onResize: t.function().optional(() => () => { }),
     initialWidth: t.number().optional(),
     minWidth: t.number().optional(400),
     class: t.string().optional(""),

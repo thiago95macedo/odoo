@@ -1,5 +1,5 @@
 import { registry } from "@web/core/registry";
-import { odooExceptionTitleMap, ErrorDialog } from "@web/core/errors/error_dialogs";
+import { wethExceptionTitleMap, ErrorDialog } from "@web/core/errors/error_dialogs";
 import { ConnectionLostError, RPCError } from "@web/core/network/rpc";
 import { AlertDialog } from "@web/core/confirmation_dialog/confirmation_dialog";
 import { useService } from "@web/core/utils/hooks";
@@ -7,11 +7,11 @@ import { _t } from "@web/core/l10n/translation";
 
 export function handleRPCError(error, dialog) {
     const { data } = error;
-    if (odooExceptionTitleMap.has(error.exceptionName)) {
-        const title = odooExceptionTitleMap.get(error.exceptionName).toString();
+    if (wethExceptionTitleMap.has(error.exceptionName)) {
+        const title = wethExceptionTitleMap.get(error.exceptionName).toString();
         dialog.add(AlertDialog, { title, body: data.message });
     } else {
-        if (odoo.debug === "assets") {
+        if (weth.debug === "assets") {
             dialog.add(ErrorDialog, {
                 traceback: data.message + "\n" + data.debug + "\n",
             });

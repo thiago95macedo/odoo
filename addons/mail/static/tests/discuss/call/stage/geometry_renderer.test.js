@@ -4,7 +4,7 @@ import {
     GeometryRenderer,
 } from "@mail/discuss/call/common/stage/geometry_renderer";
 
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@weth/hoot";
 
 /**
  * The interpolation belongs to the browser, so what is asserted is what the renderer hands over:

@@ -1,10 +1,10 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 from copy import deepcopy
 
-from odoo import fields, models, api, Command
-from odoo.tools import float_compare
+from weth import fields, models, api, Command
+from weth.tools import float_compare
 
-from odoo.addons.hr_expense.models.hr_expense import EXPENSE_APPROVAL_STATE
+from weth.addons.hr_expense.models.hr_expense import EXPENSE_APPROVAL_STATE
 
 
 class HrExpenseSplit(models.TransientModel):

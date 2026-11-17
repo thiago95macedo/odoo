@@ -1,4 +1,4 @@
-import { Component, computed, onWillDestroy, onWillStart, signal, t, useProps } from "@odoo/owl";
+import { Component, computed, onWillDestroy, onWillStart, signal, t, useProps } from "@weth/owl";
 
 import { browser } from "@web/core/browser/browser";
 import { Dropdown } from "@web/core/dropdown/dropdown";
@@ -30,7 +30,7 @@ export class DeviceSelect extends Component {
         });
         this.store = useService("mail.store");
         this.notification = useService("notification");
-        /** @type {import("@odoo/owl").Signal<Element>} */
+        /** @type {import("@weth/owl").Signal<Element>} */
         this.rootRef = signal();
         this.userDevices = signal.Array([], { type: t.instanceOf(MediaDeviceInfo) });
         this.selectedDevice = computed(() =>

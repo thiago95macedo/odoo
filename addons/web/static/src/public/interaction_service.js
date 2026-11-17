@@ -1,4 +1,4 @@
-import { Scope, useApp, useScope } from "@odoo/owl";
+import { Scope, useApp, useScope } from "@weth/owl";
 import { registry } from "@web/core/registry";
 import { addLoadingEffect, isClickable } from "@web/core/utils/ui";
 import { Colibri } from "./colibri";
@@ -32,7 +32,7 @@ import { BUTTON_HANDLER_SELECTOR, PairSet } from "./utils";
 const waitForInteractionsSetup = Promise.withResolvers();
 lazyloader.registerPageReadinessDelay(waitForInteractionsSetup.promise);
 
-class InteractionScope extends Scope {}
+class InteractionScope extends Scope { }
 
 class InteractionService {
     /**
@@ -378,7 +378,7 @@ class InteractionService {
                     continue;
                 }
                 interactionStarts.delete(interaction.startResolvers.promise);
-                interaction.startResolvers.promise.catch(() => {});
+                interaction.startResolvers.promise.catch(() => { });
                 interaction.startResolvers.reject();
                 if (!interactionStarts.size) {
                     if (!this.bufferedClicks.get(btnEl)) {

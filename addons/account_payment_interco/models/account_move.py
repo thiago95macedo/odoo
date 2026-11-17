@@ -1,6 +1,6 @@
 import math
 
-from odoo import Command, models
+from weth import Command, models
 
 
 class AccountMove(models.Model):

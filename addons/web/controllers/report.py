@@ -6,11 +6,11 @@ import logging
 import werkzeug.exceptions
 from werkzeug.urls import url_parse
 
-from odoo.http import Controller, request, route
-from odoo.http.dispatcher import serialize_exception
-from odoo.http.stream import STATIC_CACHE_LONG, content_disposition
-from odoo.tools.misc import html_escape
-from odoo.tools.safe_eval import safe_eval, time
+from weth.http import Controller, request, route
+from weth.http.dispatcher import serialize_exception
+from weth.http.stream import STATIC_CACHE_LONG, content_disposition
+from weth.tools.misc import html_escape
+from weth.tools.safe_eval import safe_eval, time
 
 _logger = logging.getLogger(__name__)
 

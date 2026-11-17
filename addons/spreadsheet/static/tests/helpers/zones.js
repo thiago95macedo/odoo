@@ -1,4 +1,4 @@
-import { helpers } from "@odoo/o-spreadsheet";
+import { helpers } from "@weth/o-spreadsheet";
 
 const { toUnboundedZone } = helpers;
 

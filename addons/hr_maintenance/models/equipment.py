@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from odoo import api, fields, models, tools
-from odoo.fields import Domain
+from weth import api, fields, models, tools
+from weth.fields import Domain
 
 
 class MaintenanceEquipment(models.Model):

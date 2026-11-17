@@ -1,9 +1,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 import logging
 
-from odoo import models, fields, api, _
-from odoo.exceptions import LockError, UserError
-from odoo.tools import BinaryBytes
+from weth import models, fields, api, _
+from weth.exceptions import LockError, UserError
+from weth.tools import BinaryBytes
 
 
 _logger = logging.getLogger(__name__)

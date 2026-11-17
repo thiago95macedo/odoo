@@ -4,7 +4,7 @@ import {
 } from "@im_livechat/../tests/livechat_test_helpers";
 import { SuggestionService } from "@mail/core/common/suggestion_service";
 import { click, contains, insertText, start } from "@mail/../tests/mail_test_helpers";
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@weth/hoot";
 import { patchWithCleanup } from "@web/../tests/web_test_helpers";
 
 describe.current.tags("desktop");

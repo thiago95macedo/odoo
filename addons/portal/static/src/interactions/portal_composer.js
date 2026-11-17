@@ -1,4 +1,4 @@
-import { markup } from "@odoo/owl";
+import { markup } from "@weth/owl";
 import { _t } from "@web/core/l10n/translation";
 import { post } from "@web/core/network/http_service";
 import { rpc, RPCError } from "@web/core/network/rpc";
@@ -39,7 +39,7 @@ export class PortalComposer extends Interaction {
             {
                 allow_composer: true,
                 display_composer: false,
-                csrf_token: odoo.csrf_token,
+                csrf_token: weth.csrf_token,
                 token: false,
                 res_model: false,
                 res_id: false,
@@ -117,8 +117,8 @@ export class PortalComposer extends Interaction {
                     (file) =>
                         new Promise((resolve, reject) => {
                             const data = this.prepareAttachmentData(file);
-                            if (odoo.csrf_token) {
-                                data.csrf_token = odoo.csrf_token;
+                            if (weth.csrf_token) {
+                                data.csrf_token = weth.csrf_token;
                             }
                             this.waitFor(post("/mail/attachment/upload", data))
                                 .then((res) => {

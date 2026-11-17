@@ -1,10 +1,10 @@
-import { test, expect } from "@odoo/hoot";
+import { test, expect } from "@weth/hoot";
 import { setupEditor, testEditor } from "../_helpers/editor";
-import { click, queryOne, waitFor } from "@odoo/hoot-dom";
+import { click, queryOne, waitFor } from "@weth/hoot-dom";
 import { getContent } from "../_helpers/selection";
 import { setFontFamily, undo, redo, insertText, deleteBackward } from "../_helpers/user_actions";
 import { execCommand } from "../_helpers/userCommands";
-import { animationFrame } from "@odoo/hoot-mock";
+import { animationFrame } from "@weth/hoot-mock";
 import { expandToolbar } from "../_helpers/toolbar";
 import { expectElementCount } from "../_helpers/ui_expectations";
 

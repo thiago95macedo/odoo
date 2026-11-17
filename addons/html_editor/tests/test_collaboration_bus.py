@@ -2,9 +2,9 @@
 
 from unittest.mock import patch
 
-from odoo.tests.common import HttpCase, new_test_user, tagged
+from weth.tests.common import HttpCase, new_test_user, tagged
 
-from odoo.addons.bus.models.bus import BusBus
+from weth.addons.bus.models.bus import BusBus
 
 
 @tagged('-at_install', 'post_install')

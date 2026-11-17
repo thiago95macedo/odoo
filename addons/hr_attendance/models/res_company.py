@@ -3,9 +3,9 @@
 import logging
 import uuid
 
-from odoo import fields, models, api
-from odoo.tools import SQL
-from odoo.tools.urls import urljoin as url_join
+from weth import fields, models, api
+from weth.tools import SQL
+from weth.tools.urls import urljoin as url_join
 
 _logger = logging.getLogger(__name__)
 

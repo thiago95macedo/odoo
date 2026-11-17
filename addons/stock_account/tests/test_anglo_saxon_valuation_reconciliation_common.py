@@ -2,9 +2,9 @@
 
 from freezegun import freeze_time
 
-from odoo import fields
+from weth import fields
 
-from odoo.addons.account.tests.common import AccountTestInvoicingCommon
+from weth.addons.account.tests.common import AccountTestInvoicingCommon
 
 
 class ValuationReconciliationTestCommon(AccountTestInvoicingCommon):

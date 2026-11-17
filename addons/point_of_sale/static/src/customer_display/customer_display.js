@@ -1,4 +1,4 @@
-import { Component, onMounted, onPatched, signal, usePlugin } from "@odoo/owl";
+import { Component, onMounted, onPatched, signal, usePlugin } from "@weth/owl";
 import { OdooLogo } from "@point_of_sale/app/components/odoo_logo/odoo_logo";
 import { MainComponentsContainer } from "@web/core/main_components_container";
 import { session } from "@web/session";

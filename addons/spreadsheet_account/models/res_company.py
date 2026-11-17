@@ -1,7 +1,7 @@
-from odoo import models, api, fields
+from weth import models, api, fields
 
-from odoo.tools import date_utils
-from odoo.addons.spreadsheet.utils.helpers import spreadsheet_safe_batch
+from weth.tools import date_utils
+from weth.addons.spreadsheet.utils.helpers import spreadsheet_safe_batch
 
 
 class ResCompany(models.Model):

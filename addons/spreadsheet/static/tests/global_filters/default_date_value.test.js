@@ -1,5 +1,5 @@
-import { describe, expect, test, getFixture, beforeEach } from "@odoo/hoot";
-import { mockDate } from "@odoo/hoot-mock";
+import { describe, expect, test, getFixture, beforeEach } from "@weth/hoot";
+import { mockDate } from "@weth/hoot-mock";
 import { contains, mountWithCleanup } from "@web/../tests/web_test_helpers";
 import { defineSpreadsheetModels } from "@spreadsheet/../tests/helpers/data";
 import { DefaultDateValue } from "@spreadsheet/global_filters/components/default_date_value/default_date_value";
@@ -24,7 +24,7 @@ async function mountDefaultDateValue(props) {
 test("Default date filter without initial value", async function () {
     await mountDefaultDateValue({
         value: undefined,
-        update: () => {},
+        update: () => { },
     });
     expect("input").toHaveValue("All time");
 });
@@ -32,7 +32,7 @@ test("Default date filter without initial value", async function () {
 test("Date filter with relative value", async function () {
     await mountDefaultDateValue({
         value: "last_7_days",
-        update: () => {},
+        update: () => { },
     });
     expect("input").toHaveValue("Last 7 Days");
 });
@@ -40,7 +40,7 @@ test("Date filter with relative value", async function () {
 test("Default date with this_month", async function () {
     await mountDefaultDateValue({
         value: "this_month",
-        update: () => {},
+        update: () => { },
     });
     expect("input").toHaveValue("Current Month");
 });
@@ -48,7 +48,7 @@ test("Default date with this_month", async function () {
 test("Default date with this_quarter", async function () {
     await mountDefaultDateValue({
         value: "this_quarter",
-        update: () => {},
+        update: () => { },
     });
     expect("input").toHaveValue("Current Quarter");
 });
@@ -56,7 +56,7 @@ test("Default date with this_quarter", async function () {
 test("Default date with this_year", async function () {
     await mountDefaultDateValue({
         value: "this_year",
-        update: () => {},
+        update: () => { },
     });
     expect("input").toHaveValue("Current Year");
 });
@@ -64,7 +64,7 @@ test("Default date with this_year", async function () {
 test("All the options should be displayed", async function () {
     await mountDefaultDateValue({
         value: undefined,
-        update: () => {},
+        update: () => { },
     });
     await contains("input").click();
     const options = fixture.querySelectorAll(".o-dropdown-item");
@@ -130,7 +130,7 @@ test("Can select all time", async function () {
 test("Input value is correct for the current value", async function () {
     await mountDefaultDateValue({
         value: "last_30_days",
-        update: () => {},
+        update: () => { },
     });
     expect("input").toHaveValue("Last 30 Days");
     await contains("input").click();
@@ -140,7 +140,7 @@ test("Input value is correct for the current value", async function () {
 test("Input value is correct for all time", async function () {
     await mountDefaultDateValue({
         value: undefined,
-        update: () => {},
+        update: () => { },
     });
     expect("input").toHaveValue("All time");
     await contains("input").click();

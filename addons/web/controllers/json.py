@@ -13,12 +13,12 @@ from dateutil.relativedelta import relativedelta
 from lxml import etree
 from werkzeug.exceptions import BadRequest, NotFound
 
-from odoo import http
-from odoo.exceptions import AccessError
-from odoo.fields import Domain
-from odoo.http import request
-from odoo.models import check_object_name
-from odoo.tools.safe_eval import safe_eval
+from weth import http
+from weth.exceptions import AccessError
+from weth.fields import Domain
+from weth.http import request
+from weth.models import check_object_name
+from weth.tools.safe_eval import safe_eval
 
 from .utils import get_action_triples
 

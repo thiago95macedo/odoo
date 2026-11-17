@@ -4,9 +4,9 @@ import json
 import lxml.html
 from urllib.parse import urlparse
 
-from odoo.addons.http_routing.tests.common import MockRequest
-from odoo.addons.website.tests.common import set_url_code
-from odoo.tests import HttpCase, tagged
+from weth.addons.http_routing.tests.common import MockRequest
+from weth.addons.website.tests.common import set_url_code
+from weth.tests import HttpCase, tagged
 
 
 class TestLangUrlCommon(HttpCase):
@@ -64,7 +64,7 @@ class TestLangUrl(TestLangUrlCommon):
         self.assertEqual(r.status_code, 200)
 
         for line in r.text.splitlines():
-            _, match, session_info_str = line.partition('odoo.__session_info__ = ')
+            _, match, session_info_str = line.partition('weth.__session_info__ = ')
             if match:
                 session_info = json.loads(session_info_str[:-1])
                 self.assertEqual(session_info['user_context']['lang'], 'en_US', "ensure english was loaded")
@@ -87,7 +87,7 @@ class TestLangUrl(TestLangUrlCommon):
             self.assertEqual(doc.get('lang'), 'fr-FR', "Ensure contactus did not soft crash + loaded in correct lang")
 
         for line in r.text.splitlines():
-            _, match, session_info_str = line.partition('odoo.__session_info__ = ')
+            _, match, session_info_str = line.partition('weth.__session_info__ = ')
             if match:
                 session_info = json.loads(session_info_str[:-1])
                 self.assertEqual(session_info['bundle_params']['lang'], 'fr_FR', "ensure bundle use french")
@@ -135,7 +135,7 @@ class TestLangUrl(TestLangUrlCommon):
             r = self.url_open(url)
             self.assertEqual(r.status_code, 200)
             for line in r.text.splitlines():
-                _, match, session_info_str = line.partition('odoo.__session_info__ = ')
+                _, match, session_info_str = line.partition('weth.__session_info__ = ')
                 if match:
                     return json.loads(session_info_str[:-1])
             raise ValueError('Session info not found in web page')

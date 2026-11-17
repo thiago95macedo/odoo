@@ -2,7 +2,7 @@ import { WORKER_STATE } from "@bus/services/worker_plugin";
 
 import { editComposer } from "@im_livechat/../tests/tours/livechat_tour_utils";
 
-import { whenReady } from "@odoo/owl";
+import { whenReady } from "@weth/owl";
 
 import { patch } from "@web/core/utils/patch";
 import { registry } from "@web/core/registry";
@@ -13,7 +13,7 @@ registry.category("web_tour.tours").add("website_livechat.lazy_frontend_bus", {
             trigger: "body",
             async run() {
                 await whenReady();
-                const busService = odoo.__WOWL_DEBUG__.root.env.services.bus_service;
+                const busService = weth.__WOWL_DEBUG__.root.env.services.bus_service;
                 if (busService.isActive) {
                     throw new Error("The bus service should not be started at page load.");
                 }
@@ -23,7 +23,7 @@ registry.category("web_tour.tours").add("website_livechat.lazy_frontend_bus", {
                         return super.start(...arguments);
                     },
                 });
-                const workerService = odoo.__WOWL_DEBUG__.root.env.services.worker_service;
+                const workerService = weth.__WOWL_DEBUG__.root.env.services.worker_service;
                 if (workerService.state !== WORKER_STATE.UNINITIALIZED) {
                     throw new Error("The worker service should not be started at page load.");
                 }

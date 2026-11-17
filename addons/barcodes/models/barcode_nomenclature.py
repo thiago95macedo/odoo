@@ -1,8 +1,8 @@
 import re
 
-from odoo import models, fields, api, _
-from odoo.exceptions import UserError
-from odoo.tools.barcode import check_barcode_encoding, get_barcode_check_digit
+from weth import models, fields, api, _
+from weth.exceptions import UserError
+from weth.tools.barcode import check_barcode_encoding, get_barcode_check_digit
 
 
 UPC_EAN_CONVERSIONS = [

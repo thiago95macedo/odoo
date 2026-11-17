@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import http
-from odoo.http import request
-from odoo.tools import file_open
+from weth import http
+from weth.http import request
+from weth.tools import file_open
 
 
 class VoiceController(http.Controller):

@@ -1,7 +1,7 @@
 import { registry } from "../registry";
 import { browser } from "../browser/browser";
 import { getVisibleElements } from "../utils/ui";
-import { onWillDestroy, Plugin, usePlugin } from "@odoo/owl";
+import { onWillDestroy, Plugin, usePlugin } from "@weth/owl";
 import { services } from "@web/core/services";
 import { UIPlugin } from "@web/core/ui/ui_plugin";
 import { AUTHORIZED_KEYS, getActiveHotkey, MODIFIERS } from "./hotkey_utils";

@@ -9,9 +9,9 @@ from markupsafe import Markup, escape
 from lxml import etree
 from werkzeug.exceptions import BadRequest, NotFound, Unauthorized
 
-from odoo import _, fields, http, tools
-from odoo.http import request, Response
-from odoo.tools import consteq
+from weth import _, fields, http, tools
+from weth.http import request, Response
+from weth.tools import consteq
 
 
 class MassMailController(http.Controller):

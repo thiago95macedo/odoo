@@ -1,4 +1,4 @@
-import { registries } from "@odoo/o-spreadsheet";
+import { registries } from "@weth/o-spreadsheet";
 
 const { chartTypeRegistry } = registries;
 

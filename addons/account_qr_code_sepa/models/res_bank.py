@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-from odoo import models, fields, api, _
-from odoo.addons.account.tools import is_valid_structured_reference, sanitize_structured_reference
-from odoo.tools import float_repr
+from weth import models, fields, api, _
+from weth.addons.account.tools import is_valid_structured_reference, sanitize_structured_reference
+from weth.tools import float_repr
 
 
 class ResPartnerBank(models.Model):

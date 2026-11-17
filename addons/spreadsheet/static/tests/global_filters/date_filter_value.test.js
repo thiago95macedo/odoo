@@ -1,9 +1,9 @@
-import { describe, expect, test, getFixture, beforeEach } from "@odoo/hoot";
-import { mockDate } from "@odoo/hoot-mock";
+import { describe, expect, test, getFixture, beforeEach } from "@weth/hoot";
+import { mockDate } from "@weth/hoot-mock";
 import { contains, mountWithCleanup } from "@web/../tests/web_test_helpers";
 import { defineSpreadsheetModels } from "@spreadsheet/../tests/helpers/data";
 import { DateFilterValue } from "@spreadsheet/global_filters/components/date_filter_value/date_filter_value";
-import { Model } from "@odoo/o-spreadsheet";
+import { Model } from "@weth/o-spreadsheet";
 
 describe.current.tags("desktop");
 defineSpreadsheetModels();
@@ -38,7 +38,7 @@ test("basic date filter value", async function () {
 test("Date filter without initial value", async function () {
     await mountDateFilterValue({
         value: undefined,
-        update: () => {},
+        update: () => { },
     });
     expect("input").toHaveValue("All time");
 });
@@ -46,7 +46,7 @@ test("Date filter without initial value", async function () {
 test("Date filter with relative value", async function () {
     await mountDateFilterValue({
         value: { type: "relative", period: "last_7_days" },
-        update: () => {},
+        update: () => { },
     });
     expect("input").toHaveValue("Last 7 Days");
 });
@@ -54,7 +54,7 @@ test("Date filter with relative value", async function () {
 test("Date filter with month value", async function () {
     await mountDateFilterValue({
         value: { type: "month", month: 1, year: 2023 },
-        update: () => {},
+        update: () => { },
     });
     expect("input").toHaveValue("January 2023");
 });
@@ -62,7 +62,7 @@ test("Date filter with month value", async function () {
 test("Date filter with quarter value", async function () {
     await mountDateFilterValue({
         value: { type: "quarter", quarter: 1, year: 2023 },
-        update: () => {},
+        update: () => { },
     });
     expect("input").toHaveValue("Q1 2023");
 });
@@ -70,7 +70,7 @@ test("Date filter with quarter value", async function () {
 test("Date filter with year value", async function () {
     await mountDateFilterValue({
         value: { type: "year", year: 2023 },
-        update: () => {},
+        update: () => { },
     });
     expect("input").toHaveValue("2023");
 });
@@ -78,7 +78,7 @@ test("Date filter with year value", async function () {
 test("Date filter with range value", async function () {
     await mountDateFilterValue({
         value: { type: "range", from: "2023-01-01", to: "2023-01-31" },
-        update: () => {},
+        update: () => { },
     });
     expect("input").toHaveValue("January 1 – 31, 2023");
 });
@@ -87,7 +87,7 @@ test("Date options are computed from the current date", async function () {
     mockDate("2022-07-14 00:00:00");
     await mountDateFilterValue({
         value: undefined,
-        update: () => {},
+        update: () => { },
     });
     await contains("input").click();
     const inputs = fixture.querySelectorAll(".o-date-filter-dropdown input");
@@ -103,7 +103,7 @@ test("Month props value should override date options", async function () {
     mockDate("2022-07-14 00:00:00");
     await mountDateFilterValue({
         value: { type: "month", month: 1, year: 2025 },
-        update: () => {},
+        update: () => { },
     });
     await contains("input").click();
     const inputs = fixture.querySelectorAll(".o-date-filter-dropdown input");
@@ -119,7 +119,7 @@ test("Quarter props value should override date options", async function () {
     mockDate("2022-07-14 00:00:00");
     await mountDateFilterValue({
         value: { type: "quarter", quarter: 1, year: 2025 },
-        update: () => {},
+        update: () => { },
     });
     await contains("input").click();
     const inputs = fixture.querySelectorAll(".o-date-filter-dropdown input");
@@ -135,7 +135,7 @@ test("Year props value should override date options", async function () {
     mockDate("2022-07-14 00:00:00");
     await mountDateFilterValue({
         value: { type: "year", year: 2025 },
-        update: () => {},
+        update: () => { },
     });
     await contains("input").click();
     const inputs = fixture.querySelectorAll(".o-date-filter-dropdown input");
@@ -150,7 +150,7 @@ test("Year props value should override date options", async function () {
 test("All the options should be displayed", async function () {
     await mountDateFilterValue({
         value: undefined,
-        update: () => {},
+        update: () => { },
     });
     await contains("input").click();
     const options = fixture.querySelectorAll(".o-date-filter-dropdown .o-date-option-label");
@@ -354,7 +354,7 @@ test("Can select all time", async function () {
 test("Input value is correct for relative period", async function () {
     await mountDateFilterValue({
         value: { type: "relative", period: "last_30_days" },
-        update: () => {},
+        update: () => { },
     });
     expect("input").toHaveValue("Last 30 Days");
     await contains("input").click();
@@ -364,7 +364,7 @@ test("Input value is correct for relative period", async function () {
 test("Input value is correct for month", async function () {
     await mountDateFilterValue({
         value: { type: "month", month: 1, year: 2023 },
-        update: () => {},
+        update: () => { },
     });
     expect("input").toHaveValue("January 2023");
     await contains("input").click();
@@ -374,7 +374,7 @@ test("Input value is correct for month", async function () {
 test("Input value is correct for quarter", async function () {
     await mountDateFilterValue({
         value: { type: "quarter", quarter: 1, year: 2023 },
-        update: () => {},
+        update: () => { },
     });
     expect("input").toHaveValue("Q1 2023");
     await contains("input").click();
@@ -384,7 +384,7 @@ test("Input value is correct for quarter", async function () {
 test("Input value is correct for year", async function () {
     await mountDateFilterValue({
         value: { type: "year", year: 2023 },
-        update: () => {},
+        update: () => { },
     });
     expect("input").toHaveValue("2023");
     await contains("input").click();
@@ -394,7 +394,7 @@ test("Input value is correct for year", async function () {
 test("Input value is correct for range", async function () {
     await mountDateFilterValue({
         value: { type: "range", from: "2023-01-01", to: "2023-01-31" },
-        update: () => {},
+        update: () => { },
     });
     expect("input").toHaveValue("January 1 – 31, 2023");
     await contains("input").click();
@@ -404,7 +404,7 @@ test("Input value is correct for range", async function () {
 test("Input value is correct for all time", async function () {
     await mountDateFilterValue({
         value: undefined,
-        update: () => {},
+        update: () => { },
     });
     expect("input").toHaveValue("All time");
     await contains("input").click();
@@ -414,7 +414,7 @@ test("Input value is correct for all time", async function () {
 test("Can open date time picker to select a range", async function () {
     await mountDateFilterValue({
         value: { type: "range", from: "2023-01-01", to: "2023-01-31" },
-        update: () => {},
+        update: () => { },
     });
     await contains("input").click();
     expect(".o_datetime_picker").toHaveCount(0);

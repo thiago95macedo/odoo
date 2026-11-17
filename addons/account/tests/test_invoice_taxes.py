@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # pylint: disable=C0326
-from odoo import Command
-from odoo.addons.account.tests.common import AccountTestInvoicingCommon
-from odoo.tests import tagged, Form, freeze_time
+from weth import Command
+from weth.addons.account.tests.common import AccountTestInvoicingCommon
+from weth.tests import tagged, Form, freeze_time
 
 
 @tagged('post_install', '-at_install')

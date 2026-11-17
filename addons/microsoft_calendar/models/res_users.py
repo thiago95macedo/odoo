@@ -2,15 +2,15 @@
 
 import logging
 import requests
-from odoo.addons.microsoft_account.models.microsoft_service import TIMEOUT
-from odoo.addons.microsoft_calendar.models.microsoft_sync import microsoft_calendar_token
+from weth.addons.microsoft_account.models.microsoft_service import TIMEOUT
+from weth.addons.microsoft_calendar.models.microsoft_sync import microsoft_calendar_token
 from datetime import datetime, timedelta
 
-from odoo import api, fields, models, _, Command
-from odoo.exceptions import UserError
-from odoo.loglevels import exception_to_unicode
-from odoo.addons.microsoft_account.models import microsoft_service
-from odoo.addons.microsoft_calendar.utils.microsoft_calendar import InvalidSyncToken
+from weth import api, fields, models, _, Command
+from weth.exceptions import UserError
+from weth.loglevels import exception_to_unicode
+from weth.addons.microsoft_account.models import microsoft_service
+from weth.addons.microsoft_calendar.utils.microsoft_calendar import InvalidSyncToken
 
 _logger = logging.getLogger(__name__)
 

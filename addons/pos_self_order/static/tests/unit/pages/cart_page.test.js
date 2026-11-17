@@ -1,5 +1,5 @@
-import { test, expect, mockUserAgent } from "@odoo/hoot";
-import { animationFrame } from "@odoo/hoot-dom";
+import { test, expect, mockUserAgent } from "@weth/hoot";
+import { animationFrame } from "@weth/hoot-dom";
 import { contains, mountWithCleanup, patchWithCleanup } from "@web/../tests/web_test_helpers";
 import { CartPage } from "@pos_self_order/app/pages/cart_page/cart_page";
 import { EatingLocationPage } from "@pos_self_order/app/pages/eating_location_page/eating_location_page";
@@ -181,7 +181,7 @@ test("opens combo suggestion popup and applies a direct combo", async () => {
 
     const comp = await mountWithCleanup(CartPage, {});
     patchWithCleanup(store, {
-        async confirmOrder() {},
+        async confirmOrder() { },
     });
 
     patchWithCleanup(comp.dialog, {
@@ -213,7 +213,7 @@ test("opens combo suggestion popup and applies repeated single-free combos", asy
 
     const comp = await mountWithCleanup(CartPage, {});
     patchWithCleanup(store, {
-        async confirmOrder() {},
+        async confirmOrder() { },
     });
 
     patchWithCleanup(comp.dialog, {

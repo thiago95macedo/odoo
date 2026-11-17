@@ -1,6 +1,6 @@
-from odoo.tests import TransactionCase
+from weth.tests import TransactionCase
 
-from odoo.addons.populate.generators import Char, Text
+from weth.addons.populate.generators import Char, Text
 
 
 class TestCharGenerator(TransactionCase):

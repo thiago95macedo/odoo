@@ -1,4 +1,4 @@
-import { onMounted, onWillUnmount, proxy } from "@odoo/owl";
+import { onMounted, onWillUnmount, proxy } from "@weth/owl";
 import { localization } from "@web/core/l10n/localization";
 const { DateTime } = luxon;
 

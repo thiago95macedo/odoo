@@ -2,8 +2,8 @@
 
 from datetime import datetime
 
-from odoo.tests import tagged
-from odoo.tests.common import TransactionCase
+from weth.tests import tagged
+from weth.tests.common import TransactionCase
 
 
 @tagged('-at_install', 'post_install', 'work_entry_pipeline', 'time_rule_pipeline')

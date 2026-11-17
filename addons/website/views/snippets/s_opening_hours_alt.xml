@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
 
 <template id="s_opening_hours_alt" name="Opening Hours Alt">
     <section class="s_opening_hours_alt oe_img_bg o_bg_img_center o_bg_img_origin_border_box" style="background-image: url('/web/image/website.landscape_xl_2');">
@@ -34,4 +34,4 @@
     </section>
 </template>
 
-</odoo>
+</weth>

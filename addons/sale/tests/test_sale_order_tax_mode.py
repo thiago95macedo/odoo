@@ -1,7 +1,7 @@
-from odoo.fields import Command
-from odoo.tests import Form, tagged
+from weth.fields import Command
+from weth.tests import Form, tagged
 
-from odoo.addons.account.tests.test_account_move_tax_mode import TestDocumentTaxModeCommon
+from weth.addons.account.tests.test_account_move_tax_mode import TestDocumentTaxModeCommon
 
 
 @tagged('post_install', '-at_install')

@@ -1,7 +1,7 @@
 import { SelectionField, selectionField } from "@web/views/fields/selection/selection_field";
 import { standardFieldProps } from "@web/views/fields/standard_field_props";
 import { registry } from "@web/core/registry";
-import { useProps, t } from "@odoo/owl";
+import { useProps, t } from "@weth/owl";
 
 import { STATUS_COLORS, STATUS_COLOR_PREFIX } from "../../utils/project_utils";
 

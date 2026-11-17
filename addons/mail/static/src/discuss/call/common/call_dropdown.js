@@ -1,6 +1,6 @@
 import { toggleFn } from "@mail/utils/common/signal";
 
-import { Component, signal, t, useListener, useProps } from "@odoo/owl";
+import { Component, signal, t, useListener, useProps } from "@weth/owl";
 
 import { useLayoutEffect } from "@web/owl2/utils";
 import { useNavigation } from "@web/core/navigation/navigation";

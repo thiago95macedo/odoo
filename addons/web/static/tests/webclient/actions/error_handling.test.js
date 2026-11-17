@@ -1,8 +1,8 @@
 import { render } from "@web/owl2/utils";
-import { expect, test } from "@odoo/hoot";
-import { queryAllTexts } from "@odoo/hoot-dom";
-import { animationFrame, mockFetch, runAllTimers } from "@odoo/hoot-mock";
-import { Component, onMounted, xml } from "@odoo/owl";
+import { expect, test } from "@weth/hoot";
+import { queryAllTexts } from "@weth/hoot-dom";
+import { animationFrame, mockFetch, runAllTimers } from "@weth/hoot-mock";
+import { Component, onMounted, xml } from "@weth/owl";
 import {
     contains,
     defineActions,

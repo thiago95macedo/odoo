@@ -4,9 +4,9 @@ import json
 
 import requests
 
-from odoo.tests import tagged
+from weth.tests import tagged
 
-from odoo.addons.payment_flutterwave.tests.common import FlutterwaveCommon
+from weth.addons.payment_flutterwave.tests.common import FlutterwaveCommon
 
 
 @tagged("post_install", "-at_install")

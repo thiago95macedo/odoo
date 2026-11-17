@@ -1,4 +1,4 @@
-import { useListener } from "@odoo/owl";
+import { useListener } from "@weth/owl";
 
 const UserPresenceEvents = ["mousemove", "mousedown", "touchmove", "click", "scroll", "keypress"];
 

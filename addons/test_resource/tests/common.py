@@ -2,8 +2,8 @@
 from datetime import date, datetime, UTC, timedelta
 from zoneinfo import ZoneInfo
 
-from odoo import fields
-from odoo.tests.common import TransactionCase
+from weth import fields
+from weth.tests.common import TransactionCase
 
 
 class TestResourceCommon(TransactionCase):

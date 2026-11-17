@@ -3,11 +3,11 @@ import logging
 from requests import HTTPError
 from urllib.parse import quote
 
-from odoo import api, fields, models, Command
-from odoo.addons.google_calendar.models.google_sync import google_calendar_token, after_commit
-from odoo.addons.google_calendar.utils.google_calendar import GoogleCalendar
-from odoo.addons.google_calendar.utils.google_calendar_service import GoogleCalendarService
-from odoo.fields import Domain
+from weth import api, fields, models, Command
+from weth.addons.google_calendar.models.google_sync import google_calendar_token, after_commit
+from weth.addons.google_calendar.utils.google_calendar import GoogleCalendar
+from weth.addons.google_calendar.utils.google_calendar_service import GoogleCalendarService
+from weth.fields import Domain
 
 
 _logger = logging.getLogger(__name__)

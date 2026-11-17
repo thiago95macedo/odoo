@@ -6,13 +6,13 @@ import requests
 import werkzeug.utils
 from werkzeug.urls import url_encode
 
-from odoo import http, modules, _
-from odoo.tools.image import image_process
-from odoo.tools.mimetypes import guess_mimetype
+from weth import http, modules, _
+from weth.tools.image import image_process
+from weth.tools.mimetypes import guess_mimetype
 
-from odoo.addons.html_editor.controllers.main import attachment_create
-from odoo.addons.web_unsplash import utils as unsplash_utils
-from odoo.addons.web_unsplash.utils import (
+from weth.addons.html_editor.controllers.main import attachment_create
+from weth.addons.web_unsplash import utils as unsplash_utils
+from weth.addons.web_unsplash.utils import (
     UNSPLASH_ACCESS_KEY_ICP,
     UNSPLASH_APP_ID_ICP,
 )

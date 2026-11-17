@@ -2,12 +2,12 @@
 
 import unittest
 
-import odoo.tests
-from odoo.tools import mute_logger
-from odoo.addons.website.tests.common import HttpCaseWithWebsiteUser
+import weth.tests
+from weth.tools import mute_logger
+from weth.addons.website.tests.common import HttpCaseWithWebsiteUser
 
 
-@odoo.tests.common.tagged('post_install', '-at_install')
+@weth.tests.common.tagged('post_install', '-at_install')
 class TestRestrictedEditor(HttpCaseWithWebsiteUser):
     @classmethod
     def setUpClass(cls):
@@ -29,11 +29,11 @@ class TestRestrictedEditor(HttpCaseWithWebsiteUser):
             'sequence': 100,
         })
 
-    @mute_logger('odoo.addons.http_routing.models.ir_http', 'odoo.http')
+    @mute_logger('weth.addons.http_routing.models.ir_http', 'weth.http')
     def test_01_restricted_editor_only(self):
         self.start_tour(self.env['website'].get_client_action_url('/'), 'test_restricted_editor_only', login="website_user")
 
-    @mute_logger('odoo.addons.http_routing.models.ir_http', 'odoo.http')
+    @mute_logger('weth.addons.http_routing.models.ir_http', 'weth.http')
     def test_02_restricted_editor_test_admin(self):
         self.user_website_user.group_ids += self.env.ref("test_website.group_test_website_admin")
         self.start_tour(self.env['website'].get_client_action_url('/'), 'test_restricted_editor_test_admin', login="website_user")
@@ -43,7 +43,7 @@ class TestRestrictedEditor(HttpCaseWithWebsiteUser):
     # a restricted editor is something we want in some custo (e.g. weth.com.br).
     # See commit messages for details.
     @unittest.skip
-    @mute_logger('odoo.addons.http_routing.models.ir_http', 'odoo.http')
+    @mute_logger('weth.addons.http_routing.models.ir_http', 'weth.http')
     def test_03_restricted_editor_tester(self):
         """
         Tests that restricted users cannot edit ir.ui.view records despite being

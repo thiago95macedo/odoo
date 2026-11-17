@@ -1,6 +1,6 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.payment.const import SENSITIVE_KEYS as PAYMENT_SENSITIVE_KEYS
+from weth.addons.payment.const import SENSITIVE_KEYS as PAYMENT_SENSITIVE_KEYS
 
 SENSITIVE_KEYS = {"secret"}
 PAYMENT_SENSITIVE_KEYS.update(SENSITIVE_KEYS)

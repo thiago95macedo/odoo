@@ -1,6 +1,6 @@
 import { defineCalendarModels } from "@calendar/../tests/calendar_test_helpers";
 import { click, contains, start, startServer } from "@mail/../tests/mail_test_helpers";
-import { expect, test } from "@odoo/hoot";
+import { expect, test } from "@weth/hoot";
 import { mockService, onRpc, preloadBundle, serverState } from "@web/../tests/web_test_helpers";
 
 defineCalendarModels();

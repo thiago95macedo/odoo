@@ -7,8 +7,8 @@ import {
 } from "@mail/../tests/mail_test_helpers";
 import { ChatHub } from "@mail/core/common/chat_hub";
 import { CHAT_HUB_DEFAULT_BUBBLE_START } from "@mail/core/common/chat_hub_model";
-import { animationFrame, describe, expect, queryFirst, test } from "@odoo/hoot";
-import { onPatched } from "@odoo/owl";
+import { animationFrame, describe, expect, queryFirst, test } from "@weth/hoot";
+import { onPatched } from "@weth/owl";
 import { getService, patchWithCleanup } from "@web/../tests/web_test_helpers";
 import { CHAT_HUB_WE_SIDEBAR_WIDTH } from "@website/mail/core/common/chat_hub_model_patch";
 

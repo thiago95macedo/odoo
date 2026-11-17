@@ -1,4 +1,4 @@
-import { Component, proxy, signal, t, useEffect, useProps } from "@odoo/owl";
+import { Component, proxy, signal, t, useEffect, useProps } from "@weth/owl";
 import { useDateTimePicker } from "@web/core/datetime/datetime_picker_hook";
 import { ConversionError, formatDate, formatDateTime, parseDateTime } from "@web/core/l10n/dates";
 import { localization } from "@web/core/l10n/localization";

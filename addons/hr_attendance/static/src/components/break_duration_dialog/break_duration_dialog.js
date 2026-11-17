@@ -1,4 +1,4 @@
-import { Component, props, proxy, t } from "@odoo/owl";
+import { Component, props, proxy, t } from "@weth/owl";
 import { Dialog } from "@web/core/dialog/dialog";
 import { _t } from "@web/core/l10n/translation";
 import { useService } from "@web/core/utils/hooks";
@@ -21,9 +21,9 @@ export class BreakDurationDialog extends Component {
         this.dialogTitle = _t("Break Duration");
         this.promptText = this.props.employeeName
             ? sprintf(
-                  _t("Enter the total break duration (in minutes) for %s."),
-                  this.props.employeeName
-              )
+                _t("Enter the total break duration (in minutes) for %s."),
+                this.props.employeeName
+            )
             : _t("Enter the total break duration in minutes.");
     }
 

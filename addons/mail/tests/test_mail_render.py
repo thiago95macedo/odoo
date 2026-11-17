@@ -4,10 +4,10 @@
 from markupsafe import Markup
 from unittest.mock import patch
 
-from odoo import Command
-from odoo.addons.mail.tests import common
-from odoo.exceptions import AccessError
-from odoo.tests import Form, tagged, users
+from weth import Command
+from weth.addons.mail.tests import common
+from weth.exceptions import AccessError
+from weth.tests import Form, tagged, users
 
 
 class TestMailRenderCommon(common.MailCommon):
@@ -276,7 +276,7 @@ class TestMailRender(TestMailRenderCommon):
         partner_ids = self.env['res.partner'].sudo().create([{
             'name': f'test partner {n}'
         } for n in range(20)]).ids
-        with patch('odoo.models.Model.get_base_url', new=_mock_get_base_url), self.assertQueryCount(13):
+        with patch('weth.models.Model.get_base_url', new=_mock_get_base_url), self.assertQueryCount(13):
             # make sure name isn't already in cache
             self.env['res.partner'].browse(partner_ids).invalidate_recordset(['name', 'display_name'])
             render_results = self.env['mail.render.mixin']._render_template(
@@ -453,13 +453,13 @@ class TestRegexRendering(common.MailCommon):
         o_qweb_render = self.env['ir.qweb']._render
         for template, expected in static_templates:
             with (patch.object(self.registry['ir.qweb'], '_render', side_effect=o_qweb_render) as qweb_render,
-                patch('odoo.addons.base.models.ir_qweb.unsafe_eval', side_effect=eval) as unsafe_eval):
+                patch('weth.addons.base.models.ir_qweb.unsafe_eval', side_effect=eval) as unsafe_eval):
                 self.assertEqual(render(template), expected)
                 self.assertFalse(qweb_render.called)
                 self.assertFalse(unsafe_eval.called)
 
         with (patch.object(self.registry['ir.qweb'], '_render', side_effect=o_qweb_render) as qweb_render,
-                patch('odoo.addons.base.models.ir_qweb.unsafe_eval', side_effect=eval) as unsafe_eval):
+                patch('weth.addons.base.models.ir_qweb.unsafe_eval', side_effect=eval) as unsafe_eval):
             self.assertNotIn("<55", render('''<55 t-out="object.name"></55>'''))
             self.assertFalse(qweb_render.called)
             self.assertFalse(unsafe_eval.called)
@@ -477,7 +477,7 @@ class TestRegexRendering(common.MailCommon):
         )
         for template, expected in non_static_templates:
             with (patch.object(self.registry['ir.qweb'], '_render', side_effect=o_qweb_render) as qweb_render,
-                patch('odoo.addons.base.models.ir_qweb.unsafe_eval', side_effect=eval) as unsafe_eval):
+                patch('weth.addons.base.models.ir_qweb.unsafe_eval', side_effect=eval) as unsafe_eval):
                 rendered = render(template)
                 self.assertTrue(isinstance(rendered, Markup))
                 self.assertEqual(rendered, expected)
@@ -497,7 +497,7 @@ class TestRegexRendering(common.MailCommon):
             ('''{{object.contact_name ||| Default}}''', 'Default'),
         )
         for template, expected in static_templates:
-            with patch('odoo.tools.safe_eval.evaluation.unsafe_eval', side_effect=eval) as unsafe_eval:
+            with patch('weth.tools.safe_eval.evaluation.unsafe_eval', side_effect=eval) as unsafe_eval:
                 self.assertEqual(render(template), expected)
                 self.assertFalse(unsafe_eval.called)
                 self.assertFalse(self.env['mail.render.mixin']._has_unsafe_expression_template_inline_template(template, 'res.partner'))
@@ -508,7 +508,7 @@ class TestRegexRendering(common.MailCommon):
             ('''{{object.env.context.get('test')}}''', ''),
         )
         for template, expected in non_static_templates:
-            with patch('odoo.tools.safe_eval.evaluation.unsafe_eval', side_effect=eval) as unsafe_eval:
+            with patch('weth.tools.safe_eval.evaluation.unsafe_eval', side_effect=eval) as unsafe_eval:
                 self.assertEqual(render(template), expected)
                 self.assertTrue(unsafe_eval.called)
                 self.assertTrue(self.env['mail.render.mixin']._has_unsafe_expression_template_inline_template(template, 'res.partner'))
@@ -604,7 +604,7 @@ class TestMailRenderSecurity(TestMailRenderCommon):
             template.body_html = template_defaults['body_html']
 
         with patch(
-            'odoo.addons.base.models.res_partner.ResPartner._mail_template_default_values',
+            'weth.addons.base.models.res_partner.ResPartner._mail_template_default_values',
             new=patched_mail_template_default_values, create=True,
         ):
             template = Form(self.env['mail.template'].with_context({

@@ -1,9 +1,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.account.tests.common import AccountTestInvoicingCommon
-from odoo.addons.mail.tests.common import MailCase
-from odoo.tests import Form
-from odoo.tests.common import tagged
+from weth.addons.account.tests.common import AccountTestInvoicingCommon
+from weth.addons.mail.tests.common import MailCase
+from weth.tests import Form
+from weth.tests.common import tagged
 
 
 @tagged('res_partner_bank')

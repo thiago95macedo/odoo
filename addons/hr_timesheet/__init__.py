@@ -5,9 +5,9 @@ from . import models
 from . import report
 from . import wizard
 
-from odoo import fields
+from weth import fields
 
-from odoo.addons.project import _check_exists_collaborators_for_project_sharing
+from weth.addons.project import _check_exists_collaborators_for_project_sharing
 
 
 def create_internal_project(env):

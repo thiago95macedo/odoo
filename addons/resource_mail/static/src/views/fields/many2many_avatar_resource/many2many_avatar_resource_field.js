@@ -7,7 +7,7 @@ import {
     listMany2ManyTagsAvatarUserField,
     many2ManyTagsAvatarUserField,
 } from "@mail/views/web/fields/many2many_avatar_user_field/many2many_avatar_user_field";
-import { Component, t, useProps } from "@odoo/owl";
+import { Component, t, useProps } from "@weth/owl";
 import { _t } from "@web/core/l10n/translation";
 import { usePopover } from "@web/core/popover/popover_hook";
 import { registry } from "@web/core/registry";
@@ -90,7 +90,7 @@ const resourceFieldMixin = {
     },
 };
 
-export class Many2ManyAvatarResourceField extends WithResourceFieldMixin(Many2ManyTagsAvatarUserField) {}
+export class Many2ManyAvatarResourceField extends WithResourceFieldMixin(Many2ManyTagsAvatarUserField) { }
 export const many2ManyAvatarResourceField = {
     ...many2ManyTagsAvatarUserField,
     ...resourceFieldMixin,
@@ -98,7 +98,7 @@ export const many2ManyAvatarResourceField = {
 };
 registry.category("fields").add("many2many_avatar_resource", many2ManyAvatarResourceField);
 
-export class ListMany2ManyAvatarResourceField extends WithResourceFieldMixin(ListMany2ManyTagsAvatarUserField) {}
+export class ListMany2ManyAvatarResourceField extends WithResourceFieldMixin(ListMany2ManyTagsAvatarUserField) { }
 export const listMany2ManyAvatarResourceField = {
     ...listMany2ManyTagsAvatarUserField,
     ...resourceFieldMixin,
@@ -106,7 +106,7 @@ export const listMany2ManyAvatarResourceField = {
 };
 registry.category("fields").add("list.many2many_avatar_resource", listMany2ManyAvatarResourceField);
 
-export class Many2ManyTagsAvatarResourceFieldPopover extends WithResourceFieldMixin(Many2ManyTagsAvatarFieldPopover) {}
+export class Many2ManyTagsAvatarResourceFieldPopover extends WithResourceFieldMixin(Many2ManyTagsAvatarFieldPopover) { }
 
 export class CardMany2ManyAvatarResourceField extends WithResourceFieldMixin(CardMany2ManyTagsAvatarUserField) {
     static PopoverClass = Many2ManyTagsAvatarResourceFieldPopover;

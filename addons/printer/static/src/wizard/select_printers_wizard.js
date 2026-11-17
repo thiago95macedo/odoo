@@ -1,4 +1,4 @@
-import { onWillUnmount } from "@odoo/owl";
+import { onWillUnmount } from "@weth/owl";
 import { _t } from "@web/core/l10n/translation";
 import { registry } from "@web/core/registry";
 import { useService } from "@web/core/utils/hooks";

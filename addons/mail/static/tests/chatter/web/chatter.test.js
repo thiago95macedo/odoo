@@ -20,8 +20,8 @@ import {
     MENU_ACTIVE_IDS,
 } from "@mail/../tests/mail_test_helpers";
 import { Message } from "@mail/core/common/message";
-import { describe, expect, mockUserAgent, rightClick, test } from "@odoo/hoot";
-import { advanceTime } from "@odoo/hoot-mock";
+import { describe, expect, mockUserAgent, rightClick, test } from "@weth/hoot";
+import { advanceTime } from "@weth/hoot-mock";
 
 import { range } from "@web/core/utils/numbers";
 import {
@@ -35,7 +35,7 @@ import {
 } from "@web/../tests/web_test_helpers";
 
 import { DELAY_FOR_SPINNER } from "@mail/chatter/web_portal_project/chatter";
-import { click as clickField, edit, queryFirst, waitFor } from "@odoo/hoot-dom";
+import { click as clickField, edit, queryFirst, waitFor } from "@weth/hoot-dom";
 
 describe.current.tags("desktop");
 defineMailModels();

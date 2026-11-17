@@ -1,4 +1,4 @@
-import { Component, proxy, useProps, t, useEffect } from "@odoo/owl";
+import { Component, proxy, useProps, t, useEffect } from "@weth/owl";
 import { getSnippetName, isElementInViewport } from "@html_builder/utils/utils";
 import { scrollTo } from "@html_builder/utils/scrolling";
 

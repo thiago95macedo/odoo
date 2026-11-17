@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 from contextlib import contextmanager
 
-from odoo import api, fields, models, _, Command
-from odoo.exceptions import UserError, ValidationError
-from odoo.fields import Datetime
-from odoo.tools.func import deprecated
-from odoo.tools.misc import formatLang
+from weth import api, fields, models, _, Command
+from weth.exceptions import UserError, ValidationError
+from weth.fields import Datetime
+from weth.tools.func import deprecated
+from weth.tools.misc import formatLang
 
 
 class AccountBankStatement(models.Model):

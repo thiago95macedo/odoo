@@ -1,5 +1,5 @@
 import { useService } from '@web/core/utils/hooks';
-import { Component, onWillStart } from '@odoo/owl';
+import { Component, onWillStart } from '@weth/owl';
 
 export class SurveySurveyActionHelper extends Component {
     static template = 'survey.SurveySurveyActionHelper';

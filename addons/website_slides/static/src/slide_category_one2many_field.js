@@ -1,4 +1,4 @@
-import { useProps, t } from "@odoo/owl";
+import { useProps, t } from "@weth/owl";
 import { registry } from "@web/core/registry";
 import { SlideCategoryListRenderer } from "./slide_category_list_renderer";
 import { standardFieldProps } from "@web/views/fields/standard_field_props";

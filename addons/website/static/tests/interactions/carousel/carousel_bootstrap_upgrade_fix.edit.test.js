@@ -1,7 +1,7 @@
 import { startInteractions, setupInteractionWhiteList } from "@web/../tests/public/helpers";
-import { describe, expect, test } from "@odoo/hoot";
-import { click, queryOne } from "@odoo/hoot-dom";
-import { advanceTime } from "@odoo/hoot-mock";
+import { describe, expect, test } from "@weth/hoot";
+import { click, queryOne } from "@weth/hoot-dom";
+import { advanceTime } from "@weth/hoot-mock";
 import { switchToEditMode } from "../../helpers";
 import { imageGalleryCarouselStyleSnippet } from "./carousel_helpers";
 

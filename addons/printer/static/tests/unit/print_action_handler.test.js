@@ -1,4 +1,4 @@
-import { beforeEach, describe, expect, mockFetch, test } from "@odoo/hoot";
+import { beforeEach, describe, expect, mockFetch, test } from "@weth/hoot";
 import { printJobs } from "@printer/print_action_handler";
 import { allowTranslations } from "@web/../tests/web_test_helpers";
 import { registry } from "@web/core/registry";
@@ -43,7 +43,7 @@ const makeMockServices = () => ({
     notification: {
         add: (title, opts) => {
             notificationsReceived.push({ title, opts });
-            return () => {};
+            return () => { };
         },
     },
 });

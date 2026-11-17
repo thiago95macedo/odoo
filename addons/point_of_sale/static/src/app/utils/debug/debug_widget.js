@@ -1,7 +1,7 @@
 import { useLayoutEffect } from "@web/owl2/utils";
 import { _t } from "@web/core/l10n/translation";
 import { useBus, useService } from "@web/core/utils/hooks";
-import { Component, onMounted, onWillDestroy, proxy, signal, usePlugin } from "@odoo/owl";
+import { Component, onMounted, onWillDestroy, proxy, signal, usePlugin } from "@weth/owl";
 import { PosNumberBufferPlugin } from "@point_of_sale/app/plugins/pos_number_buffer_plugin";
 import { usePos } from "@point_of_sale/app/hooks/pos_hook";
 import { serializeDateTime } from "@web/core/l10n/dates";
@@ -108,8 +108,7 @@ export class DebugWidget extends Component {
         this.dialog.add(ConfirmationDialog, {
             title: _t("Delete Orders?"),
             body: _t(
-                `This operation will destroy all ${
-                    paid ? "paid" : "unpaid"
+                `This operation will destroy all ${paid ? "paid" : "unpaid"
                 } orders in the browser. You will lose all the data. This operation cannot be undone.`
             ),
             confirm: () => {

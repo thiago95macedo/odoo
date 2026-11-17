@@ -1,17 +1,17 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.base.tests.files import PNG_RAW
-from odoo.addons.mail.tests.common import mail_new_test_user
-from odoo.addons.website_slides.tests import common
-from odoo.exceptions import AccessError
-from odoo.tests import tagged, HttpCase
-from odoo.tools import BinaryBytes, mute_logger
+from weth.addons.base.tests.files import PNG_RAW
+from weth.addons.mail.tests.common import mail_new_test_user
+from weth.addons.website_slides.tests import common
+from weth.exceptions import AccessError
+from weth.tests import tagged, HttpCase
+from weth.tools import BinaryBytes, mute_logger
 
 
 @tagged('security')
 class TestAccess(common.SlidesCase):
 
-    @mute_logger('odoo.models', 'odoo.addons.base.models.ir_access')
+    @mute_logger('weth.models', 'weth.addons.base.models.ir_access')
     def test_access_channel_invite(self):
         """ Invite channels don't give enroll if not member """
         self.channel.write({'enroll': 'invite'})
@@ -57,7 +57,7 @@ class TestAccess(common.SlidesCase):
         with self.assertRaises(AccessError):
             self.slide.with_user(self.user_emp).read(['name'])
 
-    @mute_logger('odoo.models', 'odoo.addons.base.models.ir_access')
+    @mute_logger('weth.models', 'weth.addons.base.models.ir_access')
     def test_access_channel_public(self):
         """ Public channels don't give enroll if not member """
         self.channel.write({'enroll': 'public'})
@@ -78,7 +78,7 @@ class TestAccess(common.SlidesCase):
         with self.assertRaises(AccessError):
             self.slide.with_user(self.user_public).read(['name'])
 
-    @mute_logger('odoo.models', 'odoo.addons.base.models.ir_access')
+    @mute_logger('weth.models', 'weth.addons.base.models.ir_access')
     def test_access_channel_publish(self):
         """ Unpublished channels and their content are visible only to eLearning people """
         self.channel.write({'is_published': False, 'enroll': 'public'})
@@ -149,7 +149,7 @@ class TestAccess(common.SlidesCase):
             self.slide.invalidate_model(['name'])
             self.slide.with_user(self.user_public).read(['name'])
 
-    @mute_logger('odoo.models', 'odoo.addons.base.models.ir_access')
+    @mute_logger('weth.models', 'weth.addons.base.models.ir_access')
     def test_access_slide_preview(self):
         """ Slides with preview flag are always visible even to non members if published """
         self.channel.write({'enroll': 'invite'})
@@ -162,7 +162,7 @@ class TestAccess(common.SlidesCase):
         self.slide.with_user(self.user_portal).read(['name'])
         self.slide.with_user(self.user_public).read(['name'])
 
-    @mute_logger('odoo.models', 'odoo.addons.base.models.ir_access')
+    @mute_logger('weth.models', 'weth.addons.base.models.ir_access')
     def test_access_channel_visibility_public(self):
         self.channel.write({'visibility': 'public'})
         self.slide.write({'is_preview': True})
@@ -180,7 +180,7 @@ class TestAccess(common.SlidesCase):
         self.slide.with_user(self.user_portal).read(['name'])
         self.slide.with_user(self.user_public).read(['name'])
 
-    @mute_logger('odoo.models', 'odoo.addons.base.models.ir_access')
+    @mute_logger('weth.models', 'weth.addons.base.models.ir_access')
     def test_access_channel_public_with_website_published(self):
         self.channel.write({'visibility': 'public', 'website_published': False})
 
@@ -202,7 +202,7 @@ class TestAccess(common.SlidesCase):
         with self.assertRaises(AccessError):
             self.slide.with_user(self.user_public).read(['name'])
 
-    @mute_logger('odoo.models', 'odoo.addons.base.models.ir_access')
+    @mute_logger('weth.models', 'weth.addons.base.models.ir_access')
     def test_access_channel_visibility_members(self):
         self.channel.write({'visibility': 'members'})
         self.channel.flush_model()
@@ -225,7 +225,7 @@ class TestAccess(common.SlidesCase):
         with self.assertRaises(AccessError):
             self.channel.with_user(self.user_emp).read(['name'])
 
-    @mute_logger('odoo.models', 'odoo.addons.base.models.ir_access')
+    @mute_logger('weth.models', 'weth.addons.base.models.ir_access')
     def test_access_channel_visiblilty_members_as_invited(self):
         self.channel.visibility = 'members'
         self.channel.flush_recordset()
@@ -244,7 +244,7 @@ class TestAccess(common.SlidesCase):
         with self.assertRaises(AccessError):
             self.channel.with_user(self.user_portal).read(['name'])
 
-    @mute_logger('odoo.models', 'odoo.addons.base.models.ir_access')
+    @mute_logger('weth.models', 'weth.addons.base.models.ir_access')
     def test_access_channel_members_with_website_published(self):
         self.channel.write({'visibility': 'members', 'website_published': False})
         self.channel.flush_model()
@@ -255,7 +255,7 @@ class TestAccess(common.SlidesCase):
         with self.assertRaises(AccessError):
             self.channel.with_user(self.user_portal).read(['name'])
 
-    @mute_logger('odoo.models', 'odoo.addons.base.models.ir_access')
+    @mute_logger('weth.models', 'weth.addons.base.models.ir_access')
     def test_access_channel_visibility_connected(self):
         self.channel.write({'visibility': 'connected'})
 
@@ -275,7 +275,7 @@ class TestAccess(common.SlidesCase):
         with self.assertRaises(AccessError):
             self.slide.with_user(self.user_public).read(['name'])
 
-    @mute_logger('odoo.models', 'odoo.addons.base.models.ir_access')
+    @mute_logger('weth.models', 'weth.addons.base.models.ir_access')
     def test_access_channel_visiblilty_connected_as_invited(self):
         self.channel.visibility = 'connected'
         self.channel.flush_recordset()
@@ -287,7 +287,7 @@ class TestAccess(common.SlidesCase):
         })
         self.channel.with_user(self.user_emp).read(['name'])
 
-    @mute_logger('odoo.models', 'odoo.addons.base.models.ir_access')
+    @mute_logger('weth.models', 'weth.addons.base.models.ir_access')
     def test_access_slide_slide_as_invited(self):
         """ Check that preview slides are visible to logged invited attendees, but not others, nor non published ones."""
         self.env['slide.channel.partner'].create({
@@ -317,7 +317,7 @@ class TestAccess(common.SlidesCase):
 
 @tagged('at_install', '-post_install')  # LEGACY at_install, fails post install
 class TestAccessHttp(common.SlidesCase, HttpCase):
-    @mute_logger('odoo.models', 'odoo.addons.base.models.ir_access', 'odoo.http')
+    @mute_logger('weth.models', 'weth.addons.base.models.ir_access', 'weth.http')
     def test_access_slide_attachment(self):
         """Check the document of slides, pdf or images, stored in a binary field, so as `ir.attachment`,
         are accessible to a user according to his access to the slide itself"""
@@ -459,7 +459,7 @@ class TestRemoveMembership(common.SlidesCase):
 @tagged('functional')
 class TestAccessFeatures(common.SlidesCase):
 
-    @mute_logger('odoo.models', 'odoo.addons.base.models.ir_access')
+    @mute_logger('weth.models', 'weth.addons.base.models.ir_access')
     def test_channel_auto_subscription(self):
         user_employees = self.env['res.users'].search([('all_group_ids', 'in', self.ref('base.group_user'))])
 
@@ -502,7 +502,7 @@ class TestAccessFeatures(common.SlidesCase):
         channel.invalidate_model()
         self.assertEqual(channel.partner_ids, user_employees.mapped('partner_id') | new_user.partner_id | new_user_2.partner_id | new_user_3.partner_id)
 
-    @mute_logger('odoo.models', 'odoo.addons.base.models.ir_access')
+    @mute_logger('weth.models', 'weth.addons.base.models.ir_access')
     def test_channel_access_fields_employee(self):
         channel_manager = self.channel.with_user(self.user_manager)
         channel_emp = self.channel.with_user(self.user_emp)
@@ -519,7 +519,7 @@ class TestAccessFeatures(common.SlidesCase):
         self.assertFalse(channel_portal.can_upload)
         self.assertFalse(channel_portal.can_publish)
 
-    @mute_logger('odoo.models', 'odoo.addons.base.models.ir_access')
+    @mute_logger('weth.models', 'weth.addons.base.models.ir_access')
     def test_channel_access_fields_officer(self):
         self.assertEqual(self.channel.user_id, self.user_officer)
 
@@ -541,7 +541,7 @@ class TestAccessFeatures(common.SlidesCase):
         self.assertTrue(channel_manager.can_upload)
         self.assertTrue(channel_manager.can_publish)
 
-    @mute_logger('odoo.models', 'odoo.addons.base.models.ir_access')
+    @mute_logger('weth.models', 'weth.addons.base.models.ir_access')
     def test_channel_access_fields_manager(self):
         channel_manager = self.channel.with_user(self.user_manager)
         self.assertTrue(channel_manager.can_upload)
@@ -569,7 +569,7 @@ class TestAccessFeatures(common.SlidesCase):
         self.assertTrue(channel_superuser.can_upload)
         self.assertTrue(channel_superuser.can_publish)
 
-    @mute_logger('odoo.models.unlink', 'odoo.addons.base.models.ir_access')
+    @mute_logger('weth.models.unlink', 'weth.addons.base.models.ir_access')
     def test_resource_access(self):
         resource_values = {
             'name': 'Image',
@@ -636,7 +636,7 @@ class TestAccessFeatures(common.SlidesCase):
 
 @tagged("functional")
 class TestReview(common.SlidesCase, HttpCase):
-    @mute_logger("odoo.addons.http_routing.models.ir_http", "odoo.http")
+    @mute_logger("weth.addons.http_routing.models.ir_http", "weth.http")
     def test_channel_multiple_reviews(self):
         self.authenticate("admin", "admin")
 
@@ -672,4 +672,4 @@ class TestReview(common.SlidesCase, HttpCase):
                 },
             },
         )
-        self.assertIn("odoo.exceptions.ValidationError", res2.text)
+        self.assertIn("weth.exceptions.ValidationError", res2.text)

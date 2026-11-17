@@ -1,11 +1,11 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-import odoo
-from odoo import Command, fields
-from odoo.addons.point_of_sale.tests.common import CommonPosTest
+import weth
+from weth import Command, fields
+from weth.addons.point_of_sale.tests.common import CommonPosTest
 
 
-@odoo.tests.tagged('post_install', '-at_install')
+@weth.tests.tagged('post_install', '-at_install')
 class TestPosDataLoading(CommonPosTest):
     # Tests for the POS data loading architecture.
 

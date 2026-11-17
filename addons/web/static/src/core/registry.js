@@ -1,18 +1,18 @@
-import { assertType, EventBus } from "@odoo/owl";
+import { assertType, EventBus } from "@weth/owl";
 
 // -----------------------------------------------------------------------------
 // Errors
 // -----------------------------------------------------------------------------
-export class KeyNotFoundError extends Error {}
+export class KeyNotFoundError extends Error { }
 
-export class DuplicatedKeyError extends Error {}
+export class DuplicatedKeyError extends Error { }
 
 // -----------------------------------------------------------------------------
 // Validation
 // -----------------------------------------------------------------------------
 
 const validateSchema = (name, key, value, schema) => {
-    if (!odoo.debug) {
+    if (!weth.debug) {
         return;
     }
     assertType(value, schema, `Validation error for key "${key}" in registry "${name}"`);

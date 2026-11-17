@@ -3,10 +3,10 @@
 
 from datetime import datetime, timedelta
 
-from odoo import Command
-from odoo.tests import Form, tagged
-from odoo.addons.mail.tests.common import mail_new_test_user
-from odoo.addons.stock.tests.test_report import TestReportsCommon
+from weth import Command
+from weth.tests import Form, tagged
+from weth.addons.mail.tests.common import mail_new_test_user
+from weth.addons.stock.tests.test_report import TestReportsCommon
 
 
 @tagged('at_install', '-post_install')  # LEGACY at_install

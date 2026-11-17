@@ -1,4 +1,4 @@
-import { Component, useProps, t } from "@odoo/owl";
+import { Component, useProps, t } from "@weth/owl";
 
 export class HeaderTopOptions extends Component {
     static template = "website.HeaderTopOptions";

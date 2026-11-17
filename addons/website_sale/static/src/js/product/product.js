@@ -1,6 +1,6 @@
 import { productProps, Product } from "@sale/js/product/product";
 import { patch } from "@web/core/utils/patch";
-import { t } from "@odoo/owl";
+import { t } from "@weth/owl";
 
 Object.assign(productProps, {
     strikethrough_price: t.number().optional(),

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 
-<odoo>
+<weth>
 
     <template id="address_form_autocomplete_enabled" inherit_id="portal.address_form_fields">
         <input name="street" position="attributes">
@@ -10,4 +10,4 @@
         </input>
     </template>
 
-</odoo>
+</weth>

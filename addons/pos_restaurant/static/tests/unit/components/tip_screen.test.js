@@ -1,4 +1,4 @@
-import { test, expect } from "@odoo/hoot";
+import { test, expect } from "@weth/hoot";
 import { TipScreen } from "@point_of_sale/app/screens/tip_screen/tip_screen";
 import { mountWithCleanup, MockServer } from "@web/../tests/web_test_helpers";
 import { setupPosEnv, getFilledOrder } from "@point_of_sale/../tests/unit/utils";
@@ -30,7 +30,7 @@ async function setupScreen(inputTip = null, selectedPercentage = null) {
 
 test("validateTip", async () => {
     const { store, order, screen } = await setupScreen("2");
-    TipScreen.prototype.printTipReceipt = async () => {};
+    TipScreen.prototype.printTipReceipt = async () => { };
     await screen.validateTip();
     expect(order.is_tipped).toBe(true);
     expect(order.tip_amount).toBe(2);

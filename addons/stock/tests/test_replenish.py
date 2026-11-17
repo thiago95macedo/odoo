@@ -3,9 +3,9 @@
 
 from freezegun import freeze_time
 
-from odoo.addons.stock.tests.common import TestStockCommon
-from odoo.tests import tagged, Form
-from odoo import Command, fields
+from weth.addons.stock.tests.common import TestStockCommon
+from weth.tests import tagged, Form
+from weth import Command, fields
 
 
 class TestStockReplenish(TestStockCommon):

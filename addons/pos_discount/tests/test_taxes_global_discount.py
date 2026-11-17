@@ -1,7 +1,7 @@
-from odoo import Command
-from odoo.addons.account.tests.test_taxes_global_discount import TestTaxesGlobalDiscount
-from odoo.addons.point_of_sale.tests.test_frontend import TestTaxCommonPOS
-from odoo.tests import tagged
+from weth import Command
+from weth.addons.account.tests.test_taxes_global_discount import TestTaxesGlobalDiscount
+from weth.addons.point_of_sale.tests.test_frontend import TestTaxCommonPOS
+from weth.tests import tagged
 
 
 @tagged('post_install', '-at_install')

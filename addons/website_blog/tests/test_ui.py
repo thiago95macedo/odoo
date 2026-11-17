@@ -1,16 +1,16 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-import odoo.tests
+import weth.tests
 import re
-from odoo.addons.http_routing.tests.common import MockRequest
-from odoo.addons.website_blog.controllers.main import WebsiteBlog
-from odoo.addons.website_blog.tests.common import TestWebsiteBlogCommon
+from weth.addons.http_routing.tests.common import MockRequest
+from weth.addons.website_blog.controllers.main import WebsiteBlog
+from weth.addons.website_blog.tests.common import TestWebsiteBlogCommon
 from datetime import datetime
 
 
-@odoo.tests.tagged('post_install', '-at_install')
-class TestWebsiteBlogUi(odoo.tests.HttpCase, TestWebsiteBlogCommon):
+@weth.tests.tagged('post_install', '-at_install')
+class TestWebsiteBlogUi(weth.tests.HttpCase, TestWebsiteBlogCommon):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()

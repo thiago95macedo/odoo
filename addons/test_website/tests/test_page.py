@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.tests import HttpCase
-from odoo.tools import mute_logger
+from weth.tests import HttpCase
+from weth.tools import mute_logger
 
 
 class WithContext(HttpCase):
@@ -49,7 +49,7 @@ class WithContext(HttpCase):
             'is_published': False,
         })
         website.homepage_url = f"/test_website/200/name-{rec_unpublished.id}"
-        with mute_logger('odoo.http'):  # mute 403 warning
+        with mute_logger('weth.http'):  # mute 403 warning
             r = self.url_open(website.homepage_url)
         self.assertEqual(r.status_code, 404, "The website homepage_url should be a 404")
         r = self.url_open(home_url)

@@ -1,5 +1,5 @@
-from odoo.addons.crm.tests.common import TestCrmCommon
-from odoo.tests import tagged, users
+from weth.addons.crm.tests.common import TestCrmCommon
+from weth.tests import tagged, users
 
 
 # This is explicit: we want CRM only check, to test base method

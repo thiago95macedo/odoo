@@ -2,8 +2,8 @@
 
 import logging
 
-from odoo.tests import TransactionCase, loaded_demo_data, tagged
-from odoo.tools import mute_logger
+from weth.tests import TransactionCase, loaded_demo_data, tagged
+from weth.tools import mute_logger
 
 _logger = logging.getLogger(__name__)
 
@@ -117,7 +117,7 @@ class TestImportFiles(TransactionCase):
         self.assertEqual(self.env.ref('__import__.product_product_6').lst_price, 2001)
         self.assertEqual(self.env.ref('__import__.product_tshirt_SW_red_l').lst_price, 2002)
 
-    @mute_logger('odoo.sql_db')
+    @mute_logger('weth.sql_db')
     def test_import_write_product_xls_error(self):
         results = self.import_product_xls("product.product")  # create products
         self.assertFalse(

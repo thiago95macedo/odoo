@@ -1,5 +1,5 @@
-import { describe, expect, test } from "@odoo/hoot";
-import { mockUserAgent } from "@odoo/hoot-mock";
+import { describe, expect, test } from "@weth/hoot";
+import { mockUserAgent } from "@weth/hoot-mock";
 import { defineMailModels, start } from "@mail/../tests/mail_test_helpers";
 import { getService } from "@web/../tests/web_test_helpers";
 

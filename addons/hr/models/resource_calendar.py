@@ -1,7 +1,7 @@
 
-from odoo import api, fields, models
-from odoo.fields import Domain
-from odoo.exceptions import ValidationError
+from weth import api, fields, models
+from weth.fields import Domain
+from weth.exceptions import ValidationError
 
 
 class ResourceCalendar(models.Model):

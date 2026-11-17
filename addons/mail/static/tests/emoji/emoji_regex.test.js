@@ -1,6 +1,6 @@
 import { EMOJI_REGEX } from "@mail/utils/common/format";
 
-import { expect, test } from "@odoo/hoot";
+import { expect, test } from "@weth/hoot";
 
 test.tags("headless");
 test("EMOJI_REGEX correctly matches all types of emojis.", async () => {

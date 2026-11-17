@@ -4,7 +4,7 @@ import { PortalChatterPlugin } from "@portal/chatter/portal/portal_chatter_plugi
 import { Chatter } from "@mail/chatter/web_portal_project/chatter";
 
 import { OverlayContainer } from "@web/core/overlay/overlay_container";
-import { Component, providePlugins, t, useListener, usePlugin, useProps, xml } from "@odoo/owl";
+import { Component, providePlugins, t, useListener, usePlugin, useProps, xml } from "@weth/owl";
 
 export class PortalChatter extends Component {
     static template = xml`

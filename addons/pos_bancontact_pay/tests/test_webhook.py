@@ -2,13 +2,13 @@ import json
 from contextlib import contextmanager
 from unittest.mock import patch
 
-from odoo.tests.common import tagged
-from odoo.tools import mute_logger
+from weth.tests.common import tagged
+from weth.tools import mute_logger
 
-from odoo.addons.pos_bancontact_pay.errors.exceptions import (
+from weth.addons.pos_bancontact_pay.errors.exceptions import (
     BancontactSignatureValidationError,
 )
-from odoo.addons.pos_bancontact_pay.tests.common import TestBancontactPay
+from weth.addons.pos_bancontact_pay.tests.common import TestBancontactPay
 
 
 @tagged("post_install", "-at_install")
@@ -16,7 +16,7 @@ class TestWebhook(TestBancontactPay):
     # ----- Payment Status ----- #
     _test_user_groups = None  # FIXME list needed groups
 
-    @mute_logger("odoo.addons.pos_bancontact_pay.controllers.webhook")
+    @mute_logger("weth.addons.pos_bancontact_pay.controllers.webhook")
     def test_bancontact_webhook(self):
         payload = self._make_payload("any_id", "any_status")
 
@@ -50,7 +50,7 @@ class TestWebhook(TestBancontactPay):
                 self._assert_notify_bancontact_pay_payments_notification(mock_notify, bancontact_id, bancontact_status)
 
     # ----- Security: payment_method/config binding & already-finalized guard ----- #
-    @mute_logger("odoo.addons.pos_bancontact_pay.controllers.webhook")
+    @mute_logger("weth.addons.pos_bancontact_pay.controllers.webhook")
     def test_bancontact_webhook_rejects_payment_method_not_configured_on_pos(self):
         """A validly signed callback for a real Bancontact payment method that
         simply isn't one of this config's own must be rejected. Without this, an
@@ -64,7 +64,7 @@ class TestWebhook(TestBancontactPay):
             self.assertEqual(response.text, "Invalid POS configuration")
             self._assert_notify_count(mock_notify, "BANCONTACT_PAY_PAYMENTS_NOTIFICATION", 0)
 
-    @mute_logger("odoo.addons.pos_bancontact_pay.controllers.webhook")
+    @mute_logger("weth.addons.pos_bancontact_pay.controllers.webhook")
     def test_bancontact_webhook_rejects_invalid_payment_method_id(self):
         """A non-existent or non-numeric payment_method_id must be rejected before
         any signature verification is attempted."""
@@ -76,7 +76,7 @@ class TestWebhook(TestBancontactPay):
                 self.assertEqual(response.text, "Invalid POS configuration")
             self._assert_notify_count(mock_notify, "BANCONTACT_PAY_PAYMENTS_NOTIFICATION", 0)
 
-    @mute_logger("odoo.addons.pos_bancontact_pay.controllers.webhook")
+    @mute_logger("weth.addons.pos_bancontact_pay.controllers.webhook")
     def test_bancontact_webhook_rejects_non_bancontact_payment_method(self):
         """A payment_method_id pointing at a real, configured payment method that
         isn't a Bancontact one at all must be rejected."""
@@ -87,7 +87,7 @@ class TestWebhook(TestBancontactPay):
             self.assertEqual(response.text, "Invalid POS configuration")
             self._assert_notify_count(mock_notify, "BANCONTACT_PAY_PAYMENTS_NOTIFICATION", 0)
 
-    @mute_logger("odoo.addons.pos_bancontact_pay.controllers.webhook")
+    @mute_logger("weth.addons.pos_bancontact_pay.controllers.webhook")
     def test_bancontact_webhook_accepts_unknown_payment_when_payment_method_valid(self):
         """The order/payment may not have synced to the server yet by the time a
         legitimate callback arrives, so finding a matching pos.payment can never be
@@ -100,7 +100,7 @@ class TestWebhook(TestBancontactPay):
             self.assertEqual(response.status_code, 200)
             self._assert_notify_count(mock_notify, "BANCONTACT_PAY_PAYMENTS_NOTIFICATION", 1)
 
-    @mute_logger("odoo.addons.pos_bancontact_pay.controllers.webhook")
+    @mute_logger("weth.addons.pos_bancontact_pay.controllers.webhook")
     def test_bancontact_webhook_ignores_already_finalized_payment(self):
         bancontact_id = "bancontact_already_done"
         payment = self._create_pending_payment(bancontact_id)
@@ -111,7 +111,7 @@ class TestWebhook(TestBancontactPay):
             self.assertEqual(response.status_code, 204)
             self._assert_notify_count(mock_notify, "BANCONTACT_PAY_PAYMENTS_NOTIFICATION", 0)
 
-    @mute_logger("odoo.addons.pos_bancontact_pay.controllers.webhook")
+    @mute_logger("weth.addons.pos_bancontact_pay.controllers.webhook")
     def test_bancontact_webhook_ignores_non_draft_order(self):
         bancontact_id = "bancontact_order_not_draft"
         payment = self._create_pending_payment(bancontact_id)
@@ -179,7 +179,7 @@ class TestWebhook(TestBancontactPay):
     # ----- Context Manager ----- #
     @contextmanager
     def mock_verify_signature(self, raise_error=False):
-        with patch("odoo.addons.pos_bancontact_pay.controllers.signature.BancontactSignatureValidation.verify_signature") as verify_signature_mock:
+        with patch("weth.addons.pos_bancontact_pay.controllers.signature.BancontactSignatureValidation.verify_signature") as verify_signature_mock:
             if raise_error:
                 verify_signature_mock.side_effect = BancontactSignatureValidationError("MOCK: Invalid signature")
             yield

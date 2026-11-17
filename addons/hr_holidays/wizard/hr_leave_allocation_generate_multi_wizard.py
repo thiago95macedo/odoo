@@ -2,11 +2,11 @@
 
 from datetime import date
 
-from odoo import api, fields, models
-from odoo.fields import Domain
+from weth import api, fields, models
+from weth.fields import Domain
 
-from odoo.addons.resource.models.utils import HOURS_PER_DAY
-from odoo.tools.float_utils import float_round
+from weth.addons.resource.models.utils import HOURS_PER_DAY
+from weth.tools.float_utils import float_round
 
 
 class HrLeaveAllocationGenerateMultiWizard(models.TransientModel):

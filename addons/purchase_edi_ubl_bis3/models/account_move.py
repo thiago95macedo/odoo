@@ -1,5 +1,5 @@
-from odoo import models
-from odoo.exceptions import UserError
+from weth import models
+from weth.exceptions import UserError
 
 
 class AccountMove(models.Model):

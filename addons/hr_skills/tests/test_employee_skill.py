@@ -2,11 +2,11 @@
 from dateutil.relativedelta import relativedelta
 import datetime
 
-from odoo import fields
+from weth import fields
 
-from odoo.exceptions import ValidationError
-from odoo.tests import tagged, Form
-from odoo.tests.common import TransactionCase
+from weth.exceptions import ValidationError
+from weth.tests import tagged, Form
+from weth.tests.common import TransactionCase
 
 
 class TestEmployeeSkills(TransactionCase):

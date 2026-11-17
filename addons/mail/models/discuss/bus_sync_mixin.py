@@ -2,9 +2,9 @@
 
 import copy
 
-from odoo import models
-from odoo.tools.misc import LazyDict
-from odoo.addons.mail.tools.discuss import Store
+from weth import models
+from weth.tools.misc import LazyDict
+from weth.addons.mail.tools.discuss import Store
 
 
 class BusSyncMixin(models.AbstractModel):

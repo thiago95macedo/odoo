@@ -1,4 +1,4 @@
-/** @odoo-module */
+/** @weth-module */
 
 import { _getTimeOffset, _isTimeFrozen, _resetTimeOffset } from "@web/../lib/hoot-dom/helpers/time";
 import { createMock, HootError, isNil } from "../hoot_utils";

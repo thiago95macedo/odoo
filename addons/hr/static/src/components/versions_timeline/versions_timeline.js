@@ -4,7 +4,7 @@ import { registry } from "@web/core/registry";
 import { useService } from "@web/core/utils/hooks";
 import { statusBarField, StatusBarField } from "@web/views/fields/statusbar/statusbar_field";
 import { _t } from "@web/core/l10n/translation";
-import { signal } from "@odoo/owl";
+import { signal } from "@weth/owl";
 
 export class VersionsTimeline extends StatusBarField {
     static template = "hr.VersionsTimeline";
@@ -59,9 +59,9 @@ export class VersionsTimeline extends StatusBarField {
         const nextItem = this.items.inline[index + 1];
         return Boolean(
             item?.isInContract &&
-                item.isCurrentContract &&
-                nextItem?.isInContract &&
-                nextItem.isCurrentContract
+            item.isCurrentContract &&
+            nextItem?.isInContract &&
+            nextItem.isCurrentContract
         );
     }
 

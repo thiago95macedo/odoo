@@ -1,6 +1,6 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.tools import LazyTranslate
+from weth.tools import LazyTranslate
 
 _lt = LazyTranslate(__name__)
 

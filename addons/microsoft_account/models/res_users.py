@@ -4,7 +4,7 @@
 from datetime import timedelta
 
 
-from odoo import fields, models
+from weth import fields, models
 
 
 class ResUsers(models.Model):

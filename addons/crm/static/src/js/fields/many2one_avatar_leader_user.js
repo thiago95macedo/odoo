@@ -3,7 +3,7 @@ import {
     Many2OneAvatarUserField,
     many2OneAvatarUserFieldProps,
 } from "@mail/views/web/fields/many2one_avatar_user_field/many2one_avatar_user_field";
-import { t, useProps } from "@odoo/owl";
+import { t, useProps } from "@weth/owl";
 import { registry } from "@web/core/registry";
 
 export class Many2OneAvatarLeaderUserField extends Many2OneAvatarUserField {

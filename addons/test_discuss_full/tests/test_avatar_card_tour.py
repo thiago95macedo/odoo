@@ -4,10 +4,10 @@ from datetime import date, timedelta
 
 from freezegun import freeze_time
 
-from odoo import Command
-from odoo.tests import users
-from odoo.tests.common import HttpCase, new_test_user
-from odoo.addons.mail.tests.common import MailCommon
+from weth import Command
+from weth.tests import users
+from weth.tests.common import HttpCase, new_test_user
+from weth.addons.mail.tests.common import MailCommon
 
 
 class TestAvatarCardTour(MailCommon, HttpCase):
@@ -149,7 +149,7 @@ class TestAvatarCardTour(MailCommon, HttpCase):
     def test_avatar_card_tour_multi_company(self):
         self._setup_channel(self.env.user)
         self.start_tour(
-            f"/odoo/res.partner/{self.user_employee_c2.partner_id.id}",
+            f"/weth/res.partner/{self.user_employee_c2.partner_id.id}",
             "avatar_card_tour",
             login=self.env.user.login,
         )
@@ -158,7 +158,7 @@ class TestAvatarCardTour(MailCommon, HttpCase):
     def test_avatar_card_tour_multi_company_no_hr_access(self):
         self._setup_channel(self.env.user)
         self.start_tour(
-            f"/odoo/res.partner/{self.user_employee_c2.partner_id.id}",
+            f"/weth/res.partner/{self.user_employee_c2.partner_id.id}",
             "avatar_card_tour_no_hr_access",
             login=self.env.user.login,
         )

@@ -9,7 +9,7 @@ import {
 } from "@html_editor/utils/dom_info";
 import { childNodes, closestElement, selectElements } from "@html_editor/utils/dom_traversal";
 import { withSequence } from "@html_editor/utils/resource";
-import { markup } from "@odoo/owl";
+import { markup } from "@weth/owl";
 import { _t } from "@web/core/l10n/translation";
 import { user } from "@web/core/user";
 import { renderToElement } from "@web/core/utils/render";

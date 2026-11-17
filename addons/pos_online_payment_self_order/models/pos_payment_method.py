@@ -1,5 +1,5 @@
-from odoo import models, api
-from odoo.fields import Domain
+from weth import models, api
+from weth.fields import Domain
 
 
 class PosPaymentMethod(models.Model):

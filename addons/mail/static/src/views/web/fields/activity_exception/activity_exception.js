@@ -1,4 +1,4 @@
-import { Component, types, useProps } from "@odoo/owl";
+import { Component, types, useProps } from "@weth/owl";
 
 import { registry } from "@web/core/registry";
 import { Record } from "@web/model/relational_model/record";

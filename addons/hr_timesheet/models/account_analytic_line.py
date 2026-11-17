@@ -4,10 +4,10 @@ import re
 from collections import defaultdict
 from datetime import datetime, time
 
-from odoo import api, fields, models
-from odoo.exceptions import UserError, AccessError, ValidationError
-from odoo.fields import Domain
-from odoo.tools.translate import _
+from weth import api, fields, models
+from weth.exceptions import UserError, AccessError, ValidationError
+from weth.fields import Domain
+from weth.tools.translate import _
 
 
 class AccountAnalyticLine(models.Model):

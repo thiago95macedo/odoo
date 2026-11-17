@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import models
-from odoo.modules.db import FunctionStatus
-from odoo.tools import SQL
+from weth import models
+from weth.modules.db import FunctionStatus
+from weth.tools import SQL
 
 
 class IrAttachment(models.Model):

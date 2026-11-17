@@ -1,4 +1,4 @@
-import { runAllTimers, test } from "@odoo/hoot";
+import { runAllTimers, test } from "@weth/hoot";
 import { definePosStockModels } from "@pos_stock/../tests/unit/data/generate_model_definitions";
 import {
     setupCustomerDisplay,

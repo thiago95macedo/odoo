@@ -1,4 +1,4 @@
-import { Component, onWillStart, useProps } from "@odoo/owl";
+import { Component, onWillStart, useProps } from "@weth/owl";
 import { openComboConfigurator } from "@sale/js/combo_configurator_utils";
 import { Dropdown } from "@web/core/dropdown/dropdown";
 import { DropdownItem } from "@web/core/dropdown/dropdown_item";

@@ -1,13 +1,13 @@
 // @ts-check
 
-import { stores } from "@odoo/o-spreadsheet";
+import { stores } from "@weth/o-spreadsheet";
 import { createModelWithDataSource } from "@spreadsheet/../tests/helpers/model";
 
 const { ModelStore, NotificationStore, DependencyContainer } = stores;
 
 /**
  * @template T
- * @typedef {import("@odoo/o-spreadsheet").StoreConstructor<T>} StoreConstructor<T>
+ * @typedef {import("@weth/o-spreadsheet").StoreConstructor<T>} StoreConstructor<T>
  */
 
 /**
@@ -27,7 +27,7 @@ export async function makeStore(Store, ...args) {
 
 /**
  * @template T
- * @param {import("@odoo/o-spreadsheet").Model} model
+ * @param {import("@weth/o-spreadsheet").Model} model
  * @param {StoreConstructor<T>} Store
  * @param  {any[]} args
  * @return {{ store: T, container: InstanceType<DependencyContainer>, model: OdooSpreadsheetModel }}
@@ -46,8 +46,8 @@ export function makeStoreWithModel(model, Store, ...args) {
 
 function makeTestNotificationStore() {
     return {
-        notifyUser: () => {},
-        raiseError: () => {},
-        askConfirmation: () => {},
+        notifyUser: () => { },
+        raiseError: () => { },
+        askConfirmation: () => { },
     };
 }

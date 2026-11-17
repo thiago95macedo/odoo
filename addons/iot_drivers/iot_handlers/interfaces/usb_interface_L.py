@@ -2,7 +2,7 @@
 
 from usb import core
 
-from odoo.addons.iot_drivers.interface import Interface
+from weth.addons.iot_drivers.interface import Interface
 
 
 class USBInterface(Interface):

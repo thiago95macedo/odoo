@@ -1,4 +1,4 @@
-import { onMounted, onPatched, onWillUnmount, proxy } from "@odoo/owl";
+import { onMounted, onPatched, onWillUnmount, proxy } from "@weth/owl";
 import { debounce } from "@web/core/utils/timing";
 
 export function useScrollShadow(scrollContainerRef, options = {}) {

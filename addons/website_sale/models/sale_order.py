@@ -5,13 +5,13 @@ from datetime import datetime, timedelta
 
 from dateutil.relativedelta import relativedelta
 
-from odoo import SUPERUSER_ID, api, fields, models
-from odoo.exceptions import UserError, ValidationError
-from odoo.fields import Command, Domain
-from odoo.http import request
-from odoo.tools import float_round
+from weth import SUPERUSER_ID, api, fields, models
+from weth.exceptions import UserError, ValidationError
+from weth.fields import Command, Domain
+from weth.http import request
+from weth.tools import float_round
 
-from odoo.addons.website_sale.models.website import (
+from weth.addons.website_sale.models.website import (
     FISCAL_POSITION_SESSION_CACHE_KEY,
     PRICELIST_SELECTED_SESSION_CACHE_KEY,
 )

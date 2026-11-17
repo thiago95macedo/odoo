@@ -2,7 +2,7 @@ from datetime import date
 
 from dateutil.relativedelta import relativedelta
 
-from odoo.tests import TransactionCase, tagged
+from weth.tests import TransactionCase, tagged
 
 
 @tagged("recruitment")

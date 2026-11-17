@@ -1,5 +1,5 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
-from odoo import _, models
+from weth import _, models
 
 
 class PosOrderReceipt(models.AbstractModel):

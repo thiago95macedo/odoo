@@ -1,6 +1,6 @@
 import { Avatar } from "@mail/views/web/fields/avatar/avatar";
 
-import { Component, onWillStart, t, useProps } from "@odoo/owl";
+import { Component, onWillStart, t, useProps } from "@weth/owl";
 import { registry } from "@web/core/registry";
 import { user } from "@web/core/user";
 import { computeM2OProps, Many2One } from "@web/views/fields/many2one/many2one";

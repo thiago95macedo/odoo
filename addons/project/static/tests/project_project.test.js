@@ -1,5 +1,5 @@
-import { expect, test, describe } from "@odoo/hoot";
-import { animationFrame } from "@odoo/hoot-mock";
+import { expect, test, describe } from "@weth/hoot";
+import { animationFrame } from "@weth/hoot-mock";
 import {
     mountView,
     onRpc,

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo noupdate="1">
+<weth noupdate="1">
     <record id="portal_projects" model="portal.entry">
         <field name="name">Projects</field>
         <field name="description">Follow the evolution of your projects</field>
@@ -19,4 +19,4 @@
         <field name="category">service_category</field>
         <field name="sequence" eval="100"/>
     </record>
-</odoo>
+</weth>

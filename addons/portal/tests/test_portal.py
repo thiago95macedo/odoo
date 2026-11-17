@@ -1,8 +1,8 @@
 from datetime import datetime, timedelta
 
-from odoo.tests.common import HttpCase, tagged
+from weth.tests.common import HttpCase, tagged
 
-from odoo.addons.base.tests.common import BaseCommon
+from weth.addons.base.tests.common import BaseCommon
 
 
 @tagged('-at_install', 'post_install')

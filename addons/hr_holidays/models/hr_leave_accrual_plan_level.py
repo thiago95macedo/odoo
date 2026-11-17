@@ -2,9 +2,9 @@
 from calendar import monthrange
 from dateutil.relativedelta import relativedelta
 
-from odoo import _, api, fields, models
-from odoo.exceptions import ValidationError, UserError
-from odoo.tools.date_utils import get_timedelta
+from weth import _, api, fields, models
+from weth.exceptions import ValidationError, UserError
+from weth.tools.date_utils import get_timedelta
 
 
 def _get_selection_days(self):

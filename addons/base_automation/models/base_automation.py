@@ -11,12 +11,12 @@ from uuid import uuid4
 
 from dateutil.relativedelta import relativedelta
 
-from odoo import _, api, exceptions, fields, models
-from odoo.exceptions import LockError, MissingError
-from odoo.fields import Domain
-from odoo.http import request
-from odoo.tools import BinaryBytes, safe_eval
-from odoo.tools.func import deprecated
+from weth import _, api, exceptions, fields, models
+from weth.exceptions import LockError, MissingError
+from weth.fields import Domain
+from weth.http import request
+from weth.tools import BinaryBytes, safe_eval
+from weth.tools.func import deprecated
 
 _logger = logging.getLogger(__name__)
 

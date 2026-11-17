@@ -1,6 +1,6 @@
 import { propComputed } from "@mail/utils/common/hooks";
 
-import { Component, types } from "@odoo/owl";
+import { Component, types } from "@weth/owl";
 
 /** Tells how long ago the invitation of a channel member who has not joined yet was last sent. */
 export class InvitationSentDate extends Component {

@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<odoo>
+<weth>
     <data>
 
         <!-- Update Preferences form !-->
@@ -47,4 +47,4 @@
         </record>
 
     </data>
-</odoo>
+</weth>

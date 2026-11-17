@@ -1,7 +1,7 @@
 from urllib.parse import quote
 
-from odoo.http import Controller, request, route
-from odoo.http.stream import content_disposition
+from weth.http import Controller, request, route
+from weth.http.stream import content_disposition
 
 # from https://github.com/monperrus/crawler-user-agents
 SOCIAL_NETWORK_USER_AGENTS = (

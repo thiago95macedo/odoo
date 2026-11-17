@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @weth-module **/
 
 import { KanbanHeader } from "@web/views/kanban/kanban_header";
 import { SelectCreateDialog } from "@web/views/view_dialogs/select_create_dialog";

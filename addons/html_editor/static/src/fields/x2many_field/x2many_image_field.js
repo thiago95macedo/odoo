@@ -1,7 +1,7 @@
 import { registry } from "@web/core/registry";
 import { useService } from "@web/core/utils/hooks";
 import { ImageField, imageField, imageFieldProps } from "@web/views/fields/image/image_field";
-import { t, useProps } from "@odoo/owl";
+import { t, useProps } from "@weth/owl";
 import { CustomMediaDialog } from "./custom_media_dialog";
 import { getDataURLFromFile } from "@web/core/utils/urls";
 import { saveSingleAttachment } from "@web/core/utils/image_library";
@@ -39,7 +39,7 @@ export class X2ManyImageField extends ImageField {
             visibleTabs: this.props.onlyImage ? ["IMAGES"] : ["IMAGES", "VIDEOS"],
             media: mediaEl,
             activeTab: isVideo ? "VIDEOS" : "IMAGES",
-            save: (el) => {}, // Simple rebound to fake its execution
+            save: (el) => { }, // Simple rebound to fake its execution
             imageSave: this.onImageSave.bind(this),
             videoSave: this.onVideoSave.bind(this),
             document: window.document,

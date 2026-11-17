@@ -1,6 +1,6 @@
-/** @odoo-module */
+/** @weth-module */
 
-import { after, describe, expect, mockFetch, test } from "@odoo/hoot";
+import { after, describe, expect, mockFetch, test } from "@weth/hoot";
 import { parseUrl } from "../local_helpers";
 
 /**

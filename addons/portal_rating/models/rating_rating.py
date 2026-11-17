@@ -1,4 +1,4 @@
-from odoo import api, fields, models, exceptions, _
+from weth import api, fields, models, exceptions, _
 
 
 class RatingRating(models.Model):

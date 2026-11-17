@@ -3,16 +3,16 @@
 
 from datetime import datetime, timedelta
 
-from odoo.addons.digest.tests.common import TestDigestCommon
-from odoo.tests import tagged
+from weth.addons.digest.tests.common import TestDigestCommon
+from weth.tests import tagged
 
-from odoo.tools import mute_logger
+from weth.tools import mute_logger
 
 
 @tagged('at_install', '-post_install')  # LEGACY at_install
 class TestCrmDigest(TestDigestCommon):
     @classmethod
-    @mute_logger('odoo.models.unlink')
+    @mute_logger('weth.models.unlink')
     def setUpClass(cls):
         super().setUpClass()
 

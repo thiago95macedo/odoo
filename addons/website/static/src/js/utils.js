@@ -59,8 +59,8 @@ function loadAnchors(url, body) {
  * into a new container appended to the document body, and returns a cleanup
  * function that destroys the root and removes the container.
  *
- * @param {import("@odoo/owl").App} app
- * @param {typeof import("@odoo/owl").Component} ComponentClass the OWL component to mount
+ * @param {import("@weth/owl").App} app
+ * @param {typeof import("@weth/owl").Component} ComponentClass the OWL component to mount
  * @param {Object} props
  * @returns {Function} cleanup function
  */
@@ -81,7 +81,7 @@ export function mountAutocompleteComponent(app, ComponentClass, props) {
 /**
  * Allows the given input to propose existing website URLs.
  *
- * @param {import("@odoo/owl").App} app
+ * @param {import("@weth/owl").App} app
  * @param {HTMLInputElement} input
  * @param {Object} [options]
  */

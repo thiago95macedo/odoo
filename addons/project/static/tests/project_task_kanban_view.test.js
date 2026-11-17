@@ -1,5 +1,5 @@
-import { beforeEach, describe, expect, test } from "@odoo/hoot";
-import { animationFrame, click, edit, waitFor } from "@odoo/hoot-dom";
+import { beforeEach, describe, expect, test } from "@weth/hoot";
+import { animationFrame, click, edit, waitFor } from "@weth/hoot-dom";
 import {
     contains,
     fields,
@@ -46,26 +46,26 @@ beforeEach(() => {
             </templates>
         </kanban>
     `,
-    onRpc(({ method }) => {
-        if (method === "unlink_wizard") {
-            return {
-                type: "ir.actions.act_window",
-                name: "Delete Stage",
-                res_model: "project.task.type.delete.wizard",
-                view_mode: "form",
-                views: [[false, "form"]],
-                target: "new",
-                res_id: 1,
-            };
-        } else if (method === "action_unlink") {
-            return {
-                type: "ir.actions.act_window_close",
-                infos: {
-                    success: true,
-                },
-            };
-        }
-    });
+        onRpc(({ method }) => {
+            if (method === "unlink_wizard") {
+                return {
+                    type: "ir.actions.act_window",
+                    name: "Delete Stage",
+                    res_model: "project.task.type.delete.wizard",
+                    view_mode: "form",
+                    views: [[false, "form"]],
+                    target: "new",
+                    res_id: 1,
+                };
+            } else if (method === "action_unlink") {
+                return {
+                    type: "ir.actions.act_window_close",
+                    infos: {
+                        success: true,
+                    },
+                };
+            }
+        });
 });
 
 test("stages nocontent helper should be displayed in the project Kanban", async () => {
@@ -116,14 +116,14 @@ test("project.task (kanban): toggle sub-tasks", async () => {
             id: 1,
             project_id: 1,
             name: "Task 1",
-            stage_id:  1,
+            stage_id: 1,
             display_in_project: true,
         },
         {
             id: 2,
             project_id: 1,
             name: "Task 2",
-            stage_id:  1,
+            stage_id: 1,
             display_in_project: false,
         }
     ];

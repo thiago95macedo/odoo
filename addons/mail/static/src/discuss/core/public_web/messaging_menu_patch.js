@@ -1,7 +1,7 @@
 import { MessagingMenu } from "@mail/core/public_web/messaging_menu/messaging_menu";
 import { useSearch } from "@mail/utils/common/hooks";
 
-import { computed, useEffect } from "@odoo/owl";
+import { computed, useEffect } from "@weth/owl";
 
 import { normalize } from "@web/core/l10n/utils";
 import { patch } from "@web/core/utils/patch";

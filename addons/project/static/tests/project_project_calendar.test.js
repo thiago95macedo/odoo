@@ -1,6 +1,6 @@
-import { expect, test, describe } from "@odoo/hoot";
-import { mockDate, runAllTimers } from "@odoo/hoot-mock";
-import { click, queryAllTexts } from "@odoo/hoot-dom";
+import { expect, test, describe } from "@weth/hoot";
+import { mockDate, runAllTimers } from "@weth/hoot-mock";
+import { click, queryAllTexts } from "@weth/hoot-dom";
 
 import { mountView, onRpc } from "@web/../tests/web_test_helpers";
 

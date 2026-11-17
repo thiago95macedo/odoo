@@ -6,9 +6,9 @@ from base64 import b64decode
 
 from dateutil.relativedelta import relativedelta
 
-from odoo import api, fields, models, _
-from odoo.exceptions import UserError
-from odoo.tools.mimetypes import guess_mimetype
+from weth import api, fields, models, _
+from weth.exceptions import UserError
+from weth.tools.mimetypes import guess_mimetype
 
 FLOOR_PLAN_SUPPORTED_IMAGE_MIMETYPES = {
     'image/gif': '.gif',

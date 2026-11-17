@@ -2,12 +2,12 @@
 
 from unittest.mock import patch
 
-from odoo import Command
-from odoo.exceptions import ValidationError
-from odoo.tests import tagged
+from weth import Command
+from weth.exceptions import ValidationError
+from weth.tests import tagged
 
-from odoo.addons.website_sale_collect.tests.common import ClickAndCollectCommon
-from odoo.addons.website_sale_stock.tests.common import WebsiteSaleStockCommon
+from weth.addons.website_sale_collect.tests.common import ClickAndCollectCommon
+from weth.addons.website_sale_stock.tests.common import WebsiteSaleStockCommon
 
 
 @tagged("post_install", "-at_install")

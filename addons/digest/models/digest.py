@@ -8,12 +8,12 @@ from dateutil.relativedelta import relativedelta
 from markupsafe import Markup
 from werkzeug.urls import url_encode
 
-from odoo import api, fields, models, modules, tools, _
-from odoo.addons.base.models.ir_mail_server import MailDeliveryException
-from odoo.exceptions import AccessError
-from odoo.fields import Domain
-from odoo.tools.float_utils import float_round
-from odoo.tools.urls import urljoin as url_join
+from weth import api, fields, models, modules, tools, _
+from weth.addons.base.models.ir_mail_server import MailDeliveryException
+from weth.exceptions import AccessError
+from weth.fields import Domain
+from weth.tools.float_utils import float_round
+from weth.tools.urls import urljoin as url_join
 
 _logger = logging.getLogger(__name__)
 
@@ -405,7 +405,7 @@ class DigestDigest(models.Model):
         if user.has_group('base.group_erp_manager'):
             preferences.append(Markup('<p>%s<br /><a href="%s" target="_blank" style="color:#017e84; font-weight: bold;">%s</a></p>') % (
                 _('Want to customize this email?'),
-                f'/odoo/{self._name}/{self.id:d}',
+                f'/weth/{self._name}/{self.id:d}',
                 _('Choose the metrics you care about')
             ))
 
@@ -501,7 +501,7 @@ class DigestDigest(models.Model):
         """Allow to override kpi default settings (module and is_cross_company).
 
         Under the kpi_action key (dict), you can define per kpi, an optional action to display in digest email.
-        The value will be concatenated with /odoo/action-{action} to build the action URL.
+        The value will be concatenated with /weth/action-{action} to build the action URL.
 
         Under the kpi_module key (dict), you can override the kpi module (by default where it is defined).
         The module is used to display the module icon next to the kpi.

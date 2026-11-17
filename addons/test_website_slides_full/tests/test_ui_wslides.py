@@ -2,10 +2,10 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
 from dateutil.relativedelta import relativedelta
-from odoo.fields import Command, Datetime
-from odoo import tests
-from odoo.tests.common import users
-from odoo.addons.website_slides.tests.test_ui_wslides import TestUICommon
+from weth.fields import Command, Datetime
+from weth import tests
+from weth.tests.common import users
+from weth.addons.website_slides.tests.test_ui_wslides import TestUICommon
 
 
 @tests.common.tagged('post_install', '-at_install')

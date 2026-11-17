@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, fields, models
-from odoo.tools import BinaryBytes, file_open
+from weth import api, fields, models
+from weth.tools import BinaryBytes, file_open
 
 
 class LunchProductCategory(models.Model):

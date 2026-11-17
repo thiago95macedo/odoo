@@ -8,16 +8,16 @@ from zoneinfo import ZoneInfoNotFoundError, ZoneInfo
 import werkzeug
 from lxml import etree
 
-import odoo
-from odoo import api, models
-from odoo import SUPERUSER_ID
-from odoo.exceptions import AccessError
-from odoo.fields import Domain
-from odoo.http import request
-from odoo.tools.json import scriptsafe as json_scriptsafe
-from odoo.tools.safe_eval import safe_eval
-from odoo.addons.http_routing.models import ir_http
-from odoo.addons.portal.controllers.portal import _build_url_w_params
+import weth
+from weth import api, models
+from weth import SUPERUSER_ID
+from weth.exceptions import AccessError
+from weth.fields import Domain
+from weth.http import request
+from weth.tools.json import scriptsafe as json_scriptsafe
+from weth.tools.safe_eval import safe_eval
+from weth.addons.http_routing.models import ir_http
+from weth.addons.portal.controllers.portal import _build_url_w_params
 
 logger = logging.getLogger(__name__)
 
@@ -280,7 +280,7 @@ class IrHttp(models.AbstractModel):
     @classmethod
     def _get_translation_frontend_modules_name(cls):
         mods = super()._get_translation_frontend_modules_name()
-        installed = request.registry._init_modules.union(odoo.tools.config['server_wide_modules'])
+        installed = request.registry._init_modules.union(weth.tools.config['server_wide_modules'])
         return mods + [mod for mod in installed if 'website' in mod]
 
     @classmethod

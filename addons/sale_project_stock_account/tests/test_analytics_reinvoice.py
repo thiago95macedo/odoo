@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.fields import Command
+from weth.fields import Command
 
-from odoo.addons.project_stock_account.tests.test_analytics import TestAnalytics
+from weth.addons.project_stock_account.tests.test_analytics import TestAnalytics
 
 
 class TestAnalyticsReinvoice(TestAnalytics):

@@ -1,4 +1,4 @@
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@weth/hoot";
 import { insertChartInSpreadsheet } from "@spreadsheet/../tests/helpers/chart";
 import { createBasicChart } from "@spreadsheet/../tests/helpers/commands";
 import { defineSpreadsheetModels } from "@spreadsheet/../tests/helpers/data";
@@ -8,7 +8,7 @@ import { createSpreadsheetWithList } from "../../helpers/list";
 import { CommandResult } from "@spreadsheet/o_spreadsheet/cancelled_reason";
 import { getMockEnv, makeTestApp } from "@web/../tests/web_test_helpers";
 
-import { Model } from "@odoo/o-spreadsheet";
+import { Model } from "@weth/o-spreadsheet";
 
 const chartId = "uuid1";
 

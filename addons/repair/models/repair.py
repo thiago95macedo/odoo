@@ -2,11 +2,11 @@
 
 from random import randint
 
-from odoo import api, fields, models, _
-from odoo.exceptions import UserError, ValidationError
-from odoo.fields import Command, Domain
-from odoo.tools import float_compare
-from odoo.tools.misc import format_date, unique
+from weth import api, fields, models, _
+from weth.exceptions import UserError, ValidationError
+from weth.fields import Command, Domain
+from weth.tools import float_compare
+from weth.tools.misc import format_date, unique
 
 MAP_REPAIR_TO_PICKING_LOCATIONS = {
     'location_id': 'default_location_src_id',

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
 
 <!-- Page -->
 <template id="index" inherit_id="website_partnership.index_layout" name="Find Resellers">
@@ -827,4 +827,4 @@
         </t>
     </template>
 
-</odoo>
+</weth>

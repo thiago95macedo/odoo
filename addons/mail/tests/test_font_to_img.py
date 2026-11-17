@@ -3,11 +3,11 @@
 
 from PIL import ImageChops
 
-from odoo.tests.common import HttpCase
-from odoo.tools.image import binary_to_image
-from odoo.tools.misc import file_open
+from weth.tests.common import HttpCase
+from weth.tools.image import binary_to_image
+from weth.tools.misc import file_open
 
-from odoo.addons.web.icons import ICONS
+from weth.addons.web.icons import ICONS
 
 
 class TestFontToImg(HttpCase):

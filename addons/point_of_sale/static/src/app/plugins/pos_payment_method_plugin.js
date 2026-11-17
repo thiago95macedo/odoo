@@ -1,4 +1,4 @@
-import { proxy, usePlugin, Plugin } from "@odoo/owl";
+import { proxy, usePlugin, Plugin } from "@weth/owl";
 import { registry } from "@web/core/registry";
 import { PosDataPlugin } from "./pos_data_plugin";
 import { DialogPlugin } from "@web/core/dialog/dialog_plugin";
@@ -18,7 +18,7 @@ export class PosPaymentMethodPlugin extends Plugin {
     }
 
     get config() {
-        return this.data.models["pos.config"].get(odoo.pos_config_id);
+        return this.data.models["pos.config"].get(weth.pos_config_id);
     }
 
     // Called once the data is loaded, the payment interfaces need the pos store
@@ -55,7 +55,7 @@ export class PosPaymentMethodPlugin extends Plugin {
     }
 
     getDefaultStorageKey(provider) {
-        return `pos_default_payment_method_id_${provider}_${this.config.id}_${odoo.info?.db}`;
+        return `pos_default_payment_method_id_${provider}_${this.config.id}_${weth.info?.db}`;
     }
 
     getDefault(provider) {

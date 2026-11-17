@@ -1,4 +1,4 @@
-import { Plugin, signal, usePlugin } from "@odoo/owl";
+import { Plugin, signal, usePlugin } from "@weth/owl";
 import { registry } from "@web/core/registry";
 import { services } from "@web/core/services";
 

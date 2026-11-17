@@ -3,9 +3,9 @@
 
 from collections import defaultdict
 
-from odoo import api, fields, models, tools, _
-from odoo.exceptions import UserError
-from odoo.tools import SQL
+from weth import api, fields, models, tools, _
+from weth.exceptions import UserError
+from weth.tools import SQL
 
 
 class PrivacyLookupWizard(models.TransientModel):

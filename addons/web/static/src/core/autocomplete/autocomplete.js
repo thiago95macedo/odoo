@@ -3,7 +3,7 @@ import { isScrollableY, scrollTo } from "@web/core/utils/scrolling";
 import { useDebounced } from "@web/core/utils/timing";
 import { getActiveHotkey } from "@web/core/hotkeys/hotkey_utils";
 import { usePosition } from "@web/core/position/position_hook";
-import { Component, onWillUpdateProps, proxy, signal, status, t, useListener, useProps } from "@odoo/owl";
+import { Component, onWillUpdateProps, proxy, signal, status, t, useListener, useProps } from "@weth/owl";
 import { mergeClasses } from "@web/core/utils/classname";
 
 export const autoCompleteProps = {
@@ -21,11 +21,11 @@ export const autoCompleteProps = {
     autocomplete: t.string().optional("off"),
     autoSelect: t.boolean().optional(false),
     resetOnSelect: t.boolean().optional(),
-    onInput: t.function().optional(() => () => {}),
-    onCancel: t.function().optional(() => () => {}),
-    onChange: t.function().optional(() => () => {}),
-    onBlur: t.function().optional(() => () => {}),
-    onFocus: t.function().optional(() => () => {}),
+    onInput: t.function().optional(() => () => { }),
+    onCancel: t.function().optional(() => () => { }),
+    onChange: t.function().optional(() => () => { }),
+    onBlur: t.function().optional(() => () => { }),
+    onFocus: t.function().optional(() => () => { }),
     searchOnInputClick: t.boolean().optional(true),
     inputDebounceDelay: t.number().optional(250),
     dropdown: t.boolean().optional(true),
@@ -123,9 +123,8 @@ export class AutoComplete extends Component {
         }
         const [sourceIndex, optionIndex] = this.state.activeSourceOption;
         const source = this.sources[sourceIndex];
-        return `${this.props.id || "autocomplete"}_${sourceIndex}_${
-            source.isLoading ? "loading" : optionIndex
-        }`;
+        return `${this.props.id || "autocomplete"}_${sourceIndex}_${source.isLoading ? "loading" : optionIndex
+            }`;
     }
 
     get dropdownOptions() {

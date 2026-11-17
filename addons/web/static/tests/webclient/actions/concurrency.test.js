@@ -1,7 +1,7 @@
-import { expect, test } from "@odoo/hoot";
-import { queryAll, queryAllTexts, runAllTimers } from "@odoo/hoot-dom";
-import { animationFrame } from "@odoo/hoot-mock";
-import { Component, onWillStart, useProps, xml } from "@odoo/owl";
+import { expect, test } from "@weth/hoot";
+import { queryAll, queryAllTexts, runAllTimers } from "@weth/hoot-dom";
+import { animationFrame } from "@weth/hoot-mock";
+import { Component, onWillStart, useProps, xml } from "@weth/owl";
 import {
     contains,
     defineActions,
@@ -219,7 +219,7 @@ test("execute a new action while loading a lazy-loaded controller", async () => 
             ],
         },
     ]);
-    redirect("/odoo/action-77/2?cids=1");
+    redirect("/weth/action-77/2?cids=1");
 
     let def;
     onRpc("partner", "search_read", () => def?.promise);

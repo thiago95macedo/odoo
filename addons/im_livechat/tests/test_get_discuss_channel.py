@@ -4,10 +4,10 @@ from datetime import timedelta
 from freezegun import freeze_time
 from unittest.mock import patch, PropertyMock
 
-from odoo import fields
-from odoo.addons.im_livechat.tests.common import TestImLivechatCommon
-from odoo.addons.mail.tests.common import MailCommon
-from odoo.tests import new_test_user
+from weth import fields
+from weth.addons.im_livechat.tests.common import TestImLivechatCommon
+from weth.addons.mail.tests.common import MailCommon
+from weth.tests import new_test_user
 
 
 class TestGetDiscussChannel(TestImLivechatCommon, MailCommon):
@@ -31,7 +31,7 @@ class TestGetDiscussChannel(TestImLivechatCommon, MailCommon):
 
         # ensure visitor info are correct with anonymous
         operator = self.operators[0]
-        with patch('odoo.http.geoip.GeoIP.country_code', new_callable=PropertyMock(return_value=belgium.code)):
+        with patch('weth.http.geoip.GeoIP.country_code', new_callable=PropertyMock(return_value=belgium.code)):
             data = self.make_jsonrpc_request(
                 "/im_livechat/get_session",
                 {

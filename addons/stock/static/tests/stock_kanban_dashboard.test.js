@@ -1,5 +1,5 @@
 import { defineMailModels } from "@mail/../tests/mail_test_helpers";
-import { expect, test } from "@odoo/hoot";
+import { expect, test } from "@weth/hoot";
 import { defineModels, fields, models, mountView } from "@web/../tests/web_test_helpers";
 
 import "@stock/components/stock_overview/stock_overview";

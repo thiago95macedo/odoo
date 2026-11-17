@@ -4,7 +4,7 @@ import itertools
 import random
 
 from markupsafe import Markup
-from odoo import models, _
+from weth import models, _
 
 
 class MailBot(models.AbstractModel):

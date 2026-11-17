@@ -3,7 +3,7 @@ import { Dropdown } from "@web/core/dropdown/dropdown";
 import { DropdownItem } from "@web/core/dropdown/dropdown_item";
 import { useService } from "@web/core/utils/hooks";
 
-import { useProps, types } from "@odoo/owl";
+import { useProps, types } from "@weth/owl";
 
 const { DateTime } = luxon;
 

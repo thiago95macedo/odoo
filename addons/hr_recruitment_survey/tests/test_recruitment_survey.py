@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.mail.tests.common import mail_new_test_user
-from odoo.exceptions import AccessError
-from odoo.tests import common, Form, tagged
-from odoo.tools import mute_logger
+from weth.addons.mail.tests.common import mail_new_test_user
+from weth.exceptions import AccessError
+from weth.tests import common, Form, tagged
+from weth.tools import mute_logger
 
 
 @tagged('security')
@@ -91,7 +91,7 @@ class TestRecruitmentSurvey(common.TransactionCase):
             'job_id': cls.job_restricted_2.id,
         })
 
-    @mute_logger('odoo.addons.base.models.ir_access')
+    @mute_logger('weth.addons.base.models.ir_access')
     def test_send_survey(self):
         Answer = self.env['survey.user_input']
         invite_recruitment = self._prepare_invite(self.survey_sysadmin, self.job_applicant_sysadmin)
@@ -135,7 +135,7 @@ class TestRecruitmentSurvey(common.TransactionCase):
             invite_recruitment = self._prepare_invite(self.survey_restricted_2, self.job_applicant_restricted_2)
             invite_recruitment.with_user(user).action_invite()
 
-    @mute_logger('odoo.addons.base.models.ir_access')
+    @mute_logger('weth.addons.base.models.ir_access')
     def test_print_survey(self):
         action_print = self.job_applicant_sysadmin.action_print_survey()
         self.assertEqual(action_print['type'], 'ir.actions.act_url')
@@ -157,7 +157,7 @@ class TestRecruitmentSurvey(common.TransactionCase):
         self.job_applicant_sysadmin.interviewer_ids = self.hr_recruitment_user
         self.job_applicant_sysadmin.with_user(self.hr_recruitment_user).action_print_survey()
 
-    @mute_logger('odoo.addons.base.models.ir_access')
+    @mute_logger('weth.addons.base.models.ir_access')
     def test_bulk_send_surveys(self):
         Answer = self.env['survey.user_input']
 

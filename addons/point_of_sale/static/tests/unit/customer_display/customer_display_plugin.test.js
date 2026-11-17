@@ -1,4 +1,4 @@
-import { test, expect } from "@odoo/hoot";
+import { test, expect } from "@weth/hoot";
 import { formatCurrency } from "@web/core/currency";
 import { getFilledOrder, setupPosEnv, expectFormattedPrice } from "../utils";
 import { definePosModels } from "../data/generate_model_definitions";

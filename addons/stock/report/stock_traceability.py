@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, models, _
-from odoo.fields import Domain
-from odoo.tools import format_datetime
+from weth import api, models, _
+from weth.fields import Domain
+from weth.tools import format_datetime
 from markupsafe import Markup
 
 

@@ -1,7 +1,7 @@
 from itertools import count, cycle
 
-from odoo import Command
-from odoo.tools.safe_eval import safe_eval
+from weth import Command
+from weth.tools.safe_eval import safe_eval
 
 from ..utils.expression import check_eval_args, get_undefined_names
 from .generator import Generator

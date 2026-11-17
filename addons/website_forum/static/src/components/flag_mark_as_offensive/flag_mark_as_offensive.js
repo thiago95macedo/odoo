@@ -1,4 +1,4 @@
-import { Component, signal, t, useListener, useProps } from "@odoo/owl";
+import { Component, signal, t, useListener, useProps } from "@weth/owl";
 import { Dialog } from "@web/core/dialog/dialog";
 
 export class FlagMarkAsOffensiveDialog extends Component {

@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.http import request, route
-from odoo.addons.mail.controllers import thread
+from weth.http import request, route
+from weth.addons.mail.controllers import thread
 
 
 class ThreadController(thread.ThreadController):

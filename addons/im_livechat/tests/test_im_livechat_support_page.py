@@ -2,8 +2,8 @@
 
 from unittest.mock import patch
 
-from odoo.addons.im_livechat.controllers.main import LivechatController
-from odoo.addons.im_livechat.tests.common import TestGetOperatorCommon
+from weth.addons.im_livechat.controllers.main import LivechatController
+from weth.addons.im_livechat.tests.common import TestGetOperatorCommon
 
 
 class TestImLivechatSupportPage(TestGetOperatorCommon):

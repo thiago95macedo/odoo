@@ -1,10 +1,10 @@
-import odoo.tests
-from odoo.addons.google_address_autocomplete.controllers.google_address_autocomplete import AutoCompleteController
+import weth.tests
+from weth.addons.google_address_autocomplete.controllers.google_address_autocomplete import AutoCompleteController
 from unittest.mock import patch
-from odoo.addons.pos_self_order.tests.self_order_common_test import SelfOrderCommonTest
+from weth.addons.pos_self_order.tests.self_order_common_test import SelfOrderCommonTest
 
 
-@odoo.tests.tagged('post_install', '-at_install')
+@weth.tests.tagged('post_install', '-at_install')
 class TestSelfOrderPreset(SelfOrderCommonTest):
     def setUp(self):
         super().setUp()
@@ -54,7 +54,7 @@ class TestSelfOrderPreset(SelfOrderCommonTest):
         self_route = self.pos_config._get_self_order_route()
 
         with patch(
-            "odoo.addons.pos_self_order.controllers.orders.PosSelfOrderController._check_delivery_address_for_partner",
+            "weth.addons.pos_self_order.controllers.orders.PosSelfOrderController._check_delivery_address_for_partner",
             side_effect=[
                 None,  # First call: address is valid
                 {"type": "delivery", "message": "Delivery isn\u2019t available for this address."},  # Second call: too far

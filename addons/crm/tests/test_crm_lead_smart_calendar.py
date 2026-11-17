@@ -2,9 +2,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
 from datetime import date, datetime
-from odoo.addons.mail.tests.common import mail_new_test_user
-from odoo.addons.crm.tests.common import TestCrmCommon
-from odoo.tests.common import tagged, users
+from weth.addons.mail.tests.common import mail_new_test_user
+from weth.addons.crm.tests.common import TestCrmCommon
+from weth.tests.common import tagged, users
 
 @tagged('post_install', '-at_install')
 class TestCRMLeadSmartCalendar(TestCrmCommon):

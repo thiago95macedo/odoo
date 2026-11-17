@@ -5,12 +5,12 @@ from zoneinfo import ZoneInfo
 
 from freezegun import freeze_time
 
-from odoo.exceptions import ValidationError
-from odoo.fields import Command, Datetime
-from odoo.tests import tagged
+from weth.exceptions import ValidationError
+from weth.fields import Command, Datetime
+from weth.tests import tagged
 
-from odoo.addons.payment.tests.common import PaymentCommon
-from odoo.addons.sale_loyalty.tests.common import TestSaleCouponCommon
+from weth.addons.payment.tests.common import PaymentCommon
+from weth.addons.sale_loyalty.tests.common import TestSaleCouponCommon
 
 
 @tagged("at_install", "-post_install")  # LEGACY at_install

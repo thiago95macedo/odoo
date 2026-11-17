@@ -1,4 +1,4 @@
-import { Component, onMounted, onWillUnmount, signal, t, useProps } from "@odoo/owl";
+import { Component, onMounted, onWillUnmount, signal, t, useProps } from "@weth/owl";
 
 export class ImportDataProgress extends Component {
     static template = "ImportDataProgress";
@@ -38,7 +38,7 @@ export class ImportDataProgress extends Component {
         this.timeLeft.set(
             ((Date.now() - this.timeStart) *
                 ((100 - this.props.importProgress.value) / this.props.importProgress.value)) /
-                60000
+            60000
         );
         this.timer = setInterval(() => this.updateTimer(), 1000);
     }

@@ -1,10 +1,10 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import http
-from odoo.http import request
-from odoo.addons.web.controllers.home import Home
-from odoo.addons.web.controllers.session import Session
-from odoo.addons.web.controllers.webclient import WebClient
+from weth import http
+from weth.http import request
+from weth.addons.web.controllers.home import Home
+from weth.addons.web.controllers.session import Session
+from weth.addons.web.controllers.webclient import WebClient
 
 
 class Routing(Home):
@@ -21,5 +21,5 @@ class Routing(Home):
 class SessionWebsite(Session):
 
     @http.route('/web/session/logout', website=True, multilang=False, sitemap=False)
-    def logout(self, redirect='/odoo'):
+    def logout(self, redirect='/weth'):
         return super().logout(redirect=redirect)

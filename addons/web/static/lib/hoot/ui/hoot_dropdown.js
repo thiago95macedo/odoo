@@ -1,6 +1,6 @@
-/** @odoo-module */
+/** @weth-module */
 
-import { Component, signal, t, useProps, xml } from "@odoo/owl";
+import { Component, signal, t, useProps, xml } from "@weth/owl";
 import { useAutofocus, useHootKey, useWindowListener } from "../hoot_utils";
 
 //-----------------------------------------------------------------------------

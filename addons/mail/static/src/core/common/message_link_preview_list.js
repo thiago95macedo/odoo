@@ -1,6 +1,6 @@
 import { LinkPreview } from "@mail/core/common/link_preview";
 
-import { Component, types, useProps } from "@odoo/owl";
+import { Component, types, useProps } from "@weth/owl";
 
 import { useService } from "@web/core/utils/hooks";
 

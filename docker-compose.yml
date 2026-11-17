@@ -18,9 +18,12 @@ services:
     volumes:
       - /home/arcanus/Workspace/dados/odoo/postgres:/var/lib/postgresql/data
     networks:
-      - backend_net
+      backend_net:
+        aliases:
+          - odoo-db
+          - weth-db
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U weth"]
+      test: [ "CMD-SHELL", "pg_isready -U weth" ]
       interval: 5s
       timeout: 5s
       retries: 5
@@ -34,7 +37,9 @@ services:
       db:
         condition: service_healthy
     volumes:
+      - .:/opt/weth
       - .:/opt/odoo
+      - /home/arcanus/Workspace/dados/odoo/data:/var/lib/weth
       - /home/arcanus/Workspace/dados/odoo/data:/var/lib/odoo
     environment:
       HOST: odoo-db
@@ -46,7 +51,7 @@ services:
         aliases:
           - odoo-app
       backend_net:
-    command: ["/opt/odoo/odoo-bin", "-c", "/opt/odoo/odoo.conf"]
+    command: [ "/opt/weth/weth-bin", "-c", "/opt/weth/weth.conf" ]
 
 networks:
   weth_proxy_net:
@@ -54,4 +59,3 @@ networks:
   backend_net:
     name: odoo_backend_net
     driver: bridge
-

@@ -1,5 +1,5 @@
-import { animationFrame, expect, test } from "@odoo/hoot";
-import { queryOne, waitFor } from "@odoo/hoot-dom";
+import { animationFrame, expect, test } from "@weth/hoot";
+import { queryOne, waitFor } from "@weth/hoot-dom";
 import { startInteractions, setupInteractionWhiteList } from "@web/../tests/public/helpers";
 import { switchToEditMode } from "../../helpers";
 

@@ -5,12 +5,12 @@ from collections.abc import Iterable
 import json
 from ast import literal_eval
 
-from odoo import api, fields, models
-from odoo.exceptions import UserError, ValidationError
-from odoo.fields import Command, Domain
-from odoo.tools import format_list, groupby
-from odoo.tools.barcode import check_barcode_encoding
-from odoo.tools.float_utils import float_is_zero
+from weth import api, fields, models
+from weth.exceptions import UserError, ValidationError
+from weth.fields import Command, Domain
+from weth.tools import format_list, groupby
+from weth.tools.barcode import check_barcode_encoding
+from weth.tools.float_utils import float_is_zero
 
 
 class StockPackage(models.Model):

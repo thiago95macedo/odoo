@@ -1,6 +1,6 @@
-from odoo.addons.http_routing.tests.common import MockRequest
-from odoo.addons.website.controllers.main import Website
-from odoo.tests import HttpCase, tagged
+from weth.addons.http_routing.tests.common import MockRequest
+from weth.addons.website.controllers.main import Website
+from weth.tests import HttpCase, tagged
 
 
 @tagged('-at_install', 'post_install')

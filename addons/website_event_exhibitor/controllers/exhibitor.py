@@ -5,11 +5,11 @@ from collections import OrderedDict
 from random import randint, sample
 from werkzeug.exceptions import Forbidden
 
-from odoo import http
-from odoo.addons.website_event.controllers.main import WebsiteEventController
-from odoo.fields import Domain
-from odoo.http import request
-from odoo.tools import format_duration
+from weth import http
+from weth.addons.website_event.controllers.main import WebsiteEventController
+from weth.fields import Domain
+from weth.http import request
+from weth.tools import format_duration
 
 
 class ExhibitorController(WebsiteEventController):

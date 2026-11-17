@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.onboarding.tests.case import TransactionCaseOnboarding
+from weth.addons.onboarding.tests.case import TransactionCaseOnboarding
 
 
 class TestOnboardingCommon(TransactionCaseOnboarding):

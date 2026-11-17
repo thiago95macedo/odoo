@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
     <data>
         <record id="ir_module_module_action_delivery_provider_modules" model="ir.actions.act_window">
             <field name="name">All Delivery Providers</field>
@@ -210,4 +210,4 @@
         <menuitem id="menu_stock_general_settings" name="Settings" parent="menu_stock_config_settings"
             sequence="0" action="action_stock_config_settings" groups="base.group_system"/>
     </data>
-</odoo>
+</weth>

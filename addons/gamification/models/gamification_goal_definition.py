@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, fields, models, _, exceptions
-from odoo.fields import Domain
-from odoo.tools.safe_eval import safe_eval
+from weth import api, fields, models, _, exceptions
+from weth.fields import Domain
+from weth.tools.safe_eval import safe_eval
 
 DOMAIN_TEMPLATE = "[('store', '=', True), '|', ('model_id', '=', model_id), ('model_id', 'in', model_inherited_ids)%s]"
 

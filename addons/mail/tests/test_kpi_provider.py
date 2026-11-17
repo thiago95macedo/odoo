@@ -1,4 +1,4 @@
-from odoo.tests import new_test_user, tagged, TransactionCase, users
+from weth.tests import new_test_user, tagged, TransactionCase, users
 
 
 @tagged('post_install', '-at_install')

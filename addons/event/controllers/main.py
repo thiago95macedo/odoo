@@ -4,11 +4,11 @@ import json
 
 from werkzeug.exceptions import NotFound
 
-from odoo import _, http
-from odoo.fields import Domain
-from odoo.http import Controller, request, route
-from odoo.http.stream import content_disposition
-from odoo.tools import consteq, format_datetime
+from weth import _, http
+from weth.fields import Domain
+from weth.http import Controller, request, route
+from weth.http.stream import content_disposition
+from weth.tools import consteq, format_datetime
 
 
 class EventController(Controller):

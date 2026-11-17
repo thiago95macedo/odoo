@@ -2,7 +2,7 @@ import { ActionList } from "@mail/core/common/action_list";
 import { useChannelMemberActions } from "@mail/discuss/core/common/channel_member_actions";
 import { propSignal } from "@mail/utils/common/hooks";
 
-import { Component, t, useProps } from "@odoo/owl";
+import { Component, t, useProps } from "@weth/owl";
 
 import { Dropdown } from "@web/core/dropdown/dropdown";
 import { DropdownState } from "@web/core/dropdown/dropdown_hooks";

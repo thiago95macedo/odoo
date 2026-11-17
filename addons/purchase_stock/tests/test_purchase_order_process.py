@@ -1,6 +1,6 @@
-from odoo import Command, fields
-from odoo.tests import Form, tagged, users
-from odoo.tools import float_compare
+from weth import Command, fields
+from weth.tests import Form, tagged, users
+from weth.tools import float_compare
 
 from .common import PurchaseTestCommon
 

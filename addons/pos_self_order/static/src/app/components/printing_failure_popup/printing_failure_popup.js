@@ -1,4 +1,4 @@
-import { Component, onWillUnmount, useProps, t } from "@odoo/owl";
+import { Component, onWillUnmount, useProps, t } from "@weth/owl";
 import { _t } from "@web/core/l10n/translation";
 
 export class PrintingFailurePopup extends Component {

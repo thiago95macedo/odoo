@@ -1,4 +1,4 @@
-import { Plugin, signal, useListener, usePlugin } from "@odoo/owl";
+import { Plugin, signal, useListener, usePlugin } from "@weth/owl";
 import { WORKER_STATE } from "@bus/workers/websocket_worker";
 import { browser } from "@web/core/browser/browser";
 import { registry } from "@web/core/registry";

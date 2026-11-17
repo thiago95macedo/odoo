@@ -3,9 +3,9 @@
 
 from freezegun import freeze_time
 
-from odoo import tests
-from odoo.addons.mail.tests.common import mail_new_test_user
-from odoo.addons.test_event_full.tests.common import TestWEventCommon
+from weth import tests
+from weth.addons.mail.tests.common import mail_new_test_user
+from weth.addons.test_event_full.tests.common import TestWEventCommon
 
 
 @tests.common.tagged('event_online', 'post_install', '-at_install')

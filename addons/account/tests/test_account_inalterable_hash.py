@@ -1,10 +1,10 @@
 from contextlib import closing
 
-from odoo.addons.account.tests.common import AccountTestInvoicingCommon
-from odoo.models import Model
-from odoo.tests import Form, tagged
-from odoo import fields, Command
-from odoo.exceptions import UserError
+from weth.addons.account.tests.common import AccountTestInvoicingCommon
+from weth.models import Model
+from weth.tests import Form, tagged
+from weth import fields, Command
+from weth.exceptions import UserError
 from unittest.mock import patch
 
 
@@ -31,7 +31,7 @@ class TestAccountMoveInalterableHash(AccountTestInvoicingCommon):
     def _skip_hash_moves(self):
         def _do_not_hash_moves(self, **kwargs):
             pass
-        return patch('odoo.addons.account.models.account_move.AccountMove._hash_moves', new=_do_not_hash_moves)
+        return patch('weth.addons.account.models.account_move.AccountMove._hash_moves', new=_do_not_hash_moves)
 
     def _reverse_move(self, move):
         reversal = move._reverse_moves()
@@ -513,7 +513,7 @@ class TestAccountMoveInalterableHash(AccountTestInvoicingCommon):
                     def _validate_locks(*args, **kwargs):
                         pass
 
-                    with patch('odoo.addons.account.models.company.ResCompany._validate_locks', new=_validate_locks):
+                    with patch('weth.addons.account.models.company.ResCompany._validate_locks', new=_validate_locks):
                         self.company_data['company'][lock_date_field] = False
                 else:
                     self.company_data['company'][lock_date_field] = False
@@ -652,16 +652,16 @@ class TestAccountMoveInalterableHash(AccountTestInvoicingCommon):
         for move in moves:
             self.assertNotEqual(move.inalterable_hash, False)
 
-        with patch('odoo.addons.account.models.company.INTEGRITY_HASH_BATCH_SIZE', 3):
+        with patch('weth.addons.account.models.company.INTEGRITY_HASH_BATCH_SIZE', 3):
             self._verify_integrity(moves, "Entries are correctly hashed", moves[0], moves[-1], moves[0].journal_id.name)
 
-        with patch('odoo.addons.account.models.company.INTEGRITY_HASH_BATCH_SIZE', 5):
+        with patch('weth.addons.account.models.company.INTEGRITY_HASH_BATCH_SIZE', 5):
             self._verify_integrity(moves, "Entries are correctly hashed", moves[0], moves[-1], moves[0].journal_id.name)
 
-        with patch('odoo.addons.account.models.company.INTEGRITY_HASH_BATCH_SIZE', 10):
+        with patch('weth.addons.account.models.company.INTEGRITY_HASH_BATCH_SIZE', 10):
             self._verify_integrity(moves, "Entries are correctly hashed", moves[0], moves[-1], moves[0].journal_id.name)
 
-        with patch('odoo.addons.account.models.company.INTEGRITY_HASH_BATCH_SIZE', 12):
+        with patch('weth.addons.account.models.company.INTEGRITY_HASH_BATCH_SIZE', 12):
             self._verify_integrity(moves, "Entries are correctly hashed", moves[0], moves[-1], moves[0].journal_id.name)
 
     def test_error_on_unreconciled_bank_statement_lines(self):

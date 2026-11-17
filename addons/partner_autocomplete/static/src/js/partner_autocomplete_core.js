@@ -1,6 +1,6 @@
 /* global checkVATNumber */
 
-import { useScope } from "@odoo/owl";
+import { useScope } from "@weth/owl";
 import { AssetsLoadingError, loadJS } from "@web/core/assets";
 import { _t } from "@web/core/l10n/translation";
 import { ConnectionLostError } from "@web/core/network/rpc";
@@ -34,7 +34,7 @@ export function usePartnerAutocomplete() {
             await loadJS("/partner_autocomplete/static/lib/jsvat.js");
         } catch (e) {
             if (e instanceof AssetsLoadingError) {
-                return new Promise(() => {});
+                return new Promise(() => { });
             }
             throw e;
         }

@@ -6,9 +6,9 @@ import {
 import { BuilderAction } from "@html_builder/core/builder_action";
 import { BaseOptionComponent } from "@html_builder/core/base_option_component";
 import { useGetItemValue } from "@html_builder/core/utils";
-import { describe, expect, test } from "@odoo/hoot";
-import { animationFrame } from "@odoo/hoot-mock";
-import { xml } from "@odoo/owl";
+import { describe, expect, test } from "@weth/hoot";
+import { animationFrame } from "@weth/hoot-mock";
+import { xml } from "@weth/owl";
 import { contains, defineModels, fields, models, onRpc } from "@web/../tests/web_test_helpers";
 
 class Test extends models.Model {

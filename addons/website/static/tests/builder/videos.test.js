@@ -1,5 +1,5 @@
-import { beforeEach, expect, test, advanceTime } from "@odoo/hoot";
-import { animationFrame, click, dblclick, edit, queryAll, waitFor, queryOne } from "@odoo/hoot-dom";
+import { beforeEach, expect, test, advanceTime } from "@weth/hoot";
+import { animationFrame, click, dblclick, edit, queryAll, waitFor, queryOne } from "@weth/hoot-dom";
 import { patch } from "@web/core/utils/patch";
 import { VideoFile } from "@html_editor/main/media/video/providers/video_file";
 import { defineWebsiteModels, setupWebsiteBuilder } from "./website_helpers";

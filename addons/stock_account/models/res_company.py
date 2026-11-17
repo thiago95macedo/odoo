@@ -1,8 +1,8 @@
 from collections import defaultdict
 from datetime import datetime
 
-from odoo import _, fields, models
-from odoo.fields import Domain
+from weth import _, fields, models
+from weth.fields import Domain
 
 
 class ResCompany(models.Model):

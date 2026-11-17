@@ -1,9 +1,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import Command, models
-from odoo.http import request
+from weth import Command, models
+from weth.http import request
 
-from odoo.addons.website_sale_collect import utils
+from weth.addons.website_sale_collect import utils
 
 
 class ProductTemplate(models.Model):

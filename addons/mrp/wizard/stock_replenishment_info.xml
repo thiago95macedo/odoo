@@ -1,4 +1,4 @@
-<odoo>
+<weth>
     <record id="mrp_bom_replenishment_tree_view" model="ir.ui.view">
         <field name="name">mrp.bom.replenishment.list.view</field>
         <field name="model">mrp.bom</field>
@@ -33,4 +33,4 @@
             </xpath>
         </field>
     </record>
-</odoo>
+</weth>

@@ -27,8 +27,8 @@ import {
     tick,
     unload,
     waitFor,
-} from "@odoo/hoot";
-import { Component, markup, onPatched, onWillStart, signal, t, useProps, xml } from "@odoo/owl";
+} from "@weth/hoot";
+import { Component, markup, onPatched, onWillStart, signal, t, useProps, xml } from "@weth/owl";
 import { buildSelector } from "@web/../tests/_framework/view_test_helpers";
 import { getPickerCell } from "@web/../tests/core/datetime/datetime_test_helpers";
 import {
@@ -6374,7 +6374,7 @@ test(`deleting a record blocked by a foreign key: the view reloads once archived
     onRpc("web_unlink", () => {
         expect.step("web_unlink");
         throw makeServerError({
-            errorName: "odoo.addons.web.models.models.UnlinkBlockedError",
+            errorName: "weth.addons.web.models.models.UnlinkBlockedError",
             context: {
                 archivable: true,
                 model_name: "Bar",

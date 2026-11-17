@@ -1,5 +1,5 @@
 
-<odoo>
+<weth>
     <data noupdate="1">
         <record id="ir_cron_apply_departure" model="ir.cron">
             <field name="name">HR: Apply employee departures</field>
@@ -10,4 +10,4 @@
             <field name="interval_number">1</field>
         </record>
     </data>
-</odoo>
+</weth>

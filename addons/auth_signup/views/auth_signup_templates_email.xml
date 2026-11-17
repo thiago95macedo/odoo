@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
     <template id="reset_password_email" name="User Reset Password">
         Dear <t t-out="object.name or ''">Marc Demo</t>,<br/><br/>
         A password reset was requested for the account linked to this email.
@@ -13,4 +13,4 @@
         If you do not expect this, you can safely ignore this email.<br/><br/>
         Thanks,
     </template>
-</odoo>
+</weth>

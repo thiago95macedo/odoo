@@ -1,5 +1,5 @@
-import { describe, expect, test } from "@odoo/hoot";
-import { registries, constants } from "@odoo/o-spreadsheet";
+import { describe, expect, test } from "@weth/hoot";
+import { registries, constants } from "@weth/o-spreadsheet";
 import { selectCell, setCellContent } from "@spreadsheet/../tests/helpers/commands";
 import { createModelWithDataSource } from "@spreadsheet/../tests/helpers/model";
 import { doMenuAction } from "@spreadsheet/../tests/helpers/ui";
@@ -88,7 +88,7 @@ test("Create drill down domain", async () => {
 });
 
 test("Create drill down domain when month date is a reference", async () => {
-    mockService("action", { doAction: () => {} });
+    mockService("action", { doAction: () => { } });
     const { model } = await createModelWithDataSource({
         serverData,
         mockRPC: async function (route, args) {
@@ -121,7 +121,7 @@ test("Create drill down domain when month date is a reference", async () => {
 });
 
 test("Create drill down domain when date uses a non-standard locale", async () => {
-    mockService("action", { doAction: () => {} });
+    mockService("action", { doAction: () => { } });
     const { model } = await createModelWithDataSource({
         serverData,
         mockRPC: async function (route, args) {

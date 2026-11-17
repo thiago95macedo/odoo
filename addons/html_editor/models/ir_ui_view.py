@@ -3,8 +3,8 @@
 import logging
 from lxml import etree
 
-from odoo import api, models
-from odoo.exceptions import MissingError
+from weth import api, models
+from weth.exceptions import MissingError
 
 _logger = logging.getLogger(__name__)
 

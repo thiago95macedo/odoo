@@ -1,7 +1,7 @@
-import { expect, test } from "@odoo/hoot";
-import { click } from "@odoo/hoot-dom";
-import { animationFrame } from "@odoo/hoot-mock";
-import { Component, proxy, xml } from "@odoo/owl";
+import { expect, test } from "@weth/hoot";
+import { click } from "@weth/hoot-dom";
+import { animationFrame } from "@weth/hoot-mock";
+import { Component, proxy, xml } from "@weth/owl";
 import { contains, mountWithCleanup } from "@web/../tests/web_test_helpers";
 
 import { ViewScaleSelector } from "@web/views/view_components/view_scale_selector";
@@ -84,9 +84,9 @@ test("ViewScaleSelector with only one scale available", async () => {
                         description: "Daily",
                     },
                 },
-                setScale: () => {},
+                setScale: () => { },
                 isWeekendVisible: false,
-                toggleWeekendVisibility: () => {},
+                toggleWeekendVisibility: () => { },
                 currentScale: this.state.scale,
             };
         }
@@ -121,7 +121,7 @@ test("ViewScaleSelector show weekends button is disabled when scale is day", asy
                 },
                 setScale: (key) => (this.state.scale = key),
                 isWeekendVisible: false,
-                toggleWeekendVisibility: () => {},
+                toggleWeekendVisibility: () => { },
                 currentScale: this.state.scale,
             };
         }

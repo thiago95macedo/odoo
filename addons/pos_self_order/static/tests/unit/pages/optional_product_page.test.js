@@ -1,9 +1,9 @@
-import { test, expect } from "@odoo/hoot";
+import { test, expect } from "@weth/hoot";
 import { mountWithCleanup, patchWithCleanup } from "@web/../tests/web_test_helpers";
 import { OptionalProductPage } from "@pos_self_order/app/pages/optional_product_page/optional_product_page";
 import { setupSelfPosEnv } from "../utils";
 import { definePosSelfModels } from "../data/generate_model_definitions";
-import { animationFrame, click } from "@odoo/hoot-dom";
+import { animationFrame, click } from "@weth/hoot-dom";
 import * as Utils from "../ui_utils";
 import { ConfirmationPage } from "@pos_self_order/app/pages/confirmation_page/confirmation_page";
 
@@ -47,7 +47,7 @@ test("optionalProducts skips products not available in self order", async () => 
 
 test("optional product UI behavior for self-order", async () => {
     const store = await setupSelfPosEnv("kiosk", "counter", "each", {}, true);
-    store.ticketPrinter.printOrderReceipt = () => {};
+    store.ticketPrinter.printOrderReceipt = () => { };
     store.config.use_presets = false;
     const order = store.currentOrder;
     const product = store.models["product.template"].get(5);
@@ -99,7 +99,7 @@ test("optional product UI behavior for self-order", async () => {
         "1,121.25"
     );
     await Utils.clickBtn("Order");
-    patchWithCleanup(ConfirmationPage.prototype, { async printOrderChanges() {} });
+    patchWithCleanup(ConfirmationPage.prototype, { async printOrderChanges() { } });
     await Utils.page.isConfirmation();
     await Utils.clickBtn("Close");
     await Utils.page.isLanding();

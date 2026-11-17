@@ -1,4 +1,4 @@
-import { EventBus } from "@odoo/owl";
+import { EventBus } from "@weth/owl";
 import { batched } from "@web/core/utils/timing";
 
 /**

@@ -1,5 +1,5 @@
-from odoo import Command
-from odoo.tests import tagged, Form, TransactionCase
+from weth import Command
+from weth.tests import tagged, Form, TransactionCase
 
 
 @tagged('at_install', '-post_install')  # LEGACY at_install

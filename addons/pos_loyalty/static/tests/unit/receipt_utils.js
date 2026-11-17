@@ -1,4 +1,4 @@
-import { expect } from "@odoo/hoot";
+import { expect } from "@weth/hoot";
 
 export const expectLoyaltyReceiptPayload = (data, expected) => {
     if (expected.loyaltyPointsData !== undefined) {

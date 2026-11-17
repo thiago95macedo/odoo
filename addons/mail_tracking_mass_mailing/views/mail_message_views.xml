@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<odoo>
+<weth>
     <data>
         <record id="mail_message_view_list" model="ir.ui.view">
             <field name="name">mail.message.view.list.inherit.mail.tracking.sms</field>
@@ -34,4 +34,4 @@
             </field>
         </record>
     </data>
-</odoo>
+</weth>

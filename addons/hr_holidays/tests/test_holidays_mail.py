@@ -6,18 +6,18 @@ from dateutil.relativedelta import relativedelta
 from freezegun import freeze_time
 from unittest.mock import patch
 
-from odoo.tools import mute_logger
+from weth.tools import mute_logger
 
 from .common import TestHrHolidaysCommon
-from odoo.tests import tagged
+from weth.tests import tagged
 
-from odoo.addons.mail.tests.common import MailCase
+from weth.addons.mail.tests.common import MailCase
 
 
 class TestHolidaysMail(TestHrHolidaysCommon, MailCase):
     """Test that mails are correctly sent when a timeoff is taken"""
 
-    @mute_logger('odoo.addons.base.models.ir_access', 'odoo.models')
+    @mute_logger('weth.addons.base.models.ir_access', 'weth.models')
     def test_email_sent_when_approved(self):
         """ Testing leave request flow: limited type of leave request """
         with freeze_time('2022-01-15'):

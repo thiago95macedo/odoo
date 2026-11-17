@@ -1,5 +1,5 @@
-import { useEffect } from "@odoo/owl";
-import { before, describe, expect, test } from "@odoo/hoot";
+import { useEffect } from "@weth/owl";
+import { before, describe, expect, test } from "@weth/hoot";
 import {
     animationFrame,
     drag,
@@ -7,7 +7,7 @@ import {
     runAllTimers,
     setInputFiles,
     waitFor,
-} from "@odoo/hoot-dom";
+} from "@weth/hoot-dom";
 import {
     contains,
     defineActions,
@@ -240,70 +240,70 @@ function executeFailingImport(field, isMultiline, field_path = "") {
         ids: false,
         messages: isMultiline
             ? [
-                  {
-                      field,
-                      field_name: Partner._fields[field].string,
-                      field_path,
-                      message: "Invalid value",
-                      moreInfo,
-                      record: 0,
-                      rows: { from: 0, to: 0 },
-                      value: "Invalid value",
-                      priority: "info",
-                  },
-                  {
-                      field,
-                      field_name: Partner._fields[field].string,
-                      field_path,
-                      message: "Duplicate value",
-                      moreInfo,
-                      record: 0,
-                      rows: { from: 1, to: 1 },
-                      priority: "error",
-                  },
-                  {
-                      field,
-                      field_name: Partner._fields[field].string,
-                      field_path,
-                      message: "Wrong values",
-                      moreInfo,
-                      record: 0,
-                      rows: { from: 2, to: 3 },
-                      priority: "warning",
-                  },
-                  {
-                      field,
-                      field_name: Partner._fields[field].string,
-                      field_path,
-                      message: "Bad value here",
-                      moreInfo,
-                      record: 0,
-                      rows: { from: 4, to: 4 },
-                      value: "Bad value",
-                      priority: "warning",
-                  },
-                  {
-                      field,
-                      field_name: Partner._fields[field].string,
-                      field_path,
-                      message: "Duplicate value",
-                      moreInfo,
-                      record: 0,
-                      rows: { from: 5, to: 5 },
-                      priority: "error",
-                  },
-              ]
+                {
+                    field,
+                    field_name: Partner._fields[field].string,
+                    field_path,
+                    message: "Invalid value",
+                    moreInfo,
+                    record: 0,
+                    rows: { from: 0, to: 0 },
+                    value: "Invalid value",
+                    priority: "info",
+                },
+                {
+                    field,
+                    field_name: Partner._fields[field].string,
+                    field_path,
+                    message: "Duplicate value",
+                    moreInfo,
+                    record: 0,
+                    rows: { from: 1, to: 1 },
+                    priority: "error",
+                },
+                {
+                    field,
+                    field_name: Partner._fields[field].string,
+                    field_path,
+                    message: "Wrong values",
+                    moreInfo,
+                    record: 0,
+                    rows: { from: 2, to: 3 },
+                    priority: "warning",
+                },
+                {
+                    field,
+                    field_name: Partner._fields[field].string,
+                    field_path,
+                    message: "Bad value here",
+                    moreInfo,
+                    record: 0,
+                    rows: { from: 4, to: 4 },
+                    value: "Bad value",
+                    priority: "warning",
+                },
+                {
+                    field,
+                    field_name: Partner._fields[field].string,
+                    field_path,
+                    message: "Duplicate value",
+                    moreInfo,
+                    record: 0,
+                    rows: { from: 5, to: 5 },
+                    priority: "error",
+                },
+            ]
             : [
-                  {
-                      field,
-                      field_name: Partner._fields[field].string,
-                      field_path,
-                      message: "Incorrect value",
-                      moreInfo,
-                      record: 0,
-                      rows: { from: 0, to: 0 },
-                  },
-              ],
+                {
+                    field,
+                    field_name: Partner._fields[field].string,
+                    field_path,
+                    message: "Incorrect value",
+                    moreInfo,
+                    record: 0,
+                    rows: { from: 0, to: 0 },
+                },
+            ],
         name: ["Some invalid content", "Wrong content", "Bad content"],
         nextrow: 0,
     };
@@ -335,7 +335,7 @@ describe("Import view", () => {
         const templateURL = "/myTemplateURL.xlsx";
         const secondTemplateURL = "/mySecondTemplateURL.xlsx";
 
-        redirect("/odoo/action-2");
+        redirect("/weth/action-2");
 
         onRpc("partner", "get_import_templates", ({ route }) => {
             expect.step(route);
@@ -352,7 +352,7 @@ describe("Import view", () => {
             "/web/dataset/call_kw/partner/get_import_templates",
             "/web/dataset/call_kw/base_import.import/create",
         ]);
-        expect(location.href).toBe("https://www.hoot.test/odoo/action-2/import");
+        expect(location.href).toBe("https://www.hoot.test/weth/action-2/import");
         expect(".o_import_action").toHaveCount(1);
         expect(".o_nocontent_help > div").toHaveCount(2);
         expect(".o_nocontent_help > div:first").toHaveText("Some Import Template");
@@ -371,7 +371,7 @@ describe("Import view", () => {
     test("open import directlty from URL", async () => {
         const templateURL = "/myTemplateURL.xlsx";
 
-        redirect("/odoo/action-2/import");
+        redirect("/weth/action-2/import");
 
         onRpc("partner", "get_import_templates", ({ route }) => {
             expect.step(route);
@@ -384,7 +384,7 @@ describe("Import view", () => {
             "/web/dataset/call_kw/partner/get_import_templates",
             "/web/dataset/call_kw/base_import.import/create",
         ]);
-        expect(location.href).toBe("https://www.hoot.test/odoo/action-2/import");
+        expect(location.href).toBe("https://www.hoot.test/weth/action-2/import");
         expect(".o_import_action").toHaveCount(1);
     });
 
@@ -401,7 +401,7 @@ describe("Import view", () => {
         onRpc("base_import.import", "parse_preview", ({ route }) => expect.step(route));
         onRpc("base_import.import", "create", ({ route }) => expect.step(route));
 
-        redirect("/odoo/action-2");
+        redirect("/weth/action-2");
         await mountWebClient();
         await getService("action").doAction(1);
         expect.verifySteps([
@@ -480,7 +480,7 @@ describe("Import view", () => {
             });
         });
         onRpc("base_import.import", "create", ({ route }) => expect.step(route));
-        redirect("/odoo/action-2");
+        redirect("/weth/action-2");
         await mountWebClient();
         await getService("action").doAction(1);
         expect.verifySteps([
@@ -587,7 +587,7 @@ describe("Import view", () => {
         mockService("notification", {
             add: (message) => {
                 expect.step(message);
-                return () => {};
+                return () => { };
             },
         });
         mockService("action", {
@@ -623,7 +623,7 @@ describe("Import view", () => {
         onRpc("base_import.import", "execute_import", ({ route }) => {
             expect.step(route);
         });
-        redirect("/odoo/action-2");
+        redirect("/weth/action-2");
         await mountWebClient();
         await getService("action").doAction(1);
         expect.verifySteps(["action"]);
@@ -648,7 +648,7 @@ describe("Import view", () => {
         ]);
         expect(".o_list_view").toHaveCount(1);
         expect(location.href).toBe(
-            "https://www.hoot.test/odoo/action-2/import/imported-records"
+            "https://www.hoot.test/weth/action-2/import/imported-records"
         );
     });
 
@@ -712,11 +712,11 @@ describe("Import view", () => {
         mockService("notification", {
             add: (message) => {
                 expect.step(message);
-                return () => {};
+                return () => { };
             },
         });
 
-        redirect("/odoo/action-2");
+        redirect("/weth/action-2");
         await mountWebClient();
         onRpc("base_import.import", "parse_preview", ({ route }) => {
             expect.step(route);
@@ -1204,7 +1204,7 @@ describe("Import view", () => {
         mockService("notification", {
             add: (message) => {
                 expect.step(message);
-                return () => {};
+                return () => { };
             },
         });
 
@@ -1222,7 +1222,7 @@ describe("Import view", () => {
             },
         });
 
-        redirect("/odoo/action-2");
+        redirect("/weth/action-2");
         await mountWebClient();
         onRpc("base_import.import", "execute_import", ({ args }) => executeImport(args, true));
         await getService("action").doAction(1);
@@ -1489,7 +1489,7 @@ describe("Import view", () => {
     });
 
     test("date format should be converted to strftime", async () => {
-        redirect("/odoo/action-2");
+        redirect("/weth/action-2");
         await mountWebClient();
         onRpc("base_import.import", "parse_preview", ({ args }) => {
             expect.step("parse_preview");
@@ -1559,7 +1559,7 @@ describe("Import view", () => {
         ]);
 
         await runAllTimers(); // wait for router pushState
-        expect(location.href).toBe("https://www.hoot.test/odoo/import?active_model=team");
+        expect(location.href).toBe("https://www.hoot.test/weth/import?active_model=team");
     });
 
     test("model in params is the main model (retrocompatibility)", async () => {
@@ -1599,7 +1599,7 @@ describe("Import view", () => {
         ]);
 
         await runAllTimers(); // wait for router pushState
-        expect(location.href).toBe("https://www.hoot.test/odoo/import?active_model=team");
+        expect(location.href).toBe("https://www.hoot.test/weth/import?active_model=team");
     });
 
     test.tags("desktop");
@@ -1627,7 +1627,7 @@ describe("Import view", () => {
         mockService("notification", {
             add: (message) => {
                 expect.step(message);
-                return () => {};
+                return () => { };
             },
         });
 
@@ -1677,7 +1677,7 @@ describe("Import view", () => {
             expect(args[1]).toEqual([false, "name", "name@fr_FR"]);
             expect(args[2]).toEqual(["id", "name", "name@fr_fr"]);
         });
-        redirect("/odoo/action-2");
+        redirect("/weth/action-2");
         await mountWebClient();
         await getService("action").doAction(1);
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
 
     <record id="action_open_export_wizard" model="ir.actions.act_window">
         <field name="name">Export Time Entries</field>
@@ -26,4 +26,4 @@
             </form>
         </field>
     </record>
-</odoo>
+</weth>

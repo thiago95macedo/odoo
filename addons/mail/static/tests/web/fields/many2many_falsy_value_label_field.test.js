@@ -5,8 +5,8 @@ import {
     start,
     startServer,
 } from "@mail/../tests/mail_test_helpers";
-import { describe, test } from "@odoo/hoot";
-import { waitFor } from "@odoo/hoot-dom";
+import { describe, test } from "@weth/hoot";
+import { waitFor } from "@weth/hoot-dom";
 import { getService, switchView } from "@web/../tests/web_test_helpers";
 
 defineMailModels();

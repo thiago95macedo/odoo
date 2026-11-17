@@ -1,4 +1,4 @@
-import { Component, useProps, signal, t, useEffect, xml } from "@odoo/owl";
+import { Component, useProps, signal, t, useEffect, xml } from "@weth/owl";
 import { useIsChildLarger } from "@point_of_sale/app/hooks/hooks";
 import { useService } from "@web/core/utils/hooks";
 import { Dialog } from "@web/core/dialog/dialog";

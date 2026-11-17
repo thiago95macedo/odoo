@@ -3,10 +3,10 @@ from datetime import date
 
 import markupsafe
 
-from odoo import Command, _, api, fields, models
-from odoo.exceptions import UserError
-from odoo.tools import OrderedSet, frozendict
-from odoo.tools.misc import clean_context
+from weth import Command, _, api, fields, models
+from weth.exceptions import UserError
+from weth.tools import OrderedSet, frozendict
+from weth.tools.misc import clean_context
 
 
 class AccountPaymentRegister(models.TransientModel):

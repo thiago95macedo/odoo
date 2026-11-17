@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.tests.common import get_db_name, BaseCase
-from odoo.modules.registry import Registry
+from weth.tests.common import get_db_name, BaseCase
+from weth.modules.registry import Registry
 
 
 class TestSlugUnslug(BaseCase):

@@ -1,7 +1,7 @@
 import { _t } from "@web/core/l10n/translation";
 import { browser } from "@web/core/browser/browser";
 
-import { Component, EventBus, proxy, t, useListener, useProps } from "@odoo/owl";
+import { Component, EventBus, proxy, t, useListener, useProps } from "@weth/owl";
 
 export class BlockUI extends Component {
     props = useProps({

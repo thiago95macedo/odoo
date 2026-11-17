@@ -5,17 +5,17 @@ import logging
 import werkzeug.urls
 from werkzeug.exceptions import BadRequest
 
-from odoo import SUPERUSER_ID, _, api
-from odoo.exceptions import AccessDenied
-from odoo.http import Controller, request, route
-from odoo.http.requestlib import fragment_to_query_string
-from odoo.http.router import db_filter
-from odoo.http.session import authenticate
-from odoo.modules.registry import Registry
-from odoo.tools.misc import clean_context
+from weth import SUPERUSER_ID, _, api
+from weth.exceptions import AccessDenied
+from weth.http import Controller, request, route
+from weth.http.requestlib import fragment_to_query_string
+from weth.http.router import db_filter
+from weth.http.session import authenticate
+from weth.modules.registry import Registry
+from weth.tools.misc import clean_context
 
-from odoo.addons.auth_signup.controllers.main import AuthSignupHome as Home
-from odoo.addons.web.controllers.utils import _get_login_redirect_url, ensure_db
+from weth.addons.auth_signup.controllers.main import AuthSignupHome as Home
+from weth.addons.web.controllers.utils import _get_login_redirect_url, ensure_db
 
 _logger = logging.getLogger(__name__)
 
@@ -114,13 +114,13 @@ class OAuthController(Controller):
             action = state.get('a')
             menu = state.get('m')
             redirect = werkzeug.urls.url_unquote_plus(state['r']) if state.get('r') else False
-            url = '/odoo'
+            url = '/weth'
             if redirect:
                 url = redirect
             elif action:
-                url = '/odoo/action-%s' % action
+                url = '/weth/action-%s' % action
             elif menu:
-                url = '/odoo?menu_id=%s' % menu
+                url = '/weth?menu_id=%s' % menu
 
             credential = {'login': login, 'token': key, 'type': 'oauth_token'}
             auth_info = authenticate(request.session, request.env, credential)

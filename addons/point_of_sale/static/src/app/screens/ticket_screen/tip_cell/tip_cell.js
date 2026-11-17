@@ -1,5 +1,5 @@
 import { useAutofocus } from "@web/core/utils/hooks";
-import { Component, proxy, useProps, t, signal } from "@odoo/owl";
+import { Component, proxy, useProps, t, signal } from "@weth/owl";
 import { PosOrder } from "@point_of_sale/app/models/pos_order";
 import { usePos } from "@point_of_sale/app/hooks/pos_hook";
 

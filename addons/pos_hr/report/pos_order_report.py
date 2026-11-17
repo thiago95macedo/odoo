@@ -1,5 +1,5 @@
-from odoo import models, fields
-from odoo.tools import SQL
+from weth import models, fields
+from weth.tools import SQL
 
 
 class ReportPosOrder(models.Model):

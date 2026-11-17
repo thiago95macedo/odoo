@@ -1,9 +1,9 @@
 import { Plugin } from "@html_editor/plugin";
 import { PowerButtonsPlugin } from "@html_editor/main/power_buttons_plugin";
 import { closestElement } from "@html_editor/utils/dom_traversal";
-import { describe, expect, queryAllTexts, test } from "@odoo/hoot";
-import { click, pointerDown, press, tick, waitFor } from "@odoo/hoot-dom";
-import { animationFrame, advanceTime } from "@odoo/hoot-mock";
+import { describe, expect, queryAllTexts, test } from "@weth/hoot";
+import { click, pointerDown, press, tick, waitFor } from "@weth/hoot-dom";
+import { animationFrame, advanceTime } from "@weth/hoot-mock";
 import { onRpc, patchWithCleanup } from "@web/../tests/web_test_helpers";
 import { PowerboxPlugin } from "../src/main/powerbox/powerbox_plugin";
 import { setupEditor } from "./_helpers/editor";
@@ -366,7 +366,7 @@ describe("individual button availability", () => {
                     icon: "bug_report",
                     isAvailable: ({ anchorNode }) =>
                         !closestElement(anchorNode, ".hide_test_button"),
-                    run: () => {},
+                    run: () => { },
                 },
                 power_buttons: { commandId: "test" },
             };

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
     <record id="view_mrp_production_work_order_search" model="ir.ui.view">
         <field name="name">mrp.production.work.order.search</field>
         <field name="model">mrp.workorder</field>
@@ -652,4 +652,4 @@
         <field name="code">records.action_mark_as_done()</field>
     </record>
 
-</odoo>
+</weth>

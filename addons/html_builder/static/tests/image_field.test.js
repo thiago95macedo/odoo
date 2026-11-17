@@ -1,5 +1,5 @@
 import { setupHTMLBuilder, dummyBase64Img } from "@html_builder/../tests/helpers";
-import { expect, test, describe } from "@odoo/hoot";
+import { expect, test, describe } from "@weth/hoot";
 import { contains, onRpc } from "@web/../tests/web_test_helpers";
 
 describe.current.tags("desktop");

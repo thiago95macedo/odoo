@@ -1,5 +1,5 @@
 import { useService } from "@web/core/utils/hooks";
-import { Component, useProps, t } from "@odoo/owl";
+import { Component, useProps, t } from "@weth/owl";
 import { usePos } from "@point_of_sale/app/hooks/pos_hook";
 
 export class SaleDetailsButton extends Component {

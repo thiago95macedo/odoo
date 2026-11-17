@@ -1,5 +1,5 @@
-from odoo import api, models
-from odoo.tools import format_date
+from weth import api, models
+from weth.tools import format_date
 
 
 class PackageLabelLayout(models.TransientModel):

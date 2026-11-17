@@ -12,8 +12,8 @@ import {
     startServer,
 } from "@mail/../tests/mail_test_helpers";
 
-import { describe, expect, test } from "@odoo/hoot";
-import { markup } from "@odoo/owl";
+import { describe, expect, test } from "@weth/hoot";
+import { markup } from "@weth/owl";
 
 import { serverState } from "@web/../tests/web_test_helpers";
 

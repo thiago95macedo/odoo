@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import fields
-from odoo.tests.common import tagged
+from weth import fields
+from weth.tests.common import tagged
 
 from .common import PurchaseTestCommon
 

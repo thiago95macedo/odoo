@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
 
 <template id="s_bento_features" name="Bento Features">
     <section class="s_bento_features pt64 pb64">
@@ -36,4 +36,4 @@
     <path>website/static/src/snippets/s_bento_features/000.scss</path>
 </asset>
 
-</odoo>
+</weth>

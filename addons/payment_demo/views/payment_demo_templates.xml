@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
 
     <template id="inline_form">
         <div t-attf-id="demo-container-{{provider_id}}">
@@ -214,4 +214,4 @@
         </div>
     </template>
 
-</odoo>
+</weth>

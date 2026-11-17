@@ -3,7 +3,7 @@
 import datetime
 import markupsafe
 
-from odoo import _, fields, models, tools
+from weth import _, fields, models, tools
 
 
 class MailThread(models.AbstractModel):

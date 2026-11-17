@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.website_livechat.tests.common import TestLivechatCommon
-from odoo.tests import HttpCase, new_test_user
+from weth.addons.website_livechat.tests.common import TestLivechatCommon
+from weth.tests import HttpCase, new_test_user
 
 
 class TestLivechatRequestHttpCase(HttpCase, TestLivechatCommon):

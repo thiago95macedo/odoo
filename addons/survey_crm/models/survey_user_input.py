@@ -1,6 +1,6 @@
 from markupsafe import Markup, escape
 
-from odoo import fields, models, _
+from weth import fields, models, _
 
 
 class SurveyUser_Input(models.Model):

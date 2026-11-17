@@ -1,9 +1,9 @@
 import json
 
-from odoo import Command
-from odoo.exceptions import UserError
+from weth import Command
+from weth.exceptions import UserError
 
-from odoo.tests import tagged
+from weth.tests import tagged
 
 from .common import DashboardTestCommon
 

@@ -1,4 +1,4 @@
-import { Component, useProps, t } from "@odoo/owl";
+import { Component, useProps, t } from "@weth/owl";
 
 export class BuilderOptionsSection extends Component {
     static template = "html_builder.BuilderOptionsSection";

@@ -1,7 +1,7 @@
 import json
 
-from odoo import Command, api, fields, models
-from odoo.tools import file_open
+from weth import Command, api, fields, models
+from weth.tools import file_open
 
 
 class SpreadsheetDashboard(models.Model):

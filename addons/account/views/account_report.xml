@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
     <data>
         <!-- QWeb Reports -->
         <record id="account_invoices" model="ir.actions.report">
@@ -84,4 +84,4 @@
         </record>
 
     </data>
-</odoo>
+</weth>

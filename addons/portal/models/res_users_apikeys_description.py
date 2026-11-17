@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import models, _
-from odoo.exceptions import AccessError
+from weth import models, _
+from weth.exceptions import AccessError
 
 
 class ResUsersApikeysDescription(models.TransientModel):

@@ -4,15 +4,15 @@ from unittest.mock import patch, call
 from datetime import timedelta, datetime
 from freezegun import freeze_time
 
-from odoo import Command, fields
+from weth import Command, fields
 
-from odoo.addons.mail.tests.common import mail_new_test_user
-from odoo.addons.microsoft_calendar.utils.microsoft_calendar import MicrosoftCalendarService
-from odoo.addons.microsoft_calendar.utils.microsoft_event import MicrosoftEvent
-from odoo.addons.microsoft_calendar.models.res_users import ResUsers
-from odoo.addons.microsoft_calendar.tests.common import TestCommon, mock_get_token, _modified_date_in_the_future
-from odoo.exceptions import ValidationError, UserError
-from odoo.tests.common import tagged
+from weth.addons.mail.tests.common import mail_new_test_user
+from weth.addons.microsoft_calendar.utils.microsoft_calendar import MicrosoftCalendarService
+from weth.addons.microsoft_calendar.utils.microsoft_event import MicrosoftEvent
+from weth.addons.microsoft_calendar.models.res_users import ResUsers
+from weth.addons.microsoft_calendar.tests.common import TestCommon, mock_get_token, _modified_date_in_the_future
+from weth.exceptions import ValidationError, UserError
+from weth.tests.common import tagged
 
 
 @tagged('post_install', '-at_install')

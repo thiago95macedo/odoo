@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.tests import tagged, HttpCase
-from odoo import Command
+from weth.tests import tagged, HttpCase
+from weth import Command
 from .test_project_base import TestProjectCommon
 
 

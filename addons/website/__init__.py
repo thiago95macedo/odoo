@@ -4,7 +4,7 @@ from . import controllers
 from . import models
 from . import wizard
 
-from odoo.http import request
+from weth.http import request
 
 
 def uninstall_hook(env):

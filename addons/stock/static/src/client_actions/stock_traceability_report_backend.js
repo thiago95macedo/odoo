@@ -1,4 +1,4 @@
-import { Component, onWillStart, proxy, useProps } from "@odoo/owl";
+import { Component, onWillStart, proxy, useProps } from "@weth/owl";
 import { download } from "@web/core/network/download";
 import { registry } from "@web/core/registry";
 import { user } from "@web/core/user";
@@ -7,7 +7,7 @@ import { useSetupAction } from "@web/search/action_hook";
 import { Layout } from "@web/search/layout";
 import { standardActionServiceProps } from "@web/webclient/actions/action_plugin";
 
-function processLine(line, lines=[], keepFolded=true) {
+function processLine(line, lines = [], keepFolded = true) {
     return { ...line, lines: lines, isFolded: keepFolded };
 }
 
@@ -216,7 +216,7 @@ export class TraceabilityReport extends Component {
         }
     }
 
-    async toggleLine(line, line_type=false) {
+    async toggleLine(line, line_type = false) {
         if (line.isFolded && !line.lines.length) {
             line.lines = (
                 await this.orm.call("stock.traceability.report", "get_lines", [line_type], {

@@ -1,4 +1,4 @@
-import { test } from "@odoo/hoot";
+import { test } from "@weth/hoot";
 import { setupSelfPosEnv } from "@pos_self_order/../tests/unit/utils";
 import { definePosSelfModels } from "@pos_self_order/../tests/unit/data/generate_model_definitions";
 import * as Utils from "@pos_self_order/../tests/unit/ui_utils";

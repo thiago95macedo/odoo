@@ -37,7 +37,7 @@ export function selectButton(name) {
 }
 
 export function expectActionTarget(expectedTarget) {
-    const actionService = odoo.__WOWL_DEBUG__.root.actionService;
+    const actionService = weth.__WOWL_DEBUG__.root.actionService;
     const original = actionService.doAction;
 
     return new Promise((resolve, reject) => {

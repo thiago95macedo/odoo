@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
     <data>
         <record id="view_city_tree" model="ir.ui.view">
             <field name="name">res.city.list</field>
@@ -61,4 +61,4 @@
         </record>
 
     </data>
-</odoo>
+</weth>

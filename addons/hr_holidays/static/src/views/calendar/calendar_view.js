@@ -7,7 +7,7 @@ import { TimeOffCalendarRenderer, TimeOffDashboardCalendarRenderer } from "./cal
 import { registry } from "@web/core/registry";
 import { user } from "@web/core/user";
 import { useService } from "@web/core/utils/hooks";
-import { onWillStart } from "@odoo/owl";
+import { onWillStart } from "@weth/owl";
 import { HrHolidaysSearchModel } from "@hr_holidays/search/hr_holidays_search_model";
 
 class TimeOffCalendarControllerHrLeave extends TimeOffCalendarController {

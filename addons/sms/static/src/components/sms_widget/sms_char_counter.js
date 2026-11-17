@@ -1,4 +1,4 @@
-import { Component, onMounted, onWillUnmount, proxy, useProps } from "@odoo/owl";
+import { Component, onMounted, onWillUnmount, proxy, useProps } from "@weth/owl";
 import {
     countSMS,
     extractSmsEncoding,

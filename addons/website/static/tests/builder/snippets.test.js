@@ -1,5 +1,5 @@
 import { getDragHelper } from "@html_builder/../tests/helpers";
-import { expect, test, waitFor } from "@odoo/hoot";
+import { expect, test, waitFor } from "@weth/hoot";
 import { contains, onRpc } from "@web/../tests/web_test_helpers";
 import {
     defineWebsiteModels,

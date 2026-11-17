@@ -1,4 +1,4 @@
-import { expect, getFixture, test } from "@odoo/hoot";
+import { expect, getFixture, test } from "@weth/hoot";
 import {
     advanceTime,
     animationFrame,
@@ -10,8 +10,8 @@ import {
     queryAllTexts,
     queryOne,
     runAllTimers,
-} from "@odoo/hoot-dom";
-import { Component, useProps, xml } from "@odoo/owl";
+} from "@weth/hoot-dom";
+import { Component, useProps, xml } from "@weth/owl";
 import {
     contains,
     getService,

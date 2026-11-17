@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<odoo>
+<weth>
     <record id="product_pricelist_view_kanban_pos" model="ir.ui.view">
         <field name="name">product.pricelist.kanban.pos</field>
         <field name="model">product.pricelist</field>
@@ -54,4 +54,4 @@
                 (0, 0, {'view_mode': 'kanban', 'view_id': ref('product_pricelist_view_kanban_pos')}),
                 (0, 0, {'view_mode': 'form', 'view_id': ref('product.product_pricelist_view')})]"/>
     </record>
-</odoo>
+</weth>

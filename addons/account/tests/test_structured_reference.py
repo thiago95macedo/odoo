@@ -1,7 +1,7 @@
-from odoo.tests import tagged
-from odoo.tests.common import TransactionCase
+from weth.tests import tagged
+from weth.tests.common import TransactionCase
 
-from odoo.addons.account.tools import (
+from weth.addons.account.tools import (
     is_valid_structured_reference_be,
     is_valid_structured_reference_dk,
     is_valid_structured_reference_fi,

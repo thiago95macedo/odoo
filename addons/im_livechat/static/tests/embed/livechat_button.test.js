@@ -10,7 +10,7 @@ import {
     startServer,
 } from "@mail/../tests/mail_test_helpers";
 import { storeHandlerRegistry } from "@mail/../tests/mock_server/store_handler";
-import { describe, test } from "@odoo/hoot";
+import { describe, test } from "@weth/hoot";
 import { Command, patchWithCleanup, serverState } from "@web/../tests/web_test_helpers";
 import { openClosePersistedChannel } from "./im_livechat_embed_shared_tests";
 

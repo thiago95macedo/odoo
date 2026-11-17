@@ -1,6 +1,6 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
-from odoo.tests.common import tagged, BaseCase
-from odoo.addons.google_calendar.utils.google_calendar_service import GoogleEvent
+from weth.tests.common import tagged, BaseCase
+from weth.addons.google_calendar.utils.google_calendar_service import GoogleEvent
 
 
 @tagged('at_install', '-post_install')  # LEGACY at_install

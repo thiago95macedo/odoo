@@ -5,10 +5,10 @@ import ast
 from collections import defaultdict
 from dateutil.relativedelta import relativedelta
 
-from odoo import api, fields, models, modules
-from odoo.exceptions import UserError
-from odoo.fields import Domain
-from odoo.tools import _, split_every
+from weth import api, fields, models, modules
+from weth.exceptions import UserError
+from weth.fields import Domain
+from weth.tools import _, split_every
 
 # When recycle_mode = automatic, _recycle_records calls action_validate.
 # This is quite slow so requires smaller batch size.

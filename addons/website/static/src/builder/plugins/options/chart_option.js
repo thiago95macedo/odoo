@@ -1,4 +1,4 @@
-import { proxy } from "@odoo/owl";
+import { proxy } from "@weth/owl";
 import { BaseOptionComponent } from "@html_builder/core/base_option_component";
 import { useDomState } from "@html_builder/core/utils";
 import { registry } from "@web/core/registry";
@@ -271,7 +271,7 @@ export class ChartOption extends BaseOptionComponent {
         ) {
             tableEl
                 .querySelectorAll(".o_builder_matrix_remove_col")
-                [columnIndex - 1].classList.remove("visually-hidden-focusable");
+            [columnIndex - 1].classList.remove("visually-hidden-focusable");
         }
 
         // Remove row: allowed if more than 1 label & on actual data rows (not

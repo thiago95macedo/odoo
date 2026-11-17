@@ -3,10 +3,10 @@ from datetime import datetime, timedelta
 from collections import defaultdict
 from typing import NamedTuple
 
-from odoo import api, fields, models
-from odoo.exceptions import UserError
-from odoo.fields import Domain
-from odoo.tools import SQL, split_every
+from weth import api, fields, models
+from weth.exceptions import UserError
+from weth.fields import Domain
+from weth.tools import SQL, split_every
 
 
 class FifoCandidate(NamedTuple):

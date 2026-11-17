@@ -3,7 +3,7 @@
 from datetime import date, datetime, time, UTC
 from zoneinfo import ZoneInfo
 
-from odoo import _, api, fields, models, modules
+from weth import _, api, fields, models, modules
 
 
 class ResCompany(models.Model):

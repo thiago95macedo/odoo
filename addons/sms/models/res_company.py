@@ -1,6 +1,6 @@
-from odoo import models
+from weth import models
 
-from odoo.addons.sms.tools.sms_api import SmsApiBase
+from weth.addons.sms.tools.sms_api import SmsApiBase
 
 
 class ResCompany(models.Model):

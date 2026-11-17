@@ -7,7 +7,7 @@ import { useDateTimePicker } from "@web/core/datetime/datetime_picker_hook";
 import { ReadonlyEmbeddedDateComponent } from "../../core/date/readonly_date";
 import { TimePickerPopover } from "@web/core/time_picker/time_picker_popover";
 import { usePopover } from "@web/core/popover/popover_hook";
-import { signal } from "@odoo/owl";
+import { signal } from "@weth/owl";
 const { DateTime } = luxon;
 
 export class EmbeddedDateComponent extends ReadonlyEmbeddedDateComponent {

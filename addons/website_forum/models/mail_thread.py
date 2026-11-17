@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
 import ast
-from odoo import models
+from weth import models
 
 
 class MailThread(models.AbstractModel):

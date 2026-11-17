@@ -1,9 +1,9 @@
-from odoo import fields
-from odoo.fields import Command
-from odoo.tests import tagged
-from odoo.tools.float_utils import float_compare
+from weth import fields
+from weth.fields import Command
+from weth.tests import tagged
+from weth.tools.float_utils import float_compare
 
-from odoo.addons.sale.tests.common import SaleCommon
+from weth.addons.sale.tests.common import SaleCommon
 
 
 @tagged("-at_install", "post_install")

@@ -14,9 +14,9 @@ import {
     waitStoreFetch,
     MENU_ACTIVE_IDS,
 } from "@mail/../tests/mail_test_helpers";
-import { describe, expect, test, waitFor } from "@odoo/hoot";
-import { animationFrame, press, rightClick } from "@odoo/hoot-dom";
-import { mockDate } from "@odoo/hoot-mock";
+import { describe, expect, test, waitFor } from "@weth/hoot";
+import { animationFrame, press, rightClick } from "@weth/hoot-dom";
+import { mockDate } from "@weth/hoot-mock";
 import {
     Command,
     getService,
@@ -306,8 +306,7 @@ test("chat - avatar: should have correct avatar", async () => {
     await openDiscuss();
     await contains(".o-mail-MessagingMenuItem img");
     await contains(
-        `img[data-src='${getOrigin()}/web/image/res.partner/${partnerId}/avatar_128?unique=${
-            deserializeDateTime(partner.write_date).ts
+        `img[data-src='${getOrigin()}/web/image/res.partner/${partnerId}/avatar_128?unique=${deserializeDateTime(partner.write_date).ts
         }']`
     );
 });

@@ -5,10 +5,10 @@ import logging
 
 from markupsafe import Markup
 
-from odoo import _, api, fields, models
-from odoo.exceptions import AccessError, UserError
-from odoo.fields import Domain
-from odoo.tools.mail import email_normalize, append_content_to_html
+from weth import _, api, fields, models
+from weth.exceptions import AccessError, UserError
+from weth.fields import Domain
+from weth.tools.mail import email_normalize, append_content_to_html
 
 _logger = logging.getLogger(__name__)
 

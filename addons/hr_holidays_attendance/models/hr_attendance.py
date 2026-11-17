@@ -1,6 +1,6 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, models
+from weth import api, models
 
 # fields that when changed invalidate previously credited allocations
 _TIME_FIELDS = frozenset({'check_in', 'check_out', 'employee_id'})

@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.tests.common import TransactionCase, tagged
-from odoo.exceptions import ValidationError
+from weth.tests.common import TransactionCase, tagged
+from weth.exceptions import ValidationError
 
 
 @tagged("-at_install", "post_install")

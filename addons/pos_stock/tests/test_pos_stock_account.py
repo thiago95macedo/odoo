@@ -1,10 +1,10 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-import odoo
-from odoo.addons.pos_stock.tests.common import TestPosStockCommon
+import weth
+from weth.addons.pos_stock.tests.common import TestPosStockCommon
 
 
-@odoo.tests.tagged('post_install', '-at_install')
+@weth.tests.tagged('post_install', '-at_install')
 class TestPoSStock(TestPosStockCommon):
     """ Tests for anglo saxon accounting scenario.
     """

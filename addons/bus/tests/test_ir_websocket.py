@@ -4,7 +4,7 @@ import unittest
 
 from unittest.mock import MagicMock, patch
 
-from odoo.tests import new_test_user, tagged
+from weth.tests import new_test_user, tagged
 from .common import WebsocketCase
 
 
@@ -12,7 +12,7 @@ from .common import WebsocketCase
 @unittest.skipIf(os.getenv("ODOO_FAKETIME_TEST_MODE"), "This test cannot work with faketime")
 class TestIrWebsocket(WebsocketCase):
     def test_only_allow_string_channels_from_frontend(self):
-        with self.assertLogs("odoo.addons.bus.websocket", level="ERROR") as log:
+        with self.assertLogs("weth.addons.bus.websocket", level="ERROR") as log:
             ws = self.websocket_connect()
             self.subscribe(ws, [("odoo", "discuss.channel", 5)], self.env["bus.bus"]._bus_last_id())
         self.assertIn("bus.Bus only string channels are allowed.", log.output[0])
@@ -23,7 +23,7 @@ class TestIrWebsocket(WebsocketCase):
         )
         mock_wsrequest = MagicMock()
         mock_wsrequest.session.uid = test_user.id
-        with patch("odoo.addons.bus.models.ir_websocket.wsrequest", new=mock_wsrequest):
+        with patch("weth.addons.bus.models.ir_websocket.wsrequest", new=mock_wsrequest):
             ir_websocket_model = self.env["ir.websocket"].with_user(test_user)
             channels = set(ir_websocket_model._build_bus_channel_list(["test_channel"]))
         expected_channels = {

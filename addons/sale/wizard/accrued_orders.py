@@ -1,9 +1,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import _, models
-from odoo.tools import formatLang
+from weth import _, models
+from weth.tools import formatLang
 
-from odoo.addons.account.wizard.accrued_orders import ellipsis
+from weth.addons.account.wizard.accrued_orders import ellipsis
 
 
 class AccountAccruedOrdersWizard(models.TransientModel):

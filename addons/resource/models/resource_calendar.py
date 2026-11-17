@@ -9,13 +9,13 @@ from zoneinfo import ZoneInfo
 from dateutil.relativedelta import relativedelta
 from dateutil.rrule import DAILY, rrule
 
-from odoo import api, fields, models
-from odoo.exceptions import UserError, ValidationError
-from odoo.fields import Command, Domain
-from odoo.tools import float_compare
-from odoo.tools.date_utils import float_to_time, localized, to_timezone
-from odoo.tools.float_utils import float_round
-from odoo.tools.intervals import Intervals
+from weth import api, fields, models
+from weth.exceptions import UserError, ValidationError
+from weth.fields import Command, Domain
+from weth.tools import float_compare
+from weth.tools.date_utils import float_to_time, localized, to_timezone
+from weth.tools.float_utils import float_round
+from weth.tools.intervals import Intervals
 
 
 class ResourceCalendar(models.Model):
@@ -28,7 +28,7 @@ class ResourceCalendar(models.Model):
       without ``resource_id`` is global (public holiday for every resource of the
       calendar), otherwise it only applies to that resource.
 
-    The computation API works on :class:`~odoo.tools.intervals.Intervals` of
+    The computation API works on :class:`~weth.tools.intervals.Intervals` of
     ``(start, stop, records)`` triples, where ``start``/``stop`` are timezone-aware
     datetimes and ``records`` is the attendance or leave recordset that produced the
     interval. Batch methods return a dict ``{resource_id: Intervals}`` in which the
@@ -540,7 +540,7 @@ class ResourceCalendar(models.Model):
         :param resource: a ``resource.resource`` record, or ``None`` / empty for the
             calendar-level leaves (global leaves only, in the timezone of ``start_dt``)
         :param tz: unused, kept for compatibility; the resource timezone is used
-        :rtype: :class:`~odoo.tools.intervals.Intervals`
+        :rtype: :class:`~weth.tools.intervals.Intervals`
         """
         if resource is None:
             resource = self.env['resource.resource']
@@ -739,7 +739,7 @@ class ResourceCalendar(models.Model):
         hours counts as 1.
 
         :param attendance_intervals: iterable of ``(start, stop, records)`` with
-            timezone-aware datetimes, e.g. an :class:`~odoo.tools.intervals.Intervals`
+            timezone-aware datetimes, e.g. an :class:`~weth.tools.intervals.Intervals`
         :return: ``{'days': float, 'hours': float}``, days rounded to 0.001
         :rtype: dict
         """

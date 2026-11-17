@@ -1,4 +1,4 @@
-import { Component, onWillStart, t, useProps } from "@odoo/owl";
+import { Component, onWillStart, t, useProps } from "@weth/owl";
 import { registry } from "@web/core/registry";
 import { useService } from "@web/core/utils/hooks";
 import { ListRenderer } from "@web/views/list/list_renderer";
@@ -30,7 +30,7 @@ export class LoyaltyActionHelper extends Component {
             "loyalty.program",
             "create_from_template",
             [templateId],
-            {context: this.env.model.root.context},
+            { context: this.env.model.root.context },
         );
         if (!action) {
             return;

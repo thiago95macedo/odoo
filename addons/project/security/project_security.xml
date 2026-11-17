@@ -1,4 +1,4 @@
-<odoo>
+<weth>
 
     <record model="res.groups.privilege" id="res_groups_privilege_project">
         <field name="name">Project</field>
@@ -60,4 +60,4 @@
     </record>
 
     </data>
-</odoo>
+</weth>

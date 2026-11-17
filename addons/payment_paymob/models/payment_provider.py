@@ -3,12 +3,12 @@
 import json
 from datetime import datetime
 
-from odoo import api, fields, models
-from odoo.exceptions import ValidationError
-from odoo.fields import Command
+from weth import api, fields, models
+from weth.exceptions import ValidationError
+from weth.fields import Command
 
-from odoo.addons.payment.logging import get_payment_logger
-from odoo.addons.payment_paymob import const
+from weth.addons.payment.logging import get_payment_logger
+from weth.addons.payment_paymob import const
 
 _logger = get_payment_logger(__name__)
 

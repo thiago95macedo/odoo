@@ -1,6 +1,6 @@
-from odoo.tests import tagged
+from weth.tests import tagged
 
-from odoo.addons.payment_toss_payments.tests.common import TossPaymentsCommon
+from weth.addons.payment_toss_payments.tests.common import TossPaymentsCommon
 
 
 @tagged("post_install", "-at_install")

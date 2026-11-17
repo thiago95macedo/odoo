@@ -12,7 +12,7 @@
 import { Domain } from "@web/core/domain";
 import { user } from "@web/core/user";
 
-import { helpers } from "@odoo/o-spreadsheet";
+import { helpers } from "@weth/o-spreadsheet";
 import { CommandResult } from "@spreadsheet/o_spreadsheet/cancelled_reason";
 
 import {

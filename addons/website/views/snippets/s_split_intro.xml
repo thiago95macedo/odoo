@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
 
 <template id="s_split_intro" name="Split Intro">
     <section class="s_split_intro o_cc o_cc1">
@@ -19,4 +19,4 @@
     </section>
 </template>
 
-</odoo>
+</weth>

@@ -1,4 +1,4 @@
-from odoo.fields import Command
+from weth.fields import Command
 
 
 class WebsiteMassMailingMultiCompanyCommon:

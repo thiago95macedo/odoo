@@ -1,17 +1,17 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
 import logging
-import odoo.tests
+import weth.tests
 
 from requests import Session, PreparedRequest, Response
 
-from odoo.addons.base.tests.common import HttpCaseWithUserDemo
+from weth.addons.base.tests.common import HttpCaseWithUserDemo
 
 _logger = logging.getLogger(__name__)
 
 
-@odoo.tests.tagged('click_all', 'post_install', '-at_install', '-standard')
-class TestMenusAdmin(odoo.tests.HttpCase):
+@weth.tests.tagged('click_all', 'post_install', '-at_install', '-standard')
+class TestMenusAdmin(weth.tests.HttpCase):
     allow_end_on_form = True
 
     @classmethod
@@ -31,10 +31,10 @@ class TestMenusAdmin(odoo.tests.HttpCase):
         for app_id in menus['root']['children']:
             with self.subTest(app=menus[app_id]['name']):
                 _logger.runbot('Testing %s', menus[app_id]['name'])
-                self.browser_js("/odoo", "odoo.loader.modules.get('@web/webclient/clickbot/clickbot_loader').startClickEverywhere({ xmlId: '%s', logger: true });" % menus[app_id]['xmlid'], "odoo.isReady === true", login="admin", timeout=1200, success_signal="clickbot test succeeded")
+                self.browser_js("/odoo", "weth.loader.modules.get('@web/webclient/clickbot/clickbot_loader').startClickEverywhere({ xmlId: '%s', logger: true });" % menus[app_id]['xmlid'], "weth.isReady === true", login="admin", timeout=1200, success_signal="clickbot test succeeded")
 
 
-@odoo.tests.tagged('click_all', 'post_install', '-at_install', '-standard')
+@weth.tests.tagged('click_all', 'post_install', '-at_install', '-standard')
 class TestMenusDemo(HttpCaseWithUserDemo):
     def test_01_click_everywhere_as_demo(self):
         user_demo = self.user_demo
@@ -42,11 +42,11 @@ class TestMenusDemo(HttpCaseWithUserDemo):
         for app_id in menus['root']['children']:
             with self.subTest(app=menus[app_id]['name']):
                 _logger.runbot('Testing %s', menus[app_id]['name'])
-                self.browser_js("/odoo", "odoo.loader.modules.get('@web/webclient/clickbot/clickbot_loader').startClickEverywhere({ xmlId: '%s', logger: true });" % menus[app_id]['xmlid'], "odoo.isReady === true", login="demo", timeout=1200, success_signal="clickbot test succeeded")
+                self.browser_js("/odoo", "weth.loader.modules.get('@web/webclient/clickbot/clickbot_loader').startClickEverywhere({ xmlId: '%s', logger: true });" % menus[app_id]['xmlid'], "weth.isReady === true", login="demo", timeout=1200, success_signal="clickbot test succeeded")
 
 
-@odoo.tests.tagged('post_install', '-at_install')
-class TestMenusAdminLight(odoo.tests.HttpCase):
+@weth.tests.tagged('post_install', '-at_install')
+class TestMenusAdminLight(weth.tests.HttpCase):
 
     @classmethod
     def _request_handler(cls, s: Session, r: PreparedRequest, /, **kw):
@@ -71,9 +71,9 @@ class TestMenusAdminLight(odoo.tests.HttpCase):
             })
 
         click_bot_options = "{ light: true, offline: true }" if offline else "{ light: true }"
-        js_code = f"odoo.loader.modules.get('@web/webclient/clickbot/clickbot_loader').startClickEverywhere({click_bot_options});"
+        js_code = f"weth.loader.modules.get('@web/webclient/clickbot/clickbot_loader').startClickEverywhere({click_bot_options});"
 
-        self.browser_js("/odoo", js_code, "odoo.isReady === true", login="admin", timeout=120, success_signal="clickbot test succeeded")
+        self.browser_js("/odoo", js_code, "weth.isReady === true", login="admin", timeout=120, success_signal="clickbot test succeeded")
 
     def test_01_click_apps_menus_as_admin(self):
         self._run_clickbot(offline=False)
@@ -82,7 +82,7 @@ class TestMenusAdminLight(odoo.tests.HttpCase):
         self._run_clickbot(offline=True)
 
 
-@odoo.tests.tagged('post_install', '-at_install')
+@weth.tests.tagged('post_install', '-at_install')
 class TestMenusDemoLight(HttpCaseWithUserDemo):
 
     @classmethod
@@ -104,4 +104,4 @@ class TestMenusDemoLight(HttpCaseWithUserDemo):
         group_website_designer = self.env.ref('website.group_website_designer', raise_if_not_found=False)
         if group_website_designer:
             self.env.ref('base.group_user').write({"implied_ids": [(4, group_website_designer.id)]})
-        self.browser_js("/odoo", "odoo.loader.modules.get('@web/webclient/clickbot/clickbot_loader').startClickEverywhere({ light: true });", "odoo.isReady === true", login="demo", timeout=120, success_signal="clickbot test succeeded")
+        self.browser_js("/odoo", "weth.loader.modules.get('@web/webclient/clickbot/clickbot_loader').startClickEverywhere({ light: true });", "weth.isReady === true", login="demo", timeout=120, success_signal="clickbot test succeeded")

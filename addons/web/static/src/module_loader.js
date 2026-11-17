@@ -1,13 +1,13 @@
-// @odoo-module ignore
+// @weth-module ignore
 
 //-----------------------------------------------------------------------------
-// Odoo Web Boostrap Code
+// WETH Web Bootstrap Code
 //-----------------------------------------------------------------------------
 
-(function (odoo) {
+(function (weth) {
     "use strict";
 
-    if (odoo.loader) {
+    if (weth.loader) {
         // Allows for duplicate calls to `module_loader`: only the first one is
         // executed.
         return;
@@ -244,11 +244,11 @@
     }
 
     const loader = new ModuleLoader();
-    odoo.define = loader.define.bind(loader);
-    odoo.loader = loader;
+    weth.define = loader.define.bind(loader);
+    weth.loader = loader;
 
-    if (odoo.debug && !loader.debug) {
-        // remove debug mode if not explicitely set in url
-        odoo.debug = "";
+    if (weth.debug && !loader.debug) {
+        // remove debug mode if not explicitly set in url
+        weth.debug = "";
     }
-})((globalThis.odoo ||= {}));
+})((globalThis.weth ||= {}));

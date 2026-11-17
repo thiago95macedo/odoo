@@ -6,14 +6,14 @@ from unittest.mock import patch
 
 from PIL import Image
 
-import odoo
-from odoo.fields import Command
-from odoo.tests import tagged
-from odoo.tools import BinaryBytes
+import weth
+from weth.fields import Command
+from weth.tests import tagged
+from weth.tools import BinaryBytes
 
-from odoo.addons.website.tests.test_performance import TestWebsitePerformanceCommon
-from odoo.addons.website_sale.tests.common import WebsiteSaleCommon
-from odoo.addons.website_sale.tests.test_pricelist import TestWebsitePriceList
+from weth.addons.website.tests.test_performance import TestWebsitePerformanceCommon
+from weth.addons.website_sale.tests.common import WebsiteSaleCommon
+from weth.addons.website_sale.tests.test_pricelist import TestWebsitePriceList
 
 
 @tagged('at_install', '-post_install')  # LEGACY at_install
@@ -213,15 +213,15 @@ class TestWebsiteAllPerformance(TestWebsitePerformanceCommon, TestWebsitePriceLi
         ).group(1))
 
     def test_website_user_id_public_user(self):
-        origin_serve_page = odoo.addons.website.models.ir_http.IrHttp._serve_page
+        origin_serve_page = weth.addons.website.models.ir_http.IrHttp._serve_page
 
         def _serve_page():
-            request = odoo.http.request
+            request = weth.http.request
             self.assertTrue(request.env['website'].search([]).user_id._is_public(), 'The public user of the website is not public!')
             self.assertTrue(request.env.user._is_public(), 'The visitor should not be logged')
             return origin_serve_page()
 
-        with patch('odoo.addons.website.models.ir_http.IrHttp._serve_page', wraps=_serve_page) as mocked:
+        with patch('weth.addons.website.models.ir_http.IrHttp._serve_page', wraps=_serve_page) as mocked:
             self.url_open(self.page.url)
             mocked.assert_called_once()
 

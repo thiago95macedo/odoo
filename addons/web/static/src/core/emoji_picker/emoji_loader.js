@@ -1,4 +1,4 @@
-import { signal, t, useScope } from "@odoo/owl";
+import { signal, t, useScope } from "@weth/owl";
 import { loadBundle } from "@web/core/assets";
 
 export const emojiCategoryType = t.object({
@@ -7,7 +7,7 @@ export const emojiCategoryType = t.object({
     sortId: t.number(),
     title: t.string(),
 });
-/** @typedef {import("@odoo/owl").StripType<typeof emojiCategoryType>} EmojiCategory */
+/** @typedef {import("@weth/owl").StripType<typeof emojiCategoryType>} EmojiCategory */
 
 export const emojiType = t.object({
     category: emojiCategoryType,
@@ -17,13 +17,13 @@ export const emojiType = t.object({
     name: t.string(),
     shortcodes: t.array(t.string()),
 });
-/** @typedef {import("@odoo/owl").StripType<typeof emojiType>} Emoji */
+/** @typedef {import("@weth/owl").StripType<typeof emojiType>} Emoji */
 
 /**
  * @returns {{ categories: EmojiCategory[], emojis: Emoji[] }}
  */
 function processEmojiData() {
-    const { getCategories, getEmojis } = odoo.loader.modules.get(
+    const { getCategories, getEmojis } = weth.loader.modules.get(
         "@web/core/emoji_picker/emoji_data"
     );
 
@@ -93,12 +93,12 @@ class EmojiLoader {
 
     /**
      * @private
-     * @type {import("@odoo/owl").Signal<EmojiCategory[]>}
+     * @type {import("@weth/owl").Signal<EmojiCategory[]>}
      */
     _categories = signal.Array([]);
     /**
      * @private
-     * @type {import("@odoo/owl").Signal<Emoji[]>}
+     * @type {import("@weth/owl").Signal<Emoji[]>}
      */
     _emojis = signal.Array([]);
     /**
@@ -149,7 +149,7 @@ class EmojiLoader {
                     // Failure: could be intentional (tour ended successfully while emoji still loading)
                     // -> returns forever promise
                     this._loadingPromise = null;
-                    return new Promise(() => {});
+                    return new Promise(() => { });
                 });
         }
         return this._loadingPromise;

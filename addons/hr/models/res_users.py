@@ -4,11 +4,11 @@ import ast
 
 from markupsafe import Markup
 
-from odoo import _, api, fields, models
-from odoo.exceptions import AccessError
-from odoo.fields import Domain
-from odoo.tools.misc import clean_context
-from odoo.addons.mail.tools.discuss import Store
+from weth import _, api, fields, models
+from weth.exceptions import AccessError
+from weth.fields import Domain
+from weth.tools.misc import clean_context
+from weth.addons.mail.tools.discuss import Store
 
 from .hr_employee_location import DAYS
 

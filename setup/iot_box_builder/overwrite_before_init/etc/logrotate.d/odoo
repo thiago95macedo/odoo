@@ -1,4 +1,4 @@
-/var/log/odoo/*.log {
+/var/log/weth/*.log {
     size 100M
     copytruncate
     missingok

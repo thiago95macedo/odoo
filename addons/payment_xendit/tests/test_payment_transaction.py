@@ -5,14 +5,14 @@ from uuid import UUID
 
 from werkzeug.urls import url_encode
 
-from odoo.exceptions import ValidationError
-from odoo.tests import tagged
-from odoo.tools import mute_logger
+from weth.exceptions import ValidationError
+from weth.tests import tagged
+from weth.tools import mute_logger
 
-from odoo.addons.payment import utils as payment_utils
-from odoo.addons.payment.tests.http_common import PaymentHttpCommon
-from odoo.addons.payment_xendit.controllers.main import XenditController
-from odoo.addons.payment_xendit.tests.common import XenditCommon
+from weth.addons.payment import utils as payment_utils
+from weth.addons.payment.tests.http_common import PaymentHttpCommon
+from weth.addons.payment_xendit.controllers.main import XenditController
+from weth.addons.payment_xendit.tests.common import XenditCommon
 
 
 @tagged("post_install", "-at_install")
@@ -43,7 +43,7 @@ class TestPaymentTransaction(PaymentHttpCommon, XenditCommon):
         tx = self._create_transaction("redirect")
         with (
             patch(
-                "odoo.addons.payment.models.payment_transaction.PaymentTransaction"
+                "weth.addons.payment.models.payment_transaction.PaymentTransaction"
                 "._send_api_request",
                 return_value=dict(self.webhook_notification_data, status="ACTIVE"),
             ),
@@ -54,18 +54,18 @@ class TestPaymentTransaction(PaymentHttpCommon, XenditCommon):
             tx.provider_reference, self.webhook_notification_data["payment_session_id"]
         )
 
-    @mute_logger("odoo.addons.payment.models.payment_transaction")
+    @mute_logger("weth.addons.payment.models.payment_transaction")
     def test_no_input_missing_from_redirect_form(self):
         """Test that the `api_url` key is not omitted from the rendering values."""
         tx = self._create_transaction("redirect")
         with (
             patch(
-                "odoo.addons.payment_xendit.models.payment_transaction.PaymentTransaction"
+                "weth.addons.payment_xendit.models.payment_transaction.PaymentTransaction"
                 "._get_specific_rendering_values",
                 return_value={"api_url": "https://dummy.com", "http_method": "get"},
             ),
             patch(
-                "odoo.addons.payment.utils.generate_access_token",
+                "weth.addons.payment.utils.generate_access_token",
                 new=self._generate_test_access_token,
             ),
         ):
@@ -91,11 +91,11 @@ class TestPaymentTransaction(PaymentHttpCommon, XenditCommon):
         test_uuid = UUID("12345678-1234-5678-1234-567812345678")
         with (
             patch(
-                "odoo.addons.payment.utils.generate_access_token",
+                "weth.addons.payment.utils.generate_access_token",
                 new=self._generate_test_access_token,
             ),
             patch(
-                "odoo.addons.payment_xendit.models.payment_transaction.uuid4",
+                "weth.addons.payment_xendit.models.payment_transaction.uuid4",
                 return_value=test_uuid,
             ),
         ):
@@ -133,7 +133,7 @@ class TestPaymentTransaction(PaymentHttpCommon, XenditCommon):
             "redirect", payment_method_id=self.payment_method_card.id, tokenize=True
         )
         with patch(
-            "odoo.addons.payment.utils.generate_access_token", new=self._generate_test_access_token
+            "weth.addons.payment.utils.generate_access_token", new=self._generate_test_access_token
         ):
             request_payload = tx._xendit_prepare_invoice_request_payload()
         self.assertEqual(request_payload["session_type"], "PAY")
@@ -148,7 +148,7 @@ class TestPaymentTransaction(PaymentHttpCommon, XenditCommon):
         """Test that card session payload has no tokenization settings without tokenize."""
         tx = self._create_transaction("redirect", payment_method_id=self.payment_method_card.id)
         with patch(
-            "odoo.addons.payment.utils.generate_access_token", new=self._generate_test_access_token
+            "weth.addons.payment.utils.generate_access_token", new=self._generate_test_access_token
         ):
             request_payload = tx._xendit_prepare_invoice_request_payload()
         self.assertNotIn("allow_save_payment_method", request_payload)
@@ -160,7 +160,7 @@ class TestPaymentTransaction(PaymentHttpCommon, XenditCommon):
             "redirect", operation="validation", payment_method_id=self.payment_method_card.id
         )
         with patch(
-            "odoo.addons.payment.utils.generate_access_token", new=self._generate_test_access_token
+            "weth.addons.payment.utils.generate_access_token", new=self._generate_test_access_token
         ):
             request_payload = tx._xendit_prepare_invoice_request_payload()
         self.assertEqual(request_payload["session_type"], "SAVE")
@@ -173,7 +173,7 @@ class TestPaymentTransaction(PaymentHttpCommon, XenditCommon):
         tx = self._create_transaction("redirect", operation="validation")
         with (
             patch(
-                "odoo.addons.payment.models.payment_transaction.PaymentTransaction"
+                "weth.addons.payment.models.payment_transaction.PaymentTransaction"
                 "._send_api_request",
                 return_value={"payment_link_url": "https://dummy.com"},
             ),
@@ -197,7 +197,7 @@ class TestPaymentTransaction(PaymentHttpCommon, XenditCommon):
             self.payment_request_requires_action_data
         )
         with patch(
-            "odoo.addons.payment.models.payment_transaction.PaymentTransaction._send_api_request",
+            "weth.addons.payment.models.payment_transaction.PaymentTransaction._send_api_request",
             return_value=self.payment_request_requires_action_data,
         ) as mock_req:
             auth_url = tx._xendit_get_pending_authentication_url()
@@ -217,7 +217,7 @@ class TestPaymentTransaction(PaymentHttpCommon, XenditCommon):
             self.payment_request_notification_data
         )  # status SUCCEEDED
         with patch(
-            "odoo.addons.payment.models.payment_transaction.PaymentTransaction._send_api_request"
+            "weth.addons.payment.models.payment_transaction.PaymentTransaction._send_api_request"
         ) as mock_req:
             auth_url = tx._xendit_get_pending_authentication_url()
         self.assertIsNone(auth_url)
@@ -232,13 +232,13 @@ class TestPaymentTransaction(PaymentHttpCommon, XenditCommon):
             self.payment_request_requires_action_data
         )
         with patch(
-            "odoo.addons.payment.models.payment_transaction.PaymentTransaction._send_api_request",
+            "weth.addons.payment.models.payment_transaction.PaymentTransaction._send_api_request",
             return_value=self.payment_request_notification_data,
         ):
             auth_url = tx._xendit_get_pending_authentication_url()
         self.assertIsNone(auth_url)
 
-    @mute_logger("odoo.addons.payment_xendit.models.payment_transaction")
+    @mute_logger("weth.addons.payment_xendit.models.payment_transaction")
     def test_get_pending_authentication_url_returns_none_on_request_failure(self):
         """Test that a failure to fetch the payment request doesn't crash the checkout
         confirmation, since the charge itself was already sent before this point."""
@@ -248,7 +248,7 @@ class TestPaymentTransaction(PaymentHttpCommon, XenditCommon):
             self.payment_request_requires_action_data
         )
         with patch(
-            "odoo.addons.payment.models.payment_transaction.PaymentTransaction._send_api_request",
+            "weth.addons.payment.models.payment_transaction.PaymentTransaction._send_api_request",
             side_effect=ValidationError("Xendit: nope"),
         ):
             auth_url = tx._xendit_get_pending_authentication_url()
@@ -262,11 +262,11 @@ class TestPaymentTransaction(PaymentHttpCommon, XenditCommon):
         tx = self._create_transaction("token", token_id=token.id)
         with (
             patch(
-                "odoo.addons.payment.utils.generate_access_token",
+                "weth.addons.payment.utils.generate_access_token",
                 new=self._generate_test_access_token,
             ),
             patch(
-                "odoo.addons.payment.models.payment_transaction.PaymentTransaction"
+                "weth.addons.payment.models.payment_transaction.PaymentTransaction"
                 "._send_api_request",
                 return_value=self.payment_request_requires_action_data,
             ) as mock_req,
@@ -289,7 +289,7 @@ class TestPaymentTransaction(PaymentHttpCommon, XenditCommon):
         del requires_action_data["actions"]
         tx._record(requires_action_data)
         with patch(
-            "odoo.addons.payment.models.payment_transaction.PaymentTransaction._send_api_request",
+            "weth.addons.payment.models.payment_transaction.PaymentTransaction._send_api_request",
             return_value=self.payment_request_requires_action_data,
         ) as mock_req:
             auth_url = tx._xendit_get_pending_authentication_url()
@@ -309,7 +309,7 @@ class TestPaymentTransaction(PaymentHttpCommon, XenditCommon):
         tx = self._create_transaction("redirect", amount=1000.50, currency_id=currency_idr.id)
         return_url = self._build_url(XenditController._return_url)
         with patch(
-            "odoo.addons.payment.models.payment_transaction.PaymentTransaction._send_api_request",
+            "weth.addons.payment.models.payment_transaction.PaymentTransaction._send_api_request",
             return_value=self.payment_request_notification_data,
         ) as mock_req:
             tx._xendit_create_token_charge("pt-token123", "card")
@@ -342,9 +342,9 @@ class TestPaymentTransaction(PaymentHttpCommon, XenditCommon):
         tx = self._create_transaction("token")
         return_url = self._build_url(XenditController._return_url)
         with (
-            patch("odoo.addons.payment_xendit.models.payment_transaction.request", new=object()),
+            patch("weth.addons.payment_xendit.models.payment_transaction.request", new=object()),
             patch(
-                "odoo.addons.payment.models.payment_transaction.PaymentTransaction"
+                "weth.addons.payment.models.payment_transaction.PaymentTransaction"
                 "._send_api_request",
                 return_value=self.payment_request_notification_data,
             ) as mock_req,
@@ -366,7 +366,7 @@ class TestPaymentTransaction(PaymentHttpCommon, XenditCommon):
             "token", provider_reference="pr-64a8d9c614802d6c402cd82d", state="pending"
         )
         with patch(
-            "odoo.addons.payment.models.payment_transaction.PaymentTransaction._send_api_request",
+            "weth.addons.payment.models.payment_transaction.PaymentTransaction._send_api_request",
             return_value=self.payment_request_notification_data,
         ) as mock_req:
             tx._xendit_sync_from_provider()
@@ -380,7 +380,7 @@ class TestPaymentTransaction(PaymentHttpCommon, XenditCommon):
         """Test that syncing a checkout redirect or validation queries the session endpoint."""
         tx = self._create_transaction("redirect", provider_reference="ps-64a8f9c614802d6c402cd82d")
         with patch(
-            "odoo.addons.payment.models.payment_transaction.PaymentTransaction._send_api_request",
+            "weth.addons.payment.models.payment_transaction.PaymentTransaction._send_api_request",
             return_value=self.webhook_notification_data,
         ) as mock_req:
             tx._xendit_sync_from_provider()
@@ -391,7 +391,7 @@ class TestPaymentTransaction(PaymentHttpCommon, XenditCommon):
         rather than customer-initiated, to reduce the odds of a 3DS challenge."""
         tx = self._create_transaction("token", operation="offline")
         with patch(
-            "odoo.addons.payment.models.payment_transaction.PaymentTransaction._send_api_request",
+            "weth.addons.payment.models.payment_transaction.PaymentTransaction._send_api_request",
             return_value=self.payment_request_notification_data,
         ) as mock_req:
             tx._xendit_create_token_charge("dummytoken", "card")
@@ -407,11 +407,11 @@ class TestPaymentTransaction(PaymentHttpCommon, XenditCommon):
         tx = self._create_transaction("token", token_id=token.id)
         with (
             patch(
-                "odoo.addons.payment_xendit.models.payment_transaction.PaymentTransaction"
+                "weth.addons.payment_xendit.models.payment_transaction.PaymentTransaction"
                 "._xendit_create_token_charge"
             ) as create_token_charge_mock,
             patch(
-                "odoo.addons.payment_xendit.models.payment_transaction.PaymentTransaction"
+                "weth.addons.payment_xendit.models.payment_transaction.PaymentTransaction"
                 "._xendit_create_legacy_token_charge"
             ) as create_legacy_charge_mock,
         ):
@@ -426,11 +426,11 @@ class TestPaymentTransaction(PaymentHttpCommon, XenditCommon):
         tx = self._create_transaction("token", token_id=token.id)
         with (
             patch(
-                "odoo.addons.payment_xendit.models.payment_transaction.PaymentTransaction"
+                "weth.addons.payment_xendit.models.payment_transaction.PaymentTransaction"
                 "._xendit_create_token_charge"
             ) as create_token_charge_mock,
             patch(
-                "odoo.addons.payment_xendit.models.payment_transaction.PaymentTransaction"
+                "weth.addons.payment_xendit.models.payment_transaction.PaymentTransaction"
                 "._xendit_create_legacy_token_charge"
             ) as create_legacy_charge_mock,
         ):
@@ -445,7 +445,7 @@ class TestPaymentTransaction(PaymentHttpCommon, XenditCommon):
         currency_idr = self.env.ref("base.IDR")
         tx = self._create_transaction("redirect", amount=1000.50, currency_id=currency_idr.id)
         with patch(
-            "odoo.addons.payment.models.payment_transaction.PaymentTransaction._send_api_request",
+            "weth.addons.payment.models.payment_transaction.PaymentTransaction._send_api_request",
             return_value=self.legacy_charge_notification_data,
         ) as mock_req:
             tx._xendit_create_legacy_token_charge("legacy-token-123")
@@ -484,7 +484,7 @@ class TestPaymentTransaction(PaymentHttpCommon, XenditCommon):
             state="pending",
         )
         with patch(
-            "odoo.addons.payment.models.payment_transaction.PaymentTransaction._send_api_request"
+            "weth.addons.payment.models.payment_transaction.PaymentTransaction._send_api_request"
         ) as mock_req:
             auth_url = tx._xendit_get_pending_authentication_url()
         self.assertIsNone(auth_url)
@@ -508,7 +508,7 @@ class TestPaymentTransaction(PaymentHttpCommon, XenditCommon):
         )
         self.assertEqual(tx, tx_found)
 
-    @mute_logger("odoo.addons.payment.models.payment_transaction")
+    @mute_logger("weth.addons.payment.models.payment_transaction")
     def test_search_by_reference_strips_suffixed_reference(self):
         """Test that the transaction is found when Xendit appends a random suffix to the
         reference of the payment request created from the session."""
@@ -543,7 +543,7 @@ class TestPaymentTransaction(PaymentHttpCommon, XenditCommon):
         )
         self.assertEqual(tx.state, "error")
 
-    @mute_logger("odoo.addons.payment_xendit.controllers.main")
+    @mute_logger("weth.addons.payment_xendit.controllers.main")
     def test_apply_updates_tokenizes_transaction(self):
         """Test that the transaction is tokenized when a token charge is successfully made on a
         transaction that saves payment details."""
@@ -551,19 +551,19 @@ class TestPaymentTransaction(PaymentHttpCommon, XenditCommon):
         tx = self._create_transaction("redirect", tokenize=True)
         with (
             patch(
-                "odoo.addons.payment.models.payment_transaction.PaymentTransaction"
+                "weth.addons.payment.models.payment_transaction.PaymentTransaction"
                 "._send_api_request",
                 return_value=self.payment_request_notification_data,
             ),
             patch(
-                "odoo.addons.payment.models.payment_transaction.PaymentTransaction._tokenize"
+                "weth.addons.payment.models.payment_transaction.PaymentTransaction._tokenize"
             ) as tokenize_mock,
         ):
             tx._xendit_create_token_charge("dummytoken", "card")
             self._run_processing()
             self.assertEqual(tokenize_mock.call_count, 1)
 
-    @mute_logger("odoo.addons.payment_xendit.controllers.main")
+    @mute_logger("weth.addons.payment_xendit.controllers.main")
     def test_tokenization_flow_not_save_payment_details(self):
         """Test that `_tokenize` would not be triggered on a transaction that doesn't save the
         payment details."""
@@ -571,12 +571,12 @@ class TestPaymentTransaction(PaymentHttpCommon, XenditCommon):
         tx = self._create_transaction("redirect")
         with (
             patch(
-                "odoo.addons.payment.models.payment_transaction.PaymentTransaction"
+                "weth.addons.payment.models.payment_transaction.PaymentTransaction"
                 "._send_api_request",
                 return_value=self.payment_request_notification_data,
             ),
             patch(
-                "odoo.addons.payment.models.payment_transaction.PaymentTransaction._tokenize"
+                "weth.addons.payment.models.payment_transaction.PaymentTransaction._tokenize"
             ) as tokenize_check_mock,
         ):
             tx._xendit_create_token_charge("dummytoken", "card")
@@ -588,7 +588,7 @@ class TestPaymentTransaction(PaymentHttpCommon, XenditCommon):
         it is not included in payment or payment request data."""
         tx = self._create_transaction("redirect", tokenize=True)
         with patch(
-            "odoo.addons.payment.models.payment_transaction.PaymentTransaction._send_api_request",
+            "weth.addons.payment.models.payment_transaction.PaymentTransaction._send_api_request",
             return_value=self.payment_token_data,
         ) as mock_req:
             tx.with_context(payment_safe_write=True)._tokenize(
@@ -607,7 +607,7 @@ class TestPaymentTransaction(PaymentHttpCommon, XenditCommon):
         notification)."""
         tx = self._create_transaction("redirect", tokenize=True)
         with patch(
-            "odoo.addons.payment.models.payment_transaction.PaymentTransaction._send_api_request"
+            "weth.addons.payment.models.payment_transaction.PaymentTransaction._send_api_request"
         ) as mock_req:
             tx.with_context(payment_safe_write=True)._tokenize(
                 self.token_activation_notification_data

@@ -1,5 +1,5 @@
-from odoo import models
-from odoo.tools import SQL
+from weth import models
+from weth.tools import SQL
 
 
 class SaleReport(models.Model):

@@ -1,4 +1,4 @@
-import { Component, onWillStart, signal, useProps, t } from "@odoo/owl";
+import { Component, onWillStart, signal, useProps, t } from "@weth/owl";
 import { session } from "@web/session";
 import { user } from "@web/core/user";
 import { Dropdown } from "@web/core/dropdown/dropdown";

@@ -1,5 +1,5 @@
 import { browser } from "@web/core/browser/browser";
-import { Component, onMounted, proxy, t, useProps } from "@odoo/owl";
+import { Component, onMounted, proxy, t, useProps } from "@weth/owl";
 
 export class SlideXPProgressBar extends Component {
     props = useProps({
@@ -55,7 +55,7 @@ export class SlideXPProgressBar extends Component {
             } else {
                 this.state.userKarma = Math.ceil(
                     this.props.previousRank.karma +
-                        (this.props.newRank.karma - this.props.previousRank.karma) * progress
+                    (this.props.newRank.karma - this.props.previousRank.karma) * progress
                 );
                 browser.requestAnimationFrame(animateKarma);
             }

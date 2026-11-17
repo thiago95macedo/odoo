@@ -1,11 +1,11 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
-from odoo.http import Controller
-from odoo.tests import new_test_user
+from weth.http import Controller
+from weth.tests import new_test_user
 
-from odoo.addons.base.tests.common import HttpCase
-from odoo.addons.bus.tests.common import BusResult
-from odoo.addons.mail.tests.common import MailCase
-from odoo.addons.mail.tools.discuss import Store, mail_route
+from weth.addons.base.tests.common import HttpCase
+from weth.addons.bus.tests.common import BusResult
+from weth.addons.mail.tests.common import MailCase
+from weth.addons.mail.tools.discuss import Store, mail_route
 
 
 class TestStoreVersioning(HttpCase, MailCase):

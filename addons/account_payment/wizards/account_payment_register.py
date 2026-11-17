@@ -1,5 +1,5 @@
-from odoo import api, fields, models
-from odoo.fields import Command, Domain
+from weth import api, fields, models
+from weth.fields import Command, Domain
 
 
 class AccountPaymentRegister(models.TransientModel):

@@ -1,4 +1,4 @@
-import { test, describe } from "@odoo/hoot";
+import { test, describe } from "@weth/hoot";
 import { testEditor } from "../_helpers/editor";
 import { unformat } from "../_helpers/format";
 import { deleteForward } from "../_helpers/user_actions";
@@ -849,7 +849,7 @@ describe("Selection not collapsed", () => {
             });
         });
 
-        describe("should delete across two list items", () => {});
+        describe("should delete across two list items", () => { });
         test("should delete across two list items (1)", async () => {
             await testEditor({
                 contentBefore:

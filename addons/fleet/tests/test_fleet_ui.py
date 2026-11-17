@@ -1,5 +1,5 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
-from odoo.tests import HttpCase, new_test_user, tagged
+from weth.tests import HttpCase, new_test_user, tagged
 
 
 @tagged('post_install', '-at_install')
@@ -23,4 +23,4 @@ class TestFleetUi(HttpCase):
             groups='fleet.fleet_group_user',
             company_id=company_b.id, company_ids=[(6, 0, company_b.ids)])
 
-        self.start_tour(f'/odoo/fleet/{vehicle.id}', 'fleet_manager_tour', login='admin')
+        self.start_tour(f'/weth/fleet/{vehicle.id}', 'fleet_manager_tour', login='admin')

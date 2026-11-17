@@ -5,10 +5,10 @@ from unittest.mock import patch, MagicMock
 
 from markupsafe import Markup
 
-from odoo import fields
-from odoo.tests.common import HttpCase
-from odoo.tools import mute_logger
-from odoo.addons.microsoft_calendar.models.microsoft_sync import MicrosoftCalendarSync
+from weth import fields
+from weth.tests.common import HttpCase
+from weth.tools import mute_logger
+from weth.addons.microsoft_calendar.models.microsoft_sync import MicrosoftCalendarSync
 
 
 def mock_get_token(user):
@@ -38,7 +38,7 @@ class TestCommon(HttpCase):
     @patch_api
     def setUp(self):
         super(TestCommon, self).setUp()
-        m = mute_logger('odoo.addons.auth_signup.models.res_users')
+        m = mute_logger('weth.addons.auth_signup.models.res_users')
         mute_logger.__enter__(m)  # noqa: PLC2801
         self.addCleanup(mute_logger.__exit__, m, None, None, None)
 

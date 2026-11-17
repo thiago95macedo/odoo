@@ -4,12 +4,12 @@ from datetime import datetime, timedelta
 
 from freezegun import freeze_time
 
-from odoo.api import Environment
-from odoo.tests import tagged
-from odoo.tools import SQL
+from weth.api import Environment
+from weth.tests import tagged
+from weth.tools import SQL
 
-from odoo.addons.base.tests.common import BaseCommon
-from odoo.addons.http_routing.tests.common import MockRequest
+from weth.addons.base.tests.common import BaseCommon
+from weth.addons.http_routing.tests.common import MockRequest
 
 
 @tagged("post_install", "-at_install")

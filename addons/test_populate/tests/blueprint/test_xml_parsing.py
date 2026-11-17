@@ -1,6 +1,6 @@
-from odoo.tests import TransactionCase
+from weth.tests import TransactionCase
 
-from odoo.addons.populate.utils import xml
+from weth.addons.populate.utils import xml
 
 
 class TestXMLParsing(TransactionCase):

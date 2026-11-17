@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
 
 <template id="s_website_form_overlay" name="Form Overlay">
     <section class="s_website_form_overlay pt64 pb64 oe_img_bg o_bg_img_center o_colored_level" style="background-image: url('/web/image/website.landscape_xl_1');">
@@ -16,4 +16,4 @@
     </section>
 </template>
 
-</odoo>
+</weth>

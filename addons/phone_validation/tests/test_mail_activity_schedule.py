@@ -2,9 +2,9 @@
 
 from unittest.mock import patch
 
-from odoo import exceptions
-from odoo.addons.mail.tests.common_activity import ActivityScheduleCase
-from odoo.tests import tagged
+from weth import exceptions
+from weth.addons.mail.tests.common_activity import ActivityScheduleCase
+from weth.tests import tagged
 
 
 @tagged("phone_validation")

@@ -1,5 +1,5 @@
-from odoo import Command, api, fields, models
-from odoo.tools.misc import unquote
+from weth import Command, api, fields, models
+from weth.tools.misc import unquote
 
 
 class ProjectTemplateCreateWizard(models.TransientModel):

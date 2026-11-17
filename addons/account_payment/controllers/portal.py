@@ -1,12 +1,12 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import _, fields, http
-from odoo.exceptions import AccessError, MissingError, ValidationError
-from odoo.http import request
+from weth import _, fields, http
+from weth.exceptions import AccessError, MissingError, ValidationError
+from weth.http import request
 
-from odoo.addons.account.controllers import portal
-from odoo.addons.payment import utils as payment_utils
-from odoo.addons.payment.controllers.portal import PaymentPortal
+from weth.addons.account.controllers import portal
+from weth.addons.payment import utils as payment_utils
+from weth.addons.payment.controllers.portal import PaymentPortal
 
 
 class PortalAccount(portal.PortalAccount, PaymentPortal):

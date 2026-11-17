@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.stock_account.tests.common import TestStockValuationCommon
-from odoo.addons.sale_stock.tests.common import TestSaleStockCommon
-from odoo.tests import Form, tagged
+from weth.addons.stock_account.tests.common import TestStockValuationCommon
+from weth.addons.sale_stock.tests.common import TestSaleStockCommon
+from weth.tests import Form, tagged
 
 
 @tagged('post_install', '-at_install')

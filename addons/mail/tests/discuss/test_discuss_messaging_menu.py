@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.mail.tests.common import MailCommon
-from odoo.tests import HttpCase, tagged, users
+from weth.addons.mail.tests.common import MailCommon
+from weth.tests import HttpCase, tagged, users
 
 
 @tagged("discuss_messaging_menu")

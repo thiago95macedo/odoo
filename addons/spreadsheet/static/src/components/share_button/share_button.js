@@ -1,4 +1,4 @@
-import { Component, proxy, t, useProps } from "@odoo/owl";
+import { Component, proxy, t, useProps } from "@weth/owl";
 import { browser } from "@web/core/browser/browser";
 import { _t } from "@web/core/l10n/translation";
 
@@ -6,7 +6,7 @@ import { Dropdown } from "@web/core/dropdown/dropdown";
 import { DropdownItem } from "@web/core/dropdown/dropdown_item";
 import { CopyButton } from "@web/core/copy_button/copy_button";
 import { waitForDataLoaded, freezeOdooData } from "@spreadsheet/helpers/model";
-import { Model } from "@odoo/o-spreadsheet";
+import { Model } from "@weth/o-spreadsheet";
 
 /**
  * Share button to share a spreadsheet

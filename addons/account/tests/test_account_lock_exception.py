@@ -2,13 +2,13 @@ from contextlib import closing
 
 from datetime import datetime, timedelta
 
-from odoo import Command, fields
-from odoo.addons.account.models.company import SOFT_LOCK_DATE_FIELDS
-from odoo.addons.account.tests.common import AccountTestInvoicingCommon
-from odoo.addons.mail.tests.common import MailCase
-from odoo.exceptions import UserError
-from odoo.tests import new_test_user, tagged
-from odoo.tools.misc import format_datetime
+from weth import Command, fields
+from weth.addons.account.models.company import SOFT_LOCK_DATE_FIELDS
+from weth.addons.account.tests.common import AccountTestInvoicingCommon
+from weth.addons.mail.tests.common import MailCase
+from weth.exceptions import UserError
+from weth.tests import new_test_user, tagged
+from weth.tools.misc import format_datetime
 
 
 @tagged('post_install', '-at_install')

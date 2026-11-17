@@ -15,7 +15,7 @@ import {
     test,
     waitFor,
     waitUntil,
-} from "@odoo/hoot";
+} from "@weth/hoot";
 import { contains } from "@web/../tests/web_test_helpers";
 import { setupEditor } from "./_helpers/editor";
 import { getContent, setSelection } from "./_helpers/selection";

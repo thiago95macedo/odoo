@@ -5,7 +5,7 @@ from xml.etree import ElementTree as ET
 
 from PIL import Image
 
-from odoo.tests import TransactionCase
+from weth.tests import TransactionCase
 
 
 def make_png_bytes(width=100, height=200) -> bytes:
@@ -36,7 +36,7 @@ class TestGetPrintJobs(TransactionCase):
         an 'epos' job, without needing any dedicated ePOS template."""
         self._link_printer('epos')
         with patch(
-            'odoo.addons.base_report_wkhtmltox.models.ir_actions_report.IrActionsReport._run_image_engine',
+            'weth.addons.base_report_wkhtmltox.models.ir_actions_report.IrActionsReport._run_image_engine',
             return_value=[make_png_bytes()],
         ) as run_image_engine:
             jobs = self.report.get_print_jobs(self.report.report_name, self.doc.ids, {})
@@ -56,7 +56,7 @@ class TestGetPrintJobs(TransactionCase):
     def test_no_job_when_image_rendering_fails(self):
         self._link_printer('epos')
         with patch(
-            'odoo.addons.base_report_wkhtmltox.models.ir_actions_report.IrActionsReport._run_image_engine',
+            'weth.addons.base_report_wkhtmltox.models.ir_actions_report.IrActionsReport._run_image_engine',
             return_value=[None],
         ):
             jobs = self.report.get_print_jobs(self.report.report_name, self.doc.ids, {})
@@ -68,7 +68,7 @@ class TestGetPrintJobs(TransactionCase):
         self.report.report_type = 'qweb-text'
         self._link_printer('epos')
         with patch(
-            'odoo.addons.base_report_wkhtmltox.models.ir_actions_report.IrActionsReport._run_image_engine',
+            'weth.addons.base_report_wkhtmltox.models.ir_actions_report.IrActionsReport._run_image_engine',
         ) as run_image_engine:
             self.report.get_print_jobs(self.report.report_name, self.doc.ids, {})
         run_image_engine.assert_not_called()
@@ -81,7 +81,7 @@ class TestGetPrintJobs(TransactionCase):
         self._link_printer('epos')
         base_url = self.report._get_report_url()
         with patch(
-            'odoo.addons.base_report_wkhtmltox.models.ir_actions_report.IrActionsReport._run_image_engine',
+            'weth.addons.base_report_wkhtmltox.models.ir_actions_report.IrActionsReport._run_image_engine',
         ) as run_image_engine:
             run_image_engine.return_value = [make_png_bytes()]
             self.report.get_print_jobs(self.report.report_name, self.doc.ids, {})

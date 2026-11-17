@@ -6,12 +6,12 @@ from collections import defaultdict
 from datetime import datetime, time, timedelta, UTC
 from zoneinfo import ZoneInfo
 
-from odoo import api, fields, models, _, SUPERUSER_ID
-from odoo.exceptions import UserError
-from odoo.fields import Domain
-from odoo.tools import float_is_zero
-from odoo.tools.date_utils import localized
-from odoo.tools.intervals import Intervals
+from weth import api, fields, models, _, SUPERUSER_ID
+from weth.exceptions import UserError
+from weth.fields import Domain
+from weth.tools import float_is_zero
+from weth.tools.date_utils import localized
+from weth.tools.intervals import Intervals
 
 
 class HrVersion(models.Model):
@@ -136,7 +136,7 @@ class HrVersion(models.Model):
         Default: leaves of the versions' calendars or without calendar. ``hr_holidays`` also
         accepts the leaves linked to time off of the versions' employees, whatever the calendar.
 
-        :rtype: odoo.fields.Domain
+        :rtype: weth.fields.Domain
         """
         return Domain('calendar_id', 'in', [False] + self.resource_calendar_id.ids)
 
@@ -148,7 +148,7 @@ class HrVersion(models.Model):
 
         :param datetime start_dt: period start, UTC (tzinfo is dropped)
         :param datetime end_dt: period end, UTC (tzinfo is dropped)
-        :rtype: odoo.fields.Domain
+        :rtype: weth.fields.Domain
         """
         domain = Domain([
             ('resource_id', 'in', [False] + self.employee_id.resource_id.ids),

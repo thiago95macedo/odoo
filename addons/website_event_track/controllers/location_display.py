@@ -3,8 +3,8 @@ from zoneinfo import ZoneInfo
 
 from werkzeug.exceptions import NotFound
 
-from odoo import fields, http, tools
-from odoo.http import request
+from weth import fields, http, tools
+from weth.http import request
 
 
 class EventTrackLocationDisplayController(http.Controller):

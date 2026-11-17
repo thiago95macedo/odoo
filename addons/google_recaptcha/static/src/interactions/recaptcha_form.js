@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @weth-module **/
 
 import { Interaction } from "@web/public/interaction";
 import { registry } from "@web/core/registry";

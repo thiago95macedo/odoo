@@ -1,4 +1,4 @@
-import { test, expect, describe, animationFrame } from "@odoo/hoot";
+import { test, expect, describe, animationFrame } from "@weth/hoot";
 import {
     setupPosEnv,
     getFilledOrder,
@@ -6,7 +6,7 @@ import {
     activateMountingDialogs,
 } from "@point_of_sale/../tests/unit/utils";
 import { definePosModels } from "@point_of_sale/../tests/unit/data/generate_model_definitions";
-import { click } from "@odoo/hoot-dom";
+import { click } from "@weth/hoot-dom";
 
 definePosModels();
 

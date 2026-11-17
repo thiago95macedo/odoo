@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<odoo>
+<weth>
     <template id="mrp_subcontracting.report_mrp_bom" inherit_id="mrp.report_mrp_bom">
         <xpath expr="//thead" position="before">
             <t t-set="show_subcontract_column" t-value="data['forecast_mode'] and data['is_subcontract']"/>
@@ -39,4 +39,4 @@
             </td>
         </xpath>
     </template>
-</odoo>
+</weth>

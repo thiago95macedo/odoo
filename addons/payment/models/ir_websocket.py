@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import models
+from weth import models
 
-from odoo.addons.payment import utils as payment_utils
+from weth.addons.payment import utils as payment_utils
 
 
 class IrWebsocket(models.AbstractModel):

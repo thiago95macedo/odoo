@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<odoo>
+<weth>
     <data>
         <record id="welcome_bot_operator_partner_demo" model="res.partner">
             <field name="name">WETH</field>
@@ -89,4 +89,4 @@
             <field name="triggering_answer_ids" eval="[(4, ref('chatbot_script_welcome_step_dispatch_answer_just_looking_demo'))]"/>
         </record>
     </data>
-</odoo>
+</weth>

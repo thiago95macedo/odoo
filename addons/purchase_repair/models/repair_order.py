@@ -1,5 +1,5 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
-from odoo import api, models, fields, _
+from weth import api, models, fields, _
 
 
 class RepairOrder(models.Model):

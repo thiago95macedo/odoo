@@ -1,6 +1,6 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import http
+from weth import http
 
 
 class PaymentDemoController(http.Controller):

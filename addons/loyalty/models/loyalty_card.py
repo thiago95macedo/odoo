@@ -2,10 +2,10 @@
 
 from uuid import uuid4
 
-from odoo import api, fields, models
-from odoo.exceptions import ValidationError
-from odoo.fields import Domain
-from odoo.tools import float_compare, float_is_zero, format_amount
+from weth import api, fields, models
+from weth.exceptions import ValidationError
+from weth.fields import Domain
+from weth.tools import float_compare, float_is_zero, format_amount
 
 
 class LoyaltyCard(models.Model):

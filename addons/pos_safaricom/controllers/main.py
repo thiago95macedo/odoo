@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
-from odoo import http
-from odoo.http import request
-from odoo.tools import verify_hash_signed
+from weth import http
+from weth.http import request
+from weth.tools import verify_hash_signed
 
 
 class SafaricomController(http.Controller):

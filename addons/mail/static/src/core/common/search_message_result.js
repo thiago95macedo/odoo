@@ -1,4 +1,4 @@
-import { Component, t, useProps } from "@odoo/owl";
+import { Component, t, useProps } from "@weth/owl";
 import { MessageCardList } from "./message_card_list";
 import { MessageSearchState } from "@mail/core/common/message_search_hook";
 import { _t } from "@web/core/l10n/translation";

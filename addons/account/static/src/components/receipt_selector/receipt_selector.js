@@ -1,7 +1,7 @@
 import { _t } from "@web/core/l10n/translation";
 import { registry } from "@web/core/registry";
 import { radioField, RadioField, radioFieldProps } from "@web/views/fields/radio/radio_field";
-import { onWillStart, useProps, proxy } from "@odoo/owl";
+import { onWillStart, useProps, proxy } from "@weth/owl";
 import { useService } from "@web/core/utils/hooks";
 import { deepCopy } from "@web/core/utils/objects";
 
@@ -27,7 +27,7 @@ export class ReceiptSelector extends RadioField {
         super.setup();
         this.lazySession = useService("lazy_session");
         this.show_sale_receipts = proxy({ value: false });
-        onWillStart(()=> {
+        onWillStart(() => {
             this.lazySession.getValue("show_sale_receipts", (show_sale_receipts) => {
                 this.show_sale_receipts.value = show_sale_receipts;
             })
@@ -40,7 +40,7 @@ export class ReceiptSelector extends RadioField {
      */
     get items() {
         const original_items = super.items;
-        if ( this.type !== 'selection' ) {
+        if (this.type !== 'selection') {
             return original_items;
         }
 
@@ -48,13 +48,13 @@ export class ReceiptSelector extends RadioField {
         let items = deepCopy(original_items)
 
         let allowedValues = [];
-        if ( in_move_types.includes(this.value) ) {
+        if (in_move_types.includes(this.value)) {
             allowedValues = in_move_types
-        } else if (out_move_types.includes(this.value) && this.show_sale_receipts.value ) {
+        } else if (out_move_types.includes(this.value) && this.show_sale_receipts.value) {
             allowedValues = out_move_types
         }
 
-        if ( allowedValues.length > 1 ) {
+        if (allowedValues.length > 1) {
             // Filter only the wanted items
             items = items.filter((item) => {
                 return (allowedValues.includes(item[0]));
@@ -71,7 +71,7 @@ export class ReceiptSelector extends RadioField {
     }
 
     get string() {
-        if ( this.type === 'selection' ) {
+        if (this.type === 'selection') {
             // Use the original labels and not the modified ones
             return this.value !== false
                 ? this.props.record.fields[this.props.name].selection.find((i) => i[0] === this.value)[1]

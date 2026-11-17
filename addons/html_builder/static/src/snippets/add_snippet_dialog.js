@@ -1,5 +1,5 @@
 import { onWillRender } from "@web/owl2/utils";
-import { Component, onMounted, onWillUnmount, useProps, proxy, signal, t, useApp } from "@odoo/owl";
+import { Component, onMounted, onWillUnmount, useProps, proxy, signal, t, useApp } from "@weth/owl";
 import { loadBundle, loadCSS } from "@web/core/assets";
 import { isBrowserFirefox } from "@web/core/browser/feature_detection";
 import { Dialog } from "@web/core/dialog/dialog";
@@ -110,7 +110,7 @@ export class AddSnippetDialog extends Component {
     /**
      * Allow to insert content inside the Iframe's head
      */
-    renderIframeHead() {}
+    renderIframeHead() { }
 
     /**
      * Loads and injects the required styles into the iframe's <head>.

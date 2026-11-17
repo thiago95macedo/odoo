@@ -9,11 +9,11 @@ from zoneinfo import ZoneInfo
 import werkzeug.urls
 from markupsafe import Markup
 
-from odoo import api, fields, models, tools
-from odoo.exceptions import UserError
-from odoo.fields import Domain
-from odoo.tools.mail import email_normalize, html_to_inner_content, is_html_empty
-from odoo.tools.translate import _, html_translate
+from weth import api, fields, models, tools
+from weth.exceptions import UserError
+from weth.fields import Domain
+from weth.tools.mail import email_normalize, html_to_inner_content, is_html_empty
+from weth.tools.translate import _, html_translate
 
 _logger = logging.getLogger(__name__)
 

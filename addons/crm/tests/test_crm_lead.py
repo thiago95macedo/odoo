@@ -3,15 +3,15 @@
 from datetime import datetime
 from freezegun import freeze_time
 
-from odoo import fields
-from odoo.fields import Domain
-from odoo.addons.base.tests.test_res_partner_addresses import FormatAddressCase
-from odoo.addons.crm.models.crm_lead import PARTNER_FIELDS_TO_SYNC, PARTNER_ADDRESS_FIELDS_TO_SYNC
-from odoo.addons.crm.tests.common import TestCrmCommon, INCOMING_EMAIL
-from odoo.addons.phone_validation.tools.phone_validation import phone_format
-from odoo.exceptions import UserError
-from odoo.tests import Form, tagged, users
-from odoo.tools import mute_logger
+from weth import fields
+from weth.fields import Domain
+from weth.addons.base.tests.test_res_partner_addresses import FormatAddressCase
+from weth.addons.crm.models.crm_lead import PARTNER_FIELDS_TO_SYNC, PARTNER_ADDRESS_FIELDS_TO_SYNC
+from weth.addons.crm.tests.common import TestCrmCommon, INCOMING_EMAIL
+from weth.addons.phone_validation.tools.phone_validation import phone_format
+from weth.exceptions import UserError
+from weth.tests import Form, tagged, users
+from weth.tools import mute_logger
 
 
 @tagged('lead_internals')
@@ -855,7 +855,7 @@ class TestCRMLead(TestCrmCommon):
                     self.assertNotIn(f"<a href='mailto:{team.alias_email}'>{team.alias_email}</a>", self.env['crm.lead'].sudo().get_empty_list_help(""))
                 team.active = False
 
-    @mute_logger('odoo.addons.mail.models.mail_thread')
+    @mute_logger('weth.addons.mail.models.mail_thread')
     def test_mailgateway(self):
         new_lead = self.format_and_process(
             INCOMING_EMAIL,

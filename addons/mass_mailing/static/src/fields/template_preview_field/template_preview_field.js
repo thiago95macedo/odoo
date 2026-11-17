@@ -7,7 +7,7 @@ import {
     usePlugin,
     useProps,
     useScope,
-} from "@odoo/owl";
+} from "@weth/owl";
 import { localization } from "@web/core/l10n/localization";
 import { renderToFragment } from "@web/core/utils/render";
 import { StyleSheetPlugin } from "../../views/mailing_template_kanban_view/stylesheets_plugin";

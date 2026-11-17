@@ -1,4 +1,4 @@
-/** @odoo-module */
+/** @weth-module */
 
 import { delay } from "@web/core/utils/concurrency";
 import {

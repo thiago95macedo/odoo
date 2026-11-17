@@ -1,4 +1,4 @@
-import { Component, onWillStart, signal, t, useProps } from "@odoo/owl";
+import { Component, onWillStart, signal, t, useProps } from "@weth/owl";
 import { _t } from "@web/core/l10n/translation";
 import { localeCompare } from "@web/core/l10n/utils";
 import { useService } from "@web/core/utils/hooks";

@@ -1,6 +1,6 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.website_sale.tests.common import WebsiteSaleCommon
+from weth.addons.website_sale.tests.common import WebsiteSaleCommon
 
 
 class WebsiteSaleStockCommon(WebsiteSaleCommon):

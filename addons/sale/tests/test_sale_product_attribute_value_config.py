@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.tests import tagged
+from weth.tests import tagged
 
-from odoo.addons.product.tests.test_product_attribute_value_config import (
+from weth.addons.product.tests.test_product_attribute_value_config import (
     TestProductAttributeValueCommon,
 )
 

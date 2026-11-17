@@ -1,4 +1,4 @@
-import { proxy } from "@odoo/owl";
+import { proxy } from "@weth/owl";
 import { Logger } from "@bus/workers/bus_worker_utils";
 import { _t } from "@web/core/l10n/translation";
 

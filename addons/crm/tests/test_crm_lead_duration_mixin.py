@@ -1,5 +1,5 @@
-from odoo.addons.mail.tests.common_tracking import MailTrackingDurationMixinCase
-from odoo.tests import tagged
+from weth.addons.mail.tests.common_tracking import MailTrackingDurationMixinCase
+from weth.tests import tagged
 
 
 @tagged('mail_track', 'mail_duration_mixin')

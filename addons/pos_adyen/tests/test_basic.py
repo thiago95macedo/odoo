@@ -2,11 +2,11 @@ import re
 from requests import Response
 from unittest.mock import patch
 
-from odoo import Command
-from odoo.exceptions import ValidationError
-from odoo.tools import hmac
-from odoo.tests.common import tagged
-from odoo.addons.point_of_sale.tests.test_frontend import TestPointOfSaleHttpCommon
+from weth import Command
+from weth.exceptions import ValidationError
+from weth.tools import hmac
+from weth.tests.common import tagged
+from weth.addons.point_of_sale.tests.test_frontend import TestPointOfSaleHttpCommon
 
 
 @tagged('post_install', '-at_install')
@@ -74,13 +74,13 @@ class TestAdyenPoS(TestPointOfSaleHttpCommon):
     def test_adyen_basic_order(self):
         self.main_pos_config.with_user(self.pos_user).open_ui()
 
-        with patch('odoo.addons.pos_adyen.models.pos_payment_method.requests.post', self.mock_adyen_post), \
-             patch('odoo.addons.pos_adyen.controllers.main.consteq', lambda a, b: a == "dummy_hmac"):
+        with patch('weth.addons.pos_adyen.models.pos_payment_method.requests.post', self.mock_adyen_post), \
+             patch('weth.addons.pos_adyen.controllers.main.consteq', lambda a, b: a == "dummy_hmac"):
             self.start_pos_tour('PosAdyenPaymentTour')
 
     def test_adyen_refund_order(self):
         self.main_pos_config.with_user(self.pos_user).open_ui()
 
-        with patch('odoo.addons.pos_adyen.models.pos_payment_method.requests.post', self.mock_adyen_post), \
-             patch('odoo.addons.pos_adyen.controllers.main.consteq', lambda a, b: a == "dummy_hmac"):
+        with patch('weth.addons.pos_adyen.models.pos_payment_method.requests.post', self.mock_adyen_post), \
+             patch('weth.addons.pos_adyen.controllers.main.consteq', lambda a, b: a == "dummy_hmac"):
             self.start_pos_tour('PosAdyenRefundTour')

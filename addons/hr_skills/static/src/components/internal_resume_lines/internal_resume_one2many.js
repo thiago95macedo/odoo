@@ -1,4 +1,4 @@
-import { Component, asyncComputed, useProps } from "@odoo/owl";
+import { Component, asyncComputed, useProps } from "@weth/owl";
 import { standardWidgetProps } from "@web/views/widgets/standard_widget_props";
 import { registry } from "@web/core/registry";
 import { useService } from "@web/core/utils/hooks";
@@ -8,7 +8,7 @@ export class InternalResumeLineComponent extends Component {
     static template = "hr_skills.InternalResumeLineComponent";
     props = useProps(standardWidgetProps);
 
-    setup(){
+    setup() {
         super.setup();
         this.orm = useService("orm");
         this.internalResumeLines = asyncComputed(
@@ -23,7 +23,7 @@ export class InternalResumeLineComponent extends Component {
         );
     }
 
-    async getInternalResumeLines(resId, resModel){
+    async getInternalResumeLines(resId, resModel) {
         const internalResumeLines = await this.orm.call(
             "hr.employee",
             "get_internal_resume_lines",
@@ -32,11 +32,11 @@ export class InternalResumeLineComponent extends Component {
         return internalResumeLines;
     }
 
-    get companyId(){
+    get companyId() {
         return this.props.record.data.company_id.display_name;
     }
 
-    get haveResumeLines(){
+    get haveResumeLines() {
         return this.props.record.data.resume_line_ids.records.length || this.internalResumeLines().length;
     }
 
@@ -50,7 +50,7 @@ export const internalResumeLinesComponent = {
     component: InternalResumeLineComponent,
     fieldDependencies: [
         { name: "company_id", type: "many2one" },
-        { name: "resume_line_ids", type: "one2many"}
+        { name: "resume_line_ids", type: "one2many" }
     ],
 };
 

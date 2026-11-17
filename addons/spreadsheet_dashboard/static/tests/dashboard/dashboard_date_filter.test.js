@@ -1,8 +1,8 @@
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@weth/hoot";
 import { contains, mountWithCleanup } from "@web/../tests/web_test_helpers";
 import { defineSpreadsheetModels } from "@spreadsheet/../tests/helpers/data";
 import { DashboardDateFilter } from "@spreadsheet_dashboard/bundle/dashboard_action/dashboard_date_filter/dashboard_date_filter";
-import { Model } from "@odoo/o-spreadsheet";
+import { Model } from "@weth/o-spreadsheet";
 
 describe.current.tags("desktop");
 defineSpreadsheetModels();
@@ -19,7 +19,7 @@ async function mountDashboardFilterValue(props) {
 test("Can display the input as a button", async function () {
     await mountDashboardFilterValue({
         value: { type: "range", from: "2023-01-01", to: "2023-01-31" },
-        update: () => {},
+        update: () => { },
     });
     expect("button").toHaveCount(3);
     expect(".o-date-filter-value").toHaveText(/January 1\s–\s31, 2023/);

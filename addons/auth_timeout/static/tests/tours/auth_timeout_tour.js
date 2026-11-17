@@ -67,7 +67,7 @@ const assertNoRPC = {
     trigger: "body",
     run: async function () {
         await retryUntil(
-            (result) => result?.error?.data?.name === "odoo.http.session.CheckIdentityException",
+            (result) => result?.error?.data?.name === "weth.http.session.CheckIdentityException",
             "RPC was allowed unexpectedly",
         );
     },
@@ -81,7 +81,7 @@ registry.category("web_tour.tours").add("auth_timeout_tour_lock_timeout_inactivi
                 const oldRpc = rpc._rpc;
                 rpc._rpc = function (...args) {
                     return oldRpc(...args).catch((err) => {
-                        if (err.data?.name === "odoo.http.session.CheckIdentityException") {
+                        if (err.data?.name === "weth.http.session.CheckIdentityException") {
                             return new Promise(() => {});
                         } else {
                             throw err;

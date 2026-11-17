@@ -1,4 +1,4 @@
-import { after, mockWorker } from "@odoo/hoot";
+import { after, mockWorker } from "@weth/hoot";
 import { MockServer, patchWithCleanup } from "@web/../tests/web_test_helpers";
 
 import { WebsocketWorker } from "@bus/workers/websocket_worker";

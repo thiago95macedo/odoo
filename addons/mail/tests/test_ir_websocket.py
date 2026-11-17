@@ -8,10 +8,10 @@ try:
 except ImportError:
     ws = None
 
-from odoo.tests import new_test_user
+from weth.tests import new_test_user
 
-from odoo.addons.bus.tests.common import WebsocketCase
-from odoo.addons.mail.models.mail_presence import AWAY_TIMER
+from weth.addons.bus.tests.common import WebsocketCase
+from weth.addons.mail.models.mail_presence import AWAY_TIMER
 
 
 class TestIrWebsocket(WebsocketCase):

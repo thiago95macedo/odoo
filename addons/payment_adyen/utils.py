@@ -1,6 +1,6 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.payment import utils as payment_utils
+from weth.addons.payment import utils as payment_utils
 
 
 def format_partner_name(partner_name):

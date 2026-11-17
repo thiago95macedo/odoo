@@ -5,12 +5,12 @@ from zoneinfo import ZoneInfo
 from freezegun import freeze_time
 from psycopg2.errors import IntegrityError
 
-from odoo import Command, fields
-from odoo.exceptions import UserError
-from odoo.tests import Form, tagged
-from odoo.tools import mute_logger
+from weth import Command, fields
+from weth.exceptions import UserError
+from weth.tests import Form, tagged
+from weth.tools import mute_logger
 
-from odoo.addons.account.tests.common import AccountTestInvoicingCommon
+from weth.addons.account.tests.common import AccountTestInvoicingCommon
 
 
 @tagged('-at_install', 'post_install')
@@ -1338,7 +1338,7 @@ class TestPurchase(AccountTestInvoicingCommon):
                 })],
         })
 
-        with (self.assertRaises(IntegrityError), self.cr.savepoint(), mute_logger("odoo.sql_db")):
+        with (self.assertRaises(IntegrityError), self.cr.savepoint(), mute_logger("weth.sql_db")):
             uom_test.unlink()
 
         self.assertEqual(po.order_line[0].uom_id, uom_test)

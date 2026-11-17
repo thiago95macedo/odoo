@@ -18,7 +18,7 @@ import {
     triggerHotkey,
 } from "@mail/../tests/mail_test_helpers";
 import { Attachment } from "@mail/core/common/attachment_model";
-import { describe, expect, mockFetch, test } from "@odoo/hoot";
+import { describe, expect, mockFetch, test } from "@weth/hoot";
 import { Command, patchWithCleanup, serverState, withUser } from "@web/../tests/web_test_helpers";
 import { location } from "@web/core/browser/browser";
 import { deserializeDateTime } from "@web/core/l10n/dates";
@@ -141,17 +141,13 @@ test("avatar url contains access token for non-internal users", async () => {
     await start({ authenticateAs: false, waitUntilSubscribe: false });
     await click(".o-livechat-LivechatButton");
     await contains(
-        `.o-mail-ChatWindow-threadAvatar img[data-src="${getOrigin()}/web/image/res.partner/${
-            partner.id
-        }/avatar_128?access_token=${partner.id}&unique=${
-            deserializeDateTime(partner.write_date).ts
+        `.o-mail-ChatWindow-threadAvatar img[data-src="${getOrigin()}/web/image/res.partner/${partner.id
+        }/avatar_128?access_token=${partner.id}&unique=${deserializeDateTime(partner.write_date).ts
         }"]`
     );
     await contains(
-        `.o-mail-Message-avatar[data-src="${getOrigin()}/web/image/res.partner/${
-            partner.id
-        }/avatar_128?access_token=${partner.id}&unique=${
-            deserializeDateTime(partner.write_date).ts
+        `.o-mail-Message-avatar[data-src="${getOrigin()}/web/image/res.partner/${partner.id
+        }/avatar_128?access_token=${partner.id}&unique=${deserializeDateTime(partner.write_date).ts
         }"]`
     );
     const subscribed = waitUntilSubscribe();
@@ -160,15 +156,12 @@ test("avatar url contains access token for non-internal users", async () => {
     const guestId = pyEnv.cookie.get("dgid");
     const [guest] = pyEnv["mail.guest"].read(guestId);
     await contains(
-        `.o-mail-Message-avatar[data-src="${getOrigin()}/web/image/mail.guest/${
-            guest.id
+        `.o-mail-Message-avatar[data-src="${getOrigin()}/web/image/mail.guest/${guest.id
         }/avatar_128?access_token=${guest.id}&unique=${deserializeDateTime(guest.write_date).ts}"]`
     );
     await contains(
-        `.o-mail-ChatWindow-threadAvatar img[data-src="${getOrigin()}/web/image/res.partner/${
-            partner.id
-        }/avatar_128?access_token=${partner.id}&unique=${
-            deserializeDateTime(partner.write_date).ts
+        `.o-mail-ChatWindow-threadAvatar img[data-src="${getOrigin()}/web/image/res.partner/${partner.id
+        }/avatar_128?access_token=${partner.id}&unique=${deserializeDateTime(partner.write_date).ts
         }"]`
     );
 });
@@ -384,8 +377,7 @@ test("Agent sees the visitor avatar on the chat bubble of a live chat", async ()
     await start();
     const [guest] = pyEnv["mail.guest"].read(guestId);
     await contains(
-        `.o-mail-ChatBubble img[data-src='${getOrigin()}/web/image/mail.guest/${guestId}/avatar_128?unique=${
-            deserializeDateTime(guest.write_date).ts
+        `.o-mail-ChatBubble img[data-src='${getOrigin()}/web/image/mail.guest/${guestId}/avatar_128?unique=${deserializeDateTime(guest.write_date).ts
         }']`
     );
     await contains(".o-mail-ChatBubble[name='Visitor 11']");
@@ -411,8 +403,7 @@ test("Agent sees their own avatar on the chat bubble of their own live chat", as
     await start();
     const [partner] = pyEnv["res.partner"].read(serverState.partnerId);
     await contains(
-        `.o-mail-ChatBubble img[data-src='${getOrigin()}/web/image/res.partner/${
-            serverState.partnerId
+        `.o-mail-ChatBubble img[data-src='${getOrigin()}/web/image/res.partner/${serverState.partnerId
         }/avatar_128?unique=${deserializeDateTime(partner.write_date).ts}']`
     );
 });

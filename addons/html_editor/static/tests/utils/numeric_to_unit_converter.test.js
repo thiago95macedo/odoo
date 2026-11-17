@@ -1,5 +1,5 @@
 import { convertNumericToUnit, getHtmlStyle } from "@html_editor/utils/formatting";
-import { expect, test } from "@odoo/hoot";
+import { expect, test } from "@weth/hoot";
 
 test("Convert with maximum float precision", () => {
     // The conversion might give a result off by exactly `Number.EPSILON`.

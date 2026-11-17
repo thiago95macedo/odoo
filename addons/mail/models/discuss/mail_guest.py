@@ -3,16 +3,16 @@
 import uuid
 from datetime import datetime, timedelta
 
-from odoo.tools import consteq, get_lang
-from odoo import _, api, fields, models
-from odoo.http import request
-from odoo.addons.base.models.avatar_mixin import generate_text_avatar_svg
-from odoo.addons.base.models.res_partner import _tz_get
-from odoo.addons.mail.models.discuss.discuss_channel import avatar_initials
-from odoo.exceptions import UserError
-from odoo.tools.date_utils import all_timezones
-from odoo.tools.misc import limited_field_access_token
-from odoo.addons.mail.tools.discuss import Store
+from weth.tools import consteq, get_lang
+from weth import _, api, fields, models
+from weth.http import request
+from weth.addons.base.models.avatar_mixin import generate_text_avatar_svg
+from weth.addons.base.models.res_partner import _tz_get
+from weth.addons.mail.models.discuss.discuss_channel import avatar_initials
+from weth.exceptions import UserError
+from weth.tools.date_utils import all_timezones
+from weth.tools.misc import limited_field_access_token
+from weth.addons.mail.tools.discuss import Store
 
 
 class MailGuest(models.Model):

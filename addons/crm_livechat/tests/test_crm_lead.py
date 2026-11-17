@@ -2,10 +2,10 @@
 
 from markupsafe import Markup
 
-from odoo import Command
-from odoo.addons.crm.tests.common import TestCrmCommon
-from odoo.addons.mail.tests.common import mail_new_test_user
-from odoo.tests.common import HttpCase, users
+from weth import Command
+from weth.addons.crm.tests.common import TestCrmCommon
+from weth.addons.mail.tests.common import mail_new_test_user
+from weth.tests.common import HttpCase, users
 
 
 class TestLivechatLead(HttpCase, TestCrmCommon):

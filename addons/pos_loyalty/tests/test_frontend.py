@@ -4,12 +4,12 @@ from datetime import date, timedelta
 from unittest.mock import patch
 from freezegun import freeze_time
 
-from odoo import Command
-from odoo.tests import tagged
+from weth import Command
+from weth.tests import tagged
 
-from odoo.addons.point_of_sale.tests.test_frontend import TestPointOfSaleHttpCommon
-from odoo.addons.point_of_sale.tests.common_setup_methods import setup_product_combo_items
-from odoo.addons.point_of_sale.tests.common import archive_products
+from weth.addons.point_of_sale.tests.test_frontend import TestPointOfSaleHttpCommon
+from weth.addons.point_of_sale.tests.common_setup_methods import setup_product_combo_items
+from weth.addons.point_of_sale.tests.common import archive_products
 
 
 @tagged("post_install", "-at_install")

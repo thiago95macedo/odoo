@@ -2,12 +2,12 @@
 
 import json
 
-from odoo import api, fields, models
-from odoo.exceptions import ValidationError
-from odoo.tools.urls import urljoin
+from weth import api, fields, models
+from weth.exceptions import ValidationError
+from weth.tools.urls import urljoin
 
-from odoo.addons.payment.logging import get_payment_logger
-from odoo.addons.payment_toss_payments import const
+from weth.addons.payment.logging import get_payment_logger
+from weth.addons.payment_toss_payments import const
 
 _logger = get_payment_logger(__name__, const.SENSITIVE_KEYS)
 

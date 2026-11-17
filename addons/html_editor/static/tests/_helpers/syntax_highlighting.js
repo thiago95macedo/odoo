@@ -2,8 +2,8 @@ import { patchWithCleanup } from "@web/../tests/web_test_helpers";
 import { unformat } from "./format";
 import { EmbeddedSyntaxHighlightingComponent } from "@html_editor/others/embedded_components/backend/syntax_highlighting/syntax_highlighting";
 import { LANGUAGES } from "@html_editor/others/embedded_components/backend/syntax_highlighting/code_toolbar";
-import { expect } from "@odoo/hoot";
-import { animationFrame } from "@odoo/hoot-dom";
+import { expect } from "@weth/hoot";
+import { animationFrame } from "@weth/hoot-dom";
 import { toExplicitString } from "@web/../lib/hoot/hoot_utils";
 import { DEFAULT_LANGUAGE_ID } from "@html_editor/others/embedded_components/core/syntax_highlighting/syntax_highlighting_utils";
 
@@ -38,8 +38,7 @@ import { DEFAULT_LANGUAGE_ID } from "@html_editor/others/embedded_components/cor
  * @returns {string}
  */
 const highlight = (html, languageId = DEFAULT_LANGUAGE_ID, ejectBr = false) =>
-    `<span id="${languageId}">${ejectBr ? html.replace(/((<br>)*)$/, "") : html}</span>${
-        ejectBr ? html.match(/(?:<br>)+$/)?.[0] || "" : ""
+    `<span id="${languageId}">${ejectBr ? html.replace(/((<br>)*)$/, "") : html}</span>${ejectBr ? html.match(/(?:<br>)+$/)?.[0] || "" : ""
     }`;
 
 /**
@@ -139,8 +138,7 @@ export const compareHighlightedContent = async (content, expected, phase, editor
         .replaceAll(
             /(?:"codeWrap":([^,}]+),)?"languageId":"([^"]*)","value":"(([^"]|\n)*)"/g,
             (_, codeWrap, languageId, value) =>
-                `"value":"${value}","languageId":"${languageId}"${
-                    codeWrap ? `,"codeWrap":${codeWrap}` : ""
+                `"value":"${value}","languageId":"${languageId}"${codeWrap ? `,"codeWrap":${codeWrap}` : ""
                 }`
         )
         // Clean up
@@ -197,9 +195,9 @@ export const highlightedPre = ({
         `<div data-embedded="syntaxHighlighting" data-oe-protected="true" contenteditable="false"
             class="o_syntax_highlighting${codeWrap ? " o-code-wrap" : ""}"
             data-saved='{"value":"${value.replaceAll(
-                "\n",
-                "\\n"
-            )}","languageId":"${language.toLowerCase()}"${codeWrap ? `,"codeWrap":true` : ""}}'>
+            "\n",
+            "\\n"
+        )}","languageId":"${language.toLowerCase()}"${codeWrap ? `,"codeWrap":true` : ""}}'>
             ${TOOLBAR(LANGUAGES[language])}
             <pre>//PRE//</pre>${textareaRange === null ? "" : "[]"}
             <textarea //TEXTAREA// class="o_prism_source" contenteditable="true" placeholder="Code"></textarea>

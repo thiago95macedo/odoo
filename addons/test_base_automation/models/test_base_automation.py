@@ -2,7 +2,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
 from dateutil import relativedelta
-from odoo import fields, models, api
+from weth import fields, models, api
 
 
 class BaseAutomationLeadTest(models.Model):

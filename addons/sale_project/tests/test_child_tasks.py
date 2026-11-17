@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details
 
-from odoo import Command
+from weth import Command
 
-from odoo.tests.common import tagged, TransactionCase, new_test_user
+from weth.tests.common import tagged, TransactionCase, new_test_user
 
 
 @tagged('at_install', '-post_install')  # LEGACY at_install

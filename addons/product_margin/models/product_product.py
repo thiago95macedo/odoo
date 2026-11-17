@@ -4,8 +4,8 @@
 import itertools
 import time
 
-from odoo import api, fields, models
-from odoo.tools.sql import SQL
+from weth import api, fields, models
+from weth.tools.sql import SQL
 
 
 class ProductProduct(models.Model):

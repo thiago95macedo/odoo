@@ -3,9 +3,9 @@ import logging
 from contextlib import contextmanager
 from functools import wraps
 
-from odoo import api, fields, models
-from odoo.modules.registry import Registry
-from odoo.sql_db import BaseCursor
+from weth import api, fields, models
+from weth.modules.registry import Registry
+from weth.sql_db import BaseCursor
 
 _logger = logging.getLogger(__name__)
 

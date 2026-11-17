@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import tests
-from odoo.addons.website_slides.tests.test_ui_wslides import TestUiMemberInvited
+from weth import tests
+from weth.addons.website_slides.tests.test_ui_wslides import TestUiMemberInvited
 
 
 @tests.tagged("-at_install", "post_install")

@@ -1,7 +1,7 @@
 import { ActionList } from "@mail/core/common/action_list";
 import { ImStatus } from "@mail/core/common/im_status";
 
-import { Component, computed, signal, t, useListener, useProps } from "@odoo/owl";
+import { Component, computed, signal, t, useListener, useProps } from "@weth/owl";
 
 import { Dropdown } from "@web/core/dropdown/dropdown";
 import { DropdownItem } from "@web/core/dropdown/dropdown_item";
@@ -113,7 +113,7 @@ export class AvatarCard extends Component {
 }
 
 /**
- * @param {import("@odoo/owl").Signal<HTMLElement>} ref
+ * @param {import("@weth/owl").Signal<HTMLElement>} ref
  * @param {() => import("models").ResPartner | undefined} getPartner
  */
 export function usePartnerAvatarCardOnClick(ref, getPartner) {

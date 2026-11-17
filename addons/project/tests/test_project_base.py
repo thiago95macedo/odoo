@@ -1,9 +1,9 @@
 from lxml import etree
 
-from odoo import Command, fields
-from odoo.tests import tagged, Form, users
-from odoo.tests.common import TransactionCase
-from odoo.exceptions import UserError
+from weth import Command, fields
+from weth.tests import tagged, Form, users
+from weth.tests.common import TransactionCase
+from weth.exceptions import UserError
 
 
 class TestProjectCommon(TransactionCase):

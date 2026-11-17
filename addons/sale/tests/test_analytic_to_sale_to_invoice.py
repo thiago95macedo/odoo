@@ -1,7 +1,7 @@
-from odoo.exceptions import UserError
-from odoo.fields import Command
+from weth.exceptions import UserError
+from weth.fields import Command
 
-from odoo.addons.sale.tests.common import SaleCommon
+from weth.addons.sale.tests.common import SaleCommon
 
 
 class TestAnalyticToSaleToInvoice(SaleCommon):

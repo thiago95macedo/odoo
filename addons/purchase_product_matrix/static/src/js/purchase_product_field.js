@@ -2,7 +2,7 @@ import {
     accountProductField,
     AccountProductField,
 } from "@account/components/account_product_field/account_product_field";
-import { useEffect } from "@odoo/owl";
+import { useEffect } from "@weth/owl";
 import { useMatrixConfigurator } from "@product_matrix/js/matrix_configurator_hook";
 import { _t } from "@web/core/l10n/translation";
 import { registry } from "@web/core/registry";

@@ -1,7 +1,7 @@
-import { describe, expect, press, test } from "@odoo/hoot";
-import { click, queryAll, tick, waitFor, waitForNone } from "@odoo/hoot-dom";
+import { describe, expect, press, test } from "@weth/hoot";
+import { click, queryAll, tick, waitFor, waitForNone } from "@weth/hoot-dom";
 import { setupEditor, testEditor } from "./_helpers/editor";
-import { animationFrame } from "@odoo/hoot-mock";
+import { animationFrame } from "@weth/hoot-mock";
 import { getContent, setContent, setSelection } from "./_helpers/selection";
 import { insertText, splitBlock, undo } from "./_helpers/user_actions";
 import { contains, onRpc } from "@web/../tests/web_test_helpers";
@@ -292,8 +292,8 @@ describe("selection", () => {
         await tick();
         expect(getContent(el)).toBe(
             '<p data-selection-placeholder=""><br></p>' +
-                '<p contenteditable="false">abc[<span class="oi" data-icon="local_bar" contenteditable="false">\u200b</span>]def</p>' +
-                '<p data-selection-placeholder="" style="margin: -9px 0px 8px;"><br></p>'
+            '<p contenteditable="false">abc[<span class="oi" data-icon="local_bar" contenteditable="false">\u200b</span>]def</p>' +
+            '<p data-selection-placeholder="" style="margin: -9px 0px 8px;"><br></p>'
         );
     });
 });

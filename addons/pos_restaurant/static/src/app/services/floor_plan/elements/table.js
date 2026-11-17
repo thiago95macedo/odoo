@@ -1,7 +1,7 @@
 import { getColorInfo } from "@pos_restaurant/app/services/floor_plan/utils/colors";
 import { FloorElement } from "./floor_element";
 import { calculateBoundsFromTransform } from "@pos_restaurant/app/services/floor_plan/utils/bounds_calculator";
-import { markRaw } from "@odoo/owl";
+import { markRaw } from "@weth/owl";
 import { normDeg } from "../utils/utils";
 const TABLE_FREE_OPACITY = 0.3;
 

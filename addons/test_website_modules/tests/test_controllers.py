@@ -2,12 +2,12 @@
 
 from base64 import b64encode
 
-from odoo import Command, tests
-from odoo.tools import mute_logger
-from odoo.tools.json import scriptsafe as json_safe
+from weth import Command, tests
+from weth.tools import mute_logger
+from weth.tools.json import scriptsafe as json_safe
 
-from odoo.addons.base.tests.common import HttpCaseWithUserDemo, HttpCaseWithUserPortal
-from odoo.addons.base.tests.files import GIF_B64, GIF_RAW
+from weth.addons.base.tests.common import HttpCaseWithUserDemo, HttpCaseWithUserPortal
+from weth.addons.base.tests.files import GIF_B64, GIF_RAW
 
 
 @tests.tagged('-at_install', 'post_install')
@@ -65,7 +65,7 @@ class TestWebEditorController(HttpCaseWithUserDemo, HttpCaseWithUserPortal):
                 Command.link(self.env.ref('base.group_user').id),
             ],
         })
-        with mute_logger('odoo.http'):
+        with mute_logger('weth.http'):
             json = modify('demo', 'page-demofail.gif', True)
         self.assertFalse(json.get('result'), "Expect no URL when called with insufficient rights")
 
@@ -78,7 +78,7 @@ class TestWebEditorController(HttpCaseWithUserDemo, HttpCaseWithUserPortal):
                 Command.link(self.env.ref('event.group_event_manager').id),
             ],
         })
-        with mute_logger('odoo.http'):
+        with mute_logger('weth.http'):
             json = modify('demo', 'page-demofail2.gif', True)
         self.assertFalse(json.get('result'), "Expect no URL when called with insufficient rights")
 
@@ -111,7 +111,7 @@ class TestWebEditorController(HttpCaseWithUserDemo, HttpCaseWithUserPortal):
                 Command.link(self.env.ref('base.group_user').id),
             ],
         })
-        with mute_logger('odoo.http'):
+        with mute_logger('weth.http'):
             json = modify('demo', 'event-demofail.gif', True)
         self.assertFalse(json.get('result'), "Expect no URL when called with insufficient rights")
 
@@ -124,7 +124,7 @@ class TestWebEditorController(HttpCaseWithUserDemo, HttpCaseWithUserPortal):
                 Command.link(self.env.ref('sales_team.group_sale_manager').id),
             ],
         })
-        with mute_logger('odoo.http'):
+        with mute_logger('weth.http'):
             json = modify('demo', 'event-demofail2.gif', True)
         self.assertFalse(json.get('result'), "Expect no URL when called with insufficient rights")
 
@@ -147,6 +147,6 @@ class TestWebEditorController(HttpCaseWithUserDemo, HttpCaseWithUserPortal):
                 Command.link(self.env.ref('website.group_website_designer').id),
             ],
         })
-        with mute_logger('odoo.http'):
+        with mute_logger('weth.http'):
             json = modify('demo', 'event-demofail3.gif', True)
         self.assertFalse(json.get('result'), "Expect no URL when called with insufficient rights")

@@ -1,11 +1,11 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, fields, models
-from odoo.exceptions import UserError, ValidationError
-from odoo.fields import Domain
+from weth import api, fields, models
+from weth.exceptions import UserError, ValidationError
+from weth.fields import Domain
 
-from odoo.addons.payment import utils as payment_utils
-from odoo.addons.payment.const import REPORT_REASONS_MAPPING
+from weth.addons.payment import utils as payment_utils
+from weth.addons.payment.const import REPORT_REASONS_MAPPING
 
 
 class PaymentMethod(models.Model):

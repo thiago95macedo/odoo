@@ -1,6 +1,6 @@
 import ast
 
-from odoo.tests import tagged, TransactionCase
+from weth.tests import tagged, TransactionCase
 
 
 @tagged('recruitment_allowed_recruiters')

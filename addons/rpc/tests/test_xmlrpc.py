@@ -3,15 +3,15 @@ import collections
 import datetime
 import time
 
-import odoo
-from odoo.exceptions import AccessDenied, AccessError, ValidationError
-from odoo.http import request_var
-from odoo.service import common as auth
-from odoo.service import model
-from odoo.tests import common, tagged
-from odoo.tools import DotDict, mute_logger
+import weth
+from weth.exceptions import AccessDenied, AccessError, ValidationError
+from weth.http import request_var
+from weth.service import common as auth
+from weth.service import model
+from weth.tests import common, tagged
+from weth.tools import DotDict, mute_logger
 
-from odoo.addons.base.tests.common import SavepointCaseWithUserDemo
+from weth.addons.base.tests.common import SavepointCaseWithUserDemo
 
 
 @tagged('at_install', '-post_install')  # LEGACY at_install
@@ -33,11 +33,11 @@ class TestXMLRPC(common.HttpCase):
         super(TestXMLRPC, self).setUp()
         self.admin_uid = self.env.ref('base.user_admin').id
 
-        ml_xml = mute_logger('odoo.addons.rpc.controllers.xmlrpc')
+        ml_xml = mute_logger('weth.addons.rpc.controllers.xmlrpc')
         ml_xml.__enter__()  # noqa: PLC2801
         self.addCleanup(ml_xml.__exit__)
 
-        ml_json = mute_logger('odoo.addons.rpc.controllers.jsonrpc')
+        ml_json = mute_logger('weth.addons.rpc.controllers.jsonrpc')
         ml_json.__enter__()  # noqa: PLC2801
         self.addCleanup(ml_json.__exit__)
 
@@ -132,7 +132,7 @@ class TestXMLRPC(common.HttpCase):
         works properly over XMLRPC
         """
         self.patch(self.registry['res.users'], 'context_get',
-                   odoo.api.model(lambda *_: collections.defaultdict(int)))
+                   weth.api.model(lambda *_: collections.defaultdict(int)))
         self.assertEqual(self.xmlrpc('res.users', 'context_get'), {})
 
     def test_xmlrpc_remove_control_characters(self):

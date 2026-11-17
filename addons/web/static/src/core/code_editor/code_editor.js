@@ -9,7 +9,7 @@ import {
     signal,
     useEffect,
     untrack,
-} from "@odoo/owl";
+} from "@weth/owl";
 import { loadBundle } from "@web/core/assets";
 import { isMarkup } from "@web/core/utils/html";
 import { Reactive } from "../utils/reactive";
@@ -81,7 +81,7 @@ export class CodeEditor extends Component {
                 .customValidator(t.string(), (v) => !isMarkup(v), "value is not a string")
                 .optional(""),
             readonly: t.boolean().optional(false),
-            onChange: t.function().optional(() => () => {}),
+            onChange: t.function().optional(() => () => { }),
             onBlur: t.function().optional(),
             class: t.string().optional(""),
             theme: t.selection(CodeEditor.THEMES).optional(""),

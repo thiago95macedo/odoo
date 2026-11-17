@@ -5,11 +5,11 @@ import werkzeug.urls
 
 from werkzeug.urls import url_parse
 
-from odoo import api, fields, models, _
-from odoo.exceptions import UserError
-from odoo.fields import Domain
-from odoo.http import request
-from odoo.tools.translate import html_translate
+from weth import api, fields, models, _
+from weth.exceptions import UserError
+from weth.fields import Domain
+from weth.http import request
+from weth.tools.translate import html_translate
 
 
 class WebsiteMenu(models.Model):

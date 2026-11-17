@@ -1,5 +1,5 @@
-import { beforeEach, delay, describe, expect, test } from "@odoo/hoot";
-import { advanceTime, queryAll, queryOne, waitFor } from "@odoo/hoot-dom";
+import { beforeEach, delay, describe, expect, test } from "@weth/hoot";
+import { advanceTime, queryAll, queryOne, waitFor } from "@weth/hoot-dom";
 import { contains, onRpc } from "@web/../tests/web_test_helpers";
 import {
     addPlugin,
@@ -22,7 +22,7 @@ defineWebsiteModels();
 /**
  * This function is used to wait for expected bootstrap events that are
  * triggered by {@link callback}
- * @param {import("@odoo/hoot-dom").Target} target the element that should
+ * @param {import("@weth/hoot-dom").Target} target the element that should
  * receive the event
  * @param {String} type the type of event to expect
  * @param {Function} callback the callback that should trigger the event

@@ -1,6 +1,6 @@
 import { Discuss } from "@mail/core/public_web/discuss_app/discuss_app";
 
-import { useOnChange } from "@odoo/owl";
+import { useOnChange } from "@weth/owl";
 
 import { patch } from "@web/core/utils/patch";
 import { ControlPanel } from "@web/search/control_panel/control_panel";

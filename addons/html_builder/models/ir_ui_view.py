@@ -1,9 +1,9 @@
 import uuid
 from lxml import etree, html
 
-from odoo import api, models
-from odoo.addons.base.models.ir_ui_view import MOVABLE_BRANDING
-from odoo.fields import Domain
+from weth import api, models
+from weth.addons.base.models.ir_ui_view import MOVABLE_BRANDING
+from weth.fields import Domain
 
 EDITING_ATTRIBUTES = MOVABLE_BRANDING + [
     'data-oe-type',

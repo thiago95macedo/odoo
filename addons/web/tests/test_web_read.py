@@ -1,6 +1,6 @@
-from odoo import Command
-from odoo.tests import TransactionCase, tagged
-from odoo.tests.common import new_test_user
+from weth import Command
+from weth.tests import TransactionCase, tagged
+from weth.tests.common import new_test_user
 
 
 @tagged('post_install', '-at_install')

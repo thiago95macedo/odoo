@@ -3,7 +3,7 @@ import { registry } from "@web/core/registry";
 import { useService, useBus } from "@web/core/utils/hooks";
 import { BomOverviewControlPanel } from "../bom_overview_control_panel/mrp_bom_overview_control_panel";
 import { BomOverviewTable } from "../bom_overview_table/mrp_bom_overview_table";
-import { Component, EventBus, onWillStart, proxy, useProps } from "@odoo/owl";
+import { Component, EventBus, onWillStart, proxy, useProps } from "@weth/owl";
 import { standardActionServiceProps } from "@web/webclient/actions/action_plugin";
 
 export class BomOverviewComponent extends Component {
@@ -84,7 +84,7 @@ export class BomOverviewComponent extends Component {
             this.state.bomQuantity,
             this.state.currentVariantId,
         ];
-        const context = { ...this.context};
+        const context = { ...this.context };
         if (this.state.currentWarehouse) {
             context.warehouse_id = this.state.currentWarehouse.id;
         }
@@ -159,9 +159,9 @@ export class BomOverviewComponent extends Component {
 
     getReportName(printAll) {
         let reportName = "mrp.report_bom_structure?docids=" + this.activeId +
-                         "&mode=" + this.state.showOptions.mode +
-                         "&quantity=" + (this.state.bomQuantity || 1) +
-                         "&unfolded_ids=" + JSON.stringify(Array.from(this.unfoldedIds));
+            "&mode=" + this.state.showOptions.mode +
+            "&quantity=" + (this.state.bomQuantity || 1) +
+            "&unfolded_ids=" + JSON.stringify(Array.from(this.unfoldedIds));
         if (this.state.currentWarehouse) {
             reportName += "&warehouse_id=" + this.state.currentWarehouse.id;
         }

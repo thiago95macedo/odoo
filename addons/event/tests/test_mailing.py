@@ -1,9 +1,9 @@
 from datetime import datetime
 
-from odoo.addons.event.tests.common import EventCase
-from odoo.addons.mail.tests.common import MockEmail
-from odoo.tests import Form, tagged, users
-from odoo.tools import formataddr
+from weth.addons.event.tests.common import EventCase
+from weth.addons.mail.tests.common import MockEmail
+from weth.tests import Form, tagged, users
+from weth.tools import formataddr
 
 
 @tagged("event_mail", "mail_template", "mail_thread", "post_install", "-at_install")

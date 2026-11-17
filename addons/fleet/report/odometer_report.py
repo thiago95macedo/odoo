@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
-from odoo import tools
-from odoo import fields, models
-from odoo.tools.sql import SQL
+from weth import tools
+from weth import fields, models
+from weth.tools.sql import SQL
 
 
 class OdometerReport(models.Model):

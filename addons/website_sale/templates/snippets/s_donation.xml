@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
 
 <template id="s_donation_form" name="Donation Form">
     <div
@@ -208,4 +208,4 @@
     <path>website_sale/static/src/snippets/s_donation/000.scss</path>
 </asset>
 
-</odoo>
+</weth>

@@ -6,7 +6,7 @@ import { utils as uiUtils } from "@web/core/ui/ui_utils";
 import { uniqueId } from "@web/core/utils/functions";
 import { renderToFragment } from "@web/core/utils/render";
 
-import { markup, usePlugin } from "@odoo/owl";
+import { markup, usePlugin } from "@weth/owl";
 import {
     DYNAMIC_SNIPPET_DEFAULT_ITEMS_PER_ROW,
     DYNAMIC_SNIPPET_DEFAULT_ITEMS_PER_ROW_SM,
@@ -94,9 +94,9 @@ export class DynamicSnippet extends Interaction {
     getRpcParameters() {
         return this.isSingleMode
             ? {
-                  res_model: this.el.dataset.snippetModel,
-                  res_id: parseInt(this.el.dataset.snippetResId),
-              }
+                res_model: this.el.dataset.snippetModel,
+                res_id: parseInt(this.el.dataset.snippetResId),
+            }
             : {};
     }
 

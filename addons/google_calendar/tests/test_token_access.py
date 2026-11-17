@@ -2,9 +2,9 @@
 from datetime import datetime
 from unittest.mock import patch
 
-from odoo import fields, Command
-from odoo.addons.google_account.models.google_service import GoogleService
-from odoo.tests.common import tagged, TransactionCase
+from weth import fields, Command
+from weth.addons.google_account.models.google_service import GoogleService
+from weth.tests.common import tagged, TransactionCase
 
 
 @tagged('at_install', '-post_install')  # LEGACY at_install

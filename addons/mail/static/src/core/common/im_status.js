@@ -1,4 +1,4 @@
-import { Component, t } from "@odoo/owl";
+import { Component, t } from "@weth/owl";
 import { Typing } from "@mail/discuss/typing/common/typing";
 import { attClassObjectToString } from "@mail/utils/common/format";
 import { propComputed } from "@mail/utils/common/hooks";

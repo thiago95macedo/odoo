@@ -1,4 +1,4 @@
-import { Component, onWillStart, usePlugin, t, useProps } from "@odoo/owl";
+import { Component, onWillStart, usePlugin, t, useProps } from "@weth/owl";
 import { browser } from "@web/core/browser/browser";
 import { Dialog } from "@web/core/dialog/dialog";
 import { _t } from "@web/core/l10n/translation";

@@ -8,7 +8,7 @@ Useful for performance testing, demos, and development environments.
 ## Quick Start
 
 ```shell
-odoo-bin populate -d <database> -b <blueprint>
+weth-bin populate -d <database> -b <blueprint>
 ```
 
 | Option             | Description                                                  |
@@ -25,7 +25,7 @@ odoo-bin populate -d <database> -b <blueprint>
 > the `populate` module first:
 >
 > ```shell
-> odoo-bin -d <database> -u populate
+> weth-bin -d <database> -u populate
 > ```
 >
 > Otherwise, the new blueprints will not be discovered or loaded into the
@@ -35,13 +35,13 @@ odoo-bin populate -d <database> -b <blueprint>
 
 ```shell
 # Run a blueprint at 10x scale using 4 cores
-odoo-bin populate -d mydb -b project.fake_project_demo --scale 10 -j 4
+weth-bin populate -d mydb -b project.fake_project_demo --scale 10 -j 4
 
 # Resume the last interrupted session
-odoo-bin populate -d mydb --resume
+weth-bin populate -d mydb --resume
 
 # Profile a populate run
-odoo-bin populate -d mydb -b project.fake_project_demo --profile
+weth-bin populate -d mydb -b project.fake_project_demo --profile
 ```
 
 ## Blueprints
@@ -750,10 +750,10 @@ produced (`populate.model.data`). If execution is interrupted
 
 ```shell
 # Resume the most recent unfinished session
-odoo-bin populate -d mydb --resume
+weth-bin populate -d mydb --resume
 
 # Resume a specific session by ID
-odoo-bin populate -d mydb --resume 42
+weth-bin populate -d mydb --resume 42
 ```
 
 ## Parallel Execution

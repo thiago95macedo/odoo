@@ -1,4 +1,4 @@
-import { Component, signal, proxy, t, useListener, usePlugin, useProps } from "@odoo/owl";
+import { Component, signal, proxy, t, useListener, usePlugin, useProps } from "@weth/owl";
 import { BarcodeVideoScanner, isBarcodeScannerSupported } from "@web/core/barcode/barcode_video_scanner";
 import { BarcodePlugin } from "@barcodes/barcode_plugin";
 import { BarcodeInput } from "./barcode_input";

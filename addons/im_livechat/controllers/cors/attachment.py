@@ -1,6 +1,6 @@
-from odoo.http import route
+from weth.http import route
 
-from odoo.addons.mail.controllers.attachment import AttachmentController
+from weth.addons.mail.controllers.attachment import AttachmentController
 
 
 class LivechatAttachmentController(AttachmentController):

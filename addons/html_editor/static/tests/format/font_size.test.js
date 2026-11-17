@@ -1,4 +1,4 @@
-import { test, expect } from "@odoo/hoot";
+import { test, expect } from "@weth/hoot";
 import { setupEditor, testEditor } from "../_helpers/editor";
 import { unformat } from "../_helpers/format";
 import {
@@ -9,7 +9,7 @@ import {
     tripleClick,
 } from "../_helpers/user_actions";
 import { Plugin } from "@html_editor/plugin";
-import { animationFrame, press, waitFor } from "@odoo/hoot-dom";
+import { animationFrame, press, waitFor } from "@weth/hoot-dom";
 import { getContent } from "../_helpers/selection";
 import { QWebPlugin } from "@html_editor/others/qweb_plugin";
 import { expectElementCount } from "../_helpers/ui_expectations";

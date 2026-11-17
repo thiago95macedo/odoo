@@ -1,12 +1,12 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.tests import tagged
-from odoo.tools.urls import urljoin
+from weth.tests import tagged
+from weth.tools.urls import urljoin
 
-from odoo.addons.payment import utils as payment_utils
-from odoo.addons.payment.tests.http_common import PaymentHttpCommon
-from odoo.addons.payment_payu import const
-from odoo.addons.payment_payu.tests.common import PayuCommon
+from weth.addons.payment import utils as payment_utils
+from weth.addons.payment.tests.http_common import PaymentHttpCommon
+from weth.addons.payment_payu import const
+from weth.addons.payment_payu.tests.common import PayuCommon
 
 
 @tagged("post_install", "-at_install")

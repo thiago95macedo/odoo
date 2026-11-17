@@ -1,9 +1,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.fields import Command
-from odoo.tests import HttpCase, tagged
+from weth.fields import Command
+from weth.tests import HttpCase, tagged
 
-from odoo.addons.website_sale_stock.tests.common import WebsiteSaleStockCommon
+from weth.addons.website_sale_stock.tests.common import WebsiteSaleStockCommon
 
 
 @tagged("post_install", "-at_install")

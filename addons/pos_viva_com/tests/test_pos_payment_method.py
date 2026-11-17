@@ -2,11 +2,11 @@
 
 from unittest.mock import MagicMock
 
-import odoo.tests
-from odoo.addons.account.tests.common import AccountTestInvoicingCommon
+import weth.tests
+from weth.addons.account.tests.common import AccountTestInvoicingCommon
 
 
-@odoo.tests.tagged('post_install', '-at_install')
+@weth.tests.tagged('post_install', '-at_install')
 class TestVivaComBearerTokenAcl(AccountTestInvoicingCommon):
 
     _test_user_groups = None  # FIXME list needed groups

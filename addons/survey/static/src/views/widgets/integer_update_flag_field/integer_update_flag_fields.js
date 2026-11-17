@@ -1,6 +1,6 @@
 import { _t } from "@web/core/l10n/translation";
 import { registry } from "@web/core/registry";
-import { useProps, t, useListener } from "@odoo/owl";
+import { useProps, t, useListener } from "@weth/owl";
 import { integerField, IntegerField, integerFieldProps } from "@web/views/fields/integer/integer_field";
 
 
@@ -30,7 +30,8 @@ export class IntegerUpdateFlagField extends IntegerField {
         super.setup(...arguments);
         const onChange = async () => {
             await this.props.record._update({
-                [this.props.flagFieldName]: parseInt(this.formattedValue) !== this.props.referenceValue}
+                [this.props.flagFieldName]: parseInt(this.formattedValue) !== this.props.referenceValue
+            }
             );
         }
         useListener(this.numpadDecimalRef, "change", onChange);
@@ -41,7 +42,7 @@ export const integerUpdateFlagField = {
     ...integerField,
     component: IntegerUpdateFlagField,
     displayName: _t("Integer updating comparison flag"),
-    extractProps ({ attrs, options }, { context: { referenceValue } }) {
+    extractProps({ attrs, options }, { context: { referenceValue } }) {
         return {
             ...integerField.extractProps(...arguments),
             flagFieldName: options.flagFieldName,

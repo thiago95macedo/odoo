@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<odoo>
+<weth>
 
     <template id="used_gift_card">
         <div class="d-md-block mb-2 small text-muted"
@@ -131,4 +131,4 @@
         </xpath>
     </template>
 
-</odoo>
+</weth>

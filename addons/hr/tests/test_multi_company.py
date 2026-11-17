@@ -3,11 +3,11 @@
 
 from datetime import UTC, date, datetime
 
-from odoo.addons.hr.tests.common import TestHrCommon
-from odoo.addons.mail.tests.common import mail_new_test_user
-from odoo.tests import tagged
-from odoo.fields import Command
-from odoo.exceptions import AccessError
+from weth.addons.hr.tests.common import TestHrCommon
+from weth.addons.mail.tests.common import mail_new_test_user
+from weth.tests import tagged
+from weth.fields import Command
+from weth.exceptions import AccessError
 
 
 class TestMultiCompanyReport(TestHrCommon):

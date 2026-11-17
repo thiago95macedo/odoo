@@ -2,7 +2,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 from dateutil.relativedelta import relativedelta
 
-from odoo import _, api, fields, models
+from weth import _, api, fields, models
 
 
 class IrActionsServer(models.Model):

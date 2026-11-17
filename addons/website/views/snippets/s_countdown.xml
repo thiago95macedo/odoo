@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
 
 <template id="s_countdown" name="Countdown">
     <t t-set="color" t-value="color or 'o-color-1'"/>
@@ -183,4 +183,4 @@
     <path>website/static/src/snippets/s_countdown/001.scss</path>
 </asset>
 
-</odoo>
+</weth>

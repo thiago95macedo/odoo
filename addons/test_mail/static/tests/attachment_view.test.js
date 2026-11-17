@@ -1,7 +1,7 @@
 import { defineTestMailModels } from "@test_mail/../tests/test_mail_test_helpers";
-import { beforeEach, describe, test, expect, mockUserAgent } from "@odoo/hoot";
-import { queryOne, waitUntil } from "@odoo/hoot-dom";
-import { animationFrame } from "@odoo/hoot-mock";
+import { beforeEach, describe, test, expect, mockUserAgent } from "@weth/hoot";
+import { queryOne, waitUntil } from "@weth/hoot-dom";
+import { animationFrame } from "@weth/hoot-mock";
 import {
     click,
     contains,
@@ -292,7 +292,7 @@ test("Chatter main attachment: can change from non-viewable to viewable", async 
 });
 
 test.skip("Attachment view / chatter popout across multiple records test", async () => {
-    // skip because test has race conditions: https://runbot.weth.com.br/odoo/runbot.build.error/109795
+    // skip because test has race conditions: https://runbot.weth.com.br/weth/runbot.build.error/109795
     const pyEnv = await startServer();
     const recordIds = pyEnv["mail.test.simple.main.attachment"].create([
         {

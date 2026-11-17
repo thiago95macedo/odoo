@@ -1,4 +1,4 @@
-import { beforeEach, expect, test } from "@odoo/hoot";
+import { beforeEach, expect, test } from "@weth/hoot";
 import {
     contains,
     mockService,
@@ -6,10 +6,10 @@ import {
     patchWithCleanup,
 } from "@web/../tests/web_test_helpers";
 
-import { setInputFiles } from "@odoo/hoot-dom";
-import { animationFrame } from "@odoo/hoot-mock";
+import { setInputFiles } from "@weth/hoot-dom";
+import { animationFrame } from "@weth/hoot-mock";
 import { FileInput } from "@web/core/file_input/file_input";
-import { Component, signal, xml } from "@odoo/owl";
+import { Component, signal, xml } from "@weth/owl";
 import { session } from "@web/session";
 
 // -----------------------------------------------------------------------------
@@ -18,10 +18,10 @@ import { session } from "@web/session";
 
 async function createFileInput({ mockPost, mockAdd, props }) {
     mockService("notification", {
-        add: mockAdd || (() => {}),
+        add: mockAdd || (() => { }),
     });
     mockService("http", {
-        post: mockPost || (() => {}),
+        post: mockPost || (() => { }),
     });
     await mountWithCleanup(FileInput, { props });
 }
@@ -226,7 +226,7 @@ test("an upload that ends after the component is destroyed does not call onUploa
             expect.step("onUpload");
         }
     }
-    mockService("notification", { add: () => {} });
+    mockService("notification", { add: () => { } });
     mockService("http", {
         post: async () => {
             await uploadedPromise.promise;

@@ -1,4 +1,4 @@
-<odoo>
+<weth>
     <data>        
         <record id="project_done_email_template" model="mail.template">
             <field name="name">Project: Project Completed</field>
@@ -23,4 +23,4 @@
             <field name="auto_delete" eval="True"/>
         </record>
     </data>
-</odoo>
+</weth>

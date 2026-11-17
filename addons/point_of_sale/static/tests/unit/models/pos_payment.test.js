@@ -1,4 +1,4 @@
-import { expect, freezeTime, mockDate, test } from "@odoo/hoot";
+import { expect, freezeTime, mockDate, test } from "@weth/hoot";
 import { definePosModels } from "../data/generate_model_definitions";
 import { createPaymentLine, getFilledOrder, setupPosEnv } from "../utils";
 

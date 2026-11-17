@@ -1,6 +1,6 @@
-import { expect, test } from "@odoo/hoot";
-import { check, click } from "@odoo/hoot-dom";
-import { animationFrame } from "@odoo/hoot-mock";
+import { expect, test } from "@weth/hoot";
+import { check, click } from "@weth/hoot-dom";
+import { animationFrame } from "@weth/hoot-mock";
 import { defineModels, fields, models, mountView, onRpc } from "@web/../tests/web_test_helpers";
 
 class Partner extends models.Model {

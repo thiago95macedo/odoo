@@ -3,12 +3,12 @@
 
 from unittest.mock import patch
 
-from odoo import Command, fields
-from odoo.exceptions import UserError
-from odoo.tests import Form, tagged
-from odoo.tools import float_is_zero
+from weth import Command, fields
+from weth.exceptions import UserError
+from weth.tests import Form, tagged
+from weth.tools import float_is_zero
 
-from odoo.addons.sale.tests.common import TestSaleCommon
+from weth.addons.sale.tests.common import TestSaleCommon
 
 
 @tagged("-at_install", "post_install")

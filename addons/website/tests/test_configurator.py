@@ -2,12 +2,12 @@
 
 from unittest.mock import patch
 
-import odoo.tests
-from odoo.addons.website.controllers.main import Website as WebsiteController
-from odoo.addons.website.models.website import Website as WebsiteModel
-from odoo.tests.common import new_test_user
+import weth.tests
+from weth.addons.website.controllers.main import Website as WebsiteController
+from weth.addons.website.models.website import Website as WebsiteModel
+from weth.tests.common import new_test_user
 
-class TestConfiguratorCommon(odoo.tests.HttpCase):
+class TestConfiguratorCommon(weth.tests.HttpCase):
 
     def _theme_upgrade_upstream(self):
         # patch to prevent module install/upgrade during tests, but still generate the snippet templates the configurator needs.
@@ -87,13 +87,13 @@ class TestConfiguratorCommon(odoo.tests.HttpCase):
                 return {"a non existing placeholder": "😠", 'Catchy Headline': 'Welcome to XXXX - Your Super test'}
 
         patcher = patch(
-            'odoo.addons.website.models.ir_module_module.IrModuleModule._theme_upgrade_upstream',
+            'weth.addons.website.models.ir_module_module.IrModuleModule._theme_upgrade_upstream',
             new=TestConfiguratorCommon._theme_upgrade_upstream,
         )
         self.startPatcher(patcher)
 
 
-@odoo.tests.common.tagged('post_install', '-at_install')
+@weth.tests.common.tagged('post_install', '-at_install')
 class TestConfigurator(TestConfiguratorCommon):
 
     def test_configurator_params_step(self):
@@ -105,7 +105,7 @@ class TestConfigurator(TestConfiguratorCommon):
         })
         self.start_tour('/website/force/%s?path=%%2Fwebsite%%2Fconfigurator' % website.id, 'configurator_page_creation', login='admin', timeout=120)
 
-@odoo.tests.common.tagged('post_install', '-at_install')
+@weth.tests.common.tagged('post_install', '-at_install')
 class TestConfiguratorTranslation(TestConfiguratorCommon):
 
     def test_01_configurator_translation(self):
@@ -134,8 +134,8 @@ class TestConfiguratorTranslation(TestConfiguratorCommon):
         )
 
 
-@odoo.tests.common.tagged('post_install', '-at_install')
-class TestConfiguratorPreview(odoo.tests.HttpCase):
+@weth.tests.common.tagged('post_install', '-at_install')
+class TestConfiguratorPreview(weth.tests.HttpCase):
     """The preview route renders a static theme file with request parameters."""
 
     PREVIEW_HTML = '<html><head><title>preview marker</title></head><body></body></html>'
@@ -186,7 +186,7 @@ class TestConfiguratorPreview(odoo.tests.HttpCase):
         self.assertNotIn('red;--x:y', dropped.text)
 
 
-@odoo.tests.common.tagged('post_install', '-at_install')
+@weth.tests.common.tagged('post_install', '-at_install')
 class TestConfiguratorDone(TestConfiguratorCommon):
 
     def test_configurator_skip_changes_nothing(self):

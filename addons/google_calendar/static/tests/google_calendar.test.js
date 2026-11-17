@@ -1,7 +1,7 @@
 import { CalendarFilters } from "@calendar/../tests/mock_server/mock_models/calendar_filters";
 import { defineMailModels } from "@mail/../tests/mail_test_helpers";
-import { beforeEach, expect, test } from "@odoo/hoot";
-import { animationFrame, mockDate } from "@odoo/hoot-mock";
+import { beforeEach, expect, test } from "@weth/hoot";
+import { animationFrame, mockDate } from "@weth/hoot-mock";
 import { changeScale } from "@web/../tests/views/calendar/calendar_test_helpers";
 import {
     contains,

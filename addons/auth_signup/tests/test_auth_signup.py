@@ -5,11 +5,11 @@ from datetime import datetime, timedelta
 from unittest.mock import patch
 from urllib.parse import parse_qs, urlsplit
 
-import odoo
-from odoo.exceptions import AccessError, UserError
-from odoo.tests import tagged
+import weth
+from weth.exceptions import AccessError, UserError
+from weth.tests import tagged
 
-from odoo.addons.base.tests.common import HttpCaseWithUserDemo, HttpCaseWithUserPortal
+from weth.addons.base.tests.common import HttpCaseWithUserDemo, HttpCaseWithUserPortal
 
 
 @tagged('at_install', '-post_install')  # LEGACY at_install
@@ -57,7 +57,7 @@ class TestAuthSignupFlow(HttpCaseWithUserPortal, HttpCaseWithUserDemo):
         }
 
         # Override unlink to not delete the email if the send works.
-        with patch.object(odoo.addons.mail.models.mail_mail.MailMail, 'unlink', lambda self: None), self.patch_captcha_signup():
+        with patch.object(weth.addons.mail.models.mail_mail.MailMail, 'unlink', lambda self: None), self.patch_captcha_signup():
             # Call the controller
             url_free_signup = self._get_free_signup_url()
             response = self.url_open(url_free_signup, data=payload)
@@ -83,7 +83,7 @@ class TestAuthSignupFlow(HttpCaseWithUserPortal, HttpCaseWithUserDemo):
                 'csrf_token': self.csrf_token(),
             })
 
-        with patch.object(odoo.addons.mail.models.mail_mail.MailMail, 'unlink', lambda self: None), \
+        with patch.object(weth.addons.mail.models.mail_mail.MailMail, 'unlink', lambda self: None), \
                 self.patch_captcha_signup():
             _signup('TwinCase@example.com', 'Twin')
             response = _signup('twincase@EXAMPLE.com', 'Twin Bis')
@@ -162,7 +162,7 @@ class TestAuthSignupFlow(HttpCaseWithUserPortal, HttpCaseWithUserDemo):
         self.assertFalse(new_user)
 
     def test_signup_does_not_invalidate_cache(self):
-        from odoo.orm.environments import Transaction  # noqa: PLC0415
+        from weth.orm.environments import Transaction  # noqa: PLC0415
 
         self.env['ir.config_parameter'].sudo().set_str('auth_signup.invitation_scope', 'b2c')
         with patch.object(Transaction, 'invalidate_ormcache') as invalidate_ormcache:

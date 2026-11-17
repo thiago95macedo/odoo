@@ -1,4 +1,4 @@
-/** @odoo-module */
+/** @weth-module */
 
 /**
  * @typedef {[string, string | undefined, any[], any]} InteractionDetails

@@ -12,7 +12,7 @@ The view receiving the `inherit_id` update is either:
    `test_specific_view_module_update_inherit_change` in `website` module.
 """
 
-from odoo.tests import standalone
+from weth.tests import standalone
 
 
 @standalone('cow_views_inherit', 'website_standalone')

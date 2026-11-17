@@ -5,15 +5,15 @@ import {
 } from "@bus/../tests/bus_test_helpers";
 import { BusMonitoringPlugin } from "@bus/services/bus_monitoring_plugin";
 import { WEBSOCKET_CLOSE_CODES } from "@bus/workers/websocket_worker";
-import { describe, expect, test } from "@odoo/hoot";
-import { manuallyDispatchProgrammaticEvent, runAllTimers } from "@odoo/hoot-dom";
+import { describe, expect, test } from "@weth/hoot";
+import { manuallyDispatchProgrammaticEvent, runAllTimers } from "@weth/hoot-dom";
 import {
     getService,
     makeTestApp,
     MockServer,
     patchWithCleanup,
 } from "@web/../tests/web_test_helpers";
-import { useOnChange } from "@odoo/owl";
+import { useOnChange } from "@weth/owl";
 
 defineBusModels();
 describe.current.tags("desktop");

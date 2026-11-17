@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
 from json import loads, dumps
-from odoo.http import Controller, request, route
+from weth.http import Controller, request, route
 
 
 class Model(Controller):

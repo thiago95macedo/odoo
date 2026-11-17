@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
-from odoo.addons.website_slides.tests import common as slides_common
-from odoo.exceptions import UserError
-from odoo.tests.common import HttpCase, tagged, users
+from weth.addons.website_slides.tests import common as slides_common
+from weth.exceptions import UserError
+from weth.tests.common import HttpCase, tagged, users
 from unittest.mock import patch
 
 
@@ -323,7 +323,7 @@ class TestSlidesManagement(slides_common.SlidesCase, HttpCase):
             return 13.37
 
         with patch(
-            'odoo.addons.website_slides.models.slide_slide.SlideSlide._get_completion_time_pdf',
+            'weth.addons.website_slides.models.slide_slide.SlideSlide._get_completion_time_pdf',
             new=_get_completion_time_pdf
         ):
             slides_1 = self.env['slide.slide'].create({

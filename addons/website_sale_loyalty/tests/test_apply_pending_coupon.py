@@ -1,13 +1,13 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import http
-from odoo.fields import Command
-from odoo.tests import tagged
+from weth import http
+from weth.fields import Command
+from weth.tests import tagged
 
-from odoo.addons.sale_loyalty.tests.common import TestSaleCouponNumbersCommon
-from odoo.addons.website_sale.tests.common import WebsiteSaleCommon
-from odoo.addons.website_sale_loyalty.controllers.cart import Cart
-from odoo.addons.website_sale_loyalty.controllers.main import WebsiteSale
+from weth.addons.sale_loyalty.tests.common import TestSaleCouponNumbersCommon
+from weth.addons.website_sale.tests.common import WebsiteSaleCommon
+from weth.addons.website_sale_loyalty.controllers.cart import Cart
+from weth.addons.website_sale_loyalty.controllers.main import WebsiteSale
 
 
 @tagged("-at_install", "post_install")

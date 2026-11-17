@@ -1,4 +1,4 @@
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@weth/hoot";
 
 import {
     deepCopy,
@@ -34,9 +34,9 @@ describe("shallowEqual", () => {
         expect(shallowEqual({ a: arr }, { a: arr })).toBe(true);
         expect(shallowEqual({ a: ["x", "y", "z"] }, { a: ["x", "y", "z"] })).toBe(false);
 
-        const fn = () => {};
+        const fn = () => { };
         expect(shallowEqual({ a: fn }, { a: fn })).toBe(true);
-        expect(shallowEqual({ a: () => {} }, { a: () => {} })).toBe(false);
+        expect(shallowEqual({ a: () => { } }, { a: () => { } })).toBe(false);
     });
 
     test("custom comparison function", () => {
@@ -101,17 +101,17 @@ test("isObject", () => {
     expect(isObject([])).toBe(false);
     expect(isObject([1, 2])).toBe(false);
 
-    expect(isObject(() => {})).toBe(false);
+    expect(isObject(() => { })).toBe(false);
     expect(isObject(new Set())).toBe(false);
     expect(isObject(new Map())).toBe(false);
     expect(isObject(new Date())).toBe(false);
     expect(isObject(document.body)).toBe(false);
-    expect(isObject(new (class AAA extends Array {})())).toBe(false);
+    expect(isObject(new (class AAA extends Array { })())).toBe(false);
 
     expect(isObject({})).toBe(true);
     expect(isObject({ a: 1 })).toBe(true);
     expect(isObject(Object.create(null))).toBe(true);
-    expect(isObject(new (class AAA {})())).toBe(true);
+    expect(isObject(new (class AAA { })())).toBe(true);
 });
 
 test("omit", () => {
@@ -186,7 +186,7 @@ test("deepMerge", () => {
     expect(deepMerge("foo", 1)).toBe(undefined);
     expect(deepMerge(null, null)).toBe(undefined);
 
-    const f = () => {};
+    const f = () => { };
     expect(deepMerge({ a: undefined }, { a: f })).toEqual({ a: f });
 
     // There's no current use for arrays, support can be added if needed

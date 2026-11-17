@@ -1,5 +1,5 @@
-import { describe, expect, test } from "@odoo/hoot";
-import { tick } from "@odoo/hoot-mock";
+import { describe, expect, test } from "@weth/hoot";
+import { tick } from "@weth/hoot-mock";
 
 import { Mutex, KeepLast, Race } from "@web/core/utils/concurrency";
 

@@ -4,11 +4,11 @@ import datetime
 from freezegun import freeze_time
 from datetime import timedelta
 
-from odoo.addons.gamification.tests.common import TransactionCaseGamification
-from odoo.exceptions import UserError, ValidationError
-from odoo.tests import tagged
+from weth.addons.gamification.tests.common import TransactionCaseGamification
+from weth.exceptions import UserError, ValidationError
+from weth.tests import tagged
 
-from odoo.tools import mute_logger
+from weth.tools import mute_logger
 
 
 class TestGamificationCommon(TransactionCaseGamification):
@@ -66,7 +66,7 @@ class test_challenge(TestGamificationCommon):
         badge_ids = self.env['gamification.badge.user'].search([('badge_id', '=', badge_id), ('user_id', '=', demo.id)])
         self.assertEqual(len(badge_ids), 1, "Demo user has not received the badge")
 
-    @mute_logger('odoo.models.unlink', 'odoo.addons.mail', 'odoo.addons.auth_signup')
+    @mute_logger('weth.models.unlink', 'weth.addons.mail', 'weth.addons.auth_signup')
     def test_20_update_all_goals_filter(self):
         # Enroll two internal and two portal users in the challenge
         (

@@ -1,4 +1,4 @@
-import { onMounted, onWillUnmount, signal } from "@odoo/owl";
+import { onMounted, onWillUnmount, signal } from "@weth/owl";
 
 /**
  * Observe a title element and notify when it leaves or re-enters the viewport.

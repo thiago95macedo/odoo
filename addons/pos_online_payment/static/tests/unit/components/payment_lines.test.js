@@ -1,4 +1,4 @@
-import { test, expect, describe } from "@odoo/hoot";
+import { test, expect, describe } from "@weth/hoot";
 import { mountWithCleanup } from "@web/../tests/web_test_helpers";
 import { setupPosEnv, getFilledOrder, createPaymentLine } from "@point_of_sale/../tests/unit/utils";
 import { definePosModels } from "@point_of_sale/../tests/unit/data/generate_model_definitions";
@@ -19,13 +19,13 @@ describe("delete button", () => {
         await mountWithCleanup(PaymentScreenPaymentLines, {
             props: {
                 paymentLines: [paymentline],
-                deleteLine: () => {},
-                selectLine: () => {},
-                sendForceDone: () => {},
-                sendForceCancel: () => {},
-                sendPaymentCancel: () => {},
-                sendPaymentRequest: () => {},
-                updateSelectedPaymentline: () => {},
+                deleteLine: () => { },
+                selectLine: () => { },
+                sendForceDone: () => { },
+                sendForceCancel: () => { },
+                sendPaymentCancel: () => { },
+                sendPaymentRequest: () => { },
+                updateSelectedPaymentline: () => { },
                 isRefundOrder: false,
             },
         });
@@ -44,13 +44,13 @@ describe("delete button", () => {
         await mountWithCleanup(PaymentScreenPaymentLines, {
             props: {
                 paymentLines: [paymentline],
-                deleteLine: () => {},
-                selectLine: () => {},
-                sendForceDone: () => {},
-                sendForceCancel: () => {},
-                sendPaymentCancel: () => {},
-                sendPaymentRequest: () => {},
-                updateSelectedPaymentline: () => {},
+                deleteLine: () => { },
+                selectLine: () => { },
+                sendForceDone: () => { },
+                sendForceCancel: () => { },
+                sendPaymentCancel: () => { },
+                sendPaymentRequest: () => { },
+                updateSelectedPaymentline: () => { },
                 isRefundOrder: false,
             },
         });

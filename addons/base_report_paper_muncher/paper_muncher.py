@@ -19,11 +19,11 @@ from urllib.parse import unquote
 
 import h11
 
-from odoo.http.router import root
-from odoo.http.server import SERVER_AGENT, SERVER_SOFTWARE
-from odoo.http.server_log import http_log, reset_thread_info, run_in_isolated_context
-from odoo.tools import parse_version
-from odoo.tools.misc import find_in_path
+from weth.http.router import root
+from weth.http.server import SERVER_AGENT, SERVER_SOFTWARE
+from weth.http.server_log import http_log, reset_thread_info, run_in_isolated_context
+from weth.tools import parse_version
+from weth.tools.misc import find_in_path
 
 __all__ = ['PaperMuncherInfo', 'PaperMuncherServer', 'paper_muncher']
 
@@ -231,7 +231,7 @@ class PaperMuncherServer:
         return response, 0
 
     def _handle_fallback(self, request: h11.Request, body: bytes):
-        # Heavily inspired from odoo.http.server.HTTPSocket._make_environ
+        # Heavily inspired from weth.http.server.HTTPSocket._make_environ
         assert request.target.startswith(b'/'), request.target
         request_uri = request.target.decode('ascii')
         path_quoted, _, query = request_uri.partition('?')

@@ -1,10 +1,10 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import fields
-from odoo.fields import Command
-from odoo.tests import Form
-from odoo.addons.pos_stock.tests.test_frontend import TestPosStockHttpCommon
-from odoo.addons.pos_sale.tests.test_pos_sale_flow import TestPoSSale
+from weth import fields
+from weth.fields import Command
+from weth.tests import Form
+from weth.addons.pos_stock.tests.test_frontend import TestPosStockHttpCommon
+from weth.addons.pos_sale.tests.test_pos_sale_flow import TestPoSSale
 
 
 class TestPoSSaleStock(TestPosStockHttpCommon, TestPoSSale):

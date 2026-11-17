@@ -1,6 +1,6 @@
 /* global StripeTerminal */
 
-import { markup } from "@odoo/owl";
+import { markup } from "@weth/owl";
 import { _t } from "@web/core/l10n/translation";
 import { loadJS } from "@web/core/assets";
 import { PaymentInterface } from "@point_of_sale/app/utils/payment/payment_interface";
@@ -346,11 +346,11 @@ export class PaymentStripe extends PaymentInterface {
                 amount === null
                     ? await this.callPaymentMethod("stripe_capture_payment", [paymentIntentId])
                     : await this.env.services.orm.silent.call(
-                          "pos.payment.method",
-                          "stripe_capture_payment",
-                          [paymentIntentId],
-                          { amount, context }
-                      );
+                        "pos.payment.method",
+                        "stripe_capture_payment",
+                        [paymentIntentId],
+                        { amount, context }
+                    );
             if (data.error) {
                 throw data.error;
             }

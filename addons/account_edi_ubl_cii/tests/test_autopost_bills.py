@@ -1,11 +1,11 @@
 from datetime import datetime, date, timedelta
 from xml.etree import ElementTree as et
 
-from odoo import fields
-from odoo.tests import tagged
-from odoo.tools import file_open
+from weth import fields
+from weth.tests import tagged
+from weth.tools import file_open
 
-from odoo.addons.account.tests.common import AccountTestInvoicingCommon
+from weth.addons.account.tests.common import AccountTestInvoicingCommon
 
 
 @tagged('post_install', '-at_install')

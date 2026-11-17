@@ -3,12 +3,12 @@
 import json
 import re
 
-from odoo import api, fields, models
-from odoo.tools.urls import urljoin
+from weth import api, fields, models
+from weth.tools.urls import urljoin
 
-from odoo.addons.payment import utils as payment_utils
-from odoo.addons.payment.logging import get_payment_logger
-from odoo.addons.payment_adyen import const
+from weth.addons.payment import utils as payment_utils
+from weth.addons.payment.logging import get_payment_logger
+from weth.addons.payment_adyen import const
 
 _logger = get_payment_logger(__name__)
 

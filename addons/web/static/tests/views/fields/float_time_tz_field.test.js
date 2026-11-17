@@ -1,5 +1,5 @@
-import { expect, test } from "@odoo/hoot";
-import { mockTimeZone } from "@odoo/hoot-mock";
+import { expect, test } from "@weth/hoot";
+import { mockTimeZone } from "@weth/hoot-mock";
 import {
     clickSave,
     contains,

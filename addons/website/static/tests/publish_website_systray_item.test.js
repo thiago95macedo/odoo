@@ -1,6 +1,6 @@
-import { test } from "@odoo/hoot";
-import { waitFor } from "@odoo/hoot-dom";
-import { advanceTime, mockDate } from "@odoo/hoot-mock";
+import { test } from "@weth/hoot";
+import { waitFor } from "@weth/hoot-dom";
+import { advanceTime, mockDate } from "@weth/hoot-mock";
 
 import { mockService, mountWithCleanup } from "@web/../tests/web_test_helpers";
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
 <template id="report_purchasequotation_document">
     <t t-set="address">
         <div t-field="o.partner_id"
@@ -93,4 +93,4 @@
         </t>
     </t>
 </template>
-</odoo>
+</weth>

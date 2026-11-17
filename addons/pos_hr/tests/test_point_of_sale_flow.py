@@ -2,11 +2,11 @@
 
 from unittest.mock import patch
 
-import odoo
-from odoo.addons.point_of_sale.tests.common import CommonPosTest
+import weth
+from weth.addons.point_of_sale.tests.common import CommonPosTest
 
 
-@odoo.tests.tagged('post_install', '-at_install')
+@weth.tests.tagged('post_install', '-at_install')
 class TestPointOfSaleFlow(CommonPosTest):
     def test_limited_partner_loading_includes_employee_work_contact(self):
         """

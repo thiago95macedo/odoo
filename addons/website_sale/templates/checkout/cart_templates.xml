@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
 
     <!-- Encapsulate the content in a `a` tag with a link to the product page. Override this
          template to change or remove the product link. Called in `website_sale.cart_lines`. -->
@@ -595,4 +595,4 @@
         </xpath>
     </template>
 
-</odoo>
+</weth>

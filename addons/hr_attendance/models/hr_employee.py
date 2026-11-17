@@ -4,10 +4,10 @@ from datetime import time
 from zoneinfo import ZoneInfo
 
 from dateutil.relativedelta import relativedelta
-from odoo.tools.intervals import Intervals
-from odoo import SUPERUSER_ID, models, fields, api, exceptions, _
-from odoo.tools import BinaryBytes
-from odoo.tools.date_utils import sum_intervals
+from weth.tools.intervals import Intervals
+from weth import SUPERUSER_ID, models, fields, api, exceptions, _
+from weth.tools import BinaryBytes
+from weth.tools.date_utils import sum_intervals
 
 
 class HrEmployee(models.Model):

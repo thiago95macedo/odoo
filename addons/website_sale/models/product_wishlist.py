@@ -2,8 +2,8 @@
 
 from datetime import datetime, timedelta
 
-from odoo import api, fields, models
-from odoo.http import request
+from weth import api, fields, models
+from weth.http import request
 
 
 class ProductWishlist(models.Model):

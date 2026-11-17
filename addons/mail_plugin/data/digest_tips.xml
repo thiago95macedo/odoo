@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<odoo>
+<weth>
     <data>
         <record id="digest_tip_mail_plugin" model="digest.tip">
             <field name="name">Tip: Connect Odoo to your inbox </field>
@@ -31,4 +31,4 @@
             </field>
         </record>
     </data>
-</odoo>
+</weth>

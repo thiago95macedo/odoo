@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, models, _
-from odoo.addons.base.models.res_lang import LangDataDict, LangData
-from odoo.exceptions import UserError
+from weth import api, models, _
+from weth.addons.base.models.res_lang import LangDataDict, LangData
+from weth.exceptions import UserError
 
 
 class ResLang(models.Model):

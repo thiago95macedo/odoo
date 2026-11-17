@@ -21,11 +21,11 @@ from lxml import etree, html
 from PIL import Image as I
 from werkzeug import urls
 
-from odoo import _, api, models, fields
-from odoo.exceptions import UserError, ValidationError
-from odoo.tools import BinaryBytes, posix_to_ldml
-from odoo.tools.json import scriptsafe as json_safe
-from odoo.tools.misc import file_open, get_lang, babel_locale_parse
+from weth import _, api, models, fields
+from weth.exceptions import UserError, ValidationError
+from weth.tools import BinaryBytes, posix_to_ldml
+from weth.tools.json import scriptsafe as json_safe
+from weth.tools.misc import file_open, get_lang, babel_locale_parse
 
 REMOTE_CONNECTION_TIMEOUT = 2.5
 

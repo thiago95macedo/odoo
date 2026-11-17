@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.tests import tagged
+from weth.tests import tagged
 
-from odoo.addons.payment_xendit.tests.common import XenditCommon
+from weth.addons.payment_xendit.tests.common import XenditCommon
 
 
 @tagged("post_install", "-at_install")

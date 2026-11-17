@@ -1,4 +1,4 @@
-from odoo.addons.stock.tests.common import TestStockCommon
+from weth.addons.stock.tests.common import TestStockCommon
 
 
 class TestAnalyticToSaleStock(TestStockCommon):

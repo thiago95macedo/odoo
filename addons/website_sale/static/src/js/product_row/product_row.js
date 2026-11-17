@@ -1,4 +1,4 @@
-import { Component, t, useProps } from '@odoo/owl';
+import { Component, t, useProps } from '@weth/owl';
 import { formatCurrency } from '@web/core/currency';
 import comparisonUtils from '@website_sale/js/comparison_utils';
 

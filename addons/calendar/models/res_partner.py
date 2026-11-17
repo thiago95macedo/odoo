@@ -3,9 +3,9 @@
 from collections import defaultdict
 from datetime import datetime
 
-from odoo import _, api, fields, models
-from odoo.fields import Domain
-from odoo.tools import SQL
+from weth import _, api, fields, models
+from weth.fields import Domain
+from weth.tools import SQL
 
 
 class ResPartner(models.Model):

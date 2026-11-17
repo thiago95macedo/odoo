@@ -5,11 +5,11 @@ from dateutil.relativedelta import relativedelta
 from freezegun import freeze_time
 from unittest.mock import patch, PropertyMock
 
-from odoo import Command, fields
-from odoo.fields import Domain
-from odoo.addons.mail.tests.common import MailCommon
-from odoo.addons.mail.tools.discuss import Store
-from odoo.tests.common import users, tagged, HttpCase, warmup
+from weth import Command, fields
+from weth.fields import Domain
+from weth.addons.mail.tests.common import MailCommon
+from weth.addons.mail.tools.discuss import Store
+from weth.tests.common import users, tagged, HttpCase, warmup
 
 
 @tagged("is_query_count")
@@ -292,7 +292,7 @@ class TestDiscussFullPerformance(HttpCase, MailCommon):
         self.channel_livechat_1.with_user(self.users[1]).message_post(body="test", message_type="comment")
         self.authenticate(None, None)
         with patch(
-            "odoo.http.geoip.GeoIP.country_code",
+            "weth.http.geoip.GeoIP.country_code",
             new_callable=PropertyMock(return_value=self.env.ref("base.be").code),
         ):
             self.channel_livechat_2 = Channel.browse(

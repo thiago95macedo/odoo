@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.pos_loyalty.tests.common import CommonPosLoyaltyTest
-from odoo.tests.common import tagged
+from weth.addons.pos_loyalty.tests.common import CommonPosLoyaltyTest
+from weth.tests.common import tagged
 
 
 @tagged('-at_install', 'post_install')

@@ -2,7 +2,7 @@ import {
     SelectCreateDialog,
     selectCreateDialogProps,
 } from "@web/views/view_dialogs/select_create_dialog";
-import { useProps, t } from "@odoo/owl";
+import { useProps, t } from "@weth/owl";
 
 export class CustomSelectCreateDialog extends SelectCreateDialog {
     props = useProps({

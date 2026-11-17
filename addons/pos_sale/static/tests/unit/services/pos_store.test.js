@@ -1,6 +1,6 @@
-import { test, expect, describe } from "@odoo/hoot";
+import { test, expect, describe } from "@weth/hoot";
 import { setupPosEnv, getFilledOrder } from "@point_of_sale/../tests/unit/utils";
-import { click, waitFor } from "@odoo/hoot-dom";
+import { click, waitFor } from "@weth/hoot-dom";
 import { mountWithCleanup } from "@web/../tests/web_test_helpers";
 import { ProductScreen } from "@point_of_sale/app/screens/product_screen/product_screen";
 import { Orderline } from "@point_of_sale/app/components/orderline/orderline";

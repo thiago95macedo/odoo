@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 from freezegun import freeze_time
 
-from odoo.tests import common, new_test_user
+from weth.tests import common, new_test_user
 
 
 class TestHrEmployeeHomeworking(common.TransactionCase):

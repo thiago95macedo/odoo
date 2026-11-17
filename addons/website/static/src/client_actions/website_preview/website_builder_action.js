@@ -14,7 +14,7 @@ import {
     useScope,
     useProps,
     t,
-} from "@odoo/owl";
+} from "@weth/owl";
 import { loadBundle } from "@web/core/assets";
 import { location, browser } from "@web/core/browser/browser";
 import { isBrowserChrome, isBrowserMicrosoftEdge } from "@web/core/browser/feature_detection";
@@ -101,7 +101,7 @@ export class WebsiteBuilderClientAction extends Component {
             () => (this.state.is404 = this.websiteService.is404)
         );
 
-        let disposeToggleMobileEffect = () => {};
+        let disposeToggleMobileEffect = () => { };
         onMounted(() => {
             // You can't wait for rendering because the Builder depends on the
             // page style synchronously.
@@ -343,7 +343,7 @@ export class WebsiteBuilderClientAction extends Component {
     }
 
     /**
-     * This replaces the browser url (/odoo/website...) with
+     * This replaces the browser url (/weth/website...) with
      * the iframe's url (it is clearer for the user).
      */
     replaceBrowserUrl() {
@@ -363,7 +363,7 @@ export class WebsiteBuilderClientAction extends Component {
             // loads "about:blank"), do not push that into the history
             // state as that could prevent the user from going back and could
             // trigger a traceback.
-            history.replaceState(history.state, document.title, "/odoo");
+            history.replaceState(history.state, document.title, "/weth");
             return;
         }
         const currentTitle = iframe.contentDocument.title;
@@ -474,7 +474,7 @@ export class WebsiteBuilderClientAction extends Component {
                         // post(). Otherwise, the browser may submit the form
                         // before the later preventDefault() call.
                         ev.preventDefault();
-                        const href = await post(action, { csrf_token: odoo.csrf_token }, "url");
+                        const href = await post(action, { csrf_token: weth.csrf_token }, "url");
                         url = new URL(href);
                     } else {
                         url = new URL(action);
@@ -600,7 +600,7 @@ export class WebsiteBuilderClientAction extends Component {
             const pathSegments = urlObj.pathname.split("/").map(encodeURIComponent);
             const encodedPath = pathSegments.join("/");
             const newUrl = new URL(encodedPath, baseUrl);
-            if(newUrl.origin !== baseUrl.origin) {
+            if (newUrl.origin !== baseUrl.origin) {
                 console.error("Tried to change the iframe's origin. Reloading instead")
                 this.websiteContent().contentWindow.location.reload();
             } else {
@@ -622,7 +622,7 @@ export class WebsiteBuilderClientAction extends Component {
         const data = { snippetTitle: snippetTitle };
         const encodedData = encodeURIComponent(JSON.stringify(data));
         redirect(
-            `/odoo/action-website.website_preview?website_id=${encodeURIComponent(
+            `/weth/action-website.website_preview?website_id=${encodeURIComponent(
                 websiteId
             )}&path=${currentPath}&enable_editor=1&module_installed=${encodedData}`
         );
@@ -771,7 +771,7 @@ export class WebsiteBuilderClientAction extends Component {
         const path = this.websiteService.contentWindow.location;
         const debugMode = this.debugMode.isActive() ? `&debug=${this.debugMode.toString()}` : "";
         redirect(
-            `/odoo/action-website.website_preview?path=${encodeURIComponent(path)}${debugMode}`
+            `/weth/action-website.website_preview?path=${encodeURIComponent(path)}${debugMode}`
         );
     }
 
@@ -824,13 +824,13 @@ function isTopWindowURL({ host, pathname }) {
 registry
     .category("isTopWindowURL")
     .add("html_builder.website_builder_action", ({ host, pathname }) => {
-        const backendRoutes = ["/web", "/web/session/logout", "/odoo"];
+        const backendRoutes = ["/web", "/web/session/logout", "/weth"];
         return (
             host !== window.location.host ||
             (pathname &&
                 (backendRoutes.includes(pathname) ||
                     pathname.startsWith("/@/") ||
-                    pathname.startsWith("/odoo/") ||
+                    pathname.startsWith("/weth/") ||
                     pathname.startsWith("/web/content/") ||
                     pathname.startsWith("/document/share/")))
         );

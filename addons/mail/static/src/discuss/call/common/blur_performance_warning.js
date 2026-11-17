@@ -1,6 +1,6 @@
 import { CallDropdown } from "@mail/discuss/call/common/call_dropdown";
 
-import { Component } from "@odoo/owl";
+import { Component } from "@weth/owl";
 
 import { useService } from "@web/core/utils/hooks";
 

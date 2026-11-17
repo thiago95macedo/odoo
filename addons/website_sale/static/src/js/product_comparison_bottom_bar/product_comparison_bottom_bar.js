@@ -1,4 +1,4 @@
-import { Component, onWillStart, proxy } from '@odoo/owl';
+import { Component, onWillStart, proxy } from '@weth/owl';
 import { rpc } from '@web/core/network/rpc';
 import { useBus } from '@web/core/utils/hooks';
 import comparisonUtils from '@website_sale/js/comparison_utils';

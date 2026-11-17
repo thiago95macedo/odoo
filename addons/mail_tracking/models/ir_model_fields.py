@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, models
-from odoo.tools import groupby
+from weth import api, models
+from weth.tools import groupby
 
 
 class IrModelFields(models.Model):

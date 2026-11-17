@@ -1,6 +1,6 @@
-/** @odoo-module **/
+/** @weth-module **/
 
-import { usePlugin } from "@odoo/owl";
+import { usePlugin } from "@weth/owl";
 import { ConfirmationDialog } from "@web/core/confirmation_dialog/confirmation_dialog";
 import { _t } from "@web/core/l10n/translation";
 import { ORM } from "@web/core/orm_plugin";

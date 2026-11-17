@@ -1,6 +1,6 @@
 from collections import defaultdict
 
-from odoo import models
+from weth import models
 
 
 class AccountJournal(models.Model):

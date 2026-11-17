@@ -28,8 +28,8 @@ import {
     setInputFiles,
     test,
     tick,
-} from "@odoo/hoot";
-import { onMounted, onPatched } from "@odoo/owl";
+} from "@weth/hoot";
+import { onMounted, onPatched } from "@weth/owl";
 import { addNewRule } from "@web/../tests/core/tree_editor/condition_tree_editor_test_helpers";
 import {
     MockServer,
@@ -99,10 +99,10 @@ const { IrAttachment } = webModels;
 
 async function createFileInput({ mockPost, mockAdd, props }) {
     mockService("notification", {
-        add: mockAdd || (() => {}),
+        add: mockAdd || (() => { }),
     });
     mockService("http", {
-        post: mockPost || (() => {}),
+        post: mockPost || (() => { }),
     });
     await mountWithCleanup(FileInput, { props });
 }
@@ -3763,22 +3763,22 @@ test("empty kanban with sample data grouped by date range (fill temporal)", asyn
     Partner._records = [];
 
     onRpc("web_read_group", () =>
-        // Simulate fill temporal
-        ({
-            groups: [
-                {
-                    __count: 0,
-                    state: false,
-                    "date:month": ["2022-12-01", "December 2022"],
-                    __extra_domain: [
-                        ["date", ">=", "2022-12-01"],
-                        ["date", "<", "2023-01-01"],
-                    ],
-                    __records: [],
-                },
-            ],
-            length: 1,
-        })
+    // Simulate fill temporal
+    ({
+        groups: [
+            {
+                __count: 0,
+                state: false,
+                "date:month": ["2022-12-01", "December 2022"],
+                __extra_domain: [
+                    ["date", ">=", "2022-12-01"],
+                    ["date", "<", "2023-01-01"],
+                ],
+                __records: [],
+            },
+        ],
+        length: 1,
+    })
     );
     await mountView({
         arch: `
@@ -4090,11 +4090,11 @@ test("empty grouped kanban with sample data: delete a column", async () => {
     ];
 
     onRpc("web_read_group", () =>
-        // override read_group to return a single, empty group
-        ({
-            groups,
-            length: groups.length,
-        })
+    // override read_group to return a single, empty group
+    ({
+        groups,
+        length: groups.length,
+    })
     );
 
     await mountView({
@@ -7665,24 +7665,24 @@ test("group by numeric field (with aggregator)", async () => {
 test.tags("desktop");
 test("click on empty kanban must shake the NEW button", async () => {
     onRpc("web_read_group", () =>
-        // override read_group to return empty groups, as this is
-        // the case for several models (e.g. project.task grouped
-        // by stage_id)
-        ({
-            groups: [
-                {
-                    __extra_domain: [["product_id", "=", 3]],
-                    __count: 0,
-                    product_id: [3, "xplone"],
-                },
-                {
-                    __extra_domain: [["product_id", "=", 5]],
-                    __count: 0,
-                    product_id: [5, "xplan"],
-                },
-            ],
-            length: 2,
-        })
+    // override read_group to return empty groups, as this is
+    // the case for several models (e.g. project.task grouped
+    // by stage_id)
+    ({
+        groups: [
+            {
+                __extra_domain: [["product_id", "=", 3]],
+                __count: 0,
+                product_id: [3, "xplone"],
+            },
+            {
+                __extra_domain: [["product_id", "=", 5]],
+                __count: 0,
+                product_id: [5, "xplan"],
+            },
+        ],
+        length: 2,
+    })
     );
 
     await mountView({
@@ -7790,7 +7790,7 @@ test("kanban records are middle clickable by default", async () => {
         'get current_state-{"actionStack":[{"displayName":"","action":1,"view_type":"kanban"}],"action":1}',
         'set current_action-{"id":1,"res_model":"partner","type":"ir.actions.act_window","views":[[false,"kanban"],[false,"form"]]}',
         'set current_state-{"actionStack":[{"displayName":"","action":1,"view_type":"kanban"},{"displayName":"","action":1,"view_type":"form","resId":1}],"resId":1,"action":1}',
-        "opened in new window: /odoo/action-1/1",
+        "opened in new window: /weth/action-1/1",
         'set current_action-{"id":1,"res_model":"partner","type":"ir.actions.act_window","views":[[false,"kanban"],[false,"form"]]}',
         'set current_state-{"actionStack":[{"displayName":"","action":1,"view_type":"kanban"}],"action":1}',
     ]);
@@ -8254,7 +8254,7 @@ test("interact with search view while kanban is loading", async () => {
 });
 
 test("click on New while kanban is loading", async () => {
-    onRpc("web_search_read", () => new Promise(() => {}));
+    onRpc("web_search_read", () => new Promise(() => { }));
     await mountView({
         arch: `
             <kanban>

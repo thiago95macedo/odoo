@@ -1,6 +1,6 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, fields, models, Command
+from weth import api, fields, models, Command
 from werkzeug import urls
 
 

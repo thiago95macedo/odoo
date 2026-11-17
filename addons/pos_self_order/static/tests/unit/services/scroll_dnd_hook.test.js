@@ -1,6 +1,6 @@
-import { test, describe, expect } from "@odoo/hoot";
+import { test, describe, expect } from "@weth/hoot";
 import { useDraggableScroll } from "@pos_self_order/app/utils/scroll_dnd_hook";
-import { Component, signal, xml } from "@odoo/owl";
+import { Component, signal, xml } from "@weth/owl";
 import { mountWithCleanup } from "@web/../tests/web_test_helpers";
 import { setupSelfPosEnv } from "../utils";
 import { definePosSelfModels } from "../data/generate_model_definitions";

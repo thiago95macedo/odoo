@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<odoo>
+<weth>
     <menuitem
         id="menu_todo_todos"
         name="To-do"
@@ -7,4 +7,4 @@
         web_icon="project_todo,static/description/icon.png"
         groups="base.group_user_regular">
     </menuitem>
-</odoo>
+</weth>

@@ -1,4 +1,4 @@
-import { Component, onMounted, onWillDestroy, proxy, signal, useProps, t } from "@odoo/owl";
+import { Component, onMounted, onWillDestroy, proxy, signal, useProps, t } from "@weth/owl";
 import { useService } from "@web/core/utils/hooks";
 import { Tooltip } from "@web/core/tooltip/tooltip";
 import { closestScrollableY, getScrollingElement, isScrollableY } from "@web/core/utils/scrolling";

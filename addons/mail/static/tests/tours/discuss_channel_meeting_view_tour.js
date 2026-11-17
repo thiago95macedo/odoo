@@ -4,7 +4,7 @@ import { registry } from "@web/core/registry";
 /** Pathname of the channel invitation link, which holds the channel secret token. */
 function getInvitationPathname() {
     /** @type {import("models").Store} */
-    const store = odoo.__WOWL_DEBUG__.root.env.services["mail.store"];
+    const store = weth.__WOWL_DEBUG__.root.env.services["mail.store"];
     return new URL(store.discuss.thread.channel.invitationLink).pathname;
 }
 

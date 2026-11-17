@@ -1,5 +1,5 @@
 import { useLayoutEffect } from "@web/owl2/utils";
-import { Component, onMounted, useProps, proxy, signal, t } from "@odoo/owl";
+import { Component, onMounted, useProps, proxy, signal, t } from "@weth/owl";
 
 export class AccordionItem extends Component {
     static template = "pos_hr.AccordionItem";

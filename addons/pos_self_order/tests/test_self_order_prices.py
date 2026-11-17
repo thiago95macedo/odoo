@@ -1,10 +1,10 @@
-import odoo.tests
-from odoo import Command
+import weth.tests
+from weth import Command
 
-from odoo.addons.pos_self_order.tests.self_order_common_test import SelfOrderCommonTest
+from weth.addons.pos_self_order.tests.self_order_common_test import SelfOrderCommonTest
 
 
-@odoo.tests.tagged('post_install', '-at_install')
+@weth.tests.tagged('post_install', '-at_install')
 class TestSelfOrderPrice(SelfOrderCommonTest):
     def setUp(self):
         super().setUp()

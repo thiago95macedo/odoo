@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
 
 <template id="s_about_bold" name="About Bold">
     <section class="s_about_bold pt112 pb88">
@@ -19,4 +19,4 @@
     </section>
 </template>
 
-</odoo>
+</weth>

@@ -2,13 +2,13 @@
 
 from freezegun import freeze_time
 
-from odoo.exceptions import UserError, ValidationError
-from odoo.fields import Command
-from odoo.tools import mute_logger
+from weth.exceptions import UserError, ValidationError
+from weth.fields import Command
+from weth.tools import mute_logger
 
-from odoo.tests import tagged
+from weth.tests import tagged
 
-from odoo.addons.product.tests.common import ProductCommon
+from weth.addons.product.tests.common import ProductCommon
 
 
 @tagged('at_install', '-post_install')  # LEGACY at_install
@@ -106,7 +106,7 @@ class TestProductCombo(ProductCommon):
                 ],
             })
 
-    @mute_logger('odoo.sql_db')
+    @mute_logger('weth.sql_db')
     def test_nested_combos_raises(self):
         combo = self.env['product.combo'].create({
             'name': "Test combo",

@@ -1,5 +1,5 @@
 import { closestScrollable, scrollTo } from "@html_builder/utils/scrolling";
-import { markup, usePlugin } from "@odoo/owl";
+import { markup, usePlugin } from "@weth/owl";
 import { location } from "@web/core/browser/browser";
 import { cookie } from "@web/core/browser/cookie";
 import { isMobileOS } from "@web/core/browser/feature_detection";
@@ -302,9 +302,9 @@ export class WebsiteForum extends Interaction {
         const data = await this.waitFor(
             rpc(
                 currentTarget.dataset.href ||
-                    (currentTarget.getAttribute("href") !== "#" &&
-                        currentTarget.getAttribute("href")) ||
-                    currentTarget.closest("form").getAttribute("action")
+                (currentTarget.getAttribute("href") !== "#" &&
+                    currentTarget.getAttribute("href")) ||
+                currentTarget.closest("form").getAttribute("action")
             )
         );
         if (data.error) {
@@ -312,8 +312,8 @@ export class WebsiteForum extends Interaction {
                 data.error === "post_already_flagged"
                     ? _t("This post is already flagged")
                     : data.error === "post_non_flaggable"
-                    ? _t("This post can not be flagged")
-                    : data.error;
+                        ? _t("This post can not be flagged")
+                        : data.error;
             this.displayAccessDeniedNotification(message);
         } else if (data.success) {
             const child = currentTarget.firstElementChild;
@@ -525,7 +525,7 @@ export class WebsiteForum extends Interaction {
                         });
                     });
             },
-            cancel: () => {},
+            cancel: () => { },
         });
     }
 

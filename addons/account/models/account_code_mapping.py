@@ -1,8 +1,8 @@
-from odoo import fields, models, api, _
-from odoo.fields import Domain
-from odoo.exceptions import UserError
-from odoo.models import Query
-from odoo.tools import SQL
+from weth import fields, models, api, _
+from weth.fields import Domain
+from weth.exceptions import UserError
+from weth.models import Query
+from weth.tools import SQL
 
 COMPANY_OFFSET = 10000
 

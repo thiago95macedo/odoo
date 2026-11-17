@@ -1,9 +1,9 @@
 from datetime import timedelta
 
-from odoo import api, fields, models
-from odoo.exceptions import UserError
-from odoo.fields import Domain
-from odoo.tools import SQL
+from weth import api, fields, models
+from weth.exceptions import UserError
+from weth.fields import Domain
+from weth.tools import SQL
 
 
 class MailTrackingDurationMixin(models.AbstractModel):

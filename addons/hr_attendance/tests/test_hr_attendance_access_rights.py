@@ -1,7 +1,7 @@
 from datetime import datetime
 
-from odoo.exceptions import AccessError
-from odoo.tests import common, tagged, new_test_user
+from weth.exceptions import AccessError
+from weth.tests import common, tagged, new_test_user
 
 
 @tagged('access_rights', 'post_install', '-at_install')

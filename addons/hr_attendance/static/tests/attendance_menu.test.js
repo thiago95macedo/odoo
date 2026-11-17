@@ -1,5 +1,5 @@
-import { beforeEach, expect, test } from "@odoo/hoot";
-import { waitFor } from "@odoo/hoot-dom";
+import { beforeEach, expect, test } from "@weth/hoot";
+import { waitFor } from "@weth/hoot-dom";
 import { defineMailModels } from "@mail/../tests/mail_test_helpers";
 import {
     allowTranslations,
@@ -234,7 +234,7 @@ test("opening the systray reviews the latest attendance from today, folded", asy
         attendanceReviewExpanded: true,
         editingAttendanceId: 41,
     };
-    attendanceMenu.setStreamAvailable = () => {};
+    attendanceMenu.setStreamAvailable = () => { };
     attendanceMenu.searchReadEmployee = async () => {
         attendanceMenu.state.attendances = [
             { id: 41, can_edit: true },
@@ -257,7 +257,7 @@ test("opening the timesheet systray does not wait for attendance review data", a
         checkedIn: true,
         showTimesheetsSystray: true,
     };
-    attendanceMenu.setStreamAvailable = () => {};
+    attendanceMenu.setStreamAvailable = () => { };
     attendanceMenu.searchReadEmployee = async () => expect.step("refresh");
 
     await attendanceMenu.beforeDropdownOpen();

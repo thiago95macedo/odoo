@@ -1,4 +1,4 @@
-import { Component, t, useProps } from "@odoo/owl";
+import { Component, t, useProps } from "@weth/owl";
 
 import { propSignal } from "@mail/utils/common/hooks";
 import { useService } from "@web/core/utils/hooks";
@@ -17,7 +17,7 @@ export class ActivityMailTemplate extends Component {
         );
         this.onClickButtons = useProps.static(
             "onClickButtons",
-            t.function([]).optional(() => () => {})
+            t.function([]).optional(() => () => { })
         );
     }
 

@@ -1,6 +1,6 @@
-import { delay, describe, expect, test, waitFor } from "@odoo/hoot";
+import { delay, describe, expect, test, waitFor } from "@weth/hoot";
 import { setupEditor } from "../_helpers/editor";
-import { press, queryOne } from "@odoo/hoot-dom";
+import { press, queryOne } from "@weth/hoot-dom";
 import { execCommand } from "../_helpers/userCommands";
 import { EMBEDDED_COMPONENT_PLUGINS } from "@html_editor/plugin_sets";
 import { TableOfContentPlugin } from "@html_editor/others/embedded_components/plugins/table_of_content_plugin/table_of_content_plugin";

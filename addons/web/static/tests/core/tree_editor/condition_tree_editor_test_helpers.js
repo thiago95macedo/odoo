@@ -1,4 +1,4 @@
-import { queryAll, queryAllTexts, queryOne, queryText, queryValue } from "@odoo/hoot-dom";
+import { queryAll, queryAllTexts, queryOne, queryText, queryValue } from "@weth/hoot-dom";
 import { contains, fields, models } from "@web/../tests/web_test_helpers";
 
 import { Domain } from "@web/core/domain";
@@ -66,8 +66,8 @@ export function formatExpr(str) {
 }
 
 /**
- * @typedef {import("@odoo/hoot-dom").FillOptions} FillOptions
- * @typedef {import("@odoo/hoot-dom").Target} Target
+ * @typedef {import("@weth/hoot-dom").FillOptions} FillOptions
+ * @typedef {import("@weth/hoot-dom").Target} Target
  */
 
 function getValue(root) {

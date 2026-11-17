@@ -1,5 +1,5 @@
-from odoo import api, models
-from odoo.tools import SQL
+from weth import api, models
+from weth.tools import SQL
 
 
 class ProductTemplate(models.Model):

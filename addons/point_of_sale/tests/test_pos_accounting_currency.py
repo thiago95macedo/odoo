@@ -1,5 +1,5 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
-from odoo.addons.point_of_sale.tests.test_pos_accounting import TestPosAccounting
+from weth.addons.point_of_sale.tests.test_pos_accounting import TestPosAccounting
 
 
 class TestPosMultiCurrencyPayment(TestPosAccounting):

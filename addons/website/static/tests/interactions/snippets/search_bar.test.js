@@ -1,8 +1,8 @@
 import { startInteractions, setupInteractionWhiteList } from "@web/../tests/public/helpers";
 
-import { describe, expect, test } from "@odoo/hoot";
-import { click, press, queryAll, queryOne } from "@odoo/hoot-dom";
-import { advanceTime } from "@odoo/hoot-mock";
+import { describe, expect, test } from "@weth/hoot";
+import { click, press, queryAll, queryOne } from "@weth/hoot-dom";
+import { advanceTime } from "@weth/hoot-mock";
 
 import { onRpc } from "@web/../tests/web_test_helpers";
 

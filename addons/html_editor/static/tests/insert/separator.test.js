@@ -1,9 +1,9 @@
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@weth/hoot";
 import { setupEditor, testEditor } from "../_helpers/editor";
 import { getContent } from "../_helpers/selection";
 import { execCommand } from "../_helpers/userCommands";
 import { simulateArrowKeyPress } from "../_helpers/user_actions";
-import { animationFrame, keyDown, keyUp, press, click, tick } from "@odoo/hoot-dom";
+import { animationFrame, keyDown, keyUp, press, click, tick } from "@weth/hoot-dom";
 import { unformat } from "../_helpers/format";
 
 async function insertSeparator(editor) {

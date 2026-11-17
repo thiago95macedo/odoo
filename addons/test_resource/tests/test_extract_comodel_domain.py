@@ -1,9 +1,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.fields import Domain
-from odoo.tests import TransactionCase, tagged
+from weth.fields import Domain
+from weth.tests import TransactionCase, tagged
 
-from odoo.addons.resource.models.utils import extract_comodel_domain
+from weth.addons.resource.models.utils import extract_comodel_domain
 
 
 @tagged('-at_install', 'post_install')

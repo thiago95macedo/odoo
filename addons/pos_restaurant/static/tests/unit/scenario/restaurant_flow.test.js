@@ -1,6 +1,6 @@
-import { expect, test } from "@odoo/hoot";
-import { animationFrame, waitFor, press, queryAll, tick, queryOne, edit } from "@odoo/hoot-dom";
-import { mockDate } from "@odoo/hoot-mock";
+import { expect, test } from "@weth/hoot";
+import { animationFrame, waitFor, press, queryAll, tick, queryOne, edit } from "@weth/hoot-dom";
+import { mockDate } from "@weth/hoot-mock";
 import { contains, mountWithCleanup } from "@web/../tests/web_test_helpers";
 import { setupPosEnv, setupAndMountPosApp } from "@point_of_sale/../tests/unit/utils";
 import { definePosModels } from "@point_of_sale/../tests/unit/data/generate_model_definitions";
@@ -842,7 +842,7 @@ test("MultiPreparationPrinter: only printer with matching category prints, no em
         contentDocument: { body: { innerHTML: "" } },
         style: {},
     });
-    store.ticketPrinter.setIframeSizeFromPrinter = () => {};
+    store.ticketPrinter.setIframeSizeFromPrinter = () => { };
     store.ticketPrinter.generateImage = async () => "mock-image";
 
     await Utils.clickTable("1", store);
@@ -1045,7 +1045,7 @@ test("test_multiple_preparation_printer_different_categories: both printers trig
         contentDocument: { body: { innerHTML: "" } },
         style: {},
     });
-    store.ticketPrinter.setIframeSizeFromPrinter = () => {};
+    store.ticketPrinter.setIframeSizeFromPrinter = () => { };
     store.ticketPrinter.generateImage = async () => "mock-image";
 
     await Utils.clickTable("1", store);

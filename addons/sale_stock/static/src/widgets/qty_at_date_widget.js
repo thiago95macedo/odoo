@@ -3,7 +3,7 @@ import { localization } from "@web/core/l10n/localization";
 import { registry } from "@web/core/registry";
 import { useService } from "@web/core/utils/hooks";
 import { usePopover } from "@web/core/popover/popover_hook";
-import { Component, computed, t, useProps } from "@odoo/owl";
+import { Component, computed, t, useProps } from "@weth/owl";
 import { standardWidgetProps } from "@web/views/widgets/standard_widget_props";
 import { roundPrecision } from "@web/core/utils/numbers";
 import { _t } from "@web/core/l10n/translation";
@@ -125,16 +125,16 @@ export class QtyAtDateWidget extends Component {
 export const qtyAtDateWidget = {
     component: QtyAtDateWidget,
     fieldDependencies: [
-        { name: 'display_qty_widget', type: 'boolean'},
-        { name: 'free_qty_today', type: 'float'},
-        { name: 'forecast_expected_date', type: 'datetime'},
-        { name: 'is_mto', type: 'boolean'},
-        { name: 'move_ids', type: 'one2many'},
-        { name: 'qty_available_today', type: 'float'},
-        { name: 'qty_to_deliver', type: 'float'},
-        { name: 'scheduled_date', type: 'datetime'},
-        { name: 'virtual_available_at_date', type: 'float'},
-        { name: 'warehouse_id', type: 'many2one'},
+        { name: 'display_qty_widget', type: 'boolean' },
+        { name: 'free_qty_today', type: 'float' },
+        { name: 'forecast_expected_date', type: 'datetime' },
+        { name: 'is_mto', type: 'boolean' },
+        { name: 'move_ids', type: 'one2many' },
+        { name: 'qty_available_today', type: 'float' },
+        { name: 'qty_to_deliver', type: 'float' },
+        { name: 'scheduled_date', type: 'datetime' },
+        { name: 'virtual_available_at_date', type: 'float' },
+        { name: 'warehouse_id', type: 'many2one' },
     ],
 };
 registry.category("view_widgets").add("qty_at_date_widget", qtyAtDateWidget);

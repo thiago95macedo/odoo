@@ -1,7 +1,7 @@
 import { FloatField, floatField } from "@web/views/fields/float/float_field";
 import { formatFloat } from "@web/views/fields/formatters";
 import { registry } from "@web/core/registry";
-import { onPatched, onMounted, proxy } from "@odoo/owl";
+import { onPatched, onMounted, proxy } from "@weth/owl";
 
 /**
  * This widget is used to display alongside the total quantity to consume of a production order,

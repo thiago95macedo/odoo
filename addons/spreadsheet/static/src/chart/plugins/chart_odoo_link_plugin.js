@@ -1,5 +1,5 @@
 import { OdooCorePlugin } from "@spreadsheet/plugins";
-import { coreTypes, evaluationCommandTypes, constants } from "@odoo/o-spreadsheet";
+import { coreTypes, evaluationCommandTypes, constants } from "@weth/o-spreadsheet";
 import { CommandResult } from "@spreadsheet/o_spreadsheet/cancelled_reason";
 import { deepCopy } from "@web/core/utils/objects";
 import { globalFieldMatchingRegistry } from "@spreadsheet/global_filters/helpers";

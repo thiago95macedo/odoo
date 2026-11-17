@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import Command
-from odoo.addons.product.tests.common import ProductCommon
+from weth import Command
+from weth.addons.product.tests.common import ProductCommon
 
 
 class PartnershipCommon(ProductCommon):

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.website_event.tests.common import TestEventOnlineCommon
+from weth.addons.website_event.tests.common import TestEventOnlineCommon
 
 
 class TestEventExhibitorCommon(TestEventOnlineCommon):

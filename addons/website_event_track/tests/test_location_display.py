@@ -1,9 +1,9 @@
 from datetime import datetime
 from freezegun import freeze_time
 
-from odoo.addons.website_event.tests.common import TestEventOnlineCommon
-from odoo.addons.website_event_track.controllers.location_display import EventTrackLocationDisplayController
-from odoo.tests.common import HttpCase, users
+from weth.addons.website_event.tests.common import TestEventOnlineCommon
+from weth.addons.website_event_track.controllers.location_display import EventTrackLocationDisplayController
+from weth.tests.common import HttpCase, users
 
 
 class TestLocationDisplay(TestEventOnlineCommon, HttpCase):

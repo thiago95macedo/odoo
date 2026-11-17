@@ -3,9 +3,9 @@
 import io
 import json
 
-from odoo import api, models
-from odoo.tools import format_amount, format_date, format_datetime, pdf
-from odoo.tools.pdf import (
+from weth import api, models
+from weth.tools import format_amount, format_date, format_datetime, pdf
+from weth.tools.pdf import (
     DictionaryObject,
     NameObject,
     NumberObject,

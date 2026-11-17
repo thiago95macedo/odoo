@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<odoo>
+<weth>
     <template id="card_campaign_preview" name="Share campaign">
         <t t-call="web.frontend_layout"
             title="card.display_name"
@@ -122,4 +122,4 @@
             </div>
         </t>
     </template>
-</odoo>
+</weth>

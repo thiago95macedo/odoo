@@ -4,7 +4,7 @@ import { registry } from "@web/core/registry";
 import { _t } from "@web/core/l10n/translation";
 import { rpc } from "@web/core/network/rpc";
 import { user } from "@web/core/user";
-import { markup } from "@odoo/owl";
+import { markup } from "@weth/owl";
 
 /**
  * Initializes the Google Maps JavaScript API using the dynamic library import
@@ -116,7 +116,7 @@ registry.category("services").add("google_maps", {
                                 notification.add(
                                     markup`<div>
                                         <span>${message}</span><br/>
-                                        <a href="/odoo/action-website.action_website_configuration">${urlTitle}</a>
+                                        <a href="/weth/action-website.action_website_configuration">${urlTitle}</a>
                                     </div>`,
                                     { type: "warning", sticky: true }
                                 );
@@ -153,9 +153,9 @@ registry.category("services").add("google_maps", {
                             message: isValid
                                 ? undefined
                                 : _t(
-                                      "Invalid API Key. The following error was returned by Google: %(error)s",
-                                      { error: await response.text() }
-                                  ),
+                                    "Invalid API Key. The following error was returned by Google: %(error)s",
+                                    { error: await response.text() }
+                                ),
                         };
                     } catch {
                         return {

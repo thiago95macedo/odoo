@@ -1,5 +1,5 @@
-from odoo.addons.microsoft_account.controllers.main import MicrosoftAuth
-from odoo.http import request
+from weth.addons.microsoft_account.controllers.main import MicrosoftAuth
+from weth.http import request
 
 
 class MicrosoftCalendarAuth(MicrosoftAuth):

@@ -1,9 +1,9 @@
 import logging
 import requests
 
-from odoo import _
-from odoo.addons.sms.tools.sms_api import SmsApiBase
-from odoo.addons.sms_twilio.tools.sms_twilio import get_twilio_from_number, get_twilio_status_callback_url
+from weth import _
+from weth.addons.sms.tools.sms_api import SmsApiBase
+from weth.addons.sms_twilio.tools.sms_twilio import get_twilio_from_number, get_twilio_status_callback_url
 
 _logger = logging.getLogger(__name__)
 

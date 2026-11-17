@@ -5,11 +5,11 @@ from uuid import uuid4
 from dateutil.parser import parse
 from dateutil.relativedelta import relativedelta
 
-from odoo import api, fields, models, tools, _
-from odoo.exceptions import ValidationError
-from odoo.fields import Domain
+from weth import api, fields, models, tools, _
+from weth.exceptions import ValidationError
+from weth.fields import Domain
 
-from odoo.addons.google_calendar.utils.google_calendar_service import GoogleCalendarService
+from weth.addons.google_calendar.utils.google_calendar_service import GoogleCalendarService
 
 
 class CalendarEvent(models.Model):

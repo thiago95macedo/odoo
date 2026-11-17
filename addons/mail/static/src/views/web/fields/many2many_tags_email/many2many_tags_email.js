@@ -2,7 +2,7 @@ import { RecipientTag, useRecipientChecker } from "@mail/core/web/recipient_tag"
 import { parseEmail } from "@mail/utils/common/format";
 import { _t } from "@web/core/l10n/translation";
 import { registry } from "@web/core/registry";
-import { t, useProps } from "@odoo/owl";
+import { t, useProps } from "@weth/owl";
 import {
     Many2ManyTagsField,
     many2ManyTagsField,

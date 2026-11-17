@@ -1,5 +1,5 @@
-from odoo.tests import tagged
-from odoo.addons.base.tests.common import BaseCommon
+from weth.tests import tagged
+from weth.addons.base.tests.common import BaseCommon
 
 
 @tagged('post_install', '-at_install')

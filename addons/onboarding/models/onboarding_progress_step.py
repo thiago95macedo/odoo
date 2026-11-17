@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import fields, models
-from odoo.addons.onboarding.models.onboarding_progress import ONBOARDING_PROGRESS_STATES
+from weth import fields, models
+from weth.addons.onboarding.models.onboarding_progress import ONBOARDING_PROGRESS_STATES
 
 
 class OnboardingProgressStep(models.Model):

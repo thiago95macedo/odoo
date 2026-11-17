@@ -1,6 +1,6 @@
-import { beforeEach, describe, expect, mockFetch, test, advanceTime } from "@odoo/hoot";
-import { click, edit, press, hover, queryAll, waitFor, waitForNone } from "@odoo/hoot-dom";
-import { animationFrame } from "@odoo/hoot-mock";
+import { beforeEach, describe, expect, mockFetch, test, advanceTime } from "@weth/hoot";
+import { click, edit, press, hover, queryAll, waitFor, waitForNone } from "@weth/hoot-dom";
+import { animationFrame } from "@weth/hoot-mock";
 import { patch } from "@web/core/utils/patch";
 
 import { setupEditor } from "../_helpers/editor";

@@ -1,10 +1,10 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import models
-from odoo.exceptions import ValidationError
+from weth import models
+from weth.exceptions import ValidationError
 
-from odoo.addons.payment import utils as payment_utils
-from odoo.addons.sale_gelato import const
+from weth.addons.payment import utils as payment_utils
+from weth.addons.sale_gelato import const
 
 
 class ResPartner(models.Model):

@@ -1,5 +1,5 @@
-import { test, expect } from "@odoo/hoot";
-import { animationFrame } from "@odoo/hoot-dom";
+import { test, expect } from "@weth/hoot";
+import { animationFrame } from "@weth/hoot-dom";
 import { mountWithCleanup } from "@web/../tests/web_test_helpers";
 import { setupPosEnv, getFilledOrder } from "@point_of_sale/../tests/unit/utils";
 import { TicketScreen } from "@point_of_sale/app/screens/ticket_screen/ticket_screen";

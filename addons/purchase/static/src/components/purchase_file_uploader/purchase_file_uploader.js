@@ -5,7 +5,7 @@ import { FileUploader } from "@web/views/fields/file_handler";
 import { WarningDialog } from "@web/core/errors/error_dialogs";
 import { _t } from "@web/core/l10n/translation";
 
-import { Component, t, useProps } from "@odoo/owl";
+import { Component, t, useProps } from "@weth/owl";
 
 export class PurchaseFileUploader extends Component {
     static template = "purchase.DocumentFileUploader";

@@ -8,7 +8,7 @@ import { KanbanController } from '@web/views/kanban/kanban_controller';
 import { KanbanRenderer, kanbanRendererProps } from '@web/views/kanban/kanban_renderer';
 import { user } from "@web/core/user";
 import { rpc } from "@web/core/network/rpc";
-import { onWillStart } from "@odoo/owl";
+import { onWillStart } from "@weth/owl";
 
 export class ExpenseKanbanController extends ExpenseDocumentUpload(KanbanController) {
     static template = "hr_expense.KanbanView";

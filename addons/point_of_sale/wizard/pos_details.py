@@ -3,7 +3,7 @@
 
 from datetime import timedelta
 
-from odoo import api, fields, models
+from weth import api, fields, models
 
 
 class PosDetailsWizard(models.TransientModel):

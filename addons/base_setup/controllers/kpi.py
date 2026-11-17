@@ -4,15 +4,15 @@ from importlib import import_module
 
 import psycopg2
 
-from odoo.exceptions import ValidationError
-from odoo.http import Controller, route
-from odoo.modules import Manifest
-from odoo.modules import module as odoo_modules_module
-from odoo.release import series as release_series
-from odoo.sql_db import db_connect
-from odoo.tools import SQL
+from weth.exceptions import ValidationError
+from weth.http import Controller, route
+from weth.modules import Manifest
+from weth.modules import module as odoo_modules_module
+from weth.release import series as release_series
+from weth.sql_db import db_connect
+from weth.tools import SQL
 
-from odoo.addons.base.models.res_users import _check_apikey_credentials
+from weth.addons.base.models.res_users import _check_apikey_credentials
 
 _logger = logging.getLogger(__name__)
 
@@ -50,10 +50,10 @@ def _get_kpi_providers():
             try:
                 if module_path:
                     # Support "submodule.path:function"
-                    module = import_module(f'.{module_path}', package=f'odoo.addons.{manifest.name}')
+                    module = import_module(f'.{module_path}', package=f'weth.addons.{manifest.name}')
                 else:
                     # Support ":function" for root-level function
-                    module = import_module(f'odoo.addons.{manifest.name}')
+                    module = import_module(f'weth.addons.{manifest.name}')
                 if not function:
                     _logger.warning('KPI provider %r from addon %r has an empty function name.', kpi_provider, manifest.name)
                     continue

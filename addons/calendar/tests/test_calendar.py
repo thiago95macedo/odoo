@@ -5,10 +5,10 @@ import logging
 
 from datetime import datetime, timedelta
 
-from odoo import fields, Command
-from odoo.exceptions import AccessError
-from odoo.tests import tagged, Form, new_test_user
-from odoo.addons.base.tests.common import SavepointCaseWithUserDemo
+from weth import fields, Command
+from weth.exceptions import AccessError
+from weth.tests import tagged, Form, new_test_user
+from weth.addons.base.tests.common import SavepointCaseWithUserDemo
 
 _logger = logging.getLogger(__name__)
 

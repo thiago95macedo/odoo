@@ -1,7 +1,7 @@
 /** @ts-check */
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@weth/hoot";
 
-import { Model } from "@odoo/o-spreadsheet";
+import { Model } from "@weth/o-spreadsheet";
 import { defineSpreadsheetModels } from "@spreadsheet/../tests/helpers/data";
 import {
     addGlobalFilterWithoutReload,

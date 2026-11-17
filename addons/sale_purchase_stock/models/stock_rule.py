@@ -1,6 +1,6 @@
 from markupsafe import Markup
 
-from odoo import models, _
+from weth import models, _
 
 
 class StockRule(models.Model):

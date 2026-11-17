@@ -3,10 +3,10 @@
 from collections import defaultdict
 from uuid import uuid4
 
-from odoo import api, fields, models
-from odoo.exceptions import UserError, ValidationError
-from odoo.fields import Command
-from odoo.tools.translate import LazyTranslate
+from weth import api, fields, models
+from weth.exceptions import UserError, ValidationError
+from weth.fields import Command
+from weth.tools.translate import LazyTranslate
 
 _lt = LazyTranslate(__name__)
 

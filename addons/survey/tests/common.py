@@ -7,8 +7,8 @@ import re
 from collections import Counter
 from contextlib import nullcontext
 
-from odoo.addons.mail.tests.common import mail_new_test_user
-from odoo.tests import common
+from weth.addons.mail.tests.common import mail_new_test_user
+from weth.tests import common
 
 
 class SurveyCase(common.TransactionCase):

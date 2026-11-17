@@ -1,7 +1,7 @@
 import { userHasEmployeeInCurrentCompany } from "@hr_holidays/utils";
 import { exportTimeOffRecords } from "@hr_holidays/views/hr_leave_export";
 import { HrHolidaysSearchModel } from "@hr_holidays/search/hr_holidays_search_model";
-import { onWillStart } from "@odoo/owl";
+import { onWillStart } from "@weth/owl";
 import { _t } from "@web/core/l10n/translation";
 import { registry } from "@web/core/registry";
 import { useBus, useService } from "@web/core/utils/hooks";

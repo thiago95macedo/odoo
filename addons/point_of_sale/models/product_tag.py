@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
-from odoo import api, fields, models
-from odoo.tools import is_html_empty
-from odoo.tools.translate import adapt_translated_field_value
+from weth import api, fields, models
+from weth.tools import is_html_empty
+from weth.tools.translate import adapt_translated_field_value
 
 
 class ProductTag(models.Model):

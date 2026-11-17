@@ -1,5 +1,5 @@
-import { after, describe, expect, test, runAllTimers } from "@odoo/hoot";
-import { mockFetch } from "@odoo/hoot-mock";
+import { after, describe, expect, test, runAllTimers } from "@weth/hoot";
+import { mockFetch } from "@weth/hoot-mock";
 import { allowTranslations } from "@web/../tests/web_test_helpers";
 
 import { download, downloadFile, parse } from "@web/core/network/download";
@@ -31,7 +31,7 @@ test("handles business error from server", async () => {
     const serverError = {
         code: 0,
         data: {
-            name: "odoo.exceptions.RedirectWarning",
+            name: "weth.exceptions.RedirectWarning",
             arguments: ["Business Error Message", "someArg"],
             message: "Business Error Message",
         },

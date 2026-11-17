@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.account_edi.tests.common import AccountEdiTestCommon
-from odoo.addons.base.tests.test_ir_cron import CronMixinCase
-from odoo.tests import tagged
+from weth.addons.account_edi.tests.common import AccountEdiTestCommon
+from weth.addons.base.tests.test_ir_cron import CronMixinCase
+from weth.tests import tagged
 
 
 @tagged('post_install', '-at_install')

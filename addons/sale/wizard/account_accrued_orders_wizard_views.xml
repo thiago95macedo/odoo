@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<odoo>
+<weth>
 
     <record id="action_accrued_revenue_entry_sale_order_line" model="ir.actions.server">
         <field name="name">Accrued Revenue Entry</field>
@@ -15,4 +15,4 @@ action = records.action_open_accrual_wizard()
         </field>
     </record>
 
-</odoo>
+</weth>

@@ -1,5 +1,5 @@
-from odoo import api, fields, models, tools, _
-from odoo.fields import Domain
+from weth import api, fields, models, tools, _
+from weth.fields import Domain
 
 
 class SlideChannelPartner(models.Model):

@@ -1,5 +1,5 @@
 import { testEditor } from "../_helpers/editor";
-import { test } from "@odoo/hoot";
+import { test } from "@weth/hoot";
 import {
     setColor,
     splitBlock,

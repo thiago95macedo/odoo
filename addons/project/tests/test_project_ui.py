@@ -1,10 +1,10 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-import odoo.tests
+import weth.tests
 
 
-@odoo.tests.tagged('post_install', '-at_install')
-class TestUi(odoo.tests.HttpCase):
+@weth.tests.tagged('post_install', '-at_install')
+class TestUi(weth.tests.HttpCase):
 
     @classmethod
     def setUpClass(cls):

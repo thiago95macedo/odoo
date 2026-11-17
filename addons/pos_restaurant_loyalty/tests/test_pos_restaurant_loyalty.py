@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.pos_restaurant.tests.test_frontend import TestFrontend
-from odoo.tests import tagged
-from odoo import Command
+from weth.addons.pos_restaurant.tests.test_frontend import TestFrontend
+from weth.tests import tagged
+from weth import Command
 
 
 @tagged("post_install", "-at_install")

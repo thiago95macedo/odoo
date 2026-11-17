@@ -1,5 +1,5 @@
 import { addBuilderPlugin, setupHTMLBuilder } from "@html_builder/../tests/helpers";
-import { expect, test, describe } from "@odoo/hoot";
+import { expect, test, describe } from "@weth/hoot";
 import { contains } from "@web/../tests/web_test_helpers";
 import { TextEffectPlugin } from "@html_builder/plugins/font/text_effect_plugin";
 import { getTextEffectPresetHash } from "@html_builder/plugins/font/text_effect_util";
@@ -11,7 +11,7 @@ import {
     queryOne,
     waitFor,
     waitForNone,
-} from "@odoo/hoot-dom";
+} from "@weth/hoot-dom";
 import { getContent, setSelection } from "@html_editor/../tests/_helpers/selection";
 
 describe.current.tags("desktop");

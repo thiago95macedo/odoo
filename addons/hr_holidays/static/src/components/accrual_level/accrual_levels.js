@@ -1,4 +1,4 @@
-import { Component, onWillStart, proxy, useProps } from "@odoo/owl";
+import { Component, onWillStart, proxy, useProps } from "@weth/owl";
 
 import { ConfirmationDialog } from "@web/core/confirmation_dialog/confirmation_dialog";
 import { _t } from "@web/core/l10n/translation";
@@ -126,11 +126,11 @@ export class AccrualLevels extends Component {
             this.dialog.add(ConfirmationDialog, {
                 body: id
                     ? _t(
-                          "Do you want to save the changes made to the accrual plan before editing this milestone?"
-                      )
+                        "Do you want to save the changes made to the accrual plan before editing this milestone?"
+                    )
                     : _t(
-                          "Do you want to save the changes made to the accrual plan before creating a new milestone?"
-                      ),
+                        "Do you want to save the changes made to the accrual plan before creating a new milestone?"
+                    ),
                 confirmLabel: _t("Yes, save changes"),
                 cancelLabel: _t("No, keep the old version"),
                 cancel: async () => await this.openMilestone(id),

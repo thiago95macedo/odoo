@@ -1,4 +1,4 @@
-import { Plugin, signal } from "@odoo/owl";
+import { Plugin, signal } from "@weth/owl";
 import { services } from "@web/core/services";
 import { session } from "@web/session";
 import { rpc } from "@web/core/network/rpc";

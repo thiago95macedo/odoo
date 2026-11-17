@@ -1,4 +1,4 @@
-import { expect, test } from "@odoo/hoot";
+import { expect, test } from "@weth/hoot";
 import { setupEditor, testEditor } from "../_helpers/editor";
 import { splitBlock } from "../_helpers/user_actions";
 import { getContent } from "../_helpers/selection";
@@ -30,8 +30,8 @@ test("should not split a contenteditable='false'", async () => {
     editor.shared.split.splitBlockNode({ targetNode: p, targetOffset: 0 });
     expect(getContent(el)).toBe(
         '<p data-selection-placeholder=""><br></p>' +
-            '<p contenteditable="false">ab</p>' +
-            '<p data-selection-placeholder="" style="margin: -9px 0px 8px;"><br></p>'
+        '<p contenteditable="false">ab</p>' +
+        '<p data-selection-placeholder="" style="margin: -9px 0px 8px;"><br></p>'
     );
 });
 test("should split an explicit contenteditable='true' if its ancestor isContentEditable", async () => {

@@ -1,6 +1,6 @@
 import { DiscussClientAction } from "@mail/core/public_web/discuss_app/client_action";
 
-import { whenReady } from "@odoo/owl";
+import { whenReady } from "@weth/owl";
 
 import { MainComponentsContainer } from "@web/core/main_components_container";
 import { registry } from "@web/core/registry";
@@ -13,5 +13,5 @@ import { mountComponent } from "@web/env";
     mainComponentsRegistry.add("DiscussClientAction", { Component: DiscussClientAction });
 
     await mountComponent(MainComponentsContainer, document.body, { name: "Discuss" });
-    odoo.isReady = true;
+    weth.isReady = true;
 })();

@@ -2,10 +2,10 @@ import io
 
 from PIL import Image
 
-from odoo.fields import Command
-from odoo.tests import HttpCase
+from weth.fields import Command
+from weth.tests import HttpCase
 
-from odoo.addons.stock.tests.common import TestStockCommon
+from weth.addons.stock.tests.common import TestStockCommon
 
 
 class TestPrinterTour(TestStockCommon, HttpCase):
@@ -48,7 +48,7 @@ class TestPrinterTour(TestStockCommon, HttpCase):
     def test_print_label_zpl(self):
         """test that the print job sent to the (mocked) ``/pstprnt`` endpoint
         has the correct content when printing a label with a ZPL printer."""
-        self.start_tour(f"/odoo/products/{self.product.product_tmpl_id.id}", "print_label_zebra_tour", login="admin")
+        self.start_tour(f"/weth/products/{self.product.product_tmpl_id.id}", "print_label_zebra_tour", login="admin")
 
     def test_print_label_epos(self):
         """test that the simulated ``/cgi-bin/epos/service.cgi`` controller
@@ -80,7 +80,7 @@ class TestPrinterTour(TestStockCommon, HttpCase):
         )
 
         self.start_tour(
-            f"/odoo/inventory/{picking_type.id}/deliveries/{picking.id}",
+            f"/weth/inventory/{picking_type.id}/deliveries/{picking.id}",
             "print_label_epos_tour",
             login="admin",
         )

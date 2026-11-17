@@ -1,4 +1,4 @@
-import { Component, t, useProps } from "@odoo/owl";
+import { Component, t, useProps } from "@weth/owl";
 import { registry } from "@web/core/registry";
 import { CallSettings } from "@mail/discuss/call/common/call_settings";
 

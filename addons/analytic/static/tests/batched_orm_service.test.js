@@ -1,6 +1,6 @@
-import { Component, proxy, t, useProps, xml } from "@odoo/owl";
-import { expect, test } from "@odoo/hoot";
-import { animationFrame } from "@odoo/hoot-mock";
+import { Component, proxy, t, useProps, xml } from "@weth/owl";
+import { expect, test } from "@weth/hoot";
+import { animationFrame } from "@weth/hoot-mock";
 import { mountWithCleanup, onRpc } from "@web/../tests/web_test_helpers";
 import { useService } from "@web/core/utils/hooks";
 import { defineAnalyticModels } from "./analytic_test_helpers";

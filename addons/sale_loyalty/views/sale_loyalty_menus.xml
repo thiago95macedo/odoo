@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<odoo>
+<weth>
 
     <menuitem
         id="menu_sale_promotions"
@@ -20,4 +20,4 @@
         />
     </menuitem>
 
-</odoo>
+</weth>

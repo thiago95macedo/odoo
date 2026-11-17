@@ -5,16 +5,16 @@ from contextlib import contextmanager
 from datetime import datetime
 from unittest.mock import patch
 
-from odoo import Command
-from odoo.addons.google_calendar.models.calendar_calendar import CalendarCalendar
-from odoo.addons.google_calendar.utils.google_calendar_service import GoogleCalendarService
-from odoo.addons.google_account.models.google_service import GoogleService
-from odoo.addons.google_calendar.models.res_users import ResUsers
-from odoo.addons.google_calendar.models.google_event_sync import GoogleEventSync
-from odoo.addons.google_calendar.models.google_sync import google_calendar_token
-from odoo.addons.mail.tests.common import mail_new_test_user
-from odoo.tests.common import HttpCase
-from odoo.tools import mute_logger
+from weth import Command
+from weth.addons.google_calendar.models.calendar_calendar import CalendarCalendar
+from weth.addons.google_calendar.utils.google_calendar_service import GoogleCalendarService
+from weth.addons.google_account.models.google_service import GoogleService
+from weth.addons.google_calendar.models.res_users import ResUsers
+from weth.addons.google_calendar.models.google_event_sync import GoogleEventSync
+from weth.addons.google_calendar.models.google_sync import google_calendar_token
+from weth.addons.mail.tests.common import mail_new_test_user
+from weth.tests.common import HttpCase
+from weth.tools import mute_logger
 
 
 def patch_api(func):
@@ -43,7 +43,7 @@ class TestSyncGoogle(HttpCase):
         })
         cls.secondary_calendar.google_sync_enabled = True
 
-        m = mute_logger('odoo.addons.auth_signup.models.res_users')
+        m = mute_logger('weth.addons.auth_signup.models.res_users')
         mute_logger.__enter__(m)  # noqa: PLC2801
         cls.addClassCleanup(mute_logger.__exit__, m, None, None, None)
 

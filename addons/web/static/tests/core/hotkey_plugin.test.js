@@ -11,8 +11,8 @@ import {
     queryOne,
     test,
     tick,
-} from "@odoo/hoot";
-import { Component, proxy, signal, types as t, useProps, xml } from "@odoo/owl";
+} from "@weth/hoot";
+import { Component, proxy, signal, types as t, useProps, xml } from "@weth/owl";
 import {
     contains,
     destroyApp,
@@ -525,7 +525,7 @@ test("hotkeys evil 👹", async () => {
 
     expect(() => hotkey.add()).toThrow(/must specify an hotkey/);
     expect(() => hotkey.add(null)).toThrow(/must specify an hotkey/);
-    function callback() {}
+    function callback() { }
     expect(() => hotkey.add(null, callback)).toThrow(/must specify an hotkey/);
     expect(() => hotkey.add("")).toThrow(/must specify an hotkey/);
     expect(() => hotkey.add("crap", callback)).toThrow(/not whitelisted/);

@@ -5,12 +5,12 @@ from unittest.mock import patch
 
 import lxml.html
 
-from odoo.http.session import session_store
-from odoo.tests import HttpCase, TransactionCase, new_test_user, tagged
-from odoo.tests.common import HOST
+from weth.http.session import session_store
+from weth.tests import HttpCase, TransactionCase, new_test_user, tagged
+from weth.tests.common import HOST
 
-from odoo.addons.auth_totp.controllers.home import TRUSTED_DEVICE_COOKIE
-from odoo.addons.auth_totp.models.totp import TOTP
+from weth.addons.auth_totp.controllers.home import TRUSTED_DEVICE_COOKIE
+from weth.addons.auth_totp.models.totp import TOTP
 
 
 @tagged('at_install', '-post_install')  # LEGACY at_install
@@ -276,12 +276,12 @@ class TestAuthTimeoutHttp(HttpCase):
         result = self.rpc("res.users", "read", [self.user.id], ["login"])
         self.assertEqual(
             result.get("error", {}).get("data", {}).get("name"),
-            "odoo.http.session.CheckIdentityException",
+            "weth.http.session.CheckIdentityException",
         )
 
     def assertSessionExpired(self):
         result = self.rpc("res.users", "read", [self.user.id], ["login"])
-        self.assertEqual(result.get("error", {}).get("data", {}).get("name"), "odoo.http.session.SessionExpiredException")
+        self.assertEqual(result.get("error", {}).get("data", {}).get("name"), "weth.http.session.SessionExpiredException")
 
     def assertMustNotCheckIdentity(self):
         result = self.rpc("res.users", "read", [self.user.id], ["login"])

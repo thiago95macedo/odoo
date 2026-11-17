@@ -2,12 +2,12 @@
 
 from unittest.mock import patch
 
-from odoo import Command
-from odoo.exceptions import UserError, ValidationError
-from odoo.tests import tagged
+from weth import Command
+from weth.exceptions import UserError, ValidationError
+from weth.tests import tagged
 
-from odoo.addons.account_payment.tests.common import AccountPaymentCommon
-from odoo.addons.base.models.ir_qweb import QWebError
+from weth.addons.account_payment.tests.common import AccountPaymentCommon
+from weth.addons.base.models.ir_qweb import QWebError
 
 
 @tagged('-at_install', 'post_install')
@@ -188,7 +188,7 @@ class TestAccountPayment(AccountPaymentCommon):
         payment_with_token.payment_token_id = payment_token.id
 
         with patch(
-            'odoo.addons.payment.models.payment_transaction.PaymentTransaction'
+            'weth.addons.payment.models.payment_transaction.PaymentTransaction'
             '._charge_with_token'
         ) as patched:
             payment_without_token.with_context(payment_safe_write=True).action_post()

@@ -1,4 +1,4 @@
-import { useProps, signal, t } from "@odoo/owl";
+import { useProps, signal, t } from "@weth/owl";
 import { MainComponentsContainer } from "@web/core/main_components_container";
 import { registry } from "@web/core/registry";
 import { useRegistry } from "@web/core/registry_hook";

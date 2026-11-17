@@ -8,10 +8,10 @@ from datetime import datetime, timedelta
 from lxml import html
 from unittest.mock import patch
 
-from odoo.tests import HttpCase, common, tagged
+from weth.tests import HttpCase, common, tagged
 
-from odoo.addons.base.tests.common import HttpCaseWithUserDemo
-from odoo.addons.website.models.ir_http import IrHttp
+from weth.addons.base.tests.common import HttpCaseWithUserDemo
+from weth.addons.website.models.ir_http import IrHttp
 
 
 class MockVisitor(common.BaseCase):

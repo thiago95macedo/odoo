@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.crm.tests.common import TestCrmCommon
-from odoo.tests.common import tagged, users
-from odoo.tools.mail import mail_prepare_for_domain_search
+from weth.addons.crm.tests.common import TestCrmCommon
+from weth.tests.common import tagged, users
+from weth.tools.mail import mail_prepare_for_domain_search
 
 
 @tagged('lead_internals')

@@ -5,14 +5,14 @@ from datetime import datetime, timedelta
 from unittest.mock import patch
 from markupsafe import Markup
 
-from odoo import fields
-from odoo.addons.mail.tests.common import MailCommon
-from odoo.exceptions import AccessError
-from odoo.addons.mail.models.mail_track_mixin import MailTrackMixin
-from odoo.addons.test_mail.data.test_mail_data import MAIL_TEMPLATE
-from odoo.tests import Form, tagged, users
-from odoo.tools import formatLang, mute_logger
-from odoo.tools.mail import formataddr
+from weth import fields
+from weth.addons.mail.tests.common import MailCommon
+from weth.exceptions import AccessError
+from weth.addons.mail.models.mail_track_mixin import MailTrackMixin
+from weth.addons.test_mail.data.test_mail_data import MAIL_TEMPLATE
+from weth.tests import Form, tagged, users
+from weth.tools import formatLang, mute_logger
+from weth.tools.mail import formataddr
 
 
 class TestTrackingCommon(MailCommon):
@@ -534,7 +534,7 @@ class TestTrackingTemplate(TestTrackingCommon):
         ])
 
     @users('employee')
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_message_track_template(self):
         """ Update some tracked fields linked to some template -> message with onchange on
         each updated record. """
@@ -590,7 +590,7 @@ class TestTrackingTemplate(TestTrackingCommon):
                 }
             )
 
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_message_track_template_at_create(self):
         """ Create records in batch with tracking template on create, template should be sent
         on all records. """
@@ -632,7 +632,7 @@ class TestTrackingTemplate(TestTrackingCommon):
                 }
             )
 
-    @mute_logger('odoo.addons.mail.models.mail_mail', 'odoo.addons.mail.models.mail_thread')
+    @mute_logger('weth.addons.mail.models.mail_mail', 'weth.addons.mail.models.mail_thread')
     def test_message_track_template_at_create_from_mailgateway(self):
         """Make sure records created through aliasing show the original message before the template"""
         # setup
@@ -671,7 +671,7 @@ class TestTrackingTemplate(TestTrackingCommon):
         )
 
     @users('employee')
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_message_track_template_create_partner_multicompany(self):
         """ Test partner created due to usage of a mail.template, triggered by
         a tracking, in a multi company environment. """
@@ -697,7 +697,7 @@ class TestTrackingTemplate(TestTrackingCommon):
                 args[0].message_post_with_source(template)
             return True
 
-        with patch('odoo.addons.mail.models.mail_thread.MailThread._track_post_template', patched_track_post_template):
+        with patch('weth.addons.mail.models.mail_thread.MailThread._track_post_template', patched_track_post_template):
             self.env['mail.test.track'].create({
                 'email_from': email_new_partner,
                 'company_id': self.company_2.id,
@@ -1750,7 +1750,7 @@ class TestTrackingInternals(TestTrackingCommon):
         self.flush_tracking()
         test_record.monetary_field = 2.0
         self.flush_tracking()
-        with mute_logger('odoo.addons.mail.tests.common'):
+        with mute_logger('weth.addons.mail.tests.common'):
             self.assertMessageFields(
                 test_record.message_ids[0], {'tracking_values': [
                     ('monetary_field', 'monetary', 1.0, 2.0, {'currency': self.env['res.currency']}),

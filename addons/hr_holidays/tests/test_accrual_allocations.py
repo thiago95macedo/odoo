@@ -5,13 +5,13 @@ from datetime import date
 from freezegun import freeze_time
 from psycopg2 import IntegrityError
 
-from odoo import Command
-from odoo.tests import tagged, Form
-from odoo.exceptions import UserError, ValidationError
-from odoo.tools import mute_logger
-from odoo.tools.date_utils import parse_iso_date
+from weth import Command
+from weth.tests import tagged, Form
+from weth.exceptions import UserError, ValidationError
+from weth.tools import mute_logger
+from weth.tools.date_utils import parse_iso_date
 
-from odoo.addons.hr_holidays.tests.common import TestHrHolidaysCommon
+from weth.addons.hr_holidays.tests.common import TestHrHolidaysCommon
 
 
 class AccrualPlanDuplicataError(Exception):
@@ -2391,7 +2391,7 @@ class TestAccrualAllocations(TestHrHolidaysCommon):
             ('2022-06-01', 18 / self.hours_per_day, date(2022, 6, 6)),
         ))
 
-    @mute_logger('odoo.sql_db')
+    @mute_logger('weth.sql_db')
     def test_yearly_cap_constraint(self):
         accrual_plan = self.accrual_plan_daily_5_max_leaves
         with self.assertRaises(IntegrityError):

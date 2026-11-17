@@ -1,4 +1,4 @@
-from odoo.addons.payment.tests.common import PaymentCommon
+from weth.addons.payment.tests.common import PaymentCommon
 
 
 class TossPaymentsCommon(PaymentCommon):

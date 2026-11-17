@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.utm.tests.common import TestUTMCommon
-from odoo.exceptions import AccessError
-from odoo.tests.common import tagged, users
+from weth.addons.utm.tests.common import TestUTMCommon
+from weth.exceptions import AccessError
+from weth.tests.common import tagged, users
 
 
 @tagged('post_install', '-at_install', 'security', 'utm')

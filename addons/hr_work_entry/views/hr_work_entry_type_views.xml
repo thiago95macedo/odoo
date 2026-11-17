@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
     <record id="hr_work_entry_type_view_search" model="ir.ui.view">
         <field name="name">hr.work.entry.type.view.search</field>
         <field name="model">hr.work.entry.type</field>
@@ -128,4 +128,4 @@
             </kanban>
         </field>
     </record>
-</odoo>
+</weth>

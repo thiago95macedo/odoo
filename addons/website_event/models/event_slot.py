@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from odoo import models
+from weth import models
 
 
 class EventSlot(models.Model):

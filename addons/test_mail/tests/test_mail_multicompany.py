@@ -6,13 +6,13 @@ from itertools import product
 from unittest.mock import patch
 from werkzeug.urls import url_parse
 
-from odoo.addons.mail.models.mail_message import MailMessage
-from odoo.addons.bus.tests.common import BusResult
-from odoo.addons.mail.tests.common import MailCommon, mail_new_test_user
-from odoo.addons.test_mail.tests.common import TestRecipients
-from odoo.exceptions import AccessError
-from odoo.tests import tagged, users, HttpCase
-from odoo.tools import mute_logger
+from weth.addons.mail.models.mail_message import MailMessage
+from weth.addons.bus.tests.common import BusResult
+from weth.addons.mail.tests.common import MailCommon, mail_new_test_user
+from weth.addons.test_mail.tests.common import TestRecipients
+from weth.exceptions import AccessError
+from weth.tests import tagged, users, HttpCase
+from weth.tools import mute_logger
 
 
 class TestMailMCCommon(MailCommon, TestRecipients):
@@ -76,7 +76,7 @@ class TestMailMCCommon(MailCommon, TestRecipients):
 class TestMultiCompanySetup(TestMailMCCommon, HttpCase):
 
     @users('employee_c2')
-    @mute_logger('odoo.addons.base.models.ir_access')
+    @mute_logger('weth.addons.base.models.ir_access')
     def test_post_with_read_access(self):
         """ Check that with readonly access, a message with attachment can be
         posted on a model with the attribute _mail_post_access = 'read'. """
@@ -134,7 +134,7 @@ class TestMultiCompanySetup(TestMailMCCommon, HttpCase):
         self.assertEqual(test_record_c1.message_main_attachment_id, first_attachment)
 
     @users('employee_c2')
-    @mute_logger('odoo.addons.base.models.ir_access')
+    @mute_logger('weth.addons.base.models.ir_access')
     def test_post_wo_access(self):
         test_records_mc_c1, test_records_mc_c2 = self.test_records_mc.with_env(self.env)
         attachments_data = [
@@ -387,7 +387,7 @@ class TestMultiCompanyControllers(TestMailMCCommon, HttpCase):
                         # company -> _redirect_to_record should redirect to
                         # messaging as the user doesn't have any access
                         parsed_url = url_parse(response.url)
-                        self.assertEqual(parsed_url.path, '/odoo/action-mail.action_discuss')
+                        self.assertEqual(parsed_url.path, '/weth/action-mail.action_discuss')
                     else:
                         # Logged into company main, try accessing record in same
                         # company -> _redirect_to_record should add company in

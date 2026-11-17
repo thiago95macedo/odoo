@@ -8,9 +8,9 @@ from itertools import zip_longest
 from lxml import etree as ET, html
 from lxml.html import builder as h
 
-from odoo.exceptions import MissingError
-from odoo.modules.module import _DEFAULT_MANIFEST, Manifest
-from odoo.tests import common, HttpCase, tagged
+from weth.exceptions import MissingError
+from weth.modules.module import _DEFAULT_MANIFEST, Manifest
+from weth.tests import common, HttpCase, tagged
 
 
 def attrs(**kwargs):
@@ -1825,7 +1825,7 @@ class TestThemeViews(common.TransactionCase):
         main_view.with_context(website_id=website_1.id).arch = '<body>specific</body>'
 
         # 2. Simulate a theme install with a child view of `main_view`
-        patcher = patch('odoo.modules.Manifest.for_addon', return_value=Manifest(path='/dummy/test_theme', manifest_content=_DEFAULT_MANIFEST))
+        patcher = patch('weth.modules.Manifest.for_addon', return_value=Manifest(path='/dummy/test_theme', manifest_content=_DEFAULT_MANIFEST))
         self.startPatcher(patcher)
         test_theme_module = self.env['ir.module.module'].create({'name': 'test_theme'})
         self.env['ir.model.data'].create({

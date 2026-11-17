@@ -2,9 +2,9 @@
 
 from werkzeug import urls
 
-from odoo import api, fields, models
+from weth import api, fields, models
 
-from odoo.addons.payment import utils as payment_utils
+from weth.addons.payment import utils as payment_utils
 
 
 class PaymentLinkWizard(models.TransientModel):

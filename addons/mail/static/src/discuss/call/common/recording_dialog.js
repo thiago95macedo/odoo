@@ -1,4 +1,4 @@
-import { Component, signal, t, useEffect, useProps } from "@odoo/owl";
+import { Component, signal, t, useEffect, useProps } from "@weth/owl";
 
 import { CheckBox } from "@web/core/checkbox/checkbox";
 import { Dialog } from "@web/core/dialog/dialog";
@@ -36,30 +36,30 @@ export class RecordingDialog extends Component {
         const rtc = this.store.rtc;
         return Boolean(
             rtc?.can_record_transcription &&
-                (!rtc?.isRecording() || rtc.recordingState.audio || rtc.recordingState.video)
+            (!rtc?.isRecording() || rtc.recordingState.audio || rtc.recordingState.video)
         );
     }
 
     isVideoDisabled() {
         return Boolean(
             this.store.rtc?.isRecording() ||
-                !this.store.rtc?.can_record_audio ||
-                !this.store.rtc?.can_record_video
+            !this.store.rtc?.can_record_audio ||
+            !this.store.rtc?.can_record_video
         );
     }
 
     isRecordingActionDisabled() {
         return Boolean(
             this.store.rtc?.recordingRequest ||
-                (!this.store.rtc?.isRecording() && !this.state().transcription && !this.state().video)
+            (!this.store.rtc?.isRecording() && !this.state().transcription && !this.state().video)
         );
     }
 
     showUpdateButton() {
         return Boolean(
             this.store.rtc?.isRecording() &&
-                this.canChangeTranscription() &&
-                this.state().transcription !== this.store.rtc?.recordingState?.transcription
+            this.canChangeTranscription() &&
+            this.state().transcription !== this.store.rtc?.recordingState?.transcription
         );
     }
 

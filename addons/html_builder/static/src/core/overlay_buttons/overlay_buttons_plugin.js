@@ -1,4 +1,4 @@
-import { proxy } from "@odoo/owl";
+import { proxy } from "@weth/owl";
 import { Plugin } from "@html_editor/plugin";
 import { throttleForAnimation } from "@web/core/utils/timing";
 import { getScrollingElement, getScrollingTarget } from "@web/core/utils/scrolling";
@@ -38,7 +38,7 @@ export class OverlayButtonsPlugin extends Plugin {
         on_mobile_view_switched_handlers: withSequence(20, this.refreshButtons.bind(this)),
         on_prepare_drag_handlers: () => {
             this.hideOverlayButtons();
-            return () => {}; // it will be refreshed by the call to `updateContainers` after drop (or cancel)
+            return () => { }; // it will be refreshed by the call to `updateContainers` after drop (or cancel)
         },
     };
 

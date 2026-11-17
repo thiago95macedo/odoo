@@ -4,10 +4,10 @@ from datetime import datetime, timedelta
 from freezegun import freeze_time
 from werkzeug.urls import url_unquote_plus
 
-from odoo.addons.base.tests.files import GIF_RAW
-from odoo.tests.common import HttpCase, new_test_user, tagged
-from odoo.tools.image import binary_to_image
-from odoo.tools.misc import limited_field_access_token
+from weth.addons.base.tests.files import GIF_RAW
+from weth.tests.common import HttpCase, new_test_user, tagged
+from weth.tools.image import binary_to_image
+from weth.tools.misc import limited_field_access_token
 
 
 @tagged('-at_install', 'post_install')

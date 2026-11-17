@@ -7,7 +7,7 @@ import { CARD_ATTRIBUTE } from "@web/views/card/card_arch_parser";
 import { CardRenderer } from "@web/views/card/card_renderer";
 import { useViewButtons } from "@web/views/view_button/view_button_hook";
 
-import { Component, onWillStart, t, useProps } from "@odoo/owl";
+import { Component, onWillStart, t, useProps } from "@weth/owl";
 
 export const BODY_ATTRIBUTE = "popover-body";
 export const FOOTER_ATTRIBUTE = "popover-footer";
@@ -94,8 +94,8 @@ export class CardPopover extends Component {
         readonly: t.boolean().optional(false),
         rootClass: t.string().optional(),
         context: t.object().optional(() => ({})),
-        reloadOnClose: t.function().optional(() => () => {}),
-        openRecord: t.function().optional(() => () => {}),
+        reloadOnClose: t.function().optional(() => () => { }),
+        openRecord: t.function().optional(() => () => { }),
     });
 
     setup() {

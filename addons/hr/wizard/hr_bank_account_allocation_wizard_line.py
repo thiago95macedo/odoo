@@ -1,5 +1,5 @@
-from odoo import models, fields, api
-from odoo.exceptions import UserError
+from weth import models, fields, api
+from weth.exceptions import UserError
 
 
 class BankAccountAllocationLineWizard(models.TransientModel):

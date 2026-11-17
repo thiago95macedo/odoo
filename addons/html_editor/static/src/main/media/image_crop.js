@@ -14,7 +14,7 @@ import {
     t,
     useListener,
     useProps,
-} from "@odoo/owl";
+} from "@weth/owl";
 import { useHotkey } from "@web/core/hotkeys/hotkey_hook";
 import { _t } from "@web/core/l10n/translation";
 import { useActiveElement } from "@web/core/ui/ui_plugin";

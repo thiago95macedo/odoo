@@ -4,13 +4,13 @@ import hashlib
 import hmac
 import pprint
 
-from odoo import http
-from odoo.exceptions import ValidationError
-from odoo.http import request
+from weth import http
+from weth.exceptions import ValidationError
+from weth.http import request
 
-from odoo.addons.payment import utils as payment_utils
-from odoo.addons.payment.logging import get_payment_logger
-from odoo.addons.payment_authorize import const
+from weth.addons.payment import utils as payment_utils
+from weth.addons.payment.logging import get_payment_logger
+from weth.addons.payment_authorize import const
 
 _logger = get_payment_logger(__name__)
 

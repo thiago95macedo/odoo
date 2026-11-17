@@ -3,7 +3,7 @@ import { fillShrunkPhrasingParent } from "@html_editor/utils/dom";
 import { closestElement, descendants, selectElements } from "@html_editor/utils/dom_traversal";
 import { parseHTML } from "@html_editor/utils/html";
 import { withSequence } from "@html_editor/utils/resource";
-import { htmlEscape } from "@odoo/owl";
+import { htmlEscape } from "@weth/owl";
 import { _t } from "@web/core/l10n/translation";
 import { closestBlock } from "@html_editor/utils/blocks";
 import { isEmptyBlock, isParagraphRelatedElement } from "../utils/dom_info";
@@ -165,14 +165,13 @@ export class BannerPlugin extends Plugin {
         containerClass = containerClass ? `${containerClass} ` : "";
         contentClass = contentClass ? `${contentClass} ` : "";
 
-        const bannerClasses = `${containerClass}o_editor_banner user-select-none o-contenteditable-false ${
-            emoji ? "lh-1 " : ""
-        }d-flex align-items-center alert alert-${alertClass} pb-0 pt-3 ps-3 pe-3`;
+        const bannerClasses = `${containerClass}o_editor_banner user-select-none o-contenteditable-false ${emoji ? "lh-1 " : ""
+            }d-flex align-items-center alert alert-${alertClass} pb-0 pt-3 ps-3 pe-3`;
         const bannerContentClasses = `${contentClass}o_editor_banner_content o-contenteditable-true w-100 px-3`;
         const emojiHtml = emoji
             ? `<i class="o_editor_banner_icon mb-3 fst-normal" data-oe-aria-label="${htmlEscape(
-                  title
-              )}">${htmlEscape(emoji)}</i>`
+                title
+            )}">${htmlEscape(emoji)}</i>`
             : "";
         const selection = this.dependencies.selection.getEditableSelection();
         const currentBanner = closestElement(selection.anchorNode, ".o_editor_banner");

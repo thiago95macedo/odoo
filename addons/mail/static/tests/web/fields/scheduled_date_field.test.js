@@ -8,8 +8,8 @@ import {
     startServer,
 } from "@mail/../tests/mail_test_helpers";
 
-import { beforeEach, test } from "@odoo/hoot";
-import { mockDate } from "@odoo/hoot-mock";
+import { beforeEach, test } from "@weth/hoot";
+import { mockDate } from "@weth/hoot-mock";
 import { MailComposeMessage } from "../../mock_server/mock_models/mail_composer_message";
 
 defineMailModels();

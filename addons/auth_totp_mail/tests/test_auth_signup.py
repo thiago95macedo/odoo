@@ -1,9 +1,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
 from unittest.mock import patch
-from odoo.addons.base.tests.common import HttpCaseWithUserDemo, HttpCaseWithUserPortal
+from weth.addons.base.tests.common import HttpCaseWithUserDemo, HttpCaseWithUserPortal
 
-from odoo.tests.common import tagged
+from weth.tests.common import tagged
 
 
 @tagged('post_install', '-at_install')

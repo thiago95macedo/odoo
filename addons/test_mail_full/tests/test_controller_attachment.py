@@ -1,10 +1,10 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-import odoo
-from odoo.addons.mail.tests.common_controllers import MailControllerAttachmentCommon
+import weth
+from weth.addons.mail.tests.common_controllers import MailControllerAttachmentCommon
 
 
-@odoo.tests.tagged("-at_install", "post_install", "mail_controller")
+@weth.tests.tagged("-at_install", "post_install", "mail_controller")
 class TestPortalAttachmentController(MailControllerAttachmentCommon):
 
     def test_attachment_upload_portal(self):

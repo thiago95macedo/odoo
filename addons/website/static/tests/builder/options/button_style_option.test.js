@@ -1,4 +1,4 @@
-import { animationFrame, describe, expect, queryFirst, queryOne, test } from "@odoo/hoot";
+import { animationFrame, describe, expect, queryFirst, queryOne, test } from "@weth/hoot";
 import {
     defineWebsiteModels,
     setupWebsiteBuilder,

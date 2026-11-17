@@ -1,6 +1,6 @@
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@weth/hoot";
 import { setupEditor } from "../_helpers/editor";
-import { press } from "@odoo/hoot-dom";
+import { press } from "@weth/hoot-dom";
 import { getContent } from "../_helpers/selection";
 import { execCommand } from "../_helpers/userCommands";
 

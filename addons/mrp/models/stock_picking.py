@@ -2,9 +2,9 @@
 
 from ast import literal_eval
 
-from odoo import _, api, fields, models
-from odoo.exceptions import ValidationError
-from odoo.fields import Domain
+from weth import _, api, fields, models
+from weth.exceptions import ValidationError
+from weth.fields import Domain
 
 
 class StockPickingType(models.Model):

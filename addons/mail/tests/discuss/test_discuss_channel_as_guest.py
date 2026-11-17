@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.mail.tests.common import mail_new_test_user
-from odoo.tests.common import tagged
-from odoo.addons.base.tests.common import HttpCaseWithUserPortal
+from weth.addons.mail.tests.common import mail_new_test_user
+from weth.tests.common import tagged
+from weth.addons.base.tests.common import HttpCaseWithUserPortal
 
 
 @tagged("is_tour")
@@ -172,4 +172,4 @@ class TestMailPublicPage(HttpCaseWithUserPortal):
         response = self.url_open(channel.invitation_url)
         group = self.env["discuss.channel"]._create_group(name="Group 1", users_to=bob)
         response = self.url_open(group.invitation_url)
-        self.assertIn(f"/odoo/action-mail.action_discuss?active_id={group.id}", response.url)
+        self.assertIn(f"/weth/action-mail.action_discuss?active_id={group.id}", response.url)

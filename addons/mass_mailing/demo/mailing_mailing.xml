@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
     <template id="mass_mail_1_body">
         <div class="o_layout o_default_theme oe_unremovable oe_unmovable" data-name="Mailing">
             <div class="container o_mail_wrapper oe_unremovable oe_unmovable o_mail_regular" style="border-collapse:collapse;">
@@ -87,4 +87,4 @@
             </field>
         </record>
     </data>
-</odoo>
+</weth>

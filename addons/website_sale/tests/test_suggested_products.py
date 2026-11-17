@@ -2,11 +2,11 @@
 
 from dateutil.relativedelta import relativedelta
 
-from odoo.fields import Command
-from odoo.tests import tagged
+from weth.fields import Command
+from weth.tests import tagged
 
-from odoo.addons.base.tests.test_ir_cron import CronMixinCase
-from odoo.addons.website_sale.tests.common import WebsiteSaleCommon
+from weth.addons.base.tests.test_ir_cron import CronMixinCase
+from weth.addons.website_sale.tests.common import WebsiteSaleCommon
 
 
 @tagged("post_install", "-at_install")

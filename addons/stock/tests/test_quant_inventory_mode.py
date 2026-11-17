@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.mail.tests.common import mail_new_test_user
-from odoo.tests import tagged, Form, TransactionCase
-from odoo.exceptions import AccessError, UserError
+from weth.addons.mail.tests.common import mail_new_test_user
+from weth.tests import tagged, Form, TransactionCase
+from weth.exceptions import AccessError, UserError
 
 
 class TestEditableQuant(TransactionCase):

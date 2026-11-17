@@ -5,11 +5,11 @@ from datetime import datetime, timedelta
 from dateutil.relativedelta import relativedelta
 from freezegun import freeze_time
 
-from odoo import fields, SUPERUSER_ID
+from weth import fields, SUPERUSER_ID
 
-from odoo.exceptions import UserError
-from odoo.tests import tagged, common, new_test_user
-from odoo.addons.hr_timesheet.tests.test_timesheet import TestCommonTimesheet
+from weth.exceptions import UserError
+from weth.tests import tagged, common, new_test_user
+from weth.addons.hr_timesheet.tests.test_timesheet import TestCommonTimesheet
 import time
 
 

@@ -6,12 +6,12 @@ from freezegun import freeze_time
 from markupsafe import Markup
 from requests.exceptions import HTTPError
 
-from odoo import fields
-from odoo.tests import JsonRpcException
-from odoo.tools import file_open, mute_logger
+from weth import fields
+from weth.tests import JsonRpcException
+from weth.tools import file_open, mute_logger
 
-from odoo.addons.base.tests.common import HttpCase
-from odoo.addons.mail.tests.common import MailCommon, mail_new_test_user
+from weth.addons.base.tests.common import HttpCase
+from weth.addons.mail.tests.common import MailCommon, mail_new_test_user
 
 
 class MessagePostSubTestData:
@@ -137,7 +137,7 @@ class MailControllerAttachmentCommon(MailControllerCommon):
 
     def _upload_attachment(self, document, route_kw):
         cookies = route_kw.pop("cookies", None)
-        with mute_logger("odoo.http"), file_open("addons/web/__init__.py") as file:
+        with mute_logger("weth.http"), file_open("addons/web/__init__.py") as file:
             res = self.url_open(
                 url="/mail/attachment/upload",
                 data={
@@ -159,7 +159,7 @@ class MailControllerAttachmentCommon(MailControllerCommon):
             return data["attachment_id"]
 
     def _delete_attachment(self, attachment, token):
-        with mute_logger("odoo.http"):
+        with mute_logger("weth.http"):
             self.make_jsonrpc_request(
                 route="/mail/attachment/delete",
                 params={

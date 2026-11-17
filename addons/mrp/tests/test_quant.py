@@ -1,7 +1,7 @@
-from odoo import Command
-from odoo.exceptions import UserError
+from weth import Command
+from weth.exceptions import UserError
 
-from odoo.addons.mrp.tests.common import TestMrpCommon
+from weth.addons.mrp.tests.common import TestMrpCommon
 
 
 class TestMrpQuant(TestMrpCommon):

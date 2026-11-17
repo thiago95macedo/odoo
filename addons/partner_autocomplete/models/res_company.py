@@ -2,7 +2,7 @@
 
 import logging
 
-from odoo import api, fields, models, modules, _
+from weth import api, fields, models, modules, _
 
 _logger = logging.getLogger(__name__)
 

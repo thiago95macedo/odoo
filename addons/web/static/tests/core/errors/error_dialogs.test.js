@@ -8,7 +8,7 @@ import {
     queryFirst,
     test,
     tick,
-} from "@odoo/hoot";
+} from "@weth/hoot";
 import {
     assignDialogTestEnv,
     mockService,
@@ -38,7 +38,7 @@ test("ErrorDialog with traceback", async () => {
             data: { debug: "Some strange unreadable stack" },
             name: "ERROR_NAME",
             traceback: "This is a traceback string",
-            close() {},
+            close() { },
         },
     });
     expect(".o_dialog").toHaveCount(1);
@@ -79,7 +79,7 @@ test("Client ErrorDialog with traceback", async () => {
             data: { debug: "Some strange unreadable stack" },
             name: "ERROR_NAME",
             traceback: "This is a traceback string",
-            close() {},
+            close() { },
         },
     });
     expect(".o_dialog").toHaveCount(1);
@@ -131,7 +131,7 @@ test("button clipboard copy error traceback", async () => {
             message: error.message,
             name: error.name,
             traceback: error.traceback,
-            close() {},
+            close() { },
         },
     });
     await click("main summary");
@@ -145,7 +145,7 @@ test("Display a tooltip on clicking copy button", async () => {
     mockService("popover", () => ({
         add(el, comp, params) {
             expect(params).toEqual({ tooltip: "Copied" });
-            return () => {};
+            return () => { };
         },
     }));
 
@@ -155,7 +155,7 @@ test("Display a tooltip on clicking copy button", async () => {
             message: "This is the message",
             name: "ERROR_NAME",
             traceback: "This is a traceback",
-            close() {},
+            close() { },
         },
     });
     await click("main summary");
@@ -168,10 +168,10 @@ test("WarningDialog", async () => {
     assignDialogTestEnv();
     await mountWithCleanup(WarningDialog, {
         props: {
-            exceptionName: "odoo.exceptions.UserError",
+            exceptionName: "weth.exceptions.UserError",
             message: "...",
             data: { arguments: ["Some strange unreadable message"] },
-            close() {},
+            close() { },
         },
     });
     expect(".o_dialog").toHaveCount(1);
@@ -326,7 +326,7 @@ test("UnlinkBlockedErrorDialog, only the blocked records are shown", async () =>
 test("Error504Dialog", async () => {
     expect(".o_dialog").toHaveCount(0);
     assignDialogTestEnv();
-    await mountWithCleanup(Error504Dialog, { props: { close() {} } });
+    await mountWithCleanup(Error504Dialog, { props: { close() { } } });
     expect(".o_dialog").toHaveCount(1);
     expect("header .modal-title").toHaveText("Request timeout");
     expect("main p").toHaveText(
@@ -343,7 +343,7 @@ test("SessionExpiredDialog", async () => {
     });
     expect(".o_dialog").toHaveCount(0);
     assignDialogTestEnv();
-    await mountWithCleanup(SessionExpiredDialog, { props: { close() {} } });
+    await mountWithCleanup(SessionExpiredDialog, { props: { close() { } } });
     expect(".o_dialog").toHaveCount(1);
     expect(".o_dialog").toHaveCount(1);
     expect("header .modal-title").toHaveText("Odoo Session Expired");
@@ -366,7 +366,7 @@ test("ErrorDialog with timestamp provided", async () => {
             data: { debug: "Some strange unreadable stack", timestamp: 1700006000 },
             name: "ERROR_NAME",
             traceback: "This is a traceback string",
-            close() {},
+            close() { },
         },
     });
     expect(".o_dialog").toHaveCount(1);

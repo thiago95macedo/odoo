@@ -1,7 +1,7 @@
-import { after, describe, expect, test } from "@odoo/hoot";
-import { on } from "@odoo/hoot-dom";
-import { microTick } from "@odoo/hoot-mock";
-import { Component, xml } from "@odoo/owl";
+import { after, describe, expect, test } from "@weth/hoot";
+import { on } from "@weth/hoot-dom";
+import { microTick } from "@weth/hoot-mock";
+import { Component, xml } from "@weth/owl";
 import { getService, makeTestApp, mountWithCleanup, onRpc } from "@web/../tests/web_test_helpers";
 
 import { rpc, rpcBus } from "@web/core/network/rpc";

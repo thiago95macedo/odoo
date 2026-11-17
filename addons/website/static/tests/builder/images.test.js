@@ -1,5 +1,5 @@
 import { setSelection } from "@html_editor/../tests/_helpers/selection";
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@weth/hoot";
 import {
     advanceTime,
     animationFrame,
@@ -12,7 +12,7 @@ import {
     waitFor,
     waitForNone,
     setInputRange,
-} from "@odoo/hoot-dom";
+} from "@weth/hoot-dom";
 import { contains, onRpc } from "@web/../tests/web_test_helpers";
 import { IMAGE_MIMETYPES } from "@html_editor/main/media/media_dialog/file_selector";
 import {
@@ -154,7 +154,7 @@ test("pasted/dropped images are converted to attachments on save in website edit
         const { params } = await request.json();
         expect(
             params.data ===
-                "iVBORw0KGgoAAAANSUhEUgAAAAgAAAAIAQMAAAD+wSzIAAAABlBMVEX///+/v7+jQ3Y5AAAADklEQVQI12P4AIX8EAgALgAD/aNpbtEAAAAASUVORK5CYII="
+            "iVBORw0KGgoAAAANSUhEUgAAAAgAAAAIAQMAAAD+wSzIAAAABlBMVEX///+/v7+jQ3Y5AAAADklEQVQI12P4AIX8EAgALgAD/aNpbtEAAAAASUVORK5CYII="
         ).toBe(true);
         expect(params.res_id).toBe(`${setupWebsiteBuilderOeId}`);
         expect(params.res_model).toBe("ir.ui.view");
@@ -296,7 +296,7 @@ describe("Image format/optimize", () => {
             .find((el) => el.textContent.includes("800px"))
             .click();
         // ensure the shape action has been applied
-        await editor.shared.operation.next(() => {});
+        await editor.shared.operation.next(() => { });
 
         const img = queryFirst(":iframe .test-options-target img");
         expect(":iframe .test-options-target img").toHaveAttribute("data-attachment-id", "1");
@@ -319,7 +319,7 @@ describe("Image format/optimize", () => {
         await waitSidebarUpdated();
         await setInputRange(`[data-action-id="setImageQuality"] input`, 50);
         // ensure the shape action has been applied
-        await editor.shared.operation.next(() => {});
+        await editor.shared.operation.next(() => { });
 
         expect(img.dataset.quality).toBe("50");
     });

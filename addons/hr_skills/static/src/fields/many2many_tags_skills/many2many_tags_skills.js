@@ -3,7 +3,7 @@ import {
     Many2ManyTagsField,
     many2ManyTagsField,
 } from "@web/views/fields/many2many_tags/many2many_tags_field";
-import { Component, t, useProps } from "@odoo/owl";
+import { Component, t, useProps } from "@weth/owl";
 import { BadgeTag } from "@web/core/tags_list/badge_tag";
 
 class SkillsTag extends Component {

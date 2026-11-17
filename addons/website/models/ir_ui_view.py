@@ -7,11 +7,11 @@ import werkzeug
 from lxml import etree, html
 
 
-from odoo import api, fields, models, _
-from odoo.exceptions import AccessError, MissingError, ValidationError
-from odoo.fields import Domain
-from odoo.http import request
-from odoo.tools import SQL
+from weth import api, fields, models, _
+from weth.exceptions import AccessError, MissingError, ValidationError
+from weth.fields import Domain
+from weth.http import request
+from weth.tools import SQL
 
 _logger = logging.getLogger(__name__)
 

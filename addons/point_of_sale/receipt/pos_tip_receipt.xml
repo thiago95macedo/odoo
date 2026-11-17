@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<odoo>
+<weth>
     <data>
         <template id="point_of_sale.pos_tip_receipt">
             <html id="pos-receipt">
@@ -66,4 +66,4 @@
             </html>
         </template>
     </data>
-</odoo>
+</weth>

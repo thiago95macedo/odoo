@@ -1,6 +1,6 @@
 from collections import defaultdict
 
-from odoo import _, models
+from weth import _, models
 
 
 class StockValuationReport(models.AbstractModel):

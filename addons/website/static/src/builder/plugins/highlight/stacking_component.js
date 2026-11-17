@@ -1,5 +1,5 @@
 import { useLayoutEffect } from "@web/owl2/utils";
-import { xml, Component, proxy, useProps, t } from "@odoo/owl";
+import { xml, Component, proxy, useProps, t } from "@weth/owl";
 import { POSITION_BUS } from "@web/core/position/position_hook";
 
 export function useStackingComponentState() {

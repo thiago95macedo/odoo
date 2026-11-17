@@ -1,4 +1,4 @@
-import { Component, t, useProps } from "@odoo/owl";
+import { Component, t, useProps } from "@weth/owl";
 import { formatCurrency } from "@web/core/currency";
 
 export class PromotionProgressBar extends Component {

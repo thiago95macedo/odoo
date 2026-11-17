@@ -1,7 +1,7 @@
 import { setSelection } from "@html_editor/../tests/_helpers/selection";
 import { insertText } from "@html_editor/../tests/_helpers/user_actions";
-import { describe, expect, test } from "@odoo/hoot";
-import { animationFrame, click, queryOne, waitFor } from "@odoo/hoot-dom";
+import { describe, expect, test } from "@weth/hoot";
+import { animationFrame, click, queryOne, waitFor } from "@weth/hoot-dom";
 import {
     contains,
     defineActions,
@@ -28,7 +28,7 @@ import {
     waitForEndOfOperation,
     wrapExample,
 } from "@html_builder/../tests/helpers";
-import { Component, xml } from "@odoo/owl";
+import { Component, xml } from "@weth/owl";
 import { BuilderAction } from "@html_builder/core/builder_action";
 import { Plugin } from "@html_editor/plugin";
 import { registry } from "@web/core/registry";

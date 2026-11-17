@@ -1,4 +1,4 @@
-import { proxy } from "@odoo/owl";
+import { proxy } from "@weth/owl";
 import { ProjectTaskKanbanCompiler } from "./project_task_kanban_compiler";
 import { SubtaskKanbanList } from "@project/components/subtask_kanban_list/subtask_kanban_list"
 import { KanbanRecord } from "@web/views/kanban/kanban_record";
@@ -12,7 +12,7 @@ export class ProjectTaskKanbanRecord extends KanbanRecord {
 
     setup() {
         super.setup();
-        this.state = proxy({folded: true});
+        this.state = proxy({ folded: true });
     }
 
     /**

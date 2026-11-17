@@ -1,11 +1,11 @@
-import { describe, expect, test } from "@odoo/hoot";
-import { waitFor } from "@odoo/hoot-dom";
-import { animationFrame } from "@odoo/hoot-mock";
+import { describe, expect, test } from "@weth/hoot";
+import { waitFor } from "@weth/hoot-dom";
+import { animationFrame } from "@weth/hoot-mock";
 import { setupWysiwyg } from "./_helpers/editor";
 import { getContent, setContent, setSelection } from "./_helpers/selection";
 import { expectElementCount } from "./_helpers/ui_expectations";
 import { htmlJoin } from "@web/core/utils/html";
-import { markup } from "@odoo/owl";
+import { markup } from "@weth/owl";
 
 describe("Wysiwyg Component", () => {
     test("Wysiwyg component can be instantiated", async () => {

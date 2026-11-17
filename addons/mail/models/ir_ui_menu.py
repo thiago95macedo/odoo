@@ -2,8 +2,8 @@
 
 import contextlib
 
-from odoo import api, models
-from odoo.exceptions import AccessError
+from weth import api, models
+from weth.exceptions import AccessError
 
 
 class IrUiMenu(models.Model):

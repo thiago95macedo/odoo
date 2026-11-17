@@ -3,16 +3,16 @@
 
 from psycopg2 import IntegrityError
 
-from odoo.addons.website_forum.tests.common import KARMA, TestForumCommon
-from odoo.exceptions import UserError, AccessError
-from odoo.tests import tagged
+from weth.addons.website_forum.tests.common import KARMA, TestForumCommon
+from weth.exceptions import UserError, AccessError
+from weth.tests import tagged
 
-from odoo.tools import mute_logger
+from weth.tools import mute_logger
 
 
 class TestForumCRUD(TestForumCommon):
 
-    @mute_logger('odoo.addons.base.models.ir_access')
+    @mute_logger('weth.addons.base.models.ir_access')
     def test_crud_rights(self):
         Post = self.env['forum.post']
         Vote = self.env['forum.post.vote']
@@ -95,7 +95,7 @@ class TestForumCRUD(TestForumCommon):
                 'vote': '1',
             })
 
-        with mute_logger('odoo.sql_db'):
+        with mute_logger('weth.sql_db'):
             with self.assertRaises(IntegrityError):
                 # One should not be able to vote more than once on a same post
                 Vote.with_user(self.user_employee).create({
@@ -136,7 +136,7 @@ class TestForumCRUD(TestForumCommon):
 
 class TestForumKarma(TestForumCommon):
 
-    @mute_logger('odoo.addons.base.models.ir_access', 'odoo.models')
+    @mute_logger('weth.addons.base.models.ir_access', 'weth.models')
     def test_answer_question(self):
         Post = self.env['forum.post']
 
@@ -157,7 +157,7 @@ class TestForumKarma(TestForumCommon):
         })
         self.assertEqual(self.user_employee.karma, KARMA['ans'], 'website_forum: wrong karma generation when answering question')
 
-    @mute_logger('odoo.addons.base.models.ir_access', 'odoo.models')
+    @mute_logger('weth.addons.base.models.ir_access', 'weth.models')
     def test_ask_question(self):
         Post = self.env['forum.post']
 
@@ -333,7 +333,7 @@ class TestForumKarma(TestForumCommon):
         self.post.with_user(self.user_portal).vote(upvote=False)
         self.assertEqual(self.post.create_uid.karma, 50 + KARMA['gen_que_dwv'], 'website_forum: wrong karma generation of downvoted question author')
 
-    @mute_logger('odoo.addons.base.models.ir_access', 'odoo.models')
+    @mute_logger('weth.addons.base.models.ir_access', 'weth.models')
     def test_downvote_crash(self):
         Post = self.env['forum.post']
         self.user_employee.karma = KARMA['ans']
@@ -527,7 +527,7 @@ class TestForumKarma(TestForumCommon):
 
         check_vote_records_count_and_integrity(ORIGIN_COUNT + 1)
 
-    @mute_logger('odoo.addons.base.models.ir_access', 'odoo.models')
+    @mute_logger('weth.addons.base.models.ir_access', 'weth.models')
     def test_vote_crash(self):
         Post = self.env['forum.post']
         self.user_employee.karma = KARMA['ans']

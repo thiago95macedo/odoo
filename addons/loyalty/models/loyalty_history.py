@@ -2,9 +2,9 @@
 
 from datetime import timedelta
 
-from odoo import api, fields, models
-from odoo.fields import Domain
-from odoo.tools import float_compare
+from weth import api, fields, models
+from weth.fields import Domain
+from weth.tools import float_compare
 
 FIFO_ORDER = "expiration_date ASC NULLS LAST, points_changed_date ASC, id ASC"
 

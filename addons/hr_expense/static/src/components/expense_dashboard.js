@@ -1,4 +1,4 @@
-import { Component, onWillStart, proxy, usePlugin } from "@odoo/owl";
+import { Component, onWillStart, proxy, usePlugin } from "@weth/owl";
 import { DebugModePlugin } from '@web/core/debug_mode_plugin';
 import { Domain } from "@web/core/domain";
 import { useBus, useService } from '@web/core/utils/hooks';
@@ -20,7 +20,7 @@ export class ExpenseDashboard extends Component {
     }
 
     renderMonetaryField(value, currency_id) {
-        return formatMonetary(value, { currencyId: currency_id});
+        return formatMonetary(value, { currencyId: currency_id });
     }
 
     async fetchExpenseDashboardData() {

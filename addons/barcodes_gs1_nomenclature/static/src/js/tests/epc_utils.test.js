@@ -1,4 +1,4 @@
-import { expect, test } from "@odoo/hoot";
+import { expect, test } from "@weth/hoot";
 import { decode } from "@barcodes_gs1_nomenclature/js/epc_utils";
 
 test.tags("RFID");

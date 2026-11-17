@@ -3,10 +3,10 @@
 from contextlib import closing
 from unittest.mock import patch
 
-from odoo.addons.account.tests.common import AccountTestInvoicingCommon
-from odoo.tests import Form, tagged, users, warmup
-from odoo.exceptions import UserError
-from odoo import fields, Command
+from weth.addons.account.tests.common import AccountTestInvoicingCommon
+from weth.tests import Form, tagged, users, warmup
+from weth.exceptions import UserError
+from weth import fields, Command
 
 
 @tagged('post_install', '-at_install')

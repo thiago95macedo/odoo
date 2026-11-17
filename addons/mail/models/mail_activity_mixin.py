@@ -4,10 +4,10 @@ import logging
 from collections.abc import Iterable
 from datetime import datetime, UTC
 
-from odoo import api, fields, models
-from odoo.fields import Domain
-from odoo.tools import partition, SQL
-from odoo.tools.misc import clean_context
+from weth import api, fields, models
+from weth.fields import Domain
+from weth.tools import partition, SQL
+from weth.tools.misc import clean_context
 
 _logger = logging.getLogger(__name__)
 

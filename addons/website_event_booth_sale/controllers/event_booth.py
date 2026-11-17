@@ -3,9 +3,9 @@
 
 import json
 
-from odoo.http import request, route
+from weth.http import request, route
 
-from odoo.addons.website_event_booth.controllers.event_booth import (
+from weth.addons.website_event_booth.controllers.event_booth import (
     WebsiteEventBoothController as WebsiteEventController,
 )
 

@@ -1,9 +1,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import models
+from weth import models
 
-from odoo.addons.bus.models.bus import SKIP_NOTIFICATION
-from odoo.addons.mail.tools.discuss import Store
+from weth.addons.bus.models.bus import SKIP_NOTIFICATION
+from weth.addons.mail.tools.discuss import Store
 
 
 class BusBus(models.Model):

@@ -5,7 +5,7 @@ import { ActivityMarkAsDone } from "@mail/core/web/activity_markasdone_popover";
 import { AvatarCard } from "@mail/core/web/avatar_card/avatar_card";
 import { propComputed } from "@mail/utils/common/hooks";
 
-import { Component, computed, t, useProps } from "@odoo/owl";
+import { Component, computed, t, useProps } from "@weth/owl";
 
 import { CopyButton } from "@web/core/copy_button/copy_button";
 import { _t } from "@web/core/l10n/translation";

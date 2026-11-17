@@ -7,15 +7,15 @@ import {
     MENU_ACTIVE_IDS,
 } from "@mail/../tests/mail_test_helpers";
 import { withGuest } from "@mail/../tests/mock_server/mail_mock_server";
-import { advanceTime, describe, test, tick } from "@odoo/hoot";
-import { mockDate } from "@odoo/hoot-mock";
+import { advanceTime, describe, test, tick } from "@weth/hoot";
+import { mockDate } from "@weth/hoot-mock";
 import { Command, serverState } from "@web/../tests/web_test_helpers";
 
 import { deserializeDateTime } from "@web/core/l10n/dates";
 import { rpc } from "@web/core/network/rpc";
 import { url } from "@web/core/utils/urls";
 import { defineLivechatModels } from "./livechat_test_helpers";
-import { waitFor, waitForNone } from "@odoo/hoot-dom";
+import { waitFor, waitForNone } from "@weth/hoot-dom";
 
 describe.current.tags("desktop");
 defineLivechatModels();
@@ -87,8 +87,7 @@ test("Smiley face avatar for livechat item linked to a guest", async () => {
     const guest = pyEnv["mail.guest"].search_read([["id", "=", guestId]])[0];
     await contains(
         `.o-mail-MessagingMenuItem img[data-src='${url(
-            `/web/image/mail.guest/${guestId}/avatar_128?unique=${
-                deserializeDateTime(guest.write_date).ts
+            `/web/image/mail.guest/${guestId}/avatar_128?unique=${deserializeDateTime(guest.write_date).ts
             }`
         )}']`
     );
@@ -109,8 +108,7 @@ test("Partner profile picture for livechat item linked to a partner", async () =
     const partner = pyEnv["res.partner"].search_read([["id", "=", partnerId]])[0];
     await contains(
         `.o-mail-MessagingMenuItem img[data-src='${url(
-            `/web/image/res.partner/${partnerId}/avatar_128?unique=${
-                deserializeDateTime(partner.write_date).ts
+            `/web/image/res.partner/${partnerId}/avatar_128?unique=${deserializeDateTime(partner.write_date).ts
             }`
         )}']`
     );

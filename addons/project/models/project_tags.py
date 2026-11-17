@@ -2,9 +2,9 @@
 
 from random import randint
 
-from odoo import api, fields, models
-from odoo.fields import Domain
-from odoo.tools import SQL
+from weth import api, fields, models
+from weth.fields import Domain
+from weth.tools import SQL
 
 
 class ProjectTags(models.Model):

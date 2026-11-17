@@ -1,5 +1,5 @@
 import { BaseOptionComponent } from "@html_builder/core/base_option_component";
-import { t, useProps } from "@odoo/owl";
+import { t, useProps } from "@weth/owl";
 import { _t } from "@web/core/l10n/translation";
 import { localeCompare } from "@web/core/l10n/utils";
 import { GOOGLE_FONTS } from "../iframe/mass_mailing_iframe_utils";

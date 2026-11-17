@@ -11,7 +11,7 @@ import {
     getCommonAncestor,
     traverseNode,
 } from "@html_editor/utils/dom_traversal";
-import { describe, expect, getFixture, test } from "@odoo/hoot";
+import { describe, expect, getFixture, test } from "@weth/hoot";
 import { insertTestHtml } from "../_helpers/editor";
 import { unformat } from "../_helpers/format";
 

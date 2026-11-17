@@ -1,4 +1,4 @@
-import { Component, types, useProps } from "@odoo/owl";
+import { Component, types, useProps } from "@weth/owl";
 import { DateTimeInput } from "@web/core/datetime/datetime_input";
 import { Dropdown } from "@web/core/dropdown/dropdown";
 import { DropdownItem } from "@web/core/dropdown/dropdown_item";

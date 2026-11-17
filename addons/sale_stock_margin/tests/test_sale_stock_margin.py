@@ -3,10 +3,10 @@
 import datetime
 from freezegun import freeze_time
 
-from odoo import Command, fields
-from odoo.tests import Form, tagged
-from odoo.exceptions import UserError
-from odoo.addons.stock_account.tests.common import TestStockValuationCommon
+from weth import Command, fields
+from weth.tests import Form, tagged
+from weth.exceptions import UserError
+from weth.addons.stock_account.tests.common import TestStockValuationCommon
 
 
 @tagged('post_install', '-at_install')

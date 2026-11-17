@@ -1,5 +1,5 @@
 import { browser } from "@web/core/browser/browser";
-import { signal, t, useProps } from "@odoo/owl";
+import { signal, t, useProps } from "@weth/owl";
 import { ColorList } from "@web/core/colorlist/colorlist";
 import { ConfirmationDialog } from "@web/core/confirmation_dialog/confirmation_dialog";
 import { Dropdown } from "@web/core/dropdown/dropdown";
@@ -41,23 +41,23 @@ export function getColorIndex(value) {
 
 export const kanbanRecordProps = {
     archInfo: t.any(),
-    archiveRecord: t.function().optional(() => () => {}),
+    archiveRecord: t.function().optional(() => () => { }),
     canOpenRecords: t.any().optional(),
     canResequence: t.any().optional(),
     cardColorField: t.any().optional(),
     colors: t.any().optional(COLORS),
     Compiler: t.any().optional(),
-    deleteRecord: t.function().optional(() => () => {}),
+    deleteRecord: t.function().optional(() => () => { }),
     forceGlobalClick: t.any().optional(),
     getSelection: t.function().optional(() => () => []),
     groupByField: t.any().optional(),
     openAction: t.any().optional(),
-    openRecord: t.function().optional(() => () => {}),
+    openRecord: t.function().optional(() => () => { }),
     progressBarState: t.any().optional(),
     readonly: t.any().optional(),
     record: t.any(),
     selectionAvailable: t.any().optional(false),
-    toggleSelection: t.function().optional(() => () => {}),
+    toggleSelection: t.function().optional(() => () => { }),
 };
 
 export class KanbanRecord extends CardRenderer {
@@ -101,7 +101,7 @@ export class KanbanRecord extends CardRenderer {
                 body: _t("Are you sure that you want to archive this record?"),
                 confirmLabel: _t("Archive"),
                 confirm: () => record.archive(),
-                cancel: () => {},
+                cancel: () => { },
             });
         } else {
             return record.unarchive();

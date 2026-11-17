@@ -1,4 +1,4 @@
-from odoo import fields, models
+from weth import fields, models
 
 
 class AuthTotpRateLimitLog(models.TransientModel):

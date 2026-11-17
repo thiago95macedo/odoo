@@ -6,8 +6,8 @@ from zoneinfo import ZoneInfo
 
 from markupsafe import Markup, escape
 
-from odoo import Command, api, fields, models
-from odoo.tools.date_utils import convert_timezone
+from weth import Command, api, fields, models
+from weth.tools.date_utils import convert_timezone
 
 
 class LoadPublicHolidaysWizard(models.TransientModel):

@@ -1,9 +1,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
 from collections import defaultdict
-from odoo import _, api, Command, fields, models
-from odoo.tools import OrderedSet, float_is_zero
-from odoo.exceptions import ValidationError
+from weth import _, api, Command, fields, models
+from weth.tools import OrderedSet, float_is_zero
+from weth.exceptions import ValidationError
 
 
 class StockMove(models.Model):

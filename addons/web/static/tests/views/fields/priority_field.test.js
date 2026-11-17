@@ -8,7 +8,7 @@ import {
     queryAll,
     queryAllTexts,
     test,
-} from "@odoo/hoot";
+} from "@weth/hoot";
 import { defineModels, fields, models, mountView, onRpc } from "@web/../tests/web_test_helpers";
 
 class Partner extends models.Model {

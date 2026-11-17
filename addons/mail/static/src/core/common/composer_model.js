@@ -6,7 +6,7 @@ import {
     prettifyMessageText,
 } from "@mail/utils/common/format";
 import { createElementFromContent, getInnerHtml } from "@mail/utils/common/html";
-import { markup } from "@odoo/owl";
+import { markup } from "@weth/owl";
 import { isHtmlEmpty } from "@web/core/utils/html";
 import { nbsp } from "@web/core/utils/strings";
 

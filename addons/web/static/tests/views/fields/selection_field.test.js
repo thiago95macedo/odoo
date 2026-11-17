@@ -7,7 +7,7 @@ import {
     queryFirst,
     queryOne,
     test,
-} from "@odoo/hoot";
+} from "@weth/hoot";
 import {
     clickSave,
     contains,
@@ -126,7 +126,7 @@ test("SelectionField in a list view with multi_edit", async () => {
 });
 
 test("SelectionField, edition and on many2one field", async () => {
-    Partner._onChanges.product_id = () => {};
+    Partner._onChanges.product_id = () => { };
     Partner._records[0].product_id = 37;
     Partner._records[0].trululu = false;
     onRpc(({ method }) => expect.step(method));
@@ -156,7 +156,7 @@ test("[Offline] SelectionField on many2one field", async () => {
     const setOffline = mockOffline();
     onRpc("web_save", () => expect.step(`web_save`));
 
-    Partner._onChanges.product_id = () => {};
+    Partner._onChanges.product_id = () => { };
     Partner._records[0].product_id = 37;
     Partner._records[0].trululu = false;
     Partner._views = {

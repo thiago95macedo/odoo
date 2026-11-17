@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.event_sale.tests.common import TestEventSaleCommon
-from odoo.addons.mail.tests.common import mail_new_test_user
-from odoo.exceptions import ValidationError
-from odoo.tests import tagged
-from odoo.tests.common import users
+from weth.addons.event_sale.tests.common import TestEventSaleCommon
+from weth.addons.mail.tests.common import mail_new_test_user
+from weth.exceptions import ValidationError
+from weth.tests import tagged
+from weth.tests.common import users
 
 
 @tagged('event_flow')

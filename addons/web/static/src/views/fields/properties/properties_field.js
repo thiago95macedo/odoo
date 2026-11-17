@@ -24,7 +24,7 @@ import {
     t,
     useEffect,
     useProps,
-} from "@odoo/owl";
+} from "@weth/owl";
 import { deepCopy } from "@web/core/utils/objects";
 
 export class PropertiesField extends Component {
@@ -664,7 +664,7 @@ export class PropertiesField extends Component {
                 this._onDeleteConfirm(propertiesDefinitions, propertyName);
                 this.props.record.update({ [this.props.name]: propertiesDefinitions });
             },
-            cancel: () => {},
+            cancel: () => { },
         };
         this.dialogService.add(ConfirmationDialog, dialogProps);
     }

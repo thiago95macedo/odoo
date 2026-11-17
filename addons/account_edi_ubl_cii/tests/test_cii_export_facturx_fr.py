@@ -1,5 +1,5 @@
-from odoo.addons.account_edi_ubl_cii.tests.common import TestCiiFacturXCommon, TestUblCiiFRCommon
-from odoo.tests import tagged
+from weth.addons.account_edi_ubl_cii.tests.common import TestCiiFacturXCommon, TestUblCiiFRCommon
+from weth.tests import tagged
 
 from freezegun import freeze_time
 

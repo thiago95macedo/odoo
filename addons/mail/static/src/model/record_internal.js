@@ -12,7 +12,7 @@ import {
 } from "./misc";
 import { computedUntilStale } from "@mail/utils/common/signal";
 import { RecordList } from "./record_list";
-import { Scope, computed, immediateEffect, markRaw, proxy, signal, untrack } from "@odoo/owl";
+import { Scope, computed, immediateEffect, markRaw, proxy, signal, untrack } from "@weth/owl";
 import { RecordUses } from "./record_uses";
 
 /**
@@ -86,7 +86,7 @@ export class RecordInternal {
      * ids and registered the record. A signal, so that clearing it re-runs the
      * onChange registrations held during setup().
      *
-     * @type {import("@odoo/owl").Signal<boolean>}
+     * @type {import("@weth/owl").Signal<boolean>}
      */
     isConstructing = signal(true);
     /**
@@ -144,14 +144,14 @@ export class RecordInternal {
      * Value of each attr field of this record, declared or not, one signal per
      * field: the sole storage, and the only thing a read of that field observes.
      *
-     * @type {Map<string, import("@odoo/owl").Signal<any>>}
+     * @type {Map<string, import("@weth/owl").Signal<any>>}
      */
     fieldsAttrSignal = new Map();
     /**
      * Whether the record is deleted. A signal, so that setting it re-runs the
      * readers of `exists()`.
      *
-     * @type {import("@odoo/owl").Signal<boolean>}
+     * @type {import("@weth/owl").Signal<boolean>}
      */
     isDeleted = signal(false);
     uses = new RecordUses();
@@ -175,7 +175,7 @@ export class RecordInternal {
      * @param {Object} [param2={}]
      * @param {boolean} [param2.accessor=true] whether to define the accessor
      *  that reads and writes the field as a property of the record
-     * @returns {import("@odoo/owl").Signal<any>}
+     * @returns {import("@weth/owl").Signal<any>}
      */
     ensureFieldSignal(fieldName, value, { accessor = true } = {}) {
         let sig = this.fieldsAttrSignal.get(fieldName);

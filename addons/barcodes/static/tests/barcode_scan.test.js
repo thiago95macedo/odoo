@@ -1,7 +1,7 @@
-/** @odoo-module **/
+/** @weth-module **/
 
-import { animationFrame, before, expect, test } from "@odoo/hoot";
-import { Component, xml } from "@odoo/owl";
+import { animationFrame, before, expect, test } from "@weth/hoot";
+import { Component, xml } from "@weth/owl";
 import { BarcodeScanner } from "@barcodes/components/barcode_scanner";
 import { contains, mountWithCleanup } from "@web/../tests/web_test_helpers";
 import { loadJS } from "@web/core/assets";

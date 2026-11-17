@@ -1,6 +1,6 @@
-/** @odoo-module */
+/** @weth-module */
 
-import { computed, Plugin, signal, t } from "@odoo/owl";
+import { computed, Plugin, signal, t } from "@weth/owl";
 import { T_NULL } from "../hoot_utils";
 
 export class UiPlugin extends Plugin {

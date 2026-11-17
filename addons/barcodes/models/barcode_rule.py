@@ -1,7 +1,7 @@
 import re
 
-from odoo import models, fields, api, _
-from odoo.exceptions import ValidationError
+from weth import models, fields, api, _
+from weth.exceptions import ValidationError
 
 
 class BarcodeRule(models.Model):

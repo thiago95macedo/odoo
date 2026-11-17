@@ -3,11 +3,11 @@
 
 from datetime import datetime, timedelta
 
-from odoo.addons.base.tests.test_ir_actions import TestServerActionsBase
-from odoo.addons.mail.tests.common import MailCommon
-from odoo.tests import Form, RecordCapturer, tagged
-from odoo.tools import mute_logger
-from odoo import Command
+from weth.addons.base.tests.test_ir_actions import TestServerActionsBase
+from weth.addons.mail.tests.common import MailCommon
+from weth.tests import Form, RecordCapturer, tagged
+from weth.tools import mute_logger
+from weth import Command
 
 
 @tagged('ir_actions')
@@ -22,7 +22,7 @@ class TestServerActionsEmail(MailCommon, TestServerActionsBase):
             }
         )
 
-    @mute_logger('odoo.addons.mail.models.mail_mail', 'odoo.models.unlink')
+    @mute_logger('weth.addons.mail.models.mail_mail', 'weth.models.unlink')
     def test_action_email(self):
         # initial state
         self.assertEqual(len(self.test_partner.message_ids), 1,
@@ -337,7 +337,7 @@ class TestServerActionsEmail(MailCommon, TestServerActionsBase):
             }
         ])
 
-    @mute_logger('odoo.addons.mail.models.mail_mail', 'odoo.models.unlink')
+    @mute_logger('weth.addons.mail.models.mail_mail', 'weth.models.unlink')
     def test_action_send_mail_without_mail_thread(self):
         """ Check running a server action to send an email with custom layout on a non mail.thread model """
         no_thread_record = self.env['mail.test.nothread'].create({'name': 'Test NoMailThread', 'customer_id': self.test_partner.id})

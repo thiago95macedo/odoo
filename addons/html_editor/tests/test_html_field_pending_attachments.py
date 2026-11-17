@@ -1,6 +1,6 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.tests import HttpCase, tagged
+from weth.tests import HttpCase, tagged
 
 
 @tagged("-at_install", "post_install")
@@ -31,7 +31,7 @@ class TestHtmlFieldPendingAttachments(HttpCase):
 
     @property
     def _new_record_url(self):
-        return f"/odoo/action-{self.action.id}/new"
+        return f"/weth/action-{self.action.id}/new"
 
     def test_pending_attachment_shown_in_same_record_dialog(self):
         self.start_tour(

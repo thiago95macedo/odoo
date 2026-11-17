@@ -1,4 +1,4 @@
-import { Component, computed, proxy, useProps, t } from "@odoo/owl";
+import { Component, computed, proxy, useProps, t } from "@weth/owl";
 import { Dialog } from "@web/core/dialog/dialog";
 import { fuzzyLookup } from "@web/core/utils/search";
 import { localeCompare } from "@web/core/l10n/utils";

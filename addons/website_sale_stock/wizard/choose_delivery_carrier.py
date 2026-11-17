@@ -1,7 +1,7 @@
 import json
 
-from odoo import api, fields, models
-from odoo.exceptions import UserError
+from weth import api, fields, models
+from weth.exceptions import UserError
 
 
 class ChooseDeliveryCarrier(models.TransientModel):

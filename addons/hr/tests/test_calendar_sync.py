@@ -1,8 +1,8 @@
-from odoo.fields import Datetime, Date
-from odoo.tests import tagged
+from weth.fields import Datetime, Date
+from weth.tests import tagged
 
-from odoo.addons.hr.tests.common import TestHrCommon
-from odoo.tests import Form, freeze_time
+from weth.addons.hr.tests.common import TestHrCommon
+from weth.tests import Form, freeze_time
 
 
 class TestContractCalendars(TestHrCommon):

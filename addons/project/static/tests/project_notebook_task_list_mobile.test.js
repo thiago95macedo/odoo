@@ -1,5 +1,5 @@
-import { beforeEach, expect, describe, test } from "@odoo/hoot";
-import { animationFrame, click } from "@odoo/hoot-dom";
+import { beforeEach, expect, describe, test } from "@weth/hoot";
+import { animationFrame, click } from "@weth/hoot-dom";
 import { getService, mountWithCleanup } from "@web/../tests/web_test_helpers";
 import { WebClient } from "@web/webclient/webclient";
 

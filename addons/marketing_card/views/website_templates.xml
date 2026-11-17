@@ -1,4 +1,4 @@
-<odoo>
+<weth>
     <data>
         <template id="robots" inherit_id="website.robots">
             <xpath expr="//t[@id='robots_module_rules']" position="inside">
@@ -9,4 +9,4 @@ Allow: /cards/
             </xpath>
         </template>
     </data>
-</odoo>
+</weth>

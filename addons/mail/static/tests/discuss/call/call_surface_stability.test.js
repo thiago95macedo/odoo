@@ -15,7 +15,7 @@ import {
 
 import { SPEAKER_WINDOW } from "@mail/discuss/call/common/discuss_channel_model_patch";
 
-import { advanceTime, beforeEach, describe, disableAnimations, expect, test } from "@odoo/hoot";
+import { advanceTime, beforeEach, describe, disableAnimations, expect, test } from "@weth/hoot";
 import {
     advanceFrame,
     animationFrame,
@@ -25,7 +25,7 @@ import {
     queryAll,
     queryFirst,
     resize,
-} from "@odoo/hoot-dom";
+} from "@weth/hoot-dom";
 import { getService, patchWithCleanup } from "@web/../tests/web_test_helpers";
 import { Call } from "@mail/discuss/call/common/call";
 import { INSET_MARGIN } from "@mail/discuss/call/common/stage/layout_engine";

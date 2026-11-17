@@ -5,9 +5,9 @@ import {
     pointerDown,
     runAllTimers,
     test,
-} from "@odoo/hoot";
-import { click, edit, press, queryAll, queryAllTexts, queryOne } from "@odoo/hoot-dom";
-import { Component, proxy, t, useProps, xml } from "@odoo/owl";
+} from "@weth/hoot";
+import { click, edit, press, queryAll, queryAllTexts, queryOne } from "@weth/hoot-dom";
+import { Component, proxy, t, useProps, xml } from "@weth/owl";
 import {
     contains,
     editSelectMenu,

@@ -1,6 +1,6 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.event.tests.common import EventCase
+from weth.addons.event.tests.common import EventCase
 
 
 class TestEventProductCommon(EventCase):

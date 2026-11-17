@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, fields, models, _
-from odoo.exceptions import RedirectWarning, UserError
-from odoo.fields import Domain
+from weth import api, fields, models, _
+from weth.exceptions import RedirectWarning, UserError
+from weth.fields import Domain
 
 
 class AccountAnalyticLine(models.Model):

@@ -5,21 +5,21 @@ import os
 from io import BytesIO
 from zipfile import ZipFile
 
-import odoo.tests
-from odoo.tests import new_test_user
+import weth.tests
+from weth.tests import new_test_user
 
 
 from unittest.mock import patch
 
-from odoo import release
-from odoo.addons import __path__ as __addons_path__
-from odoo.exceptions import UserError
-from odoo.tools import BinaryBytes, file_open, file_open_temporary_directory, mute_logger
-from odoo.tools.translate import TranslationModuleReader
+from weth import release
+from weth.addons import __path__ as __addons_path__
+from weth.exceptions import UserError
+from weth.tools import BinaryBytes, file_open, file_open_temporary_directory, mute_logger
+from weth.tools.translate import TranslationModuleReader
 
 
-@odoo.tests.tagged('post_install', '-at_install')
-class TestImportModule(odoo.tests.TransactionCase):
+@weth.tests.tagged('post_install', '-at_install')
+class TestImportModule(weth.tests.TransactionCase):
 
     def manifest_content(self, manifest={}, /, **values):
         return json.dumps({
@@ -93,9 +93,9 @@ class TestImportModule(odoo.tests.TransactionCase):
             """)
         ]
         self.env['res.lang']._activate_lang('fr_FR')
-        with self.assertLogs('odoo.addons.base_import_module.models.ir_module') as log_catcher:
+        with self.assertLogs('weth.addons.base_import_module.models.ir_module') as log_catcher:
             self.import_zipfile(files)
-            self.assertIn('INFO:odoo.addons.base_import_module.models.ir_module:module foo: no translation for language fr_FR', log_catcher.output)
+            self.assertIn('INFO:weth.addons.base_import_module.models.ir_module:module foo: no translation for language fr_FR', log_catcher.output)
         self.assertEqual(self.env.ref('foo.foo')._name, 'res.partner')
         self.assertEqual(self.env.ref('foo.foo').name, 'foo')
         self.assertEqual(self.env.ref('foo.bar')._name, 'res.partner')
@@ -147,7 +147,7 @@ class TestImportModule(odoo.tests.TransactionCase):
         ]
         error_message = "Error while importing module 'foo'"
         with (
-            mute_logger("odoo.addons.base_import_module.models.ir_module"),
+            mute_logger("weth.addons.base_import_module.models.ir_module"),
             self.assertRaises(UserError, msg=error_message),
         ):
             self.import_zipfile(files)
@@ -163,7 +163,7 @@ class TestImportModule(odoo.tests.TransactionCase):
             ('foo/static/js/foo.js', b"console.log('foo')"),
         ]
         with (
-            mute_logger("odoo.addons.base_import_module.models.ir_module"),
+            mute_logger("weth.addons.base_import_module.models.ir_module"),
             self.assertRaises(UserError, msg="modules with assets path containing glob wildcards shouldn't be successcully imported"),
         ):
             self.import_zipfile(files)
@@ -189,7 +189,7 @@ class TestImportModule(odoo.tests.TransactionCase):
             """),
         ]
         with (
-            mute_logger("odoo.addons.base_import_module.models.ir_module"),
+            mute_logger("weth.addons.base_import_module.models.ir_module"),
             self.assertRaises(UserError),
         ):
             self.import_zipfile(files)
@@ -227,10 +227,10 @@ class TestImportModule(odoo.tests.TransactionCase):
                 b'foo,foo'
             ),
         ]
-        with self.assertLogs('odoo.addons.base_import_module.models.ir_module') as log_catcher:
+        with self.assertLogs('weth.addons.base_import_module.models.ir_module') as log_catcher:
             self.import_zipfile(files)
-            self.assertIn("INFO:odoo.addons.base_import_module.models.ir_module:module foo: skip unsupported file res.partner.xls", log_catcher.output)
-            self.assertIn("INFO:odoo.addons.base_import_module.models.ir_module:Successfully imported module 'foo'", log_catcher.output)
+            self.assertIn("INFO:weth.addons.base_import_module.models.ir_module:module foo: skip unsupported file res.partner.xls", log_catcher.output)
+            self.assertIn("INFO:weth.addons.base_import_module.models.ir_module:Successfully imported module 'foo'", log_catcher.output)
             self.assertFalse(self.env.ref('foo.foo', raise_if_not_found=False))
 
     def test_import_zip_extract_only_useful(self):
@@ -416,7 +416,7 @@ class TestImportModule(odoo.tests.TransactionCase):
             """),
         ]
         with (
-            mute_logger("odoo.addons.base_import_module.models.ir_module"),
+            mute_logger("weth.addons.base_import_module.models.ir_module"),
             self.assertRaisesRegex(
                 UserError,
                 "Unknown module dependencies",
@@ -465,7 +465,7 @@ class TestImportModule(odoo.tests.TransactionCase):
             file_open(tmp_folder + '/foo/__manifest__.py', 'r', env=self.env)
 
 
-class TestImportModuleHttp(TestImportModule, odoo.tests.HttpCase):
+class TestImportModuleHttp(TestImportModule, weth.tests.HttpCase):
     def test_import_module_icon(self):
         """Assert import a module with an icon result in the module displaying the icon in the apps menu,
         and with the base module icon if module without icon"""

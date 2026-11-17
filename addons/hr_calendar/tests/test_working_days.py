@@ -2,9 +2,9 @@
 
 from datetime import datetime
 
-from odoo.tests import tagged
+from weth.tests import tagged
 
-from odoo.addons.hr_calendar.tests.common import TestHrContractCalendarCommon
+from weth.addons.hr_calendar.tests.common import TestHrContractCalendarCommon
 
 
 @tagged("work_days")

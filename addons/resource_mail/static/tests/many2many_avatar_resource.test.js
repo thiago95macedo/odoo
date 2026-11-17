@@ -8,8 +8,8 @@ import {
     startServer,
 } from "@mail/../tests/mail_test_helpers";
 import { contains as webContains } from "@web/../tests/web_test_helpers";
-import { animationFrame, beforeEach, describe, expect, test } from "@odoo/hoot";
-import { queryAll, queryFirst, waitFor } from "@odoo/hoot-dom";
+import { animationFrame, beforeEach, describe, expect, test } from "@weth/hoot";
+import { queryAll, queryFirst, waitFor } from "@weth/hoot-dom";
 import { defineResourceMailModels } from "./resource_mail_test_helpers";
 
 describe.current.tags("desktop");
@@ -65,7 +65,7 @@ beforeEach(async () => {
     ]);
 
     // Tasks linked to those resources
-    [ data.task1Id, data.task2Id ] = pyEnv["resource.task"].create([{
+    [data.task1Id, data.task2Id] = pyEnv["resource.task"].create([{
         display_name: "Task with three resources",
         resource_ids: [data.resourceComputerId, data.resourceMarieId, data.resourcePierreId],
     }, {
@@ -133,7 +133,7 @@ test("many2many_avatar_resource widget in list view", async () => {
         arch: '<list><field name="display_name"/><field name="resource_ids" widget="many2many_avatar_resource"/></list>',
     });
 
-    const [ row1, row2 ] = queryAll(".o_data_row");
+    const [row1, row2] = queryAll(".o_data_row");
     await contains(
         "img.o_m2m_avatar",
         { count: 2, target: row1 },
@@ -162,7 +162,7 @@ test("many2many_avatar_resource widget in list view", async () => {
     );
 
     // Second and third records in widget should display employee avatars
-    const [ tagMarie, tagPierre ] = document.querySelectorAll(".many2many_tags_avatar_field_container .o_tag img");
+    const [tagMarie, tagPierre] = document.querySelectorAll(".many2many_tags_avatar_field_container .o_tag img");
     expect(tagMarie).toHaveAttribute("data-src", `/web/image/resource.resource/${data.resourceMarieId}/avatar_128`);
     expect(tagPierre).toHaveAttribute("data-src", `/web/image/resource.resource/${data.resourcePierreId}/avatar_128`);
     // 1. Clicking on material resource's icon
@@ -217,7 +217,7 @@ test("many2many_avatar_resource widget in kanban view", async () => {
             </kanban>`,
     });
 
-    const [ card1, card2 ] = queryAll(".oe_kanban_content");
+    const [card1, card2] = queryAll(".oe_kanban_content");
     await contains(
         "i.o_m2m_avatar[data-icon='build']",
         { count: 1, target: card1 },
@@ -277,7 +277,7 @@ test("many2many_avatar_resource widget in kanban view", async () => {
         "The delete button should be displayed on the wrench record"
     ).click();
     // 2. Second and third records in widget should display employee avatars
-    const [ tagMarie, tagPierre ] = document.querySelectorAll(".many2many_tags_avatar_field_container .o_tag img");
+    const [tagMarie, tagPierre] = document.querySelectorAll(".many2many_tags_avatar_field_container .o_tag img");
     expect(tagMarie).toHaveAttribute("data-src", `/web/image/resource.resource/${data.resourceMarieId}/avatar_128`);
     expect(tagPierre).toHaveAttribute("data-src", `/web/image/resource.resource/${data.resourcePierreId}/avatar_128`);
     // 3. Clicking on human resource's avatar with no user associated

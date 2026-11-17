@@ -1,6 +1,6 @@
-import { test, expect, animationFrame } from "@odoo/hoot";
-import { queryOne, waitFor } from "@odoo/hoot-dom";
-import { Component, proxy, xml } from "@odoo/owl";
+import { test, expect, animationFrame } from "@weth/hoot";
+import { queryOne, waitFor } from "@weth/hoot-dom";
+import { Component, proxy, xml } from "@weth/owl";
 import { patch } from "@web/core/utils/patch";
 import { getService, mountWithCleanup } from "@web/../tests/web_test_helpers";
 import { setupPosEnv } from "@point_of_sale/../tests/unit/utils";

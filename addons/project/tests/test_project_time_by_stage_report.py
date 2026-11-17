@@ -1,9 +1,9 @@
 from ast import literal_eval
 from datetime import timedelta
 
-from odoo.exceptions import AccessError
-from odoo.fields import Command
-from odoo.tests import tagged
+from weth.exceptions import AccessError
+from weth.fields import Command
+from weth.tests import tagged
 
 from .test_project_base import TestProjectCommon
 

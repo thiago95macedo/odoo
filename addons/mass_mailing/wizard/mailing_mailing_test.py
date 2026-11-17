@@ -4,7 +4,7 @@
 from email.utils import getaddresses
 from markupsafe import Markup
 
-from odoo import _, api, fields, models, tools
+from weth import _, api, fields, models, tools
 
 
 class MailingMailingTest(models.TransientModel):

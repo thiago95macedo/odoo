@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
 
     <record id="equipment_action" model="ir.actions.act_window">
         <field name="name">Equipment</field>
@@ -44,4 +44,4 @@
             </xpath>
         </field>
     </record>
-</odoo>
+</weth>

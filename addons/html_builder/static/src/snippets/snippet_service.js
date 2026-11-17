@@ -5,7 +5,7 @@ import { Reactive } from "@web/core/utils/reactive";
 import { AddSnippetDialog } from "./add_snippet_dialog";
 import { registry } from "@web/core/registry";
 import { user } from "@web/core/user";
-import { markup, proxy } from "@odoo/owl";
+import { markup, proxy } from "@weth/owl";
 import { useService } from "@web/core/utils/hooks";
 import { patch } from "@web/core/utils/patch";
 
@@ -99,14 +99,14 @@ export class SnippetModel extends Reactive {
         const bodyText = _t("Do you want to install %s App?", snippet.moduleDisplayName);
         const linkText = _t("More info about this app.");
         const linkUrl =
-            "/odoo/action-base.open_module_tree/" + encodeURIComponent(snippet.moduleId);
+            "/weth/action-base.open_module_tree/" + encodeURIComponent(snippet.moduleId);
 
         this.dialog.add(ConfirmationDialog, {
             title: _t("Install %s", snippet.moduleDisplayName),
             body: markup`${bodyText}\n<a href="${linkUrl}" target="_blank"><i class="oi me-1" data-icon="east"></i>${linkText}</a>`,
             confirm: async () => installSnippetModule(snippet),
             confirmLabel: _t("Save and Install"),
-            cancel: () => {},
+            cancel: () => { },
         });
     }
 
@@ -303,7 +303,7 @@ export class SnippetModel extends Reactive {
                             template_key: this.snippetsName,
                         });
                     },
-                    cancel: () => {},
+                    cancel: () => { },
                     confirmLabel: _t("Delete Block"),
                     cancelLabel: _t("Keep it"),
                     title: _t("Delete this block?"),

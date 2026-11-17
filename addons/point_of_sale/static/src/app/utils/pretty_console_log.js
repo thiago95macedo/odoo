@@ -1,7 +1,7 @@
 import { Logger } from "@bus/workers/bus_worker_utils";
 import { downloadFile } from "@web/core/network/download";
 
-const posLogger = new Logger(`point_of_sale_config_${odoo.pos_config_id}_logger`);
+const posLogger = new Logger(`point_of_sale_config_${weth.pos_config_id}_logger`);
 
 const IDB_ERROR_LOG_KEY = "pos_idb_errors";
 const IDB_ERROR_LOG_MAX = 200;
@@ -14,7 +14,7 @@ export function logPosMessage(
     args = [],
     persistToStorage = false
 ) {
-    if (odoo.debug === "assets") {
+    if (weth.debug === "assets") {
         console.groupCollapsed(
             `[%c${type}%c]: %c${functionName}%c - ${message}`,
             `color:${color};`,
@@ -35,7 +35,7 @@ export function logPosMessage(
         functionName,
         message,
     };
-    if (args.length && odoo.debug) {
+    if (args.length && weth.debug) {
         try {
             log.args = JSON.parse(JSON.stringify(args));
         } catch {
@@ -68,7 +68,7 @@ export function downloadIdbErrors() {
 }
 
 export function logPosImage(image, size = 30) {
-    if (odoo.debug === "assets") {
+    if (weth.debug === "assets") {
         const url = image.toDataURL();
         const img = new Image();
         img.src = url;

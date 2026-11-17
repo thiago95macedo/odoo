@@ -3,8 +3,8 @@
 
 from collections import defaultdict
 
-from odoo import _, api, fields, models
-from odoo.tools.misc import clean_context
+from weth import _, api, fields, models
+from weth.tools.misc import clean_context
 
 
 class StockPickingType(models.Model):

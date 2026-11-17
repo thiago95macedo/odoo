@@ -18,9 +18,9 @@ import {
     startServer,
 } from "@mail/../tests/mail_test_helpers";
 import { LONG_PRESS_DELAY } from "@mail/utils/common/hooks";
-import { describe, expect, test } from "@odoo/hoot";
-import { advanceTime, pointerDown, press, queryAllRects } from "@odoo/hoot-dom";
-import { mockTouch, mockUserAgent } from "@odoo/hoot-mock";
+import { describe, expect, test } from "@weth/hoot";
+import { advanceTime, pointerDown, press, queryAllRects } from "@weth/hoot-dom";
+import { mockTouch, mockUserAgent } from "@weth/hoot-mock";
 
 import { location } from "@web/core/browser/browser";
 import { serverState } from "@web/../tests/web_test_helpers";

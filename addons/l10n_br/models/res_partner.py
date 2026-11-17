@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, fields, models
+from weth import api, fields, models
 
-from odoo.addons.l10n_br.tools.partner_identifiers import BR_ADDITIONAL_IDENTIFIERS_METADATA
+from weth.addons.l10n_br.tools.partner_identifiers import BR_ADDITIONAL_IDENTIFIERS_METADATA
 
 
 class ResPartner(models.Model):

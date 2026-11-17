@@ -1,6 +1,6 @@
-/** @odoo-module */
+/** @weth-module */
 
-import { markup, signal, t } from "@odoo/owl";
+import { markup, signal, t } from "@weth/owl";
 import { HootError, stringify } from "../hoot_utils";
 import { Job } from "./job";
 import { Tag } from "./tag";
@@ -53,7 +53,7 @@ export class Test extends Job {
         warn: 0,
     };
     // FIXME: cannot import on CaseResult for proper validation
-    /** @type {import("@odoo/owl").Signal<import("./expect").CaseResult[]>} */
+    /** @type {import("@weth/owl").Signal<import("./expect").CaseResult[]>} */
     results = signal.Array([], { type: t.object() });
     /** @type {() => MaybePromise<void> | null} */
     run = null;

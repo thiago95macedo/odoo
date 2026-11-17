@@ -1,4 +1,4 @@
-from odoo.tools import sql
+from weth.tools import sql
 
 
 def migrate(cr, version):

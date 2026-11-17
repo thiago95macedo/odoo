@@ -1,5 +1,5 @@
 import { useLayoutEffect } from "@web/owl2/utils";
-import { Component, proxy, useProps } from "@odoo/owl";
+import { Component, proxy, useProps } from "@weth/owl";
 import {
     CustomFieldCard
 } from "@sale_pdf_quote_builder/js/custom_content_kanban_like_widget/custom_field_card/custom_field_card";
@@ -58,10 +58,11 @@ export class CustomContentKanbanLikeWidget extends Component {
                     [header.id]: {
                         document_name: header.name,
                         custom_form_fields: Object.assign({}, ...header.custom_form_fields.map(
-                            formField => ({[formField.name]: formField.value})
+                            formField => ({ [formField.name]: formField.value })
                         )),
                     }
-            }})),
+                }
+            })),
             'line': Object.assign({}, ...this.state.lines.map(line => {
                 return {
                     [line.id]: Object.assign({}, ...line.files.filter(f => f.is_selected).map(doc => {
@@ -69,20 +70,23 @@ export class CustomContentKanbanLikeWidget extends Component {
                             [doc.id]: {
                                 document_name: doc.name,
                                 custom_form_fields: Object.assign({}, ...doc.custom_form_fields.map(
-                                    formField => ({[formField.name]: formField.value})
+                                    formField => ({ [formField.name]: formField.value })
                                 )),
                             }
-                    }})),
-            }})),
+                        }
+                    })),
+                }
+            })),
             'footer': Object.assign({}, ...selectedFooters.map(footer => {
                 return {
                     [footer.id]: {
                         document_name: footer.name,
                         custom_form_fields: Object.assign({}, ...footer.custom_form_fields.map(
-                            formField => ({[formField.name]: formField.value})
+                            formField => ({ [formField.name]: formField.value })
                         )),
                     }
-            }})),
+                }
+            })),
         })
         this.props.record.update({ ['customizable_pdf_form_fields']: value });
     }
@@ -97,12 +101,12 @@ export class CustomContentKanbanLikeWidget extends Component {
         sol._noUpdateParent = true; // Ensure that no rpc will be made to save the changes
         if (isSelected) {
             // save is needed to ensure that no onChange call will be made
-            await sol.update({product_document_ids: [x2ManyCommands.link(docId)]}, { save: true });
+            await sol.update({ product_document_ids: [x2ManyCommands.link(docId)] }, { save: true });
         } else {
             // save is needed to ensure that no onChange call will be made
-            await sol.update({product_document_ids: [x2ManyCommands.unlink(docId)]}, { save: true });
+            await sol.update({ product_document_ids: [x2ManyCommands.unlink(docId)] }, { save: true });
         }
-        await this.props.record.data.order_line._onUpdate({withoutOnchange: true});
+        await this.props.record.data.order_line._onUpdate({ withoutOnchange: true });
         this.updateJson();
     };
 

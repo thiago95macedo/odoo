@@ -1,6 +1,6 @@
-from odoo.tests import tagged, users
+from weth.tests import tagged, users
 
-from odoo.addons.mass_mailing.tests.common import MassMailCommon
+from weth.addons.mass_mailing.tests.common import MassMailCommon
 
 
 @tagged('mailing_list')

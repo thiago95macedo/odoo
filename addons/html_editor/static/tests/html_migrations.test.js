@@ -1,6 +1,6 @@
 import { HtmlField } from "@html_editor/fields/html_field";
 import { htmlEditorVersions } from "@html_editor/html_migrations/html_migrations_utils";
-import { beforeEach, describe, expect, getFixture, test } from "@odoo/hoot";
+import { beforeEach, describe, expect, getFixture, test } from "@weth/hoot";
 import {
     defineModels,
     fields,

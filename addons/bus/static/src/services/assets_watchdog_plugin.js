@@ -2,7 +2,7 @@ import { _t } from "@web/core/l10n/translation";
 import { location, browser } from "@web/core/browser/browser";
 import { registry } from "@web/core/registry";
 import { session } from "@web/session";
-import { Plugin, usePlugin } from "@odoo/owl";
+import { Plugin, usePlugin } from "@weth/owl";
 import { BusPlugin } from "@bus/services/bus_plugin";
 import { NotificationPlugin } from "@web/core/notifications/notification_plugin";
 import { services } from "@web/core/services";

@@ -1,8 +1,8 @@
 import logging
 from unittest import SkipTest
 
-from odoo.fields import Domain
-from odoo.tests import TransactionCase
+from weth.fields import Domain
+from weth.tests import TransactionCase
 
 _logger = logging.getLogger(__name__)
 

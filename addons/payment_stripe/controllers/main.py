@@ -7,15 +7,15 @@ from datetime import UTC, datetime
 
 from werkzeug.exceptions import Forbidden
 
-from odoo import http
-from odoo.exceptions import ValidationError
-from odoo.http import request
-from odoo.tools import file_open, mute_logger
+from weth import http
+from weth.exceptions import ValidationError
+from weth.http import request
+from weth.tools import file_open, mute_logger
 
-from odoo.addons.payment import utils as payment_utils
-from odoo.addons.payment.logging import get_payment_logger
-from odoo.addons.payment_stripe import const
-from odoo.addons.payment_stripe import utils as stripe_utils
+from weth.addons.payment import utils as payment_utils
+from weth.addons.payment.logging import get_payment_logger
+from weth.addons.payment_stripe import const
+from weth.addons.payment_stripe import utils as stripe_utils
 
 _logger = get_payment_logger(__name__, const.SENSITIVE_KEYS)
 

@@ -1,4 +1,4 @@
-import { test } from "@odoo/hoot";
+import { test } from "@weth/hoot";
 import { testEditor } from "../_helpers/editor";
 
 test("should consider elements with same classes and styles in different orders as similar", async () => {

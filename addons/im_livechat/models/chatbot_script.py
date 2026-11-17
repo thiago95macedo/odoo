@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, Command, models, fields
-from odoo.fields import Domain
-from odoo.http import request
-from odoo.tools import email_normalize, get_lang, html2plaintext, is_html_empty, plaintext2html
-from odoo.addons.mail.tools.discuss import Store
-from odoo.addons.phone_validation.tools import phone_validation
-from odoo.exceptions import UserError, ValidationError
-from odoo.tools.translate import mark_as_copy
+from weth import api, Command, models, fields
+from weth.fields import Domain
+from weth.http import request
+from weth.tools import email_normalize, get_lang, html2plaintext, is_html_empty, plaintext2html
+from weth.addons.mail.tools.discuss import Store
+from weth.addons.phone_validation.tools import phone_validation
+from weth.exceptions import UserError, ValidationError
+from weth.tools.translate import mark_as_copy
 
 
 class ChatbotScript(models.Model):

@@ -1,6 +1,6 @@
-import { expect, test } from "@odoo/hoot";
-import { animationFrame } from "@odoo/hoot-mock";
-import { Component, onWillStart, signal, xml } from "@odoo/owl";
+import { expect, test } from "@weth/hoot";
+import { animationFrame } from "@weth/hoot-mock";
+import { Component, onWillStart, signal, xml } from "@weth/owl";
 import { registry } from "@web/core/registry";
 import { Interaction } from "@web/public/interaction";
 import { startInteractions } from "@web/../tests/public/helpers";

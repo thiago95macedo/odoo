@@ -2,8 +2,8 @@
 
 import logging
 
-from odoo import models
-from odoo.exceptions import UserError
+from weth import models
+from weth.exceptions import UserError
 
 _logger = logging.getLogger(__name__)
 

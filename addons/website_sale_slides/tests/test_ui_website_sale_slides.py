@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import fields, tests
-from odoo.addons.website_slides.tests import test_ui_wslides
+from weth import fields, tests
+from weth.addons.website_slides.tests import test_ui_wslides
 
 
 @tests.common.tagged('post_install', '-at_install')

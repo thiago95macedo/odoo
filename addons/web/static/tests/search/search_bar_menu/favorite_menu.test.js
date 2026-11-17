@@ -1,6 +1,6 @@
-import { expect, test } from "@odoo/hoot";
-import { queryFirst } from "@odoo/hoot-dom";
-import { mockDate } from "@odoo/hoot-mock";
+import { expect, test } from "@weth/hoot";
+import { queryFirst } from "@weth/hoot-dom";
+import { mockDate } from "@weth/hoot-mock";
 import { editValue } from "@web/../tests/core/tree_editor/condition_tree_editor_test_helpers";
 import {
     contains,

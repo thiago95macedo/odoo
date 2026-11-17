@@ -2,10 +2,10 @@
 
 from datetime import timedelta
 
-from odoo import api, fields, models, tools
-from odoo.sql_db import PG_CONCURRENCY_EXCEPTIONS_TO_RETRY
+from weth import api, fields, models, tools
+from weth.sql_db import PG_CONCURRENCY_EXCEPTIONS_TO_RETRY
 
-from odoo.addons.mail.tools.discuss import Store
+from weth.addons.mail.tools.discuss import Store
 
 UPDATE_PRESENCE_DELAY = 60
 DISCONNECTION_TIMER = UPDATE_PRESENCE_DELAY + 5
@@ -69,7 +69,7 @@ class MailPresence(models.Model):
         try:
             # Hide transaction serialization errors, which can be ignored, the presence update is not essential
             # The errors are supposed from presence.write(...) call only
-            with tools.mute_logger("odoo.sql_db"):
+            with tools.mute_logger("weth.sql_db"):
                 self._update_presence(user_or_guest, inactivity_period)
                 # commit on success
                 self.env.cr.commit()

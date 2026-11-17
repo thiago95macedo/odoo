@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
-from odoo import Command
-from odoo.tests import HttpCase, tagged
+from weth import Command
+from weth.tests import HttpCase, tagged
 
-from odoo.addons.website.tests.common import set_url_code
+from weth.addons.website.tests.common import set_url_code
 
 
 @tagged('post_install', '-at_install', 'is_tour')

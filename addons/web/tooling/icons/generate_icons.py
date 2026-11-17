@@ -1034,7 +1034,7 @@ def write_python_icon_list(
         "manually.\n"
         '"""\n'
         "\n"
-        "from odoo.tools import LazyTranslate, frozendict\n"
+        "from weth.tools import LazyTranslate, frozendict\n"
         "\n"
         "_lt = LazyTranslate(__name__)\n"
         "\n"

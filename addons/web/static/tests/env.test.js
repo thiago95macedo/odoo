@@ -1,5 +1,5 @@
-import { afterEach, beforeEach, describe, expect, getFixture, test, tick } from "@odoo/hoot";
-import { Component, signal, useProps, xml } from "@odoo/owl";
+import { afterEach, beforeEach, describe, expect, getFixture, test, tick } from "@weth/hoot";
+import { Component, signal, useProps, xml } from "@weth/owl";
 import {
     allowTranslations,
     clearRegistry,
@@ -28,7 +28,7 @@ beforeEach(() => {
 });
 afterEach(() => {
     delete odoo.isReady;
-    delete odoo.__WOWL_DEBUG__;
+    delete weth.__WOWL_DEBUG__;
 });
 
 /**
@@ -211,7 +211,7 @@ test(`mountComponent creates an env and sets the application as root`, async () 
     const { env } = await mountComponent(Root, getFixture());
     expect(env.services).toEqual({ my_service: "a" });
     expect(comp).not.toBe(null);
-    expect(odoo.__WOWL_DEBUG__).toEqual({ root: comp });
+    expect(weth.__WOWL_DEBUG__).toEqual({ root: comp });
     expect(getFixture()).toHaveText("Root");
 });
 

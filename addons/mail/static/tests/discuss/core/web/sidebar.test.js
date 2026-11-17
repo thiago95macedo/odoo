@@ -9,8 +9,8 @@ import {
     startServer,
     MENU_ACTIVE_IDS,
 } from "@mail/../tests/mail_test_helpers";
-import { describe, expect, test } from "@odoo/hoot";
-import { press } from "@odoo/hoot-dom";
+import { describe, expect, test } from "@weth/hoot";
+import { press } from "@weth/hoot-dom";
 import { Command, getService, serverState } from "@web/../tests/web_test_helpers";
 
 describe.current.tags("desktop");

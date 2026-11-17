@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
 
     <!-- /shop/payment route -->
     <template id="website_sale.payment" name="Payment">
@@ -50,4 +50,4 @@
         </div>
     </template>
 
-</odoo>
+</weth>

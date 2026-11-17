@@ -1,8 +1,8 @@
 import logging
 
 
-from odoo import http
-from odoo.http import request, Controller
+from weth import http
+from weth.http import request, Controller
 
 logger = logging.getLogger(__name__)
 

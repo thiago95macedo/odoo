@@ -1,4 +1,4 @@
-import { describe, test } from "@odoo/hoot";
+import { describe, test } from "@weth/hoot";
 
 import {
     startServer,
@@ -12,8 +12,8 @@ import {
 
 import { defineHrHolidaysModels } from "@hr_holidays/../tests/hr_holidays_test_helpers";
 import { Command, serverState } from "@web/../tests/web_test_helpers";
-import { press } from "@odoo/hoot-dom";
-import { mockDate } from "@odoo/hoot-mock";
+import { press } from "@weth/hoot-dom";
+import { mockDate } from "@weth/hoot-mock";
 
 describe.current.tags("desktop");
 defineHrHolidaysModels();

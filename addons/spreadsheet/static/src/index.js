@@ -14,7 +14,7 @@
  */
 
 /** TODO: Introduce a position parameter to the plugin registry in order to load them in a specific order */
-import * as spreadsheet from "@odoo/o-spreadsheet";
+import * as spreadsheet from "@weth/o-spreadsheet";
 import { _t } from "@web/core/l10n/translation";
 
 const { corePluginRegistry, evaluationPluginRegistry, featurePluginRegistry } =
@@ -105,7 +105,7 @@ globalFieldMatchingRegistry.add("chart", {
     getActionXmlId: (getters, chartId) => getters.getChartDefinition(chartId).actionXmlId,
     getDomain: (getters, chartId) => getters.getChartDataSource(chartId).getComputedDomain(),
     // Note: we don't support the datasource context on drilldown for the charts, so we never stored it
-    getContext: (getters, chartId) => {},
+    getContext: (getters, chartId) => { },
     openSidePanel: (env, chartId) => {
         const figureId = env.model.getters.getFigureIdFromChartId(chartId);
         env.model.dispatch("SELECT_FIGURE", { figureId });

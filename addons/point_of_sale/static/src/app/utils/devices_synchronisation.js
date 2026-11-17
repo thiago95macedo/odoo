@@ -49,8 +49,8 @@ export default class DevicesSynchronisation {
 
         logPosMessage("Synchronisation", "dispatch", "Disptaching synchronization", CONSOLE_COLOR);
         await this.pos.data.call("pos.config", "notify_synchronisation", [
-            odoo.pos_config_id,
-            odoo.pos_session_id,
+            weth.pos_config_id,
+            weth.pos_session_id,
             this.pos.device.identifier,
             recordIds,
         ]);
@@ -112,7 +112,7 @@ export default class DevicesSynchronisation {
 
         try {
             this.inSync = this.pos.data.call("pos.config", "read_config_open_orders", [
-                odoo.pos_config_id,
+                weth.pos_config_id,
                 domain,
                 recordIds,
             ]);
@@ -277,5 +277,5 @@ export default class DevicesSynchronisation {
 }
 
 export function isSamePosDevice(session_id, device_identifier, posStore) {
-    return odoo.pos_session_id != session_id || device_identifier == posStore.device.identifier;
+    return weth.pos_session_id != session_id || device_identifier == posStore.device.identifier;
 }

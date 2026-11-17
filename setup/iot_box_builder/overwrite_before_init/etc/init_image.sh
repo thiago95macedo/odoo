@@ -24,9 +24,9 @@ unset "${!LC_@}"
 unset "${!LANG@}"
 
 # create a symbolic link to the new iot_box_builder if necessary (e.g.: building a branch where the old module is still there)
-if [ ! -d /home/pi/odoo/setup/iot_box_builder -a -d /home/pi/odoo/addons/iot_box_image ]; then
-  mkdir -p /home/pi/odoo/setup
-  ln -s /home/pi/odoo/addons/iot_box_image /home/pi/odoo/setup/iot_box_builder
+if [ ! -d /home/pi/weth/setup/iot_box_builder -a -d /home/pi/weth/addons/iot_box_image ]; then
+  mkdir -p /home/pi/weth/setup
+  ln -s /home/pi/weth/addons/iot_box_image /home/pi/weth/setup/iot_box_builder
 fi
 
 # set locale to en_US
@@ -38,8 +38,8 @@ echo 'LANG=en_US.UTF-8' > /etc/default/locale
 # Aliases
 cat <<'EOF' | tee -a ~/.bashrc /home/pi/.bashrc
 alias ll='ls -al'
-alias odoo='sudo systemctl stop odoo; sudo -u odoo /usr/bin/python3 /home/pi/odoo/odoo-bin --config /home/pi/odoo.conf'
-alias odoo_logs='less -R +F /var/log/odoo/odoo-server.log'
+alias odoo='sudo systemctl stop odoo; sudo -u odoo /usr/bin/python3 /home/pi/weth/weth-bin --config /home/pi/odoo.conf'
+alias odoo_logs='less -R +F /var/log/weth/odoo-server.log'
 alias odoo_conf='cat /home/pi/odoo.conf'
 alias install='sudo chroot /root_bypass_ramdisks/'
 alias blackbox='ls /dev/serial/by-path/'
@@ -61,7 +61,7 @@ odoo_help() {
   echo 'odoo_start            Starts Odoo service'
   echo 'odoo_stop             Stops Odoo service'
   echo 'odoo_restart          Restarts Odoo service'
-  echo 'odoo_dev <branch>     Resets Odoo on the specified branch from odoo-dev repository'
+  echo 'odoo_dev <branch>     Resets Odoo on the specified branch from weth-dev repository'
   echo 'odoo_origin <branch>  Resets Odoo on the specified branch from the odoo repository'
   echo 'devtools              Enables/Disables specific functions for development (more help with devtools help)'
   echo ''
@@ -79,8 +79,8 @@ odoo_dev() {
   sudo -u odoo git fetch dev "$1" --depth=1 --prune
   sudo -u odoo git reset --hard FETCH_HEAD
   sudo -u odoo git branch -m "$1"
-  sudo -u odoo pip3 install -r /home/pi/odoo/setup/iot_box_builder/configuration/requirements.txt --break-system-package
-  sudo chroot /root_bypass_ramdisks /bin/bash -c "export DEBIAN_FRONTEND=noninteractive && xargs apt-get -y -o Dpkg::Options::=\"--force-confdef\" -o Dpkg::Options::=\"--force-confold\" install < /home/pi/odoo/setup/iot_box_builder/configuration/packages.txt"
+  sudo -u odoo pip3 install -r /home/pi/weth/setup/iot_box_builder/configuration/requirements.txt --break-system-package
+  sudo chroot /root_bypass_ramdisks /bin/bash -c "export DEBIAN_FRONTEND=noninteractive && xargs apt-get -y -o Dpkg::Options::=\"--force-confdef\" -o Dpkg::Options::=\"--force-confold\" install < /home/pi/weth/setup/iot_box_builder/configuration/packages.txt"
   cd "$pwd"
 }
 
@@ -91,12 +91,12 @@ odoo_origin() {
   fi
   pwd=$(pwd)
   cd /home/pi/odoo
-  sudo -u odoo git remote set-url origin https://github.com/odoo/odoo.git  # ensure odoo repository
+  sudo -u odoo git remote set-url origin https://github.com/weth/odoo.git  # ensure odoo repository
   sudo -u odoo git fetch origin "$1" --depth=1 --prune
   sudo -u odoo git reset --hard FETCH_HEAD
   sudo -u odoo git branch -m "$1"
-  sudo chroot /root_bypass_ramdisks /bin/bash -c "export DEBIAN_FRONTEND=noninteractive && xargs apt-get -y -o Dpkg::Options::=\"--force-confdef\" -o Dpkg::Options::=\"--force-confold\" install < /home/pi/odoo/setup/iot_box_builder/configuration/packages.txt"
-  sudo -u odoo pip3 install -r /home/pi/odoo/setup/iot_box_builder/configuration/requirements.txt --break-system-package
+  sudo chroot /root_bypass_ramdisks /bin/bash -c "export DEBIAN_FRONTEND=noninteractive && xargs apt-get -y -o Dpkg::Options::=\"--force-confdef\" -o Dpkg::Options::=\"--force-confold\" install < /home/pi/weth/setup/iot_box_builder/configuration/packages.txt"
+  sudo -u odoo pip3 install -r /home/pi/weth/setup/iot_box_builder/configuration/requirements.txt --break-system-package
   cd "$pwd"
 }
 
@@ -175,7 +175,7 @@ echo TrustedUserCAKeys /etc/ssh/ca.pub >> /etc/ssh/sshd_config
 
 # KEEP OWN CONFIG FILES DURING PACKAGE CONFIGURATION
 # http://serverfault.com/questions/259226/automatically-keep-current-version-of-config-files-when-apt-get-install
-xargs -r -a /home/pi/odoo/setup/iot_box_builder/configuration/packages.txt \
+xargs -r -a /home/pi/weth/setup/iot_box_builder/configuration/packages.txt \
     apt-get -y -qq \
     -o Dpkg::Options::="--force-confdef" \
     -o Dpkg::Options::="--force-confold" \
@@ -188,11 +188,11 @@ rm -rfv /usr/share/doc /usr/share/locale/*
 
 # Remove the default nginx website, we have our own config in /etc/nginx/conf.d/
 rm /etc/nginx/sites-enabled/default
-cd /home/pi/odoo/
+cd /home/pi/weth/
 pip3 install \
     --no-cache-dir \
     --break-system-package \
-    -r /home/pi/odoo/setup/iot_box_builder/configuration/requirements.txt
+    -r /home/pi/weth/setup/iot_box_builder/configuration/requirements.txt
 
 # Create Odoo user for odoo service and disable password login
 adduser --disabled-password --gecos "" --shell /usr/sbin/nologin odoo
@@ -202,7 +202,7 @@ echo "odoo ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/010_odoo-nopasswd
 chmod 440 /etc/sudoers.d/010_odoo-nopasswd
 
 # copy the odoo.conf file to the overwrite directory
-mv -v "/home/pi/odoo/setup/iot_box_builder/configuration/odoo.conf" "/home/pi/"
+mv -v "/home/pi/weth/setup/iot_box_builder/configuration/odoo.conf" "/home/pi/"
 chown odoo:odoo "/home/pi/odoo.conf"
 
 groupadd usbusers
@@ -214,7 +214,7 @@ usermod -a -G input odoo
 usermod -a -G dialout odoo
 usermod -a -G pi odoo
 install -d -o odoo -g odoo /var/log/odoo
-chown odoo:odoo -R /home/pi/odoo/
+chown odoo:odoo -R /home/pi/weth/
 
 # logrotate is very picky when it comes to file permissions
 chown -R root:root /etc/logrotate.d/

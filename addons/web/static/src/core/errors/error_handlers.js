@@ -1,4 +1,4 @@
-import { usePlugin } from "@odoo/owl";
+import { usePlugin } from "@weth/owl";
 import { DebugModePlugin } from "@web/core/debug_mode_plugin";
 import {
     ClientErrorDialog,

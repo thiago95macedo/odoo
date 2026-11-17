@@ -5,12 +5,12 @@ from typing import TYPE_CHECKING
 
 from PIL import Image as PilImage
 
-from odoo.tools.binary import BinaryBytes
+from weth.tools.binary import BinaryBytes
 
 from .generator import Generator
 
 if TYPE_CHECKING:
-    from odoo.api import ValuesType
+    from weth.api import ValuesType
 
 
 class Binary(Generator):

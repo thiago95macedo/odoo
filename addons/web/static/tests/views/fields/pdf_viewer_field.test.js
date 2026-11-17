@@ -8,8 +8,8 @@ import {
     onRpc,
     patchWithCleanup,
 } from "@web/../tests/web_test_helpers";
-import { test, expect } from "@odoo/hoot";
-import { click, setInputFiles, queryOne, waitFor } from "@odoo/hoot-dom";
+import { test, expect } from "@weth/hoot";
+import { click, setInputFiles, queryOne, waitFor } from "@weth/hoot-dom";
 import { browser } from "@web/core/browser/browser";
 
 const getIframeSrc = () => queryOne(".o_field_widget iframe.o_pdfview_iframe").dataset.src;
@@ -63,7 +63,7 @@ test("PdfViewerField: upload rendering", async () => {
     expect.assertions(4);
 
     onRpc("web_save", ({ args }) => {
-        expect(args[1]).toEqual({ document: {content: btoa("test"), filename: "test.pdf"} });
+        expect(args[1]).toEqual({ document: { content: btoa("test"), filename: "test.pdf" } });
     });
 
     await mountView({

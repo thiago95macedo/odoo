@@ -6,13 +6,13 @@ from gi.repository import GLib
 import logging
 from threading import Thread
 
-from odoo.addons.iot_drivers.interface import Interface
+from weth.addons.iot_drivers.interface import Interface
 
 _logger = logging.getLogger(__name__)
 
 bluetooth_devices = {}
 
-AGENT_PATH = "/odoo/iot/agent/bluetooth"
+AGENT_PATH = "/weth/iot/agent/bluetooth"
 
 
 class BtPairingAgent(dbus.service.Object):

@@ -1,5 +1,5 @@
 import { useService } from "@web/core/utils/hooks";
-import { Component, proxy, useProps } from "@odoo/owl";
+import { Component, proxy, useProps } from "@weth/owl";
 
 export class MobilePreviewSystrayItem extends Component {
     static template = "website.MobilePreviewSystrayItem";

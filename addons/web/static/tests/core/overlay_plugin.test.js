@@ -1,5 +1,5 @@
-import { expect, getFixture, test } from "@odoo/hoot";
-import { animationFrame } from "@odoo/hoot-mock";
+import { expect, getFixture, test } from "@weth/hoot";
+import { animationFrame } from "@weth/hoot-mock";
 import {
     Component,
     Plugin,
@@ -10,7 +10,7 @@ import {
     useProps,
     useScope,
     xml,
-} from "@odoo/owl";
+} from "@weth/owl";
 import {
     assignTestEnv,
     getService,

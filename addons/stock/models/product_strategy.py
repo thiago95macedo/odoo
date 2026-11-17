@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import _, api, fields, models
-from odoo.fields import Domain
-from odoo.exceptions import UserError
+from weth import _, api, fields, models
+from weth.fields import Domain
+from weth.exceptions import UserError
 
 
 class ProductRemoval(models.Model):

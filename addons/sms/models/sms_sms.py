@@ -6,10 +6,10 @@ from datetime import datetime
 from dateutil.relativedelta import relativedelta
 from uuid import uuid4
 
-from odoo import api, fields, models, tools, _
-from odoo.addons.sms.tools.sms_api import SmsApiBase
-from odoo.fields import Domain
-from odoo.tools.urls import urljoin as url_join
+from weth import api, fields, models, tools, _
+from weth.addons.sms.tools.sms_api import SmsApiBase
+from weth.fields import Domain
+from weth.tools.urls import urljoin as url_join
 
 _logger = logging.getLogger(__name__)
 

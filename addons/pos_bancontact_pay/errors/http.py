@@ -1,11 +1,11 @@
-from odoo.exceptions import (
+from weth.exceptions import (
     AccessDenied,
     AccessError,
     MissingError,
     UserError,
     ValidationError,
 )
-from odoo.tools.translate import LazyTranslate
+from weth.tools.translate import LazyTranslate
 
 _lt = LazyTranslate(__name__)
 

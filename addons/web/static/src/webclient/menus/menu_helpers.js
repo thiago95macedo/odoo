@@ -25,9 +25,9 @@ export function computeAppsAndMenuItems(menuTree) {
             return;
         }
         const isApp = menuItem.id === menuItem.appID;
-        let href = `/odoo/${menuItem.actionPath || "action-" + menuItem.actionID}`;
-        if (odoo.debug) {
-            href += "?debug=" + odoo.debug;
+        let href = `/weth/${menuItem.actionPath || "action-" + menuItem.actionID}`;
+        if (weth.debug) {
+            href += "?debug=" + weth.debug;
         }
         const item = {
             parents: parents

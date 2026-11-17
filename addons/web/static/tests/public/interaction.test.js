@@ -1,4 +1,4 @@
-import { before, beforeEach, describe, expect, test } from "@odoo/hoot";
+import { before, beforeEach, describe, expect, test } from "@weth/hoot";
 import {
     animationFrame,
     click,
@@ -7,8 +7,8 @@ import {
     queryAll,
     queryFirst,
     queryOne,
-} from "@odoo/hoot-dom";
-import { advanceTime } from "@odoo/hoot-mock";
+} from "@weth/hoot-dom";
+import { advanceTime } from "@weth/hoot-mock";
 import {
     Component,
     markup,
@@ -20,7 +20,7 @@ import {
     useProps,
     useScope,
     xml,
-} from "@odoo/owl";
+} from "@weth/owl";
 import { clearRegistry, patchWithCleanup } from "@web/../tests/web_test_helpers";
 import { registry } from "@web/core/registry";
 import { services } from "@web/core/services";
@@ -446,7 +446,7 @@ describe("adding listeners", () => {
             class Test extends Interaction {
                 static selector = ".test";
                 dynamicContent = {
-                    button: { "t-on-click": () => {} },
+                    button: { "t-on-click": () => { } },
                 };
                 willStart() {
                     expect.step("willStart");
@@ -519,7 +519,7 @@ describe("adding listeners", () => {
                     def.promise.then(() => {
                         expect.step(
                             "bufferedClicks: " +
-                                this.services["public.interactions"].bufferedClicks.size
+                            this.services["public.interactions"].bufferedClicks.size
                         );
                         this.el.querySelector(".running").classList.remove("running");
                     });
@@ -969,7 +969,7 @@ describe("handling crashes", () => {
         class Test extends Interaction {
             static selector = ".test";
             dynamicContent = {
-                span: { click: () => {} },
+                span: { click: () => { } },
             };
         }
         await expect(startInteraction(Test, TemplateTest)).rejects.toThrow(
@@ -999,7 +999,7 @@ describe("handling crashes", () => {
     test("crash if first-level key on dynamicContent is a directive, not a selector", async () => {
         class Test extends Interaction {
             static selector = ".test";
-            dynamicContent = { "t-on-click": () => {} };
+            dynamicContent = { "t-on-click": () => { } };
         }
         await expect(startInteraction(Test, TemplateTest)).rejects.toThrow(
             "Selector missing for key t-on-click in dynamicContent (interaction 'Test')"

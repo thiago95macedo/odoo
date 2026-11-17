@@ -3,8 +3,8 @@
 
 from datetime import datetime, timedelta
 
-from odoo.addons.event_crm.tests.common import TestEventCrmCommon
-from odoo.tests.common import RecordCapturer, tagged, users
+from weth.addons.event_crm.tests.common import TestEventCrmCommon
+from weth.tests.common import RecordCapturer, tagged, users
 
 
 @tagged('event_crm', 'post_install', '-at_install')

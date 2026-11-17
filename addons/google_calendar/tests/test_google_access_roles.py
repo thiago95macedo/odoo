@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.calendar.tests.test_access_rights import TestAccessRights
-from odoo.exceptions import AccessError
-from odoo.tests import tagged
+from weth.addons.calendar.tests.test_access_rights import TestAccessRights
+from weth.exceptions import AccessError
+from weth.tests import tagged
 
 
 @tagged('at_install', '-post_install')  # LEGACY at_install

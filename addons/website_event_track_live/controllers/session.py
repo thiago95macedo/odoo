@@ -3,8 +3,8 @@
 
 import re
 
-from odoo.addons.website_event_track.controllers.event_track import EventTrackController
-from odoo.http import request
+from weth.addons.website_event_track.controllers.event_track import EventTrackController
+from weth.http import request
 
 
 class WebsiteEventSessionLiveController(EventTrackController):

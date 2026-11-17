@@ -1,9 +1,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.exceptions import AccessError, ValidationError
-from odoo.http import Controller, request, route
-from odoo.http.session import touch
-from odoo.tools.mail import email_re
+from weth.exceptions import AccessError, ValidationError
+from weth.http import Controller, request, route
+from weth.http.session import touch
+from weth.tools.mail import email_re
 
 
 class ProductWishlist(Controller):

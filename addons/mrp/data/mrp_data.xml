@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
     <data noupdate="1">
 
         <function model="res.company" name="create_missing_unbuild_sequences" />
@@ -93,4 +93,4 @@
 
     </data>
 
-</odoo>
+</weth>

@@ -1,6 +1,6 @@
 import { BaseOptionComponent } from "@html_builder/core/base_option_component";
 import { useDomState } from "@html_builder/core/utils";
-import { onWillStart, onWillUpdateProps, proxy, useProps, t } from "@odoo/owl";
+import { onWillStart, onWillUpdateProps, proxy, useProps, t } from "@weth/owl";
 import { FormActionFieldsOption } from "./form_action_fields_option";
 import {
     getDependencyEl,

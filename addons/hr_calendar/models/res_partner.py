@@ -8,9 +8,9 @@ from zoneinfo import ZoneInfo
 from dateutil.relativedelta import relativedelta
 from dateutil.rrule import DAILY, rrule
 
-from odoo import api, models
-from odoo.fields import Domain
-from odoo.tools.intervals import Intervals
+from weth import api, models
+from weth.fields import Domain
+from weth.tools.intervals import Intervals
 
 
 class ResPartner(models.Model):

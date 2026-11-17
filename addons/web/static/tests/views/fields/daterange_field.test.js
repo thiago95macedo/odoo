@@ -1,4 +1,4 @@
-import { after, beforeEach, expect, runAllTimers, test } from "@odoo/hoot";
+import { after, beforeEach, expect, runAllTimers, test } from "@weth/hoot";
 import {
     animationFrame,
     click,
@@ -14,8 +14,8 @@ import {
     queryValue,
     resize,
     waitFor,
-} from "@odoo/hoot-dom";
-import { disableAnimations, mockDate, mockTimeZone } from "@odoo/hoot-mock";
+} from "@weth/hoot-dom";
+import { disableAnimations, mockDate, mockTimeZone } from "@weth/hoot-mock";
 import { editTime } from "@web/../tests/core/datetime/datetime_test_helpers";
 import { _makeUser, user } from "@web/core/user";
 import { resetDateFieldWidths } from "@web/views/list/column_width_hook";
@@ -1343,7 +1343,7 @@ test("invalid empty date with optional start date", async () => {
 
 test.tags("desktop");
 test("date values are selected eagerly and do not flicker", async () => {
-    Partner._onChanges.datetime = () => {};
+    Partner._onChanges.datetime = () => { };
 
     const def = Promise.withResolvers();
     onRpc("onchange", async () => {

@@ -10,7 +10,7 @@ import { renderToFragment } from "@web/core/utils/render";
 import { useSortable } from "@web/core/utils/sortable_owl";
 import { standardViewProps } from "@web/views/standard_view_props";
 import { BoardAction } from "./board_action";
-import { Component, proxy, signal, t, useProps } from "@odoo/owl";
+import { Component, proxy, signal, t, useProps } from "@weth/owl";
 
 export class BoardController extends Component {
     static template = "board.BoardView";
@@ -107,7 +107,7 @@ export class BoardController extends Component {
                 column.actions.splice(index, 1);
                 this.saveBoard();
             },
-            cancel: () => {},
+            cancel: () => { },
         });
     }
 

@@ -6,9 +6,9 @@ import {
     setupHTMLBuilder,
 } from "@html_builder/../tests/helpers";
 import { BackgroundOption } from "@html_builder/plugins/background_option/background_option";
-import { t } from "@odoo/owl";
-import { expect, test, describe, beforeEach, queryFirst } from "@odoo/hoot";
-import { queryOne, setInputRange } from "@odoo/hoot-dom";
+import { t } from "@weth/owl";
+import { expect, test, describe, beforeEach, queryFirst } from "@weth/hoot";
+import { queryOne, setInputRange } from "@weth/hoot-dom";
 import { contains, onRpc } from "@web/../tests/web_test_helpers";
 
 describe.current.tags("desktop");

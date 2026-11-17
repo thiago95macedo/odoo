@@ -1,10 +1,10 @@
 
 from itertools import accumulate
 
-from odoo import api, fields, models
-from odoo.exceptions import UserError
-from odoo.models import Query
-from odoo.tools import SQL
+from weth import api, fields, models
+from weth.exceptions import UserError
+from weth.models import Query
+from weth.tools import SQL
 
 
 class AccountRoot(models.Model):

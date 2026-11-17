@@ -1,6 +1,6 @@
-from odoo import SUPERUSER_ID
-from odoo.tests import tagged
-from odoo.addons.stock.tests.common import TestStockCommon
+from weth import SUPERUSER_ID
+from weth.tests import tagged
+from weth.addons.stock.tests.common import TestStockCommon
 
 
 @tagged("post_install", "-at_install")

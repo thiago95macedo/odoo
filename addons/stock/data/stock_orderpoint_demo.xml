@@ -1,4 +1,4 @@
-<odoo>
+<weth>
     <data noupdate="1">
 
         <!-- Resource: stock.warehouse.orderpoint -->
@@ -62,4 +62,4 @@
                 eval="obj().env.ref('stock.warehouse0').lot_stock_id.id"/>
         </record>
     </data>
-</odoo>
+</weth>

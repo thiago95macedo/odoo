@@ -297,7 +297,7 @@ function isValidDate(date) {
 
 /**
  * Smart date inputs are shortcuts to write dates quicker.
- * These shortcuts are based on python version: `odoo.tools.date_utils.parse_date`.
+ * These shortcuts are based on python version: `weth.tools.date_utils.parse_date`.
  * Starting from now (or "today"), add relative delta to the date.
  *
  * e.g.

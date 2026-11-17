@@ -1,4 +1,4 @@
-import { Component, useProps, t } from "@odoo/owl";
+import { Component, useProps, t } from "@weth/owl";
 import { ProductProduct } from "@point_of_sale/app/models/product_product";
 import { ProductTemplate } from "@point_of_sale/app/models/product_template";
 import { formatFloat } from "@web/core/utils/numbers";
@@ -14,7 +14,7 @@ export class ProductCard extends Component {
         comboExtraPrice: t.string().optional(),
         color: t.or([t.number(), t.literal(undefined)]).optional(),
         imageUrl: t.or([t.string(), t.boolean()]),
-        onClick: t.function().optional(() => () => {}),
+        onClick: t.function().optional(() => () => { }),
         showWarning: t.boolean().optional(false),
         productCartQty: t.or([t.number(), t.literal(undefined)]).optional(),
         isComboPopup: t.boolean().optional(false),

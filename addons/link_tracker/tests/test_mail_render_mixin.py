@@ -4,9 +4,9 @@ import re
 
 from markupsafe import Markup
 
-from odoo.tests import common, tagged
-from odoo.tools import mute_logger
-from odoo.tools.mail import TEXT_URL_REGEX
+from weth.tests import common, tagged
+from weth.tools import mute_logger
+from weth.tools.mail import TEXT_URL_REGEX
 
 
 @tagged('-at_install', 'post_install')
@@ -17,7 +17,7 @@ class TestMailRenderMixin(common.HttpCase):
         super().setUpClass()
         cls.base_url = cls.env["mail.render.mixin"].get_base_url()
 
-    @mute_logger("odoo.tests.common.requests")
+    @mute_logger("weth.tests.common.requests")
     def test_shorten_links(self):
         test_links = [
             '<a href="https://gitlab.com" title="title" fake="fake">test_label</a>',
@@ -81,7 +81,7 @@ class TestMailRenderMixin(common.HttpCase):
             with self.subTest(tracker_to_fail=tracker_to_fail):
                 self.assertFalse(self.env["link.tracker"].search(tracker_to_fail))
 
-    @mute_logger("odoo.tests.common.requests")
+    @mute_logger("weth.tests.common.requests")
     def test_shorten_links_html_different_labels(self):
         # Covers multiple additions from web_editor's convert_inline.js classToStyle
         content = """<p>There is a <a href="https://www.weth.com.br">logo.png</a> here,
@@ -153,7 +153,7 @@ And here is the same: <a href="{self.base_url}/r/(\w+)+"><img src="https://www.w
             matches[8], matches[9], "Links to the same image without alt should be covered by the same tracker."
         )
 
-    @mute_logger("odoo.tests.common.requests")
+    @mute_logger("weth.tests.common.requests")
     def test_shorten_links_html_including_base_url(self):
         content = f"""<p>
 This is a link: <a href="https://www.worldcommunitygrid.org">https://www.worldcommunitygrid.org</a><br/>
@@ -193,7 +193,7 @@ And a last, more complex: <a href="{self.base_url}/r/(\w+)">There!</a>
         self.assertNotEqual(matches[3], matches[4])
         self.assertNotEqual(matches[4], matches[5])
 
-    @mute_logger("odoo.tests.common.requests")
+    @mute_logger("weth.tests.common.requests")
     def test_shorten_links_html_markup(self):
         content = Markup('<p>A link: <a href="https://www.worldcommunitygrid.org">Link</a></p>')
 
@@ -203,7 +203,7 @@ And a last, more complex: <a href="{self.base_url}/r/(\w+)">There!</a>
         expected_pattern = re.compile(rf'<p>A link: <a href="{self.base_url}/r/\w+">Link</a></p>')
         self.assertRegex(new_content, expected_pattern)
 
-    @mute_logger("odoo.tests.common.requests")
+    @mute_logger("weth.tests.common.requests")
     def test_shorten_links_html_skip_shorts(self):
         old_content = self.env["mail.render.mixin"]._shorten_links(
             'This is a link: <a href="https://test_542152qsdqsd.com">old</a>', {})
@@ -220,7 +220,7 @@ And a last, more complex: <a href="{self.base_url}/r/(\w+)">There!</a>
         )
         self.assertRegex(new_content, expected)
 
-    @mute_logger("odoo.tests.common.requests")
+    @mute_logger("weth.tests.common.requests")
     def test_shorten_links_text_including_base_url(self):
         content = f"""
 This is a link: https://www.worldcommunitygrid.org

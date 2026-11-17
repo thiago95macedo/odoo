@@ -3,11 +3,11 @@
 from dateutil.relativedelta import relativedelta
 from freezegun import freeze_time
 
-from odoo import fields
-from odoo.exceptions import ValidationError
-from odoo.tests import tagged
+from weth import fields
+from weth.exceptions import ValidationError
+from weth.tests import tagged
 
-from odoo.addons.hr_holidays.tests.common import TestHrHolidaysCommon
+from weth.addons.hr_holidays.tests.common import TestHrHolidaysCommon
 
 
 @tagged("post_install", "-at_install")

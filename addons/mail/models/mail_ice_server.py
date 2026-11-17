@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import fields, models
-from odoo.addons.mail.tools.discuss import get_twilio_credentials
+from weth import fields, models
+from weth.addons.mail.tools.discuss import get_twilio_credentials
 import logging
 import requests
 

@@ -4,7 +4,7 @@ import { registry } from "@web/core/registry";
 import { useService } from "@web/core/utils/hooks";
 import { Record } from "@web/model/relational_model/record";
 
-import { Component, types, useProps } from "@odoo/owl";
+import { Component, types, useProps } from "@weth/owl";
 
 /**
  * Widgets used to display and select the scheduled date in the composer (in monocomment mode)

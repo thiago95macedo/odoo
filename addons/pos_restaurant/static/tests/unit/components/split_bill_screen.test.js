@@ -1,5 +1,5 @@
-import { describe, test, expect } from "@odoo/hoot";
-import { animationFrame } from "@odoo/hoot-dom";
+import { describe, test, expect } from "@weth/hoot";
+import { animationFrame } from "@weth/hoot-dom";
 import { SplitBillScreen } from "@pos_restaurant/app/screens/split_bill_screen/split_bill_screen";
 import { setupPosEnv, getFilledOrder } from "@point_of_sale/../tests/unit/utils";
 import { contains, mountWithCleanup } from "@web/../tests/web_test_helpers";

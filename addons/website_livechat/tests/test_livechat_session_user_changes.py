@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import tests
-from odoo.addons.website_livechat.tests.common import TestLivechatCommon
+from weth import tests
+from weth.addons.website_livechat.tests.common import TestLivechatCommon
 
 
 class TestLivechatSessionUserChanges(tests.HttpCase, TestLivechatCommon):

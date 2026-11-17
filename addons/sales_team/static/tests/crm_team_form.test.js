@@ -1,6 +1,6 @@
 import { contains, openFormView, start, startServer } from "@mail/../tests/mail_test_helpers";
 
-import { expect, test } from "@odoo/hoot";
+import { expect, test } from "@weth/hoot";
 
 import { defineCrmTeamModels } from "@sales_team/../tests/crm_team_test_helpers";
 

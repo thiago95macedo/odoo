@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.tests.common import HttpCase
-from odoo.tests import tagged
-from odoo.tools import mute_logger
+from weth.tests.common import HttpCase
+from weth.tests import tagged
+from weth.tools import mute_logger
 
 
 @tagged("post_install", "-at_install")
@@ -20,7 +20,7 @@ class SkillsTestReport(HttpCase):
             }
         )
 
-    @mute_logger("odoo.http")
+    @mute_logger("weth.http")
     def test_cv_report_traceback(self):
         template = """
         <t t-name="hr_skills.report_employee_cv">

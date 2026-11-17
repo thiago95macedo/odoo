@@ -4,7 +4,7 @@ import { useService } from "@web/core/utils/hooks";
 import { useX2ManyCrud } from "@web/views/fields/relational_utils";
 import { Record } from "@web/model/relational_model/record";
 
-import { Component, types, useProps } from "@odoo/owl";
+import { Component, types, useProps } from "@weth/owl";
 import { FileUploader } from "@web/views/fields/file_handler";
 
 import { useMailComposerAttachmentsUploader } from "./mail_composer_attachment_hook";

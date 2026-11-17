@@ -2,14 +2,14 @@
 
 from unittest.mock import Mock, patch
 
-from odoo.tests import HttpCase, tagged
-from odoo.tools import urls
+from weth.tests import HttpCase, tagged
+from weth.tools import urls
 
-from odoo.addons.payment import utils as payment_utils
-from odoo.addons.website_sale.controllers.cart import Cart
-from odoo.addons.website_sale.controllers.delivery import Delivery as WebsiteSaleDeliveryController
-from odoo.addons.website_sale.controllers.main import WebsiteSale
-from odoo.addons.website_sale.tests.common import WebsiteSaleCommon
+from weth.addons.payment import utils as payment_utils
+from weth.addons.website_sale.controllers.cart import Cart
+from weth.addons.website_sale.controllers.delivery import Delivery as WebsiteSaleDeliveryController
+from weth.addons.website_sale.controllers.main import WebsiteSale
+from weth.addons.website_sale.tests.common import WebsiteSaleCommon
 
 
 @tagged("post_install", "-at_install")
@@ -240,7 +240,7 @@ class TestWebsiteSaleExpressCheckoutFlows(WebsiteSaleCommon, HttpCase):
         self.authenticate(None, None, session_extra={"sale_order_id": self.sale_order.id})
 
         with patch(
-            "odoo.addons.delivery.models.delivery_carrier.DeliveryCarrier.rate_shipment",
+            "weth.addons.delivery.models.delivery_carrier.DeliveryCarrier.rate_shipment",
             return_value=self.rate_shipment_result,
         ):
             self.make_jsonrpc_request(
@@ -268,7 +268,7 @@ class TestWebsiteSaleExpressCheckoutFlows(WebsiteSaleCommon, HttpCase):
         self.authenticate(None, None, session_extra={"sale_order_id": self.sale_order.id})
 
         with patch(
-            "odoo.addons.delivery.models.delivery_carrier.DeliveryCarrier.rate_shipment",
+            "weth.addons.delivery.models.delivery_carrier.DeliveryCarrier.rate_shipment",
             return_value=self.rate_shipment_result,
         ):
             self.make_jsonrpc_request(
@@ -309,7 +309,7 @@ class TestWebsiteSaleExpressCheckoutFlows(WebsiteSaleCommon, HttpCase):
         )
 
         with patch(
-            "odoo.addons.delivery.models.delivery_carrier.DeliveryCarrier.rate_shipment",
+            "weth.addons.delivery.models.delivery_carrier.DeliveryCarrier.rate_shipment",
             return_value=self.rate_shipment_result,
         ):
             self.make_jsonrpc_request(
@@ -337,7 +337,7 @@ class TestWebsiteSaleExpressCheckoutFlows(WebsiteSaleCommon, HttpCase):
         )
 
         with patch(
-            "odoo.addons.delivery.models.delivery_carrier.DeliveryCarrier.rate_shipment",
+            "weth.addons.delivery.models.delivery_carrier.DeliveryCarrier.rate_shipment",
             return_value=self.rate_shipment_result,
         ):
             self.make_jsonrpc_request(
@@ -371,7 +371,7 @@ class TestWebsiteSaleExpressCheckoutFlows(WebsiteSaleCommon, HttpCase):
         )
 
         with patch(
-            "odoo.addons.delivery.models.delivery_carrier.DeliveryCarrier.rate_shipment",
+            "weth.addons.delivery.models.delivery_carrier.DeliveryCarrier.rate_shipment",
             return_value=self.rate_shipment_result,
         ):
             self.make_jsonrpc_request(
@@ -430,7 +430,7 @@ class TestWebsiteSaleExpressCheckoutFlows(WebsiteSaleCommon, HttpCase):
         )
 
         with patch(
-            "odoo.addons.delivery.models.delivery_carrier.DeliveryCarrier.rate_shipment",
+            "weth.addons.delivery.models.delivery_carrier.DeliveryCarrier.rate_shipment",
             return_value=self.rate_shipment_result,
         ):
             shipping_options = self.make_jsonrpc_request(
@@ -470,7 +470,7 @@ class TestWebsiteSaleExpressCheckoutFlows(WebsiteSaleCommon, HttpCase):
         )
 
         with patch(
-            "odoo.addons.delivery.models.delivery_carrier.DeliveryCarrier.rate_shipment",
+            "weth.addons.delivery.models.delivery_carrier.DeliveryCarrier.rate_shipment",
             return_value=self.rate_shipment_result,
         ):
             # Won't create a new partner because the partial information are the same as an
@@ -517,7 +517,7 @@ class TestWebsiteSaleExpressCheckoutFlows(WebsiteSaleCommon, HttpCase):
 
         with (
             patch(
-                "odoo.addons.delivery.models.delivery_carrier.DeliveryCarrier.rate_shipment",
+                "weth.addons.delivery.models.delivery_carrier.DeliveryCarrier.rate_shipment",
                 return_value=self.rate_shipment_result,
             ),
             self.mock_request(user=self.env.user, sale_order_id=self.sale_order.id),

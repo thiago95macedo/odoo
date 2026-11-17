@@ -3,7 +3,7 @@ import { Domain } from "@web/core/domain";
 import { _t } from "@web/core/l10n/translation";
 import { SearchModel } from "@web/search/search_model";
 
-import { computed, proxy } from "@odoo/owl";
+import { computed, proxy } from "@weth/owl";
 
 export class CrmSearchModel extends SearchModel {
 
@@ -149,7 +149,7 @@ export class CrmSearchModel extends SearchModel {
      * Init the switcher selected team by retrieving it from
      * the local storage or fallback on "All Teams".
      */
-    _initSwitcherSelection(loaded=false) {
+    _initSwitcherSelection(loaded = false) {
         let teamId = JSON.parse(browser.localStorage.getItem("crm.switcher_team_id"));
         const isValid = this.state.switcherTeams.find((t) => t.id === teamId);
         if (!isValid) {
@@ -194,7 +194,7 @@ export class CrmSearchModel extends SearchModel {
      * @param {Number} teamId Id of the new selected team, "undefined" fallbacks on "All Sales Team".
      * @param {Boolean} notify Whether or not to notify to recompute the search context and domain.
      */
-    _updateSwitcherSelection(teamId, notify=true) {
+    _updateSwitcherSelection(teamId, notify = true) {
         this.state.switcherTeamId = teamId;
         this._updateActionContext(teamId);
         if (teamId) {

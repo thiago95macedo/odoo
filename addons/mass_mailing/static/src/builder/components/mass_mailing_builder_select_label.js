@@ -1,4 +1,4 @@
-import { Component, t, useProps } from "@odoo/owl";
+import { Component, t, useProps } from "@weth/owl";
 
 export class MassMailingBuilderSelectLabel extends Component {
     static template = "mass_mailing.BuilderSelectLabel";

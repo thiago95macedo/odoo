@@ -3,9 +3,9 @@
 from datetime import datetime, date
 from zoneinfo import ZoneInfo
 
-from odoo.tests import tagged
+from weth.tests import tagged
 
-from odoo.addons.hr.tests.common import TestHrCommon
+from weth.addons.hr.tests.common import TestHrCommon
 
 
 class TestAttendances(TestHrCommon):

@@ -58,7 +58,7 @@ msgstr ""
 "dados. Visite https://www.weth.com.br/pricing-plan para obter mais "
 "informações.\n"
 "Se precisar de temas de site, o download pode ser feito em https://"
-"github.com/odoo/design-themes.\n"
+"github.com/weth/design-themes.\n"
 
 #. module: base_import_module
 #: model_terms:ir.ui.view,arch_db:base_import_module.module_form_apps_inherit

@@ -3,7 +3,7 @@ import { _t } from '@web/core/l10n/translation';
 import { rpc, RPCError } from '@web/core/network/rpc';
 import { registry } from '@web/core/registry';
 import { Interaction } from '@web/public/interaction';
-import { useListener } from "@odoo/owl";
+import { useListener } from "@weth/owl";
 
 export class ExpressCheckout extends Interaction {
     static selector = 'form[name="o_payment_express_checkout_form"]';
@@ -81,7 +81,7 @@ export class ExpressCheckout extends Interaction {
      * @param {Object} providerData - The provider-specific data.
      * @return {void}
      */
-    async _prepareExpressCheckoutForm(providerData) {}
+    async _prepareExpressCheckoutForm(providerData) { }
 
     /**
      * Make an RPC to initiate the express payment flow by creating a new transaction.
@@ -99,7 +99,7 @@ export class ExpressCheckout extends Interaction {
             ));
         } catch (error) {
             if (error instanceof RPCError) {
-                processingValues = {state: 'error', state_message: error.data.message};
+                processingValues = { state: 'error', state_message: error.data.message };
             }
         }
 
@@ -124,7 +124,7 @@ export class ExpressCheckout extends Interaction {
             'tokenization_requested': false,
             'landing_route': this.paymentContext['landingRoute'],
             'access_token': this.paymentContext['accessToken'],
-            'csrf_token': odoo.csrf_token,
+            'csrf_token': weth.csrf_token,
         };
     }
 

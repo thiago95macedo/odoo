@@ -1,5 +1,5 @@
-from odoo import _, api, models
-from odoo.exceptions import ValidationError
+from weth import _, api, models
+from weth.exceptions import ValidationError
 
 
 class PosConfig(models.Model):

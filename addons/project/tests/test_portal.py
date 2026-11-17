@@ -1,16 +1,16 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import Command
-from odoo.addons.project.tests.test_access_rights import TestProjectPortalCommon
-from odoo.exceptions import AccessError
-from odoo.tests import tagged, HttpCase
-from odoo.tools import mute_logger
+from weth import Command
+from weth.addons.project.tests.test_access_rights import TestProjectPortalCommon
+from weth.exceptions import AccessError
+from weth.tests import tagged, HttpCase
+from weth.tools import mute_logger
 
 
 @tagged('at_install', '-post_install')  # LEGACY at_install, fails post install
 class TestPortalProject(TestProjectPortalCommon, HttpCase):
-    @mute_logger('odoo.addons.base.models.ir_access')
+    @mute_logger('weth.addons.base.models.ir_access')
     def test_portal_project_access_rights(self):
         pigs = self.project_pigs
         pigs.write({'privacy_visibility': 'portal'})

@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-from odoo import fields
-from odoo.addons.sale_timesheet.tests.common import TestCommonSaleTimesheet
-from odoo.tests import tagged
-from odoo.exceptions import UserError
+from weth import fields
+from weth.addons.sale_timesheet.tests.common import TestCommonSaleTimesheet
+from weth.tests import tagged
+from weth.exceptions import UserError
 
 
 @tagged('post_install', '-at_install')

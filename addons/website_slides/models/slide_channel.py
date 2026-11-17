@@ -8,12 +8,12 @@ from collections import defaultdict
 from dateutil.relativedelta import relativedelta
 from markupsafe import Markup
 
-from odoo import api, fields, models, tools, _
-from odoo.addons.website.tools import text_from_html
-from odoo.exceptions import AccessError, UserError, ValidationError
-from odoo.fields import Domain
-from odoo.tools import SQL, is_html_empty
-from odoo.tools.misc import format_duration
+from weth import api, fields, models, tools, _
+from weth.addons.website.tools import text_from_html
+from weth.exceptions import AccessError, UserError, ValidationError
+from weth.fields import Domain
+from weth.tools import SQL, is_html_empty
+from weth.tools.misc import format_duration
 
 _logger = logging.getLogger(__name__)
 

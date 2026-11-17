@@ -1,4 +1,4 @@
-import { registries, helpers, constants } from "@odoo/o-spreadsheet";
+import { registries, helpers, constants } from "@weth/o-spreadsheet";
 
 const { DEFAULT_LOCALE } = constants;
 const { pivotToFunctionValueRegistry } = registries;

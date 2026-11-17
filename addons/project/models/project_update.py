@@ -2,9 +2,9 @@
 
 from dateutil.relativedelta import relativedelta
 
-from odoo import api, fields, models
-from odoo.fields import Domain
-from odoo.tools import format_amount, formatLang
+from weth import api, fields, models
+from weth.fields import Domain
+from weth.tools import format_amount, formatLang
 
 STATUS_COLOR = {
     'on_track': 20,  # green / success

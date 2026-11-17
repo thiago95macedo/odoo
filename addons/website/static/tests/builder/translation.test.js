@@ -1,8 +1,8 @@
 import { EditWebsiteSystrayItem } from "@website/client_actions/website_preview/edit_website_systray_item";
 import { setContent, setSelection } from "@html_editor/../tests/_helpers/selection";
 import { insertText, pasteHtml, pasteText } from "@html_editor/../tests/_helpers/user_actions";
-import { beforeEach, delay, describe, expect, globals, press, test } from "@odoo/hoot";
-import { animationFrame, manuallyDispatchProgrammaticEvent, queryOne } from "@odoo/hoot-dom";
+import { beforeEach, delay, describe, expect, globals, press, test } from "@weth/hoot";
+import { animationFrame, manuallyDispatchProgrammaticEvent, queryOne } from "@weth/hoot-dom";
 import { contains, mockService, onRpc, patchWithCleanup } from "@web/../tests/web_test_helpers";
 import {
     defineWebsiteModels,
@@ -191,8 +191,8 @@ test("cascade of [data-oe-model] in translation", async () => {
     await setupSidebarBuilderForTranslation({
         websiteContent: `
             <div data-oe-model="test"><section>${getTranslateEditable({
-                inWrap: "Hello",
-            })}</section></div>
+            inWrap: "Hello",
+        })}</section></div>
         `,
     });
     expect(":iframe [data-oe-model='test']").not.toHaveClass("o_savable");
@@ -287,8 +287,7 @@ test("translate attribute history", async () => {
         ".options-container [data-action-id='translateAttribute'][data-action-param='title'] input"
     ).edit("titre");
     const getImg = ({ titleName, translated }) =>
-        `<img src="/web/image/website.landscape_md_9" class="img img-fluid o_savable_attribute o_translatable_attribute${
-            translated ? " oe_translated" : ""
+        `<img src="/web/image/website.landscape_md_9" class="img img-fluid o_savable_attribute o_translatable_attribute${translated ? " oe_translated" : ""
         }" loading="lazy" title="${titleName}" style="" data-oe-translation-state="to_translate">`;
     expect(wrapEl).toHaveInnerHTML(getImg({ titleName: "titre", translated: true }));
     await contains(".o-snippets-menu button[data-icon='undo']").click();

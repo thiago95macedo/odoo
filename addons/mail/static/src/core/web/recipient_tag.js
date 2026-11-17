@@ -5,7 +5,7 @@ import { useBus, useService } from "@web/core/utils/hooks";
 import { RecipientsInputTagsListPopover } from "./recipients_input_tags_list_popover";
 import { RecipientsPopover } from "./recipients_popover";
 
-import { Component, EventBus, signal, types, useProps } from "@odoo/owl";
+import { Component, EventBus, signal, types, useProps } from "@weth/owl";
 
 export class RecipientTag extends Component {
     static template = "mail.RecipientTag";

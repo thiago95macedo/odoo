@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from odoo import models, api, fields
+from weth import models, api, fields
 
 
 class MySubscription(models.AbstractModel):

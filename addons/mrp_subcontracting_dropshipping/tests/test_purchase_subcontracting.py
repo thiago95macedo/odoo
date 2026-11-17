@@ -1,10 +1,10 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import fields
-from odoo.fields import Command
-from odoo.tests import tagged, Form
-from odoo.addons.mrp_subcontracting.tests.common import TestMrpSubcontractingCommon
-from odoo.addons.stock_account.tests.common import TestStockValuationCommon
+from weth import fields
+from weth.fields import Command
+from weth.tests import tagged, Form
+from weth.addons.mrp_subcontracting.tests.common import TestMrpSubcontractingCommon
+from weth.addons.stock_account.tests.common import TestStockValuationCommon
 
 
 @tagged('post_install', '-at_install')

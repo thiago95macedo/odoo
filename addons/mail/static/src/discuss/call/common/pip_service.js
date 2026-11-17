@@ -1,6 +1,6 @@
 import { Meeting } from "./meeting";
 
-import { proxy } from "@odoo/owl";
+import { proxy } from "@weth/owl";
 
 import { registry } from "@web/core/registry";
 
@@ -17,7 +17,7 @@ export const callPipService = {
         let pipWindow = null;
         const state = proxy({ active: false });
         popout.addHooks(
-            () => {},
+            () => { },
             () => {
                 state.active = false;
                 env.services["discuss.rtc"]?.channel?.openChatWindow();

@@ -1,5 +1,5 @@
 
-from odoo.tests.common import tagged, HttpCase
+from weth.tests.common import tagged, HttpCase
 
 from .common import DashboardTestCommon
 

@@ -1,12 +1,12 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 from datetime import timedelta
 
-from odoo import Command
-from odoo.fields import Date, Domain
-from odoo.tools import float_is_zero
-from odoo.exceptions import AccessError, UserError, ValidationError
-from odoo.addons.sale_timesheet.tests.common import TestCommonSaleTimesheet
-from odoo.tests import Form, tagged, new_test_user
+from weth import Command
+from weth.fields import Date, Domain
+from weth.tools import float_is_zero
+from weth.exceptions import AccessError, UserError, ValidationError
+from weth.addons.sale_timesheet.tests.common import TestCommonSaleTimesheet
+from weth.tests import Form, tagged, new_test_user
 
 @tagged('-at_install', 'post_install')
 class TestSaleTimesheet(TestCommonSaleTimesheet):

@@ -6,7 +6,7 @@ import { insertText, pasteHtml } from "@html_editor/../tests/_helpers/user_actio
 import { FontSizePlugin } from "@html_editor/main/font/font_size_plugin";
 import { isTextNode } from "@html_editor/utils/dom_info";
 import { parseHTML } from "@html_editor/utils/html";
-import { expect, test, describe } from "@odoo/hoot";
+import { expect, test, describe } from "@weth/hoot";
 import {
     click,
     manuallyDispatchProgrammaticEvent,
@@ -14,8 +14,8 @@ import {
     queryOne,
     waitForNone,
     advanceTime,
-} from "@odoo/hoot-dom";
-import { animationFrame } from "@odoo/hoot-mock";
+} from "@weth/hoot-dom";
+import { animationFrame } from "@weth/hoot-mock";
 import { contains, onRpc, patchWithCleanup } from "@web/../tests/web_test_helpers";
 
 describe.current.tags("desktop");

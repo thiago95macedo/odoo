@@ -1,5 +1,5 @@
-from odoo import api, fields, models
-from odoo.fields import Datetime
+from weth import api, fields, models
+from weth.fields import Datetime
 
 
 class PosSnooze(models.Model):

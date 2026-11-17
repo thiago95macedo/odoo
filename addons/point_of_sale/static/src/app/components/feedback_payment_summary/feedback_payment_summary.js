@@ -1,4 +1,4 @@
-import { Component, onMounted, useProps, signal, t } from "@odoo/owl";
+import { Component, onMounted, useProps, signal, t } from "@weth/owl";
 import { PriceFormatter } from "../price_formatter/price_formatter";
 
 export class FeedbackPaymentSummary extends Component {

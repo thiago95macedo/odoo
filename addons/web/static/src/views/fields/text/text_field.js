@@ -8,7 +8,7 @@ import { parseInteger } from "../parsers";
 import { standardFieldProps } from "../standard_field_props";
 import { TranslationButton } from "../translation/translation";
 
-import { Component, onMounted, onPatched, signal, t, useListener, useProps } from "@odoo/owl";
+import { Component, onMounted, onPatched, signal, t, useListener, useProps } from "@weth/owl";
 
 export const textFieldProps = {
     ...standardFieldProps,
@@ -90,9 +90,8 @@ export class TextField extends Component {
     async onDynamicPlaceholderValidate(chain, defaultValue) {
         if (chain) {
             this.textareaRef().focus();
-            const dynamicPlaceholder = ` {{object.${chain}${
-                defaultValue?.length ? ` ||| ${defaultValue}` : ""
-            }}}`;
+            const dynamicPlaceholder = ` {{object.${chain}${defaultValue?.length ? ` ||| ${defaultValue}` : ""
+                }}}`;
             this.textareaRef().setRangeText(
                 dynamicPlaceholder,
                 this.selectionStart,

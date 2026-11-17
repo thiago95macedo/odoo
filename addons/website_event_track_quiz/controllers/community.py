@@ -3,9 +3,9 @@
 
 import math
 
-from odoo import http
-from odoo.addons.website_event.controllers.community import EventCommunityController
-from odoo.http import request
+from weth import http
+from weth.addons.website_event.controllers.community import EventCommunityController
+from weth.http import request
 
 
 class WebsiteEventTrackQuizCommunityController(EventCommunityController):

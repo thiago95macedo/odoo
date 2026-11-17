@@ -1,5 +1,5 @@
 import { useService } from "@web/core/utils/hooks";
-import { Component, signal, useProps, t } from "@odoo/owl";
+import { Component, signal, useProps, t } from "@weth/owl";
 import { useTrackedAsync } from "@point_of_sale/app/hooks/hooks";
 import { usePos } from "@point_of_sale/app/hooks/pos_hook";
 import { Dialog } from "@web/core/dialog/dialog";

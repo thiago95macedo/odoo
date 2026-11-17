@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
     <data noupdate="1">
         <!--Blanket Order Agreement-->
         <record id="bo_requisition" model="purchase.requisition">
@@ -50,4 +50,4 @@
             <field name="product_qty">10</field>
         </record>
     </data>
-</odoo>
+</weth>

@@ -1,12 +1,12 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 import json
 
-from odoo import Command
-from odoo.tests import tagged
-from odoo.tools import mute_logger
+from weth import Command
+from weth.tests import tagged
+from weth.tools import mute_logger
 
-from odoo.addons.base.tests.common import HttpCaseWithUserDemo
-from odoo.addons.http_routing.tests.common import MockRequest
+from weth.addons.base.tests.common import HttpCaseWithUserDemo
+from weth.addons.http_routing.tests.common import MockRequest
 
 
 @tagged('post_install', '-at_install')
@@ -121,7 +121,7 @@ class TestGetCurrentWebsite(HttpCaseWithUserDemo):
         })
         self.assertTrue(user.website_id == user.partner_id.website_id == website)
 
-    @mute_logger('odoo.addons.rpc.controllers.jsonrpc')
+    @mute_logger('weth.addons.rpc.controllers.jsonrpc')
     def test_03_rpc_signin_user_website_id(self):
         def rpc_login_user_demo():
             """

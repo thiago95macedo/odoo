@@ -4,7 +4,7 @@ import { user } from "@web/core/user";
 import { useService } from "@web/core/utils/hooks";
 import { Record } from "@web/model/relational_model/record";
 
-import { Component, onWillStart, proxy, types, useProps } from "@odoo/owl";
+import { Component, onWillStart, proxy, types, useProps } from "@weth/owl";
 import { Dropdown } from "@web/core/dropdown/dropdown";
 import { DropdownItem } from "@web/core/dropdown/dropdown_item";
 import { SelectCreateDialog } from "@web/views/view_dialogs/select_create_dialog";

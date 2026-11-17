@@ -4,19 +4,19 @@ from datetime import datetime, timedelta
 from http import HTTPStatus
 from unittest.mock import patch
 
-from odoo.fields import Command
-from odoo.models import Model
-from odoo.tests import new_test_user, tagged
-from odoo.tools import mute_logger
-from odoo.tools.misc import submap
+from weth.fields import Command
+from weth.models import Model
+from weth.tests import new_test_user, tagged
+from weth.tools import mute_logger
+from weth.tools.misc import submap
 
 from .dummy_methods import DummyMethods
-from odoo.addons.api_doc.controllers.api_doc import (
+from weth.addons.api_doc.controllers.api_doc import (
     DocController,
     is_public_method,
     parse_signature,
 )
-from odoo.addons.base.tests.common import HttpCaseWithUserDemo
+from weth.addons.base.tests.common import HttpCaseWithUserDemo
 
 
 @tagged("-at_install", "post_install")
@@ -42,13 +42,13 @@ class TestDoc(HttpCaseWithUserDemo):
         for path in ('/doc', '/doc/index.json', '/doc/res.company.json'):
             with self.subTest(path=path):
                 with (
-                    mute_logger('odoo.http.server'),
-                    self.assertLogs('odoo.http') as capture,
+                    mute_logger('weth.http.server'),
+                    self.assertLogs('weth.http') as capture,
                 ):
                     res = self.url_open(path)
                 self.assertEqual(res.status_code, 403)
                 self.assertIn(e, res.text)
-                self.assertEqual(capture.output, [f'WARNING:odoo.http:{e}'])
+                self.assertEqual(capture.output, [f'WARNING:weth.http:{e}'])
 
     def test_doc_web_client(self):
         self.authenticate('demo', 'demo')
@@ -296,7 +296,7 @@ class TestDoc(HttpCaseWithUserDemo):
         FakeCls = type('ModelDummyMethods', (DummyMethods, Model), {
             '_name': 'model.dummy.methods',
             '_register': False,
-            '__module__': 'odoo.addons.api_doc',
+            '__module__': 'weth.addons.api_doc',
         })
         FakeModel = FakeCls(self.env, (), ())
         assert is_public_method(FakeModel, 'one_arg')

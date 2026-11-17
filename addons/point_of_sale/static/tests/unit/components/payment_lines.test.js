@@ -1,5 +1,5 @@
-import { test, expect, describe } from "@odoo/hoot";
-import { animationFrame } from "@odoo/hoot-mock";
+import { test, expect, describe } from "@weth/hoot";
+import { animationFrame } from "@weth/hoot-mock";
 import { findComponent, mountWithCleanup } from "@web/../tests/web_test_helpers";
 import {
     setupPosEnv,
@@ -9,7 +9,7 @@ import {
 } from "../utils";
 import { definePosModels } from "../data/generate_model_definitions";
 import { PaymentScreenPaymentLines } from "@point_of_sale/app/screens/payment_screen/payment_lines/payment_lines";
-import { Component, proxy, xml } from "@odoo/owl";
+import { Component, proxy, xml } from "@weth/owl";
 
 definePosModels();
 
@@ -20,13 +20,13 @@ test("getPaymentActionState", async () => {
     const paymentline = createPaymentLine(store, order, card);
     const childProps = proxy({
         paymentLines: [paymentline],
-        deleteLine: () => {},
-        selectLine: () => {},
-        sendForceDone: () => {},
-        sendForceCancel: () => {},
-        sendPaymentCancel: () => {},
-        sendPaymentRequest: () => {},
-        updateSelectedPaymentline: () => {},
+        deleteLine: () => { },
+        selectLine: () => { },
+        sendForceDone: () => { },
+        sendForceCancel: () => { },
+        sendPaymentCancel: () => { },
+        sendPaymentRequest: () => { },
+        updateSelectedPaymentline: () => { },
         isRefundOrder: false,
     });
     // Props only update through a parent re-render, so wrap the component in a
@@ -324,13 +324,13 @@ describe("show qr code button", () => {
         await mountWithCleanup(PaymentScreenPaymentLines, {
             props: {
                 paymentLines: [paymentline],
-                deleteLine: () => {},
-                selectLine: () => {},
-                sendForceDone: () => {},
-                sendForceCancel: () => {},
-                sendPaymentCancel: () => {},
-                sendPaymentRequest: () => {},
-                updateSelectedPaymentline: () => {},
+                deleteLine: () => { },
+                selectLine: () => { },
+                sendForceDone: () => { },
+                sendForceCancel: () => { },
+                sendPaymentCancel: () => { },
+                sendPaymentRequest: () => { },
+                updateSelectedPaymentline: () => { },
                 isRefundOrder: false,
             },
         });
@@ -350,13 +350,13 @@ describe("show qr code button", () => {
         await mountWithCleanup(PaymentScreenPaymentLines, {
             props: {
                 paymentLines: [paymentline],
-                deleteLine: () => {},
-                selectLine: () => {},
-                sendForceDone: () => {},
-                sendForceCancel: () => {},
-                sendPaymentCancel: () => {},
-                sendPaymentRequest: () => {},
-                updateSelectedPaymentline: () => {},
+                deleteLine: () => { },
+                selectLine: () => { },
+                sendForceDone: () => { },
+                sendForceCancel: () => { },
+                sendPaymentCancel: () => { },
+                sendPaymentRequest: () => { },
+                updateSelectedPaymentline: () => { },
                 isRefundOrder: false,
             },
         });
@@ -376,13 +376,13 @@ describe("show qr code button", () => {
         await mountWithCleanup(PaymentScreenPaymentLines, {
             props: {
                 paymentLines: [paymentline],
-                deleteLine: () => {},
-                selectLine: () => {},
-                sendForceDone: () => {},
-                sendForceCancel: () => {},
-                sendPaymentCancel: () => {},
-                sendPaymentRequest: () => {},
-                updateSelectedPaymentline: () => {},
+                deleteLine: () => { },
+                selectLine: () => { },
+                sendForceDone: () => { },
+                sendForceCancel: () => { },
+                sendPaymentCancel: () => { },
+                sendPaymentRequest: () => { },
+                updateSelectedPaymentline: () => { },
                 isRefundOrder: false,
             },
         });
@@ -400,13 +400,13 @@ describe("show qr code button", () => {
         await mountWithCleanup(PaymentScreenPaymentLines, {
             props: {
                 paymentLines: [paymentline],
-                deleteLine: () => {},
-                selectLine: () => {},
-                sendForceDone: () => {},
-                sendForceCancel: () => {},
-                sendPaymentCancel: () => {},
-                sendPaymentRequest: () => {},
-                updateSelectedPaymentline: () => {},
+                deleteLine: () => { },
+                selectLine: () => { },
+                sendForceDone: () => { },
+                sendForceCancel: () => { },
+                sendPaymentCancel: () => { },
+                sendPaymentRequest: () => { },
+                updateSelectedPaymentline: () => { },
                 isRefundOrder: false,
             },
         });
@@ -424,13 +424,13 @@ describe("spinner or delete button", () => {
         await mountWithCleanup(PaymentScreenPaymentLines, {
             props: {
                 paymentLines: [paymentline],
-                deleteLine: () => {},
-                selectLine: () => {},
-                sendForceDone: () => {},
-                sendForceCancel: () => {},
-                sendPaymentCancel: () => {},
-                sendPaymentRequest: () => {},
-                updateSelectedPaymentline: () => {},
+                deleteLine: () => { },
+                selectLine: () => { },
+                sendForceDone: () => { },
+                sendForceCancel: () => { },
+                sendPaymentCancel: () => { },
+                sendPaymentRequest: () => { },
+                updateSelectedPaymentline: () => { },
                 isRefundOrder: false,
             },
         });
@@ -449,13 +449,13 @@ describe("spinner or delete button", () => {
         await mountWithCleanup(PaymentScreenPaymentLines, {
             props: {
                 paymentLines: [paymentline],
-                deleteLine: () => {},
-                selectLine: () => {},
-                sendForceDone: () => {},
-                sendForceCancel: () => {},
-                sendPaymentCancel: () => {},
-                sendPaymentRequest: () => {},
-                updateSelectedPaymentline: () => {},
+                deleteLine: () => { },
+                selectLine: () => { },
+                sendForceDone: () => { },
+                sendForceCancel: () => { },
+                sendPaymentCancel: () => { },
+                sendPaymentRequest: () => { },
+                updateSelectedPaymentline: () => { },
                 isRefundOrder: false,
             },
         });
@@ -474,13 +474,13 @@ describe("spinner or delete button", () => {
         await mountWithCleanup(PaymentScreenPaymentLines, {
             props: {
                 paymentLines: [paymentline],
-                deleteLine: () => {},
-                selectLine: () => {},
-                sendForceDone: () => {},
-                sendForceCancel: () => {},
-                sendPaymentCancel: () => {},
-                sendPaymentRequest: () => {},
-                updateSelectedPaymentline: () => {},
+                deleteLine: () => { },
+                selectLine: () => { },
+                sendForceDone: () => { },
+                sendForceCancel: () => { },
+                sendPaymentCancel: () => { },
+                sendPaymentRequest: () => { },
+                updateSelectedPaymentline: () => { },
                 isRefundOrder: false,
             },
         });
@@ -499,13 +499,13 @@ describe("spinner or delete button", () => {
         await mountWithCleanup(PaymentScreenPaymentLines, {
             props: {
                 paymentLines: [paymentline],
-                deleteLine: () => {},
-                selectLine: () => {},
-                sendForceDone: () => {},
-                sendForceCancel: () => {},
-                sendPaymentCancel: () => {},
-                sendPaymentRequest: () => {},
-                updateSelectedPaymentline: () => {},
+                deleteLine: () => { },
+                selectLine: () => { },
+                sendForceDone: () => { },
+                sendForceCancel: () => { },
+                sendPaymentCancel: () => { },
+                sendPaymentRequest: () => { },
+                updateSelectedPaymentline: () => { },
                 isRefundOrder: false,
             },
         });
@@ -525,13 +525,13 @@ describe("spinner or delete button", () => {
         await mountWithCleanup(PaymentScreenPaymentLines, {
             props: {
                 paymentLines: [paymentline],
-                deleteLine: () => {},
-                selectLine: () => {},
-                sendForceDone: () => {},
-                sendForceCancel: () => {},
-                sendPaymentCancel: () => {},
-                sendPaymentRequest: () => {},
-                updateSelectedPaymentline: () => {},
+                deleteLine: () => { },
+                selectLine: () => { },
+                sendForceDone: () => { },
+                sendForceCancel: () => { },
+                sendPaymentCancel: () => { },
+                sendPaymentRequest: () => { },
+                updateSelectedPaymentline: () => { },
                 isRefundOrder: false,
             },
         });
@@ -551,13 +551,13 @@ describe("spinner or delete button", () => {
         await mountWithCleanup(PaymentScreenPaymentLines, {
             props: {
                 paymentLines: [paymentline],
-                deleteLine: () => {},
-                selectLine: () => {},
-                sendForceDone: () => {},
-                sendForceCancel: () => {},
-                sendPaymentCancel: () => {},
-                sendPaymentRequest: () => {},
-                updateSelectedPaymentline: () => {},
+                deleteLine: () => { },
+                selectLine: () => { },
+                sendForceDone: () => { },
+                sendForceCancel: () => { },
+                sendPaymentCancel: () => { },
+                sendPaymentRequest: () => { },
+                updateSelectedPaymentline: () => { },
                 isRefundOrder: false,
             },
         });

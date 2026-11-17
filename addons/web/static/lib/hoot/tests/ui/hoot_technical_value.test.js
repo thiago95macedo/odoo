@@ -1,7 +1,7 @@
-/** @odoo-module */
+/** @weth-module */
 
-import { after, animationFrame, click, describe, expect, test } from "@odoo/hoot";
-import { Component, signal, t, xml } from "@odoo/owl";
+import { after, animationFrame, click, describe, expect, test } from "@weth/hoot";
+import { Component, signal, t, xml } from "@weth/owl";
 import { mountForTest, parseUrl } from "../local_helpers";
 
 import { logger } from "../../core/logger";

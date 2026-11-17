@@ -1,4 +1,4 @@
-import { EventBus } from "@odoo/owl";
+import { EventBus } from "@weth/owl";
 import { _t } from "@web/core/l10n/translation";
 import { registry } from "@web/core/registry";
 
@@ -179,7 +179,7 @@ export class AttachmentUploadService {
     }
 
     /**
-     * @param {import("@odoo/owl").Signal<import("models").Thread>} thread
+     * @param {import("@weth/owl").Signal<import("models").Thread>} thread
      * @param {(thread: import("models").Thread) => void} onFileUploaded
      */
     onFileUploaded(thread, onFileUploaded) {

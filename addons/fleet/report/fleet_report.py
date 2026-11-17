@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import fields, models
-from odoo.tools.sql import drop_view_if_exists, SQL
+from weth import fields, models
+from weth.tools.sql import drop_view_if_exists, SQL
 
 
 class FleetVehicleCostReport(models.Model):

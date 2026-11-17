@@ -1,7 +1,7 @@
 import { registry } from "@web/core/registry";
 
 registry.category("web_tour.tours").add("test_dashboard_refresh", {
-    url: "/odoo/ecommerce-orders",
+    url: "/weth/ecommerce-orders",
     steps: () => [
         {
             content: "Make sure there are 2 orders to confirm and display them",

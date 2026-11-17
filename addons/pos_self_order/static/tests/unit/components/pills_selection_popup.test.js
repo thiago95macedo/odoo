@@ -1,4 +1,4 @@
-import { test, expect, mockDate } from "@odoo/hoot";
+import { test, expect, mockDate } from "@weth/hoot";
 import { mountWithCleanup } from "@web/../tests/web_test_helpers";
 import { PillsSelectionPopup } from "@pos_self_order/app/components/pills_selection_popup/pills_selection_popup";
 import { setupSelfPosEnv } from "../utils";
@@ -17,8 +17,8 @@ test("PillsSelectionPopup", async () => {
             options: store.getTimingOptions(preset),
             title: "Select Time",
             subtitle: "Choose when to receive your order",
-            close: () => {},
-            getPayload: () => {},
+            close: () => { },
+            getPayload: () => { },
             selectionType: "time",
         },
     });

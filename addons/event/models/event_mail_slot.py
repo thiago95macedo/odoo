@@ -1,5 +1,5 @@
-from odoo import api, fields, models
-from odoo.addons.event.models.event_mail import _INTERVALS
+from weth import api, fields, models
+from weth.addons.event.models.event_mail import _INTERVALS
 
 
 class EventMailRegistration(models.Model):

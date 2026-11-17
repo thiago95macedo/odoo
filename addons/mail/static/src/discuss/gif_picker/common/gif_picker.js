@@ -1,7 +1,7 @@
 import { Gif } from "@mail/core/common/gif";
 import { useOnBottomScrolled, useSequential } from "@mail/utils/common/hooks";
 
-import { Component, onWillStart, proxy, signal, t, useOnChange, useProps } from "@odoo/owl";
+import { Component, onWillStart, proxy, signal, t, useOnChange, useProps } from "@weth/owl";
 import { user } from "@web/core/user";
 import { useService, useAutofocus } from "@web/core/utils/hooks";
 import { useDebounced } from "@web/core/utils/timing";
@@ -40,7 +40,7 @@ const tenorGifType = t.object({
     hasaudio: t.boolean(),
     media_formats: t.object({ tinygif: tenorMediaFormatType }),
 });
-/** @typedef {import("@odoo/owl").StripType<typeof tenorGifType>} TenorGif */
+/** @typedef {import("@weth/owl").StripType<typeof tenorGifType>} TenorGif */
 
 export class GifPicker extends Component {
     static template = "discuss.GifPicker";

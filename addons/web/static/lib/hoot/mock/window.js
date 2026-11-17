@@ -1,6 +1,6 @@
-/** @odoo-module */
+/** @weth-module */
 
-import { EventBus } from "@odoo/owl";
+import { EventBus } from "@weth/owl";
 import { _getCurrentDimensions, _getDocument, _getWindow } from "@web/../lib/hoot-dom/helpers/dom";
 import {
     _mockedCancelAnimationFrame,

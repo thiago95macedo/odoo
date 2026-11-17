@@ -1,8 +1,8 @@
 import { render } from "@web/owl2/utils";
-import { expect, test } from "@odoo/hoot";
-import { queryAllTexts } from "@odoo/hoot-dom";
-import { animationFrame, runAllTimers } from "@odoo/hoot-mock";
-import { Component, proxy, xml } from "@odoo/owl";
+import { expect, test } from "@weth/hoot";
+import { queryAllTexts } from "@weth/hoot-dom";
+import { animationFrame, runAllTimers } from "@weth/hoot-mock";
+import { Component, proxy, xml } from "@weth/owl";
 import {
     clickPrev,
     followRelation,
@@ -729,7 +729,7 @@ test("focus on search input", async () => {
         setup() {
             this.state = proxy({ path: `foo` });
         }
-        update() {}
+        update() { }
     }
 
     await mountWithCleanup(Parent);
@@ -981,7 +981,7 @@ test("Fields can be selected but not followable", async () => {
         cats = fields.One2many({ relation: "cat" });
     }
 
-    class Dog extends models.Model {}
+    class Dog extends models.Model { }
 
     defineModels([Cat, Dog]);
 

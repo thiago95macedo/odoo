@@ -1,9 +1,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.fields import Command
-from odoo.tests import tagged, HttpCase
+from weth.fields import Command
+from weth.tests import tagged, HttpCase
 
-from odoo.addons.delivery.tests.common import DeliveryCommon
+from weth.addons.delivery.tests.common import DeliveryCommon
 
 
 @tagged("post_install", "-at_install")
@@ -43,7 +43,7 @@ class TestChooseDeliveryCarrier(DeliveryCommon, HttpCase):
             "order_line": [Command.create({"product_id": self.product.id, "price_unit": 750.00})],
         })
 
-        self.start_tour(f"/odoo/sales/{sale_order.id}", "test_get_all_rates", login="admin")
+        self.start_tour(f"/weth/sales/{sale_order.id}", "test_get_all_rates", login="admin")
 
         # check that shipping was added
         line = sale_order.order_line.filtered("is_delivery")

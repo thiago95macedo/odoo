@@ -11,14 +11,14 @@ from cryptography.hazmat.primitives.asymmetric.utils import decode_dss_signature
 from freezegun import freeze_time
 from requests import Response
 
-from odoo.tests.common import tagged
-from odoo.tools import mute_logger
+from weth.tests.common import tagged
+from weth.tools import mute_logger
 
-from odoo.addons.point_of_sale.tests.common import CommonPosTest
-from odoo.addons.point_of_sale.tests.test_frontend import TestPointOfSaleHttpCommon
-from odoo.addons.pos_bancontact_pay import const
-from odoo.addons.pos_bancontact_pay.controllers.signature import BancontactSignatureValidation
-from odoo.addons.pos_bancontact_pay.errors.exceptions import BancontactSignatureValidationError
+from weth.addons.point_of_sale.tests.common import CommonPosTest
+from weth.addons.point_of_sale.tests.test_frontend import TestPointOfSaleHttpCommon
+from weth.addons.pos_bancontact_pay import const
+from weth.addons.pos_bancontact_pay.controllers.signature import BancontactSignatureValidation
+from weth.addons.pos_bancontact_pay.errors.exceptions import BancontactSignatureValidationError
 
 
 @tagged("post_install", "-at_install")
@@ -394,7 +394,7 @@ class TestSignature(CommonPosTest, TestPointOfSaleHttpCommon):
         validation._validate_critical_headers(protected, "dummy-ppid")
 
     # ----- verify_signature ----- #
-    @mute_logger("odoo.addons.pos_bancontact_pay.controllers.signature")
+    @mute_logger("weth.addons.pos_bancontact_pay.controllers.signature")
     @freeze_time("2026-02-12 12:00:00")
     def test_verify_signature_invalid_signature(self):
         kid = "dummy-kid"
@@ -450,8 +450,8 @@ class TestSignature(CommonPosTest, TestPointOfSaleHttpCommon):
         mock_request.env.__getitem__.return_value = mock_param
 
         with (
-            patch("odoo.addons.pos_bancontact_pay.controllers.signature.requests.get") as mock_get,
-            patch("odoo.addons.pos_bancontact_pay.controllers.signature.request", mock_request),
+            patch("weth.addons.pos_bancontact_pay.controllers.signature.requests.get") as mock_get,
+            patch("weth.addons.pos_bancontact_pay.controllers.signature.request", mock_request),
         ):
             mock_get.return_value = self.utils.create_jwks_response(jwks)
             yield lambda: json.loads(memo.get("pos_bancontact.jwk_cache")) if memo.get("pos_bancontact.jwk_cache") else None

@@ -2,12 +2,12 @@
 
 from datetime import timedelta
 
-from odoo.addons.mrp.tests.common import TestMrpCommon
-from odoo.addons.mrp_account.tests.common import TestBomPriceCommon, TestBomPriceOperationCommon
-from odoo.tests import Form, tagged
-from odoo.tests.common import new_test_user
-from odoo.tools import float_compare, float_round
-from odoo import Command, fields
+from weth.addons.mrp.tests.common import TestMrpCommon
+from weth.addons.mrp_account.tests.common import TestBomPriceCommon, TestBomPriceOperationCommon
+from weth.tests import Form, tagged
+from weth.tests.common import new_test_user
+from weth.tools import float_compare, float_round
+from weth import Command, fields
 
 
 class TestMrpAccount(TestBomPriceCommon, TestMrpCommon):

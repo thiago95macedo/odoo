@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
 
     <!-- Search Bar input-group template -->
     <template id="website_sale.search" name="Search Box" active="True">
@@ -489,7 +489,7 @@
                                     <div>
                                         <a
                                             name="products_manager_button"
-                                            href="/odoo/action-website_sale.product_template_action_website"
+                                            href="/weth/action-website_sale.product_template_action_website"
                                             class="btn btn-primary d-md-none mb-3"
                                             >
                                             Go to Products Manager
@@ -1615,4 +1615,4 @@
         </xpath>
     </template>
 
-</odoo>
+</weth>

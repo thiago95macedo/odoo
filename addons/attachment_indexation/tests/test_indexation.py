@@ -1,7 +1,7 @@
 from unittest import skipIf
 
-from odoo.tests.common import TransactionCase, tagged
-from odoo.tools import file_open
+from weth.tests.common import TransactionCase, tagged
+from weth.tools import file_open
 import io
 import openpyxl
 
@@ -51,7 +51,7 @@ class TestCaseIndexation(TransactionCase):
         # If not handled properly, the indexing will then attempt to process
         # the remaining 16,383 empty cells per row.
         # From local tests, 50K populated rows should be enough to trigger memory errors
-        # in a default odoo-bin run.
+        # in a default weth-bin run.
         for r in range(2, 50000):
             ws.cell(row=r, column=1, value=f"Data {r}")
 

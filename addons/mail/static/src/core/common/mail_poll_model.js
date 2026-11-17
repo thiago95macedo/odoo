@@ -1,7 +1,7 @@
 import { fields } from "@mail/model/misc";
 import { Record } from "@mail/model/record";
 
-import { markup } from "@odoo/owl";
+import { markup } from "@weth/owl";
 
 import { _t } from "@web/core/l10n/translation";
 import { rpc } from "@web/core/network/rpc";

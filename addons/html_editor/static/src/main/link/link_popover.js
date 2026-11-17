@@ -10,7 +10,7 @@ import {
     useEffect,
     onMounted,
     onWillUnmount,
-} from "@odoo/owl";
+} from "@weth/owl";
 import { useService } from "@web/core/utils/hooks";
 import { cleanZWChars, deduceLinkUrl, normalizeLinkUrlInput } from "./utils";
 import { CheckBox } from "@web/core/checkbox/checkbox";
@@ -451,7 +451,7 @@ export class LinkPopover extends Component {
             } else if (internalMetadata.other_error_msg) {
                 console.error(
                     "Internal meta data retrieve error for link preview: " +
-                        internalMetadata.other_error_msg
+                    internalMetadata.other_error_msg
                 );
             } else {
                 this.state.linkPreviewName =

@@ -1,6 +1,6 @@
 import { InputPlugin } from "@html_editor/core/input_plugin";
 import { MailFullComposerSuggestionPlugin } from "@mail/views/web/fields/html_composer_message_field/mail_full_composer_suggestion_plugin";
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@weth/hoot";
 
 describe("Implicit plugin dependencies", () => {
     test("position as an implicit dependency", async () => {

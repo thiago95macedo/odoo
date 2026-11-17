@@ -1,4 +1,4 @@
-<odoo noupdate="1">
+<weth noupdate="1">
 
     <!-- Replace these rules because in hr_timesheet,
         the lowest access right can only see own timesheets (model: account.analytic.line)
@@ -15,4 +15,4 @@
         <field name="active" eval="False"/>
     </record>
 
-    </odoo>
+    </weth>

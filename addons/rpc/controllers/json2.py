@@ -10,10 +10,10 @@ from werkzeug.exceptions import (
     UnprocessableEntity,
 )
 
-from odoo import http
-from odoo.http import request
-from odoo.models import BaseModel, get_public_method
-from odoo.tools import frozendict
+from weth import http
+from weth.http import request
+from weth.models import BaseModel, get_public_method
+from weth.tools import frozendict
 
 _logger = logging.getLogger(__name__)
 

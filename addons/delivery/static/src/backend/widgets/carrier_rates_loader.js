@@ -1,4 +1,4 @@
-import { Component, useEffect, useProps, signal } from "@odoo/owl";
+import { Component, useEffect, useProps, signal } from "@weth/owl";
 import { useService } from "@web/core/utils/hooks";
 import { registry } from "@web/core/registry";
 

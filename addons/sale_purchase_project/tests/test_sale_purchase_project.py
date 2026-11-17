@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import fields, Command
-from odoo.tests import tagged
-from odoo.addons.sale_purchase.tests.test_sale_purchase import TestSalePurchase
+from weth import fields, Command
+from weth.tests import tagged
+from weth.addons.sale_purchase.tests.test_sale_purchase import TestSalePurchase
 
 
 @tagged('-at_install', 'post_install')

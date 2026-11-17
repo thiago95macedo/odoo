@@ -2,11 +2,11 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
 
-from odoo import Command
-from odoo.addons.account.tests.common import AccountTestInvoicingCommon
-from odoo.addons.mail.tests.common import MailCase
-from odoo.tests import Form, users
-from odoo.tests.common import tagged
+from weth import Command
+from weth.addons.account.tests.common import AccountTestInvoicingCommon
+from weth.addons.mail.tests.common import MailCase
+from weth.tests import Form, users
+from weth.tests.common import tagged
 
 
 @tagged('mail_track', 'post_install', '-at_install')

@@ -26,7 +26,7 @@ OTHER DEALINGS IN THE SOFTWARE.
 import { usePositionHook } from "@html_editor/position_hook";
 import { removeStyle } from "@html_editor/utils/dom";
 import { closestElement } from "@html_editor/utils/dom_traversal";
-import { Component, onMounted, useProps, signal, t, useListener } from "@odoo/owl";
+import { Component, onMounted, useProps, signal, t, useListener } from "@weth/owl";
 import { useCrossDocumentListener } from "../../utils/hooks";
 
 const rad = Math.PI / 180;
@@ -42,7 +42,7 @@ export class ImageTransformation extends Component {
         image: t.customValidator(t.object(), (p) => p.tagName === "IMG"),
         onApply: t.function().optional(),
         onChange: t.function().optional(),
-        onComponentMounted: t.function().optional(() => () => {}),
+        onComponentMounted: t.function().optional(() => () => { }),
     });
 
     transfoContainer = signal.ref();

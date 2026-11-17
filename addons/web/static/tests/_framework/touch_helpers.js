@@ -1,9 +1,9 @@
-import { advanceTime, queryFirst } from "@odoo/hoot";
+import { advanceTime, queryFirst } from "@weth/hoot";
 import { contains } from "./dom_test_helpers";
 
 /**
- * @typedef {import("@odoo/hoot").PointerOptions} PointerOptions
- * @typedef {import("@odoo/hoot").Target} Target
+ * @typedef {import("@weth/hoot").PointerOptions} PointerOptions
+ * @typedef {import("@weth/hoot").Target} Target
  */
 
 /**

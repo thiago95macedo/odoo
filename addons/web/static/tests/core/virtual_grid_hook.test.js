@@ -1,7 +1,7 @@
-import { after, beforeEach, expect, test } from "@odoo/hoot";
-import { resize, scroll } from "@odoo/hoot-dom";
-import { animationFrame, runAllTimers } from "@odoo/hoot-mock";
-import { Component, computed, effect, signal, types as t, useProps, xml } from "@odoo/owl";
+import { after, beforeEach, expect, test } from "@weth/hoot";
+import { resize, scroll } from "@weth/hoot-dom";
+import { animationFrame, runAllTimers } from "@weth/hoot-mock";
+import { Component, computed, effect, signal, types as t, useProps, xml } from "@weth/owl";
 import { defineParams, mountWithCleanup } from "@web/../tests/web_test_helpers";
 import { localization } from "@web/core/l10n/localization";
 import { range } from "@web/core/utils/numbers";
@@ -68,9 +68,8 @@ class TestGridComponent extends Component {
             style="${CONTAINER_STYLE}"
             t-att-dir="this.direction"
         >
-            <div class="inner" style="height: ${ROW_COUNT * ITEM_HEIGHT}px; width: ${
-        COLUMN_COUNT * ITEM_WIDTH
-    }px;">
+            <div class="inner" style="height: ${ROW_COUNT * ITEM_HEIGHT}px; width: ${COLUMN_COUNT * ITEM_WIDTH
+        }px;">
                 <t t-foreach="this.virtualRows()" t-as="row" t-key="row">
                     <t t-foreach="this.virtualColumns()" t-as="col" t-key="col">
                         <TestGridItem row="row" col="col" />
@@ -299,7 +298,7 @@ test("react to individual virtual grid changes", async () => {
     const { virtualGrid } = await mountWithCleanup(TestGridComponent);
 
     // FIXME: currently, effects order is inverted for computed * computed
-    // values: https://github.com/odoo/owl/issues/1983
+    // values: https://github.com/weth/owl/issues/1983
     after(effect(() => expect.step("firstRow: " + virtualGrid.firstRow())));
     after(effect(() => expect.step("lastRow: " + virtualGrid.lastRow())));
     after(effect(() => expect.step("firstColumn: " + virtualGrid.firstColumn())));

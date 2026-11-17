@@ -6,14 +6,14 @@ import json
 
 from markupsafe import Markup
 
-from odoo import _, api, fields, models, Command, tools
-from odoo.exceptions import UserError, ValidationError
-from odoo.fields import Domain
-from odoo.tools import human_size
-from odoo.tools.mail import is_html_empty, email_normalize, email_split_and_format, html_remove_xpath
-from odoo.tools.misc import clean_context
-from odoo.addons.mail.tools.attachment import extract_attachment_ids_from_html
-from odoo.addons.mail.tools.parser import parse_res_ids
+from weth import _, api, fields, models, Command, tools
+from weth.exceptions import UserError, ValidationError
+from weth.fields import Domain
+from weth.tools import human_size
+from weth.tools.mail import is_html_empty, email_normalize, email_split_and_format, html_remove_xpath
+from weth.tools.misc import clean_context
+from weth.addons.mail.tools.attachment import extract_attachment_ids_from_html
+from weth.addons.mail.tools.parser import parse_res_ids
 
 
 def _reopen(self, res_id, model, context=None):

@@ -4,10 +4,10 @@ from contextlib import contextmanager
 
 from lxml import etree, objectify
 
-from odoo.tests import HttpCase, JsonRpcException
-from odoo.tools import urls
+from weth.tests import HttpCase, JsonRpcException
+from weth.tools import urls
 
-from odoo.addons.payment.tests.common import PaymentCommon
+from weth.addons.payment.tests.common import PaymentCommon
 
 
 class PaymentHttpCommon(PaymentCommon, HttpCase):

@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
 
-from odoo.addons.website_mass_mailing.controllers.main import MassMailController
-from odoo.addons.website_sale.controllers.main import (
+from weth.addons.website_mass_mailing.controllers.main import MassMailController
+from weth.addons.website_sale.controllers.main import (
     WebsiteSale as WebsiteSaleController,
 )
 

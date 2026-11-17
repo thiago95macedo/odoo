@@ -5,8 +5,8 @@ import datetime
 import dateutil.parser as dparser
 from re import findall as re_findall
 
-from odoo import api, fields, models
-from odoo.tools import get_lang
+from weth import api, fields, models
+from weth.tools import get_lang
 
 
 class StockMove(models.Model):

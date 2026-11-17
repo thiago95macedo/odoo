@@ -2,12 +2,12 @@
 
 import pprint
 
-from odoo import http
-from odoo.http import request
-from odoo.tools import str2bool
+from weth import http
+from weth.http import request
+from weth.tools import str2bool
 
-from odoo.addons.payment import utils as payment_utils
-from odoo.addons.payment.logging import get_payment_logger
+from weth.addons.payment import utils as payment_utils
+from weth.addons.payment.logging import get_payment_logger
 
 _logger = get_payment_logger(__name__)
 

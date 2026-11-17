@@ -1,4 +1,4 @@
-import { Component, proxy, signal } from "@odoo/owl";
+import { Component, proxy, signal } from "@weth/owl";
 import { useFloorPlanStore } from "@pos_restaurant/app/hooks/floor_plan_hook";
 
 export const ELEM_ID_PREFIX = "fpe-";

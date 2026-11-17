@@ -1,4 +1,4 @@
-import { expect } from "@odoo/hoot";
+import { expect } from "@weth/hoot";
 import { renderToElement } from "@web/core/utils/render";
 
 export const normalizeText = (value = "") => value.replace(/\s+/g, " ").trim();
@@ -7,8 +7,8 @@ export const normalizeAmount = (value) =>
     value === false || value === undefined || value === null
         ? value
         : String(value)
-              .replace(/[^\d,.-]/g, "")
-              .replace(/,/g, "");
+            .replace(/[^\d,.-]/g, "")
+            .replace(/,/g, "");
 
 export const renameProduct = (productTemplate, name) => {
     productTemplate.name = name;
@@ -87,9 +87,8 @@ export const assertCssRule = (root, rule) => {
     if (rule.text) {
         const found = matches.some((match) => normalizeText(match.textContent).includes(rule.text));
         expect(found).toBe(!rule.negation, {
-            message: `CSS rule ${rule.css} text content should ${
-                rule.negation ? "not" : ""
-            } include "${rule.text}"`,
+            message: `CSS rule ${rule.css} text content should ${rule.negation ? "not" : ""
+                } include "${rule.text}"`,
         });
     }
 };

@@ -1,6 +1,6 @@
 import { Meter } from "@auth_password_policy/password_meter";
 import { ConcretePolicy, recommendations } from "@auth_password_policy/password_policy";
-import { Component, proxy, t, useListener, useProps } from "@odoo/owl";
+import { Component, proxy, t, useListener, useProps } from "@weth/owl";
 import { registry } from "@web/core/registry";
 
 class PasswordMeter extends Component {

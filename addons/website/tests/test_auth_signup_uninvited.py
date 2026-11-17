@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.http.session import session_store
-from odoo.tests import common, HttpCase, new_test_user, tagged
+from weth.http.session import session_store
+from weth.tests import common, HttpCase, new_test_user, tagged
 
 
 @tagged('-at_install', 'post_install')

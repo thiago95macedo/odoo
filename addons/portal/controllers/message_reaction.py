@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.http import request
-from odoo.addons.mail.controllers.message_reaction import MessageReactionController
-from odoo.addons.portal.utils import get_portal_partner
+from weth.http import request
+from weth.addons.mail.controllers.message_reaction import MessageReactionController
+from weth.addons.portal.utils import get_portal_partner
 
 
 class PortalMessageReactionController(MessageReactionController):

@@ -3,7 +3,7 @@ import { SlideQuizFinishDialog } from "@website_slides/js/public/components/slid
 import { Interaction } from "@web/public/interaction";
 import { registry } from "@web/core/registry";
 import { _t } from "@web/core/l10n/translation";
-import { markup } from "@odoo/owl";
+import { markup } from "@weth/owl";
 import { session } from "@web/session";
 import { user } from "@web/core/user";
 

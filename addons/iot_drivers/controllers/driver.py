@@ -10,12 +10,12 @@ from zlib import adler32
 
 from werkzeug.exceptions import InternalServerError
 
-from odoo import http, tools
-from odoo.http.stream import Stream
+from weth import http, tools
+from weth.http.stream import Stream
 
-from odoo.addons.iot_drivers.event_manager import event_manager
-from odoo.addons.iot_drivers.tools import communication, helpers, route
-from odoo.addons.iot_drivers.tools.system import IOT_IDENTIFIER
+from weth.addons.iot_drivers.event_manager import event_manager
+from weth.addons.iot_drivers.tools import communication, helpers, route
+from weth.addons.iot_drivers.tools.system import IOT_IDENTIFIER
 
 _logger = logging.getLogger(__name__)
 
@@ -72,7 +72,7 @@ class DriverController(http.Controller):
         """
         Downloads the log file
         """
-        log_path = tools.config['logfile'] or "/var/log/odoo/odoo-server.log"
+        log_path = tools.config['logfile'] or "/var/log/weth/odoo-server.log"
         try:
             stat = os.stat(log_path)
         except FileNotFoundError:

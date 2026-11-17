@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
     <template id="mail_plugin.app_auth" name="Accept app">
         <t t-call="web.login_layout" disable_database_manager="1">
             <form role="form" method="post" action="/mail_plugin/auth/confirm">
@@ -23,4 +23,4 @@
             <div class="alert alert-danger" role="alert" t-out="error"/>
         </t>
     </template>
-</odoo>
+</weth>

@@ -1,5 +1,5 @@
-import { describe, expect, test, getFixture } from "@odoo/hoot";
-import { animationFrame, manuallyDispatchProgrammaticEvent } from "@odoo/hoot-dom";
+import { describe, expect, test, getFixture } from "@weth/hoot";
+import { animationFrame, manuallyDispatchProgrammaticEvent } from "@weth/hoot-dom";
 import { mountWithCleanup, patchWithCleanup } from "@web/../tests/web_test_helpers";
 import { defineMailModels } from "@mail/../tests/mail_test_helpers";
 import { UrlAutoComplete } from "@website/components/autocomplete_with_pages/url_autocomplete";

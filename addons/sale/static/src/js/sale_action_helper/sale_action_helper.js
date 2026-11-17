@@ -1,4 +1,4 @@
-import { Component, t, useProps } from "@odoo/owl";
+import { Component, t, useProps } from "@weth/owl";
 import { useService } from "@web/core/utils/hooks";
 import { SaleActionHelperDialog } from "./sale_action_helper_dialog";
 

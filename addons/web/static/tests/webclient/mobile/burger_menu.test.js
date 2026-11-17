@@ -1,6 +1,6 @@
-import { beforeEach, describe, expect, test } from "@odoo/hoot";
-import { click, queryAll } from "@odoo/hoot-dom";
-import { animationFrame } from "@odoo/hoot-mock";
+import { beforeEach, describe, expect, test } from "@weth/hoot";
+import { click, queryAll } from "@weth/hoot-dom";
+import { animationFrame } from "@weth/hoot-mock";
 import {
     contains,
     defineActions,

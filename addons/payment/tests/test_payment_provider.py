@@ -4,14 +4,14 @@ from unittest.mock import patch
 
 import requests
 
-from odoo.exceptions import ValidationError
-from odoo.fields import Command
-from odoo.tests.common import MockHTTPClient, tagged
-from odoo.tools import mute_logger
+from weth.exceptions import ValidationError
+from weth.fields import Command
+from weth.tests.common import MockHTTPClient, tagged
+from weth.tools import mute_logger
 
-from odoo.addons.payment import utils as payment_utils
-from odoo.addons.payment.const import REPORT_REASONS_MAPPING
-from odoo.addons.payment.tests.common import PaymentCommon
+from weth.addons.payment import utils as payment_utils
+from weth.addons.payment.const import REPORT_REASONS_MAPPING
+from weth.addons.payment.tests.common import PaymentCommon
 
 
 @tagged("-at_install", "post_install")
@@ -34,7 +34,7 @@ class TestPaymentProvider(PaymentCommon):
         """Test that archiving a provider deactivates its default payment methods ."""
         self.payment_methods.active = True
         with patch(
-            "odoo.addons.payment.models.payment_provider.PaymentProvider"
+            "weth.addons.payment.models.payment_provider.PaymentProvider"
             "._get_default_payment_method_codes",
             return_value=self.payment_method_code,
         ):
@@ -46,7 +46,7 @@ class TestPaymentProvider(PaymentCommon):
         self.provider.active = False
         self.payment_methods.active = False
         with patch(
-            "odoo.addons.payment.models.payment_provider.PaymentProvider"
+            "weth.addons.payment.models.payment_provider.PaymentProvider"
             "._get_default_payment_method_codes",
             return_value={self.payment_method_code},
         ):
@@ -65,7 +65,7 @@ class TestPaymentProvider(PaymentCommon):
         self.provider.write({"active": False, "capture_manually": True})
         self.payment_method.support_manual_capture = "none"
         with patch(
-            "odoo.addons.payment.models.payment_provider.PaymentProvider"
+            "weth.addons.payment.models.payment_provider.PaymentProvider"
             "._get_default_payment_method_codes",
             return_value={self.payment_method_code, payment_method_with_manual_capture.code},
         ):
@@ -163,7 +163,7 @@ class TestPaymentProvider(PaymentCommon):
         """Test that uninstalling a provider deactivates its default payment methods ."""
         self.payment_methods.active = True
         with patch(
-            "odoo.addons.payment.models.payment_provider.PaymentProvider"
+            "weth.addons.payment.models.payment_provider.PaymentProvider"
             "._get_default_payment_method_codes",
             return_value=self.payment_method_code,
         ):
@@ -175,7 +175,7 @@ class TestPaymentProvider(PaymentCommon):
         post_processing_cron = self.env.ref("payment.post_processing_cron")
         post_processing_cron.active = True
         with patch(
-            "odoo.addons.payment.models.payment_provider.PaymentProvider.search_count",
+            "weth.addons.payment.models.payment_provider.PaymentProvider.search_count",
             return_value=0,
         ):
             self.provider._remove_provider("none")
@@ -344,7 +344,7 @@ class TestPaymentProvider(PaymentCommon):
     def test_provider_available_when_tokenization_required(self):
         self.provider.allow_tokenization = True
         with patch(
-            "odoo.addons.payment.models.payment_provider.PaymentProvider._is_tokenization_required",
+            "weth.addons.payment.models.payment_provider.PaymentProvider._is_tokenization_required",
             return_value=True,
         ):
             available_providers = self.provider._find_available_providers(
@@ -355,7 +355,7 @@ class TestPaymentProvider(PaymentCommon):
     def test_provider_not_available_when_tokenization_required(self):
         self.provider.allow_tokenization = False
         with patch(
-            "odoo.addons.payment.models.payment_provider.PaymentProvider._is_tokenization_required",
+            "weth.addons.payment.models.payment_provider.PaymentProvider._is_tokenization_required",
             return_value=True,
         ):
             available_providers = self.provider._find_available_providers(
@@ -644,7 +644,7 @@ class TestPaymentProvider(PaymentCommon):
         self.assertIn(validation_currency, self.provider.available_currency_ids)
         self.assertIn(validation_currency, self.payment_method.supported_currency_ids)
 
-    @mute_logger("odoo.addons.payment.models.payment_provider")
+    @mute_logger("weth.addons.payment.models.payment_provider")
     def test_parsing_non_json_response_falls_back_to_text_response(self):
         """Test that a non-JSON response is smoothly parsed as a text response."""
         with (
@@ -657,7 +657,7 @@ class TestPaymentProvider(PaymentCommon):
                 return_value="https://example.com/dummy",
             ),
             patch(
-                "odoo.addons.payment.models.payment_provider.PaymentProvider._parse_response_error",
+                "weth.addons.payment.models.payment_provider.PaymentProvider._parse_response_error",
                 new=lambda _self, response_: response_.json(),
             ),
         ):

@@ -1,10 +1,10 @@
-import { animationFrame, delay, expect, test } from "@odoo/hoot";
+import { animationFrame, delay, expect, test } from "@weth/hoot";
 import { setupEditor, testEditor } from "../_helpers/editor";
 import { deleteBackward, deleteForward, insertText } from "../_helpers/user_actions";
 import { getContent } from "../_helpers/selection";
 import { contains } from "@web/../tests/web_test_helpers";
 import { expectElementCount } from "../_helpers/ui_expectations";
-import { click } from "@odoo/hoot-dom";
+import { click } from "@weth/hoot-dom";
 import { expandToolbar } from "../_helpers/toolbar";
 import { DELAY_TOOLBAR_OPEN } from "@html_editor/main/toolbar/toolbar_plugin";
 

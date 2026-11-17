@@ -1,11 +1,11 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, fields, models, _
-from odoo.addons.resource.models.utils import extract_comodel_domain
-from odoo.exceptions import ValidationError, AccessError
-from odoo.fields import Domain
-from odoo.tools import SQL, OrderedSet
-from odoo.tools.misc import unquote
+from weth import api, fields, models, _
+from weth.addons.resource.models.utils import extract_comodel_domain
+from weth.exceptions import ValidationError, AccessError
+from weth.fields import Domain
+from weth.tools import SQL, OrderedSet
+from weth.tools.misc import unquote
 
 
 class ProjectTask(models.Model):

@@ -2,8 +2,8 @@
 
 from unittest.mock import patch
 
-from odoo.addons.base.models import ir_attachment
-from odoo.tests import tagged, TransactionCase
+from weth.addons.base.models import ir_attachment
+from weth.tests import tagged, TransactionCase
 
 
 @tagged("post_install", "-at_install")

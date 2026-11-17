@@ -2,7 +2,7 @@
 
 from datetime import datetime
 
-from odoo.tests import Form, TransactionCase, new_test_user, tagged
+from weth.tests import Form, TransactionCase, new_test_user, tagged
 
 
 @tagged('post_install', '-at_install')

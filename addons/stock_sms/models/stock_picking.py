@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import models, modules, _
+from weth import models, modules, _
 
 
 class StockPicking(models.Model):

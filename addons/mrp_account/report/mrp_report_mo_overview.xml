@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<odoo>
+<weth>
     <template id="mrp_account.mo_overview_components" inherit_id="mrp.mo_overview_components">
         <xpath expr="." position="inside">
             <tr t-if="summary['extra_cost'] &gt; 0">
@@ -18,4 +18,4 @@
             </tr>
         </xpath>
     </template>
-</odoo>
+</weth>

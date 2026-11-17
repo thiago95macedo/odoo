@@ -1,6 +1,6 @@
 from collections import defaultdict
-from odoo import _, api, Command, fields, models
-from odoo.exceptions import RedirectWarning, UserError
+from weth import _, api, Command, fields, models
+from weth.exceptions import RedirectWarning, UserError
 
 
 class AccountMoveSendBatchWizard(models.TransientModel):

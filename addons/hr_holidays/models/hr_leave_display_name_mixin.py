@@ -1,6 +1,6 @@
-from odoo import models
+from weth import models
 from zoneinfo import ZoneInfo
-from odoo.tools.misc import format_date, format_duration
+from weth.tools.misc import format_date, format_duration
 
 
 class HrLeaveDisplayNameMixin(models.AbstractModel):

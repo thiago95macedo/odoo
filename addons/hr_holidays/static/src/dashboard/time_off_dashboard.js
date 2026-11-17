@@ -1,5 +1,5 @@
 import { useNewAllocationRequest } from "@hr_holidays/views/hooks";
-import { Component, onWillStart, proxy, types as t, usePlugin, useProps } from "@odoo/owl";
+import { Component, onWillStart, proxy, types as t, usePlugin, useProps } from "@weth/owl";
 import { DateTimeInput } from "@web/core/datetime/datetime_input";
 import { useService } from "@web/core/utils/hooks";
 import { _t } from "@web/core/l10n/translation";

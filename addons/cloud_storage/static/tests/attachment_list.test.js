@@ -6,8 +6,8 @@ import {
     start,
     startServer,
 } from "@mail/../tests/mail_test_helpers";
-import { describe, expect, test } from "@odoo/hoot";
-import { queryAttribute } from "@odoo/hoot-dom";
+import { describe, expect, test } from "@weth/hoot";
+import { queryAttribute } from "@weth/hoot-dom";
 import { onRpc } from "@web/../tests/web_test_helpers";
 
 import { patch } from "@web/core/utils/patch";

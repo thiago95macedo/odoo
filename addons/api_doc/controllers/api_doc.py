@@ -17,14 +17,14 @@ from docutils.writers.html4css1 import Writer as HtmlWriter
 from werkzeug.exceptions import NotFound
 from werkzeug.http import is_resource_modified, parse_cache_control_header
 
-import odoo
-from odoo import http, models
-from odoo.exceptions import AccessError
-from odoo.http import request
-from odoo.http.stream import content_disposition
-from odoo.models import get_public_method
-from odoo.modules.module_graph import ModuleGraph
-from odoo.tools import hmac, json_default, lazy_classproperty, py_to_js_locale
+import weth
+from weth import http, models
+from weth.exceptions import AccessError
+from weth.http import request
+from weth.http.stream import content_disposition
+from weth.models import get_public_method
+from weth.modules.module_graph import ModuleGraph
+from weth.tools import hmac, json_default, lazy_classproperty, py_to_js_locale
 
 logger = logging.getLogger(__name__)
 
@@ -320,7 +320,7 @@ def is_public_method(model, name):
         return None
 
 
-DOC_API_MAGIC_COLUMNS = list(odoo.models.MAGIC_COLUMNS)
+DOC_API_MAGIC_COLUMNS = list(weth.models.MAGIC_COLUMNS)
 DOC_API_MAGIC_COLUMNS.insert(1, 'display_name')
 def sort_key_field(sorted_module_list, model, field):  # noqa: E302
     """
@@ -604,7 +604,7 @@ class Return:
 
 
 # This class could had been a python module, but lazy_classproperty
-# works much better than odoo.tools.lazy.
+# works much better than weth.tools.lazy.
 class _DocUtils:
     """ Helpers for docutils """
     @lazy_classproperty

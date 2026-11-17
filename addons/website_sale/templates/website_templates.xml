@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
 
     <template id="website_sale.header_cart_link" name="Header Cart Link">
         <t
@@ -650,4 +650,4 @@ Disallow: /*/shop/confirmation
         </xpath>
     </template>
 
-</odoo>
+</weth>

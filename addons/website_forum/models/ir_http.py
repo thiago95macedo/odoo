@@ -1,5 +1,5 @@
-from odoo import api, models
-from odoo.http import request
+from weth import api, models
+from weth.http import request
 
 
 class IrHttp(models.AbstractModel):

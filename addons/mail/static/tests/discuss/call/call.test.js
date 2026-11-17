@@ -50,8 +50,8 @@ import {
     mockUserAgent,
     queryFirst,
     test,
-} from "@odoo/hoot";
-import { press, waitUntil } from "@odoo/hoot-dom";
+} from "@weth/hoot";
+import { press, waitUntil } from "@weth/hoot-dom";
 import {
     Command,
     getService,
@@ -2405,7 +2405,7 @@ test("active call with a recording shows a processing link", async () => {
         { count: 1 }
     );
     await click(
-        `.o-mail-NotificationMessage a[href='/odoo/discuss.call.history/${callHistoryId}']:text('here')`
+        `.o-mail-NotificationMessage a[href='/weth/discuss.call.history/${callHistoryId}']:text('here')`
     );
     await expect.waitForSteps(["open recording"]);
 });

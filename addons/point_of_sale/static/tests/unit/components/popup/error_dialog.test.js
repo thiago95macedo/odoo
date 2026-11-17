@@ -1,4 +1,4 @@
-import { test, expect, animationFrame, mockMatchMedia, queryOne } from "@odoo/hoot";
+import { test, expect, animationFrame, mockMatchMedia, queryOne } from "@weth/hoot";
 import { contains } from "@web/../tests/web_test_helpers";
 import { setupAndMountPosApp } from "@point_of_sale/../tests/unit/utils";
 import { definePosModels } from "@point_of_sale/../tests/unit/data/generate_model_definitions";
@@ -13,7 +13,7 @@ test("shows Reload Data button on Error Dialog", async () => {
         store.dialog.add(ErrorDialog, {
             name: "OwlError",
             message: "Something went wrong",
-            close: () => {},
+            close: () => { },
         });
         await animationFrame();
     };

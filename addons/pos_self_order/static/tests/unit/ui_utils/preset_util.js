@@ -1,5 +1,5 @@
-import { expect } from "@odoo/hoot";
-import { animationFrame, waitFor, queryAll } from "@odoo/hoot-dom";
+import { expect } from "@weth/hoot";
+import { animationFrame, waitFor, queryAll } from "@weth/hoot-dom";
 import { contains } from "@web/../tests/web_test_helpers";
 
 export async function selectLocation(name) {

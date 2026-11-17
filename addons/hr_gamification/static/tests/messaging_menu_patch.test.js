@@ -6,7 +6,7 @@ import {
     start,
     MENU_ACTIVE_IDS,
 } from "@mail/../tests/mail_test_helpers";
-import { expect, test } from "@odoo/hoot";
+import { expect, test } from "@weth/hoot";
 import { defineHrGamificationModels } from "@hr_gamification/../tests/hr_gamification_test_helpers";
 import { makeMockServer, mockService, serverState } from "@web/../tests/web_test_helpers";
 import { user } from "@web/core/user";

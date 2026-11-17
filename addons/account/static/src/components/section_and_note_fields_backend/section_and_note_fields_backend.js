@@ -1,4 +1,4 @@
-import { computed, onPatched, t, useProps } from "@odoo/owl";
+import { computed, onPatched, t, useProps } from "@weth/owl";
 import { _t } from "@web/core/l10n/translation";
 import { x2ManyCommands } from "@web/core/orm_plugin";
 import { registry } from "@web/core/registry";
@@ -265,7 +265,7 @@ export class SectionAndNoteListRenderer extends ListRenderer {
         await this.props.list.duplicateRecords(recordsToDuplicate, {
             targetIndex: sectionIndex,
             copyFields: this.copyFields,
-            context: { first_onchange_call: true },  
+            context: { first_onchange_call: true },
         });
     }
 

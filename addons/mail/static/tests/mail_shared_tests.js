@@ -7,7 +7,7 @@ import {
     start,
     startServer,
 } from "@mail/../tests/mail_test_helpers";
-import { expect, mockTouch, mockUserAgent, queryFirst } from "@odoo/hoot";
+import { expect, mockTouch, mockUserAgent, queryFirst } from "@weth/hoot";
 import { serverState } from "@web/../tests/web_test_helpers";
 
 export async function mailCanAddMessageReactionMobile() {

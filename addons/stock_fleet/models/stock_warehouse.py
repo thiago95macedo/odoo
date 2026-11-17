@@ -1,4 +1,4 @@
-from odoo import Command, models
+from weth import Command, models
 
 
 class StockWarehouse(models.Model):

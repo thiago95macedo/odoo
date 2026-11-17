@@ -1,6 +1,6 @@
-import { Component, onMounted, onWillStart, xml } from "@odoo/owl";
-import { expect, test } from "@odoo/hoot";
-import { animationFrame } from "@odoo/hoot-mock";
+import { Component, onMounted, onWillStart, xml } from "@weth/owl";
+import { expect, test } from "@weth/hoot";
+import { animationFrame } from "@weth/hoot-mock";
 import {
     getService,
     mountWithCleanup,

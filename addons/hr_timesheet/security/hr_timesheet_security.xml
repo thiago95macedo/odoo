@@ -1,4 +1,4 @@
-<odoo>
+<weth>
     <data noupdate="1">
         <record model="res.groups.privilege" id="res_groups_privilege_timesheets">
             <field name="name">Timesheets</field>
@@ -54,4 +54,4 @@
         </record>
 
         </data>
-</odoo>
+</weth>

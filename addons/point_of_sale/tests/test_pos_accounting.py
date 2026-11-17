@@ -1,12 +1,12 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 from unittest.mock import patch
 
-from odoo import Command, fields
-from odoo.exceptions import UserError
-from odoo.tests import Form, freeze_time
-from odoo.tools import mute_logger
+from weth import Command, fields
+from weth.exceptions import UserError
+from weth.tests import Form, freeze_time
+from weth.tools import mute_logger
 
-from odoo.addons.account.tests.common import AccountTestInvoicingCommon
+from weth.addons.account.tests.common import AccountTestInvoicingCommon
 
 
 class TestPosAccounting(AccountTestInvoicingCommon):
@@ -2298,7 +2298,7 @@ class TestPosAccounting(AccountTestInvoicingCommon):
         self.assertTrue(transfer_line.reconciled)
         self.assertEqual(invoice.amount_residual, 22.4)
 
-    @mute_logger('odoo.addons.point_of_sale.models.pos_session')
+    @mute_logger('weth.addons.point_of_sale.models.pos_session')
     def test_launch_cron_generate_invoice_period_rollback_on_failure(self):
         session_ok = self.open_pos_session()
         order_ok = self.create_pos_order(

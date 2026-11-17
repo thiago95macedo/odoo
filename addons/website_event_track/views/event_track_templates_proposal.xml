@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
 
 <template id="event_track_proposal">
     <t t-call="website_event.layout" hide_submenu="True">
@@ -186,4 +186,4 @@
     </div>
 </template>
 
-</odoo>
+</weth>

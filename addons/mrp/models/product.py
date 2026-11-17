@@ -3,8 +3,8 @@
 import collections
 from datetime import timedelta
 import operator as py_operator
-from odoo import api, fields, models, _
-from odoo.exceptions import UserError
+from weth import api, fields, models, _
+from weth.exceptions import UserError
 
 
 PY_OPERATORS = {

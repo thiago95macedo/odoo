@@ -1,4 +1,4 @@
-import { Component, proxy } from "@odoo/owl";
+import { Component, proxy } from "@weth/owl";
 import { Dropdown } from "@web/core/dropdown/dropdown";
 import { DropdownItem } from "@web/core/dropdown/dropdown_item";
 import { useDropdownState } from "@web/core/dropdown/dropdown_hooks";
@@ -203,7 +203,7 @@ export class LeadGenerationDropdown extends Component {
                     console.error(error);
                 }
             },
-            cancel: () => {},
+            cancel: () => { },
             confirmLabel: "Install",
         };
         this.dialogs.add(ConfirmationDialog, dialogProps);

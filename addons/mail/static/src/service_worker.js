@@ -143,11 +143,11 @@ function arrayBufferToBase64Url(buffer) {
  * @param {Client | ServiceWorker | MessagePort} [source] if set, will not open the channel on the source
  */
 async function openDiscussChannel(channelId, { action, joinCall = false, source } = {}) {
-    const discussURLRegexes = [new RegExp("/odoo/discuss")];
+    const discussURLRegexes = [new RegExp("/weth/discuss")];
     if (action) {
         discussURLRegexes.push(
-            new RegExp(`/odoo/\\d+/action-${action}`),
-            new RegExp(`/odoo/action-${action}`)
+            new RegExp(`/weth/\\d+/action-${action}`),
+            new RegExp(`/weth/action-${action}`)
         );
     }
     let targetClient;
@@ -168,7 +168,7 @@ async function openDiscussChannel(channelId, { action, joinCall = false, source 
         return;
     }
     if (action) {
-        const url = new URL(`/odoo/action-${action}`, location.origin);
+        const url = new URL(`/weth/action-${action}`, location.origin);
         url.searchParams.set("active_id", `discuss.channel_${channelId}`);
         if (joinCall) {
             url.searchParams.set("call", "accept");
@@ -183,7 +183,7 @@ async function openRecord(model, resId) {
     ).find((client) => /^\/(odoo|scoped_app)(\/|$)/.test(new URL(client.url).pathname));
     if (!targetClient) {
         const modelPath = model.includes(".") ? model : `m-${model}`;
-        await self.clients.openWindow(`/odoo/${modelPath}/${resId}`);
+        await self.clients.openWindow(`/weth/${modelPath}/${resId}`);
         return;
     }
     await targetClient.focus();

@@ -8,11 +8,11 @@ from types import MappingProxyType
 
 from markupsafe import Markup
 
-import odoo.exceptions
-from odoo.fields import Command, Date, Datetime, Domain
-from odoo.http import Controller, Response, request, route
-from odoo.http.router import dispatch_rpc
-from odoo.tools import lazy
+import weth.exceptions
+from weth.fields import Command, Date, Datetime, Domain
+from weth.http import Controller, Response, request, route
+from weth.http.router import dispatch_rpc
+from weth.tools import lazy
 
 from . import RPC_DEPRECATION_NOTICE, _check_request
 
@@ -20,7 +20,7 @@ logger = logging.getLogger(__name__)
 
 # XML-RPC fault codes. Some care must be taken when changing these: the
 # constants are also defined client-side and must remain in sync.
-# User code must use the exceptions defined in ``odoo.exceptions`` (not
+# User code must use the exceptions defined in ``weth.exceptions`` (not
 # create directly ``xmlrpc.client.Fault`` objects).
 RPC_FAULT_CODE_CLIENT_ERROR = 1  # indistinguishable from app. error.
 RPC_FAULT_CODE_APPLICATION_ERROR = 1
@@ -33,13 +33,13 @@ CONTROL_CHARACTERS = dict.fromkeys(set(range(32)) - {9, 10, 13})
 
 
 def xmlrpc_handle_exception_int(e):
-    if isinstance(e, odoo.exceptions.RedirectWarning):
+    if isinstance(e, weth.exceptions.RedirectWarning):
         fault = xmlrpc.client.Fault(RPC_FAULT_CODE_WARNING, str(e))
-    elif isinstance(e, odoo.exceptions.AccessError):
+    elif isinstance(e, weth.exceptions.AccessError):
         fault = xmlrpc.client.Fault(RPC_FAULT_CODE_ACCESS_ERROR, str(e))
-    elif isinstance(e, odoo.exceptions.AccessDenied):
+    elif isinstance(e, weth.exceptions.AccessDenied):
         fault = xmlrpc.client.Fault(RPC_FAULT_CODE_ACCESS_DENIED, str(e))
-    elif isinstance(e, odoo.exceptions.UserError):
+    elif isinstance(e, weth.exceptions.UserError):
         fault = xmlrpc.client.Fault(RPC_FAULT_CODE_WARNING, str(e))
     else:
         info = sys.exc_info()
@@ -50,21 +50,21 @@ def xmlrpc_handle_exception_int(e):
 
 
 def xmlrpc_handle_exception_string(e):
-    if isinstance(e, odoo.exceptions.RedirectWarning):
+    if isinstance(e, weth.exceptions.RedirectWarning):
         fault = xmlrpc.client.Fault(f'warning -- Warning\n\n{e}', '')
-    elif isinstance(e, odoo.exceptions.MissingError):
+    elif isinstance(e, weth.exceptions.MissingError):
         fault = xmlrpc.client.Fault(f'warning -- MissingError\n\n{e}', '')
-    elif isinstance(e, odoo.exceptions.AccessError):
+    elif isinstance(e, weth.exceptions.AccessError):
         fault = xmlrpc.client.Fault(f'warning -- AccessError\n\n{e}', '')
-    elif isinstance(e, odoo.exceptions.AccessDenied):
+    elif isinstance(e, weth.exceptions.AccessDenied):
         fault = xmlrpc.client.Fault('AccessDenied', str(e))
-    elif isinstance(e, odoo.exceptions.UserError):
+    elif isinstance(e, weth.exceptions.UserError):
         fault = xmlrpc.client.Fault(f'warning -- UserError\n\n{e}', '')
     # InternalError
     else:
         info = sys.exc_info()
         formatted_info = "".join(traceback.format_exception(*info))
-        fault = xmlrpc.client.Fault(odoo.tools.exception_to_unicode(e), formatted_info)
+        fault = xmlrpc.client.Fault(weth.tools.exception_to_unicode(e), formatted_info)
 
     return dumps(fault)
 

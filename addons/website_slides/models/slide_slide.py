@@ -10,13 +10,13 @@ from dateutil.relativedelta import relativedelta
 from markupsafe import Markup
 from werkzeug import urls
 
-from odoo import api, fields, models, _
-from odoo.exceptions import RedirectWarning, UserError, AccessError
-from odoo.http import request
-from odoo.addons.website.tools import text_from_html
-from odoo.tools import BinaryBytes, html2plaintext, sql
-from odoo.tools.pdf import PdfFileReader
-from odoo.addons.portal.controllers.thread import PortalWebClientController
+from weth import api, fields, models, _
+from weth.exceptions import RedirectWarning, UserError, AccessError
+from weth.http import request
+from weth.addons.website.tools import text_from_html
+from weth.tools import BinaryBytes, html2plaintext, sql
+from weth.tools.pdf import PdfFileReader
+from weth.addons.portal.controllers.thread import PortalWebClientController
 
 _logger = logging.getLogger(__name__)
 

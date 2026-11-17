@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import Command, api, models
+from weth import Command, api, models
 
 
 class PurchaseOrder(models.Model):

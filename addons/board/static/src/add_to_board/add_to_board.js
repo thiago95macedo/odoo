@@ -3,7 +3,7 @@ import { Dropdown } from "@web/core/dropdown/dropdown";
 import { rpc, rpcBus } from "@web/core/network/rpc";
 import { registry } from "@web/core/registry";
 import { useAutofocus, useService } from "@web/core/utils/hooks";
-import { Component, proxy, signal } from "@odoo/owl";
+import { Component, proxy, signal } from "@weth/owl";
 
 const cogMenuRegistry = registry.category("cogMenu");
 

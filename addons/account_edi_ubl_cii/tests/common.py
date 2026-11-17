@@ -4,10 +4,10 @@ import textwrap
 import uuid
 from unittest.mock import patch
 
-from odoo import Command, fields
-from odoo.addons.account.tests.common import AccountTestInvoicingCommon
-from odoo.tools import config, file_open
-from odoo.tools.pdf import OdooPdfFileWriter
+from weth import Command, fields
+from weth.addons.account.tests.common import AccountTestInvoicingCommon
+from weth.tools import config, file_open
+from weth.tools.pdf import OdooPdfFileWriter
 
 
 class TestUblCiiCommon(AccountTestInvoicingCommon):

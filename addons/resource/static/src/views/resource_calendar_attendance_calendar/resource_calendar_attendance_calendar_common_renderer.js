@@ -1,5 +1,5 @@
 import { CalendarCommonRenderer } from "@web/views/calendar/calendar_common/calendar_common_renderer";
-import { usePlugin, providePlugins, useScope } from "@odoo/owl";
+import { usePlugin, providePlugins, useScope } from "@weth/owl";
 import { serializeDate } from "@web/core/l10n/dates";
 import { usePopover } from "@web/core/popover/popover_hook";
 import { ResourceCalendarAttendancePopoverLoader } from "@resource/plugins/resource_calendar_attendance_popover_loader";

@@ -5,9 +5,9 @@ import unittest
 from datetime import date, datetime, timezone
 from requests.exceptions import HTTPError
 
-from odoo import Command
-from odoo.tests import tagged
-from odoo.tests.common import HttpCase
+from weth import Command
+from weth.tests import tagged
+from weth.tests.common import HttpCase
 
 _logger = logging.getLogger(__name__)
 

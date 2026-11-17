@@ -1,7 +1,7 @@
 import logging
 
-from odoo.exceptions import AccessError
-from odoo.addons.project.tests.test_project_task_type import TestProjectTaskTypeSecurity
+from weth.exceptions import AccessError
+from weth.addons.project.tests.test_project_task_type import TestProjectTaskTypeSecurity
 
 _logger = logging.getLogger(__name__)
 

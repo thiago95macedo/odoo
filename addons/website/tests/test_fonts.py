@@ -2,14 +2,14 @@ import re
 import unittest
 from unittest.mock import Mock, patch
 
-import odoo.tests
-from odoo.tools.config import config
+import weth.tests
+from weth.tools.config import config
 
-from odoo.addons.base.models.ir_qweb import IrQweb
+from weth.addons.base.models.ir_qweb import IrQweb
 
 
-@odoo.tests.common.tagged('post_install', '-at_install')
-class TestWebsiteFontUrls(odoo.tests.HttpCase):
+@weth.tests.common.tagged('post_install', '-at_install')
+class TestWebsiteFontUrls(weth.tests.HttpCase):
     """
     Tests for `website._get_font_urls` and the `website.font_links` template.
 
@@ -209,8 +209,8 @@ class TestWebsiteFontUrls(odoo.tests.HttpCase):
         self.assertNotIn('<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>', page)
 
 
-@odoo.tests.common.tagged('post_install', '-at_install')
-class TestWebsiteIconFont(odoo.tests.HttpCase):
+@weth.tests.common.tagged('post_install', '-at_install')
+class TestWebsiteIconFont(weth.tests.HttpCase):
     """
     Tests for `website._get_icon_font_family` and the
     `website.icons_fonts_preload` template.

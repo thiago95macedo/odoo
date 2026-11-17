@@ -1,6 +1,6 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.base.tests.common import HttpCaseWithUserDemo, TransactionCaseWithUserDemo
+from weth.addons.base.tests.common import HttpCaseWithUserDemo, TransactionCaseWithUserDemo
 
 
 class HttpCaseGamification(HttpCaseWithUserDemo):

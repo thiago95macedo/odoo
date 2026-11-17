@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.base.tests.common import HttpCaseWithUserPortal
-from odoo.tests import tagged
+from weth.addons.base.tests.common import HttpCaseWithUserPortal
+from weth.tests import tagged
 
 
 @tagged("-at_install", "post_install")

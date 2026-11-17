@@ -1,7 +1,7 @@
-from odoo import _
-from odoo.exceptions import ValidationError
+from weth import _
+from weth.exceptions import ValidationError
 
-from odoo.addons.payment.controllers import portal as payment_portal
+from weth.addons.payment.controllers import portal as payment_portal
 
 
 class PaymentPortal(payment_portal.PaymentPortal):

@@ -25,7 +25,7 @@ const mockVivaWebhook = (isRefund) => ({
                 body: JSON.stringify({
                     EventData: {
                         TerminalId: "01234543210",
-                        MerchantTrns: `123/${odoo.pos_session_id}`,
+                        MerchantTrns: `123/${weth.pos_session_id}`,
                     },
                     EventTypeId: 1796,
                 }),

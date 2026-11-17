@@ -1,5 +1,5 @@
 import { registry } from "@web/core/registry";
-import { Component, onWillStart, proxy, useProps, signal } from "@odoo/owl";
+import { Component, onWillStart, proxy, useProps, signal } from "@weth/owl";
 import { useService } from "@web/core/utils/hooks";
 import { standardWidgetProps } from "@web/views/widgets/standard_widget_props";
 

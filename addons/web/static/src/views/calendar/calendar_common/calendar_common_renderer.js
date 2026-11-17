@@ -13,7 +13,7 @@ import { useFullCalendar } from "@web/views/calendar/hooks/full_calendar_hook";
 import { useSquareSelection } from "@web/views/calendar/hooks/square_selection_hook";
 import { TOUCH_SELECTION_THRESHOLD } from "@web/views/utils";
 
-import { Component, signal, t, useOnChange, useProps } from "@odoo/owl";
+import { Component, signal, t, useOnChange, useProps } from "@weth/owl";
 
 const SCALE_TO_FC_VIEW = {
     day: "timeGridDay",

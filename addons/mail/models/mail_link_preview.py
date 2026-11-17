@@ -8,10 +8,10 @@ from dateutil.relativedelta import relativedelta
 from lxml import html
 from urllib.parse import urlparse
 
-from odoo import api, models, fields, tools
-from odoo.tools.misc import OrderedSet
-from odoo.addons.mail.tools.link_preview import get_link_preview_from_url
-from odoo.addons.mail.tools.discuss import Store
+from weth import api, models, fields, tools
+from weth.tools.misc import OrderedSet
+from weth.addons.mail.tools.link_preview import get_link_preview_from_url
+from weth.addons.mail.tools.discuss import Store
 
 
 class MailLinkPreview(models.Model):

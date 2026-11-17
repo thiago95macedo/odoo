@@ -1,5 +1,5 @@
-import { test, expect, queryOne, waitFor } from "@odoo/hoot";
-import { mockDate } from "@odoo/hoot-mock";
+import { test, expect, queryOne, waitFor } from "@weth/hoot";
+import { mockDate } from "@weth/hoot-mock";
 import { isVisible } from "@html_editor/utils/dom_info";
 import { contains, patchWithCleanup } from "@web/../tests/web_test_helpers";
 import { definePosModels } from "../data/generate_model_definitions";

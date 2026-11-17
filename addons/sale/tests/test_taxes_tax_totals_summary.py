@@ -1,9 +1,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.tests import tagged
+from weth.tests import tagged
 
-from odoo.addons.account.tests.test_taxes_tax_totals_summary import TestTaxesTaxTotalsSummary
-from odoo.addons.sale.tests.common import TestTaxCommonSale
+from weth.addons.account.tests.test_taxes_tax_totals_summary import TestTaxesTaxTotalsSummary
+from weth.addons.sale.tests.common import TestTaxCommonSale
 
 
 @tagged("post_install", "-at_install")

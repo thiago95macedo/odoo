@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
-import odoo
+import weth
 
-from odoo.addons.point_of_sale.tests.common import TestPoSCommon
+from weth.addons.point_of_sale.tests.common import TestPoSCommon
 
 
-@odoo.tests.tagged('post_install', '-at_install')
+@weth.tests.tagged('post_install', '-at_install')
 class TestPoSSaleMarginReport(TestPoSCommon):
 
     _test_user_groups = None  # FIXME list needed groups

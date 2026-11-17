@@ -4,17 +4,17 @@ from ast import literal_eval
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
-from odoo.fields import Domain
-from odoo.tools.safe_eval import expr_eval
-from odoo.tools import SQL
+from weth.fields import Domain
+from weth.tools.safe_eval import expr_eval
+from weth.tools import SQL
 
 from .expression import check_eval_args, get_undefined_names
 
 if TYPE_CHECKING:
     from collections.abc import Callable, Iterable
 
-    from odoo.api import Environment, ValuesType
-    from odoo.models import Model
+    from weth.api import Environment, ValuesType
+    from weth.models import Model
 
     from ..models.blueprint import Blueprint
     from ..models.session import Session

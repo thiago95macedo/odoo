@@ -3,9 +3,9 @@ import re
 
 from collections import OrderedDict
 
-from odoo import models
-from odoo.http import request
-from odoo.addons.website.tools import add_form_signature
+from weth import models
+from weth.http import request
+from weth.addons.website.tools import add_form_signature
 
 
 re_background_image = re.compile(r"(background-image\s*:\s*url\(\s*['\"]?\s*)([^)'\"]+)")

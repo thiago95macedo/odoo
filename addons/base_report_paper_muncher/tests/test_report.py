@@ -1,14 +1,14 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-import odoo.tests
-from odoo.tests import patch
-from odoo.tests.common import TEST_CURSOR_COOKIE_NAME, release_test_lock
+import weth.tests
+from weth.tests import patch
+from weth.tests.common import TEST_CURSOR_COOKIE_NAME, release_test_lock
 
 from ..paper_muncher import SERVE_TIMEOUT, PaperMuncherServer, paper_muncher
 
 
-@odoo.tests.tagged('post_install', '-at_install')
-class TestPaperMuncherReport(odoo.tests.HttpCase):
+@weth.tests.tagged('post_install', '-at_install')
+class TestPaperMuncherReport(weth.tests.HttpCase):
 
     @classmethod
     def setUpClass(cls):
@@ -65,7 +65,7 @@ class TestPaperMuncherReport(odoo.tests.HttpCase):
             with (
                 patch.object(self_setup, 'http_request_key', 'paper-muncher'),
                 release_test_lock(),
-                patch('odoo.tests.common._disable_flushing_cursor', True),
+                patch('weth.tests.common._disable_flushing_cursor', True),
             ):
                 return old_serve(self_server, documents, header, footer, timeout=timeout)
 

@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.tools.misc import str2bool
-from odoo.tools.sql import SQL
+from weth.tools.misc import str2bool
+from weth.tools.sql import SQL
 
 from . import const, controllers, models, report, wizard
 

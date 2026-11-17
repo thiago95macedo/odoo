@@ -2,11 +2,11 @@
 
 import re
 
-from odoo import _, api, fields, models, tools
-from odoo.fields import Domain
-from odoo.tools.misc import limited_field_access_token
-from odoo.addons.mail.tools.discuss import Store
-from odoo.exceptions import AccessError
+from weth import _, api, fields, models, tools
+from weth.fields import Domain
+from weth.tools.misc import limited_field_access_token
+from weth.addons.mail.tools.discuss import Store
+from weth.exceptions import AccessError
 
 
 class ResPartner(models.Model):

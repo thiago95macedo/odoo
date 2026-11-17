@@ -1,8 +1,8 @@
 from .test_multicompany import TestMultiCompanyProject
 
-from odoo.tests import tagged
+from weth.tests import tagged
 
-from odoo.exceptions import UserError
+from weth.exceptions import UserError
 
 
 class TestProjectStagesMulticompany(TestMultiCompanyProject):

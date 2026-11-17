@@ -11,7 +11,7 @@ import {
     scroll,
     test,
     waitFor,
-} from "@odoo/hoot";
+} from "@weth/hoot";
 import { getPickerCell, zoomOut } from "@web/../tests/core/datetime/datetime_test_helpers";
 import {
     clickSave,
@@ -85,7 +85,7 @@ test("toggle datepicker on mobile", async () => {
 });
 
 test("datepicker is automatically closed after selecting a value", async () => {
-    Partner._onChanges.date = () => {};
+    Partner._onChanges.date = () => { };
     const def = Promise.withResolvers();
     onRpc("onchange", () => def.promise);
 
@@ -324,7 +324,7 @@ test("date field with warning option: past date", async () => {
 });
 
 test("date field with warning option: do not overwrite datepicker option", async () => {
-    Partner._onChanges.date = () => {};
+    Partner._onChanges.date = () => { };
 
     await mountView({
         type: "form",

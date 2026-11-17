@@ -3,13 +3,13 @@
 import logging
 
 
-from odoo import api, fields, models, Command
-from odoo.addons.google_calendar.utils.google_calendar_service import GoogleCalendarService, InvalidSyncToken
-from odoo.addons.google_calendar.models.google_sync import google_calendar_token
-from odoo.addons.google_account.models import google_service
-from odoo.addons.google_calendar.utils.google_event import GoogleEvent
-from odoo.exceptions import LockError
-from odoo.loglevels import exception_to_unicode
+from weth import api, fields, models, Command
+from weth.addons.google_calendar.utils.google_calendar_service import GoogleCalendarService, InvalidSyncToken
+from weth.addons.google_calendar.models.google_sync import google_calendar_token
+from weth.addons.google_account.models import google_service
+from weth.addons.google_calendar.utils.google_event import GoogleEvent
+from weth.exceptions import LockError
+from weth.loglevels import exception_to_unicode
 
 _logger = logging.getLogger(__name__)
 

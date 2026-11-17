@@ -1,6 +1,6 @@
-import { before, beforeEach, describe, expect, test } from "@odoo/hoot";
-import { advanceTime, animationFrame, queryOne, waitFor } from "@odoo/hoot-dom";
-import { xml } from "@odoo/owl";
+import { before, beforeEach, describe, expect, test } from "@weth/hoot";
+import { advanceTime, animationFrame, queryOne, waitFor } from "@weth/hoot-dom";
+import { xml } from "@weth/owl";
 import { getService, patchWithCleanup } from "@web/../tests/web_test_helpers";
 import {
     defineWebsiteModels,

@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import _, api, fields, models
-from odoo.fields import Domain
-from odoo.tools import sql
+from weth import _, api, fields, models
+from weth.fields import Domain
+from weth.tools import sql
 
 AVAILABLE_PRIORITIES = [
     ('0', 'Low'),

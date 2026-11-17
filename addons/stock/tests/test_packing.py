@@ -1,10 +1,10 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import Command
-from odoo.addons.stock.tests.common import TestStockCommon
-from odoo.exceptions import UserError
-from odoo.tests import Form, tagged
-from odoo.tools.safe_eval import expr_eval
+from weth import Command
+from weth.addons.stock.tests.common import TestStockCommon
+from weth.exceptions import UserError
+from weth.tests import Form, tagged
+from weth.tools.safe_eval import expr_eval
 
 
 class TestPackingCommon(TestStockCommon):

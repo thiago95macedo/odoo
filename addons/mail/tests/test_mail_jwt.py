@@ -6,9 +6,9 @@ import json
 
 from freezegun import freeze_time
 
-from odoo.tests.common import BaseCase
+from weth.tests.common import BaseCase
 
-from odoo.addons.mail.tools import jwt
+from weth.addons.mail.tools import jwt
 
 
 class TestMailJwt(BaseCase):

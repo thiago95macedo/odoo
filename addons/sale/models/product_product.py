@@ -2,9 +2,9 @@
 
 from datetime import timedelta
 
-from odoo import api, fields, models
-from odoo.exceptions import UserError
-from odoo.fields import Domain
+from weth import api, fields, models
+from weth.exceptions import UserError
+from weth.fields import Domain
 
 
 class ProductProduct(models.Model):

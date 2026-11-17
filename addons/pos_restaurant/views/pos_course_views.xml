@@ -1,4 +1,4 @@
-<odoo>
+<weth>
     <record id="view_pos_course_list" model="ir.ui.view">
         <field name="name">pos.course.list</field>
         <field name="model">pos.course</field>
@@ -44,4 +44,4 @@
               parent="point_of_sale.pos_menu_products_configuration"
               action="action_pos_course"
               sequence="13"/>
-</odoo>
+</weth>

@@ -2,7 +2,7 @@ import {
     LocationSchedule
 } from '@website_sale_stock/js/location_selector/location_schedule/location_schedule';
 import { Map } from '@website_sale_stock/js/location_selector/map/map';
-import { Component, onWillStart, proxy, t, useProps } from '@odoo/owl';
+import { Component, onWillStart, proxy, t, useProps } from '@weth/owl';
 import { AssetsLoadingError, loadCSS, loadJS } from '@web/core/assets';
 import { _t } from '@web/core/l10n/translation';
 

@@ -6,11 +6,11 @@ from dateutil.relativedelta import relativedelta
 from babel.dates import format_date, get_date_format
 from zoneinfo import ZoneInfo
 
-from odoo import api, fields, models
-from odoo.fields import Domain
-from odoo.addons.base.models.res_partner import _tz_get
-from odoo.exceptions import ValidationError
-from odoo.tools import SQL, get_lang, babel_locale_parse
+from weth import api, fields, models
+from weth.fields import Domain
+from weth.addons.base.models.res_partner import _tz_get
+from weth.exceptions import ValidationError
+from weth.tools import SQL, get_lang, babel_locale_parse
 
 import logging
 _logger = logging.getLogger(__name__)

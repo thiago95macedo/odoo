@@ -1,5 +1,5 @@
-import { animationFrame, describe, expect, press, test, tick } from "@odoo/hoot";
-import { Component, xml } from "@odoo/owl";
+import { animationFrame, describe, expect, press, test, tick } from "@weth/hoot";
+import { Component, xml } from "@weth/owl";
 import {
     assignDialogTestEnv,
     contains,
@@ -16,9 +16,9 @@ test("check content confirmation dialog", async () => {
         props: {
             body: "Some content",
             title: "Confirmation",
-            close: () => {},
-            confirm: () => {},
-            cancel: () => {},
+            close: () => { },
+            confirm: () => { },
+            cancel: () => { },
         },
     });
     expect(".modal-header").toHaveText("Confirmation");
@@ -214,11 +214,11 @@ test("can't click twice on 'Ok'", async () => {
         props: {
             body: "Some content",
             title: "Confirmation",
-            close: () => {},
+            close: () => { },
             confirm: () => {
                 expect.step("Confirm action");
             },
-            cancel: () => {},
+            cancel: () => { },
         },
     });
     expect.verifySteps([]);
@@ -236,8 +236,8 @@ test("can't click twice on 'Cancel'", async () => {
         props: {
             body: "Some content",
             title: "Confirmation",
-            close: () => {},
-            confirm: () => {},
+            close: () => { },
+            confirm: () => { },
             cancel: () => {
                 expect.step("Cancel action");
             },

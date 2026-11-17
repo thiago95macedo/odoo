@@ -1,4 +1,4 @@
-import { assertType, t } from "@odoo/owl";
+import { assertType, t } from "@weth/owl";
 import { isVisible } from "@web/core/utils/ui";
 import { delay } from "@web/core/utils/concurrency";
 
@@ -94,8 +94,8 @@ export class Macro {
             );
         }
         Object.assign(this, descr);
-        this.onComplete = this.onComplete || (() => {});
-        this.onStep = this.onStep || (() => {});
+        this.onComplete = this.onComplete || (() => { });
+        this.onStep = this.onStep || (() => { });
         this.onError =
             this.onError ||
             ((error, step, index) => {

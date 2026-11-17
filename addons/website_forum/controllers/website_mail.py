@@ -1,6 +1,6 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
-from odoo.http import route
-from odoo.addons.website_mail.controllers.main import WebsiteMail
+from weth.http import route
+from weth.addons.website_mail.controllers.main import WebsiteMail
 
 
 class ForumWebsiteMail(WebsiteMail):

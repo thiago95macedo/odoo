@@ -1,7 +1,7 @@
-from odoo import http
-from odoo.http import request
+from weth import http
+from weth.http import request
 
-from odoo.addons.website.controllers.main import Website
+from weth.addons.website.controllers.main import Website
 
 
 class WebsiteLivechat(Website):

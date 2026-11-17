@@ -4,7 +4,7 @@ import {
     getAllActionsAndOperations,
     useDomState,
 } from "@html_builder/core/utils";
-import { Component, onWillStart, proxy, status, t, useEffect, useProps } from "@odoo/owl";
+import { Component, onWillStart, proxy, status, t, useEffect, useProps } from "@weth/owl";
 import { uniqueId } from "@web/core/utils/functions";
 import { useService } from "@web/core/utils/hooks";
 import { BasicMany2Many } from "./basic_many2many";

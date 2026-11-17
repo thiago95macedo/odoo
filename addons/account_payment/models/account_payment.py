@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import _, api, Command, fields, models
-from odoo.exceptions import ValidationError
+from weth import _, api, Command, fields, models
+from weth.exceptions import ValidationError
 
 
 class AccountPayment(models.Model):

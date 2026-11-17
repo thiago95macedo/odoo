@@ -4,12 +4,12 @@ from urllib.parse import urlsplit
 
 from werkzeug.exceptions import NotFound
 
-from odoo import _, http
-from odoo.http import request
-from odoo.http.stream import Stream, content_disposition
-from odoo.tools import format_list
+from weth import _, http
+from weth.http import request
+from weth.http.stream import Stream, content_disposition
+from weth.tools import format_list
 
-from odoo.addons.mail.tools.discuss import add_guest_to_context, mail_route, Store
+from weth.addons.mail.tools.discuss import add_guest_to_context, mail_route, Store
 
 
 class LivechatController(http.Controller):

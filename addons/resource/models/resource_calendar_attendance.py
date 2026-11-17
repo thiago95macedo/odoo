@@ -4,14 +4,14 @@ from datetime import date, timedelta
 
 from dateutil.relativedelta import relativedelta
 
-from odoo import api, fields, models
-from odoo.addons.resource.models.utils import get_collision_new_rucurrency
-from odoo.exceptions import UserError
-from odoo.fields import Domain
-from odoo.tools import format_time
-from odoo.tools.date_utils import float_to_time, parse_iso_date
-from odoo.tools.intervals import Intervals
-from odoo.tools.misc import format_date, format_duration
+from weth import api, fields, models
+from weth.addons.resource.models.utils import get_collision_new_rucurrency
+from weth.exceptions import UserError
+from weth.fields import Domain
+from weth.tools import format_time
+from weth.tools.date_utils import float_to_time, parse_iso_date
+from weth.tools.intervals import Intervals
+from weth.tools.misc import format_date, format_duration
 
 
 class ResourceCalendarAttendance(models.Model):

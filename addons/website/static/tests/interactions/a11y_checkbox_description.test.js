@@ -1,7 +1,7 @@
 import { startInteractions, setupInteractionWhiteList } from "@web/../tests/public/helpers";
 
-import { describe, expect, test } from "@odoo/hoot";
-import { click, queryOne } from "@odoo/hoot-dom";
+import { describe, expect, test } from "@weth/hoot";
+import { click, queryOne } from "@weth/hoot-dom";
 
 setupInteractionWhiteList("website.a11y_checkbox_description");
 

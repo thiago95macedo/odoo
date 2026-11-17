@@ -1,5 +1,5 @@
 import { CommandResult } from "../../o_spreadsheet/cancelled_reason";
-import { helpers, CompiledFormula, registries } from "@odoo/o-spreadsheet";
+import { helpers, CompiledFormula, registries } from "@weth/o-spreadsheet";
 import { OdooCorePlugin } from "@spreadsheet/plugins";
 
 const { getMaxObjectId, deepEquals, deepCopy, getCanonicalSymbolName } = helpers;
@@ -29,7 +29,7 @@ const { specificRangeTransformRegistry } = registries;
 /**
  * @typedef {Object} ComputeState
  * @property {CompiledFormula} formula
- * @property {import("@odoo/o-spreadsheet").Range[]} dependencies
+ * @property {import("@weth/o-spreadsheet").Range[]} dependencies
  */
 
 function updateOdooListCommandAdaptRange(cmd, { adaptFormulaString }) {

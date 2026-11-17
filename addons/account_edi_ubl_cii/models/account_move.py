@@ -4,10 +4,10 @@ import binascii
 
 from lxml import etree
 
-from odoo import api, fields, models, Command
-from odoo.tools.mimetypes import guess_mimetype
-from odoo.exceptions import UserError
-from odoo.tools import frozendict
+from weth import api, fields, models, Command
+from weth.tools.mimetypes import guess_mimetype
+from weth.exceptions import UserError
+from weth.tools import frozendict
 
 
 class AccountMove(models.Model):

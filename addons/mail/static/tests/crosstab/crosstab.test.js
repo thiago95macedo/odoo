@@ -9,9 +9,9 @@ import {
     triggerHotkey,
     MENU_ACTIVE_IDS,
 } from "@mail/../tests/mail_test_helpers";
-import { describe, expect, setInputFiles, test } from "@odoo/hoot";
-import { press } from "@odoo/hoot-dom";
-import { mockDate } from "@odoo/hoot-mock";
+import { describe, expect, setInputFiles, test } from "@weth/hoot";
+import { press } from "@weth/hoot-dom";
+import { mockDate } from "@weth/hoot-mock";
 
 import { Command, getService, mockService, serverState } from "@web/../tests/web_test_helpers";
 

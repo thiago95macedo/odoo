@@ -6,7 +6,7 @@ import logging
 
 from datetime import datetime
 
-from odoo import api, fields, models
+from weth import api, fields, models
 
 _logger = logging.getLogger(__name__)
 

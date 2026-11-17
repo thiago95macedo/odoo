@@ -2,11 +2,11 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 import json
 
-from odoo.tests import tagged
+from weth.tests import tagged
 
-from odoo.addons.survey.controllers.main import Survey
-from odoo.addons.survey.tests import common
-from odoo.addons.http_routing.tests.common import MockRequest
+from weth.addons.survey.controllers.main import Survey
+from weth.addons.survey.tests import common
+from weth.addons.http_routing.tests.common import MockRequest
 
 
 @tagged("is_query_count")

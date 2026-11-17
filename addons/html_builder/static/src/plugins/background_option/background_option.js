@@ -1,5 +1,5 @@
 import { BaseOptionComponent } from "@html_builder/core/base_option_component";
-import { useProps, t } from "@odoo/owl";
+import { useProps, t } from "@weth/owl";
 import { BackgroundImageOption } from "./background_image_option";
 import { BackgroundPositionOption } from "./background_position_option";
 import { BackgroundShapeOption } from "./background_shape_option";

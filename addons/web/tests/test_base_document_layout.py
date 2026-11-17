@@ -3,9 +3,9 @@ import re
 from PIL import Image
 from functools import partial
 
-from odoo.tests import TransactionCase, tagged, Form
-from odoo.tools import BinaryBytes, frozendict
-from odoo.tools.image import image_apply_opt, hex_to_rgb
+from weth.tests import TransactionCase, tagged, Form
+from weth.tools import BinaryBytes, frozendict
+from weth.tools.image import image_apply_opt, hex_to_rgb
 
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
@@ -48,7 +48,7 @@ class TestBaseDocumentLayoutHelpers(TransactionCase):
             self.assertAlmostEqual(color1[i], color2[i], delta=self.css_color_error)
 
     def _get_images_for_test(self):
-        return ['sweden.png', 'odoo.png']
+        return ['sweden.png', 'weth.png']
 
     def _set_images(self):
         for fname in self._get_images_for_test():

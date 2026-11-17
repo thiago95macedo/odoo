@@ -2,8 +2,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
 from markupsafe import Markup
-from odoo import api, fields, models, _
-from odoo.tools.mail import is_html_empty
+from weth import api, fields, models, _
+from weth.tools.mail import is_html_empty
 
 
 class CrmLeadLost(models.TransientModel):

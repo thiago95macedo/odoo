@@ -1,9 +1,9 @@
 from psycopg2 import IntegrityError
 
-from odoo.addons.calendar.tests.test_calendar_calendar import TestCalendarCalendar
-from odoo.exceptions import AccessError
-from odoo.tests.common import tagged
-from odoo.tools import mute_logger
+from weth.addons.calendar.tests.test_calendar_calendar import TestCalendarCalendar
+from weth.exceptions import AccessError
+from weth.tests.common import tagged
+from weth.tools import mute_logger
 
 
 @tagged("post_install", "-at_install")
@@ -16,7 +16,7 @@ class TestCalendarUser(TestCalendarCalendar):
 
     def test_unique_membership_per_user_and_calendar(self):
         # The owner membership already exists from create(); a duplicate must violate the index.
-        with self.assertRaises(IntegrityError), mute_logger("odoo.sql_db"):
+        with self.assertRaises(IntegrityError), mute_logger("weth.sql_db"):
             with self.env.cr.savepoint():
                 self.env["calendar.user"].create({
                     "calendar_id": self.calendar.id,

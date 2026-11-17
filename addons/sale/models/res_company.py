@@ -1,10 +1,10 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, fields, models
-from odoo.exceptions import ValidationError
-from odoo.fields import Domain
+from weth import api, fields, models
+from weth.exceptions import ValidationError
+from weth.fields import Domain
 
-from odoo.addons.base.models.res_company import company_default_for
+from weth.addons.base.models.res_company import company_default_for
 
 SALE_INVOICE_POLICY = [("order", "Ordered quantities"), ("delivery", "Delivered quantities")]
 

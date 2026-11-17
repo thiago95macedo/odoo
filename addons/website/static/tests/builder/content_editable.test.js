@@ -1,6 +1,6 @@
-import { expect, test } from "@odoo/hoot";
-import { queryOne } from "@odoo/hoot-dom";
-import { xml } from "@odoo/owl";
+import { expect, test } from "@weth/hoot";
+import { queryOne } from "@weth/hoot-dom";
+import { xml } from "@weth/owl";
 import { addBuilderOption } from "@html_builder/../tests/helpers";
 import { contains, onRpc } from "@web/../tests/web_test_helpers";
 import {

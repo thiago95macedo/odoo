@@ -1,4 +1,4 @@
-import { useProps } from "@odoo/owl";
+import { useProps } from "@weth/owl";
 import { _t } from "@web/core/l10n/translation";
 import { usePopover } from "@web/core/popover/popover_hook";
 import { useService } from "@web/core/utils/hooks";
@@ -27,9 +27,8 @@ export function useDynamicPlaceholder(elementRef) {
         // When the user cancel/close the popover, the path is empty.
         if (path) {
             defaultValue = defaultValue.replace("|||", "");
-            const dynamicPlaceholder = ` {{object.${path}${
-                defaultValue?.length ? ` ||| ${defaultValue}` : ""
-            }}}`;
+            const dynamicPlaceholder = ` {{object.${path}${defaultValue?.length ? ` ||| ${defaultValue}` : ""
+                }}}`;
             const baseValue = element.value;
             const splitedValue = [baseValue.slice(0, rangeIndex), baseValue.slice(rangeIndex)];
             const newValue =

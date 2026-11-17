@@ -1,4 +1,4 @@
-import { markRaw, markup, toRaw } from "@odoo/owl";
+import { markRaw, markup, toRaw } from "@weth/owl";
 import { serializeDate, serializeDateTime } from "@web/core/l10n/dates";
 import { _t } from "@web/core/l10n/translation";
 import { ConnectionLostError, RPCError } from "@web/core/network/rpc";
@@ -52,7 +52,7 @@ export class Record extends DataPoint {
         /** set only when the record comes from a grouped list */
         this.group = options.group;
         this._manuallyAdded = options.manuallyAdded === true;
-        this._onUpdate = options.onUpdate || (() => {});
+        this._onUpdate = options.onUpdate || (() => { });
         this._parentRecord = options.parentRecord;
         this.canSaveOnUpdate = !options.parentRecord;
         this._virtualId = options.virtualId || false;
@@ -68,7 +68,7 @@ export class Record extends DataPoint {
 
         /** @type {Set<string>} */
         this._unsetRequiredFields = markRaw(new Set());
-        this._closeInvalidFieldsNotification = () => {};
+        this._closeInvalidFieldsNotification = () => { };
 
         const parentRecord = this._parentRecord;
         if (parentRecord) {
@@ -768,7 +768,7 @@ export class Record extends DataPoint {
             this._checkValidity();
         }
         this._closeInvalidFieldsNotification();
-        this._closeInvalidFieldsNotification = () => {};
+        this._closeInvalidFieldsNotification = () => { };
         this._restoreActiveFields();
         this.model.hooks.onRecordDiscarded(this);
     }
@@ -846,9 +846,9 @@ export class Record extends DataPoint {
                 case "reference": {
                     result[fieldName] = value
                         ? {
-                              id: { id: value.resId, model: value.resModel },
-                              display_name: value.displayName,
-                          }
+                            id: { id: value.resId, model: value.resModel },
+                            display_name: value.displayName,
+                        }
                         : false;
                     break;
                 }

@@ -4,15 +4,15 @@ import uuid
 
 from PIL import Image
 
-from odoo import http
-from odoo.http import request
-from odoo.tools.misc import file_path
+from weth import http
+from weth.http import request
+from weth.tools.misc import file_path
 
-from odoo.addons.pos_bancontact_pay import const
-from odoo.addons.pos_bancontact_pay.controllers.signature import (
+from weth.addons.pos_bancontact_pay import const
+from weth.addons.pos_bancontact_pay.controllers.signature import (
     BancontactSignatureValidation,
 )
-from odoo.addons.pos_bancontact_pay.errors.exceptions import (
+from weth.addons.pos_bancontact_pay.errors.exceptions import (
     BancontactSignatureValidationError,
 )
 

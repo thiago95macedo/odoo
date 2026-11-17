@@ -2,9 +2,9 @@
 
 from itertools import chain
 
-from odoo.addons.mail.tests.common import MailCommon
-from odoo.exceptions import AccessError
-from odoo.tests.common import HttpCase, tagged, warmup
+from weth.addons.mail.tests.common import MailCommon
+from weth.exceptions import AccessError
+from weth.tests.common import HttpCase, tagged, warmup
 
 
 @tagged("is_query_count")

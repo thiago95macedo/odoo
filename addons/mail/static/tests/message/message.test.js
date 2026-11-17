@@ -28,7 +28,7 @@ import { MailMessage } from "@mail/../tests/mock_server/mock_models/mail_message
 import { Gif } from "@mail/core/common/gif";
 import { Message } from "@mail/core/common/message";
 import { LONG_PRESS_DELAY } from "@mail/utils/common/hooks";
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@weth/hoot";
 import {
     animationFrame,
     leave,
@@ -37,8 +37,8 @@ import {
     queryFirst,
     rightClick,
     waitFor,
-} from "@odoo/hoot-dom";
-import { advanceTime, mockDate, mockTouch, mockUserAgent, tick } from "@odoo/hoot-mock";
+} from "@weth/hoot-dom";
+import { advanceTime, mockDate, mockTouch, mockUserAgent, tick } from "@weth/hoot-mock";
 import {
     contains as webContains,
     Command,

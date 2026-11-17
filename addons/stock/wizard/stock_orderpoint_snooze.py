@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, fields, models
-from odoo.tools.date_utils import add
+from weth import api, fields, models
+from weth.tools.date_utils import add
 
 
 class StockOrderpointSnooze(models.TransientModel):

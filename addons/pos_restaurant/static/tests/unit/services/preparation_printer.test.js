@@ -1,4 +1,4 @@
-import { expect, test } from "@odoo/hoot";
+import { expect, test } from "@weth/hoot";
 import { definePosModels } from "@point_of_sale/../tests/unit/data/generate_model_definitions";
 import { getFilledOrder, setupPosEnv } from "@point_of_sale/../tests/unit/utils";
 
@@ -114,8 +114,8 @@ test("only printers with matching categories are used", async () => {
         printedBy.push(printer.name);
         return { successful: true };
     };
-    store.ticketPrinter.showPrinterErrorDialog = () => {};
-    store.ticketPrinter.setIframeSizeFromPrinter = () => {};
+    store.ticketPrinter.showPrinterErrorDialog = () => { };
+    store.ticketPrinter.setIframeSizeFromPrinter = () => { };
 
     // Both printers print when order has lines matching both categories
     let result = await store.ticketPrinter.printOrderChanges({

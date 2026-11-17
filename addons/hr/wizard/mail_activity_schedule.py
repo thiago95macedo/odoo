@@ -2,8 +2,8 @@
 
 from dateutil.relativedelta import relativedelta
 
-from odoo import api, fields, models
-from odoo.fields import Domain
+from weth import api, fields, models
+from weth.fields import Domain
 
 
 class MailActivitySchedule(models.TransientModel):

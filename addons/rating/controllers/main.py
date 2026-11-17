@@ -4,11 +4,11 @@
 import logging
 import werkzeug
 
-from odoo import http
-from odoo.http import request
-from odoo.tools.translate import _
-from odoo.tools.misc import get_lang
-from odoo.addons.rating.models.rating_data import (
+from weth import http
+from weth.http import request
+from weth.tools.translate import _
+from weth.tools.misc import get_lang
+from weth.addons.rating.models.rating_data import (
     RATING_HAPPY_VALUE,
     RATING_NEUTRAL_VALUE,
     RATING_UNHAPPY_VALUE,

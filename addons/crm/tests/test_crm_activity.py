@@ -3,8 +3,8 @@
 
 from datetime import date, timedelta
 
-from odoo.addons.crm.tests.common import TestCrmCommon
-from odoo.tests.common import tagged, users
+from weth.addons.crm.tests.common import TestCrmCommon
+from weth.tests.common import tagged, users
 
 
 @tagged('mail_activity')

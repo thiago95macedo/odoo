@@ -1,6 +1,6 @@
 // @ts-check
 
-import { registries, helpers, constants, EvaluationError } from "@odoo/o-spreadsheet";
+import { registries, helpers, constants, EvaluationError } from "@weth/o-spreadsheet";
 import { deserializeDate } from "@web/core/l10n/dates";
 import { _t } from "@web/core/l10n/translation";
 import { user } from "@web/core/user";

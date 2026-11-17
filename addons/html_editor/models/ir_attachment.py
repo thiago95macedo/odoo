@@ -3,7 +3,7 @@ import binascii
 
 from urllib.parse import quote
 
-from odoo import api, models, fields
+from weth import api, models, fields
 from PIL import Image
 
 SUPPORTED_IMAGE_MIMETYPES = {

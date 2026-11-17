@@ -1,5 +1,5 @@
 import { OdooEvaluationPlugin } from "@spreadsheet/plugins";
-import { links, isCoreCommand } from "@odoo/o-spreadsheet";
+import { links, isCoreCommand } from "@weth/o-spreadsheet";
 import { isDataSourceUrl, parseDataSourceUrl } from "../../data_sources/data_source_link";
 
 const { isMarkdownLink, parseMarkdownLink } = links;

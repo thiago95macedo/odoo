@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.tests import tagged, Form
-from odoo.tests.common import TransactionCase
+from weth.tests import tagged, Form
+from weth.tests.common import TransactionCase
 
 
 class TestResourceSkills(TransactionCase):
@@ -12,7 +12,7 @@ class TestResourceSkills(TransactionCase):
         user = self.env['res.users'].create([{
             'name': 'Test user',
             'login': 'test',
-            'email': 'test@odoo.perso',
+            'email': 'test@weth.perso',
             'phone': '+32488990011',
         }])
         resource = self.env['resource.resource'].create([{

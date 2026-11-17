@@ -10,7 +10,7 @@ patch(PosStore.prototype, {
         this.employeeBuffer = [];
         await super.setup(...arguments);
         if (this.config.module_pos_hr) {
-            this.login = Boolean(odoo.from_backend) && !this.config.module_pos_hr;
+            this.login = Boolean(weth.from_backend) && !this.config.module_pos_hr;
             if (!this.accessRight.hasLoggedIn()) {
                 this.navigate("LoginScreen");
             }

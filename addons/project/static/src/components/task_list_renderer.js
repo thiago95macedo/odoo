@@ -1,4 +1,4 @@
-import { onPatched } from "@odoo/owl";
+import { onPatched } from "@weth/owl";
 import { useService } from "@web/core/utils/hooks";
 import { ListRenderer } from "@web/views/list/list_renderer";
 

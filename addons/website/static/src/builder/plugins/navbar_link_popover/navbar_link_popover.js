@@ -1,5 +1,5 @@
 import { LinkPopover, linkPopoverProps } from "@html_editor/main/link/link_popover";
-import { useProps, t } from "@odoo/owl";
+import { useProps, t } from "@weth/owl";
 
 export class NavbarLinkPopover extends LinkPopover {
     static template = "website.navbarLinkPopover";

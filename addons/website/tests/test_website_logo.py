@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.tests import tagged
-from odoo.tests.common import TransactionCase
-from odoo.tools import BinaryBytes
+from weth.tests import tagged
+from weth.tests.common import TransactionCase
+from weth.tools import BinaryBytes
 
 
 @tagged('post_install', '-at_install')

@@ -1,4 +1,4 @@
-import { onMounted, onPatched, onWillUnmount } from "@odoo/owl";
+import { onMounted, onPatched, onWillUnmount } from "@weth/owl";
 import { localization } from "@web/core/l10n/localization";
 import { isIOS } from "@web/core/browser/feature_detection";
 

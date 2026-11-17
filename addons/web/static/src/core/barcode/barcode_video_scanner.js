@@ -15,7 +15,7 @@ import {
     status,
     t,
     useProps,
-} from "@odoo/owl";
+} from "@weth/owl";
 import { isIOS } from "@web/core/browser/feature_detection";
 import { _t } from "@web/core/l10n/translation";
 import { pick } from "@web/core/utils/objects";

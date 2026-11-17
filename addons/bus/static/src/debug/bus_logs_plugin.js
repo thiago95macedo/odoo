@@ -1,4 +1,4 @@
-import { Plugin, signal, useListener, usePlugin } from "@odoo/owl";
+import { Plugin, signal, useListener, usePlugin } from "@weth/owl";
 
 import { browser } from "@web/core/browser/browser";
 import { registry } from "@web/core/registry";
@@ -23,14 +23,14 @@ export class BusLogsPlugin extends Plugin {
         this.workerService.workerInitPromise.then(() => {
             this.busService.setLoggingEnabled(this.enabled());
         });
-        odoo.busLogging = {
+        weth.busLogging = {
             stop: () => this.disableLogging(),
             start: () => this.enableLogging(),
             download: () => this.busService.downloadLogs(),
         };
         if (this.enabled()) {
             console.log(
-                "Bus logging is enabled. To disable it, use `odoo.busLogging.stop()`. To download the logs, use `odoo.busLogging.download()`."
+                "Bus logging is enabled. To disable it, use `weth.busLogging.stop()`. To download the logs, use `weth.busLogging.download()`."
             );
         }
     }

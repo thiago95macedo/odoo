@@ -4,8 +4,8 @@ import { OdooEvaluationPlugin } from "@spreadsheet/plugins";
 
 /**
  * @typedef {import("@spreadsheet").FieldMatching} FieldMatching
- * @typedef {import("@odoo/o-spreadsheet").Token} Token
- * @typedef {import("@odoo/o-spreadsheet").PivotDomain} PivotDomain
+ * @typedef {import("@weth/o-spreadsheet").Token} Token
+ * @typedef {import("@weth/o-spreadsheet").PivotDomain} PivotDomain
  */
 
 /**

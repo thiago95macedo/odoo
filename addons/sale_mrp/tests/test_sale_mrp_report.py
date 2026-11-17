@@ -1,12 +1,12 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.fields import Command
-from odoo.tests import Form, tagged
-from odoo.tools import html2plaintext
+from weth.fields import Command
+from weth.tests import Form, tagged
+from weth.tools import html2plaintext
 
 
-from odoo.addons.sale.tests.common import TestSaleCommon
-from odoo.addons.stock.tests.test_report import TestReportsCommon
+from weth.addons.sale.tests.common import TestSaleCommon
+from weth.addons.stock.tests.test_report import TestReportsCommon
 
 
 @tagged('post_install', '-at_install')

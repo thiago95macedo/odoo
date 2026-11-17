@@ -1,4 +1,4 @@
-import { test, describe, beforeEach, expect } from "@odoo/hoot";
+import { test, describe, beforeEach, expect } from "@weth/hoot";
 import { setupEditor } from "../_helpers/editor";
 import { unformat } from "../_helpers/format";
 import { getContent, setContent } from "../_helpers/selection";
@@ -17,8 +17,8 @@ import {
     EmbeddedToggleBlockComponent,
     toggleBlockEmbedding,
 } from "@html_editor/others/embedded_components/core/toggle_block/toggle_block";
-import { onMounted } from "@odoo/owl";
-import { animationFrame, press, queryOne, tick, waitFor } from "@odoo/hoot-dom";
+import { onMounted } from "@weth/owl";
+import { animationFrame, press, queryOne, tick, waitFor } from "@weth/hoot-dom";
 import { browser } from "@web/core/browser/browser";
 import { EmbeddedComponentPlugin } from "@html_editor/others/embedded_component_plugin";
 import { ToggleBlockPlugin } from "@html_editor/others/embedded_components/plugins/toggle_block_plugin/toggle_block_plugin";

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<odoo>
+<weth>
     <data>
         <!-- Outer template: renders 4 copies per group of pickings with different languages -->
         <template id="report_cmr">
@@ -634,4 +634,4 @@
             </t>
         </template>
     </data>
-</odoo>
+</weth>

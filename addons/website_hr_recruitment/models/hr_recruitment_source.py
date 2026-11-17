@@ -2,8 +2,8 @@
 
 from werkzeug.urls import url_encode
 
-from odoo import api, fields, models
-from odoo.tools import urls
+from weth import api, fields, models
+from weth.tools import urls
 
 
 class HrRecruitmentSource(models.Model):

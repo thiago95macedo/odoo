@@ -8,16 +8,16 @@ from PIL import Image
 from markupsafe import Markup
 from psycopg2 import errors
 
-from odoo import Command, fields
-from odoo.addons.base.models.avatar_mixin import get_random_ui_color_from_seed
-from odoo.addons.bus.models.bus import channel_with_db, json_dump
-from odoo.addons.bus.tests.common import BusResult
-from odoo.addons.mail.models.discuss.discuss_channel import group_avatar
-from odoo.addons.mail.tests.common import MailCommon, mail_new_test_user
-from odoo.addons.mail.tools.discuss import Store
-from odoo.exceptions import AccessError, UserError, ValidationError
-from odoo.tests import HttpCase, users
-from odoo.tools import BinaryBytes, convert_file, html_escape, mute_logger
+from weth import Command, fields
+from weth.addons.base.models.avatar_mixin import get_random_ui_color_from_seed
+from weth.addons.bus.models.bus import channel_with_db, json_dump
+from weth.addons.bus.tests.common import BusResult
+from weth.addons.mail.models.discuss.discuss_channel import group_avatar
+from weth.addons.mail.tests.common import MailCommon, mail_new_test_user
+from weth.addons.mail.tools.discuss import Store
+from weth.exceptions import AccessError, UserError, ValidationError
+from weth.tests import HttpCase, users
+from weth.tools import BinaryBytes, convert_file, html_escape, mute_logger
 
 
 class TestChannelInternals(MailCommon, HttpCase):
@@ -338,7 +338,7 @@ class TestChannelInternals(MailCommon, HttpCase):
         self.assertEqual(test_group.channel_partner_ids, self.partner_employee)
 
     @users('employee')
-    @mute_logger('odoo.addons.mail.models.mail_mail', 'odoo.models.unlink')
+    @mute_logger('weth.addons.mail.models.mail_mail', 'weth.models.unlink')
     def test_channel_chat_message_post_should_update_last_interest_dt(self):
         chat = self.env['discuss.channel'].with_user(self.user_admin)._get_or_create_chat((self.partner_employee | self.user_admin.partner_id).ids)
         post_time = fields.Datetime.now()
@@ -349,7 +349,7 @@ class TestChannelInternals(MailCommon, HttpCase):
         self.assertEqual(chat.last_interest_dt, post_time)
 
     @users('employee')
-    @mute_logger('odoo.addons.mail.models.mail_mail', 'odoo.models.unlink')
+    @mute_logger('weth.addons.mail.models.mail_mail', 'weth.models.unlink')
     def test_channel_recipients_channel(self):
         """ Posting a message on a channel should not send emails """
         channel = self.env['discuss.channel'].browse(self.test_channel.ids)
@@ -364,7 +364,7 @@ class TestChannelInternals(MailCommon, HttpCase):
         self.assertEqual(new_msg.notified_partner_ids, self.env['res.partner'])
 
     @users('employee')
-    @mute_logger('odoo.addons.mail.models.mail_mail', 'odoo.models.unlink')
+    @mute_logger('weth.addons.mail.models.mail_mail', 'weth.models.unlink')
     def test_channel_recipients_chat(self):
         """ Posting a message on a chat should not send emails """
         chat = self.env['discuss.channel'].with_user(self.user_admin)._get_or_create_chat((self.partner_employee | self.user_admin.partner_id).ids)
@@ -377,7 +377,7 @@ class TestChannelInternals(MailCommon, HttpCase):
         self.assertEqual(new_msg.partner_ids, self.env['res.partner'])
         self.assertEqual(new_msg.notified_partner_ids, self.env['res.partner'])
 
-    @mute_logger('odoo.addons.mail.models.mail_mail', 'odoo.models.unlink')
+    @mute_logger('weth.addons.mail.models.mail_mail', 'weth.models.unlink')
     def test_channel_recipients_mention(self):
         """Posting a message on a channel should not send emails to internal users with notification type email"""
         no_user_partner = self.env["res.partner"].create({"name": "No User", "email": "nouser@example.com"})
@@ -393,7 +393,7 @@ class TestChannelInternals(MailCommon, HttpCase):
         ])
         self.assertEqual(len(mentions_notif), 1, "Shoule have Inbox notification for the mentioned internal user")
 
-    @mute_logger('odoo.addons.mail.models.mail_mail', 'odoo.models.unlink')
+    @mute_logger('weth.addons.mail.models.mail_mail', 'weth.models.unlink')
     def test_channel_recipients_user_of_partner_with_archived_user(self):
         """The user picked for a recipient partner is one of its active users."""
         archived_only, two_logins = self.env["res.partner"].with_context(self._test_context).create([
@@ -421,7 +421,7 @@ class TestChannelInternals(MailCommon, HttpCase):
             {archived_only.id: None, two_logins.id: new_login.id},
         )
 
-    @mute_logger("odoo.models.unlink")
+    @mute_logger("weth.models.unlink")
     def test_channel_special_mention(self):
         """ Posting a message on a channel should support special mention """
         self.test_channel._add_members(users=self.user_employee | self.user_employee_nomail)
@@ -437,7 +437,7 @@ class TestChannelInternals(MailCommon, HttpCase):
                 message_type="comment", subtype_xmlid="mail.mt_comment")
         self.assertEqual(new_msg.partner_ids, self.user_employee.partner_id)
 
-    @mute_logger('odoo.models.unlink')
+    @mute_logger('weth.models.unlink')
     def test_channel_user_synchronize(self):
         """Archiving / deleting a user should automatically unsubscribe related partner from group restricted channels"""
         group_restricted_channel = self.env['discuss.channel']._create_channel(name='Sic Mundus', group_id=self.env.ref('base.group_user').id)
@@ -455,7 +455,7 @@ class TestChannelInternals(MailCommon, HttpCase):
         self.assertEqual(group_restricted_channel.channel_partner_ids, self.env['res.partner'])
         self.assertEqual(self.test_channel.channel_partner_ids, self.user_employee.partner_id | self.partner_employee_nomail)
 
-    @mute_logger("odoo.models.unlink")
+    @mute_logger("weth.models.unlink")
     def test_channel_user_synchronize_partner_with_several_users(self):
         """A partner stays in a group restricted channel as long as one of its users has access"""
         group_restricted_channel = self.env["discuss.channel"]._create_channel(
@@ -766,7 +766,7 @@ class TestChannelInternals(MailCommon, HttpCase):
         channel.message_post(attachments=[('audio', b'OggS\x00\x02', {'voice': True})])
         self.assertTrue(channel.message_ids.attachment_ids.voice_ids, "message's attachment should have voice metadata")
 
-    @mute_logger('odoo.models.unlink')
+    @mute_logger('weth.models.unlink')
     def test_channel_unsubscribe_auto(self):
         """ Archiving / deleting a user should automatically unsubscribe related
         partner from private channels """
@@ -825,7 +825,7 @@ class TestChannelInternals(MailCommon, HttpCase):
         )
 
     @users('employee')
-    @mute_logger('odoo.models.unlink')
+    @mute_logger('weth.models.unlink')
     def test_channel_private_unfollow(self):
         """ Test that a partner can leave a channel/group but not a chat."""
         group_restricted_channel = self.env['discuss.channel']._create_channel(name='Channel for Groups', group_id=self.env.ref('base.group_user').id)
@@ -1516,7 +1516,7 @@ class TestChannelInternals(MailCommon, HttpCase):
         self.assertEqual(chat.channel_member_ids.partner_id, self.partner_employee)
         self.assertEqual(chat.member_indices, member_indices)
 
-    @mute_logger("odoo.sql_db")
+    @mute_logger("weth.sql_db")
     @users("employee")
     def test_chat_is_rejoined_when_its_member_was_removed(self):
         chat = self.env["discuss.channel"]._get_or_create_chat(self.test_partner.ids)
@@ -1538,7 +1538,7 @@ class TestChannelInternals(MailCommon, HttpCase):
             self.partner_employee | self.test_partner,
         )
 
-    @mute_logger("odoo.sql_db")
+    @mute_logger("weth.sql_db")
     @users("employee")
     def test_chat_is_joined_when_created_concurrently(self):
         chat = self.env["discuss.channel"]._get_or_create_chat(self.test_partner.ids)
@@ -1561,7 +1561,7 @@ class TestChannelInternals(MailCommon, HttpCase):
             self.partner_employee | self.test_partner,
         )
 
-    @mute_logger("odoo.sql_db")
+    @mute_logger("weth.sql_db")
     def test_chat_cannot_be_duplicated_with_same_partners(self):
         self.env["discuss.channel"]._get_or_create_chat(self.partner_employee.ids)
         with self.assertRaises(errors.UniqueViolation):

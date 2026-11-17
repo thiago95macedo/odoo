@@ -1,5 +1,5 @@
-from odoo.addons.google_account.controllers.main import GoogleAuth
-from odoo.http import request
+from weth.addons.google_account.controllers.main import GoogleAuth
+from weth.http import request
 
 
 class GoogleCalendarAuth(GoogleAuth):

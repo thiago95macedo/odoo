@@ -1,8 +1,8 @@
 // @ts-check
 
 /**
- * @typedef {import("@odoo/o-spreadsheet").CompiledFormula} CompiledFormula
- * @typedef {import("@odoo/o-spreadsheet").CoreGetters} CoreGetters
+ * @typedef {import("@weth/o-spreadsheet").CompiledFormula} CompiledFormula
+ * @typedef {import("@weth/o-spreadsheet").CoreGetters} CoreGetters
  * @typedef  {import("../helpers/odoo_functions_helpers").OdooFunctionDescription} OdooFunctionDescription
  * */
 

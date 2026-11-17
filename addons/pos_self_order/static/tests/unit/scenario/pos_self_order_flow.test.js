@@ -1,5 +1,5 @@
-import { expect, test } from "@odoo/hoot";
-import { mockDate } from "@odoo/hoot-mock";
+import { expect, test } from "@weth/hoot";
+import { mockDate } from "@weth/hoot-mock";
 import { patchWithCleanup } from "@web/../tests/web_test_helpers";
 import { setupSelfPosEnv } from "@pos_self_order/../tests/unit/utils";
 import { definePosSelfModels } from "@pos_self_order/../tests/unit/data/generate_model_definitions";

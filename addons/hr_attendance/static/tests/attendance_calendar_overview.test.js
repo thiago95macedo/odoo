@@ -1,5 +1,5 @@
-import { animationFrame, expect, test } from "@odoo/hoot";
-import { Component, signal, xml } from "@odoo/owl";
+import { animationFrame, expect, test } from "@weth/hoot";
+import { Component, signal, xml } from "@weth/owl";
 import { defineMailModels } from "@mail/../tests/mail_test_helpers";
 import { defineModels, models, mountWithCleanup, onRpc } from "@web/../tests/web_test_helpers";
 import { AttendanceCalendarOverview } from "@hr_attendance/components/attendance_calendar/attendance_calendar_overview";

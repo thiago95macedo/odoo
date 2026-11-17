@@ -1,7 +1,7 @@
 import { setupInteractionWhiteList, startInteractions } from "@web/../tests/public/helpers";
-import { beforeEach, describe, expect, getFixture, test } from "@odoo/hoot";
-import { queryAll } from "@odoo/hoot-dom";
-import { enableTransitions } from "@odoo/hoot-mock";
+import { beforeEach, describe, expect, getFixture, test } from "@weth/hoot";
+import { queryAll } from "@weth/hoot-dom";
+import { enableTransitions } from "@weth/hoot-mock";
 import { onceAllImagesLoaded } from "@website/utils/images";
 import { defaultCarouselStyleSnippet } from "./carousel_helpers";
 

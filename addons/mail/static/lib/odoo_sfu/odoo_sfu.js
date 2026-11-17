@@ -1,7 +1,7 @@
-/* @odoo-module */
+/* @weth-module */
 var lib$4 = {};
 
-var browser = {exports: {}};
+var browser = { exports: {} };
 
 /**
  * Helpers.
@@ -10,168 +10,168 @@ var browser = {exports: {}};
 var ms;
 var hasRequiredMs;
 
-function requireMs () {
-	if (hasRequiredMs) return ms;
-	hasRequiredMs = 1;
-	var s = 1000;
-	var m = s * 60;
-	var h = m * 60;
-	var d = h * 24;
-	var w = d * 7;
-	var y = d * 365.25;
+function requireMs() {
+    if (hasRequiredMs) return ms;
+    hasRequiredMs = 1;
+    var s = 1000;
+    var m = s * 60;
+    var h = m * 60;
+    var d = h * 24;
+    var w = d * 7;
+    var y = d * 365.25;
 
-	/**
-	 * Parse or format the given `val`.
-	 *
-	 * Options:
-	 *
-	 *  - `long` verbose formatting [false]
-	 *
-	 * @param {String|Number} val
-	 * @param {Object} [options]
-	 * @throws {Error} throw an error if val is not a non-empty string or a number
-	 * @return {String|Number}
-	 * @api public
-	 */
+    /**
+     * Parse or format the given `val`.
+     *
+     * Options:
+     *
+     *  - `long` verbose formatting [false]
+     *
+     * @param {String|Number} val
+     * @param {Object} [options]
+     * @throws {Error} throw an error if val is not a non-empty string or a number
+     * @return {String|Number}
+     * @api public
+     */
 
-	ms = function (val, options) {
-	  options = options || {};
-	  var type = typeof val;
-	  if (type === 'string' && val.length > 0) {
-	    return parse(val);
-	  } else if (type === 'number' && isFinite(val)) {
-	    return options.long ? fmtLong(val) : fmtShort(val);
-	  }
-	  throw new Error(
-	    'val is not a non-empty string or a valid number. val=' +
-	      JSON.stringify(val)
-	  );
-	};
+    ms = function (val, options) {
+        options = options || {};
+        var type = typeof val;
+        if (type === 'string' && val.length > 0) {
+            return parse(val);
+        } else if (type === 'number' && isFinite(val)) {
+            return options.long ? fmtLong(val) : fmtShort(val);
+        }
+        throw new Error(
+            'val is not a non-empty string or a valid number. val=' +
+            JSON.stringify(val)
+        );
+    };
 
-	/**
-	 * Parse the given `str` and return milliseconds.
-	 *
-	 * @param {String} str
-	 * @return {Number}
-	 * @api private
-	 */
+    /**
+     * Parse the given `str` and return milliseconds.
+     *
+     * @param {String} str
+     * @return {Number}
+     * @api private
+     */
 
-	function parse(str) {
-	  str = String(str);
-	  if (str.length > 100) {
-	    return;
-	  }
-	  var match = /^(-?(?:\d+)?\.?\d+) *(milliseconds?|msecs?|ms|seconds?|secs?|s|minutes?|mins?|m|hours?|hrs?|h|days?|d|weeks?|w|years?|yrs?|y)?$/i.exec(
-	    str
-	  );
-	  if (!match) {
-	    return;
-	  }
-	  var n = parseFloat(match[1]);
-	  var type = (match[2] || 'ms').toLowerCase();
-	  switch (type) {
-	    case 'years':
-	    case 'year':
-	    case 'yrs':
-	    case 'yr':
-	    case 'y':
-	      return n * y;
-	    case 'weeks':
-	    case 'week':
-	    case 'w':
-	      return n * w;
-	    case 'days':
-	    case 'day':
-	    case 'd':
-	      return n * d;
-	    case 'hours':
-	    case 'hour':
-	    case 'hrs':
-	    case 'hr':
-	    case 'h':
-	      return n * h;
-	    case 'minutes':
-	    case 'minute':
-	    case 'mins':
-	    case 'min':
-	    case 'm':
-	      return n * m;
-	    case 'seconds':
-	    case 'second':
-	    case 'secs':
-	    case 'sec':
-	    case 's':
-	      return n * s;
-	    case 'milliseconds':
-	    case 'millisecond':
-	    case 'msecs':
-	    case 'msec':
-	    case 'ms':
-	      return n;
-	    default:
-	      return undefined;
-	  }
-	}
+    function parse(str) {
+        str = String(str);
+        if (str.length > 100) {
+            return;
+        }
+        var match = /^(-?(?:\d+)?\.?\d+) *(milliseconds?|msecs?|ms|seconds?|secs?|s|minutes?|mins?|m|hours?|hrs?|h|days?|d|weeks?|w|years?|yrs?|y)?$/i.exec(
+            str
+        );
+        if (!match) {
+            return;
+        }
+        var n = parseFloat(match[1]);
+        var type = (match[2] || 'ms').toLowerCase();
+        switch (type) {
+            case 'years':
+            case 'year':
+            case 'yrs':
+            case 'yr':
+            case 'y':
+                return n * y;
+            case 'weeks':
+            case 'week':
+            case 'w':
+                return n * w;
+            case 'days':
+            case 'day':
+            case 'd':
+                return n * d;
+            case 'hours':
+            case 'hour':
+            case 'hrs':
+            case 'hr':
+            case 'h':
+                return n * h;
+            case 'minutes':
+            case 'minute':
+            case 'mins':
+            case 'min':
+            case 'm':
+                return n * m;
+            case 'seconds':
+            case 'second':
+            case 'secs':
+            case 'sec':
+            case 's':
+                return n * s;
+            case 'milliseconds':
+            case 'millisecond':
+            case 'msecs':
+            case 'msec':
+            case 'ms':
+                return n;
+            default:
+                return undefined;
+        }
+    }
 
-	/**
-	 * Short format for `ms`.
-	 *
-	 * @param {Number} ms
-	 * @return {String}
-	 * @api private
-	 */
+    /**
+     * Short format for `ms`.
+     *
+     * @param {Number} ms
+     * @return {String}
+     * @api private
+     */
 
-	function fmtShort(ms) {
-	  var msAbs = Math.abs(ms);
-	  if (msAbs >= d) {
-	    return Math.round(ms / d) + 'd';
-	  }
-	  if (msAbs >= h) {
-	    return Math.round(ms / h) + 'h';
-	  }
-	  if (msAbs >= m) {
-	    return Math.round(ms / m) + 'm';
-	  }
-	  if (msAbs >= s) {
-	    return Math.round(ms / s) + 's';
-	  }
-	  return ms + 'ms';
-	}
+    function fmtShort(ms) {
+        var msAbs = Math.abs(ms);
+        if (msAbs >= d) {
+            return Math.round(ms / d) + 'd';
+        }
+        if (msAbs >= h) {
+            return Math.round(ms / h) + 'h';
+        }
+        if (msAbs >= m) {
+            return Math.round(ms / m) + 'm';
+        }
+        if (msAbs >= s) {
+            return Math.round(ms / s) + 's';
+        }
+        return ms + 'ms';
+    }
 
-	/**
-	 * Long format for `ms`.
-	 *
-	 * @param {Number} ms
-	 * @return {String}
-	 * @api private
-	 */
+    /**
+     * Long format for `ms`.
+     *
+     * @param {Number} ms
+     * @return {String}
+     * @api private
+     */
 
-	function fmtLong(ms) {
-	  var msAbs = Math.abs(ms);
-	  if (msAbs >= d) {
-	    return plural(ms, msAbs, d, 'day');
-	  }
-	  if (msAbs >= h) {
-	    return plural(ms, msAbs, h, 'hour');
-	  }
-	  if (msAbs >= m) {
-	    return plural(ms, msAbs, m, 'minute');
-	  }
-	  if (msAbs >= s) {
-	    return plural(ms, msAbs, s, 'second');
-	  }
-	  return ms + ' ms';
-	}
+    function fmtLong(ms) {
+        var msAbs = Math.abs(ms);
+        if (msAbs >= d) {
+            return plural(ms, msAbs, d, 'day');
+        }
+        if (msAbs >= h) {
+            return plural(ms, msAbs, h, 'hour');
+        }
+        if (msAbs >= m) {
+            return plural(ms, msAbs, m, 'minute');
+        }
+        if (msAbs >= s) {
+            return plural(ms, msAbs, s, 'second');
+        }
+        return ms + ' ms';
+    }
 
-	/**
-	 * Pluralization helper.
-	 */
+    /**
+     * Pluralization helper.
+     */
 
-	function plural(ms, msAbs, n, name) {
-	  var isPlural = msAbs >= n * 1.5;
-	  return Math.round(ms / n) + ' ' + name + (isPlural ? 's' : '');
-	}
-	return ms;
+    function plural(ms, msAbs, n, name) {
+        var isPlural = msAbs >= n * 1.5;
+        return Math.round(ms / n) + ' ' + name + (isPlural ? 's' : '');
+    }
+    return ms;
 }
 
 /**
@@ -180,288 +180,288 @@ function requireMs () {
  */
 
 function setup(env) {
-	createDebug.debug = createDebug;
-	createDebug.default = createDebug;
-	createDebug.coerce = coerce;
-	createDebug.disable = disable;
-	createDebug.enable = enable;
-	createDebug.enabled = enabled;
-	createDebug.humanize = requireMs();
-	createDebug.destroy = destroy;
+    createDebug.debug = createDebug;
+    createDebug.default = createDebug;
+    createDebug.coerce = coerce;
+    createDebug.disable = disable;
+    createDebug.enable = enable;
+    createDebug.enabled = enabled;
+    createDebug.humanize = requireMs();
+    createDebug.destroy = destroy;
 
-	Object.keys(env).forEach(key => {
-		createDebug[key] = env[key];
-	});
+    Object.keys(env).forEach(key => {
+        createDebug[key] = env[key];
+    });
 
-	/**
-	* The currently active debug mode names, and names to skip.
-	*/
+    /**
+    * The currently active debug mode names, and names to skip.
+    */
 
-	createDebug.names = [];
-	createDebug.skips = [];
+    createDebug.names = [];
+    createDebug.skips = [];
 
-	/**
-	* Map of special "%n" handling functions, for the debug "format" argument.
-	*
-	* Valid key names are a single, lower or upper-case letter, i.e. "n" and "N".
-	*/
-	createDebug.formatters = {};
+    /**
+    * Map of special "%n" handling functions, for the debug "format" argument.
+    *
+    * Valid key names are a single, lower or upper-case letter, i.e. "n" and "N".
+    */
+    createDebug.formatters = {};
 
-	/**
-	* Selects a color for a debug namespace
-	* @param {String} namespace The namespace string for the debug instance to be colored
-	* @return {Number|String} An ANSI color code for the given namespace
-	* @api private
-	*/
-	function selectColor(namespace) {
-		let hash = 0;
+    /**
+    * Selects a color for a debug namespace
+    * @param {String} namespace The namespace string for the debug instance to be colored
+    * @return {Number|String} An ANSI color code for the given namespace
+    * @api private
+    */
+    function selectColor(namespace) {
+        let hash = 0;
 
-		for (let i = 0; i < namespace.length; i++) {
-			hash = ((hash << 5) - hash) + namespace.charCodeAt(i);
-			hash |= 0; // Convert to 32bit integer
-		}
+        for (let i = 0; i < namespace.length; i++) {
+            hash = ((hash << 5) - hash) + namespace.charCodeAt(i);
+            hash |= 0; // Convert to 32bit integer
+        }
 
-		return createDebug.colors[Math.abs(hash) % createDebug.colors.length];
-	}
-	createDebug.selectColor = selectColor;
+        return createDebug.colors[Math.abs(hash) % createDebug.colors.length];
+    }
+    createDebug.selectColor = selectColor;
 
-	/**
-	* Create a debugger with the given `namespace`.
-	*
-	* @param {String} namespace
-	* @return {Function}
-	* @api public
-	*/
-	function createDebug(namespace) {
-		let prevTime;
-		let enableOverride = null;
-		let namespacesCache;
-		let enabledCache;
+    /**
+    * Create a debugger with the given `namespace`.
+    *
+    * @param {String} namespace
+    * @return {Function}
+    * @api public
+    */
+    function createDebug(namespace) {
+        let prevTime;
+        let enableOverride = null;
+        let namespacesCache;
+        let enabledCache;
 
-		function debug(...args) {
-			// Disabled?
-			if (!debug.enabled) {
-				return;
-			}
+        function debug(...args) {
+            // Disabled?
+            if (!debug.enabled) {
+                return;
+            }
 
-			const self = debug;
+            const self = debug;
 
-			// Set `diff` timestamp
-			const curr = Number(new Date());
-			const ms = curr - (prevTime || curr);
-			self.diff = ms;
-			self.prev = prevTime;
-			self.curr = curr;
-			prevTime = curr;
+            // Set `diff` timestamp
+            const curr = Number(new Date());
+            const ms = curr - (prevTime || curr);
+            self.diff = ms;
+            self.prev = prevTime;
+            self.curr = curr;
+            prevTime = curr;
 
-			args[0] = createDebug.coerce(args[0]);
+            args[0] = createDebug.coerce(args[0]);
 
-			if (typeof args[0] !== 'string') {
-				// Anything else let's inspect with %O
-				args.unshift('%O');
-			}
+            if (typeof args[0] !== 'string') {
+                // Anything else let's inspect with %O
+                args.unshift('%O');
+            }
 
-			// Apply any `formatters` transformations
-			let index = 0;
-			args[0] = args[0].replace(/%([a-zA-Z%])/g, (match, format) => {
-				// If we encounter an escaped % then don't increase the array index
-				if (match === '%%') {
-					return '%';
-				}
-				index++;
-				const formatter = createDebug.formatters[format];
-				if (typeof formatter === 'function') {
-					const val = args[index];
-					match = formatter.call(self, val);
+            // Apply any `formatters` transformations
+            let index = 0;
+            args[0] = args[0].replace(/%([a-zA-Z%])/g, (match, format) => {
+                // If we encounter an escaped % then don't increase the array index
+                if (match === '%%') {
+                    return '%';
+                }
+                index++;
+                const formatter = createDebug.formatters[format];
+                if (typeof formatter === 'function') {
+                    const val = args[index];
+                    match = formatter.call(self, val);
 
-					// Now we need to remove `args[index]` since it's inlined in the `format`
-					args.splice(index, 1);
-					index--;
-				}
-				return match;
-			});
+                    // Now we need to remove `args[index]` since it's inlined in the `format`
+                    args.splice(index, 1);
+                    index--;
+                }
+                return match;
+            });
 
-			// Apply env-specific formatting (colors, etc.)
-			createDebug.formatArgs.call(self, args);
+            // Apply env-specific formatting (colors, etc.)
+            createDebug.formatArgs.call(self, args);
 
-			const logFn = self.log || createDebug.log;
-			logFn.apply(self, args);
-		}
+            const logFn = self.log || createDebug.log;
+            logFn.apply(self, args);
+        }
 
-		debug.namespace = namespace;
-		debug.useColors = createDebug.useColors();
-		debug.color = createDebug.selectColor(namespace);
-		debug.extend = extend;
-		debug.destroy = createDebug.destroy; // XXX Temporary. Will be removed in the next major release.
+        debug.namespace = namespace;
+        debug.useColors = createDebug.useColors();
+        debug.color = createDebug.selectColor(namespace);
+        debug.extend = extend;
+        debug.destroy = createDebug.destroy; // XXX Temporary. Will be removed in the next major release.
 
-		Object.defineProperty(debug, 'enabled', {
-			enumerable: true,
-			configurable: false,
-			get: () => {
-				if (enableOverride !== null) {
-					return enableOverride;
-				}
-				if (namespacesCache !== createDebug.namespaces) {
-					namespacesCache = createDebug.namespaces;
-					enabledCache = createDebug.enabled(namespace);
-				}
+        Object.defineProperty(debug, 'enabled', {
+            enumerable: true,
+            configurable: false,
+            get: () => {
+                if (enableOverride !== null) {
+                    return enableOverride;
+                }
+                if (namespacesCache !== createDebug.namespaces) {
+                    namespacesCache = createDebug.namespaces;
+                    enabledCache = createDebug.enabled(namespace);
+                }
 
-				return enabledCache;
-			},
-			set: v => {
-				enableOverride = v;
-			}
-		});
+                return enabledCache;
+            },
+            set: v => {
+                enableOverride = v;
+            }
+        });
 
-		// Env-specific initialization logic for debug instances
-		if (typeof createDebug.init === 'function') {
-			createDebug.init(debug);
-		}
+        // Env-specific initialization logic for debug instances
+        if (typeof createDebug.init === 'function') {
+            createDebug.init(debug);
+        }
 
-		return debug;
-	}
+        return debug;
+    }
 
-	function extend(namespace, delimiter) {
-		const newDebug = createDebug(this.namespace + (typeof delimiter === 'undefined' ? ':' : delimiter) + namespace);
-		newDebug.log = this.log;
-		return newDebug;
-	}
+    function extend(namespace, delimiter) {
+        const newDebug = createDebug(this.namespace + (typeof delimiter === 'undefined' ? ':' : delimiter) + namespace);
+        newDebug.log = this.log;
+        return newDebug;
+    }
 
-	/**
-	* Enables a debug mode by namespaces. This can include modes
-	* separated by a colon and wildcards.
-	*
-	* @param {String} namespaces
-	* @api public
-	*/
-	function enable(namespaces) {
-		createDebug.save(namespaces);
-		createDebug.namespaces = namespaces;
+    /**
+    * Enables a debug mode by namespaces. This can include modes
+    * separated by a colon and wildcards.
+    *
+    * @param {String} namespaces
+    * @api public
+    */
+    function enable(namespaces) {
+        createDebug.save(namespaces);
+        createDebug.namespaces = namespaces;
 
-		createDebug.names = [];
-		createDebug.skips = [];
+        createDebug.names = [];
+        createDebug.skips = [];
 
-		const split = (typeof namespaces === 'string' ? namespaces : '')
-			.trim()
-			.replace(/\s+/g, ',')
-			.split(',')
-			.filter(Boolean);
+        const split = (typeof namespaces === 'string' ? namespaces : '')
+            .trim()
+            .replace(/\s+/g, ',')
+            .split(',')
+            .filter(Boolean);
 
-		for (const ns of split) {
-			if (ns[0] === '-') {
-				createDebug.skips.push(ns.slice(1));
-			} else {
-				createDebug.names.push(ns);
-			}
-		}
-	}
+        for (const ns of split) {
+            if (ns[0] === '-') {
+                createDebug.skips.push(ns.slice(1));
+            } else {
+                createDebug.names.push(ns);
+            }
+        }
+    }
 
-	/**
-	 * Checks if the given string matches a namespace template, honoring
-	 * asterisks as wildcards.
-	 *
-	 * @param {String} search
-	 * @param {String} template
-	 * @return {Boolean}
-	 */
-	function matchesTemplate(search, template) {
-		let searchIndex = 0;
-		let templateIndex = 0;
-		let starIndex = -1;
-		let matchIndex = 0;
+    /**
+     * Checks if the given string matches a namespace template, honoring
+     * asterisks as wildcards.
+     *
+     * @param {String} search
+     * @param {String} template
+     * @return {Boolean}
+     */
+    function matchesTemplate(search, template) {
+        let searchIndex = 0;
+        let templateIndex = 0;
+        let starIndex = -1;
+        let matchIndex = 0;
 
-		while (searchIndex < search.length) {
-			if (templateIndex < template.length && (template[templateIndex] === search[searchIndex] || template[templateIndex] === '*')) {
-				// Match character or proceed with wildcard
-				if (template[templateIndex] === '*') {
-					starIndex = templateIndex;
-					matchIndex = searchIndex;
-					templateIndex++; // Skip the '*'
-				} else {
-					searchIndex++;
-					templateIndex++;
-				}
-			} else if (starIndex !== -1) { // eslint-disable-line no-negated-condition
-				// Backtrack to the last '*' and try to match more characters
-				templateIndex = starIndex + 1;
-				matchIndex++;
-				searchIndex = matchIndex;
-			} else {
-				return false; // No match
-			}
-		}
+        while (searchIndex < search.length) {
+            if (templateIndex < template.length && (template[templateIndex] === search[searchIndex] || template[templateIndex] === '*')) {
+                // Match character or proceed with wildcard
+                if (template[templateIndex] === '*') {
+                    starIndex = templateIndex;
+                    matchIndex = searchIndex;
+                    templateIndex++; // Skip the '*'
+                } else {
+                    searchIndex++;
+                    templateIndex++;
+                }
+            } else if (starIndex !== -1) { // eslint-disable-line no-negated-condition
+                // Backtrack to the last '*' and try to match more characters
+                templateIndex = starIndex + 1;
+                matchIndex++;
+                searchIndex = matchIndex;
+            } else {
+                return false; // No match
+            }
+        }
 
-		// Handle trailing '*' in template
-		while (templateIndex < template.length && template[templateIndex] === '*') {
-			templateIndex++;
-		}
+        // Handle trailing '*' in template
+        while (templateIndex < template.length && template[templateIndex] === '*') {
+            templateIndex++;
+        }
 
-		return templateIndex === template.length;
-	}
+        return templateIndex === template.length;
+    }
 
-	/**
-	* Disable debug output.
-	*
-	* @return {String} namespaces
-	* @api public
-	*/
-	function disable() {
-		const namespaces = [
-			...createDebug.names,
-			...createDebug.skips.map(namespace => '-' + namespace)
-		].join(',');
-		createDebug.enable('');
-		return namespaces;
-	}
+    /**
+    * Disable debug output.
+    *
+    * @return {String} namespaces
+    * @api public
+    */
+    function disable() {
+        const namespaces = [
+            ...createDebug.names,
+            ...createDebug.skips.map(namespace => '-' + namespace)
+        ].join(',');
+        createDebug.enable('');
+        return namespaces;
+    }
 
-	/**
-	* Returns true if the given mode name is enabled, false otherwise.
-	*
-	* @param {String} name
-	* @return {Boolean}
-	* @api public
-	*/
-	function enabled(name) {
-		for (const skip of createDebug.skips) {
-			if (matchesTemplate(name, skip)) {
-				return false;
-			}
-		}
+    /**
+    * Returns true if the given mode name is enabled, false otherwise.
+    *
+    * @param {String} name
+    * @return {Boolean}
+    * @api public
+    */
+    function enabled(name) {
+        for (const skip of createDebug.skips) {
+            if (matchesTemplate(name, skip)) {
+                return false;
+            }
+        }
 
-		for (const ns of createDebug.names) {
-			if (matchesTemplate(name, ns)) {
-				return true;
-			}
-		}
+        for (const ns of createDebug.names) {
+            if (matchesTemplate(name, ns)) {
+                return true;
+            }
+        }
 
-		return false;
-	}
+        return false;
+    }
 
-	/**
-	* Coerce `val`.
-	*
-	* @param {Mixed} val
-	* @return {Mixed}
-	* @api private
-	*/
-	function coerce(val) {
-		if (val instanceof Error) {
-			return val.stack || val.message;
-		}
-		return val;
-	}
+    /**
+    * Coerce `val`.
+    *
+    * @param {Mixed} val
+    * @return {Mixed}
+    * @api private
+    */
+    function coerce(val) {
+        if (val instanceof Error) {
+            return val.stack || val.message;
+        }
+        return val;
+    }
 
-	/**
-	* XXX DO NOT USE. This is a temporary stub function.
-	* XXX It WILL be removed in the next major release.
-	*/
-	function destroy() {
-		console.warn('Instance method `debug.destroy()` is deprecated and no longer does anything. It will be removed in the next major version of `debug`.');
-	}
+    /**
+    * XXX DO NOT USE. This is a temporary stub function.
+    * XXX It WILL be removed in the next major release.
+    */
+    function destroy() {
+        console.warn('Instance method `debug.destroy()` is deprecated and no longer does anything. It will be removed in the next major version of `debug`.');
+    }
 
-	createDebug.enable(createDebug.load());
+    createDebug.enable(createDebug.load());
 
-	return createDebug;
+    return createDebug;
 }
 
 var common = setup;
@@ -470,277 +470,277 @@ var common = setup;
 browser.exports;
 
 (function (module, exports) {
-	/**
-	 * This is the web browser implementation of `debug()`.
-	 */
+    /**
+     * This is the web browser implementation of `debug()`.
+     */
 
-	exports.formatArgs = formatArgs;
-	exports.save = save;
-	exports.load = load;
-	exports.useColors = useColors;
-	exports.storage = localstorage();
-	exports.destroy = (() => {
-		let warned = false;
+    exports.formatArgs = formatArgs;
+    exports.save = save;
+    exports.load = load;
+    exports.useColors = useColors;
+    exports.storage = localstorage();
+    exports.destroy = (() => {
+        let warned = false;
 
-		return () => {
-			if (!warned) {
-				warned = true;
-				console.warn('Instance method `debug.destroy()` is deprecated and no longer does anything. It will be removed in the next major version of `debug`.');
-			}
-		};
-	})();
+        return () => {
+            if (!warned) {
+                warned = true;
+                console.warn('Instance method `debug.destroy()` is deprecated and no longer does anything. It will be removed in the next major version of `debug`.');
+            }
+        };
+    })();
 
-	/**
-	 * Colors.
-	 */
+    /**
+     * Colors.
+     */
 
-	exports.colors = [
-		'#0000CC',
-		'#0000FF',
-		'#0033CC',
-		'#0033FF',
-		'#0066CC',
-		'#0066FF',
-		'#0099CC',
-		'#0099FF',
-		'#00CC00',
-		'#00CC33',
-		'#00CC66',
-		'#00CC99',
-		'#00CCCC',
-		'#00CCFF',
-		'#3300CC',
-		'#3300FF',
-		'#3333CC',
-		'#3333FF',
-		'#3366CC',
-		'#3366FF',
-		'#3399CC',
-		'#3399FF',
-		'#33CC00',
-		'#33CC33',
-		'#33CC66',
-		'#33CC99',
-		'#33CCCC',
-		'#33CCFF',
-		'#6600CC',
-		'#6600FF',
-		'#6633CC',
-		'#6633FF',
-		'#66CC00',
-		'#66CC33',
-		'#9900CC',
-		'#9900FF',
-		'#9933CC',
-		'#9933FF',
-		'#99CC00',
-		'#99CC33',
-		'#CC0000',
-		'#CC0033',
-		'#CC0066',
-		'#CC0099',
-		'#CC00CC',
-		'#CC00FF',
-		'#CC3300',
-		'#CC3333',
-		'#CC3366',
-		'#CC3399',
-		'#CC33CC',
-		'#CC33FF',
-		'#CC6600',
-		'#CC6633',
-		'#CC9900',
-		'#CC9933',
-		'#CCCC00',
-		'#CCCC33',
-		'#FF0000',
-		'#FF0033',
-		'#FF0066',
-		'#FF0099',
-		'#FF00CC',
-		'#FF00FF',
-		'#FF3300',
-		'#FF3333',
-		'#FF3366',
-		'#FF3399',
-		'#FF33CC',
-		'#FF33FF',
-		'#FF6600',
-		'#FF6633',
-		'#FF9900',
-		'#FF9933',
-		'#FFCC00',
-		'#FFCC33'
-	];
+    exports.colors = [
+        '#0000CC',
+        '#0000FF',
+        '#0033CC',
+        '#0033FF',
+        '#0066CC',
+        '#0066FF',
+        '#0099CC',
+        '#0099FF',
+        '#00CC00',
+        '#00CC33',
+        '#00CC66',
+        '#00CC99',
+        '#00CCCC',
+        '#00CCFF',
+        '#3300CC',
+        '#3300FF',
+        '#3333CC',
+        '#3333FF',
+        '#3366CC',
+        '#3366FF',
+        '#3399CC',
+        '#3399FF',
+        '#33CC00',
+        '#33CC33',
+        '#33CC66',
+        '#33CC99',
+        '#33CCCC',
+        '#33CCFF',
+        '#6600CC',
+        '#6600FF',
+        '#6633CC',
+        '#6633FF',
+        '#66CC00',
+        '#66CC33',
+        '#9900CC',
+        '#9900FF',
+        '#9933CC',
+        '#9933FF',
+        '#99CC00',
+        '#99CC33',
+        '#CC0000',
+        '#CC0033',
+        '#CC0066',
+        '#CC0099',
+        '#CC00CC',
+        '#CC00FF',
+        '#CC3300',
+        '#CC3333',
+        '#CC3366',
+        '#CC3399',
+        '#CC33CC',
+        '#CC33FF',
+        '#CC6600',
+        '#CC6633',
+        '#CC9900',
+        '#CC9933',
+        '#CCCC00',
+        '#CCCC33',
+        '#FF0000',
+        '#FF0033',
+        '#FF0066',
+        '#FF0099',
+        '#FF00CC',
+        '#FF00FF',
+        '#FF3300',
+        '#FF3333',
+        '#FF3366',
+        '#FF3399',
+        '#FF33CC',
+        '#FF33FF',
+        '#FF6600',
+        '#FF6633',
+        '#FF9900',
+        '#FF9933',
+        '#FFCC00',
+        '#FFCC33'
+    ];
 
-	/**
-	 * Currently only WebKit-based Web Inspectors, Firefox >= v31,
-	 * and the Firebug extension (any Firefox version) are known
-	 * to support "%c" CSS customizations.
-	 *
-	 * TODO: add a `localStorage` variable to explicitly enable/disable colors
-	 */
+    /**
+     * Currently only WebKit-based Web Inspectors, Firefox >= v31,
+     * and the Firebug extension (any Firefox version) are known
+     * to support "%c" CSS customizations.
+     *
+     * TODO: add a `localStorage` variable to explicitly enable/disable colors
+     */
 
-	// eslint-disable-next-line complexity
-	function useColors() {
-		// NB: In an Electron preload script, document will be defined but not fully
-		// initialized. Since we know we're in Chrome, we'll just detect this case
-		// explicitly
-		if (typeof window !== 'undefined' && window.process && (window.process.type === 'renderer' || window.process.__nwjs)) {
-			return true;
-		}
+    // eslint-disable-next-line complexity
+    function useColors() {
+        // NB: In an Electron preload script, document will be defined but not fully
+        // initialized. Since we know we're in Chrome, we'll just detect this case
+        // explicitly
+        if (typeof window !== 'undefined' && window.process && (window.process.type === 'renderer' || window.process.__nwjs)) {
+            return true;
+        }
 
-		// Internet Explorer and Edge do not support colors.
-		if (typeof navigator !== 'undefined' && navigator.userAgent && navigator.userAgent.toLowerCase().match(/(edge|trident)\/(\d+)/)) {
-			return false;
-		}
+        // Internet Explorer and Edge do not support colors.
+        if (typeof navigator !== 'undefined' && navigator.userAgent && navigator.userAgent.toLowerCase().match(/(edge|trident)\/(\d+)/)) {
+            return false;
+        }
 
-		let m;
+        let m;
 
-		// Is webkit? http://stackoverflow.com/a/16459606/376773
-		// document is undefined in react-native: https://github.com/facebook/react-native/pull/1632
-		// eslint-disable-next-line no-return-assign
-		return (typeof document !== 'undefined' && document.documentElement && document.documentElement.style && document.documentElement.style.WebkitAppearance) ||
-			// Is firebug? http://stackoverflow.com/a/398120/376773
-			(typeof window !== 'undefined' && window.console && (window.console.firebug || (window.console.exception && window.console.table))) ||
-			// Is firefox >= v31?
-			// https://developer.mozilla.org/en-US/docs/Tools/Web_Console#Styling_messages
-			(typeof navigator !== 'undefined' && navigator.userAgent && (m = navigator.userAgent.toLowerCase().match(/firefox\/(\d+)/)) && parseInt(m[1], 10) >= 31) ||
-			// Double check webkit in userAgent just in case we are in a worker
-			(typeof navigator !== 'undefined' && navigator.userAgent && navigator.userAgent.toLowerCase().match(/applewebkit\/(\d+)/));
-	}
+        // Is webkit? http://stackoverflow.com/a/16459606/376773
+        // document is undefined in react-native: https://github.com/facebook/react-native/pull/1632
+        // eslint-disable-next-line no-return-assign
+        return (typeof document !== 'undefined' && document.documentElement && document.documentElement.style && document.documentElement.style.WebkitAppearance) ||
+            // Is firebug? http://stackoverflow.com/a/398120/376773
+            (typeof window !== 'undefined' && window.console && (window.console.firebug || (window.console.exception && window.console.table))) ||
+            // Is firefox >= v31?
+            // https://developer.mozilla.org/en-US/docs/Tools/Web_Console#Styling_messages
+            (typeof navigator !== 'undefined' && navigator.userAgent && (m = navigator.userAgent.toLowerCase().match(/firefox\/(\d+)/)) && parseInt(m[1], 10) >= 31) ||
+            // Double check webkit in userAgent just in case we are in a worker
+            (typeof navigator !== 'undefined' && navigator.userAgent && navigator.userAgent.toLowerCase().match(/applewebkit\/(\d+)/));
+    }
 
-	/**
-	 * Colorize log arguments if enabled.
-	 *
-	 * @api public
-	 */
+    /**
+     * Colorize log arguments if enabled.
+     *
+     * @api public
+     */
 
-	function formatArgs(args) {
-		args[0] = (this.useColors ? '%c' : '') +
-			this.namespace +
-			(this.useColors ? ' %c' : ' ') +
-			args[0] +
-			(this.useColors ? '%c ' : ' ') +
-			'+' + module.exports.humanize(this.diff);
+    function formatArgs(args) {
+        args[0] = (this.useColors ? '%c' : '') +
+            this.namespace +
+            (this.useColors ? ' %c' : ' ') +
+            args[0] +
+            (this.useColors ? '%c ' : ' ') +
+            '+' + module.exports.humanize(this.diff);
 
-		if (!this.useColors) {
-			return;
-		}
+        if (!this.useColors) {
+            return;
+        }
 
-		const c = 'color: ' + this.color;
-		args.splice(1, 0, c, 'color: inherit');
+        const c = 'color: ' + this.color;
+        args.splice(1, 0, c, 'color: inherit');
 
-		// The final "%c" is somewhat tricky, because there could be other
-		// arguments passed either before or after the %c, so we need to
-		// figure out the correct index to insert the CSS into
-		let index = 0;
-		let lastC = 0;
-		args[0].replace(/%[a-zA-Z%]/g, match => {
-			if (match === '%%') {
-				return;
-			}
-			index++;
-			if (match === '%c') {
-				// We only are interested in the *last* %c
-				// (the user may have provided their own)
-				lastC = index;
-			}
-		});
+        // The final "%c" is somewhat tricky, because there could be other
+        // arguments passed either before or after the %c, so we need to
+        // figure out the correct index to insert the CSS into
+        let index = 0;
+        let lastC = 0;
+        args[0].replace(/%[a-zA-Z%]/g, match => {
+            if (match === '%%') {
+                return;
+            }
+            index++;
+            if (match === '%c') {
+                // We only are interested in the *last* %c
+                // (the user may have provided their own)
+                lastC = index;
+            }
+        });
 
-		args.splice(lastC, 0, c);
-	}
+        args.splice(lastC, 0, c);
+    }
 
-	/**
-	 * Invokes `console.debug()` when available.
-	 * No-op when `console.debug` is not a "function".
-	 * If `console.debug` is not available, falls back
-	 * to `console.log`.
-	 *
-	 * @api public
-	 */
-	exports.log = console.debug || console.log || (() => {});
+    /**
+     * Invokes `console.debug()` when available.
+     * No-op when `console.debug` is not a "function".
+     * If `console.debug` is not available, falls back
+     * to `console.log`.
+     *
+     * @api public
+     */
+    exports.log = console.debug || console.log || (() => { });
 
-	/**
-	 * Save `namespaces`.
-	 *
-	 * @param {String} namespaces
-	 * @api private
-	 */
-	function save(namespaces) {
-		try {
-			if (namespaces) {
-				exports.storage.setItem('debug', namespaces);
-			} else {
-				exports.storage.removeItem('debug');
-			}
-		} catch (error) {
-			// Swallow
-			// XXX (@Qix-) should we be logging these?
-		}
-	}
+    /**
+     * Save `namespaces`.
+     *
+     * @param {String} namespaces
+     * @api private
+     */
+    function save(namespaces) {
+        try {
+            if (namespaces) {
+                exports.storage.setItem('debug', namespaces);
+            } else {
+                exports.storage.removeItem('debug');
+            }
+        } catch (error) {
+            // Swallow
+            // XXX (@Qix-) should we be logging these?
+        }
+    }
 
-	/**
-	 * Load `namespaces`.
-	 *
-	 * @return {String} returns the previously persisted debug modes
-	 * @api private
-	 */
-	function load() {
-		let r;
-		try {
-			r = exports.storage.getItem('debug') || exports.storage.getItem('DEBUG') ;
-		} catch (error) {
-			// Swallow
-			// XXX (@Qix-) should we be logging these?
-		}
+    /**
+     * Load `namespaces`.
+     *
+     * @return {String} returns the previously persisted debug modes
+     * @api private
+     */
+    function load() {
+        let r;
+        try {
+            r = exports.storage.getItem('debug') || exports.storage.getItem('DEBUG');
+        } catch (error) {
+            // Swallow
+            // XXX (@Qix-) should we be logging these?
+        }
 
-		// If debug isn't set in LS, and we're in Electron, try to load $DEBUG
-		if (!r && typeof process !== 'undefined' && 'env' in process) {
-			r = process.env.DEBUG;
-		}
+        // If debug isn't set in LS, and we're in Electron, try to load $DEBUG
+        if (!r && typeof process !== 'undefined' && 'env' in process) {
+            r = process.env.DEBUG;
+        }
 
-		return r;
-	}
+        return r;
+    }
 
-	/**
-	 * Localstorage attempts to return the localstorage.
-	 *
-	 * This is necessary because safari throws
-	 * when a user disables cookies/localstorage
-	 * and you attempt to access it.
-	 *
-	 * @return {LocalStorage}
-	 * @api private
-	 */
+    /**
+     * Localstorage attempts to return the localstorage.
+     *
+     * This is necessary because safari throws
+     * when a user disables cookies/localstorage
+     * and you attempt to access it.
+     *
+     * @return {LocalStorage}
+     * @api private
+     */
 
-	function localstorage() {
-		try {
-			// TVMLKit (Apple TV JS Runtime) does not have a window object, just localStorage in the global context
-			// The Browser also has localStorage in the global context.
-			return localStorage;
-		} catch (error) {
-			// Swallow
-			// XXX (@Qix-) should we be logging these?
-		}
-	}
+    function localstorage() {
+        try {
+            // TVMLKit (Apple TV JS Runtime) does not have a window object, just localStorage in the global context
+            // The Browser also has localStorage in the global context.
+            return localStorage;
+        } catch (error) {
+            // Swallow
+            // XXX (@Qix-) should we be logging these?
+        }
+    }
 
-	module.exports = common(exports);
+    module.exports = common(exports);
 
-	const {formatters} = module.exports;
+    const { formatters } = module.exports;
 
-	/**
-	 * Map %j to `JSON.stringify()`, since no Web Inspectors do that by default.
-	 */
+    /**
+     * Map %j to `JSON.stringify()`, since no Web Inspectors do that by default.
+     */
 
-	formatters.j = function (v) {
-		try {
-			return JSON.stringify(v);
-		} catch (error) {
-			return '[UnexpectedJSONParseError]: ' + error.message;
-		}
-	}; 
-} (browser, browser.exports));
+    formatters.j = function (v) {
+        try {
+            return JSON.stringify(v);
+        } catch (error) {
+            return '[UnexpectedJSONParseError]: ' + error.message;
+        }
+    };
+}(browser, browser.exports));
 
 var browserExports = browser.exports;
 
@@ -791,39 +791,39 @@ Logger$5.Logger = Logger$4;
 
 var enhancedEvents = {};
 
-var events = {exports: {}};
+var events = { exports: {} };
 
 var R = typeof Reflect === 'object' ? Reflect : null;
 var ReflectApply = R && typeof R.apply === 'function'
-  ? R.apply
-  : function ReflectApply(target, receiver, args) {
-    return Function.prototype.apply.call(target, receiver, args);
-  };
+    ? R.apply
+    : function ReflectApply(target, receiver, args) {
+        return Function.prototype.apply.call(target, receiver, args);
+    };
 
 var ReflectOwnKeys;
 if (R && typeof R.ownKeys === 'function') {
-  ReflectOwnKeys = R.ownKeys;
+    ReflectOwnKeys = R.ownKeys;
 } else if (Object.getOwnPropertySymbols) {
-  ReflectOwnKeys = function ReflectOwnKeys(target) {
-    return Object.getOwnPropertyNames(target)
-      .concat(Object.getOwnPropertySymbols(target));
-  };
+    ReflectOwnKeys = function ReflectOwnKeys(target) {
+        return Object.getOwnPropertyNames(target)
+            .concat(Object.getOwnPropertySymbols(target));
+    };
 } else {
-  ReflectOwnKeys = function ReflectOwnKeys(target) {
-    return Object.getOwnPropertyNames(target);
-  };
+    ReflectOwnKeys = function ReflectOwnKeys(target) {
+        return Object.getOwnPropertyNames(target);
+    };
 }
 
 function ProcessEmitWarning(warning) {
-  if (console && console.warn) console.warn(warning);
+    if (console && console.warn) console.warn(warning);
 }
 
 var NumberIsNaN = Number.isNaN || function NumberIsNaN(value) {
-  return value !== value;
+    return value !== value;
 };
 
 function EventEmitter() {
-  EventEmitter.init.call(this);
+    EventEmitter.init.call(this);
 }
 events.exports = EventEmitter;
 events.exports.once = once;
@@ -840,431 +840,431 @@ EventEmitter.prototype._maxListeners = undefined;
 var defaultMaxListeners = 10;
 
 function checkListener(listener) {
-  if (typeof listener !== 'function') {
-    throw new TypeError('The "listener" argument must be of type Function. Received type ' + typeof listener);
-  }
+    if (typeof listener !== 'function') {
+        throw new TypeError('The "listener" argument must be of type Function. Received type ' + typeof listener);
+    }
 }
 
 Object.defineProperty(EventEmitter, 'defaultMaxListeners', {
-  enumerable: true,
-  get: function() {
-    return defaultMaxListeners;
-  },
-  set: function(arg) {
-    if (typeof arg !== 'number' || arg < 0 || NumberIsNaN(arg)) {
-      throw new RangeError('The value of "defaultMaxListeners" is out of range. It must be a non-negative number. Received ' + arg + '.');
+    enumerable: true,
+    get: function () {
+        return defaultMaxListeners;
+    },
+    set: function (arg) {
+        if (typeof arg !== 'number' || arg < 0 || NumberIsNaN(arg)) {
+            throw new RangeError('The value of "defaultMaxListeners" is out of range. It must be a non-negative number. Received ' + arg + '.');
+        }
+        defaultMaxListeners = arg;
     }
-    defaultMaxListeners = arg;
-  }
 });
 
-EventEmitter.init = function() {
+EventEmitter.init = function () {
 
-  if (this._events === undefined ||
-      this._events === Object.getPrototypeOf(this)._events) {
-    this._events = Object.create(null);
-    this._eventsCount = 0;
-  }
+    if (this._events === undefined ||
+        this._events === Object.getPrototypeOf(this)._events) {
+        this._events = Object.create(null);
+        this._eventsCount = 0;
+    }
 
-  this._maxListeners = this._maxListeners || undefined;
+    this._maxListeners = this._maxListeners || undefined;
 };
 
 // Obviously not all Emitters should be limited to 10. This function allows
 // that to be increased. Set to zero for unlimited.
 EventEmitter.prototype.setMaxListeners = function setMaxListeners(n) {
-  if (typeof n !== 'number' || n < 0 || NumberIsNaN(n)) {
-    throw new RangeError('The value of "n" is out of range. It must be a non-negative number. Received ' + n + '.');
-  }
-  this._maxListeners = n;
-  return this;
+    if (typeof n !== 'number' || n < 0 || NumberIsNaN(n)) {
+        throw new RangeError('The value of "n" is out of range. It must be a non-negative number. Received ' + n + '.');
+    }
+    this._maxListeners = n;
+    return this;
 };
 
 function _getMaxListeners(that) {
-  if (that._maxListeners === undefined)
-    return EventEmitter.defaultMaxListeners;
-  return that._maxListeners;
+    if (that._maxListeners === undefined)
+        return EventEmitter.defaultMaxListeners;
+    return that._maxListeners;
 }
 
 EventEmitter.prototype.getMaxListeners = function getMaxListeners() {
-  return _getMaxListeners(this);
+    return _getMaxListeners(this);
 };
 
 EventEmitter.prototype.emit = function emit(type) {
-  var args = [];
-  for (var i = 1; i < arguments.length; i++) args.push(arguments[i]);
-  var doError = (type === 'error');
+    var args = [];
+    for (var i = 1; i < arguments.length; i++) args.push(arguments[i]);
+    var doError = (type === 'error');
 
-  var events = this._events;
-  if (events !== undefined)
-    doError = (doError && events.error === undefined);
-  else if (!doError)
-    return false;
+    var events = this._events;
+    if (events !== undefined)
+        doError = (doError && events.error === undefined);
+    else if (!doError)
+        return false;
 
-  // If there is no 'error' event listener then throw.
-  if (doError) {
-    var er;
-    if (args.length > 0)
-      er = args[0];
-    if (er instanceof Error) {
-      // Note: The comments on the `throw` lines are intentional, they show
-      // up in Node's output if this results in an unhandled exception.
-      throw er; // Unhandled 'error' event
+    // If there is no 'error' event listener then throw.
+    if (doError) {
+        var er;
+        if (args.length > 0)
+            er = args[0];
+        if (er instanceof Error) {
+            // Note: The comments on the `throw` lines are intentional, they show
+            // up in Node's output if this results in an unhandled exception.
+            throw er; // Unhandled 'error' event
+        }
+        // At least give some kind of context to the user
+        var err = new Error('Unhandled error.' + (er ? ' (' + er.message + ')' : ''));
+        err.context = er;
+        throw err; // Unhandled 'error' event
     }
-    // At least give some kind of context to the user
-    var err = new Error('Unhandled error.' + (er ? ' (' + er.message + ')' : ''));
-    err.context = er;
-    throw err; // Unhandled 'error' event
-  }
 
-  var handler = events[type];
+    var handler = events[type];
 
-  if (handler === undefined)
-    return false;
+    if (handler === undefined)
+        return false;
 
-  if (typeof handler === 'function') {
-    ReflectApply(handler, this, args);
-  } else {
-    var len = handler.length;
-    var listeners = arrayClone(handler, len);
-    for (var i = 0; i < len; ++i)
-      ReflectApply(listeners[i], this, args);
-  }
+    if (typeof handler === 'function') {
+        ReflectApply(handler, this, args);
+    } else {
+        var len = handler.length;
+        var listeners = arrayClone(handler, len);
+        for (var i = 0; i < len; ++i)
+            ReflectApply(listeners[i], this, args);
+    }
 
-  return true;
+    return true;
 };
 
 function _addListener(target, type, listener, prepend) {
-  var m;
-  var events;
-  var existing;
+    var m;
+    var events;
+    var existing;
 
-  checkListener(listener);
+    checkListener(listener);
 
-  events = target._events;
-  if (events === undefined) {
-    events = target._events = Object.create(null);
-    target._eventsCount = 0;
-  } else {
-    // To avoid recursion in the case that type === "newListener"! Before
-    // adding it to the listeners, first emit "newListener".
-    if (events.newListener !== undefined) {
-      target.emit('newListener', type,
-                  listener.listener ? listener.listener : listener);
-
-      // Re-assign `events` because a newListener handler could have caused the
-      // this._events to be assigned to a new object
-      events = target._events;
-    }
-    existing = events[type];
-  }
-
-  if (existing === undefined) {
-    // Optimize the case of one listener. Don't need the extra array object.
-    existing = events[type] = listener;
-    ++target._eventsCount;
-  } else {
-    if (typeof existing === 'function') {
-      // Adding the second element, need to change to array.
-      existing = events[type] =
-        prepend ? [listener, existing] : [existing, listener];
-      // If we've already got an array, just append.
-    } else if (prepend) {
-      existing.unshift(listener);
+    events = target._events;
+    if (events === undefined) {
+        events = target._events = Object.create(null);
+        target._eventsCount = 0;
     } else {
-      existing.push(listener);
+        // To avoid recursion in the case that type === "newListener"! Before
+        // adding it to the listeners, first emit "newListener".
+        if (events.newListener !== undefined) {
+            target.emit('newListener', type,
+                listener.listener ? listener.listener : listener);
+
+            // Re-assign `events` because a newListener handler could have caused the
+            // this._events to be assigned to a new object
+            events = target._events;
+        }
+        existing = events[type];
     }
 
-    // Check for listener leak
-    m = _getMaxListeners(target);
-    if (m > 0 && existing.length > m && !existing.warned) {
-      existing.warned = true;
-      // No error code for this since it is a Warning
-      // eslint-disable-next-line no-restricted-syntax
-      var w = new Error('Possible EventEmitter memory leak detected. ' +
-                          existing.length + ' ' + String(type) + ' listeners ' +
-                          'added. Use emitter.setMaxListeners() to ' +
-                          'increase limit');
-      w.name = 'MaxListenersExceededWarning';
-      w.emitter = target;
-      w.type = type;
-      w.count = existing.length;
-      ProcessEmitWarning(w);
-    }
-  }
+    if (existing === undefined) {
+        // Optimize the case of one listener. Don't need the extra array object.
+        existing = events[type] = listener;
+        ++target._eventsCount;
+    } else {
+        if (typeof existing === 'function') {
+            // Adding the second element, need to change to array.
+            existing = events[type] =
+                prepend ? [listener, existing] : [existing, listener];
+            // If we've already got an array, just append.
+        } else if (prepend) {
+            existing.unshift(listener);
+        } else {
+            existing.push(listener);
+        }
 
-  return target;
+        // Check for listener leak
+        m = _getMaxListeners(target);
+        if (m > 0 && existing.length > m && !existing.warned) {
+            existing.warned = true;
+            // No error code for this since it is a Warning
+            // eslint-disable-next-line no-restricted-syntax
+            var w = new Error('Possible EventEmitter memory leak detected. ' +
+                existing.length + ' ' + String(type) + ' listeners ' +
+                'added. Use emitter.setMaxListeners() to ' +
+                'increase limit');
+            w.name = 'MaxListenersExceededWarning';
+            w.emitter = target;
+            w.type = type;
+            w.count = existing.length;
+            ProcessEmitWarning(w);
+        }
+    }
+
+    return target;
 }
 
 EventEmitter.prototype.addListener = function addListener(type, listener) {
-  return _addListener(this, type, listener, false);
+    return _addListener(this, type, listener, false);
 };
 
 EventEmitter.prototype.on = EventEmitter.prototype.addListener;
 
 EventEmitter.prototype.prependListener =
     function prependListener(type, listener) {
-      return _addListener(this, type, listener, true);
+        return _addListener(this, type, listener, true);
     };
 
 function onceWrapper() {
-  if (!this.fired) {
-    this.target.removeListener(this.type, this.wrapFn);
-    this.fired = true;
-    if (arguments.length === 0)
-      return this.listener.call(this.target);
-    return this.listener.apply(this.target, arguments);
-  }
+    if (!this.fired) {
+        this.target.removeListener(this.type, this.wrapFn);
+        this.fired = true;
+        if (arguments.length === 0)
+            return this.listener.call(this.target);
+        return this.listener.apply(this.target, arguments);
+    }
 }
 
 function _onceWrap(target, type, listener) {
-  var state = { fired: false, wrapFn: undefined, target: target, type: type, listener: listener };
-  var wrapped = onceWrapper.bind(state);
-  wrapped.listener = listener;
-  state.wrapFn = wrapped;
-  return wrapped;
+    var state = { fired: false, wrapFn: undefined, target: target, type: type, listener: listener };
+    var wrapped = onceWrapper.bind(state);
+    wrapped.listener = listener;
+    state.wrapFn = wrapped;
+    return wrapped;
 }
 
 EventEmitter.prototype.once = function once(type, listener) {
-  checkListener(listener);
-  this.on(type, _onceWrap(this, type, listener));
-  return this;
+    checkListener(listener);
+    this.on(type, _onceWrap(this, type, listener));
+    return this;
 };
 
 EventEmitter.prototype.prependOnceListener =
     function prependOnceListener(type, listener) {
-      checkListener(listener);
-      this.prependListener(type, _onceWrap(this, type, listener));
-      return this;
+        checkListener(listener);
+        this.prependListener(type, _onceWrap(this, type, listener));
+        return this;
     };
 
 // Emits a 'removeListener' event if and only if the listener was removed.
 EventEmitter.prototype.removeListener =
     function removeListener(type, listener) {
-      var list, events, position, i, originalListener;
+        var list, events, position, i, originalListener;
 
-      checkListener(listener);
+        checkListener(listener);
 
-      events = this._events;
-      if (events === undefined)
+        events = this._events;
+        if (events === undefined)
+            return this;
+
+        list = events[type];
+        if (list === undefined)
+            return this;
+
+        if (list === listener || list.listener === listener) {
+            if (--this._eventsCount === 0)
+                this._events = Object.create(null);
+            else {
+                delete events[type];
+                if (events.removeListener)
+                    this.emit('removeListener', type, list.listener || listener);
+            }
+        } else if (typeof list !== 'function') {
+            position = -1;
+
+            for (i = list.length - 1; i >= 0; i--) {
+                if (list[i] === listener || list[i].listener === listener) {
+                    originalListener = list[i].listener;
+                    position = i;
+                    break;
+                }
+            }
+
+            if (position < 0)
+                return this;
+
+            if (position === 0)
+                list.shift();
+            else {
+                spliceOne(list, position);
+            }
+
+            if (list.length === 1)
+                events[type] = list[0];
+
+            if (events.removeListener !== undefined)
+                this.emit('removeListener', type, originalListener || listener);
+        }
+
         return this;
-
-      list = events[type];
-      if (list === undefined)
-        return this;
-
-      if (list === listener || list.listener === listener) {
-        if (--this._eventsCount === 0)
-          this._events = Object.create(null);
-        else {
-          delete events[type];
-          if (events.removeListener)
-            this.emit('removeListener', type, list.listener || listener);
-        }
-      } else if (typeof list !== 'function') {
-        position = -1;
-
-        for (i = list.length - 1; i >= 0; i--) {
-          if (list[i] === listener || list[i].listener === listener) {
-            originalListener = list[i].listener;
-            position = i;
-            break;
-          }
-        }
-
-        if (position < 0)
-          return this;
-
-        if (position === 0)
-          list.shift();
-        else {
-          spliceOne(list, position);
-        }
-
-        if (list.length === 1)
-          events[type] = list[0];
-
-        if (events.removeListener !== undefined)
-          this.emit('removeListener', type, originalListener || listener);
-      }
-
-      return this;
     };
 
 EventEmitter.prototype.off = EventEmitter.prototype.removeListener;
 
 EventEmitter.prototype.removeAllListeners =
     function removeAllListeners(type) {
-      var listeners, events, i;
+        var listeners, events, i;
 
-      events = this._events;
-      if (events === undefined)
-        return this;
+        events = this._events;
+        if (events === undefined)
+            return this;
 
-      // not listening for removeListener, no need to emit
-      if (events.removeListener === undefined) {
+        // not listening for removeListener, no need to emit
+        if (events.removeListener === undefined) {
+            if (arguments.length === 0) {
+                this._events = Object.create(null);
+                this._eventsCount = 0;
+            } else if (events[type] !== undefined) {
+                if (--this._eventsCount === 0)
+                    this._events = Object.create(null);
+                else
+                    delete events[type];
+            }
+            return this;
+        }
+
+        // emit removeListener for all listeners on all events
         if (arguments.length === 0) {
-          this._events = Object.create(null);
-          this._eventsCount = 0;
-        } else if (events[type] !== undefined) {
-          if (--this._eventsCount === 0)
+            var keys = Object.keys(events);
+            var key;
+            for (i = 0; i < keys.length; ++i) {
+                key = keys[i];
+                if (key === 'removeListener') continue;
+                this.removeAllListeners(key);
+            }
+            this.removeAllListeners('removeListener');
             this._events = Object.create(null);
-          else
-            delete events[type];
+            this._eventsCount = 0;
+            return this;
         }
+
+        listeners = events[type];
+
+        if (typeof listeners === 'function') {
+            this.removeListener(type, listeners);
+        } else if (listeners !== undefined) {
+            // LIFO order
+            for (i = listeners.length - 1; i >= 0; i--) {
+                this.removeListener(type, listeners[i]);
+            }
+        }
+
         return this;
-      }
-
-      // emit removeListener for all listeners on all events
-      if (arguments.length === 0) {
-        var keys = Object.keys(events);
-        var key;
-        for (i = 0; i < keys.length; ++i) {
-          key = keys[i];
-          if (key === 'removeListener') continue;
-          this.removeAllListeners(key);
-        }
-        this.removeAllListeners('removeListener');
-        this._events = Object.create(null);
-        this._eventsCount = 0;
-        return this;
-      }
-
-      listeners = events[type];
-
-      if (typeof listeners === 'function') {
-        this.removeListener(type, listeners);
-      } else if (listeners !== undefined) {
-        // LIFO order
-        for (i = listeners.length - 1; i >= 0; i--) {
-          this.removeListener(type, listeners[i]);
-        }
-      }
-
-      return this;
     };
 
 function _listeners(target, type, unwrap) {
-  var events = target._events;
+    var events = target._events;
 
-  if (events === undefined)
-    return [];
+    if (events === undefined)
+        return [];
 
-  var evlistener = events[type];
-  if (evlistener === undefined)
-    return [];
+    var evlistener = events[type];
+    if (evlistener === undefined)
+        return [];
 
-  if (typeof evlistener === 'function')
-    return unwrap ? [evlistener.listener || evlistener] : [evlistener];
+    if (typeof evlistener === 'function')
+        return unwrap ? [evlistener.listener || evlistener] : [evlistener];
 
-  return unwrap ?
-    unwrapListeners(evlistener) : arrayClone(evlistener, evlistener.length);
+    return unwrap ?
+        unwrapListeners(evlistener) : arrayClone(evlistener, evlistener.length);
 }
 
 EventEmitter.prototype.listeners = function listeners(type) {
-  return _listeners(this, type, true);
+    return _listeners(this, type, true);
 };
 
 EventEmitter.prototype.rawListeners = function rawListeners(type) {
-  return _listeners(this, type, false);
+    return _listeners(this, type, false);
 };
 
-EventEmitter.listenerCount = function(emitter, type) {
-  if (typeof emitter.listenerCount === 'function') {
-    return emitter.listenerCount(type);
-  } else {
-    return listenerCount.call(emitter, type);
-  }
+EventEmitter.listenerCount = function (emitter, type) {
+    if (typeof emitter.listenerCount === 'function') {
+        return emitter.listenerCount(type);
+    } else {
+        return listenerCount.call(emitter, type);
+    }
 };
 
 EventEmitter.prototype.listenerCount = listenerCount;
 function listenerCount(type) {
-  var events = this._events;
+    var events = this._events;
 
-  if (events !== undefined) {
-    var evlistener = events[type];
+    if (events !== undefined) {
+        var evlistener = events[type];
 
-    if (typeof evlistener === 'function') {
-      return 1;
-    } else if (evlistener !== undefined) {
-      return evlistener.length;
+        if (typeof evlistener === 'function') {
+            return 1;
+        } else if (evlistener !== undefined) {
+            return evlistener.length;
+        }
     }
-  }
 
-  return 0;
+    return 0;
 }
 
 EventEmitter.prototype.eventNames = function eventNames() {
-  return this._eventsCount > 0 ? ReflectOwnKeys(this._events) : [];
+    return this._eventsCount > 0 ? ReflectOwnKeys(this._events) : [];
 };
 
 function arrayClone(arr, n) {
-  var copy = new Array(n);
-  for (var i = 0; i < n; ++i)
-    copy[i] = arr[i];
-  return copy;
+    var copy = new Array(n);
+    for (var i = 0; i < n; ++i)
+        copy[i] = arr[i];
+    return copy;
 }
 
 function spliceOne(list, index) {
-  for (; index + 1 < list.length; index++)
-    list[index] = list[index + 1];
-  list.pop();
+    for (; index + 1 < list.length; index++)
+        list[index] = list[index + 1];
+    list.pop();
 }
 
 function unwrapListeners(arr) {
-  var ret = new Array(arr.length);
-  for (var i = 0; i < ret.length; ++i) {
-    ret[i] = arr[i].listener || arr[i];
-  }
-  return ret;
+    var ret = new Array(arr.length);
+    for (var i = 0; i < ret.length; ++i) {
+        ret[i] = arr[i].listener || arr[i];
+    }
+    return ret;
 }
 
 function once(emitter, name) {
-  return new Promise(function (resolve, reject) {
-    function errorListener(err) {
-      emitter.removeListener(name, resolver);
-      reject(err);
-    }
+    return new Promise(function (resolve, reject) {
+        function errorListener(err) {
+            emitter.removeListener(name, resolver);
+            reject(err);
+        }
 
-    function resolver() {
-      if (typeof emitter.removeListener === 'function') {
-        emitter.removeListener('error', errorListener);
-      }
-      resolve([].slice.call(arguments));
-    }
-    eventTargetAgnosticAddListener(emitter, name, resolver, { once: true });
-    if (name !== 'error') {
-      addErrorHandlerIfEventEmitter(emitter, errorListener, { once: true });
-    }
-  });
+        function resolver() {
+            if (typeof emitter.removeListener === 'function') {
+                emitter.removeListener('error', errorListener);
+            }
+            resolve([].slice.call(arguments));
+        }
+        eventTargetAgnosticAddListener(emitter, name, resolver, { once: true });
+        if (name !== 'error') {
+            addErrorHandlerIfEventEmitter(emitter, errorListener, { once: true });
+        }
+    });
 }
 
 function addErrorHandlerIfEventEmitter(emitter, handler, flags) {
-  if (typeof emitter.on === 'function') {
-    eventTargetAgnosticAddListener(emitter, 'error', handler, flags);
-  }
+    if (typeof emitter.on === 'function') {
+        eventTargetAgnosticAddListener(emitter, 'error', handler, flags);
+    }
 }
 
 function eventTargetAgnosticAddListener(emitter, name, listener, flags) {
-  if (typeof emitter.on === 'function') {
-    if (flags.once) {
-      emitter.once(name, listener);
+    if (typeof emitter.on === 'function') {
+        if (flags.once) {
+            emitter.once(name, listener);
+        } else {
+            emitter.on(name, listener);
+        }
+    } else if (typeof emitter.addEventListener === 'function') {
+        // EventTarget does not have `error` event semantics like Node
+        // EventEmitters, we do not listen for `error` events here.
+        emitter.addEventListener(name, function wrapListener(arg) {
+            // IE does not have builtin `{ once: true }` support so we
+            // have to do it manually.
+            if (flags.once) {
+                emitter.removeEventListener(name, wrapListener);
+            }
+            listener(arg);
+        });
     } else {
-      emitter.on(name, listener);
+        throw new TypeError('The "emitter" argument must be of type EventEmitter. Received type ' + typeof emitter);
     }
-  } else if (typeof emitter.addEventListener === 'function') {
-    // EventTarget does not have `error` event semantics like Node
-    // EventEmitters, we do not listen for `error` events here.
-    emitter.addEventListener(name, function wrapListener(arg) {
-      // IE does not have builtin `{ once: true }` support so we
-      // have to do it manually.
-      if (flags.once) {
-        emitter.removeEventListener(name, wrapListener);
-      }
-      listener(arg);
-    });
-  } else {
-    throw new TypeError('The "emitter" argument must be of type EventEmitter. Received type ' + typeof emitter);
-  }
 }
 
 var eventsExports = events.exports;
@@ -1999,7 +1999,7 @@ function supportedLevel(max_frame_pixel_count, max_fps) {
         if (level_constraint.max_macroblock_frame_size * PixelsPerMacroblock <=
             max_frame_pixel_count &&
             level_constraint.max_macroblocks_per_second <=
-                max_fps * level_constraint.max_macroblock_frame_size) {
+            max_fps * level_constraint.max_macroblock_frame_size) {
             logger$e.debug(`supportedLevel() | result [max_frame_pixel_count:${max_frame_pixel_count}, max_fps:${max_fps}, level:${level_constraint.level}]`);
             return level_constraint.level;
         }
@@ -3190,14 +3190,14 @@ class AwaitQueue {
 AwaitQueue$1.AwaitQueue = AwaitQueue;
 
 (function (exports) {
-	Object.defineProperty(exports, "__esModule", { value: true });
-	exports.AwaitQueueRemovedTaskError = exports.AwaitQueueStoppedError = exports.AwaitQueue = void 0;
-	var AwaitQueue_1 = AwaitQueue$1;
-	Object.defineProperty(exports, "AwaitQueue", { enumerable: true, get: function () { return AwaitQueue_1.AwaitQueue; } });
-	var errors_1 = errors;
-	Object.defineProperty(exports, "AwaitQueueStoppedError", { enumerable: true, get: function () { return errors_1.AwaitQueueStoppedError; } });
-	Object.defineProperty(exports, "AwaitQueueRemovedTaskError", { enumerable: true, get: function () { return errors_1.AwaitQueueRemovedTaskError; } }); 
-} (lib$2));
+    Object.defineProperty(exports, "__esModule", { value: true });
+    exports.AwaitQueueRemovedTaskError = exports.AwaitQueueStoppedError = exports.AwaitQueue = void 0;
+    var AwaitQueue_1 = AwaitQueue$1;
+    Object.defineProperty(exports, "AwaitQueue", { enumerable: true, get: function () { return AwaitQueue_1.AwaitQueue; } });
+    var errors_1 = errors;
+    Object.defineProperty(exports, "AwaitQueueStoppedError", { enumerable: true, get: function () { return errors_1.AwaitQueueStoppedError; } });
+    Object.defineProperty(exports, "AwaitQueueRemovedTaskError", { enumerable: true, get: function () { return errors_1.AwaitQueueRemovedTaskError; } });
+}(lib$2));
 
 var Producer$1 = {};
 
@@ -4368,101 +4368,101 @@ class Transport extends enhancedEvents_1$7.EnhancedEventEmitter {
         // Enqueue command.
         return (this._awaitQueue
             .push(async () => {
-            let normalizedEncodings;
-            if (encodings && !Array.isArray(encodings)) {
-                throw TypeError('encodings must be an array');
-            }
-            else if (encodings?.length === 0) {
-                normalizedEncodings = undefined;
-            }
-            else if (encodings) {
-                normalizedEncodings = encodings.map(encoding => {
-                    const normalizedEncoding = {
-                        active: true,
-                    };
-                    if (encoding.active === false) {
-                        normalizedEncoding.active = false;
-                    }
-                    if (typeof encoding.dtx === 'boolean') {
-                        normalizedEncoding.dtx = encoding.dtx;
-                    }
-                    if (typeof encoding.scalabilityMode === 'string') {
-                        normalizedEncoding.scalabilityMode = encoding.scalabilityMode;
-                    }
-                    if (typeof encoding.scaleResolutionDownBy === 'number') {
-                        normalizedEncoding.scaleResolutionDownBy =
-                            encoding.scaleResolutionDownBy;
-                    }
-                    if (typeof encoding.maxBitrate === 'number') {
-                        normalizedEncoding.maxBitrate = encoding.maxBitrate;
-                    }
-                    if (typeof encoding.maxFramerate === 'number') {
-                        normalizedEncoding.maxFramerate = encoding.maxFramerate;
-                    }
-                    if (typeof encoding.adaptivePtime === 'boolean') {
-                        normalizedEncoding.adaptivePtime = encoding.adaptivePtime;
-                    }
-                    if (typeof encoding.priority === 'string') {
-                        normalizedEncoding.priority = encoding.priority;
-                    }
-                    if (typeof encoding.networkPriority === 'string') {
-                        normalizedEncoding.networkPriority = encoding.networkPriority;
-                    }
-                    return normalizedEncoding;
-                });
-            }
-            const { localId, rtpParameters, rtpSender } = await this._handler.send({
-                track,
-                streamId,
-                encodings: normalizedEncodings,
-                codecOptions,
-                headerExtensionOptions,
-                codec,
-                onRtpSender,
-            });
-            try {
-                // This will fill rtpParameters's missing fields with default values.
-                ortc$7.validateAndNormalizeRtpParameters(rtpParameters);
-                const { id } = await new Promise((resolve, reject) => {
-                    this.safeEmit('produce', {
-                        kind: track.kind,
-                        rtpParameters,
-                        appData,
-                    }, resolve, reject);
-                });
-                const producer = new Producer_1.Producer({
-                    id,
-                    localId,
-                    rtpSender,
+                let normalizedEncodings;
+                if (encodings && !Array.isArray(encodings)) {
+                    throw TypeError('encodings must be an array');
+                }
+                else if (encodings?.length === 0) {
+                    normalizedEncodings = undefined;
+                }
+                else if (encodings) {
+                    normalizedEncodings = encodings.map(encoding => {
+                        const normalizedEncoding = {
+                            active: true,
+                        };
+                        if (encoding.active === false) {
+                            normalizedEncoding.active = false;
+                        }
+                        if (typeof encoding.dtx === 'boolean') {
+                            normalizedEncoding.dtx = encoding.dtx;
+                        }
+                        if (typeof encoding.scalabilityMode === 'string') {
+                            normalizedEncoding.scalabilityMode = encoding.scalabilityMode;
+                        }
+                        if (typeof encoding.scaleResolutionDownBy === 'number') {
+                            normalizedEncoding.scaleResolutionDownBy =
+                                encoding.scaleResolutionDownBy;
+                        }
+                        if (typeof encoding.maxBitrate === 'number') {
+                            normalizedEncoding.maxBitrate = encoding.maxBitrate;
+                        }
+                        if (typeof encoding.maxFramerate === 'number') {
+                            normalizedEncoding.maxFramerate = encoding.maxFramerate;
+                        }
+                        if (typeof encoding.adaptivePtime === 'boolean') {
+                            normalizedEncoding.adaptivePtime = encoding.adaptivePtime;
+                        }
+                        if (typeof encoding.priority === 'string') {
+                            normalizedEncoding.priority = encoding.priority;
+                        }
+                        if (typeof encoding.networkPriority === 'string') {
+                            normalizedEncoding.networkPriority = encoding.networkPriority;
+                        }
+                        return normalizedEncoding;
+                    });
+                }
+                const { localId, rtpParameters, rtpSender } = await this._handler.send({
                     track,
-                    rtpParameters,
-                    stopTracks,
-                    disableTrackOnPause,
-                    zeroRtpOnPause,
-                    appData,
+                    streamId,
+                    encodings: normalizedEncodings,
+                    codecOptions,
+                    headerExtensionOptions,
+                    codec,
+                    onRtpSender,
                 });
-                this._producers.set(producer.id, producer);
-                this.handleProducer(producer);
-                // Emit observer event.
-                this._observer.safeEmit('newproducer', producer);
-                return producer;
-            }
-            catch (error) {
-                this._handler.stopSending(localId).catch(() => { });
-                throw error;
-            }
-        }, 'transport.produce()')
+                try {
+                    // This will fill rtpParameters's missing fields with default values.
+                    ortc$7.validateAndNormalizeRtpParameters(rtpParameters);
+                    const { id } = await new Promise((resolve, reject) => {
+                        this.safeEmit('produce', {
+                            kind: track.kind,
+                            rtpParameters,
+                            appData,
+                        }, resolve, reject);
+                    });
+                    const producer = new Producer_1.Producer({
+                        id,
+                        localId,
+                        rtpSender,
+                        track,
+                        rtpParameters,
+                        stopTracks,
+                        disableTrackOnPause,
+                        zeroRtpOnPause,
+                        appData,
+                    });
+                    this._producers.set(producer.id, producer);
+                    this.handleProducer(producer);
+                    // Emit observer event.
+                    this._observer.safeEmit('newproducer', producer);
+                    return producer;
+                }
+                catch (error) {
+                    this._handler.stopSending(localId).catch(() => { });
+                    throw error;
+                }
+            }, 'transport.produce()')
             // This catch is needed to stop the given track if the command above
             // failed due to closed Transport.
             .catch((error) => {
-            if (stopTracks) {
-                try {
-                    track.stop();
+                if (stopTracks) {
+                    try {
+                        track.stop();
+                    }
+                    catch (error2) { }
                 }
-                catch (error2) { }
-            }
-            throw error;
-        }));
+                throw error;
+            }));
     }
     /**
      * Create a Consumer to consume a remote Producer.
@@ -4636,88 +4636,88 @@ class Transport extends enhancedEvents_1$7.EnhancedEventEmitter {
         this._consumerCreationInProgress = true;
         this._awaitQueue
             .push(async () => {
-            if (this._pendingConsumerTasks.length === 0) {
-                logger$8.debug('createPendingConsumers() | there is no Consumer to be created');
-                return;
-            }
-            const pendingConsumerTasks = [...this._pendingConsumerTasks];
-            // Clear pending Consumer tasks.
-            this._pendingConsumerTasks = [];
-            // Video Consumer in order to create the probator.
-            let videoConsumerForProbator = undefined;
-            // Fill options list.
-            const optionsList = [];
-            for (const task of pendingConsumerTasks) {
-                const { id, kind, rtpParameters, streamId, onRtpReceiver } = task.consumerOptions;
-                optionsList.push({
-                    trackId: id,
-                    kind: kind,
-                    rtpParameters,
-                    streamId,
-                    onRtpReceiver,
-                });
-            }
-            try {
-                const results = await this._handler.receive(optionsList);
-                for (let idx = 0; idx < results.length; ++idx) {
-                    const task = pendingConsumerTasks[idx];
-                    const result = results[idx];
-                    const { id, producerId, kind, rtpParameters, appData } = task.consumerOptions;
-                    const { localId, rtpReceiver, track } = result;
-                    const consumer = new Consumer_1.Consumer({
-                        id,
-                        localId,
-                        producerId,
-                        rtpReceiver,
-                        track,
-                        rtpParameters,
-                        appData: appData,
-                    });
-                    this._consumers.set(consumer.id, consumer);
-                    this.handleConsumer(consumer);
-                    // If this is the first video Consumer and the Consumer for RTP probation
-                    // has not yet been created, it's time to create it.
-                    if (!this._probatorConsumerCreated &&
-                        !videoConsumerForProbator &&
-                        kind === 'video') {
-                        videoConsumerForProbator = consumer;
-                    }
-                    // Emit observer event.
-                    this._observer.safeEmit('newconsumer', consumer);
-                    task.resolve(consumer);
+                if (this._pendingConsumerTasks.length === 0) {
+                    logger$8.debug('createPendingConsumers() | there is no Consumer to be created');
+                    return;
                 }
-            }
-            catch (error) {
+                const pendingConsumerTasks = [...this._pendingConsumerTasks];
+                // Clear pending Consumer tasks.
+                this._pendingConsumerTasks = [];
+                // Video Consumer in order to create the probator.
+                let videoConsumerForProbator = undefined;
+                // Fill options list.
+                const optionsList = [];
                 for (const task of pendingConsumerTasks) {
-                    task.reject(error);
+                    const { id, kind, rtpParameters, streamId, onRtpReceiver } = task.consumerOptions;
+                    optionsList.push({
+                        trackId: id,
+                        kind: kind,
+                        rtpParameters,
+                        streamId,
+                        onRtpReceiver,
+                    });
                 }
-            }
-            // If RTP probation must be handled, do it now.
-            if (videoConsumerForProbator) {
                 try {
-                    const probatorRtpParameters = ortc$7.generateProbatorRtpParameters(videoConsumerForProbator.rtpParameters);
-                    await this._handler.receive([
-                        {
-                            trackId: 'probator',
-                            kind: 'video',
-                            rtpParameters: probatorRtpParameters,
-                        },
-                    ]);
-                    logger$8.debug('createPendingConsumers() | Consumer for RTP probation created');
-                    this._probatorConsumerCreated = true;
+                    const results = await this._handler.receive(optionsList);
+                    for (let idx = 0; idx < results.length; ++idx) {
+                        const task = pendingConsumerTasks[idx];
+                        const result = results[idx];
+                        const { id, producerId, kind, rtpParameters, appData } = task.consumerOptions;
+                        const { localId, rtpReceiver, track } = result;
+                        const consumer = new Consumer_1.Consumer({
+                            id,
+                            localId,
+                            producerId,
+                            rtpReceiver,
+                            track,
+                            rtpParameters,
+                            appData: appData,
+                        });
+                        this._consumers.set(consumer.id, consumer);
+                        this.handleConsumer(consumer);
+                        // If this is the first video Consumer and the Consumer for RTP probation
+                        // has not yet been created, it's time to create it.
+                        if (!this._probatorConsumerCreated &&
+                            !videoConsumerForProbator &&
+                            kind === 'video') {
+                            videoConsumerForProbator = consumer;
+                        }
+                        // Emit observer event.
+                        this._observer.safeEmit('newconsumer', consumer);
+                        task.resolve(consumer);
+                    }
                 }
                 catch (error) {
-                    logger$8.error('createPendingConsumers() | failed to create Consumer for RTP probation:%o', error);
+                    for (const task of pendingConsumerTasks) {
+                        task.reject(error);
+                    }
                 }
-            }
-        }, 'transport.createPendingConsumers()')
+                // If RTP probation must be handled, do it now.
+                if (videoConsumerForProbator) {
+                    try {
+                        const probatorRtpParameters = ortc$7.generateProbatorRtpParameters(videoConsumerForProbator.rtpParameters);
+                        await this._handler.receive([
+                            {
+                                trackId: 'probator',
+                                kind: 'video',
+                                rtpParameters: probatorRtpParameters,
+                            },
+                        ]);
+                        logger$8.debug('createPendingConsumers() | Consumer for RTP probation created');
+                        this._probatorConsumerCreated = true;
+                    }
+                    catch (error) {
+                        logger$8.error('createPendingConsumers() | failed to create Consumer for RTP probation:%o', error);
+                    }
+                }
+            }, 'transport.createPendingConsumers()')
             .then(() => {
-            this._consumerCreationInProgress = false;
-            // There are pending Consumer tasks, enqueue their creation.
-            if (this._pendingConsumerTasks.length > 0) {
-                this.createPendingConsumers();
-            }
-        })
+                this._consumerCreationInProgress = false;
+                // There are pending Consumer tasks, enqueue their creation.
+                if (this._pendingConsumerTasks.length > 0) {
+                    this.createPendingConsumers();
+                }
+            })
             // NOTE: We only get here when the await queue is closed.
             .catch(() => { });
     }
@@ -4725,28 +4725,28 @@ class Transport extends enhancedEvents_1$7.EnhancedEventEmitter {
         this._consumerPauseInProgress = true;
         this._awaitQueue
             .push(async () => {
-            if (this._pendingPauseConsumers.size === 0) {
-                logger$8.debug('pausePendingConsumers() | there is no Consumer to be paused');
-                return;
-            }
-            const pendingPauseConsumers = Array.from(this._pendingPauseConsumers.values());
-            // Clear pending pause Consumer map.
-            this._pendingPauseConsumers.clear();
-            try {
-                const localIds = pendingPauseConsumers.map(consumer => consumer.localId);
-                await this._handler.pauseReceiving(localIds);
-            }
-            catch (error) {
-                logger$8.error('pausePendingConsumers() | failed to pause Consumers:', error);
-            }
-        }, 'transport.pausePendingConsumers()')
+                if (this._pendingPauseConsumers.size === 0) {
+                    logger$8.debug('pausePendingConsumers() | there is no Consumer to be paused');
+                    return;
+                }
+                const pendingPauseConsumers = Array.from(this._pendingPauseConsumers.values());
+                // Clear pending pause Consumer map.
+                this._pendingPauseConsumers.clear();
+                try {
+                    const localIds = pendingPauseConsumers.map(consumer => consumer.localId);
+                    await this._handler.pauseReceiving(localIds);
+                }
+                catch (error) {
+                    logger$8.error('pausePendingConsumers() | failed to pause Consumers:', error);
+                }
+            }, 'transport.pausePendingConsumers()')
             .then(() => {
-            this._consumerPauseInProgress = false;
-            // There are pending Consumers to be paused, do it.
-            if (this._pendingPauseConsumers.size > 0) {
-                this.pausePendingConsumers();
-            }
-        })
+                this._consumerPauseInProgress = false;
+                // There are pending Consumers to be paused, do it.
+                if (this._pendingPauseConsumers.size > 0) {
+                    this.pausePendingConsumers();
+                }
+            })
             // NOTE: We only get here when the await queue is closed.
             .catch(() => { });
     }
@@ -4754,28 +4754,28 @@ class Transport extends enhancedEvents_1$7.EnhancedEventEmitter {
         this._consumerResumeInProgress = true;
         this._awaitQueue
             .push(async () => {
-            if (this._pendingResumeConsumers.size === 0) {
-                logger$8.debug('resumePendingConsumers() | there is no Consumer to be resumed');
-                return;
-            }
-            const pendingResumeConsumers = Array.from(this._pendingResumeConsumers.values());
-            // Clear pending resume Consumer map.
-            this._pendingResumeConsumers.clear();
-            try {
-                const localIds = pendingResumeConsumers.map(consumer => consumer.localId);
-                await this._handler.resumeReceiving(localIds);
-            }
-            catch (error) {
-                logger$8.error('resumePendingConsumers() | failed to resume Consumers:', error);
-            }
-        }, 'transport.resumePendingConsumers()')
+                if (this._pendingResumeConsumers.size === 0) {
+                    logger$8.debug('resumePendingConsumers() | there is no Consumer to be resumed');
+                    return;
+                }
+                const pendingResumeConsumers = Array.from(this._pendingResumeConsumers.values());
+                // Clear pending resume Consumer map.
+                this._pendingResumeConsumers.clear();
+                try {
+                    const localIds = pendingResumeConsumers.map(consumer => consumer.localId);
+                    await this._handler.resumeReceiving(localIds);
+                }
+                catch (error) {
+                    logger$8.error('resumePendingConsumers() | failed to resume Consumers:', error);
+                }
+            }, 'transport.resumePendingConsumers()')
             .then(() => {
-            this._consumerResumeInProgress = false;
-            // There are pending Consumer to be resumed, do it.
-            if (this._pendingResumeConsumers.size > 0) {
-                this.resumePendingConsumers();
-            }
-        })
+                this._consumerResumeInProgress = false;
+                // There are pending Consumer to be resumed, do it.
+                if (this._pendingResumeConsumers.size > 0) {
+                    this.resumePendingConsumers();
+                }
+            })
             // NOTE: We only get here when the await queue is closed.
             .catch(() => { });
     }
@@ -4783,27 +4783,27 @@ class Transport extends enhancedEvents_1$7.EnhancedEventEmitter {
         this._consumerCloseInProgress = true;
         this._awaitQueue
             .push(async () => {
-            if (this._pendingCloseConsumers.size === 0) {
-                logger$8.debug('closePendingConsumers() | there is no Consumer to be closed');
-                return;
-            }
-            const pendingCloseConsumers = Array.from(this._pendingCloseConsumers.values());
-            // Clear pending close Consumer map.
-            this._pendingCloseConsumers.clear();
-            try {
-                await this._handler.stopReceiving(pendingCloseConsumers.map(consumer => consumer.localId));
-            }
-            catch (error) {
-                logger$8.error('closePendingConsumers() | failed to close Consumers:', error);
-            }
-        }, 'transport.closePendingConsumers()')
+                if (this._pendingCloseConsumers.size === 0) {
+                    logger$8.debug('closePendingConsumers() | there is no Consumer to be closed');
+                    return;
+                }
+                const pendingCloseConsumers = Array.from(this._pendingCloseConsumers.values());
+                // Clear pending close Consumer map.
+                this._pendingCloseConsumers.clear();
+                try {
+                    await this._handler.stopReceiving(pendingCloseConsumers.map(consumer => consumer.localId));
+                }
+                catch (error) {
+                    logger$8.error('closePendingConsumers() | failed to close Consumers:', error);
+                }
+            }, 'transport.closePendingConsumers()')
             .then(() => {
-            this._consumerCloseInProgress = false;
-            // There are pending Consumer to be resumed, do it.
-            if (this._pendingCloseConsumers.size > 0) {
-                this.closePendingConsumers();
-            }
-        })
+                this._consumerCloseInProgress = false;
+                // There are pending Consumer to be resumed, do it.
+                if (this._pendingCloseConsumers.size > 0) {
+                    this.closePendingConsumers();
+                }
+            })
             // NOTE: We only get here when the await queue is closed.
             .catch(() => { });
     }
@@ -4969,746 +4969,746 @@ var lib$1 = {};
 
 var parser$1 = {};
 
-var grammar$3 = {exports: {}};
+var grammar$3 = { exports: {} };
 
 var grammar$2 = grammar$3.exports = {
-  v: [{
-    name: 'version',
-    reg: /^(\d*)$/
-  }],
-  o: [{
-    // o=- 20518 0 IN IP4 203.0.113.1
-    // NB: sessionId will be a String in most cases because it is huge
-    name: 'origin',
-    reg: /^(\S*) (\d*) (\d*) (\S*) IP(\d) (\S*)/,
-    names: ['username', 'sessionId', 'sessionVersion', 'netType', 'ipVer', 'address'],
-    format: '%s %s %d %s IP%d %s'
-  }],
-  // default parsing of these only (though some of these feel outdated)
-  s: [{ name: 'name' }],
-  i: [{ name: 'description' }],
-  u: [{ name: 'uri' }],
-  e: [{ name: 'email' }],
-  p: [{ name: 'phone' }],
-  z: [{ name: 'timezones' }], // TODO: this one can actually be parsed properly...
-  r: [{ name: 'repeats' }],   // TODO: this one can also be parsed properly
-  // k: [{}], // outdated thing ignored
-  t: [{
-    // t=0 0
-    name: 'timing',
-    reg: /^(\d*) (\d*)/,
-    names: ['start', 'stop'],
-    format: '%d %d'
-  }],
-  c: [{
-    // c=IN IP4 10.47.197.26
-    name: 'connection',
-    reg: /^IN IP(\d) (\S*)/,
-    names: ['version', 'ip'],
-    format: 'IN IP%d %s'
-  }],
-  b: [{
-    // b=AS:4000
-    push: 'bandwidth',
-    reg: /^(TIAS|AS|CT|RR|RS):(\d*)/,
-    names: ['type', 'limit'],
-    format: '%s:%s'
-  }],
-  m: [{
-    // m=video 51744 RTP/AVP 126 97 98 34 31
-    // NB: special - pushes to session
-    // TODO: rtp/fmtp should be filtered by the payloads found here?
-    reg: /^(\w*) (\d*) ([\w/]*)(?: (.*))?/,
-    names: ['type', 'port', 'protocol', 'payloads'],
-    format: '%s %d %s %s'
-  }],
-  a: [
-    {
-      // a=rtpmap:110 opus/48000/2
-      push: 'rtp',
-      reg: /^rtpmap:(\d*) ([\w\-.]*)(?:\s*\/(\d*)(?:\s*\/(\S*))?)?/,
-      names: ['payload', 'codec', 'rate', 'encoding'],
-      format: function (o) {
-        return (o.encoding)
-          ? 'rtpmap:%d %s/%s/%s'
-          : o.rate
-            ? 'rtpmap:%d %s/%s'
-            : 'rtpmap:%d %s';
-      }
-    },
-    {
-      // a=fmtp:108 profile-level-id=24;object=23;bitrate=64000
-      // a=fmtp:111 minptime=10; useinbandfec=1
-      push: 'fmtp',
-      reg: /^fmtp:(\d*) ([\S| ]*)/,
-      names: ['payload', 'config'],
-      format: 'fmtp:%d %s'
-    },
-    {
-      // a=control:streamid=0
-      name: 'control',
-      reg: /^control:(.*)/,
-      format: 'control:%s'
-    },
-    {
-      // a=rtcp:65179 IN IP4 193.84.77.194
-      name: 'rtcp',
-      reg: /^rtcp:(\d*)(?: (\S*) IP(\d) (\S*))?/,
-      names: ['port', 'netType', 'ipVer', 'address'],
-      format: function (o) {
-        return (o.address != null)
-          ? 'rtcp:%d %s IP%d %s'
-          : 'rtcp:%d';
-      }
-    },
-    {
-      // a=rtcp-fb:98 trr-int 100
-      push: 'rtcpFbTrrInt',
-      reg: /^rtcp-fb:(\*|\d*) trr-int (\d*)/,
-      names: ['payload', 'value'],
-      format: 'rtcp-fb:%s trr-int %d'
-    },
-    {
-      // a=rtcp-fb:98 nack rpsi
-      push: 'rtcpFb',
-      reg: /^rtcp-fb:(\*|\d*) ([\w-_]*)(?: ([\w-_]*))?/,
-      names: ['payload', 'type', 'subtype'],
-      format: function (o) {
-        return (o.subtype != null)
-          ? 'rtcp-fb:%s %s %s'
-          : 'rtcp-fb:%s %s';
-      }
-    },
-    {
-      // a=extmap:2 urn:ietf:params:rtp-hdrext:toffset
-      // a=extmap:1/recvonly URI-gps-string
-      // a=extmap:3 urn:ietf:params:rtp-hdrext:encrypt urn:ietf:params:rtp-hdrext:smpte-tc 25@600/24
-      push: 'ext',
-      reg: /^extmap:(\d+)(?:\/(\w+))?(?: (urn:ietf:params:rtp-hdrext:encrypt))? (\S*)(?: (\S*))?/,
-      names: ['value', 'direction', 'encrypt-uri', 'uri', 'config'],
-      format: function (o) {
-        return (
-          'extmap:%d' +
-          (o.direction ? '/%s' : '%v') +
-          (o['encrypt-uri'] ? ' %s' : '%v') +
-          ' %s' +
-          (o.config ? ' %s' : '')
-        );
-      }
-    },
-    {
-      // a=extmap-allow-mixed
-      name: 'extmapAllowMixed',
-      reg: /^(extmap-allow-mixed)/
-    },
-    {
-      // a=crypto:1 AES_CM_128_HMAC_SHA1_80 inline:PS1uQCVeeCFCanVmcjkpPywjNWhcYD0mXXtxaVBR|2^20|1:32
-      push: 'crypto',
-      reg: /^crypto:(\d*) ([\w_]*) (\S*)(?: (\S*))?/,
-      names: ['id', 'suite', 'config', 'sessionConfig'],
-      format: function (o) {
-        return (o.sessionConfig != null)
-          ? 'crypto:%d %s %s %s'
-          : 'crypto:%d %s %s';
-      }
-    },
-    {
-      // a=setup:actpass
-      name: 'setup',
-      reg: /^setup:(\w*)/,
-      format: 'setup:%s'
-    },
-    {
-      // a=connection:new
-      name: 'connectionType',
-      reg: /^connection:(new|existing)/,
-      format: 'connection:%s'
-    },
-    {
-      // a=mid:1
-      name: 'mid',
-      reg: /^mid:([^\s]*)/,
-      format: 'mid:%s'
-    },
-    {
-      // a=msid:0c8b064d-d807-43b4-b434-f92a889d8587 98178685-d409-46e0-8e16-7ef0db0db64a
-      push: 'msid',
-      reg: /^msid:([\w-]+)(?: ([\w-]+))?/,
-      names: ['id', 'appdata'],
-      format: 'msid:%s %s'
-    },
-    {
-      // a=ptime:20
-      name: 'ptime',
-      reg: /^ptime:(\d*(?:\.\d*)*)/,
-      format: 'ptime:%d'
-    },
-    {
-      // a=maxptime:60
-      name: 'maxptime',
-      reg: /^maxptime:(\d*(?:\.\d*)*)/,
-      format: 'maxptime:%d'
-    },
-    {
-      // a=sendrecv
-      name: 'direction',
-      reg: /^(sendrecv|recvonly|sendonly|inactive)/
-    },
-    {
-      // a=ice-lite
-      name: 'icelite',
-      reg: /^(ice-lite)/
-    },
-    {
-      // a=ice-ufrag:F7gI
-      name: 'iceUfrag',
-      reg: /^ice-ufrag:(\S*)/,
-      format: 'ice-ufrag:%s'
-    },
-    {
-      // a=ice-pwd:x9cml/YzichV2+XlhiMu8g
-      name: 'icePwd',
-      reg: /^ice-pwd:(\S*)/,
-      format: 'ice-pwd:%s'
-    },
-    {
-      // a=fingerprint:SHA-1 00:11:22:33:44:55:66:77:88:99:AA:BB:CC:DD:EE:FF:00:11:22:33
-      name: 'fingerprint',
-      reg: /^fingerprint:(\S*) (\S*)/,
-      names: ['type', 'hash'],
-      format: 'fingerprint:%s %s'
-    },
-    {
-      // a=candidate:0 1 UDP 2113667327 203.0.113.1 54400 typ host
-      // a=candidate:1162875081 1 udp 2113937151 192.168.34.75 60017 typ host generation 0 network-id 3 network-cost 10
-      // a=candidate:3289912957 2 udp 1845501695 193.84.77.194 60017 typ srflx raddr 192.168.34.75 rport 60017 generation 0 network-id 3 network-cost 10
-      // a=candidate:229815620 1 tcp 1518280447 192.168.150.19 60017 typ host tcptype active generation 0 network-id 3 network-cost 10
-      // a=candidate:3289912957 2 tcp 1845501695 193.84.77.194 60017 typ srflx raddr 192.168.34.75 rport 60017 tcptype passive generation 0 network-id 3 network-cost 10
-      push:'candidates',
-      reg: /^candidate:(\S*) (\d*) (\S*) (\d*) (\S*) (\d*) typ (\S*)(?: raddr (\S*) rport (\d*))?(?: tcptype (\S*))?(?: generation (\d*))?(?: network-id (\d*))?(?: network-cost (\d*))?/,
-      names: ['foundation', 'component', 'transport', 'priority', 'ip', 'port', 'type', 'raddr', 'rport', 'tcptype', 'generation', 'network-id', 'network-cost'],
-      format: function (o) {
-        var str = 'candidate:%s %d %s %d %s %d typ %s';
+    v: [{
+        name: 'version',
+        reg: /^(\d*)$/
+    }],
+    o: [{
+        // o=- 20518 0 IN IP4 203.0.113.1
+        // NB: sessionId will be a String in most cases because it is huge
+        name: 'origin',
+        reg: /^(\S*) (\d*) (\d*) (\S*) IP(\d) (\S*)/,
+        names: ['username', 'sessionId', 'sessionVersion', 'netType', 'ipVer', 'address'],
+        format: '%s %s %d %s IP%d %s'
+    }],
+    // default parsing of these only (though some of these feel outdated)
+    s: [{ name: 'name' }],
+    i: [{ name: 'description' }],
+    u: [{ name: 'uri' }],
+    e: [{ name: 'email' }],
+    p: [{ name: 'phone' }],
+    z: [{ name: 'timezones' }], // TODO: this one can actually be parsed properly...
+    r: [{ name: 'repeats' }],   // TODO: this one can also be parsed properly
+    // k: [{}], // outdated thing ignored
+    t: [{
+        // t=0 0
+        name: 'timing',
+        reg: /^(\d*) (\d*)/,
+        names: ['start', 'stop'],
+        format: '%d %d'
+    }],
+    c: [{
+        // c=IN IP4 10.47.197.26
+        name: 'connection',
+        reg: /^IN IP(\d) (\S*)/,
+        names: ['version', 'ip'],
+        format: 'IN IP%d %s'
+    }],
+    b: [{
+        // b=AS:4000
+        push: 'bandwidth',
+        reg: /^(TIAS|AS|CT|RR|RS):(\d*)/,
+        names: ['type', 'limit'],
+        format: '%s:%s'
+    }],
+    m: [{
+        // m=video 51744 RTP/AVP 126 97 98 34 31
+        // NB: special - pushes to session
+        // TODO: rtp/fmtp should be filtered by the payloads found here?
+        reg: /^(\w*) (\d*) ([\w/]*)(?: (.*))?/,
+        names: ['type', 'port', 'protocol', 'payloads'],
+        format: '%s %d %s %s'
+    }],
+    a: [
+        {
+            // a=rtpmap:110 opus/48000/2
+            push: 'rtp',
+            reg: /^rtpmap:(\d*) ([\w\-.]*)(?:\s*\/(\d*)(?:\s*\/(\S*))?)?/,
+            names: ['payload', 'codec', 'rate', 'encoding'],
+            format: function (o) {
+                return (o.encoding)
+                    ? 'rtpmap:%d %s/%s/%s'
+                    : o.rate
+                        ? 'rtpmap:%d %s/%s'
+                        : 'rtpmap:%d %s';
+            }
+        },
+        {
+            // a=fmtp:108 profile-level-id=24;object=23;bitrate=64000
+            // a=fmtp:111 minptime=10; useinbandfec=1
+            push: 'fmtp',
+            reg: /^fmtp:(\d*) ([\S| ]*)/,
+            names: ['payload', 'config'],
+            format: 'fmtp:%d %s'
+        },
+        {
+            // a=control:streamid=0
+            name: 'control',
+            reg: /^control:(.*)/,
+            format: 'control:%s'
+        },
+        {
+            // a=rtcp:65179 IN IP4 193.84.77.194
+            name: 'rtcp',
+            reg: /^rtcp:(\d*)(?: (\S*) IP(\d) (\S*))?/,
+            names: ['port', 'netType', 'ipVer', 'address'],
+            format: function (o) {
+                return (o.address != null)
+                    ? 'rtcp:%d %s IP%d %s'
+                    : 'rtcp:%d';
+            }
+        },
+        {
+            // a=rtcp-fb:98 trr-int 100
+            push: 'rtcpFbTrrInt',
+            reg: /^rtcp-fb:(\*|\d*) trr-int (\d*)/,
+            names: ['payload', 'value'],
+            format: 'rtcp-fb:%s trr-int %d'
+        },
+        {
+            // a=rtcp-fb:98 nack rpsi
+            push: 'rtcpFb',
+            reg: /^rtcp-fb:(\*|\d*) ([\w-_]*)(?: ([\w-_]*))?/,
+            names: ['payload', 'type', 'subtype'],
+            format: function (o) {
+                return (o.subtype != null)
+                    ? 'rtcp-fb:%s %s %s'
+                    : 'rtcp-fb:%s %s';
+            }
+        },
+        {
+            // a=extmap:2 urn:ietf:params:rtp-hdrext:toffset
+            // a=extmap:1/recvonly URI-gps-string
+            // a=extmap:3 urn:ietf:params:rtp-hdrext:encrypt urn:ietf:params:rtp-hdrext:smpte-tc 25@600/24
+            push: 'ext',
+            reg: /^extmap:(\d+)(?:\/(\w+))?(?: (urn:ietf:params:rtp-hdrext:encrypt))? (\S*)(?: (\S*))?/,
+            names: ['value', 'direction', 'encrypt-uri', 'uri', 'config'],
+            format: function (o) {
+                return (
+                    'extmap:%d' +
+                    (o.direction ? '/%s' : '%v') +
+                    (o['encrypt-uri'] ? ' %s' : '%v') +
+                    ' %s' +
+                    (o.config ? ' %s' : '')
+                );
+            }
+        },
+        {
+            // a=extmap-allow-mixed
+            name: 'extmapAllowMixed',
+            reg: /^(extmap-allow-mixed)/
+        },
+        {
+            // a=crypto:1 AES_CM_128_HMAC_SHA1_80 inline:PS1uQCVeeCFCanVmcjkpPywjNWhcYD0mXXtxaVBR|2^20|1:32
+            push: 'crypto',
+            reg: /^crypto:(\d*) ([\w_]*) (\S*)(?: (\S*))?/,
+            names: ['id', 'suite', 'config', 'sessionConfig'],
+            format: function (o) {
+                return (o.sessionConfig != null)
+                    ? 'crypto:%d %s %s %s'
+                    : 'crypto:%d %s %s';
+            }
+        },
+        {
+            // a=setup:actpass
+            name: 'setup',
+            reg: /^setup:(\w*)/,
+            format: 'setup:%s'
+        },
+        {
+            // a=connection:new
+            name: 'connectionType',
+            reg: /^connection:(new|existing)/,
+            format: 'connection:%s'
+        },
+        {
+            // a=mid:1
+            name: 'mid',
+            reg: /^mid:([^\s]*)/,
+            format: 'mid:%s'
+        },
+        {
+            // a=msid:0c8b064d-d807-43b4-b434-f92a889d8587 98178685-d409-46e0-8e16-7ef0db0db64a
+            push: 'msid',
+            reg: /^msid:([\w-]+)(?: ([\w-]+))?/,
+            names: ['id', 'appdata'],
+            format: 'msid:%s %s'
+        },
+        {
+            // a=ptime:20
+            name: 'ptime',
+            reg: /^ptime:(\d*(?:\.\d*)*)/,
+            format: 'ptime:%d'
+        },
+        {
+            // a=maxptime:60
+            name: 'maxptime',
+            reg: /^maxptime:(\d*(?:\.\d*)*)/,
+            format: 'maxptime:%d'
+        },
+        {
+            // a=sendrecv
+            name: 'direction',
+            reg: /^(sendrecv|recvonly|sendonly|inactive)/
+        },
+        {
+            // a=ice-lite
+            name: 'icelite',
+            reg: /^(ice-lite)/
+        },
+        {
+            // a=ice-ufrag:F7gI
+            name: 'iceUfrag',
+            reg: /^ice-ufrag:(\S*)/,
+            format: 'ice-ufrag:%s'
+        },
+        {
+            // a=ice-pwd:x9cml/YzichV2+XlhiMu8g
+            name: 'icePwd',
+            reg: /^ice-pwd:(\S*)/,
+            format: 'ice-pwd:%s'
+        },
+        {
+            // a=fingerprint:SHA-1 00:11:22:33:44:55:66:77:88:99:AA:BB:CC:DD:EE:FF:00:11:22:33
+            name: 'fingerprint',
+            reg: /^fingerprint:(\S*) (\S*)/,
+            names: ['type', 'hash'],
+            format: 'fingerprint:%s %s'
+        },
+        {
+            // a=candidate:0 1 UDP 2113667327 203.0.113.1 54400 typ host
+            // a=candidate:1162875081 1 udp 2113937151 192.168.34.75 60017 typ host generation 0 network-id 3 network-cost 10
+            // a=candidate:3289912957 2 udp 1845501695 193.84.77.194 60017 typ srflx raddr 192.168.34.75 rport 60017 generation 0 network-id 3 network-cost 10
+            // a=candidate:229815620 1 tcp 1518280447 192.168.150.19 60017 typ host tcptype active generation 0 network-id 3 network-cost 10
+            // a=candidate:3289912957 2 tcp 1845501695 193.84.77.194 60017 typ srflx raddr 192.168.34.75 rport 60017 tcptype passive generation 0 network-id 3 network-cost 10
+            push: 'candidates',
+            reg: /^candidate:(\S*) (\d*) (\S*) (\d*) (\S*) (\d*) typ (\S*)(?: raddr (\S*) rport (\d*))?(?: tcptype (\S*))?(?: generation (\d*))?(?: network-id (\d*))?(?: network-cost (\d*))?/,
+            names: ['foundation', 'component', 'transport', 'priority', 'ip', 'port', 'type', 'raddr', 'rport', 'tcptype', 'generation', 'network-id', 'network-cost'],
+            format: function (o) {
+                var str = 'candidate:%s %d %s %d %s %d typ %s';
 
-        str += (o.raddr != null) ? ' raddr %s rport %d' : '%v%v';
+                str += (o.raddr != null) ? ' raddr %s rport %d' : '%v%v';
 
-        // NB: candidate has three optional chunks, so %void middles one if it's missing
-        str += (o.tcptype != null) ? ' tcptype %s' : '%v';
+                // NB: candidate has three optional chunks, so %void middles one if it's missing
+                str += (o.tcptype != null) ? ' tcptype %s' : '%v';
 
-        if (o.generation != null) {
-          str += ' generation %d';
+                if (o.generation != null) {
+                    str += ' generation %d';
+                }
+
+                str += (o['network-id'] != null) ? ' network-id %d' : '%v';
+                str += (o['network-cost'] != null) ? ' network-cost %d' : '%v';
+                return str;
+            }
+        },
+        {
+            // a=end-of-candidates (keep after the candidates line for readability)
+            name: 'endOfCandidates',
+            reg: /^(end-of-candidates)/
+        },
+        {
+            // a=remote-candidates:1 203.0.113.1 54400 2 203.0.113.1 54401 ...
+            name: 'remoteCandidates',
+            reg: /^remote-candidates:(.*)/,
+            format: 'remote-candidates:%s'
+        },
+        {
+            // a=ice-options:google-ice
+            name: 'iceOptions',
+            reg: /^ice-options:(\S*)/,
+            format: 'ice-options:%s'
+        },
+        {
+            // a=ssrc:2566107569 cname:t9YU8M1UxTF8Y1A1
+            push: 'ssrcs',
+            reg: /^ssrc:(\d*) ([\w_-]*)(?::(.*))?/,
+            names: ['id', 'attribute', 'value'],
+            format: function (o) {
+                var str = 'ssrc:%d';
+                if (o.attribute != null) {
+                    str += ' %s';
+                    if (o.value != null) {
+                        str += ':%s';
+                    }
+                }
+                return str;
+            }
+        },
+        {
+            // a=ssrc-group:FEC 1 2
+            // a=ssrc-group:FEC-FR 3004364195 1080772241
+            push: 'ssrcGroups',
+            // token-char = %x21 / %x23-27 / %x2A-2B / %x2D-2E / %x30-39 / %x41-5A / %x5E-7E
+            reg: /^ssrc-group:([\x21\x23\x24\x25\x26\x27\x2A\x2B\x2D\x2E\w]*) (.*)/,
+            names: ['semantics', 'ssrcs'],
+            format: 'ssrc-group:%s %s'
+        },
+        {
+            // a=msid-semantic: WMS Jvlam5X3SX1OP6pn20zWogvaKJz5Hjf9OnlV
+            name: 'msidSemantic',
+            reg: /^msid-semantic:\s?(\w*) (\S*)/,
+            names: ['semantic', 'token'],
+            format: 'msid-semantic: %s %s' // space after ':' is not accidental
+        },
+        {
+            // a=group:BUNDLE audio video
+            push: 'groups',
+            reg: /^group:(\w*) (.*)/,
+            names: ['type', 'mids'],
+            format: 'group:%s %s'
+        },
+        {
+            // a=rtcp-mux
+            name: 'rtcpMux',
+            reg: /^(rtcp-mux)/
+        },
+        {
+            // a=rtcp-rsize
+            name: 'rtcpRsize',
+            reg: /^(rtcp-rsize)/
+        },
+        {
+            // a=sctpmap:5000 webrtc-datachannel 1024
+            name: 'sctpmap',
+            reg: /^sctpmap:([\w_/]*) (\S*)(?: (\S*))?/,
+            names: ['sctpmapNumber', 'app', 'maxMessageSize'],
+            format: function (o) {
+                return (o.maxMessageSize != null)
+                    ? 'sctpmap:%s %s %s'
+                    : 'sctpmap:%s %s';
+            }
+        },
+        {
+            // a=x-google-flag:conference
+            name: 'xGoogleFlag',
+            reg: /^x-google-flag:([^\s]*)/,
+            format: 'x-google-flag:%s'
+        },
+        {
+            // a=rid:1 send max-width=1280;max-height=720;max-fps=30;depend=0
+            push: 'rids',
+            reg: /^rid:([\d\w]+) (\w+)(?: ([\S| ]*))?/,
+            names: ['id', 'direction', 'params'],
+            format: function (o) {
+                return (o.params) ? 'rid:%s %s %s' : 'rid:%s %s';
+            }
+        },
+        {
+            // a=imageattr:97 send [x=800,y=640,sar=1.1,q=0.6] [x=480,y=320] recv [x=330,y=250]
+            // a=imageattr:* send [x=800,y=640] recv *
+            // a=imageattr:100 recv [x=320,y=240]
+            push: 'imageattrs',
+            reg: new RegExp(
+                // a=imageattr:97
+                '^imageattr:(\\d+|\\*)' +
+                // send [x=800,y=640,sar=1.1,q=0.6] [x=480,y=320]
+                '[\\s\\t]+(send|recv)[\\s\\t]+(\\*|\\[\\S+\\](?:[\\s\\t]+\\[\\S+\\])*)' +
+                // recv [x=330,y=250]
+                '(?:[\\s\\t]+(recv|send)[\\s\\t]+(\\*|\\[\\S+\\](?:[\\s\\t]+\\[\\S+\\])*))?'
+            ),
+            names: ['pt', 'dir1', 'attrs1', 'dir2', 'attrs2'],
+            format: function (o) {
+                return 'imageattr:%s %s %s' + (o.dir2 ? ' %s %s' : '');
+            }
+        },
+        {
+            // a=simulcast:send 1,2,3;~4,~5 recv 6;~7,~8
+            // a=simulcast:recv 1;4,5 send 6;7
+            name: 'simulcast',
+            reg: new RegExp(
+                // a=simulcast:
+                '^simulcast:' +
+                // send 1,2,3;~4,~5
+                '(send|recv) ([a-zA-Z0-9\\-_~;,]+)' +
+                // space + recv 6;~7,~8
+                '(?:\\s?(send|recv) ([a-zA-Z0-9\\-_~;,]+))?' +
+                // end
+                '$'
+            ),
+            names: ['dir1', 'list1', 'dir2', 'list2'],
+            format: function (o) {
+                return 'simulcast:%s %s' + (o.dir2 ? ' %s %s' : '');
+            }
+        },
+        {
+            // old simulcast draft 03 (implemented by Firefox)
+            //   https://tools.ietf.org/html/draft-ietf-mmusic-sdp-simulcast-03
+            // a=simulcast: recv pt=97;98 send pt=97
+            // a=simulcast: send rid=5;6;7 paused=6,7
+            name: 'simulcast_03',
+            reg: /^simulcast:[\s\t]+([\S+\s\t]+)$/,
+            names: ['value'],
+            format: 'simulcast: %s'
+        },
+        {
+            // a=framerate:25
+            // a=framerate:29.97
+            name: 'framerate',
+            reg: /^framerate:(\d+(?:$|\.\d+))/,
+            format: 'framerate:%s'
+        },
+        {
+            // RFC4570
+            // a=source-filter: incl IN IP4 239.5.2.31 10.1.15.5
+            name: 'sourceFilter',
+            reg: /^source-filter: *(excl|incl) (\S*) (IP4|IP6|\*) (\S*) (.*)/,
+            names: ['filterMode', 'netType', 'addressTypes', 'destAddress', 'srcList'],
+            format: 'source-filter: %s %s %s %s %s'
+        },
+        {
+            // a=bundle-only
+            name: 'bundleOnly',
+            reg: /^(bundle-only)/
+        },
+        {
+            // a=label:1
+            name: 'label',
+            reg: /^label:(.+)/,
+            format: 'label:%s'
+        },
+        {
+            // RFC version 26 for SCTP over DTLS
+            // https://tools.ietf.org/html/draft-ietf-mmusic-sctp-sdp-26#section-5
+            name: 'sctpPort',
+            reg: /^sctp-port:(\d+)$/,
+            format: 'sctp-port:%s'
+        },
+        {
+            // RFC version 26 for SCTP over DTLS
+            // https://tools.ietf.org/html/draft-ietf-mmusic-sctp-sdp-26#section-6
+            name: 'maxMessageSize',
+            reg: /^max-message-size:(\d+)$/,
+            format: 'max-message-size:%s'
+        },
+        {
+            // RFC7273
+            // a=ts-refclk:ptp=IEEE1588-2008:39-A7-94-FF-FE-07-CB-D0:37
+            push: 'tsRefClocks',
+            reg: /^ts-refclk:([^\s=]*)(?:=(\S*))?/,
+            names: ['clksrc', 'clksrcExt'],
+            format: function (o) {
+                return 'ts-refclk:%s' + (o.clksrcExt != null ? '=%s' : '');
+            }
+        },
+        {
+            // RFC7273
+            // a=mediaclk:direct=963214424
+            name: 'mediaClk',
+            reg: /^mediaclk:(?:id=(\S*))? *([^\s=]*)(?:=(\S*))?(?: *rate=(\d+)\/(\d+))?/,
+            names: ['id', 'mediaClockName', 'mediaClockValue', 'rateNumerator', 'rateDenominator'],
+            format: function (o) {
+                var str = 'mediaclk:';
+                str += (o.id != null ? 'id=%s %s' : '%v%s');
+                str += (o.mediaClockValue != null ? '=%s' : '');
+                str += (o.rateNumerator != null ? ' rate=%s' : '');
+                str += (o.rateDenominator != null ? '/%s' : '');
+                return str;
+            }
+        },
+        {
+            // a=keywds:keywords
+            name: 'keywords',
+            reg: /^keywds:(.+)$/,
+            format: 'keywds:%s'
+        },
+        {
+            // a=content:main
+            name: 'content',
+            reg: /^content:(.+)/,
+            format: 'content:%s'
+        },
+        // BFCP https://tools.ietf.org/html/rfc4583
+        {
+            // a=floorctrl:c-s
+            name: 'bfcpFloorCtrl',
+            reg: /^floorctrl:(c-only|s-only|c-s)/,
+            format: 'floorctrl:%s'
+        },
+        {
+            // a=confid:1
+            name: 'bfcpConfId',
+            reg: /^confid:(\d+)/,
+            format: 'confid:%s'
+        },
+        {
+            // a=userid:1
+            name: 'bfcpUserId',
+            reg: /^userid:(\d+)/,
+            format: 'userid:%s'
+        },
+        {
+            // a=floorid:1
+            name: 'bfcpFloorId',
+            reg: /^floorid:(.+) (?:m-stream|mstrm):(.+)/,
+            names: ['id', 'mStream'],
+            format: 'floorid:%s mstrm:%s'
+        },
+        {
+            // any a= that we don't understand is kept verbatim on media.invalid
+            push: 'invalid',
+            names: ['value']
         }
-
-        str += (o['network-id'] != null) ? ' network-id %d' : '%v';
-        str += (o['network-cost'] != null) ? ' network-cost %d' : '%v';
-        return str;
-      }
-    },
-    {
-      // a=end-of-candidates (keep after the candidates line for readability)
-      name: 'endOfCandidates',
-      reg: /^(end-of-candidates)/
-    },
-    {
-      // a=remote-candidates:1 203.0.113.1 54400 2 203.0.113.1 54401 ...
-      name: 'remoteCandidates',
-      reg: /^remote-candidates:(.*)/,
-      format: 'remote-candidates:%s'
-    },
-    {
-      // a=ice-options:google-ice
-      name: 'iceOptions',
-      reg: /^ice-options:(\S*)/,
-      format: 'ice-options:%s'
-    },
-    {
-      // a=ssrc:2566107569 cname:t9YU8M1UxTF8Y1A1
-      push: 'ssrcs',
-      reg: /^ssrc:(\d*) ([\w_-]*)(?::(.*))?/,
-      names: ['id', 'attribute', 'value'],
-      format: function (o) {
-        var str = 'ssrc:%d';
-        if (o.attribute != null) {
-          str += ' %s';
-          if (o.value != null) {
-            str += ':%s';
-          }
-        }
-        return str;
-      }
-    },
-    {
-      // a=ssrc-group:FEC 1 2
-      // a=ssrc-group:FEC-FR 3004364195 1080772241
-      push: 'ssrcGroups',
-      // token-char = %x21 / %x23-27 / %x2A-2B / %x2D-2E / %x30-39 / %x41-5A / %x5E-7E
-      reg: /^ssrc-group:([\x21\x23\x24\x25\x26\x27\x2A\x2B\x2D\x2E\w]*) (.*)/,
-      names: ['semantics', 'ssrcs'],
-      format: 'ssrc-group:%s %s'
-    },
-    {
-      // a=msid-semantic: WMS Jvlam5X3SX1OP6pn20zWogvaKJz5Hjf9OnlV
-      name: 'msidSemantic',
-      reg: /^msid-semantic:\s?(\w*) (\S*)/,
-      names: ['semantic', 'token'],
-      format: 'msid-semantic: %s %s' // space after ':' is not accidental
-    },
-    {
-      // a=group:BUNDLE audio video
-      push: 'groups',
-      reg: /^group:(\w*) (.*)/,
-      names: ['type', 'mids'],
-      format: 'group:%s %s'
-    },
-    {
-      // a=rtcp-mux
-      name: 'rtcpMux',
-      reg: /^(rtcp-mux)/
-    },
-    {
-      // a=rtcp-rsize
-      name: 'rtcpRsize',
-      reg: /^(rtcp-rsize)/
-    },
-    {
-      // a=sctpmap:5000 webrtc-datachannel 1024
-      name: 'sctpmap',
-      reg: /^sctpmap:([\w_/]*) (\S*)(?: (\S*))?/,
-      names: ['sctpmapNumber', 'app', 'maxMessageSize'],
-      format: function (o) {
-        return (o.maxMessageSize != null)
-          ? 'sctpmap:%s %s %s'
-          : 'sctpmap:%s %s';
-      }
-    },
-    {
-      // a=x-google-flag:conference
-      name: 'xGoogleFlag',
-      reg: /^x-google-flag:([^\s]*)/,
-      format: 'x-google-flag:%s'
-    },
-    {
-      // a=rid:1 send max-width=1280;max-height=720;max-fps=30;depend=0
-      push: 'rids',
-      reg: /^rid:([\d\w]+) (\w+)(?: ([\S| ]*))?/,
-      names: ['id', 'direction', 'params'],
-      format: function (o) {
-        return (o.params) ? 'rid:%s %s %s' : 'rid:%s %s';
-      }
-    },
-    {
-      // a=imageattr:97 send [x=800,y=640,sar=1.1,q=0.6] [x=480,y=320] recv [x=330,y=250]
-      // a=imageattr:* send [x=800,y=640] recv *
-      // a=imageattr:100 recv [x=320,y=240]
-      push: 'imageattrs',
-      reg: new RegExp(
-        // a=imageattr:97
-        '^imageattr:(\\d+|\\*)' +
-        // send [x=800,y=640,sar=1.1,q=0.6] [x=480,y=320]
-        '[\\s\\t]+(send|recv)[\\s\\t]+(\\*|\\[\\S+\\](?:[\\s\\t]+\\[\\S+\\])*)' +
-        // recv [x=330,y=250]
-        '(?:[\\s\\t]+(recv|send)[\\s\\t]+(\\*|\\[\\S+\\](?:[\\s\\t]+\\[\\S+\\])*))?'
-      ),
-      names: ['pt', 'dir1', 'attrs1', 'dir2', 'attrs2'],
-      format: function (o) {
-        return 'imageattr:%s %s %s' + (o.dir2 ? ' %s %s' : '');
-      }
-    },
-    {
-      // a=simulcast:send 1,2,3;~4,~5 recv 6;~7,~8
-      // a=simulcast:recv 1;4,5 send 6;7
-      name: 'simulcast',
-      reg: new RegExp(
-        // a=simulcast:
-        '^simulcast:' +
-        // send 1,2,3;~4,~5
-        '(send|recv) ([a-zA-Z0-9\\-_~;,]+)' +
-        // space + recv 6;~7,~8
-        '(?:\\s?(send|recv) ([a-zA-Z0-9\\-_~;,]+))?' +
-        // end
-        '$'
-      ),
-      names: ['dir1', 'list1', 'dir2', 'list2'],
-      format: function (o) {
-        return 'simulcast:%s %s' + (o.dir2 ? ' %s %s' : '');
-      }
-    },
-    {
-      // old simulcast draft 03 (implemented by Firefox)
-      //   https://tools.ietf.org/html/draft-ietf-mmusic-sdp-simulcast-03
-      // a=simulcast: recv pt=97;98 send pt=97
-      // a=simulcast: send rid=5;6;7 paused=6,7
-      name: 'simulcast_03',
-      reg: /^simulcast:[\s\t]+([\S+\s\t]+)$/,
-      names: ['value'],
-      format: 'simulcast: %s'
-    },
-    {
-      // a=framerate:25
-      // a=framerate:29.97
-      name: 'framerate',
-      reg: /^framerate:(\d+(?:$|\.\d+))/,
-      format: 'framerate:%s'
-    },
-    {
-      // RFC4570
-      // a=source-filter: incl IN IP4 239.5.2.31 10.1.15.5
-      name: 'sourceFilter',
-      reg: /^source-filter: *(excl|incl) (\S*) (IP4|IP6|\*) (\S*) (.*)/,
-      names: ['filterMode', 'netType', 'addressTypes', 'destAddress', 'srcList'],
-      format: 'source-filter: %s %s %s %s %s'
-    },
-    {
-      // a=bundle-only
-      name: 'bundleOnly',
-      reg: /^(bundle-only)/
-    },
-    {
-      // a=label:1
-      name: 'label',
-      reg: /^label:(.+)/,
-      format: 'label:%s'
-    },
-    {
-      // RFC version 26 for SCTP over DTLS
-      // https://tools.ietf.org/html/draft-ietf-mmusic-sctp-sdp-26#section-5
-      name: 'sctpPort',
-      reg: /^sctp-port:(\d+)$/,
-      format: 'sctp-port:%s'
-    },
-    {
-      // RFC version 26 for SCTP over DTLS
-      // https://tools.ietf.org/html/draft-ietf-mmusic-sctp-sdp-26#section-6
-      name: 'maxMessageSize',
-      reg: /^max-message-size:(\d+)$/,
-      format: 'max-message-size:%s'
-    },
-    {
-      // RFC7273
-      // a=ts-refclk:ptp=IEEE1588-2008:39-A7-94-FF-FE-07-CB-D0:37
-      push:'tsRefClocks',
-      reg: /^ts-refclk:([^\s=]*)(?:=(\S*))?/,
-      names: ['clksrc', 'clksrcExt'],
-      format: function (o) {
-        return 'ts-refclk:%s' + (o.clksrcExt != null ? '=%s' : '');
-      }
-    },
-    {
-      // RFC7273
-      // a=mediaclk:direct=963214424
-      name:'mediaClk',
-      reg: /^mediaclk:(?:id=(\S*))? *([^\s=]*)(?:=(\S*))?(?: *rate=(\d+)\/(\d+))?/,
-      names: ['id', 'mediaClockName', 'mediaClockValue', 'rateNumerator', 'rateDenominator'],
-      format: function (o) {
-        var str = 'mediaclk:';
-        str += (o.id != null ? 'id=%s %s' : '%v%s');
-        str += (o.mediaClockValue != null ? '=%s' : '');
-        str += (o.rateNumerator != null ? ' rate=%s' : '');
-        str += (o.rateDenominator != null ? '/%s' : '');
-        return str;
-      }
-    },
-    {
-      // a=keywds:keywords
-      name: 'keywords',
-      reg: /^keywds:(.+)$/,
-      format: 'keywds:%s'
-    },
-    {
-      // a=content:main
-      name: 'content',
-      reg: /^content:(.+)/,
-      format: 'content:%s'
-    },
-    // BFCP https://tools.ietf.org/html/rfc4583
-    {
-      // a=floorctrl:c-s
-      name: 'bfcpFloorCtrl',
-      reg: /^floorctrl:(c-only|s-only|c-s)/,
-      format: 'floorctrl:%s'
-    },
-    {
-      // a=confid:1
-      name: 'bfcpConfId',
-      reg: /^confid:(\d+)/,
-      format: 'confid:%s'
-    },
-    {
-      // a=userid:1
-      name: 'bfcpUserId',
-      reg: /^userid:(\d+)/,
-      format: 'userid:%s'
-    },
-    {
-      // a=floorid:1
-      name: 'bfcpFloorId',
-      reg: /^floorid:(.+) (?:m-stream|mstrm):(.+)/,
-      names: ['id', 'mStream'],
-      format: 'floorid:%s mstrm:%s'
-    },
-    {
-      // any a= that we don't understand is kept verbatim on media.invalid
-      push: 'invalid',
-      names: ['value']
-    }
-  ]
+    ]
 };
 
 // set sensible defaults to avoid polluting the grammar with boring details
 Object.keys(grammar$2).forEach(function (key) {
-  var objs = grammar$2[key];
-  objs.forEach(function (obj) {
-    if (!obj.reg) {
-      obj.reg = /(.*)/;
-    }
-    if (!obj.format) {
-      obj.format = '%s';
-    }
-  });
+    var objs = grammar$2[key];
+    objs.forEach(function (obj) {
+        if (!obj.reg) {
+            obj.reg = /(.*)/;
+        }
+        if (!obj.format) {
+            obj.format = '%s';
+        }
+    });
 });
 
 var grammarExports = grammar$3.exports;
 
 (function (exports) {
-	var toIntIfInt = function (v) {
-	  return String(Number(v)) === v ? Number(v) : v;
-	};
+    var toIntIfInt = function (v) {
+        return String(Number(v)) === v ? Number(v) : v;
+    };
 
-	var attachProperties = function (match, location, names, rawName) {
-	  if (rawName && !names) {
-	    location[rawName] = toIntIfInt(match[1]);
-	  }
-	  else {
-	    for (var i = 0; i < names.length; i += 1) {
-	      if (match[i+1] != null) {
-	        location[names[i]] = toIntIfInt(match[i+1]);
-	      }
-	    }
-	  }
-	};
+    var attachProperties = function (match, location, names, rawName) {
+        if (rawName && !names) {
+            location[rawName] = toIntIfInt(match[1]);
+        }
+        else {
+            for (var i = 0; i < names.length; i += 1) {
+                if (match[i + 1] != null) {
+                    location[names[i]] = toIntIfInt(match[i + 1]);
+                }
+            }
+        }
+    };
 
-	var parseReg = function (obj, location, content) {
-	  var needsBlank = obj.name && obj.names;
-	  if (obj.push && !location[obj.push]) {
-	    location[obj.push] = [];
-	  }
-	  else if (needsBlank && !location[obj.name]) {
-	    location[obj.name] = {};
-	  }
-	  var keyLocation = obj.push ?
-	    {} :  // blank object that will be pushed
-	    needsBlank ? location[obj.name] : location; // otherwise, named location or root
+    var parseReg = function (obj, location, content) {
+        var needsBlank = obj.name && obj.names;
+        if (obj.push && !location[obj.push]) {
+            location[obj.push] = [];
+        }
+        else if (needsBlank && !location[obj.name]) {
+            location[obj.name] = {};
+        }
+        var keyLocation = obj.push ?
+            {} :  // blank object that will be pushed
+            needsBlank ? location[obj.name] : location; // otherwise, named location or root
 
-	  attachProperties(content.match(obj.reg), keyLocation, obj.names, obj.name);
+        attachProperties(content.match(obj.reg), keyLocation, obj.names, obj.name);
 
-	  if (obj.push) {
-	    location[obj.push].push(keyLocation);
-	  }
-	};
+        if (obj.push) {
+            location[obj.push].push(keyLocation);
+        }
+    };
 
-	var grammar = grammarExports;
-	var validLine = RegExp.prototype.test.bind(/^([a-z])=(.*)/);
+    var grammar = grammarExports;
+    var validLine = RegExp.prototype.test.bind(/^([a-z])=(.*)/);
 
-	exports.parse = function (sdp) {
-	  var session = {}
-	    , media = []
-	    , location = session; // points at where properties go under (one of the above)
+    exports.parse = function (sdp) {
+        var session = {}
+            , media = []
+            , location = session; // points at where properties go under (one of the above)
 
-	  // parse lines we understand
-	  sdp.split(/(\r\n|\r|\n)/).filter(validLine).forEach(function (l) {
-	    var type = l[0];
-	    var content = l.slice(2);
-	    if (type === 'm') {
-	      media.push({rtp: [], fmtp: []});
-	      location = media[media.length-1]; // point at latest media line
-	    }
+        // parse lines we understand
+        sdp.split(/(\r\n|\r|\n)/).filter(validLine).forEach(function (l) {
+            var type = l[0];
+            var content = l.slice(2);
+            if (type === 'm') {
+                media.push({ rtp: [], fmtp: [] });
+                location = media[media.length - 1]; // point at latest media line
+            }
 
-	    for (var j = 0; j < (grammar[type] || []).length; j += 1) {
-	      var obj = grammar[type][j];
-	      if (obj.reg.test(content)) {
-	        return parseReg(obj, location, content);
-	      }
-	    }
-	  });
+            for (var j = 0; j < (grammar[type] || []).length; j += 1) {
+                var obj = grammar[type][j];
+                if (obj.reg.test(content)) {
+                    return parseReg(obj, location, content);
+                }
+            }
+        });
 
-	  session.media = media; // link it up
-	  return session;
-	};
+        session.media = media; // link it up
+        return session;
+    };
 
-	var paramReducer = function (acc, expr) {
-	  var s = expr.split(/=(.+)/, 2);
-	  if (s.length === 2) {
-	    acc[s[0]] = toIntIfInt(s[1]);
-	  } else if (s.length === 1 && expr.length > 1) {
-	    acc[s[0]] = undefined;
-	  }
-	  return acc;
-	};
+    var paramReducer = function (acc, expr) {
+        var s = expr.split(/=(.+)/, 2);
+        if (s.length === 2) {
+            acc[s[0]] = toIntIfInt(s[1]);
+        } else if (s.length === 1 && expr.length > 1) {
+            acc[s[0]] = undefined;
+        }
+        return acc;
+    };
 
-	exports.parseParams = function (str) {
-	  return str.split(/;\s?/).reduce(paramReducer, {});
-	};
+    exports.parseParams = function (str) {
+        return str.split(/;\s?/).reduce(paramReducer, {});
+    };
 
-	// For backward compatibility - alias will be removed in 3.0.0
-	exports.parseFmtpConfig = exports.parseParams;
+    // For backward compatibility - alias will be removed in 3.0.0
+    exports.parseFmtpConfig = exports.parseParams;
 
-	exports.parsePayloads = function (str) {
-	  return str.toString().split(' ').map(Number);
-	};
+    exports.parsePayloads = function (str) {
+        return str.toString().split(' ').map(Number);
+    };
 
-	exports.parseRemoteCandidates = function (str) {
-	  var candidates = [];
-	  var parts = str.split(' ').map(toIntIfInt);
-	  for (var i = 0; i < parts.length; i += 3) {
-	    candidates.push({
-	      component: parts[i],
-	      ip: parts[i + 1],
-	      port: parts[i + 2]
-	    });
-	  }
-	  return candidates;
-	};
+    exports.parseRemoteCandidates = function (str) {
+        var candidates = [];
+        var parts = str.split(' ').map(toIntIfInt);
+        for (var i = 0; i < parts.length; i += 3) {
+            candidates.push({
+                component: parts[i],
+                ip: parts[i + 1],
+                port: parts[i + 2]
+            });
+        }
+        return candidates;
+    };
 
-	exports.parseImageAttributes = function (str) {
-	  return str.split(' ').map(function (item) {
-	    return item.substring(1, item.length-1).split(',').reduce(paramReducer, {});
-	  });
-	};
+    exports.parseImageAttributes = function (str) {
+        return str.split(' ').map(function (item) {
+            return item.substring(1, item.length - 1).split(',').reduce(paramReducer, {});
+        });
+    };
 
-	exports.parseSimulcastStreamList = function (str) {
-	  return str.split(';').map(function (stream) {
-	    return stream.split(',').map(function (format) {
-	      var scid, paused = false;
+    exports.parseSimulcastStreamList = function (str) {
+        return str.split(';').map(function (stream) {
+            return stream.split(',').map(function (format) {
+                var scid, paused = false;
 
-	      if (format[0] !== '~') {
-	        scid = toIntIfInt(format);
-	      } else {
-	        scid = toIntIfInt(format.substring(1, format.length));
-	        paused = true;
-	      }
+                if (format[0] !== '~') {
+                    scid = toIntIfInt(format);
+                } else {
+                    scid = toIntIfInt(format.substring(1, format.length));
+                    paused = true;
+                }
 
-	      return {
-	        scid: scid,
-	        paused: paused
-	      };
-	    });
-	  });
-	}; 
-} (parser$1));
+                return {
+                    scid: scid,
+                    paused: paused
+                };
+            });
+        });
+    };
+}(parser$1));
 
 var grammar$1 = grammarExports;
 
 // customized util.format - discards excess arguments and can void middle ones
 var formatRegExp = /%[sdv%]/g;
 var format = function (formatStr) {
-  var i = 1;
-  var args = arguments;
-  var len = args.length;
-  return formatStr.replace(formatRegExp, function (x) {
-    if (i >= len) {
-      return x; // missing argument
-    }
-    var arg = args[i];
-    i += 1;
-    switch (x) {
-    case '%%':
-      return '%';
-    case '%s':
-      return String(arg);
-    case '%d':
-      return Number(arg);
-    case '%v':
-      return '';
-    }
-  });
-  // NB: we discard excess arguments - they are typically undefined from makeLine
+    var i = 1;
+    var args = arguments;
+    var len = args.length;
+    return formatStr.replace(formatRegExp, function (x) {
+        if (i >= len) {
+            return x; // missing argument
+        }
+        var arg = args[i];
+        i += 1;
+        switch (x) {
+            case '%%':
+                return '%';
+            case '%s':
+                return String(arg);
+            case '%d':
+                return Number(arg);
+            case '%v':
+                return '';
+        }
+    });
+    // NB: we discard excess arguments - they are typically undefined from makeLine
 };
 
 var makeLine = function (type, obj, location) {
-  var str = obj.format instanceof Function ?
-    (obj.format(obj.push ? location : location[obj.name])) :
-    obj.format;
+    var str = obj.format instanceof Function ?
+        (obj.format(obj.push ? location : location[obj.name])) :
+        obj.format;
 
-  var args = [type + '=' + str];
-  if (obj.names) {
-    for (var i = 0; i < obj.names.length; i += 1) {
-      var n = obj.names[i];
-      if (obj.name) {
-        args.push(location[obj.name][n]);
-      }
-      else { // for mLine and push attributes
-        args.push(location[obj.names[i]]);
-      }
+    var args = [type + '=' + str];
+    if (obj.names) {
+        for (var i = 0; i < obj.names.length; i += 1) {
+            var n = obj.names[i];
+            if (obj.name) {
+                args.push(location[obj.name][n]);
+            }
+            else { // for mLine and push attributes
+                args.push(location[obj.names[i]]);
+            }
+        }
     }
-  }
-  else {
-    args.push(location[obj.name]);
-  }
-  return format.apply(null, args);
+    else {
+        args.push(location[obj.name]);
+    }
+    return format.apply(null, args);
 };
 
 // RFC specified order
 // TODO: extend this with all the rest
 var defaultOuterOrder = [
-  'v', 'o', 's', 'i',
-  'u', 'e', 'p', 'c',
-  'b', 't', 'r', 'z', 'a'
+    'v', 'o', 's', 'i',
+    'u', 'e', 'p', 'c',
+    'b', 't', 'r', 'z', 'a'
 ];
 var defaultInnerOrder = ['i', 'c', 'b', 'a'];
 
 
 var writer$1 = function (session, opts) {
-  opts = opts || {};
-  // ensure certain properties exist
-  if (session.version == null) {
-    session.version = 0; // 'v=0' must be there (only defined version atm)
-  }
-  if (session.name == null) {
-    session.name = ' '; // 's= ' must be there if no meaningful name set
-  }
-  session.media.forEach(function (mLine) {
-    if (mLine.payloads == null) {
-      mLine.payloads = '';
+    opts = opts || {};
+    // ensure certain properties exist
+    if (session.version == null) {
+        session.version = 0; // 'v=0' must be there (only defined version atm)
     }
-  });
+    if (session.name == null) {
+        session.name = ' '; // 's= ' must be there if no meaningful name set
+    }
+    session.media.forEach(function (mLine) {
+        if (mLine.payloads == null) {
+            mLine.payloads = '';
+        }
+    });
 
-  var outerOrder = opts.outerOrder || defaultOuterOrder;
-  var innerOrder = opts.innerOrder || defaultInnerOrder;
-  var sdp = [];
+    var outerOrder = opts.outerOrder || defaultOuterOrder;
+    var innerOrder = opts.innerOrder || defaultInnerOrder;
+    var sdp = [];
 
-  // loop through outerOrder for matching properties on session
-  outerOrder.forEach(function (type) {
-    grammar$1[type].forEach(function (obj) {
-      if (obj.name in session && session[obj.name] != null) {
-        sdp.push(makeLine(type, obj, session));
-      }
-      else if (obj.push in session && session[obj.push] != null) {
-        session[obj.push].forEach(function (el) {
-          sdp.push(makeLine(type, obj, el));
+    // loop through outerOrder for matching properties on session
+    outerOrder.forEach(function (type) {
+        grammar$1[type].forEach(function (obj) {
+            if (obj.name in session && session[obj.name] != null) {
+                sdp.push(makeLine(type, obj, session));
+            }
+            else if (obj.push in session && session[obj.push] != null) {
+                session[obj.push].forEach(function (el) {
+                    sdp.push(makeLine(type, obj, el));
+                });
+            }
         });
-      }
     });
-  });
 
-  // then for each media line, follow the innerOrder
-  session.media.forEach(function (mLine) {
-    sdp.push(makeLine('m', grammar$1.m[0], mLine));
+    // then for each media line, follow the innerOrder
+    session.media.forEach(function (mLine) {
+        sdp.push(makeLine('m', grammar$1.m[0], mLine));
 
-    innerOrder.forEach(function (type) {
-      grammar$1[type].forEach(function (obj) {
-        if (obj.name in mLine && mLine[obj.name] != null) {
-          sdp.push(makeLine(type, obj, mLine));
-        }
-        else if (obj.push in mLine && mLine[obj.push] != null) {
-          mLine[obj.push].forEach(function (el) {
-            sdp.push(makeLine(type, obj, el));
-          });
-        }
-      });
+        innerOrder.forEach(function (type) {
+            grammar$1[type].forEach(function (obj) {
+                if (obj.name in mLine && mLine[obj.name] != null) {
+                    sdp.push(makeLine(type, obj, mLine));
+                }
+                else if (obj.push in mLine && mLine[obj.push] != null) {
+                    mLine[obj.push].forEach(function (el) {
+                        sdp.push(makeLine(type, obj, el));
+                    });
+                }
+            });
+        });
     });
-  });
 
-  return sdp.join('\r\n') + '\r\n';
+    return sdp.join('\r\n') + '\r\n';
 };
 
 var parser = parser$1;
@@ -11112,7 +11112,7 @@ class Device {
         this._getSendExtendedRtpCapabilities = (nativeRtpCapabilities) => {
             return utils$3.clone(ortc$1.getExtendedRtpCapabilities(nativeRtpCapabilities, clonedRouterRtpCapabilities, preferLocalCodecsOrder));
         };
-        const recvExtendedRtpCapabilities = ortc$1.getExtendedRtpCapabilities(clonedNativeRtpCapabilities, clonedRouterRtpCapabilities, 
+        const recvExtendedRtpCapabilities = ortc$1.getExtendedRtpCapabilities(clonedNativeRtpCapabilities, clonedRouterRtpCapabilities,
         /* preferLocalCodecsOrder */ false);
         // Generate our receiving RTP capabilities for receiving media.
         this._recvRtpCapabilities = ortc$1.getRecvRtpCapabilities(recvExtendedRtpCapabilities);
@@ -11433,29 +11433,29 @@ var lib = {};
 
 var dist = {};
 
-var IDX=256, HEX=[], BUFFER;
+var IDX = 256, HEX = [], BUFFER;
 while (IDX--) HEX[IDX] = (IDX + 256).toString(16).substring(1);
 
 function v4() {
-	var i=0, num, out='';
+    var i = 0, num, out = '';
 
-	if (!BUFFER || ((IDX + 16) > 256)) {
-		BUFFER = Array(i=256);
-		while (i--) BUFFER[i] = 256 * Math.random() | 0;
-		i = IDX = 0;
-	}
+    if (!BUFFER || ((IDX + 16) > 256)) {
+        BUFFER = Array(i = 256);
+        while (i--) BUFFER[i] = 256 * Math.random() | 0;
+        i = IDX = 0;
+    }
 
-	for (; i < 16; i++) {
-		num = BUFFER[IDX + i];
-		if (i==6) out += HEX[num & 15 | 64];
-		else if (i==8) out += HEX[num & 63 | 128];
-		else out += HEX[num];
+    for (; i < 16; i++) {
+        num = BUFFER[IDX + i];
+        if (i == 6) out += HEX[num & 15 | 64];
+        else if (i == 8) out += HEX[num & 63 | 128];
+        else out += HEX[num];
 
-		if (i & 1 && i > 1 && i < 11) out += '-';
-	}
+        if (i & 1 && i > 1 && i < 11) out += '-';
+    }
 
-	IDX++;
-	return out;
+    IDX++;
+    return out;
 }
 
 dist.v4 = v4;
@@ -11472,15 +11472,15 @@ class FakeEventTarget$2 {
         }
         this.listeners[type] = this.listeners[type] ?? [];
         this.listeners[type].push({
-            callback: 
-            // eslint-disable-next-line @typescript-eslint/unbound-method
-            typeof callback === 'function' ? callback : callback.handleEvent,
+            callback:
+                // eslint-disable-next-line @typescript-eslint/unbound-method
+                typeof callback === 'function' ? callback : callback.handleEvent,
             once: typeof options === 'object' && options.once === true,
         });
     }
-    removeEventListener(type, callback, 
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    options) {
+    removeEventListener(type, callback,
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        options) {
         if (!this.listeners[type]) {
             return;
         }
@@ -11857,9 +11857,9 @@ class FakeEventTarget {
             once: typeof options === 'object' && options.once === true,
         });
     }
-    removeEventListener(type, callback, 
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    options) {
+    removeEventListener(type, callback,
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        options) {
         if (!this.listeners[type]) {
             return;
         }
@@ -11949,16 +11949,16 @@ class FakeHandler extends enhancedEvents_1.EnhancedEventEmitter {
         ortc.validateAndNormalizeRtpCapabilities(nativeRtpCapabilities);
         return nativeRtpCapabilities;
     }
-    constructor({ 
-    // direction,
-    // iceParameters,
-    // iceCandidates,
-    // dtlsParameters,
-    // sctpParameters,
-    // iceServers,
-    // iceTransportPolicy,
-    // additionalSettings,
-    getSendExtendedRtpCapabilities, }, fakeParameters) {
+    constructor({
+        // direction,
+        // iceParameters,
+        // iceCandidates,
+        // dtlsParameters,
+        // sctpParameters,
+        // iceServers,
+        // iceTransportPolicy,
+        // additionalSettings,
+        getSendExtendedRtpCapabilities, }, fakeParameters) {
         super();
         logger.debug('constructor()');
         this._getSendExtendedRtpCapabilities = getSendExtendedRtpCapabilities;
@@ -11999,8 +11999,8 @@ class FakeHandler extends enhancedEvents_1.EnhancedEventEmitter {
         return new Map(); // NOTE: Whatever.
     }
     async send(
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    { track, streamId, encodings, codecOptions, codec }) {
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        { track, streamId, encodings, codecOptions, codec }) {
         this.assertNotClosed();
         logger.debug('send() [kind:%s, track.id:%s]', track.kind, track.id);
         if (!this._transportReady) {
@@ -12129,14 +12129,14 @@ class FakeHandler extends enhancedEvents_1.EnhancedEventEmitter {
         }
     }
     async pauseReceiving(
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    localIds) {
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        localIds) {
         this.assertNotClosed();
         // Unimplemented.
     }
     async resumeReceiving(
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    localIds) {
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        localIds) {
         this.assertNotClosed();
         // Unimplemented.
     }
@@ -12161,9 +12161,9 @@ class FakeHandler extends enhancedEvents_1.EnhancedEventEmitter {
         });
         return { dataChannel };
     }
-    async setupTransport({ localDtlsRole, 
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    localSdpObject, }) {
+    async setupTransport({ localDtlsRole,
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        localSdpObject, }) {
         const dtlsParameters = utils$1.clone(this._fakeParameters.generateLocalDtlsParameters());
         // Set our DTLS role.
         if (localDtlsRole) {
@@ -13056,48 +13056,48 @@ function generateDataConsumerRemoteParameters({ id, } = {}) {
 }
 
 (function (exports) {
-	Object.defineProperty(exports, "__esModule", { value: true });
-	exports.debug = exports.testFakeParameters = exports.FakeHandler = exports.enhancedEvents = exports.ortc = exports.parseScalabilityMode = exports.detectDeviceAsync = exports.detectDevice = exports.Device = exports.version = exports.types = void 0;
-	const debug_1 = browserExports;
-	exports.debug = debug_1.default;
-	/**
-	 * Expose all types.
-	 */
-	exports.types = types;
-	/**
-	 * Expose mediasoup-client version.
-	 */
-	exports.version = '3.18.3';
-	/**
-	 * Expose Device class and device detector helpers.
-	 */
-	var Device_1 = Device$1;
-	Object.defineProperty(exports, "Device", { enumerable: true, get: function () { return Device_1.Device; } });
-	Object.defineProperty(exports, "detectDevice", { enumerable: true, get: function () { return Device_1.detectDevice; } });
-	Object.defineProperty(exports, "detectDeviceAsync", { enumerable: true, get: function () { return Device_1.detectDeviceAsync; } });
-	/**
-	 * Expose parseScalabilityMode() function.
-	 */
-	var scalabilityModes_1 = scalabilityModes;
-	Object.defineProperty(exports, "parseScalabilityMode", { enumerable: true, get: function () { return scalabilityModes_1.parse; } });
-	/**
-	 * Expose all ORTC functions.
-	 */
-	exports.ortc = ortc$8;
-	/**
-	 * Expose enhanced events.
-	 */
-	exports.enhancedEvents = enhancedEvents;
-	/**
-	 * Expose FakeHandler.
-	 */
-	var FakeHandler_1 = FakeHandler$1;
-	Object.defineProperty(exports, "FakeHandler", { enumerable: true, get: function () { return FakeHandler_1.FakeHandler; } });
-	/**
-	 * Expose test/fakeParameters utils.
-	 */
-	exports.testFakeParameters = fakeParameters; 
-} (lib$4));
+    Object.defineProperty(exports, "__esModule", { value: true });
+    exports.debug = exports.testFakeParameters = exports.FakeHandler = exports.enhancedEvents = exports.ortc = exports.parseScalabilityMode = exports.detectDeviceAsync = exports.detectDevice = exports.Device = exports.version = exports.types = void 0;
+    const debug_1 = browserExports;
+    exports.debug = debug_1.default;
+    /**
+     * Expose all types.
+     */
+    exports.types = types;
+    /**
+     * Expose mediasoup-client version.
+     */
+    exports.version = '3.18.3';
+    /**
+     * Expose Device class and device detector helpers.
+     */
+    var Device_1 = Device$1;
+    Object.defineProperty(exports, "Device", { enumerable: true, get: function () { return Device_1.Device; } });
+    Object.defineProperty(exports, "detectDevice", { enumerable: true, get: function () { return Device_1.detectDevice; } });
+    Object.defineProperty(exports, "detectDeviceAsync", { enumerable: true, get: function () { return Device_1.detectDeviceAsync; } });
+    /**
+     * Expose parseScalabilityMode() function.
+     */
+    var scalabilityModes_1 = scalabilityModes;
+    Object.defineProperty(exports, "parseScalabilityMode", { enumerable: true, get: function () { return scalabilityModes_1.parse; } });
+    /**
+     * Expose all ORTC functions.
+     */
+    exports.ortc = ortc$8;
+    /**
+     * Expose enhanced events.
+     */
+    exports.enhancedEvents = enhancedEvents;
+    /**
+     * Expose FakeHandler.
+     */
+    var FakeHandler_1 = FakeHandler$1;
+    Object.defineProperty(exports, "FakeHandler", { enumerable: true, get: function () { return FakeHandler_1.FakeHandler; } });
+    /**
+     * Expose test/fakeParameters utils.
+     */
+    exports.testFakeParameters = fakeParameters;
+}(lib$4));
 
 /**
  * Bus class that implements a request/response pattern and batching feature on top of WebSocket.
@@ -13876,6 +13876,6 @@ export { CLIENT_UPDATE, SFU_CLIENT_STATE, SfuClient, SfuClientState };
 export const __info__ = {
     date: '2026-09-09T12:47:58.657Z',
     hash: '120df21',
-    url: 'https://github.com/odoo/sfu',
+    url: 'https://github.com/weth/sfu',
     version: '1.3.3',
 };

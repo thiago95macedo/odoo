@@ -1,5 +1,5 @@
-from odoo.addons.account_edi_ubl_cii.tests.test_cii_import_facturx_fr import CiiImportFacturXFR
-from odoo.tests import tagged
+from weth.addons.account_edi_ubl_cii.tests.test_cii_import_facturx_fr import CiiImportFacturXFR
+from weth.tests import tagged
 
 
 @tagged('post_install_l10n', 'post_install', '-at_install')

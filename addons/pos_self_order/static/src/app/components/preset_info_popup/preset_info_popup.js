@@ -1,4 +1,4 @@
-import { Component, EventBus, proxy, useProps, signal, t } from "@odoo/owl";
+import { Component, EventBus, proxy, useProps, signal, t } from "@weth/owl";
 import { rpc } from "@web/core/network/rpc";
 import { Dialog } from "@web/core/dialog/dialog";
 import { SelectMenu } from "@web/core/select_menu/select_menu";

@@ -1,6 +1,6 @@
 import random
 
-from odoo import fields, models
+from weth import fields, models
 
 
 class CardCampaignTag(models.Model):

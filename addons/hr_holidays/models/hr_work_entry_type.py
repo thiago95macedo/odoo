@@ -7,12 +7,12 @@ import operator as py_operator
 from collections import defaultdict
 from datetime import date, datetime, time, UTC
 
-from odoo import api, fields, models
-from odoo.exceptions import UserError, ValidationError
-from odoo.fields import Domain
-from odoo.tools import format_date
-from odoo.tools.translate import _
-from odoo.tools.float_utils import float_round
+from weth import api, fields, models
+from weth.exceptions import UserError, ValidationError
+from weth.fields import Domain
+from weth.tools import format_date
+from weth.tools.translate import _
+from weth.tools.float_utils import float_round
 
 _logger = logging.getLogger(__name__)
 
@@ -542,7 +542,7 @@ been taken for this time off type. Changing it now would affect existing employe
         """Return the balance of the employees for each type of ``self`` on a date.
 
         Sums the data of
-        :meth:`~odoo.addons.hr_holidays.models.hr_employee.HrEmployee._get_consumed_leaves` over
+        :meth:`~weth.addons.hr_holidays.models.hr_employee.HrEmployee._get_consumed_leaves` over
         the allocations valid on ``target_date``. Amounts are in the ``unit_of_measure`` of
         the type, rounded to 2 digits. Requests listed in the context key ``ignored_leave_ids``
         are ignored.
@@ -705,7 +705,7 @@ been taken for this time off type. Changing it now would affect existing employe
 
         :param allocations: ``hr.leave.allocation`` with remaining time
         :param dict remaining_leaves: ``{allocation: data}`` of
-            :meth:`~odoo.addons.hr_holidays.models.hr_employee.HrEmployee._get_consumed_leaves`
+            :meth:`~weth.addons.hr_holidays.models.hr_employee.HrEmployee._get_consumed_leaves`
         :param datetime.date target_date: reference date
         :param str primary_unit: ``'days'`` or ``'hours'``
         :return: ``(date, amount)``, ``(None, 0)`` when nothing expires

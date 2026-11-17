@@ -1,5 +1,5 @@
-import { describe, expect, test } from "@odoo/hoot";
-import { queryAllTexts } from "@odoo/hoot-dom";
+import { describe, expect, test } from "@weth/hoot";
+import { queryAllTexts } from "@weth/hoot-dom";
 import {
     clickCancel,
     clickSave,
@@ -129,16 +129,16 @@ const EXPECTED_LINE_RECORDS = [
     "r2",
     "Sec1",
     "Sec3",
-        "Sec3-r1",
-        "Sec3-r2",
-        "Sec3-sub1",
-            "Sec3-sub1-r1",
-        "Sec3-sub2",
-            "Sec3-sub2-r1",
+    "Sec3-r1",
+    "Sec3-r2",
+    "Sec3-sub1",
+    "Sec3-sub1-r1",
+    "Sec3-sub2",
+    "Sec3-sub2-r1",
     "Sec4",
-        "Sec4-r1",
-        "Sec4-sub1",
-            "Sec4-sub1-r1",
+    "Sec4-r1",
+    "Sec4-sub1",
+    "Sec4-sub1-r1",
 ];
 
 test("Editing a subsection's quantity applies the ratio to its line and recomputes its price", async () => {

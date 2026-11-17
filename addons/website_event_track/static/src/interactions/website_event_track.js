@@ -1,4 +1,4 @@
-import { usePlugin } from "@odoo/owl";
+import { usePlugin } from "@weth/owl";
 import { registry } from "@web/core/registry";
 import { Interaction } from "@web/public/interaction";
 import { BootstrapInstance } from "@web/core/utils/bootstrap_plugin";
@@ -11,9 +11,11 @@ export class WebsiteEventTrack extends Interaction {
             "t-on-scroll": () => this.throttledUpdateAgendaScroll(),
             "t-on-resize": () => this.throttledUpdateAgendaScroll(),
         },
-        "#event_track_search": { "t-on-input.prevent": (ev) => {
-            this.searchText = ev.currentTarget.value.toLowerCase();
-        }},
+        "#event_track_search": {
+            "t-on-input.prevent": (ev) => {
+                this.searchText = ev.currentTarget.value.toLowerCase();
+            }
+        },
         ".o_we_online_agenda": { "t-on-scroll": this.throttled(this.onAgendaScroll) },
         ".event_track": { "t-att-class": (el) => ({ "invisible": !el.textContent.toLowerCase().includes(this.searchText) }) },
         "#search_summary": { "t-att-class": () => ({ "invisible": !this.searchText }) },
@@ -74,7 +76,7 @@ export class WebsiteEventTrack extends Interaction {
      */
     updateAgendaScroll() {
         if (!this.agendaScroller) {
-            return ;
+            return;
         }
 
         // reverse the agendas, we always want the last agenda "on screen" to be the scrolled one

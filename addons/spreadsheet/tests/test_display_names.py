@@ -1,4 +1,4 @@
-from odoo.tests.common import tagged, TransactionCase, new_test_user
+from weth.tests.common import tagged, TransactionCase, new_test_user
 
 
 @tagged('at_install', '-post_install')  # LEGACY at_install

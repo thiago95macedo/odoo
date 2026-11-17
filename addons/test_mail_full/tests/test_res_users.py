@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.mail.tests.common import mail_new_test_user
-from odoo.tests import tagged
+from weth.addons.mail.tests.common import mail_new_test_user
+from weth.tests import tagged
 
-from odoo.addons.test_mail_full.tests.common import TestMailFullCommon
+from weth.addons.test_mail_full.tests.common import TestMailFullCommon
 
 
 @tagged('at_install', '-post_install')  # LEGACY at_install

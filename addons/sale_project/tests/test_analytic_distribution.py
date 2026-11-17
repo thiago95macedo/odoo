@@ -1,9 +1,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
 from .common import TestSaleProjectCommon
-from odoo.fields import Command, Domain
-from odoo.tests import HttpCase
-from odoo.tests.common import tagged
+from weth.fields import Command, Domain
+from weth.tests import HttpCase
+from weth.tests.common import tagged
 
 
 @tagged('post_install', '-at_install')

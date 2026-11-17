@@ -2,8 +2,8 @@
 
 import io
 
-from odoo import models
-from odoo.tools.pdf import OdooPdfFileReader, OdooPdfFileWriter
+from weth import models
+from weth.tools.pdf import OdooPdfFileReader, OdooPdfFileWriter
 
 
 class IrActionsReport(models.Model):

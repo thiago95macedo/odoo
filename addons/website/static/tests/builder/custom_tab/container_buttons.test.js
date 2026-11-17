@@ -1,5 +1,5 @@
-import { expect, test } from "@odoo/hoot";
-import { xml } from "@odoo/owl";
+import { expect, test } from "@weth/hoot";
+import { xml } from "@weth/owl";
 import {
     defineWebsiteModels,
     setupWebsiteBuilder,
@@ -18,7 +18,7 @@ import {
 import { undo } from "@html_editor/../tests/_helpers/user_actions";
 import { Plugin } from "@html_editor/plugin";
 import { BuilderAction } from "@html_builder/core/builder_action";
-import { animationFrame, tick, click } from "@odoo/hoot-dom";
+import { animationFrame, tick, click } from "@weth/hoot-dom";
 import { browser } from "@web/core/browser/browser";
 import { contains, onRpc, patchWithCleanup } from "@web/../tests/web_test_helpers";
 

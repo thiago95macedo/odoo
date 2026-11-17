@@ -2,13 +2,13 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime, timedelta
-from odoo.tools import html2plaintext
+from weth.tools import html2plaintext
 
-from odoo import Command
-from odoo.tests import Form, tagged
-from odoo.exceptions import AccessError
-from odoo.addons.stock.tests.test_report import TestReportsCommon
-from odoo.addons.sale.tests.common import TestSaleCommon
+from weth import Command
+from weth.tests import Form, tagged
+from weth.exceptions import AccessError
+from weth.addons.stock.tests.test_report import TestReportsCommon
+from weth.addons.sale.tests.common import TestSaleCommon
 
 
 @tagged('at_install', '-post_install')  # LEGACY at_install

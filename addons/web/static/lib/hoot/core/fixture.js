@@ -1,6 +1,6 @@
-/** @odoo-module */
+/** @weth-module */
 
-import { animationFrame } from "@odoo/hoot-dom";
+import { animationFrame } from "@weth/hoot-dom";
 import { _getCurrentDimensions, getActiveElement } from "@web/../lib/hoot-dom/helpers/dom";
 import { _setupEventActions } from "@web/../lib/hoot-dom/helpers/events";
 import { HootError } from "../hoot_utils";
@@ -8,13 +8,13 @@ import { subscribeToTransitionChange } from "../mock/animation";
 import { getViewPortHeight, getViewPortWidth } from "../mock/window";
 
 /**
- * @typedef {Parameters<typeof import("@odoo/owl").mount>[2] & {
+ * @typedef {Parameters<typeof import("@weth/owl").mount>[2] & {
  *  className: string | string[];
- *  target?: import("@odoo/hoot-dom").Target;
+ *  target?: import("@weth/hoot-dom").Target;
  * }} MountOnFixtureOptions
  *
  * @typedef {{
- *  component: import("@odoo/owl").ComponentConstructor;
+ *  component: import("@weth/owl").ComponentConstructor;
  *  props: unknown;
  * }} TestRootProps
  */

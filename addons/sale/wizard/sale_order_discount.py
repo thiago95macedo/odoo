@@ -1,9 +1,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, fields, models
-from odoo.exceptions import ValidationError
-from odoo.fields import Command
-from odoo.tools import float_repr
+from weth import api, fields, models
+from weth.exceptions import ValidationError
+from weth.fields import Command
+from weth.tools import float_repr
 
 
 class SaleOrderDiscount(models.TransientModel):

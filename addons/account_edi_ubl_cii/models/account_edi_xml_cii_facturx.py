@@ -1,8 +1,8 @@
-from odoo import _, models, Command
-from odoo.addons.account.tools import dict_to_xml
-from odoo.addons.account_edi_ubl_cii.tools import CrossIndustryInvoice
-from odoo.tools import float_repr, is_html_empty, html2plaintext, cleanup_xml_node
-from odoo.tools.misc import str2bool
+from weth import _, models, Command
+from weth.addons.account.tools import dict_to_xml
+from weth.addons.account_edi_ubl_cii.tools import CrossIndustryInvoice
+from weth.tools import float_repr, is_html_empty, html2plaintext, cleanup_xml_node
+from weth.tools.misc import str2bool
 from lxml import etree
 
 from datetime import datetime

@@ -3,9 +3,9 @@
 
 from datetime import date, datetime
 
-from odoo import Command
-from odoo.tests import tagged
-from odoo.tests.common import TransactionCase, warmup
+from weth import Command
+from weth.tests import tagged
+from weth.tests.common import TransactionCase, warmup
 
 
 @tagged('company_leave')

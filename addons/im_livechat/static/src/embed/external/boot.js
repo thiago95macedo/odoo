@@ -1,7 +1,7 @@
 import { makeRoot, makeShadow } from "@im_livechat/embed/common/boot_helpers";
 import { canLoadLivechat } from "@im_livechat/embed/common/misc";
 
-import { whenReady } from "@odoo/owl";
+import { whenReady } from "@weth/owl";
 
 import { loadBundle } from "@web/core/assets";
 import { MainComponentsContainer } from "@web/core/main_components_container";
@@ -20,9 +20,9 @@ import { session } from "@web/session";
     const root = makeRoot(document.body);
     const target = await makeShadow(root);
     const { env } = await mountComponent(MainComponentsContainer, target, {
-        name: "Odoo livechat",
+        name: "WETH livechat",
     });
     env.rootId = root.getAttribute("id");
     env.services["discuss.rtc"].rootEl = target;
-    odoo.isReady = true;
+    weth.isReady = true;
 })();

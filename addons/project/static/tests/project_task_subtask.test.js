@@ -7,7 +7,7 @@ import {
     expect,
     queryOne,
     test,
-} from "@odoo/hoot";
+} from "@weth/hoot";
 import {
     Command,
     defineActions,

@@ -3,7 +3,7 @@ import { CollaborationPlugin } from "@html_editor/others/collaboration/collabora
 import { createDOMPathGenerator } from "@html_editor/utils/dom_traversal";
 import { DIRECTIONS } from "@html_editor/utils/position";
 import { HistoryCommit } from "@html_editor/core/history_plugin";
-import { after, expect } from "@odoo/hoot";
+import { after, expect } from "@weth/hoot";
 import { setupEditor } from "./editor";
 import { localeCompare } from "@web/core/l10n/utils";
 

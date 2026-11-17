@@ -6,7 +6,7 @@ import {
     markup,
     shallowEqual,
     untrack,
-} from "@odoo/owl";
+} from "@weth/owl";
 import {
     COMPUTED_SYM,
     OR_SYM,
@@ -304,7 +304,7 @@ export class Record {
     /** @type {this} */
     _proxy;
 
-    setup() {}
+    setup() { }
 
     /**
      * Declares a value computed from the record, read like a field without

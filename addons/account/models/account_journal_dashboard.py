@@ -5,12 +5,12 @@ from datetime import datetime, timedelta
 import json
 import random
 
-from odoo import models, api, _, fields, tools
-from odoo.exceptions import AccessError, UserError
-from odoo.fields import Command, Domain
-from odoo.release import version
-from odoo.tools import DEFAULT_SERVER_DATE_FORMAT as DF, SQL, date_utils
-from odoo.tools.misc import formatLang, format_date as odoo_format_date, get_lang
+from weth import models, api, _, fields, tools
+from weth.exceptions import AccessError, UserError
+from weth.fields import Command, Domain
+from weth.release import version
+from weth.tools import DEFAULT_SERVER_DATE_FORMAT as DF, SQL, date_utils
+from weth.tools.misc import formatLang, format_date as odoo_format_date, get_lang
 
 
 def group_by_journal(vals_list):

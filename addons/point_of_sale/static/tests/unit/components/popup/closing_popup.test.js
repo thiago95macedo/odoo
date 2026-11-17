@@ -1,4 +1,4 @@
-import { test, expect } from "@odoo/hoot";
+import { test, expect } from "@weth/hoot";
 import { mountWithCleanup, patchWithCleanup } from "@web/../tests/web_test_helpers";
 import { currencies } from "@web/core/currency";
 import { ClosePosPopup } from "@point_of_sale/app/components/popups/closing_popup/closing_popup";
@@ -21,7 +21,7 @@ const getProps = (overrides = {}) => ({
     non_cash_payment_methods: [],
     is_manager: false,
     amount_authorized_diff: null,
-    close: () => {},
+    close: () => { },
     ...overrides,
 });
 

@@ -6,9 +6,9 @@ from urllib.parse import unquote, quote
 
 from google.oauth2 import service_account
 
-from odoo import models
-from odoo.exceptions import ValidationError
-from odoo.http.stream import content_disposition
+from weth import models
+from weth.exceptions import ValidationError
+from weth.http.stream import content_disposition
 
 from ..utils.cloud_storage_google_utils import generate_signed_url_v4
 

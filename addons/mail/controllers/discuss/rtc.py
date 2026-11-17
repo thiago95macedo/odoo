@@ -6,18 +6,18 @@ from datetime import UTC
 
 from werkzeug.exceptions import BadRequest, NotFound
 
-from odoo.exceptions import UserError
-from odoo.http import Controller, request, route
-from odoo.http.stream import STATIC_CACHE
-from odoo.tools import file_open
+from weth.exceptions import UserError
+from weth.http import Controller, request, route
+from weth.http.stream import STATIC_CACHE
+from weth.tools import file_open
 
-from odoo.addons.mail.tools.discuss import (
+from weth.addons.mail.tools.discuss import (
     Store,
     add_guest_to_context,
     get_derived_sfu_key,
     mail_route,
 )
-from odoo.addons.mail.tools.jwt import Algorithm, verify
+from weth.addons.mail.tools.jwt import Algorithm, verify
 
 _logger = logging.getLogger(__name__)
 

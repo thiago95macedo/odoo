@@ -1,4 +1,4 @@
-import { Component, onMounted, proxy, signal, t, useListener, useProps } from "@odoo/owl";
+import { Component, onMounted, proxy, signal, t, useListener, useProps } from "@weth/owl";
 import { useDebounced } from "@web/core/utils/timing";
 import { search } from "@api_doc/utils/doc_model_search";
 

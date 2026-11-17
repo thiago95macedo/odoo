@@ -3,9 +3,9 @@
 
 from ast import literal_eval
 
-from odoo.addons.mass_mailing_sms.tests.common import MassSMSCommon
-from odoo.exceptions import ValidationError
-from odoo.tests.common import tagged, users
+from weth.addons.mass_mailing_sms.tests.common import MassSMSCommon
+from weth.exceptions import ValidationError
+from weth.tests.common import tagged, users
 
 
 @tagged('at_install', '-post_install')  # LEGACY at_install

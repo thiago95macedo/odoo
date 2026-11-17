@@ -2,9 +2,9 @@
 
 from datetime import timedelta
 
-from odoo.fields import Command, Datetime
+from weth.fields import Command, Datetime
 
-from odoo.addons.website_sale.tests.common import WebsiteSaleCommon
+from weth.addons.website_sale.tests.common import WebsiteSaleCommon
 
 
 class TestWebsiteEventSaleCommon(WebsiteSaleCommon):

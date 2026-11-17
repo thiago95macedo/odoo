@@ -1,4 +1,4 @@
-import { Component, onWillStart, usePlugin, proxy } from "@odoo/owl";
+import { Component, onWillStart, usePlugin, proxy } from "@weth/owl";
 import { ORM } from "@web/core/orm_plugin";
 
 export class PurchaseDashBoard extends Component {

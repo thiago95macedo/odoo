@@ -1,6 +1,6 @@
 import { _t } from "@web/core/l10n/translation";
 import { useService } from "@web/core/utils/hooks";
-import { Component, markup, t, useProps } from "@odoo/owl";
+import { Component, markup, t, useProps } from "@weth/owl";
 
 export class ForecastedButtons extends Component {
     static template = "stock.ForecastedButtons";

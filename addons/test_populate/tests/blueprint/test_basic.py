@@ -1,8 +1,8 @@
 from psycopg2 import IntegrityError
 
-from odoo.exceptions import ValidationError
-from odoo.tests import TransactionCase
-from odoo.tools import mute_logger
+from weth.exceptions import ValidationError
+from weth.tests import TransactionCase
+from weth.tools import mute_logger
 
 
 class TestBlueprintDefinition(TransactionCase):
@@ -48,14 +48,14 @@ class TestBlueprintDefinition(TransactionCase):
 
         self.assertEqual(blueprint.definition, json_def)
 
-    @mute_logger('odoo.sql_db')
+    @mute_logger('weth.sql_db')
     def test_blueprint_with_no_definition_fails(self):
         with self.assertRaises(IntegrityError):
             self.env['populate.blueprint'].create({
                 'name': 'Invalid Blueprint',
             })
 
-    @mute_logger('odoo.sql_db')
+    @mute_logger('weth.sql_db')
     def test_blueprint_name_required(self):
         with self.assertRaises(IntegrityError):
             self.env['populate.blueprint'].create({

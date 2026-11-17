@@ -1,10 +1,10 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.fields import Command
-from odoo.tests.common import HttpCase, tagged
+from weth.fields import Command
+from weth.tests.common import HttpCase, tagged
 
-from odoo.addons.account.tests.common import AccountTestInvoicingCommon
-from odoo.addons.sale.tests.common import TestSaleCommon
+from weth.addons.account.tests.common import AccountTestInvoicingCommon
+from weth.addons.sale.tests.common import TestSaleCommon
 
 
 @tagged("post_install", "-at_install")

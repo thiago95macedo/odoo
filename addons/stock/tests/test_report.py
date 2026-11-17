@@ -4,8 +4,8 @@ from datetime import date, datetime, timedelta
 from re import findall
 from unittest.mock import patch
 
-from odoo.tests import tagged, Form, TransactionCase
-from odoo import Command
+from weth.tests import tagged, Form, TransactionCase
+from weth import Command
 
 
 class TestReportsCommon(TransactionCase):

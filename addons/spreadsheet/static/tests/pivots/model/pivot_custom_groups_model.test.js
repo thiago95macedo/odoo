@@ -1,5 +1,5 @@
-import { beforeEach, describe, expect, test } from "@odoo/hoot";
-import { registries } from "@odoo/o-spreadsheet";
+import { beforeEach, describe, expect, test } from "@weth/hoot";
+import { registries } from "@weth/o-spreadsheet";
 import { setCellContent, setSelection, updatePivot } from "@spreadsheet/../tests/helpers/commands";
 import { defineSpreadsheetModels } from "@spreadsheet/../tests/helpers/data";
 import { getEvaluatedCell, getFormattedValueGrid } from "@spreadsheet/../tests/helpers/getters";
@@ -43,9 +43,9 @@ describe("Pivot custom groups", () => {
 
         // prettier-ignore
         expect(getFormattedValueGrid(model, "A1:E3")).toEqual({
-            A1:"Partner Pivot",  B1: "A Group",      C1: "chair",        D1: "table",        E1: "Total",
-            A2: "",              B2: "Probability",  C2: "Probability",  D2: "Probability",  E2: "Probability",
-            A3: "Total",         B3: "131.00",       C3: "100.00",       D3: "50.00",        E3: "281.00",
+            A1: "Partner Pivot", B1: "A Group", C1: "chair", D1: "table", E1: "Total",
+            A2: "", B2: "Probability", C2: "Probability", D2: "Probability", E2: "Probability",
+            A3: "Total", B3: "131.00", C3: "100.00", D3: "50.00", E3: "281.00",
         });
     });
 
@@ -70,9 +70,9 @@ describe("Pivot custom groups", () => {
 
         // prettier-ignore
         expect(getFormattedValueGrid(model, "A1:E3")).toEqual({
-            A1:"Partner Pivot",  B1: "A Group",      C1: "chair",        D1: "table",        E1: "Total",
-            A2: "",              B2: "Money!",       C2: "Money!",       D2: "Money!",       E2: "Money!",
-            A3: "Total",         B3: "1,153.20",     C3: "0.00",         D3: "0.00",         E3: "1,153.20",
+            A1: "Partner Pivot", B1: "A Group", C1: "chair", D1: "table", E1: "Total",
+            A2: "", B2: "Money!", C2: "Money!", D2: "Money!", E2: "Money!",
+            A3: "Total", B3: "1,153.20", C3: "0.00", D3: "0.00", E3: "1,153.20",
         });
     });
 
@@ -99,13 +99,13 @@ describe("Pivot custom groups", () => {
 
         // prettier-ignore
         expect(getFormattedValueGrid(model, "A1:B7")).toEqual({
-            A1:"Partner Pivot",  B1: "Total",
-            A2: "",              B2: "Probability",
-            A3: "First Three",   B3: "10.00",
-            A4: "Partner4",      B4: "15.00",
-            A5: "Partner5",      B5: "100.00",
-            A6: "Partner6",      B6: "50.00",
-            A7: "Total",         B7: "10.00",
+            A1: "Partner Pivot", B1: "Total",
+            A2: "", B2: "Probability",
+            A3: "First Three", B3: "10.00",
+            A4: "Partner4", B4: "15.00",
+            A5: "Partner5", B5: "100.00",
+            A6: "Partner6", B6: "50.00",
+            A7: "Total", B7: "10.00",
         });
     });
 
@@ -170,13 +170,13 @@ describe("Pivot custom groups", () => {
 
         // prettier-ignore
         expect(getFormattedValueGrid(model, "A1:D7")).toEqual({
-            A1:"Partner Pivot",  B1: "Group1",       C1: "Group2",       D1: "Total",
-            A2: "",              B2: "Probability",  C2: "Probability",  D2: "Probability",
-            A3: "xphone",        B3: "10.00",        C3: "",             D3: "10.00",
-            A4: "xpad",          B4: "121.00",       C4: "",             D4: "121.00",
-            A5: "chair",         B5: "",             C5: "100.00",       D5: "100.00",
-            A6: "table",         B6: "",             C6: "50.00",        D6: "50.00",
-            A7: "Total",         B7: "131.00",       C7: "150.00",       D7: "281.00",
+            A1: "Partner Pivot", B1: "Group1", C1: "Group2", D1: "Total",
+            A2: "", B2: "Probability", C2: "Probability", D2: "Probability",
+            A3: "xphone", B3: "10.00", C3: "", D3: "10.00",
+            A4: "xpad", B4: "121.00", C4: "", D4: "121.00",
+            A5: "chair", B5: "", C5: "100.00", D5: "100.00",
+            A6: "table", B6: "", C6: "50.00", D6: "50.00",
+            A7: "Total", B7: "131.00", C7: "150.00", D7: "281.00",
         });
         expect.verifySteps(["product_id asc"]);
     });
@@ -202,9 +202,9 @@ describe("Pivot custom groups", () => {
 
         // prettier-ignore
         expect(getFormattedValueGrid(model, "A1:E3")).toEqual({
-            A1:"Partner Pivot",  B1: "Group1",       C1: "table",        D1: "None",         E1: "Total",
-            A2: "",              B2: "Probability",  C2: "Probability",  D2: "Probability",  E2: "Probability",
-            A3: "Total",         B3: "5",            C3: "1",            D3: "1",            E3: "7",
+            A1: "Partner Pivot", B1: "Group1", C1: "table", D1: "None", E1: "Total",
+            A2: "", B2: "Probability", C2: "Probability", D2: "Probability", E2: "Probability",
+            A3: "Total", B3: "5", C3: "1", D3: "1", E3: "7",
         });
 
         updatePivot(model, pivotId, {
@@ -220,9 +220,9 @@ describe("Pivot custom groups", () => {
 
         // prettier-ignore
         expect(getFormattedValueGrid(model, "A1:D3")).toEqual({
-            A1:"Partner Pivot",  B1: "Group1",       C1: "table",        D1: "Total",
-            A2: "",              B2: "Probability",  C2: "Probability",  D2: "Probability",
-            A3: "Total",         B3: "6",            C3: "1",            D3: "7",
+            A1: "Partner Pivot", B1: "Group1", C1: "table", D1: "Total",
+            A2: "", B2: "Probability", C2: "Probability", D2: "Probability",
+            A3: "Total", B3: "6", C3: "1", D3: "7",
         });
     });
 
@@ -247,9 +247,9 @@ describe("Pivot custom groups", () => {
 
         // prettier-ignore
         expect(getFormattedValueGrid(model, "A1:F3")).toEqual({
-            A1:"Partner Pivot",  B1: "chair",        C1: "My Group",     D1: "table",        E1: "None",      F1: "Total",
-            A2: "",              B2: "Probability",  C2: "Probability",  D2: "Probability",  E2: "Probability",  F2: "Probability",
-            A3: "Total",         B3: "100.00",       C3: "95.00",        D3: "50.00",        E3: "10.00",        F3: "100.00",
+            A1: "Partner Pivot", B1: "chair", C1: "My Group", D1: "table", E1: "None", F1: "Total",
+            A2: "", B2: "Probability", C2: "Probability", D2: "Probability", E2: "Probability", F2: "Probability",
+            A3: "Total", B3: "100.00", C3: "95.00", D3: "50.00", E3: "10.00", F3: "100.00",
         });
 
         updatePivot(model, pivotId, {
@@ -259,9 +259,9 @@ describe("Pivot custom groups", () => {
 
         // prettier-ignore
         expect(getFormattedValueGrid(model, "A1:F3")).toEqual({
-            A1:"Partner Pivot",  B1: "None",         C1: "table",        D1: "My Group",     E1: "chair",        F1: "Total",
-            A2: "",              B2: "Probability",  C2: "Probability",  D2: "Probability",  E2: "Probability",  F2: "Probability",
-            A3: "Total",         B3: "10.00",        C3: "50.00",        D3: "95.00",        E3: "100.00",       F3: "100.00",
+            A1: "Partner Pivot", B1: "None", C1: "table", D1: "My Group", E1: "chair", F1: "Total",
+            A2: "", B2: "Probability", C2: "Probability", D2: "Probability", E2: "Probability", F2: "Probability",
+            A3: "Total", B3: "10.00", C3: "50.00", D3: "95.00", E3: "100.00", F3: "100.00",
         });
     });
 
@@ -287,9 +287,9 @@ describe("Pivot custom groups", () => {
 
         // prettier-ignore
         expect(getFormattedValueGrid(model, "A1:D3")).toEqual({
-            A1:"Partner Pivot",  B1: "Group1",       C1: "Others",       D1: "Total",
-            A2: "",              B2: "Probability",  C2: "Probability",  D2: "Probability",
-            A3: "Total",         B3: "131.00",       C3: "150.00",       D3: "281.00",
+            A1: "Partner Pivot", B1: "Group1", C1: "Others", D1: "Total",
+            A2: "", B2: "Probability", C2: "Probability", D2: "Probability",
+            A3: "Total", B3: "131.00", C3: "150.00", D3: "281.00",
         });
     });
 
@@ -318,9 +318,9 @@ describe("Pivot custom groups", () => {
 
         // prettier-ignore
         expect(getFormattedValueGrid(model, "A1:E3")).toEqual({
-            A1:"Partner Pivot",  B1: "Group1",       C1: "Group2",       D1: "Others",       E1: "Total",
-            A2: "",              B2: "Probability",  C2: "Probability",  D2: "Probability",  E2: "Probability",
-            A3: "Total",         B3: "131.00",       C3: "110.00",       D3: "50.00",        E3: "291.00",
+            A1: "Partner Pivot", B1: "Group1", C1: "Group2", D1: "Others", E1: "Total",
+            A2: "", B2: "Probability", C2: "Probability", D2: "Probability", E2: "Probability",
+            A3: "Total", B3: "131.00", C3: "110.00", D3: "50.00", E3: "291.00",
         });
 
         updatePivot(model, pivotId, {
@@ -330,9 +330,9 @@ describe("Pivot custom groups", () => {
 
         // prettier-ignore
         expect(getFormattedValueGrid(model, "A1:E3")).toEqual({
-            A1:"Partner Pivot",  B1: "Group2",       C1: "Group1",       D1: "Others",       E1: "Total",
-            A2: "",              B2: "Probability",  C2: "Probability",  D2: "Probability",  E2: "Probability",
-            A3: "Total",         B3: "110.00",       C3: "131.00",       D3: "50.00",        E3: "291.00",
+            A1: "Partner Pivot", B1: "Group2", C1: "Group1", D1: "Others", E1: "Total",
+            A2: "", B2: "Probability", C2: "Probability", D2: "Probability", E2: "Probability",
+            A3: "Total", B3: "110.00", C3: "131.00", D3: "50.00", E3: "291.00",
         });
     });
 });

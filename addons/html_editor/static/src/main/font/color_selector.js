@@ -5,7 +5,7 @@ import {
 } from "@html_editor/components/color_picker/color_picker";
 import { useDropdownAutoVisibility } from "@html_editor/toolbar_dropdown_hook";
 import { getCSSVariableValue, getHtmlStyle } from "@html_editor/utils/formatting";
-import { Component, useProps, proxy, signal, t, useEffect } from "@odoo/owl";
+import { Component, useProps, proxy, signal, t, useEffect } from "@weth/owl";
 import { isColorGradient } from "@web/core/utils/colors";
 
 export class ColorSelector extends Component {
@@ -98,8 +98,7 @@ export class ColorSelector extends Component {
         if (isColorGradient(this.state.selectedColor)) {
             return `border-bottom: 2px solid transparent; border-image: ${this.state.selectedColor}; border-image-slice: 1`;
         }
-        return `border-bottom: 2px solid ${
-            this.state.selectedColor || this.props.getDefaultColor?.()
-        }`;
+        return `border-bottom: 2px solid ${this.state.selectedColor || this.props.getDefaultColor?.()
+            }`;
     }
 }

@@ -1,10 +1,10 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.bus.tests.common import BusResult
-from odoo.addons.mail.models import mail_message as mail_message_module
-from odoo.addons.mail.tests import common
-from odoo.exceptions import UserError
-from odoo.tests import HttpCase, new_test_user, tagged, users
+from weth.addons.bus.tests.common import BusResult
+from weth.addons.mail.models import mail_message as mail_message_module
+from weth.addons.mail.tests import common
+from weth.exceptions import UserError
+from weth.tests import HttpCase, new_test_user, tagged, users
 
 from unittest.mock import patch
 

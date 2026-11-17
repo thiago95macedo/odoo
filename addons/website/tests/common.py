@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.fields import Command
-from odoo.tests import HttpCase
+from weth.fields import Command
+from weth.tests import HttpCase
 
 
 class HttpCaseWithWebsiteUser(HttpCase):

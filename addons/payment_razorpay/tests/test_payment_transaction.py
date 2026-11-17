@@ -6,12 +6,12 @@ from unittest.mock import patch
 
 from dateutil.relativedelta import relativedelta
 
-from odoo.exceptions import UserError
-from odoo.tests import tagged
-from odoo.tools import mute_logger
+from weth.exceptions import UserError
+from weth.tests import tagged
+from weth.tools import mute_logger
 
-from odoo.addons.payment import utils as payment_utils
-from odoo.addons.payment_razorpay.tests.common import RazorpayCommon
+from weth.addons.payment import utils as payment_utils
+from weth.addons.payment_razorpay.tests.common import RazorpayCommon
 
 
 @tagged("post_install", "-at_install")
@@ -81,7 +81,7 @@ class TestPaymentTransaction(RazorpayCommon):
                     other_tx.amount, other_tx.currency_id
                 )
                 with patch(
-                    "odoo.addons.payment.models.payment_provider.PaymentProvider._send_api_request",
+                    "weth.addons.payment.models.payment_provider.PaymentProvider._send_api_request",
                     return_value={
                         "status": "created",
                         "id": "12345",
@@ -126,8 +126,8 @@ class TestPaymentTransaction(RazorpayCommon):
         tx.with_context(payment_safe_write=True)._apply_updates(self.payment_data)
         self.assertEqual(tx.state, "done")
 
-    @mute_logger("odoo.addons.payment.models.payment_transaction")
-    @mute_logger("odoo.addons.payment_razorpay.models.payment_transaction")
+    @mute_logger("weth.addons.payment.models.payment_transaction")
+    @mute_logger("weth.addons.payment_razorpay.models.payment_transaction")
     def test_apply_updates_updates_reference_if_not_confirmed(self):
         """Test that the provider reference and payment method are not changed when the transaction
         is already confirmed. This can happen in case of multiple payment attempts."""

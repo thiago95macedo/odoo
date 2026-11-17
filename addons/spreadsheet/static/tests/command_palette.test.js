@@ -1,8 +1,8 @@
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@weth/hoot";
 import { mountSpreadsheet } from "@spreadsheet/../tests/helpers/ui";
 import { createModelWithDataSource } from "@spreadsheet/../tests/helpers/model";
-import { animationFrame } from "@odoo/hoot-mock";
-import { press } from "@odoo/hoot-dom";
+import { animationFrame } from "@weth/hoot-mock";
+import { press } from "@weth/hoot-dom";
 import { defineSpreadsheetModels } from "@spreadsheet/../tests/helpers/data";
 import { WebClient } from "@web/webclient/webclient";
 import { mountWithCleanup, contains } from "@web/../tests/web_test_helpers";

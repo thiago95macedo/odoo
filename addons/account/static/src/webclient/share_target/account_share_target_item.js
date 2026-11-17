@@ -1,7 +1,7 @@
 import { ShareTargetItem } from "@web/webclient/share_target/share_target_item";
 import { AbstractDocumentFileUploader } from "@account/components/document_file_uploader/document_file_uploader";
 import { registry } from "@web/core/registry";
-import { onWillStart } from "@odoo/owl";
+import { onWillStart } from "@weth/owl";
 import { _t } from "@web/core/l10n/translation";
 
 export class AccountShareTargetItem extends AbstractDocumentFileUploader(ShareTargetItem) {

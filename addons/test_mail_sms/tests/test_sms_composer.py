@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.sms.tests.common import SMSCommon
-from odoo.addons.sms_twilio.tests.common import MockSmsTwilioApi
-from odoo.addons.test_mail_sms.tests.common import TestSMSRecipients
-from odoo.tests import Form, tagged, users
+from weth.addons.sms.tests.common import SMSCommon
+from weth.addons.sms_twilio.tests.common import MockSmsTwilioApi
+from weth.addons.test_mail_sms.tests.common import TestSMSRecipients
+from weth.tests import Form, tagged, users
 
 
 @tagged('post_install', '-at_install', 'sms_composer')

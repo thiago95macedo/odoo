@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.mass_mailing_sms.tests.common import MassSMSCommon
-from odoo.tests import tagged, Form, users
+from weth.addons.mass_mailing_sms.tests.common import MassSMSCommon
+from weth.tests import tagged, Form, users
 
 
 @tagged('at_install', '-post_install')  # LEGACY at_install

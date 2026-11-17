@@ -1,13 +1,13 @@
 import { parseHTML } from "@html_editor/utils/html";
-import { describe, expect, test } from "@odoo/hoot";
-import { tick } from "@odoo/hoot-mock";
+import { describe, expect, test } from "@weth/hoot";
+import { tick } from "@weth/hoot-mock";
 import { setupEditor, testEditor } from "../_helpers/editor";
 import { unformat } from "../_helpers/format";
 import { getContent } from "../_helpers/selection";
 import { cleanHints } from "../_helpers/dispatch";
 import { commit } from "../_helpers/user_actions";
 import { Plugin } from "@html_editor/plugin";
-import { waitFor } from "@odoo/hoot-dom";
+import { waitFor } from "@weth/hoot-dom";
 
 function span(text) {
     const span = document.createElement("span");
@@ -218,8 +218,8 @@ describe("collapsed selection", () => {
         insertHTML("<table><tbody><tr><td/></tr></tbody></table>")(editor);
         expect(getContent(editor.editable)).toBe(
             '<p data-selection-placeholder=""><br></p>' +
-                `<div><p class="oe_unbreakable" contenteditable="true"><b class="oe_unbreakable">content</b><div class="o_table_wrapper"><table><tbody><tr><td>[]<br></td></tr></tbody></table></div></p></div>` +
-                '<p data-selection-placeholder=""><br></p>'
+            `<div><p class="oe_unbreakable" contenteditable="true"><b class="oe_unbreakable">content</b><div class="o_table_wrapper"><table><tbody><tr><td>[]<br></td></tr></tbody></table></div></p></div>` +
+            '<p data-selection-placeholder=""><br></p>'
         );
     });
 
@@ -228,7 +228,7 @@ describe("collapsed selection", () => {
         insertHTML(`<p class="oe_unbreakable">1</p>`)(editor);
         expect(getContent(editor.editable)).toBe(
             `<p>cont</p><p class="oe_unbreakable">1[]</p>` +
-                '<p data-selection-placeholder="" style="margin: -9px 0px 8px;"><br></p>'
+            '<p data-selection-placeholder="" style="margin: -9px 0px 8px;"><br></p>'
         );
     });
 
@@ -251,9 +251,9 @@ describe("collapsed selection", () => {
         editor.shared.history.commit();
         expect(getContent(editor.editable)).toBe(
             `<p>cont</p><p class="oe_unbreakable">1</p>` +
-                `<p data-selection-placeholder="" style="margin: -9px 0px 8px;"><br></p>` +
-                `<p class="oe_unbreakable">2[]</p>` +
-                `<p data-selection-placeholder="" style="margin: -9px 0px 8px;"><br></p>`
+            `<p data-selection-placeholder="" style="margin: -9px 0px 8px;"><br></p>` +
+            `<p class="oe_unbreakable">2[]</p>` +
+            `<p data-selection-placeholder="" style="margin: -9px 0px 8px;"><br></p>`
         );
     });
 
@@ -348,8 +348,8 @@ describe("collapsed selection", () => {
         cleanHints(editor);
         expect(getContent(el)).toBe(
             '<p data-selection-placeholder=""><br></p>' +
-                '<div class="oe_unbreakable">a[]</div>' +
-                '<p data-selection-placeholder=""><br></p>'
+            '<div class="oe_unbreakable">a[]</div>' +
+            '<p data-selection-placeholder=""><br></p>'
         );
     });
 

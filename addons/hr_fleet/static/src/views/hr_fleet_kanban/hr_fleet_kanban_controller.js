@@ -1,4 +1,4 @@
-import { signal } from "@odoo/owl";
+import { signal } from "@weth/owl";
 import { KanbanController } from "@web/views/kanban/kanban_controller";
 import { useBus, useService } from "@web/core/utils/hooks";
 

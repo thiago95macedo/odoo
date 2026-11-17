@@ -1,10 +1,10 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import fields
-from odoo.fields import Command
-from odoo.tests import freeze_time, tagged
+from weth import fields
+from weth.fields import Command
+from weth.tests import freeze_time, tagged
 
-from odoo.addons.sale.tests.common import TestSaleCommon
+from weth.addons.sale.tests.common import TestSaleCommon
 
 
 @freeze_time("2022-01-01")

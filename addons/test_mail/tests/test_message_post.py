@@ -7,20 +7,20 @@ from unittest.mock import patch
 from freezegun import freeze_time
 from markupsafe import Markup, escape
 
-from odoo import Command, tools
-from odoo.exceptions import AccessError
-from odoo.fields import Domain
-from odoo.service.model import call_kw
-from odoo.tests import tagged
-from odoo.tests.common import users
-from odoo.tools import email_normalize, formataddr, mute_logger
+from weth import Command, tools
+from weth.exceptions import AccessError
+from weth.fields import Domain
+from weth.service.model import call_kw
+from weth.tests import tagged
+from weth.tests.common import users
+from weth.tools import email_normalize, formataddr, mute_logger
 
-from odoo.addons.base.tests.test_ir_cron import CronMixinCase
-from odoo.addons.bus.tests.common import BusResult
-from odoo.addons.mail.tests.common import MailCommon, mail_new_test_user
-from odoo.addons.test_mail.data.test_mail_data import MAIL_TEMPLATE_PLAINTEXT
-from odoo.addons.test_mail.models.test_mail_models import MailTestSimple
-from odoo.addons.test_mail.tests.common import TestRecipients
+from weth.addons.base.tests.test_ir_cron import CronMixinCase
+from weth.addons.bus.tests.common import BusResult
+from weth.addons.mail.tests.common import MailCommon, mail_new_test_user
+from weth.addons.test_mail.data.test_mail_data import MAIL_TEMPLATE_PLAINTEXT
+from weth.addons.test_mail.models.test_mail_models import MailTestSimple
+from weth.addons.test_mail.tests.common import TestRecipients
 
 
 class TestMessagePostCommon(MailCommon, TestRecipients):
@@ -116,7 +116,7 @@ class TestMailNotifyAPI(TestMessagePostCommon):
         })
         cls._activate_multi_lang(test_record=cls.test_lang_records[0], test_template=cls.test_lang_template)
 
-    @mute_logger('odoo.models.unlink')
+    @mute_logger('weth.models.unlink')
     @users('employee')
     def test_email_notification_layouts(self):
         self.user_employee.write({'notification_type': 'email'})
@@ -145,7 +145,7 @@ class TestMailNotifyAPI(TestMessagePostCommon):
             user_email = self._new_mails.filtered(lambda mail: mail.recipient_ids == self.partner_employee)
             self.assertTrue(user_email)
 
-    @mute_logger('odoo.models.unlink')
+    @mute_logger('weth.models.unlink')
     @users('employee')
     def test_email_notification_layouts_header_footer(self):
         """ Test tweaks for header / footer
@@ -233,7 +233,7 @@ class TestMailNotifyAPI(TestMessagePostCommon):
                         self.assertNotIn('mail/unfollow', found_email['body'])
 
     @users('employee')
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_notify_by_mail_add_signature(self):
         test_track = self.env['mail.test.track'].with_user(self.user_employee).create({
             'name': 'Test',
@@ -421,7 +421,7 @@ class TestMailNotifyAPI(TestMessagePostCommon):
 class TestMessageNotify(TestMessagePostCommon):
 
     @users('employee')
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_notify(self):
         test_record = self.env['mail.test.simple'].browse(self.test_record.ids)
 
@@ -472,7 +472,7 @@ class TestMessageNotify(TestMessagePostCommon):
         self.assertNotIn('/mail/view?model=', partner_mail_body, 'The email sent to customer should not contain an access link')
 
     @users('employee')
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_notify_author(self):
         """ Author is added in notified people by default, unless asked not to
         using the 'notify_author' parameter or context key. """
@@ -527,7 +527,7 @@ class TestMessageNotify(TestMessagePostCommon):
             )
 
     @users('employee')
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_notify_from_user_id(self):
         """ Test notify coming from user_id assignment (in batch) """
         test_records, _ = self._create_records_for_batch(
@@ -573,7 +573,7 @@ class TestMessageNotify(TestMessagePostCommon):
             )
 
     @users('employee')
-    @mute_logger('odoo.addons.mail.models.mail_mail', 'odoo.models.unlink', 'odoo.tests')
+    @mute_logger('weth.addons.mail.models.mail_mail', 'weth.models.unlink', 'weth.tests')
     def test_notify_parameters(self):
         """ Test usage of parameters in notify, both for unwanted side effects
         and magic parameters. """
@@ -607,7 +607,7 @@ class TestMessageNotify(TestMessagePostCommon):
         self.assertEqual(new_message.subtype_id, self.env.ref('mail.mt_note'))
 
     @users('employee')
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_notify_thread(self):
         """ Test notify on ``mail.thread`` model, which is pushing a message to
         people without having a document. """
@@ -767,7 +767,7 @@ class TestMessagePost(TestMessagePostCommon, CronMixinCase):
         self.assertFalse(self.test_record.message_follower_ids)
         self.assertFalse(self.test_record.message_partner_ids)
 
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_manual_send_user_notification_email_from_queue(self):
         """ Test sending a mail from the queue that is not related to the admin user sending it.
         Will throw a security error not having access to the mail."""
@@ -788,7 +788,7 @@ class TestMessagePost(TestMessagePostCommon, CronMixinCase):
 
         self.assertEqual(new_notification.mail_ids.state, 'exception', 'Email will be sent but with exception state - write access denied')
 
-    @mute_logger('odoo.addons.mail.models.mail_mail', 'odoo.models.unlink')
+    @mute_logger('weth.addons.mail.models.mail_mail', 'weth.models.unlink')
     @users('employee')
     def test_message_post(self):
         self.user_employee_2.write({'notification_type': 'inbox'})
@@ -886,7 +886,7 @@ class TestMessagePost(TestMessagePostCommon, CronMixinCase):
         # notifications emails should have been deleted
         self.assertFalse(self.env['mail.mail'].sudo().search_count([('mail_message_id', '=', last_message.id)]))
 
-    @mute_logger('odoo.addons.mail.models.mail_mail', 'odoo.models.unlink', 'odoo.tests')
+    @mute_logger('weth.addons.mail.models.mail_mail', 'weth.models.unlink', 'weth.tests')
     @users('employee')
     def test_message_post_author(self):
         """ Test author recognition """
@@ -944,7 +944,7 @@ class TestMessagePost(TestMessagePostCommon, CronMixinCase):
         self.assertEqual(test_record.message_partner_ids, self.partner_employee_2,
                          'Author is the message author when user is inactive, and shoud be added in followers')
 
-    @mute_logger('odoo.addons.mail.models.mail_mail', 'odoo.models.unlink', 'odoo.tests')
+    @mute_logger('weth.addons.mail.models.mail_mail', 'weth.models.unlink', 'weth.tests')
     @users('employee')
     def test_message_post_defaults(self):
         """ Test default values when posting a classic message. """
@@ -998,7 +998,7 @@ class TestMessagePost(TestMessagePostCommon, CronMixinCase):
         )
 
     @users('employee')
-    @mute_logger('odoo.models.unlink')
+    @mute_logger('weth.models.unlink')
     def test_message_post_inactive_follower(self):
         """ Test posting with inactive followers does not notify them (e.g. odoobot) """
         test_record = self.env['mail.test.simple'].browse(self.test_record.ids)
@@ -1013,7 +1013,7 @@ class TestMessagePost(TestMessagePostCommon, CronMixinCase):
                 subtype_xmlid='mail.mt_comment',
             )
 
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     @users('employee')
     def test_message_post_keep_emails(self):
         test_record = self.env['mail.test.simple'].browse(self.test_record.ids)
@@ -1033,7 +1033,7 @@ class TestMessagePost(TestMessagePostCommon, CronMixinCase):
         self.assertEqual(self.env['mail.mail'].sudo().search_count([('mail_message_id', '=', msg.id)]), 2)
 
 
-    @mute_logger('odoo.addons.mail.models.mail_mail', 'odoo.models.unlink')
+    @mute_logger('weth.addons.mail.models.mail_mail', 'weth.models.unlink')
     @users('erp_manager')
     def test_message_post_mc(self):
         """ Test posting in multi-company environment, notably with aliases """
@@ -1233,7 +1233,7 @@ class TestMessagePost(TestMessagePostCommon, CronMixinCase):
             {'email': email_normalize(email_address), 'is_read': True, 'type': 'email'} for email_address in email_addresses
         ])
 
-    @mute_logger('odoo.addons.mail.models.mail_mail', 'odoo.tests')
+    @mute_logger('weth.addons.mail.models.mail_mail', 'weth.tests')
     def test_message_post_recipients_email_field(self):
         """ Test various combinations of corner case / not standard filling of
         email fields: multi email, formatted emails, ... """
@@ -1345,7 +1345,7 @@ class TestMessagePost(TestMessagePostCommon, CronMixinCase):
                 )
 
     @users('employee')
-    @mute_logger('odoo.addons.mail.models.mail_mail', 'odoo.addons.mail.models.mail_message_schedule', 'odoo.models.unlink')
+    @mute_logger('weth.addons.mail.models.mail_mail', 'weth.addons.mail.models.mail_message_schedule', 'weth.models.unlink')
     def test_message_post_schedule(self):
         """ Test delaying notifications through scheduled_date usage """
         cron_id = self.env.ref('mail.ir_cron_send_scheduled_message').id
@@ -1447,7 +1447,7 @@ class TestMessagePost(TestMessagePostCommon, CronMixinCase):
         self.assertMailNotifications(msg, recipients_info)
 
     @users('employee')
-    @mute_logger('odoo.addons.mail.models.mail_mail', 'odoo.addons.mail.models.mail_message_schedule', 'odoo.models.unlink')
+    @mute_logger('weth.addons.mail.models.mail_mail', 'weth.addons.mail.models.mail_message_schedule', 'weth.models.unlink')
     def test_message_post_schedule_update(self):
         """ Test tools to update scheduled notifications """
         cron = self.env.ref('mail.ir_cron_send_scheduled_message')
@@ -1492,7 +1492,7 @@ class TestMessagePost(TestMessagePostCommon, CronMixinCase):
         self.assertFalse(self.env['mail.message.schedule'].sudo()._update_message_scheduled_datetime(msg, now - timedelta(hours=1)),
                          'Mail scheduler: should return False when no schedule is found')
 
-    @mute_logger('odoo.addons.mail.models.mail_mail', 'odoo.addons.mail.models.mail_message_schedule')
+    @mute_logger('weth.addons.mail.models.mail_mail', 'weth.addons.mail.models.mail_message_schedule')
     def test_message_post_w_attachments_filtering(self):
         """
         Test the message_main_attachment heuristics with an emphasis on the XML/Octet/PDF types.
@@ -1558,7 +1558,7 @@ class TestMessagePost(TestMessagePostCommon, CronMixinCase):
                          'MailThread: main attachment should be set to application/pdf')
 
     @users('employee')
-    @mute_logger('odoo.addons.mail.models.mail_mail', 'odoo.addons.mail.models.mail_message_schedule')
+    @mute_logger('weth.addons.mail.models.mail_mail', 'weth.addons.mail.models.mail_message_schedule')
     def test_message_post_w_attachments_on_main_attachment_model(self):
         """ Test posting a message with attachments on a model inheriting from
         the mixin mail.thread.main.attachment.
@@ -1619,7 +1619,7 @@ class TestMessagePost(TestMessagePostCommon, CronMixinCase):
                         ]
         )
 
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_multiline_subject(self):
         with self.mock_mail_gateway():
             msg = self.test_record.with_user(self.user_employee).message_post(
@@ -1629,7 +1629,7 @@ class TestMessagePost(TestMessagePostCommon, CronMixinCase):
             )
         self.assertEqual(msg.subject, '1st line 2nd line')
 
-    @mute_logger('odoo.addons.base.models.ir_access', 'odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.base.models.ir_access', 'weth.addons.mail.models.mail_mail')
     def test_portal_acls(self):
         self.test_record.message_subscribe((self.partner_1 | self.user_employee.partner_id).ids)
         record_asportal = self.test_record.with_user(self.user_portal)
@@ -1659,7 +1659,7 @@ class TestMessagePost(TestMessagePostCommon, CronMixinCase):
                 subtype_xmlid='mail.mt_comment',
             )
 
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     @users('employee')
     def test_post_answer(self):
         for subtype in (
@@ -1759,7 +1759,7 @@ class TestMessagePost(TestMessagePostCommon, CronMixinCase):
                     references=f'{top_msg.message_id} {internal_msg.message_id} {msg.message_id} {new_msg.message_id}',
                 )
 
-    @mute_logger('odoo.addons.mail.models.mail_mail', 'odoo.addons.mail.models.mail_thread')
+    @mute_logger('weth.addons.mail.models.mail_mail', 'weth.addons.mail.models.mail_thread')
     @users('employee')
     def test_post_internal(self):
         test_record = self.env['mail.test.simple'].browse(self.test_record.ids)
@@ -1951,7 +1951,7 @@ class TestMessagePostHelpers(TestMessagePostCommon):
         cls.test_template.invalidate_recordset(['attachment_ids'])
 
     @users('employee')
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_message_helpers_source_ref(self):
         """ Test various sources (record or xml id) to ensure source_ref right
         computation. """
@@ -1993,7 +1993,7 @@ class TestMessagePostHelpers(TestMessagePostCommon):
                     )
 
     @users('employee')
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_message_mail_with_template(self):
         """ Test sending mass mail on documents based on a template """
         test_records = self.test_records.with_env(self.env)
@@ -2045,7 +2045,7 @@ class TestMessagePostHelpers(TestMessagePostCommon):
             )
 
     @users('employee')
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_message_mail_with_view(self):
         """ Test sending a mass mailing on documents based on a view """
         view_data = self.env.ref('test_mail.mail_template_simple_test')
@@ -2091,7 +2091,7 @@ class TestMessagePostHelpers(TestMessagePostCommon):
             )
 
     @users('employee')
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_message_post_with_source_subtype(self):
         """ Test subtype tweaks when posting with a source """
         test_record = self.test_records.with_env(self.env)[0]
@@ -2104,7 +2104,7 @@ class TestMessagePostHelpers(TestMessagePostCommon):
         self.assertEqual(new_message.subtype_id, self.env.ref("mail.mt_activities"))
 
     @users('employee')
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_message_post_with_template(self):
         """ Test posting on a document based on a template content """
         test_record = self.test_records.with_env(self.env)[0]
@@ -2150,7 +2150,7 @@ class TestMessagePostHelpers(TestMessagePostCommon):
         )
 
     @users('employee')
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_message_post_with_template_defaults(self):
         """ Test default values, notably subtype being a comment """
         test_record = self.test_records.with_env(self.env)[0]
@@ -2191,7 +2191,7 @@ class TestMessagePostHelpers(TestMessagePostCommon):
         }])
 
     @users('employee')
-    @mute_logger('odoo.addons.mail.models.mail_mail', 'odoo.tests')
+    @mute_logger('weth.addons.mail.models.mail_mail', 'weth.tests')
     def test_message_post_with_view(self):
         """ Test posting on documents based on a view """
         test_record = self.test_records.with_env(self.env)[0]
@@ -2225,7 +2225,7 @@ class TestMessagePostHelpers(TestMessagePostCommon):
         }])
 
     @users('employee')
-    @mute_logger('odoo.addons.mail.models.mail_mail', 'odoo.tests')
+    @mute_logger('weth.addons.mail.models.mail_mail', 'weth.tests')
     def test_message_post_with_view_defaults(self):
         """ Test posting on documents based on a view, check default values """
         test_record = self.test_records.with_env(self.env)[0]
@@ -2328,7 +2328,7 @@ class TestMessagePostLang(MailCommon, TestRecipients):
         self.assertEqual(self.user_employee.lang, 'en_US')
 
     @users('employee')
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_composer_lang_template_comment(self):
         """ When posting in comment mode, content is rendered using the lang
         field of template. Notification layout lang is the one from the
@@ -2416,7 +2416,7 @@ class TestMessagePostLang(MailCommon, TestRecipients):
                     self.assertNotIn('<b>Subtitle2 test_model2</b>', body, 'Subtitles translation failed')
 
     @users('employee')
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_composer_lang_template_mass(self):
         test_records = self.test_records.with_user(self.env.user)
         test_template = self.test_template.with_user(self.env.user)
@@ -2444,7 +2444,7 @@ class TestMessagePostLang(MailCommon, TestRecipients):
                              'Subject based on template should be translated')
 
     @users('employee')
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_layout_email_lang_context(self):
         test_records = self.test_records.with_user(self.env.user).with_context(lang='es_ES')
         test_records[1].message_subscribe(self.partner_2.ids)
@@ -2476,7 +2476,7 @@ class TestMessagePostLang(MailCommon, TestRecipients):
                          '"View document" should be translated')
 
     @users('employee')
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_layout_email_lang_template(self):
         """ Test language support when posting in batch using a template.
         Content is translated based on template definition, layout based on
@@ -2537,7 +2537,7 @@ class TestMessagePostLang(MailCommon, TestRecipients):
                                  '"View document" should be translated')
 
     @users('employee')
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_post_multi_lang_inactive(self):
         """ Test posting using an inactive lang, due do some data in DB. It
         should not crash when trying to search for translated terms / fetch
@@ -2578,7 +2578,7 @@ class TestMessagePostLang(MailCommon, TestRecipients):
                     self.assertIn(exp_button_en, email['body'])
 
     @users('employee')
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_post_multi_lang_recipients(self):
         """ Test posting on a document in a multilang environment. Currently
         current user's lang determines completely language used for notification

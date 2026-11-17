@@ -1,5 +1,5 @@
-from odoo import api, models, fields, _
-from odoo.exceptions import UserError
+from weth import api, models, fields, _
+from weth.exceptions import UserError
 
 
 class PosPreset(models.Model):

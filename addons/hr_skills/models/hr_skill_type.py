@@ -2,8 +2,8 @@
 
 from random import randint
 
-from odoo import _, api, fields, models, Command
-from odoo.exceptions import ValidationError
+from weth import _, api, fields, models, Command
+from weth.exceptions import ValidationError
 
 
 class HrSkillType(models.Model):

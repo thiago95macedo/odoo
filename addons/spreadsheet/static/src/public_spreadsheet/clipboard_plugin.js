@@ -1,4 +1,4 @@
-import { CommandResult, UIPlugin, registries } from "@odoo/o-spreadsheet";
+import { CommandResult, UIPlugin, registries } from "@weth/o-spreadsheet";
 
 const { statefulUIPluginRegistry } = registries;
 

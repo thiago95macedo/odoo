@@ -1,4 +1,4 @@
-import { usePlugin } from "@odoo/owl";
+import { usePlugin } from "@weth/owl";
 import { scrollTo } from "@html_builder/utils/scrolling";
 import { Interaction } from "@web/public/interaction";
 import { registry } from "@web/core/registry";
@@ -69,11 +69,11 @@ export class Form extends Interaction {
             },
         },
         ".s_website_form_datetime, .o_website_form_datetime, .s_website_form_date, .o_website_form_date":
-            {
-                "t-att-class": () => ({
-                    s_website_form_datepicker_initialized: this.datepickerInitialized,
-                }),
-            },
+        {
+            "t-att-class": () => ({
+                s_website_form_datepicker_initialized: this.datepickerInitialized,
+            }),
+        },
     };
 
     setup() {
@@ -461,8 +461,8 @@ export class Form extends Interaction {
             }
         }
 
-        if (odoo.csrf_token) {
-            formValues.csrf_token = odoo.csrf_token;
+        if (weth.csrf_token) {
+            formValues.csrf_token = weth.csrf_token;
         }
 
         const formData = new FormData();
@@ -473,7 +473,7 @@ export class Form extends Interaction {
         // Post form and handle result
         return post(
             this.el.getAttribute("action") +
-                (this.el.dataset.force_action || this.el.dataset.model_name),
+            (this.el.dataset.force_action || this.el.dataset.model_name),
             formData
         )
             .then(async (resultData) => {
@@ -576,8 +576,8 @@ export class Form extends Interaction {
                     "error",
                     error.message && error.message === "Content too large"
                         ? _t(
-                              "Your upload is too large for the server to accept. Please choose smaller files."
-                          )
+                            "Your upload is too large for the server to accept. Please choose smaller files."
+                        )
                         : ""
                 );
             });
@@ -642,7 +642,7 @@ export class Form extends Interaction {
                     // Special cases for dates and datetimes
                     // FIXME this seems like dead code, the inputs do not use
                     // those classes, their parent does (but it seemed to work
-                    // at some point given that https://github.com/odoo/odoo/commit/75e03c0f7692a112e1b0fa33267f4939363f3871
+                    // at some point given that https://github.com/weth/odoo/commit/75e03c0f7692a112e1b0fa33267f4939363f3871
                     // was made)... need more investigation (if restored,
                     // consider checking the date inputs are not disabled before
                     // saying they are invalid (see checkValidity used here))

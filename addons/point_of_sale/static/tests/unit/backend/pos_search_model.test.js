@@ -1,4 +1,4 @@
-import { expect, test, describe } from "@odoo/hoot";
+import { expect, test, describe } from "@weth/hoot";
 import { mountWithSearch } from "@web/../tests/web_test_helpers";
 import { definePosModels } from "../data/generate_model_definitions";
 import { SearchBar } from "@web/search/search_bar/search_bar";
@@ -8,9 +8,9 @@ definePosModels();
 
 describe("SearchModel", () => {
     test("pos orders can be grouped by hour", async () => {
-        odoo.pos_session_id = 1;
-        odoo.pos_config_id = 1;
-        odoo.info = {
+        weth.pos_session_id = 1;
+        weth.pos_config_id = 1;
+        weth.info = {
             db: "pos",
             isEnterprise: true,
         };

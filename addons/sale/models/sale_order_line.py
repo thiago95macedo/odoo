@@ -3,10 +3,10 @@ from datetime import timedelta
 
 from markupsafe import Markup
 
-from odoo import api, fields, models
-from odoo.exceptions import UserError, ValidationError
-from odoo.fields import Command, Domain
-from odoo.tools import float_compare, float_is_zero, format_date, groupby
+from weth import api, fields, models
+from weth.exceptions import UserError, ValidationError
+from weth.fields import Command, Domain
+from weth.tools import float_compare, float_is_zero, format_date, groupby
 
 
 class SaleOrderLine(models.Model):

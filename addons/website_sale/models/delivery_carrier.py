@@ -2,10 +2,10 @@
 
 from datetime import timedelta
 
-from odoo import fields, models
-from odoo.tools import OrderedSet
-from odoo.tools.date_utils import localized
-from odoo.tools.misc import format_date
+from weth import fields, models
+from weth.tools import OrderedSet
+from weth.tools.date_utils import localized
+from weth.tools.misc import format_date
 
 
 class DeliveryCarrier(models.Model):

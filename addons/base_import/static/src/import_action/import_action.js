@@ -1,4 +1,4 @@
-import { Component, onWillStart, proxy, signal, useProps } from "@odoo/owl";
+import { Component, onWillStart, proxy, signal, useProps } from "@weth/owl";
 import { useDropzone } from "@web/core/dropzone/dropzone_hook";
 import { FileInput } from "@web/core/file_input/file_input";
 import { _t } from "@web/core/l10n/translation";
@@ -81,7 +81,7 @@ export class ImportAction extends Component {
                     );
                 } else {
                     await this.uploadFiles(this.uploadFilesRoute, {
-                        csrf_token: odoo.csrf_token,
+                        csrf_token: weth.csrf_token,
                         ufile: [file],
                         model: this.resModel,
                         id: this.model.id,

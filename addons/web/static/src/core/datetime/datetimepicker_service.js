@@ -7,7 +7,7 @@ import {
     onWillDestroy,
     proxy,
     untrack,
-} from "@odoo/owl";
+} from "@weth/owl";
 import { hasTouch } from "@web/core/browser/feature_detection";
 import { onWillRender, useLayoutEffect } from "@web/owl2/utils";
 import { areDatesEqual, formatDate, formatDateTime, parseDate, parseDateTime } from "../l10n/dates";
@@ -24,7 +24,7 @@ import { DateTimePickerPopover } from "./datetime_picker_popover";
  * @typedef {import("./datetime_picker").DateTimePickerProps} DateTimePickerProps
  * @typedef {import("../popover/popover_hook").PopoverHookReturnType} PopoverHookReturnType
  * @typedef {import("../popover/popover_plugin").PopoverOptionSchema} PopoverServiceAddOptions
- * @typedef {import("@odoo/owl").Component} Component
+ * @typedef {import("@weth/owl").Component} Component
  *
  * @typedef {{
  *  createPopover?: (component: Component, options: PopoverServiceAddOptions) => PopoverHookReturnType;
@@ -532,7 +532,7 @@ export const datetimePickerService = {
                     state: pickerProps,
                 };
 
-                let disposeEffect = () => {};
+                let disposeEffect = () => { };
                 /** @type {boolean[]} */
                 let inputsChanged = [];
                 let lastAppliedStringValue = "";

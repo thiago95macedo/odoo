@@ -7,8 +7,8 @@ import {
     start,
     startServer,
 } from "@mail/../tests/mail_test_helpers";
-import { test } from "@odoo/hoot";
-import { animationFrame } from "@odoo/hoot-dom";
+import { test } from "@weth/hoot";
+import { animationFrame } from "@weth/hoot-dom";
 import { serializeDateTime } from "@web/core/l10n/dates";
 import { clickEvent } from "@web/../tests/views/calendar/calendar_test_helpers";
 import { preloadBundle } from "@web/../tests/web_test_helpers";

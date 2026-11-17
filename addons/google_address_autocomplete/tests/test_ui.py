@@ -1,16 +1,16 @@
 # -*- encoding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 import json
-from odoo.tools import mute_logger
+from weth.tools import mute_logger
 
-from odoo.addons.google_address_autocomplete.controllers.google_address_autocomplete import (
+from weth.addons.google_address_autocomplete.controllers.google_address_autocomplete import (
     AutoCompleteController,
 )
 from .mock_google_places import make_mock_google_route
 
-from odoo.tests import patch, HttpCase, tagged
+from weth.tests import patch, HttpCase, tagged
 
-CONTROLLER_PATH = "odoo.addons.google_address_autocomplete.controllers.google_address_autocomplete.AutoCompleteController"
+CONTROLLER_PATH = "weth.addons.google_address_autocomplete.controllers.google_address_autocomplete.AutoCompleteController"
 MOCK_GOOGLE_ID = "aHR0cHM6Ly93d3cueW91dHViZS5jb20vd2F0Y2g/dj1kUXc0dzlXZ1hjUQ=="
 MOCK_API_KEY = "Tm9ib2R5IGV4cGVjdHMgdGhlIFNwYW5pc2ggaW5xdWlzaXRpb24gIQ=="
 
@@ -56,7 +56,7 @@ class TestUI(HttpCase):
                 "google_address_autocomplete.google_places_api_key", MOCK_API_KEY
             )
             self.start_tour(
-                "/odoo/companies", "autocomplete_address_tour", login="admin"
+                "/weth/companies", "autocomplete_address_tour", login="admin"
             )
 
     def test_google_api_calls(self):
@@ -235,7 +235,7 @@ class TestUI(HttpCase):
             },
         )
 
-    @mute_logger("odoo.http")
+    @mute_logger("weth.http")
     def test_no_access(self):
         self.env["ir.config_parameter"].sudo().set_str(
             "google_address_autocomplete.google_places_api_key", MOCK_API_KEY
@@ -259,4 +259,4 @@ class TestUI(HttpCase):
             data=json.dumps(data),
             headers={"Content-Type": "application/json"},
         )
-        self.assertEqual(res.json()["error"]["data"]["name"], "odoo.exceptions.AccessError")
+        self.assertEqual(res.json()["error"]["data"]["name"], "weth.exceptions.AccessError")

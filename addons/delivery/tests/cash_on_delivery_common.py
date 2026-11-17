@@ -1,9 +1,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.fields import Command
+from weth.fields import Command
 
-from odoo.addons.delivery.tests.common import DeliveryCommon
-from odoo.addons.payment_custom.tests.common import PaymentCustomCommon
+from weth.addons.delivery.tests.common import DeliveryCommon
+from weth.addons.payment_custom.tests.common import PaymentCustomCommon
 
 
 class CashOnDeliveryCommon(PaymentCustomCommon, DeliveryCommon):

@@ -3,8 +3,8 @@
 import requests
 from datetime import datetime, timedelta, timezone
 
-from odoo import models, fields, _
-from odoo.exceptions import ValidationError, UserError
+from weth import models, fields, _
+from weth.exceptions import ValidationError, UserError
 
 
 class ResConfigSettings(models.TransientModel):

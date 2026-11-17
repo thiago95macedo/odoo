@@ -127,7 +127,7 @@ registerWebsitePreviewTour(
                 ":iframe .s_social_media" +
                 ":has(a:eq(0)[href='https://www.linkedin.com/company/odoo'])" +
                 ":has(a:eq(1)[href='https://www.youtube.com/user/OpenERPonline'])" +
-                ":has(a:eq(2)[href='https://www.instagram.com/explore/tags/odoo/'])" +
+                ":has(a:eq(2)[href='https://www.instagram.com/explore/tags/weth/'])" +
                 ":has(a:eq(3)[href='https://github.com/odoo'])" +
                 ":has(a:eq(4)[href='https://www.tiktok.com/@odoo'])" +
                 ":has(a:eq(5)[href='https://discord.com/servers/discord-town-hall-169256939211980800'])" +
@@ -165,7 +165,7 @@ registerWebsitePreviewTour(
                 ":iframe .s_social_media" +
                 ":has(a:eq(0)[href='https://www.linkedin.com/company/odoo'])" +
                 ":has(a:eq(1)[href='https://www.youtube.com/user/OpenERPonline'])" +
-                ":has(a:eq(2)[href='https://www.instagram.com/explore/tags/odoo/'])" +
+                ":has(a:eq(2)[href='https://www.instagram.com/explore/tags/weth/'])" +
                 ":has(a:eq(3)[href='https://github.com/odoo'])" +
                 ":has(a:eq(4)[href='https://www.tiktok.com/@odoo'])" +
                 ":has(a:eq(5)[href='https://discord.com/servers/discord-town-hall-169256939211980800'])" +

@@ -1,5 +1,5 @@
-import { animationFrame, beforeEach, expect, runAllTimers, test } from "@odoo/hoot";
-import { Component, onMounted, useProps, xml } from "@odoo/owl";
+import { animationFrame, beforeEach, expect, runAllTimers, test } from "@weth/hoot";
+import { Component, onMounted, useProps, xml } from "@weth/owl";
 import {
     contains,
     defineActions,
@@ -480,11 +480,11 @@ test("test reload client action", async () => {
     expect.verifySteps([
         "replaceState /odoo?test=42",
         "window_reload",
-        "pushState /odoo/action-2",
+        "pushState /weth/action-2",
         "window_reload",
         "pushState /odoo?menu_id=1",
         "window_reload",
-        "pushState /odoo/action-1?menu_id=2",
+        "pushState /weth/action-1?menu_id=2",
         "window_reload",
     ]);
 });
@@ -522,7 +522,7 @@ test("test display_exception client action", async () => {
             code: 0,
             message: "WETH Server Error",
             data: {
-                name: `odoo.exceptions.UserError`,
+                name: `weth.exceptions.UserError`,
                 debug: "traceback",
                 arguments: [],
                 context: {},

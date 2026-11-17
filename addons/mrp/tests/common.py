@@ -1,9 +1,9 @@
 
-from odoo import Command
-from odoo.tests import Form
+from weth import Command
+from weth.tests import Form
 
-from odoo.addons.mail.tests.common import mail_new_test_user
-from odoo.addons.stock.tests.common import TestStockCommon
+from weth.addons.mail.tests.common import mail_new_test_user
+from weth.addons.stock.tests.common import TestStockCommon
 
 
 class TestMrpCommon(TestStockCommon):

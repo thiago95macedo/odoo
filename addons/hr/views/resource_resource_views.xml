@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
     <record id="resource_resource_form_view_inherit_hr" model="ir.ui.view">
         <field name="inherit_id" ref="resource.resource_resource_form" />
         <field name="model">resource.resource</field>
@@ -19,4 +19,4 @@
             </xpath>
         </field>
     </record>
-</odoo>
+</weth>

@@ -25,7 +25,7 @@ import {
     untrack,
     useApp,
     useProps,
-} from "@odoo/owl";
+} from "@weth/owl";
 import { MessageSearchState } from "@mail/core/common/message_search_hook";
 
 import { isMobileOS } from "@web/core/browser/feature_detection";
@@ -214,7 +214,7 @@ export class Message extends Component {
                         this.message.showTranslation
                             ? this.message.richTranslationValue
                             : this.props.messageSearch?.highlight(this.message.richBody) ??
-                                  this.message.richBody
+                            this.message.richBody
                     );
                     const roots = this.prepareMessageBody(bodyEl) ?? [];
                     shadowRoot.appendChild(bodyEl);
@@ -286,18 +286,18 @@ export class Message extends Component {
         const moreActions = this.moreMenuActions();
         return moreActions?.length
             ? this.messageActions.more(this.messageActionsParams, {
-                  actions: moreActions,
-                  btnClass: "o-mail-Message-moreAction",
-                  dropdownMenuClass: "o-mail-Message-moreMenu",
-                  dropdownPosition: this.isAlignedRight
-                      ? this.message.threadAsNewest
-                          ? "left-end"
-                          : "left-start"
-                      : this.message.threadAsNewest
-                      ? "right-end"
-                      : "right-start",
-                  name: _t("Expand"),
-              })
+                actions: moreActions,
+                btnClass: "o-mail-Message-moreAction",
+                dropdownMenuClass: "o-mail-Message-moreMenu",
+                dropdownPosition: this.isAlignedRight
+                    ? this.message.threadAsNewest
+                        ? "left-end"
+                        : "left-start"
+                    : this.message.threadAsNewest
+                        ? "right-end"
+                        : "right-start",
+                name: _t("Expand"),
+            })
             : undefined;
     });
 
@@ -391,7 +391,7 @@ export class Message extends Component {
         return (
             this.message.subtype_id?.description &&
             this.message.subtype_id.description.toLowerCase() !==
-                htmlToTextContentInline(this.message.body || "").toLowerCase()
+            htmlToTextContentInline(this.message.body || "").toLowerCase()
         );
     }
 

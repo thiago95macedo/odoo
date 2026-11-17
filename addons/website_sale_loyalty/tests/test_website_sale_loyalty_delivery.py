@@ -1,14 +1,14 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.exceptions import ValidationError
-from odoo.fields import Command
-from odoo.tests import HttpCase, tagged
+from weth.exceptions import ValidationError
+from weth.fields import Command
+from weth.tests import HttpCase, tagged
 
-from odoo.addons.base.tests.common import DISABLED_MAIL_CREATE_CONTEXT
-from odoo.addons.payment import utils as payment_utils
-from odoo.addons.website_sale.tests.common import WebsiteSaleCommon
-from odoo.addons.website_sale_loyalty.controllers.cart import Cart
-from odoo.addons.website_sale_loyalty.controllers.delivery import WebsiteSaleLoyaltyDelivery
+from weth.addons.base.tests.common import DISABLED_MAIL_CREATE_CONTEXT
+from weth.addons.payment import utils as payment_utils
+from weth.addons.website_sale.tests.common import WebsiteSaleCommon
+from weth.addons.website_sale_loyalty.controllers.cart import Cart
+from weth.addons.website_sale_loyalty.controllers.delivery import WebsiteSaleLoyaltyDelivery
 
 
 @tagged("post_install", "-at_install")

@@ -1,5 +1,5 @@
 import { useLayoutEffect } from "@web/owl2/utils";
-import { onMounted, onWillDestroy, proxy, signal, useApp } from "@odoo/owl";
+import { onMounted, onWillDestroy, proxy, signal, useApp } from "@weth/owl";
 import { registry } from "@web/core/registry";
 import { BaseOptionComponent } from "@html_builder/core/base_option_component";
 import { PlacesAutoComplete } from "@website/components/googleplaces_autocomplete/places_autocomplete";

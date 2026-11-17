@@ -5,12 +5,12 @@ from unittest.mock import patch
 
 from psycopg2 import OperationalError
 
-from odoo import fields
-from odoo.exceptions import AccessError, LockError, UserError, ValidationError
-from odoo.tests import tagged
-from odoo.tools import mute_logger
+from weth import fields
+from weth.exceptions import AccessError, LockError, UserError, ValidationError
+from weth.tests import tagged
+from weth.tools import mute_logger
 
-from odoo.addons.payment.tests.common import PaymentCommon
+from weth.addons.payment.tests.common import PaymentCommon
 
 
 @tagged("-at_install", "post_install")
@@ -383,7 +383,7 @@ class TestPaymentTransaction(PaymentCommon):
             tx._validate_amount({})
         self.assertNotEqual(tx.state, "error")
 
-    @mute_logger("odoo.addons.payment.models.payment_transaction")
+    @mute_logger("weth.addons.payment.models.payment_transaction")
     def test_update_state_to_illegal_target_state(self):
         tx = self._create_transaction("redirect", state="done")
         tx.with_context(payment_safe_write=True)._update_state(
@@ -442,7 +442,7 @@ class TestPaymentTransaction(PaymentCommon):
             self._run_post_processing()
         self.assertEqual(lock_mock.call_count, 1)
 
-    @mute_logger("odoo.addons.payment.models.payment_transaction")
+    @mute_logger("weth.addons.payment.models.payment_transaction")
     def test_post_processing_cron_releases_locks_when_post_processing_fails(self):
         self._create_transaction("redirect", state="done")
         with patch.object(self.IrCron, "_rollback_progress") as rollback_mock:
@@ -463,7 +463,7 @@ class TestPaymentTransaction(PaymentCommon):
         child_tx._try_post_process()
         self.assertEqual(self.post_process_mock.call_args[0][0], child_tx + source_tx)
 
-    @mute_logger("odoo.addons.payment.models.payment_transaction")
+    @mute_logger("weth.addons.payment.models.payment_transaction")
     def test_try_post_process_rolls_back_on_failure(self):
 
         def fail_post_process(txs):
@@ -475,7 +475,7 @@ class TestPaymentTransaction(PaymentCommon):
         tx._try_post_process()
         self.assertFalse(tx.is_post_processed)
 
-    @mute_logger("odoo.addons.payment.models.payment_transaction")
+    @mute_logger("weth.addons.payment.models.payment_transaction")
     def test_try_post_process_defers_to_cron_on_failure(self):
         tx = self._create_transaction("redirect", state="done")
         post_processing_cron = self.env.ref("payment.post_processing_cron")
@@ -496,7 +496,7 @@ class TestPaymentTransaction(PaymentCommon):
             tx._try_post_process()
         self.assertEqual(notify_status_mock.call_count, 1)
 
-    @mute_logger("odoo.addons.payment.models.payment_transaction")
+    @mute_logger("weth.addons.payment.models.payment_transaction")
     def test_try_post_process_notifies_client_on_failure(self):
         tx = self._create_transaction("redirect", state="done")
         self.post_process_mock.side_effect = Exception

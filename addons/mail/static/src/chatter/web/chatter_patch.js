@@ -14,7 +14,7 @@ import { FollowerList } from "@mail/core/web/follower_list";
 import { groupAttachments } from "@mail/utils/common/attachments";
 import { assignGetter, isDragSourceExternalFile } from "@mail/utils/common/misc";
 
-import { status, t, untrack, useEffect, useOnChange, useProps } from "@odoo/owl";
+import { status, t, untrack, useEffect, useOnChange, useProps } from "@weth/owl";
 
 import { browser } from "@web/core/browser/browser";
 import { Dropdown } from "@web/core/dropdown/dropdown";

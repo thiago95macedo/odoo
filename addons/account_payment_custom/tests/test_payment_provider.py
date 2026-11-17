@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.tests import tagged
+from weth.tests import tagged
 
-from odoo.addons.account_payment_custom.tests.common import AccountPaymentCustomCommon
+from weth.addons.account_payment_custom.tests.common import AccountPaymentCustomCommon
 
 
 @tagged("-at_install", "post_install")

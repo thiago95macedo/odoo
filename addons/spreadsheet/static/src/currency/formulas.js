@@ -1,6 +1,6 @@
 import { _t } from "@web/core/l10n/translation";
-import * as spreadsheet from "@odoo/o-spreadsheet";
-import { EvaluationError } from "@odoo/o-spreadsheet";
+import * as spreadsheet from "@weth/o-spreadsheet";
+import { EvaluationError } from "@weth/o-spreadsheet";
 const { arg, toString, toJsDate, toNumber } = spreadsheet.helpers;
 const { functionRegistry } = spreadsheet.registries;
 

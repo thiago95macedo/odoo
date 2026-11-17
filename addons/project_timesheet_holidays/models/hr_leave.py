@@ -2,7 +2,7 @@
 from datetime import datetime, time
 from zoneinfo import ZoneInfo
 
-from odoo import api, fields, models, _
+from weth import api, fields, models, _
 
 
 class HrLeave(models.Model):

@@ -3,7 +3,7 @@ import { MessagingMenu } from "@mail/core/public_web/messaging_menu/messaging_me
 import { useDiscussSystray } from "@mail/utils/common/hooks";
 import { incrementFn } from "@mail/utils/common/signal";
 
-import { Component, computed, signal, useEffect } from "@odoo/owl";
+import { Component, computed, signal, useEffect } from "@weth/owl";
 
 import { Dropdown } from "@web/core/dropdown/dropdown";
 import { useDropdownState } from "@web/core/dropdown/dropdown_hooks";

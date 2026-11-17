@@ -3,12 +3,12 @@
 import hashlib
 from urllib.parse import urlencode
 
-from odoo import api, fields, models
-from odoo.exceptions import RedirectWarning, ValidationError
-from odoo.http import request
-from odoo.tools.urls import urljoin
+from weth import api, fields, models
+from weth.exceptions import RedirectWarning, ValidationError
+from weth.http import request
+from weth.tools.urls import urljoin
 
-from odoo.addons.payment_payu import const
+from weth.addons.payment_payu import const
 
 
 class PaymentProvider(models.Model):

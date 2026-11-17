@@ -1,4 +1,4 @@
-from odoo import api, SUPERUSER_ID
+from weth import api, SUPERUSER_ID
 
 
 def migrate(cr, version):

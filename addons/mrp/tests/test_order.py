@@ -3,14 +3,14 @@
 from datetime import datetime, timedelta
 from freezegun import freeze_time
 
-from odoo import Command, fields
-from odoo.exceptions import UserError
-from odoo.tests import Form, users
-from odoo.tools.misc import format_date
-from odoo.tests.common import HttpCase
+from weth import Command, fields
+from weth.exceptions import UserError
+from weth.tests import Form, users
+from weth.tools.misc import format_date
+from weth.tests.common import HttpCase
 
-from odoo.addons.mail.tests.common import MailCase
-from odoo.addons.mrp.tests.common import TestMrpCommon
+from weth.addons.mail.tests.common import MailCase
+from weth.addons.mrp.tests.common import TestMrpCommon
 
 
 class TestMrpOrder(TestMrpCommon, MailCase):
@@ -5622,7 +5622,7 @@ class TestTourMrpOrder(HttpCase):
             'is_storable': True,
         })
         self.assertEqual(len(mo.move_raw_ids), 0)
-        url = f'/odoo/action-mrp.mrp_production_action/{mo.id}'
+        url = f'/weth/action-mrp.mrp_production_action/{mo.id}'
 
         self.start_tour(url, 'test_mrp_production_product_catalog', login='admin')
         self.assertEqual(len(mo.move_raw_ids), 1)
@@ -5641,7 +5641,7 @@ class TestTourMrpOrder(HttpCase):
         })
         mo.action_confirm()
 
-        url = f'/odoo/action-mrp.mrp_production_action/{mo.id}'
+        url = f'/weth/action-mrp.mrp_production_action/{mo.id}'
         self.start_tour(url, 'mrp_mo_overview_no_byproducts_tour', login='admin')
 
     def test_manufacturing_and_byproduct_sm_to_sml_synchronization(self):
@@ -5689,7 +5689,7 @@ class TestTourMrpOrder(HttpCase):
         mo = mo_form.save()
 
         action_id = self.env.ref('mrp.menu_mrp_production_action').action
-        url = f'/odoo/action-{action_id.id}/{mo.id}'
+        url = f'/weth/action-{action_id.id}/{mo.id}'
         self.start_tour(url, "test_manufacturing_and_byproduct_sm_to_sml_synchronization", login="admin", timeout=100)
         self.assertEqual(mo.move_raw_ids.quantity, 7)
         self.assertEqual(mo.move_raw_ids.move_line_ids.quantity, 7)

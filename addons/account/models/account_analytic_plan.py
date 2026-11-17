@@ -1,6 +1,6 @@
 import re
 
-from odoo import _, fields, models, api
+from weth import _, fields, models, api
 
 
 class AccountAnalyticApplicability(models.Model):

@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.purchase_alternative.tests.common import TestPurchaseAlternativeCommon
-from odoo.tests import Form, tagged
-from odoo import Command
+from weth.addons.purchase_alternative.tests.common import TestPurchaseAlternativeCommon
+from weth.tests import Form, tagged
+from weth import Command
 
 
 @tagged('at_install', '-post_install')  # LEGACY at_install

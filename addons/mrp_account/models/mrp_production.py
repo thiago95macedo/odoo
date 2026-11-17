@@ -3,9 +3,9 @@
 from ast import literal_eval
 from collections import defaultdict
 
-from odoo import api, fields, models, _
-from odoo.exceptions import UserError
-from odoo.tools import float_is_zero, float_round
+from weth import api, fields, models, _
+from weth.exceptions import UserError
+from weth.tools import float_is_zero, float_round
 
 
 class MrpProduction(models.Model):

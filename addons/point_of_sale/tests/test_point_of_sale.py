@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.fields import Command
-from odoo.tests.common import tagged, TransactionCase
-from odoo.exceptions import UserError
+from weth.fields import Command
+from weth.tests.common import tagged, TransactionCase
+from weth.exceptions import UserError
 
 
 @tagged('at_install', '-post_install')  # LEGACY at_install

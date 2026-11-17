@@ -8,15 +8,15 @@ from dateutil.relativedelta import relativedelta
 from freezegun import freeze_time
 from werkzeug.exceptions import NotFound
 
-from odoo import fields
-from odoo.tests.common import HttpCase, new_test_user, tagged, users
-from odoo.tools.misc import mute_logger
+from weth import fields
+from weth.tests.common import HttpCase, new_test_user, tagged, users
+from weth.tools.misc import mute_logger
 
-from odoo.addons.bus.tests.common import BusResult
-from odoo.addons.mail.controllers.discuss.rtc import _check_jwt
-from odoo.addons.mail.tests.common import MailCommon
-from odoo.addons.mail.tools import discuss, jwt
-from odoo.addons.mail.tools.discuss import Store
+from weth.addons.bus.tests.common import BusResult
+from weth.addons.mail.controllers.discuss.rtc import _check_jwt
+from weth.addons.mail.tests.common import MailCommon
+from weth.addons.mail.tools import discuss, jwt
+from weth.addons.mail.tools.discuss import Store
 
 
 @tagged("RTC")
@@ -91,7 +91,7 @@ class TestChannelRTC(MailCommon, HttpCase):
         self.assertNotEqual(channel_key, discuss.get_derived_sfu_key(self.env, 43))
 
     @users("employee")
-    @mute_logger("odoo.models.unlink")
+    @mute_logger("weth.models.unlink")
     @freeze_time("2023-03-15 12:34:56")
     def test_01_join_call(self):
         """Join call should remove existing sessions, remove invitation, create a new session, and return data."""
@@ -374,7 +374,7 @@ class TestChannelRTC(MailCommon, HttpCase):
         params.set_bool("mail.use_sfu_server", True)
         params.set_str("mail.sfu_server_url", "https://sfu.example.com")
         with patch(
-            "odoo.addons.mail.models.discuss.discuss_channel_member.requests.get",
+            "weth.addons.mail.models.discuss.discuss_channel_member.requests.get",
         ) as get_channel:
             get_channel.return_value.json.return_value = {
                 "uuid": "sfu-channel-uuid",
@@ -423,7 +423,7 @@ class TestChannelRTC(MailCommon, HttpCase):
         params.set_bool("mail.use_sfu_server", True)
         params.set_str("mail.sfu_server_url", "https://sfu.example.com")
         with patch(
-            "odoo.addons.mail.models.discuss.discuss_channel_member.requests.get",
+            "weth.addons.mail.models.discuss.discuss_channel_member.requests.get",
         ) as get_channel:
             get_channel.return_value.json.return_value = {
                 "uuid": "solo-recording-channel",
@@ -465,7 +465,7 @@ class TestChannelRTC(MailCommon, HttpCase):
         self.assertEqual(claims["user_id"], other_user.id)
 
     @users("employee")
-    @mute_logger("odoo.models.unlink")
+    @mute_logger("weth.models.unlink")
     @freeze_time("2023-03-15 12:34:56")
     def test_10_start_call_in_chat_should_invite_all_members_to_call(self):
         self.member_of_employee_in_chat.sudo()._rtc_join_call()
@@ -607,7 +607,7 @@ class TestChannelRTC(MailCommon, HttpCase):
                 self.member_of_employee_in_chat.sudo()._rtc_join_call()
 
     @users("employee")
-    @mute_logger("odoo.models.unlink")
+    @mute_logger("weth.models.unlink")
     @freeze_time("2023-03-15 12:34:56")
     def test_11_start_call_in_group_should_invite_all_members_to_call(self):
         self.member_of_employee_in_group_a.sudo()._rtc_join_call()
@@ -782,7 +782,7 @@ class TestChannelRTC(MailCommon, HttpCase):
                 self.member_of_employee_in_group_a.sudo()._rtc_join_call()
 
     @users("employee")
-    @mute_logger("odoo.models.unlink")
+    @mute_logger("weth.models.unlink")
     @freeze_time("2023-03-15 12:34:56")
     def test_20_join_call_should_cancel_pending_invitations(self):
         self.member_of_employee_in_group_a.sudo()._rtc_join_call()
@@ -952,7 +952,7 @@ class TestChannelRTC(MailCommon, HttpCase):
             self.member_of_guest_in_group_a.sudo()._rtc_join_call()
 
     @users("employee")
-    @mute_logger("odoo.models.unlink")
+    @mute_logger("weth.models.unlink")
     @freeze_time("2023-03-15 12:34:56")
     def test_21_leave_call_should_cancel_pending_invitations(self):
         self.channel_group_a._add_members(guests=self.guest)
@@ -1055,7 +1055,7 @@ class TestChannelRTC(MailCommon, HttpCase):
             self.member_of_guest_in_group_a.sudo()._rtc_leave_call()
 
     @users("employee")
-    @mute_logger("odoo.models.unlink")
+    @mute_logger("weth.models.unlink")
     @freeze_time("2023-03-15 12:34:56")
     def test_25_lone_call_participant_leaving_call_should_cancel_pending_invitations(self):
         self.channel_group_a._add_members(guests=self.guest)
@@ -1161,7 +1161,7 @@ class TestChannelRTC(MailCommon, HttpCase):
             self.member_of_employee_in_group_a.sudo()._rtc_leave_call()
 
     @users("employee")
-    @mute_logger("odoo.models.unlink")
+    @mute_logger("weth.models.unlink")
     @freeze_time("2023-03-15 12:34:56")
     def test_30_add_members_while_in_call_should_invite_new_members_to_call(self):
         now = fields.Datetime.now()
@@ -1285,7 +1285,7 @@ class TestChannelRTC(MailCommon, HttpCase):
                 )
 
     @users("employee")
-    @mute_logger("odoo.models.unlink")
+    @mute_logger("weth.models.unlink")
     @freeze_time("2023-03-15 12:34:56")
     def test_40_leave_call_should_remove_existing_sessions_of_user_in_channel_and_return_data(self):
         self.member_of_employee_in_group_b.sudo()._rtc_join_call()
@@ -1323,7 +1323,7 @@ class TestChannelRTC(MailCommon, HttpCase):
                 self.member_of_employee_in_group_b.sudo()._rtc_leave_call()
 
     @users("employee")
-    @mute_logger("odoo.models.unlink")
+    @mute_logger("weth.models.unlink")
     @freeze_time("2023-03-15 12:34:56")
     def test_50_garbage_collect_should_remove_old_sessions_and_notify_data(self):
         self.member_of_employee_in_group_b.sudo()._rtc_join_call()
@@ -1364,7 +1364,7 @@ class TestChannelRTC(MailCommon, HttpCase):
         self.assertFalse(self.member_of_employee_in_group_b.sudo().rtc_session_ids)
 
     @users("employee")
-    @mute_logger("odoo.models.unlink")
+    @mute_logger("weth.models.unlink")
     @freeze_time("2023-03-15 12:34:56")
     def test_51_action_disconnect_should_remove_selected_session_and_notify_data(self):
         self.member_of_employee_in_group_b.sudo()._rtc_join_call()
@@ -1401,7 +1401,7 @@ class TestChannelRTC(MailCommon, HttpCase):
         self.assertFalse(self.member_of_employee_in_group_b.sudo().rtc_session_ids)
 
     @users("employee")
-    @mute_logger("odoo.models.unlink")
+    @mute_logger("weth.models.unlink")
     @freeze_time("2023-03-15 12:34:56")
     def test_60_rtc_sync_sessions_should_gc_and_return_outdated_and_active_sessions(self):
         store = Store()

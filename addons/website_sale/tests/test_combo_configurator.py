@@ -1,10 +1,10 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.fields import Command
-from odoo.tests import HttpCase, JsonRpcException, tagged
-from odoo.tools import mute_logger
+from weth.fields import Command
+from weth.tests import HttpCase, JsonRpcException, tagged
+from weth.tools import mute_logger
 
-from odoo.addons.website_sale.tests.common import WebsiteSaleCommon
+from weth.addons.website_sale.tests.common import WebsiteSaleCommon
 
 
 @tagged("post_install", "-at_install")
@@ -117,7 +117,7 @@ class TestWebsiteSaleComboConfigurator(HttpCase, WebsiteSaleCommon):
             combo_product.website_url, "website_sale.combo_configurator_single_configurable_item"
         )
 
-    @mute_logger("odoo.http")
+    @mute_logger("weth.http")
     def test_website_sale_combo_configurator_incomplete_selection(self):
         """ Test that a combo can't be added to the cart with missing combo choices. """
         combos = self.env["product.combo"].create([{

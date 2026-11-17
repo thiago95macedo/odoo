@@ -1,6 +1,6 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import models, fields, api
+from weth import models, fields, api
 
 
 class CloudStorageMigrationSettings(models.TransientModel):

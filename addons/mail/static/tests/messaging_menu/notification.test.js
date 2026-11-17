@@ -8,9 +8,9 @@ import {
     triggerEvents,
     MENU_ACTIVE_IDS,
 } from "@mail/../tests/mail_test_helpers";
-import { describe, expect, test } from "@odoo/hoot";
-import { advanceTime } from "@odoo/hoot-dom";
-import { mockDate } from "@odoo/hoot-mock";
+import { describe, expect, test } from "@weth/hoot";
+import { advanceTime } from "@weth/hoot-dom";
+import { mockDate } from "@weth/hoot-mock";
 import { Command, mockService, serverState, withUser } from "@web/../tests/web_test_helpers";
 import { rpc } from "@web/core/network/rpc";
 

@@ -2,10 +2,10 @@
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
 
-from odoo import Command, fields
-from odoo.addons.purchase_stock.tests.common import PurchaseTestCommon
-from odoo.tests import tagged, freeze_time
-from odoo.tests.common import HttpCase
+from weth import Command, fields
+from weth.addons.purchase_stock.tests.common import PurchaseTestCommon
+from weth.tests import tagged, freeze_time
+from weth.tests.common import HttpCase
 
 
 @freeze_time("2021-01-14 09:12:15")
@@ -663,7 +663,7 @@ class TestPurchaseOrderSuggest(PurchaseTestCommon, HttpCase):
             [(test_product, 1)], date=today - relativedelta(days=1), warehouse=other_warehouse
         )
         self.start_tour(
-            '/odoo/purchase', "test_purchase_order_suggest_search_panel_ux", login='admin',
+            '/weth/purchase', "test_purchase_order_suggest_search_panel_ux", login='admin',
             cookies={"cids": f"{self.company.id}"},
         )
 

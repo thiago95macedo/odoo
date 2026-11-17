@@ -1,10 +1,10 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, fields, models
-from odoo.fields import Domain
-from odoo.tools import email_normalize, single_email_re
-from odoo.addons.mail.tools.discuss import Store
-from odoo.exceptions import AccessError
+from weth import api, fields, models
+from weth.fields import Domain
+from weth.tools import email_normalize, single_email_re
+from weth.addons.mail.tools.discuss import Store
+from weth.exceptions import AccessError
 
 
 class ResPartner(models.Model):

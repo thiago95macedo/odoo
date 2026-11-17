@@ -5,13 +5,13 @@ from zoneinfo import ZoneInfo
 
 from dateutil.relativedelta import relativedelta
 
-from odoo import SUPERUSER_ID
-from odoo.exceptions import ValidationError
-from odoo.tests.common import tagged
-from odoo.fields import Date
-from odoo.addons.hr_work_entry.tests.common import TestWorkEntryBase
-from odoo.addons.hr_holidays.tests.common import TestHolidayContract
-from odoo.addons.mail.tests.common import mail_new_test_user
+from weth import SUPERUSER_ID
+from weth.exceptions import ValidationError
+from weth.tests.common import tagged
+from weth.fields import Date
+from weth.addons.hr_work_entry.tests.common import TestWorkEntryBase
+from weth.addons.hr_holidays.tests.common import TestHolidayContract
+from weth.addons.mail.tests.common import mail_new_test_user
 
 
 @tagged('work_entry')

@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import _, http
-from odoo.exceptions import AccessError
-from odoo.http import request
+from weth import _, http
+from weth.exceptions import AccessError
+from weth.http import request
 
 
 class BaseSetup(http.Controller):

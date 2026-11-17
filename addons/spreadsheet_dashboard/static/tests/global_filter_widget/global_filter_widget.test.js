@@ -1,4 +1,4 @@
-import { test, expect, describe, animationFrame } from "@odoo/hoot";
+import { test, expect, describe, animationFrame } from "@weth/hoot";
 import { contains, mountView, onRpc } from "@web/../tests/web_test_helpers";
 import {
     defineSpreadsheetDashboardModels,

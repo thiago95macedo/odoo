@@ -2,15 +2,15 @@
 
 from unittest.mock import patch
 
-from odoo import release
-from odoo.tests import tagged
-from odoo.tools import mute_logger
+from weth import release
+from weth.tests import tagged
+from weth.tools import mute_logger
 
-from odoo.addons.payment import utils as payment_utils
-from odoo.addons.payment.tests.http_common import PaymentHttpCommon
-from odoo.addons.payment_adyen import utils as adyen_utils
-from odoo.addons.payment_adyen.controllers.main import AdyenController
-from odoo.addons.payment_adyen.tests.common import AdyenCommon
+from weth.addons.payment import utils as payment_utils
+from weth.addons.payment.tests.http_common import PaymentHttpCommon
+from weth.addons.payment_adyen import utils as adyen_utils
+from weth.addons.payment_adyen.controllers.main import AdyenController
+from weth.addons.payment_adyen.tests.common import AdyenCommon
 
 
 @tagged("post_install", "-at_install")
@@ -18,9 +18,9 @@ class AdyenTest(AdyenCommon, PaymentHttpCommon):
     def test_processing_values(self):
         tx = self._create_transaction(flow="direct")
         with (
-            mute_logger("odoo.addons.payment.models.payment_transaction"),
+            mute_logger("weth.addons.payment.models.payment_transaction"),
             patch(
-                "odoo.addons.payment.utils.generate_access_token",
+                "weth.addons.payment.utils.generate_access_token",
                 new=self._generate_test_access_token,
             ),
         ):
@@ -32,7 +32,7 @@ class AdyenTest(AdyenCommon, PaymentHttpCommon):
         )
         self.assertEqual(processing_values["converted_amount"], converted_amount)
         with patch(
-            "odoo.addons.payment.utils.generate_access_token", new=self._generate_test_access_token
+            "weth.addons.payment.utils.generate_access_token", new=self._generate_test_access_token
         ):
             self.assertTrue(
                 payment_utils.check_access_token(
@@ -44,7 +44,7 @@ class AdyenTest(AdyenCommon, PaymentHttpCommon):
                 )
             )
 
-    @mute_logger("odoo.addons.payment_adyen.models.payment_transaction")
+    @mute_logger("weth.addons.payment_adyen.models.payment_transaction")
     def test_send_refund_request(self):
         self.provider.support_refund = "full_only"  # Should simply not be False
         tx = self._create_transaction(
@@ -54,7 +54,7 @@ class AdyenTest(AdyenCommon, PaymentHttpCommon):
 
         # Send the refund request
         with patch(
-            "odoo.addons.payment.models.payment_provider.PaymentProvider._send_api_request",
+            "weth.addons.payment.models.payment_provider.PaymentProvider._send_api_request",
             return_value={"pspReference": "refund_reference", "status": "received"},
         ):
             tx._refund()
@@ -223,14 +223,14 @@ class AdyenTest(AdyenCommon, PaymentHttpCommon):
         self.assertNotEqual(void_tx, source_tx)
         self.assertEqual(void_tx.source_transaction_id, source_tx)
 
-    @mute_logger("odoo.addons.payment_adyen.models.payment_transaction")
+    @mute_logger("weth.addons.payment_adyen.models.payment_transaction")
     def test_tx_state_after_send_full_capture_request(self):
         self.provider.payment_method_ids.active = False  # TODO VCHU: remove in master
         self.provider.capture_manually = True
         tx = self._create_transaction("direct", state="authorized")
 
         with patch(
-            "odoo.addons.payment.models.payment_provider.PaymentProvider._send_api_request",
+            "weth.addons.payment.models.payment_provider.PaymentProvider._send_api_request",
             return_value={"status": "received"},
         ):
             tx._capture()
@@ -241,14 +241,14 @@ class AdyenTest(AdyenCommon, PaymentHttpCommon):
             " 'authorized' until a success notification is sent",
         )
 
-    @mute_logger("odoo.addons.payment_adyen.models.payment_transaction")
+    @mute_logger("weth.addons.payment_adyen.models.payment_transaction")
     def test_tx_state_after_partial_capture_request(self):
         self.provider.payment_method_ids.active = False  # TODO VCHU: remove in master
         self.provider.capture_manually = True
         tx = self._create_transaction("direct", state="authorized")
 
         with patch(
-            "odoo.addons.payment.models.payment_provider.PaymentProvider._send_api_request",
+            "weth.addons.payment.models.payment_provider.PaymentProvider._send_api_request",
             return_value={"status": "received"},
         ):
             tx._capture(amount_to_capture=10)
@@ -265,14 +265,14 @@ class AdyenTest(AdyenCommon, PaymentHttpCommon):
             " stays as 'draft' until a success notification is sent.",
         )
 
-    @mute_logger("odoo.addons.payment_adyen.models.payment_transaction")
+    @mute_logger("weth.addons.payment_adyen.models.payment_transaction")
     def test_tx_state_after_send_void_request(self):
         self.provider.payment_method_ids.active = False  # TODO VCHU: remove in master
         self.provider.capture_manually = True
         tx = self._create_transaction("direct", state="authorized")
 
         with patch(
-            "odoo.addons.payment.models.payment_provider.PaymentProvider._send_api_request",
+            "weth.addons.payment.models.payment_provider.PaymentProvider._send_api_request",
             return_value={"status": "received"},
         ):
             tx._void()
@@ -306,9 +306,9 @@ class AdyenTest(AdyenCommon, PaymentHttpCommon):
         """Ensure applicationInfo is added correctly to the payment request payload."""
         tx = self._create_transaction("direct")
         with (
-            patch("odoo.addons.payment.utils.check_access_token", return_value="dummy_token"),
+            patch("weth.addons.payment.utils.check_access_token", return_value="dummy_token"),
             patch(
-                "odoo.addons.payment.models.payment_provider.PaymentProvider._send_api_request",
+                "weth.addons.payment.models.payment_provider.PaymentProvider._send_api_request",
                 return_value=dict(),
             ) as mock_make_request,
         ):
@@ -340,7 +340,7 @@ class AdyenTest(AdyenCommon, PaymentHttpCommon):
         """Ensure applicationInfo is added correctly to the token payment request payload."""
         tx = self._create_transaction("token", token_id=self._create_token().id)
         with patch(
-            "odoo.addons.payment.models.payment_provider.PaymentProvider._send_api_request",
+            "weth.addons.payment.models.payment_provider.PaymentProvider._send_api_request",
             return_value={"dummy": "dummy"},
         ) as mock_make_request:
             tx._send_payment_request()
@@ -552,19 +552,19 @@ class AdyenTest(AdyenCommon, PaymentHttpCommon):
             msg="After a failed refund notification, the refund state should be in 'error'.",
         )
 
-    @mute_logger("odoo.addons.payment_adyen.controllers.main")
-    @mute_logger("odoo.addons.payment_adyen.models.payment_transaction")
+    @mute_logger("weth.addons.payment_adyen.controllers.main")
+    @mute_logger("weth.addons.payment_adyen.models.payment_transaction")
     def _webhook_notification_flow(self, payload):
         """Send a notification to the webhook, ignore the signature, and check the response."""
         url = self._build_url(AdyenController._webhook_url)
-        with patch("odoo.addons.payment.utils.verify_signature"):
+        with patch("weth.addons.payment.utils.verify_signature"):
             response = self._make_json_request(url, data=payload).json()
         self.assertEqual(
             response, "[accepted]", msg="The webhook should always respond '[accepted]'"
         )
         self._run_processing()  # Process the payment data sent to the webhook
 
-    @mute_logger("odoo.addons.payment_adyen.models.payment_transaction")
+    @mute_logger("weth.addons.payment_adyen.models.payment_transaction")
     def test_no_information_missing_from_partner_address(self):
         test_partner = self.env["res.partner"].create({
             "name": "Dummy Partner",

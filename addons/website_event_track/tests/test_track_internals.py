@@ -5,10 +5,10 @@ from datetime import datetime, timedelta
 from freezegun import freeze_time
 from unittest.mock import patch
 
-from odoo import fields
-from odoo.addons.website.models.ir_http import IrHttp
-from odoo.addons.website_event.tests.common import TestEventOnlineCommon
-from odoo.tests.common import tagged, users
+from weth import fields
+from weth.addons.website.models.ir_http import IrHttp
+from weth.addons.website_event.tests.common import TestEventOnlineCommon
+from weth.tests.common import tagged, users
 
 
 @tagged('event_track_internals')

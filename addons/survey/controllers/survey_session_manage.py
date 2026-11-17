@@ -7,11 +7,11 @@ import json
 from dateutil.relativedelta import relativedelta
 from werkzeug.exceptions import NotFound
 
-from odoo import fields, http
-from odoo.http import request
-from odoo.tools import is_html_empty
+from weth import fields, http
+from weth.http import request
+from weth.tools import is_html_empty
 
-from odoo.addons.survey.models.survey_survey import SURVEY_LEADERBOARD_MAX_PARTICIPANTS
+from weth.addons.survey.models.survey_survey import SURVEY_LEADERBOARD_MAX_PARTICIPANTS
 
 
 class UserInputSession(http.Controller):

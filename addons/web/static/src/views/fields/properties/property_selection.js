@@ -1,4 +1,4 @@
-import { Component, props, asyncComputed, computed } from "@odoo/owl";
+import { Component, props, asyncComputed, computed } from "@weth/owl";
 import { registry } from "@web/core/registry";
 import { standardFieldProps } from "@web/views/fields/standard_field_props";
 import { _t } from "@web/core/l10n/translation";
@@ -13,7 +13,7 @@ export class PropertySelectionField extends Component {
         propertyModelName: String,
     });
 
-    
+
     fieldService = useService("field");
     selectedValue = computed(() => this.props.record.data[this.props.name]);
     propertyName = computed(() => this.props.record.data[this.props.propertyName])

@@ -1,4 +1,4 @@
-import { Component, t, useProps } from "@odoo/owl";
+import { Component, t, useProps } from "@weth/owl";
 import { Dialog } from "@web/core/dialog/dialog";
 
 export class GloryErrorDialog extends Component {

@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from odoo.tests.common import TransactionCase, new_test_user, tagged
+from weth.tests.common import TransactionCase, new_test_user, tagged
 
 
 @tagged("post_install", "-at_install")

@@ -4,7 +4,7 @@ import logging
 import re
 import subprocess
 
-from odoo.addons.iot_drivers.interface import Interface
+from weth.addons.iot_drivers.interface import Interface
 
 _logger = logging.getLogger(__name__)
 

@@ -1,4 +1,4 @@
-import { Component, computed, onWillDestroy, proxy, signal, t, useProps } from "@odoo/owl";
+import { Component, computed, onWillDestroy, proxy, signal, t, useProps } from "@weth/owl";
 import {
     basicContainerBuilderComponentProps,
     useBuilderComponent,

@@ -19,7 +19,7 @@ import {
     t,
     useProps,
     usePlugin,
-} from "@odoo/owl";
+} from "@weth/owl";
 
 import { Dropdown } from "@web/core/dropdown/dropdown";
 import { localization } from "@web/core/l10n/localization";

@@ -1,4 +1,4 @@
-import { onWillStart, onWillDestroy, proxy } from "@odoo/owl";
+import { onWillStart, onWillDestroy, proxy } from "@weth/owl";
 
 export function useRegistry(registry) {
     const state = proxy({ entries: registry.getEntries() });

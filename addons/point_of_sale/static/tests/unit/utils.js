@@ -9,9 +9,9 @@ import {
     onRpc,
     serverState,
 } from "@web/../tests/web_test_helpers";
-import { animationFrame, tick, waitFor, waitUntil } from "@odoo/hoot-dom";
+import { animationFrame, tick, waitFor, waitUntil } from "@weth/hoot-dom";
 import { mountPosApp } from "@point_of_sale/../tests/unit/ui_utils";
-import { expect } from "@odoo/hoot";
+import { expect } from "@weth/hoot";
 import { MainComponentsContainer } from "@web/core/main_components_container";
 import { ResCurrency } from "./data/res_currency.data";
 import { unmockedOrm } from "@web/../tests/_framework/module_set.hoot";
@@ -21,11 +21,11 @@ const { DateTime } = luxon;
 
 export const setupPosEnv = async (opts = { setupCashier: true }) => {
     // Do not change these variables, they are in accordance with the demo data
-    odoo.pos_session_id = 1;
-    odoo.pos_config_id = 1;
-    odoo.from_backend = 0;
-    odoo.access_token = uuidv4(); // Avoid indexedDB conflicts
-    odoo.info = {
+    weth.pos_session_id = 1;
+    weth.pos_config_id = 1;
+    weth.from_backend = 0;
+    weth.access_token = uuidv4(); // Avoid indexedDB conflicts
+    weth.info = {
         db: `pos-${uuidv4()}`, // Avoid indexedDB conflicts
         isEnterprise: true,
         server_version: "1.0",

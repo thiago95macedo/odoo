@@ -1,7 +1,7 @@
-from odoo import Command
-from odoo.tests import tagged, HttpCase
+from weth import Command
+from weth.tests import tagged, HttpCase
 
-from odoo.addons.website_sale.tests.common import WebsiteSaleCommon
+from weth.addons.website_sale.tests.common import WebsiteSaleCommon
 
 
 @tagged('post_install', '-at_install')
@@ -20,4 +20,4 @@ class TestDashboard(WebsiteSaleCommon, HttpCase):
                 'state': 'sent'
             } for _ in range(2)
         ])
-        self.start_tour('/odoo/ecommerce-orders', 'test_dashboard_refresh', login='admin')
+        self.start_tour('/weth/ecommerce-orders', 'test_dashboard_refresh', login='admin')

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<odoo>
+<weth>
     <record id="action_open_hr_employee_create_version_wizard" model="ir.actions.act_window">
         <field name="name">New Employee Records</field>
         <field name="res_model">hr.employee.create.version.wizard</field>
@@ -43,4 +43,4 @@
             </form>
         </field>
     </record>
-</odoo>
+</weth>

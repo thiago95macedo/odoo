@@ -1,4 +1,4 @@
-import { onWillDestroy } from "@odoo/owl";
+import { onWillDestroy } from "@weth/owl";
 import { SWITCHSIGN, DECIMAL } from "@point_of_sale/app/components/numpad/numpad";
 import { ProductScreen } from "@point_of_sale/app/screens/product_screen/product_screen";
 import { useBus } from "@web/core/utils/hooks";

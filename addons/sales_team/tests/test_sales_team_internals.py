@@ -1,11 +1,11 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import exceptions
-from odoo.tests.common import tagged, TransactionCase, users
-from odoo.tools import mute_logger
+from weth import exceptions
+from weth.tests.common import tagged, TransactionCase, users
+from weth.tools import mute_logger
 
-from odoo.addons.mail.tests.common import mail_new_test_user
-from odoo.addons.sales_team.tests.common import TestSalesMC
+from weth.addons.mail.tests.common import mail_new_test_user
+from weth.addons.sales_team.tests.common import TestSalesMC
 
 
 @tagged('at_install', '-post_install')  # LEGACY at_install
@@ -52,7 +52,7 @@ class TestCornerCases(TransactionCase):
         ])
         self.assertEqual(found, sales_team_1_m2)
 
-        with self.assertRaises(exceptions.UserError), mute_logger('odoo.sql_db'):
+        with self.assertRaises(exceptions.UserError), mute_logger('weth.sql_db'):
             self.env['crm.team.member'].create({
                 'user_id': self.user_sales_leads.id,
                 'crm_team_id': self.sales_team_1.id,
@@ -61,7 +61,7 @@ class TestCornerCases(TransactionCase):
     def test_unicity_multicreate(self):
         """ Test constraint works with creating duplicates in the same create
         method. """
-        with self.assertRaises(exceptions.UserError), mute_logger('odoo.sql_db'):
+        with self.assertRaises(exceptions.UserError), mute_logger('weth.sql_db'):
             self.env['crm.team.member'].create([
                 {'user_id': self.user_sales_leads.id, 'crm_team_id': self.sales_team_1.id},
                 {'user_id': self.user_sales_leads.id, 'crm_team_id': self.sales_team_1.id}

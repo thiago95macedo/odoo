@@ -1,5 +1,5 @@
 declare module "@spreadsheet" {
-    import { CommandResult, CorePlugin, UIPlugin } from "@odoo/o-spreadsheet";
+    import { CommandResult, CorePlugin, UIPlugin } from "@weth/o-spreadsheet";
     import { CommandResult as CR } from "@spreadsheet/o_spreadsheet/cancelled_reason";
     type OdooCommandResult = CommandResult | typeof CR;
 
@@ -12,7 +12,7 @@ declare module "@spreadsheet" {
     }
 
     export interface OdooCorePluginConstructor {
-        new (config: unknown): OdooCorePlugin;
+        new(config: unknown): OdooCorePlugin;
     }
 
     export interface OdooUIPlugin extends UIPlugin {
@@ -24,6 +24,6 @@ declare module "@spreadsheet" {
     }
 
     export interface OdooUIPluginConstructor {
-        new (config: unknown): OdooUIPlugin;
+        new(config: unknown): OdooUIPlugin;
     }
 }

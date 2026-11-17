@@ -1,5 +1,5 @@
-import { animationFrame } from "@odoo/hoot-mock";
-import { describe, expect, test } from "@odoo/hoot";
+import { animationFrame } from "@weth/hoot-mock";
+import { describe, expect, test } from "@weth/hoot";
 import {
     defineSpreadsheetActions,
     defineSpreadsheetModels,
@@ -13,7 +13,7 @@ import { doMenuAction, getActionMenu } from "@spreadsheet/../tests/helpers/ui";
 import { createSpreadsheetWithPivot } from "@spreadsheet/../tests/helpers/pivot";
 import { waitForDataLoaded } from "@spreadsheet/helpers/model";
 
-import * as spreadsheet from "@odoo/o-spreadsheet";
+import * as spreadsheet from "@weth/o-spreadsheet";
 import { getCell, getCellFormula, getCellValue } from "@spreadsheet/../tests/helpers/getters";
 import { mockService, onRpc } from "@web/../tests/web_test_helpers";
 import { createSheet } from "../helpers/commands";

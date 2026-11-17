@@ -4,9 +4,9 @@ import random
 
 from markupsafe import Markup
 
-from odoo import api, fields, models, _
-from odoo.exceptions import AccessDenied, AccessError, UserError
-from odoo.fields import Domain
+from weth import api, fields, models, _
+from weth.exceptions import AccessDenied, AccessError, UserError
+from weth.fields import Domain
 
 
 class CrmLead(models.Model):

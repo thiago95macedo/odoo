@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
 <data noupdate="0">
     <record id="lunch_order_mail_supplier" model="mail.template">
         <field name="name">Lunch: Supplier Order</field>
@@ -74,4 +74,4 @@ Here is, today orders for <t t-out="order.get('company_name', '')">LunchCompany<
         </t></field>
     </record>
 
-</data></odoo>
+</data></weth>

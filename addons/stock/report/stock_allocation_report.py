@@ -1,7 +1,7 @@
 from collections import OrderedDict, defaultdict
 
-from odoo import api, models
-from odoo.fields import Domain
+from weth import api, models
+from weth.fields import Domain
 
 
 class StockAllocationReport(models.AbstractModel):

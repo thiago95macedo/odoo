@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 from freezegun import freeze_time
 
-from odoo.addons.mail.tests.common import mail_new_test_user
-from odoo.tests import common, tagged
+from weth.addons.mail.tests.common import mail_new_test_user
+from weth.tests import common, tagged
 from datetime import datetime
 
 

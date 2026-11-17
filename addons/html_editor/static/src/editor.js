@@ -1,4 +1,4 @@
-import { useEnv, useScope } from "@odoo/owl";
+import { useEnv, useScope } from "@weth/owl";
 import { MAIN_PLUGINS, TOUCH_EXCLUDED_PLUGINS } from "./plugin_sets";
 import { createBaseContainer, SUPPORTED_BASE_CONTAINER_NAMES } from "./utils/base_container";
 import { removeClass } from "./utils/dom";

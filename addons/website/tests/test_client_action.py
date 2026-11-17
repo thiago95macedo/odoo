@@ -1,10 +1,10 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-import odoo.tests
-from odoo.addons.website.tests.common import HttpCaseWithWebsiteUser
+import weth.tests
+from weth.addons.website.tests.common import HttpCaseWithWebsiteUser
 
 
-@odoo.tests.common.tagged('post_install', '-at_install')
+@weth.tests.common.tagged('post_install', '-at_install')
 class TestClientAction(HttpCaseWithWebsiteUser):
 
     def test_01_client_action_redirect(self):

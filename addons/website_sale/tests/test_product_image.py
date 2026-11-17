@@ -4,12 +4,12 @@ import io
 
 from PIL import Image
 
-from odoo.fields import Command
-from odoo.tests import HttpCase, tagged
-from odoo.tools import BinaryBytes
-from odoo.tools.image import binary_to_image
+from weth.fields import Command
+from weth.tests import HttpCase, tagged
+from weth.tools import BinaryBytes
+from weth.tools.image import binary_to_image
 
-from odoo.addons.website.tests.common import HttpCaseWithWebsiteUser
+from weth.addons.website.tests.common import HttpCaseWithWebsiteUser
 
 
 def _create_image(color="black", dims=(1920, 1080), format="JPEG"):

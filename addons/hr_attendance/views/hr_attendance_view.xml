@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
 
     <!-- views -->
 
@@ -651,4 +651,4 @@
         groups="hr_attendance.group_hr_attendance_manager"
         sequence="30"/>
 
-</odoo>
+</weth>

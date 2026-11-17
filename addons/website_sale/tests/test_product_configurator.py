@@ -2,13 +2,13 @@
 
 from datetime import datetime
 
-from odoo.fields import Command
-from odoo.tests import HttpCase, tagged
+from weth.fields import Command
+from weth.tests import HttpCase, tagged
 
-from odoo.addons.website_sale.controllers.product_configurator import (
+from weth.addons.website_sale.controllers.product_configurator import (
     WebsiteSaleProductConfiguratorController,
 )
-from odoo.addons.website_sale.tests.common import MockRequest, WebsiteSaleCommon
+from weth.addons.website_sale.tests.common import MockRequest, WebsiteSaleCommon
 
 
 @tagged("post_install", "-at_install")

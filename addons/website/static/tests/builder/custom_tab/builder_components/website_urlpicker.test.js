@@ -1,7 +1,7 @@
 import { addBuilderOption } from "@html_builder/../tests/helpers";
-import { beforeEach, expect, test } from "@odoo/hoot";
-import { advanceTime } from "@odoo/hoot-dom";
-import { xml } from "@odoo/owl";
+import { beforeEach, expect, test } from "@weth/hoot";
+import { advanceTime } from "@weth/hoot-dom";
+import { xml } from "@weth/owl";
 import { contains, onRpc } from "@web/../tests/web_test_helpers";
 import { patch } from "@web/core/utils/patch";
 import {

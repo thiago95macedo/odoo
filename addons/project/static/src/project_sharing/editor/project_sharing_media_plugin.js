@@ -22,7 +22,7 @@ export class ProjectSharingImageSavePlugin extends ImageSavePlugin {
                     data: imageData,
                     res_id: resId,
                     access_token: "",
-                    csrf_token: odoo.csrf_token,
+                    csrf_token: weth.csrf_token,
                 },
                 "text"
             )

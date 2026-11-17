@@ -1,6 +1,6 @@
 import { SearchInput } from "@mail/core/common/search_input";
 import { propSignal, useSearch } from "@mail/utils/common/hooks";
-import { Component, signal, types, useEffect, useProps } from "@odoo/owl";
+import { Component, signal, types, useEffect, useProps } from "@weth/owl";
 import { getActiveHotkey } from "@web/core/hotkeys/hotkey_utils";
 import { useService } from "@web/core/utils/hooks";
 

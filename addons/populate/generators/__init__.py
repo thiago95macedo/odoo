@@ -68,5 +68,5 @@ try:
 except ImportError:
     _logger.info("Faker library isn't installed, skipping creation of 'fake.*' generators. "
                  "Won't be able to run blueprints that use them. "
-                 "Install it from odoo/addons/populate/requirements.txt")
+                 "Install it from weth/addons/populate/requirements.txt")
     faker = None

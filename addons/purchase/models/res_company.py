@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import fields, models
-from odoo.fields import Domain
+from weth import fields, models
+from weth.fields import Domain
 
-from odoo.addons.base.models.res_company import company_default_for
+from weth.addons.base.models.res_company import company_default_for
 
 
 class ResCompany(models.Model):

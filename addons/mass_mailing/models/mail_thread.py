@@ -4,7 +4,7 @@
 import datetime
 from markupsafe import Markup
 
-from odoo import api, models, fields, tools, _
+from weth import api, models, fields, tools, _
 
 BLACKLIST_MAX_BOUNCED_LIMIT = 5
 

@@ -5,13 +5,13 @@ from __future__ import annotations
 from datetime import timedelta
 from typing import TYPE_CHECKING, Literal
 
-from odoo import _, api, fields, models, tools
-from odoo.exceptions import UserError
-from odoo.tools import float_round
+from weth import _, api, fields, models, tools
+from weth.exceptions import UserError
+from weth.tools import float_round
 
 if TYPE_CHECKING:
     from typing import Self
-    from odoo.tools.float_utils import RoundingMethod
+    from weth.tools.float_utils import RoundingMethod
 
 
 class UomUom(models.Model):

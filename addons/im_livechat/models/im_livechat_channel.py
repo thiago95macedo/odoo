@@ -6,10 +6,10 @@ import random
 import re
 from urllib.parse import urlparse
 
-from odoo import api, Command, fields, models, release, _
-from odoo.exceptions import AccessError, ValidationError
-from odoo.fields import Domain
-from odoo.addons.mail.tools.discuss import Store
+from weth import api, Command, fields, models, release, _
+from weth.exceptions import AccessError, ValidationError
+from weth.fields import Domain
+from weth.addons.mail.tools.discuss import Store
 
 BUFFER_TIME = 120  # Time in seconds between two sessions assigned to the same operator. Not enforced if the operator is the best suited.
 

@@ -1,5 +1,5 @@
-import { expect, test } from "@odoo/hoot";
-import { press, queryAllTexts } from "@odoo/hoot-dom";
+import { expect, test } from "@weth/hoot";
+import { press, queryAllTexts } from "@weth/hoot-dom";
 import {
     contains,
     defineModels,
@@ -23,7 +23,7 @@ class Foo extends models.Model {
     foo = fields.Char();
 }
 
-class Partner extends models.Model {}
+class Partner extends models.Model { }
 
 defineModels([Foo, Partner]);
 

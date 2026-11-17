@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import Command
-from odoo.tests.common import HttpCase, new_test_user
+from weth import Command
+from weth.tests.common import HttpCase, new_test_user
 
 
 class TestDiscussMentionSuggestions(HttpCase):
@@ -32,7 +32,7 @@ class TestDiscussMentionSuggestions(HttpCase):
             ],
         })
         self.start_tour(
-            f"/odoo/discuss?active_id=discuss.channel_{rd_channel.id}",
+            f"/weth/discuss?active_id=discuss.channel_{rd_channel.id}",
             "discuss_mention_suggestions_group_restricted_channel.js",
             login="admin",
         )

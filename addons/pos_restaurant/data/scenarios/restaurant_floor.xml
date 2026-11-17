@@ -1,4 +1,4 @@
-<odoo>
+<weth>
     <data noupdate="1">
 
         <!-- Floors: Main Floor -->
@@ -379,4 +379,4 @@
         </record>
 
     </data>
-</odoo>
+</weth>

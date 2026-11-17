@@ -1,5 +1,5 @@
-import { expect, test } from "@odoo/hoot";
-import { Component, useProps, xml } from "@odoo/owl";
+import { expect, test } from "@weth/hoot";
+import { Component, useProps, xml } from "@weth/owl";
 import { contains, mountWithCleanup } from "@web/../tests/web_test_helpers";
 
 import { ColorList } from "@web/core/colorlist/colorlist";
@@ -19,7 +19,7 @@ class Parent extends Component {
         const props = { ...this.props };
         delete props.Component;
         if (!props.onColorSelected) {
-            props.onColorSelected = () => {};
+            props.onColorSelected = () => { };
         }
         return props;
     }

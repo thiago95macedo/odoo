@@ -1,4 +1,4 @@
-import { onWillStart, t, onMounted, useProps } from "@odoo/owl";
+import { onWillStart, t, onMounted, useProps } from "@weth/owl";
 import { FormControllerWithHTMLExpander } from '@resource/views/form_with_html_expander/form_controller_with_html_expander';
 import { user } from "@web/core/user";
 import { formControllerProps } from "@web/views/form/form_controller";

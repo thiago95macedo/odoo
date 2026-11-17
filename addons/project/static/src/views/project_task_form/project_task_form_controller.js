@@ -2,7 +2,7 @@ import { _t } from "@web/core/l10n/translation";
 import { ConfirmationDialog } from "@web/core/confirmation_dialog/confirmation_dialog";
 import { HistoryDialog } from "@html_editor/components/history_dialog/history_dialog";
 import { useService } from '@web/core/utils/hooks';
-import { markup, onMounted, useProps, t } from "@odoo/owl";
+import { markup, onMounted, useProps, t } from "@weth/owl";
 import { formControllerProps } from "@web/views/form/form_controller";
 import { FormControllerWithHTMLExpander } from '@resource/views/form_with_html_expander/form_controller_with_html_expander';
 import { getHtmlFieldMetadata, setHtmlFieldMetadata } from "@html_editor/fields/html_field";
@@ -81,8 +81,8 @@ export class ProjectTaskFormController extends FormControllerWithHTMLExpander {
                 title: _t("Task Description History"),
                 noContentHelper: markup`
                     <span class='text-muted fst-italic'>${_t(
-                        "The task description was empty at the time."
-                    )}</span>`,
+                    "The task description was empty at the time."
+                )}</span>`,
                 recordId: record.resId,
                 recordModel: this.props.resModel,
                 versionedFieldName,

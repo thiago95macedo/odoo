@@ -1,4 +1,4 @@
-import { Component, props, types as t } from "@odoo/owl";
+import { Component, props, types as t } from "@weth/owl";
 import { getEmbeddedProps } from "@html_editor/others/embedded_component_utils";
 
 export class EmbeddedWhiteboardComponent extends Component {

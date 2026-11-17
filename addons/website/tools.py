@@ -6,8 +6,8 @@ from urllib.parse import urlsplit
 import werkzeug.urls
 from lxml import etree, html
 
-from odoo.tools.misc import hmac
-from odoo.tools.urls import urljoin
+from weth.tools.misc import hmac
+from weth.tools.urls import urljoin
 
 
 def distance(s1="", s2="", limit=4):

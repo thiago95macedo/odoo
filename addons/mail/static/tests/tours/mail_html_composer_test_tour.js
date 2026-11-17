@@ -15,7 +15,7 @@ registry.category("web_tour.tours").add("mail/static/tests/tours/mail_html_compo
             content: "Wait for the chatter to be fully loaded",
             trigger: ".o-mail-Chatter",
             async run() {
-                const composerService = odoo.__WOWL_DEBUG__.root.env.services["mail.composer"];
+                const composerService = weth.__WOWL_DEBUG__.root.env.services["mail.composer"];
                 composerService.setHtmlComposer();
             },
         },

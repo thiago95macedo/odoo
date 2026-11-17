@@ -3,8 +3,8 @@
 
 from dateutil.relativedelta import relativedelta
 
-from odoo import _, api, fields, models
-from odoo.exceptions import ValidationError
+from weth import _, api, fields, models
+from weth.exceptions import ValidationError
 
 
 class MailActivityPlanTemplate(models.Model):

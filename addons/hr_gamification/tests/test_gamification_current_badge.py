@@ -1,7 +1,7 @@
-from odoo import Command
-from odoo.exceptions import AccessError
-from odoo.tests.common import tagged
-from odoo.addons.hr.tests.common import TestHrCommon
+from weth import Command
+from weth.exceptions import AccessError
+from weth.tests.common import tagged
+from weth.addons.hr.tests.common import TestHrCommon
 
 
 @tagged('post_install', '-at_install')

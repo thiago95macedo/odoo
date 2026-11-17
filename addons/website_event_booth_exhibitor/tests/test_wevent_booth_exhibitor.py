@@ -3,8 +3,8 @@
 
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
-from odoo.addons.base.tests.common import HttpCaseWithUserDemo, HttpCaseWithUserPortal
-from odoo.tests import tagged
+from weth.addons.base.tests.common import HttpCaseWithUserDemo, HttpCaseWithUserPortal
+from weth.tests import tagged
 
 
 @tagged('post_install', '-at_install')

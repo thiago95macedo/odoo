@@ -1,3 +1,3 @@
-import { Registry } from "@odoo/o-spreadsheet";
+import { Registry } from "@weth/o-spreadsheet";
 
 export const initCallbackRegistry = new Registry();

@@ -1,4 +1,4 @@
-import { test, expect } from "@odoo/hoot";
+import { test, expect } from "@weth/hoot";
 import { patchWithCleanup } from "@web/../tests/web_test_helpers";
 import { PosOrder } from "../data/pos_order.data";
 import { getFilledOrder, setupPosEnv } from "../utils";

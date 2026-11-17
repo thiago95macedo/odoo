@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo><data noupdate="1">
+<weth><data noupdate="1">
 
     <!-- CHANNEL 0: Basics of Gardening -->
     <!-- ================================================== -->
@@ -828,4 +828,4 @@
     <!-- CHANNEL 6: DIY Furniture -->
     <!-- ======================================= -->
 
-</data></odoo>
+</data></weth>

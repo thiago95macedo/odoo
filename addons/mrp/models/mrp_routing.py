@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, fields, models, _
-from odoo.exceptions import ValidationError
-from odoo.tools import float_round, float_is_zero
+from weth import api, fields, models, _
+from weth.exceptions import ValidationError
+from weth.tools import float_round, float_is_zero
 
 
 class MrpRoutingWorkcenter(models.Model):

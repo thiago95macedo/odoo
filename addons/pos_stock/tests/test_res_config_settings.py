@@ -1,6 +1,6 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.pos_stock.tests.common import TestPosStockCommon
+from weth.addons.pos_stock.tests.common import TestPosStockCommon
 
 
 class TestPosStockResConfigSettings(TestPosStockCommon):

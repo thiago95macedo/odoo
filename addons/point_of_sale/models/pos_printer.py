@@ -3,8 +3,8 @@
 from base64 import b32encode
 from hashlib import sha256
 
-from odoo import api, fields, models, _
-from odoo.exceptions import ValidationError
+from weth import api, fields, models, _
+from weth.exceptions import ValidationError
 
 
 def format_epson_certified_domain(serial_number):

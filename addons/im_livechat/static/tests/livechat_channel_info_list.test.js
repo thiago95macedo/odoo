@@ -8,7 +8,7 @@ import {
     startServer,
     MENU_ACTIVE_IDS,
 } from "@mail/../tests/mail_test_helpers";
-import { describe, press, test, waitFor } from "@odoo/hoot";
+import { describe, press, test, waitFor } from "@weth/hoot";
 import { Command, serverState } from "@web/../tests/web_test_helpers";
 import { serializeDate, today } from "@web/core/l10n/dates";
 import { getOrigin } from "@web/core/utils/urls";

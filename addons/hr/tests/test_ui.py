@@ -1,6 +1,6 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.tests import HttpCase, freeze_time, tagged, new_test_user
+from weth.tests import HttpCase, freeze_time, tagged, new_test_user
 
 
 @tagged('-at_install', 'post_install', 'is_tour')

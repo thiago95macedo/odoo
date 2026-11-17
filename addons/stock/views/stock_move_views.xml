@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
 
         <record id="view_move_pivot" model="ir.ui.view">
             <field name="name">stock.move.pivot</field>
@@ -598,4 +598,4 @@
 
     <menuitem action="stock_move_action" id="stock_move_menu" name="Moves Analysis" parent="stock.menu_warehouse_report" sequence="230"/>
     <menuitem action="stock_scrapped_moves_action" id="menu_stock_scrap" name="Scrap" parent="stock.menu_stock_adjustments" sequence="99"/>
-</odoo>
+</weth>

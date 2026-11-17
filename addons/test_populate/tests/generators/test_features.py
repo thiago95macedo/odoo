@@ -1,10 +1,10 @@
 from random import Random
 from unittest.mock import MagicMock
 
-from odoo.tests import TransactionCase
-from odoo.tests.case import TestCase
+from weth.tests import TransactionCase
+from weth.tests.case import TestCase
 
-from odoo.addons.populate.generators import (
+from weth.addons.populate.generators import (
     Boolean,
     Char,
     Float,
@@ -17,8 +17,8 @@ from odoo.addons.populate.generators import (
     UnmetDependencies,
     generate_values,
 )
-from odoo.addons.populate.generators.generator import round_robin_subset
-from odoo.addons.populate.utils.distributions import Distribution
+from weth.addons.populate.generators.generator import round_robin_subset
+from weth.addons.populate.utils.distributions import Distribution
 
 
 class TestGeneratorUnique(TransactionCase):

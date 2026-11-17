@@ -1,6 +1,6 @@
 from datetime import timedelta
-from odoo import _, api, fields, models
-from odoo.exceptions import UserError
+from weth import _, api, fields, models
+from weth.exceptions import UserError
 
 
 class AccountUpdateTaxTagsWizard(models.TransientModel):

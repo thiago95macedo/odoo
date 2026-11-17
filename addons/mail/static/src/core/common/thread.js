@@ -17,7 +17,7 @@ import {
     untrack,
     useOnChange,
     useProps,
-} from "@odoo/owl";
+} from "@weth/owl";
 import { browser } from "@web/core/browser/browser";
 
 import { _t } from "@web/core/l10n/translation";
@@ -33,7 +33,7 @@ export const PRESENT_VIEWPORT_THRESHOLD = 1;
  * @property {"asc"|"desc"} [order="asc"]
  * @property {import("models").Thread} thread
  * @property {string} [searchTerm]
- * @property {import("@odoo/owl").Signal<HTMLElement>} [scrollRef]
+ * @property {import("@weth/owl").Signal<HTMLElement>} [scrollRef]
  * @extends {Component<Props, Env>}
  */
 export class Thread extends Component {
@@ -281,13 +281,11 @@ export class Thread extends Component {
         const pe = parseInt(computedStyle.getPropertyValue("padding-right"));
         const pt = parseInt(computedStyle.getPropertyValue("padding-top"));
         const pb = parseInt(computedStyle.getPropertyValue("padding-bottom"));
-        this.jumpPresentRef().style.transform = `translate(${
-            this.env.inChatter ? 22 : width - ps - pe - 22
-        }px, ${
-            this.env.inChatter && !this.env.inChatter.aside
+        this.jumpPresentRef().style.transform = `translate(${this.env.inChatter ? 22 : width - ps - pe - 22
+            }px, ${this.env.inChatter && !this.env.inChatter.aside
                 ? -22
                 : height - pt - pb - (this.env.inChatter?.aside ? 75 : 0)
-        }px)`;
+            }px)`;
     }
 
     /**
@@ -442,8 +440,8 @@ export class Thread extends Component {
         if (this.snapshot && messagesAtTop) {
             this.setScroll(
                 this.snapshot.scrollTop +
-                    this.scrollableRef().scrollHeight -
-                    this.snapshot.scrollHeight
+                this.scrollableRef().scrollHeight -
+                this.snapshot.scrollHeight
             );
         } else if (this.snapshot && messagesAtBottom) {
             this.setScroll(this.snapshot.scrollTop);
@@ -475,8 +473,8 @@ export class Thread extends Component {
                     this.props.order === "asc"
                         ? thread.scrollTop
                         : this.scrollableRef().scrollHeight -
-                          thread.scrollTop -
-                          this.scrollableRef().clientHeight;
+                        thread.scrollTop -
+                        this.scrollableRef().clientHeight;
             }
             if (
                 (this.lastSetValue === undefined || Math.abs(this.lastSetValue - value) > 1) &&
@@ -664,9 +662,9 @@ export class Thread extends Component {
         }
         return this.props.order === "asc"
             ? this.scrollableRef().scrollHeight -
-                  this.scrollableRef().scrollTop -
-                  this.scrollableRef().clientHeight <
-                  30
+            this.scrollableRef().scrollTop -
+            this.scrollableRef().clientHeight <
+            30
             : this.scrollableRef().scrollTop < 30;
     }
 
@@ -705,8 +703,8 @@ export class Thread extends Component {
                 this.props.order === "asc"
                     ? this.scrollableRef().scrollTop
                     : this.scrollableRef().scrollHeight -
-                      this.scrollableRef().scrollTop -
-                      this.scrollableRef().clientHeight;
+                    this.scrollableRef().scrollTop -
+                    this.scrollableRef().clientHeight;
         }
     }
 

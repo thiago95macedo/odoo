@@ -3,14 +3,14 @@
 import base64
 from unittest.mock import patch
 
-import odoo.tests
+import weth.tests
 
-from odoo.addons.pos_self_order.tests.self_order_common_test import SelfOrderCommonTest
+from weth.addons.pos_self_order.tests.self_order_common_test import SelfOrderCommonTest
 
 CHANGE_RECEIPT_ROUTE = '/pos-self-order/kiosk/change-receipt'
 
 
-@odoo.tests.tagged("post_install", "-at_install")
+@weth.tests.tagged("post_install", "-at_install")
 class TestSelfOrderReceiptLang(SelfOrderCommonTest):
     def _setup_change_receipt_order(self):
         """Create a paid kiosk order on a config with a receipt and a label preparation printer."""

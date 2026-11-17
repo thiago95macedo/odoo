@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
 <template id="report_mrporder">
     <t t-call="web.html_container">
         <t t-foreach="docs" t-as="o">
@@ -210,4 +210,4 @@
     <t t-call="stock.report_package_barcode"/>
 </template>
 
-</odoo>
+</weth>

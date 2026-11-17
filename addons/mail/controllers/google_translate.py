@@ -3,8 +3,8 @@
 import babel
 import requests
 
-from odoo.addons.mail.tools.discuss import mail_route
-from odoo.http import request, Controller
+from weth.addons.mail.tools.discuss import mail_route
+from weth.http import request, Controller
 
 # Google Translate rejects an unlisted region instead of falling back to the language.
 GOOGLE_LANG_CODES = {

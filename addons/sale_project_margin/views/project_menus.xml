@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
     <menuitem
         name="Forecast Margins"
         id="analytic_projected_margins_menu_project"
@@ -8,4 +8,4 @@
         groups="project.group_project_manager"
         sequence="70"
     />
-</odoo>
+</weth>

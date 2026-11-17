@@ -1,6 +1,6 @@
-import { describe, expect, queryOne, test } from "@odoo/hoot";
-import { dblclick, queryAll, queryAllTexts } from "@odoo/hoot-dom";
-import { animationFrame } from "@odoo/hoot-mock";
+import { describe, expect, queryOne, test } from "@weth/hoot";
+import { dblclick, queryAll, queryAllTexts } from "@weth/hoot-dom";
+import { animationFrame } from "@weth/hoot-mock";
 import { createSpreadsheetDashboard } from "@spreadsheet_dashboard/../tests/helpers/dashboard_action";
 import {
     defineSpreadsheetDashboardModels,

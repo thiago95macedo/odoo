@@ -75,7 +75,7 @@ export function isEmpty(item) {
 }
 
 /**
- * @param {import("@odoo/o-spreadsheet").Cell} cell
+ * @param {import("@weth/o-spreadsheet").Cell} cell
  */
 export function containsReferences(cell) {
     if (!cell.isFormula) {

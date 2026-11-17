@@ -1,6 +1,6 @@
-import { beforeEach, describe, expect, test } from "@odoo/hoot";
-import { click, edit, queryOne, runAllTimers } from "@odoo/hoot-dom";
-import { animationFrame } from "@odoo/hoot-mock";
+import { beforeEach, describe, expect, test } from "@weth/hoot";
+import { click, edit, queryOne, runAllTimers } from "@weth/hoot-dom";
+import { animationFrame } from "@weth/hoot-mock";
 
 import { focus, mailModels } from "@mail/../tests/mail_test_helpers";
 import { projectModels } from "@project/../tests/project_models";

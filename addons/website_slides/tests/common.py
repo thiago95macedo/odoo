@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.mail.tests.common import mail_new_test_user, MailCase
+from weth.addons.mail.tests.common import mail_new_test_user, MailCase
 
 
 class SlidesCase(MailCase):

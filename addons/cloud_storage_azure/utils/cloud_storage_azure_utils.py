@@ -13,7 +13,7 @@ import requests
 from urllib.parse import quote
 from datetime import date
 from lxml import etree
-from odoo.exceptions import ValidationError
+from weth.exceptions import ValidationError
 
 X_MS_VERSION = '2023-11-03'
 

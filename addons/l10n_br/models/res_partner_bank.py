@@ -1,10 +1,10 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 import re
 
-from odoo import models, fields, api, _
-from odoo.exceptions import ValidationError
-from odoo.tools import float_repr
-from odoo.tools.mail import email_normalize
+from weth import models, fields, api, _
+from weth.exceptions import ValidationError
+from weth.tools import float_repr
+from weth.tools.mail import email_normalize
 
 
 class ResPartnerBank(models.Model):

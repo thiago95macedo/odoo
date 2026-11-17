@@ -1,6 +1,6 @@
 import { registry } from "@web/core/registry";
 import { useBus } from "@web/core/utils/hooks";
-import { Component, proxy, useProps } from "@odoo/owl";
+import { Component, proxy, useProps } from "@weth/owl";
 import { standardFieldProps } from "@web/views/fields/standard_field_props";
 
 class FieldIframePreview extends Component {

@@ -5,12 +5,12 @@ import logging
 
 from datetime import datetime, timedelta
 
-from odoo import _, models
-from odoo.exceptions import AccessDenied, UserError
-from odoo.http import request
-from odoo.tools.misc import babel_locale_parse, hmac
+from weth import _, models
+from weth.exceptions import AccessDenied, UserError
+from weth.http import request
+from weth.tools.misc import babel_locale_parse, hmac
 
-from odoo.addons.auth_totp.models.totp import hotp, TOTP
+from weth.addons.auth_totp.models.totp import hotp, TOTP
 
 _logger = logging.getLogger(__name__)
 
@@ -88,7 +88,7 @@ class ResUsers(models.Model):
         return action
 
     def get_totp_invite_url(self):
-        return '/odoo/action-auth_totp_mail.action_activate_two_factor_authentication'
+        return '/weth/action-auth_totp_mail.action_activate_two_factor_authentication'
 
     def action_totp_invite(self):
         invite_template = self.env.ref('auth_totp_mail.mail_template_totp_invite')

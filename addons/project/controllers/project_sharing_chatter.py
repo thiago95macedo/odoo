@@ -2,9 +2,9 @@
 
 from werkzeug.exceptions import Forbidden
 
-from odoo.http import request
+from weth.http import request
 
-from odoo.addons.portal.controllers.thread import PortalThreadController
+from weth.addons.portal.controllers.thread import PortalThreadController
 from .portal import ProjectCustomerPortal
 
 

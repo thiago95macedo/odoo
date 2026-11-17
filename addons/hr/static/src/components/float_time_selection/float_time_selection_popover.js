@@ -1,4 +1,4 @@
-import { Component, proxy, t, useProps } from "@odoo/owl";
+import { Component, proxy, t, useProps } from "@weth/owl";
 import { range } from "@web/core/utils/numbers";
 
 const HOURS = range(24).map((hour) => [hour, String(hour)]);

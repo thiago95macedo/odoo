@@ -1,7 +1,7 @@
 import { setupHTMLBuilder } from "@html_builder/../tests/helpers";
-import { expect, test, describe } from "@odoo/hoot";
+import { expect, test, describe } from "@weth/hoot";
 import { contains } from "@web/../tests/web_test_helpers";
-import { queryOne } from "@odoo/hoot-dom";
+import { queryOne } from "@weth/hoot-dom";
 
 describe.current.tags("desktop");
 

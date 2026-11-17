@@ -8,7 +8,7 @@ import {
     usePlugin,
     useProps,
     useScope,
-} from "@odoo/owl";
+} from "@weth/owl";
 import { AutoComplete } from "@web/core/autocomplete/autocomplete";
 import { makeContext } from "@web/core/context";
 import { Dialog } from "@web/core/dialog/dialog";
@@ -215,7 +215,7 @@ export const many2XAutocompleteProps = {
     searchMoreLimit: t.number().optional(1000),
     searchThreshold: t.number().optional(0),
     preventMemoization: t.boolean().optional(),
-    setInputFloats: t.function().optional(() => () => {}),
+    setInputFloats: t.function().optional(() => () => { }),
     slots: t.any().optional(),
     specification: t.object().optional({}),
     update: t.function(),
@@ -410,7 +410,7 @@ export class Many2XAutocomplete extends Component {
     onQuickCreateError(error, request) {
         if (
             error instanceof RPCError &&
-            error.exceptionName === "odoo.exceptions.ValidationError"
+            error.exceptionName === "weth.exceptions.ValidationError"
         ) {
             return this.slowCreate(request);
         } else {
@@ -628,7 +628,7 @@ export function useOpenMany2XRecord({
     fieldString,
     activeActions,
     isToMany,
-    onClose = (isNew) => {},
+    onClose = (isNew) => { },
     component = FormViewDialog,
     size = "lg",
 }) {
@@ -647,7 +647,7 @@ export function useOpenMany2XRecord({
             });
         }
 
-        let resolve = () => {};
+        let resolve = () => { };
         if (!title) {
             title = resId ? _t("Open: %s", fieldString) : _t("Create %s", fieldString);
         }
@@ -783,9 +783,8 @@ export class X2ManyFieldDialog extends Component {
             title: this.title,
             withBodyPadding: false,
             modalRef: this.modalRef,
-            contentClass: `${this.contentClass}  ${
-                this.ui.size <= SIZES.XS ? " o_xxs_form_view" : ""
-            }`,
+            contentClass: `${this.contentClass}  ${this.ui.size <= SIZES.XS ? " o_xxs_form_view" : ""
+                }`,
         };
         const dialogSize = this.archInfo.xmlDoc.getAttribute("dialog_size");
         if (dialogSize) {

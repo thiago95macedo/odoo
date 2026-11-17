@@ -1,4 +1,4 @@
-import { Component, onMounted, xml, proxy, useProps, t } from "@odoo/owl";
+import { Component, onMounted, xml, proxy, useProps, t } from "@weth/owl";
 import { Dropdown } from "@web/core/dropdown/dropdown";
 import { DropdownItem } from "@web/core/dropdown/dropdown_item";
 import { useDropdownState } from "@web/core/dropdown/dropdown_hooks";
@@ -244,7 +244,7 @@ export class NewContentSystrayItem extends Component {
             this.website.redirectOutFromLoader({
                 redirectAction: () => {
                     redirect(
-                        `/odoo/action-website.website_preview?website_id=${id}&path=${encodedPath}&module_installed=${encodedData}`
+                        `/weth/action-website.website_preview?website_id=${id}&path=${encodedPath}&module_installed=${encodedData}`
                     );
                 },
             });

@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, exceptions, models
-from odoo.addons.phone_validation.tools import phone_validation
+from weth import api, exceptions, models
+from weth.addons.phone_validation.tools import phone_validation
 
 
 class Base(models.AbstractModel):

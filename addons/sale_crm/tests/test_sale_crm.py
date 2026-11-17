@@ -1,7 +1,7 @@
-from odoo.addons.crm.tests.common import TestCrmCommon
-from odoo.tests import tagged
+from weth.addons.crm.tests.common import TestCrmCommon
+from weth.tests import tagged
 
-from odoo.fields import Command
+from weth.fields import Command
 
 
 @tagged('at_install', '-post_install')  # LEGACY at_install

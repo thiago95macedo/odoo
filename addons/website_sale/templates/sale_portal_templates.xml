@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<odoo>
+<weth>
 
     <template
         id="website_sale.sale_order_portal_content_inherit_website_sale"
@@ -33,4 +33,4 @@
         </div>
     </template>
 
-</odoo>
+</weth>

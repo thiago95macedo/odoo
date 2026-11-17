@@ -2,14 +2,14 @@ from unittest.mock import patch
 
 from freezegun import freeze_time
 
-import odoo
+import weth
 
-from odoo.addons.point_of_sale.models.pos_order import TRACKING_NUMBER_SEQUENCE_CODE
-from odoo.addons.point_of_sale.models.pos_payment_method import PosPaymentMethod
-from odoo.addons.point_of_sale.tests.common import TestPoSCommon
+from weth.addons.point_of_sale.models.pos_order import TRACKING_NUMBER_SEQUENCE_CODE
+from weth.addons.point_of_sale.models.pos_payment_method import PosPaymentMethod
+from weth.addons.point_of_sale.tests.common import TestPoSCommon
 
 
-@odoo.tests.tagged('post_install', '-at_install')
+@weth.tests.tagged('post_install', '-at_install')
 class TestBackend(TestPoSCommon):
 
     _test_user_groups = None  # FIXME list needed groups

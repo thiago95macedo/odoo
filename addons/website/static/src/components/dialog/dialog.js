@@ -1,8 +1,8 @@
 import { Dialog, dialogProps } from "@web/core/dialog/dialog";
 import { _t } from "@web/core/l10n/translation";
-import { Component, useProps, proxy, signal, t } from "@odoo/owl";
+import { Component, useProps, proxy, signal, t } from "@weth/owl";
 
-const NO_OP = () => {};
+const NO_OP = () => { };
 
 export class WebsiteDialog extends Component {
     static template = "website.WebsiteDialog";

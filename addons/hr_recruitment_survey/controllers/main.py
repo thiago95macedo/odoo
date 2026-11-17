@@ -1,6 +1,6 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.survey.controllers import main
+from weth.addons.survey.controllers import main
 
 
 class ApplicantSurvey(main.Survey):

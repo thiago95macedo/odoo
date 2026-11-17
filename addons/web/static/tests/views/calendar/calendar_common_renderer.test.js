@@ -1,6 +1,6 @@
-import { beforeEach, expect, test } from "@odoo/hoot";
-import { queryAllTexts, queryFirst, queryRect } from "@odoo/hoot-dom";
-import { runAllTimers, mockTimeZone } from "@odoo/hoot-mock";
+import { beforeEach, expect, test } from "@weth/hoot";
+import { queryAllTexts, queryFirst, queryRect } from "@weth/hoot-dom";
+import { runAllTimers, mockTimeZone } from "@weth/hoot-mock";
 import { mockService, mountWithCleanup, preloadBundle } from "@web/../tests/web_test_helpers";
 import {
     DEFAULT_DATE,
@@ -16,12 +16,12 @@ import { CallbackRecorder } from "@web/search/action_hook";
 const FAKE_PROPS = {
     model: FAKE_MODEL,
     initialDate: FAKE_MODEL.date,
-    createRecord() {},
-    deleteRecord() {},
-    editRecord() {},
+    createRecord() { },
+    deleteRecord() { },
+    editRecord() { },
     callbackRecorder: new CallbackRecorder(),
-    onSquareSelection() {},
-    cleanSquareSelection() {},
+    onSquareSelection() { },
+    cleanSquareSelection() { },
 };
 
 async function start(props = {}, target) {
@@ -109,7 +109,7 @@ test(`Day: click on event`, async () => {
         add(target, component, { record }) {
             expect.step("popover");
             expect(record.id).toBe(1);
-            return () => {};
+            return () => { };
         },
     }));
     await start({ model: { ...FAKE_MODEL, scale: "day" } });

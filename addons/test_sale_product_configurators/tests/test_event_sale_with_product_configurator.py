@@ -2,11 +2,11 @@
 
 from datetime import datetime, timedelta
 
-from odoo import fields
-from odoo.tests import HttpCase, tagged
+from weth import fields
+from weth.tests import HttpCase, tagged
 
-from odoo.addons.mail.tests.common import mail_new_test_user
-from odoo.addons.account.tests.common import AccountTestInvoicingCommon
+from weth.addons.mail.tests.common import mail_new_test_user
+from weth.addons.account.tests.common import AccountTestInvoicingCommon
 
 
 @tagged('post_install', '-at_install')

@@ -1,4 +1,4 @@
-<odoo>
+<weth>
     <record model="res.groups.privilege" id="res_groups_privilege_maintenance">
         <field name="name">Maintenance</field>
         <field name="category_id" ref="base.module_category_supply_chain"/>
@@ -14,4 +14,4 @@
         <field name="comment">The user will be able to manage equipment.</field>
     </record>
 
-    </odoo>
+    </weth>

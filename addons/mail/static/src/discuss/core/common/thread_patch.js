@@ -1,6 +1,6 @@
 import { Thread } from "@mail/core/common/thread";
 
-import { useListener, useOnChange } from "@odoo/owl";
+import { useListener, useOnChange } from "@weth/owl";
 
 import { _t } from "@web/core/l10n/translation";
 import { patch } from "@web/core/utils/patch";
@@ -28,8 +28,8 @@ const threadPatch = {
                 if (
                     Math.abs(
                         scrollTop +
-                            this.scrollableRef().clientHeight -
-                            this.scrollableRef().scrollHeight
+                        this.scrollableRef().clientHeight -
+                        this.scrollableRef().scrollHeight
                     ) <= 1
                 ) {
                     this.channel.self_member_id.hideUnreadBanner = true;

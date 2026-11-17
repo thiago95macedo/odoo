@@ -1,7 +1,7 @@
 import { AttachmentView } from "@mail/core/common/attachment_view";
 import { Chatter } from "@mail/chatter/web_portal_project/chatter";
 
-import { onMounted, onWillUnmount, signal, types } from "@odoo/owl";
+import { onMounted, onWillUnmount, signal, types } from "@weth/owl";
 
 import { browser } from "@web/core/browser/browser";
 import { SIZES } from "@web/core/ui/ui_utils";

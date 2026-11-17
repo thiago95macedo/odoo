@@ -1,5 +1,5 @@
-from odoo import models, api, fields, _
-from odoo.exceptions import UserError, ValidationError
+from weth import models, api, fields, _
+from weth.exceptions import UserError, ValidationError
 
 ADDRESS_FIELDS = ('delivery_from_street', 'delivery_from_zip', 'delivery_from_city', 'delivery_from_state_id', 'delivery_from_country_id')
 

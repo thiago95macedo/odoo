@@ -1,5 +1,5 @@
 import { _t } from "@web/core/l10n/translation";
-import { helpers, registries, EvaluationError } from "@odoo/o-spreadsheet";
+import { helpers, registries, EvaluationError } from "@weth/o-spreadsheet";
 import { addListDependencies } from "./list_helpers";
 
 const { arg, toString, toNumber } = helpers;

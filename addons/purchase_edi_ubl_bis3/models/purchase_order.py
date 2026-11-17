@@ -1,4 +1,4 @@
-from odoo import _, api, models, Command
+from weth import _, api, models, Command
 
 
 class PurchaseOrder(models.Model):

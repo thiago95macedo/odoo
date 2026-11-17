@@ -2,13 +2,13 @@
 
 from unittest.mock import patch
 
-from odoo.fields import Command
-from odoo.tests.common import JsonRpcException, tagged
-from odoo.tools import mute_logger
+from weth.fields import Command
+from weth.tests.common import JsonRpcException, tagged
+from weth.tools import mute_logger
 
-from odoo.addons.payment.tests.http_common import PaymentHttpCommon
-from odoo.addons.website_sale.controllers.cart import Cart
-from odoo.addons.website_sale.tests.common import WebsiteSaleCommon
+from weth.addons.payment.tests.http_common import PaymentHttpCommon
+from weth.addons.website_sale.controllers.cart import Cart
+from weth.addons.website_sale.tests.common import WebsiteSaleCommon
 
 
 @tagged("post_install", "-at_install")
@@ -58,7 +58,7 @@ class WebsiteSaleCartPayment(PaymentHttpCommon, WebsiteSaleCommon):
                     f"the linked order.",
                 )
 
-    @mute_logger("odoo.http")
+    @mute_logger("weth.http")
     def test_transaction_route_rejects_unexpected_kwarg(self):
         self.cart.partner_id.write(self.dummy_partner_address_values.copy())
         self.cart._set_delivery_method(self.free_delivery)
@@ -67,7 +67,7 @@ class WebsiteSaleCartPayment(PaymentHttpCommon, WebsiteSaleCommon):
             "access_token": self.cart._portal_ensure_token(),
             "partner_id": self.partner.id,  # This should be rejected.
         }
-        with self.assertRaises(JsonRpcException, msg="odoo.exceptions.ValidationError"):
+        with self.assertRaises(JsonRpcException, msg="weth.exceptions.ValidationError"):
             self.make_jsonrpc_request(url, route_kwargs)
 
     def test_payment_confirmation_mail(self):

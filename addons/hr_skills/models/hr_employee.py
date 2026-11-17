@@ -5,11 +5,11 @@ from collections import defaultdict
 from datetime import date
 from dateutil.relativedelta import relativedelta
 
-from odoo import api, fields, models
-from odoo.exceptions import AccessError
-from odoo.fields import Domain
-from odoo.tools import convert
-from odoo.addons.mail.tools.discuss import Store
+from weth import api, fields, models
+from weth.exceptions import AccessError
+from weth.fields import Domain
+from weth.tools import convert
+from weth.addons.mail.tools.discuss import Store
 
 
 class HrEmployee(models.Model):

@@ -2,7 +2,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
 from ast import literal_eval
-from odoo import api, fields, models
+from weth import api, fields, models
 
 
 class ProjectProjectStageDeleteWizard(models.TransientModel):

@@ -2,11 +2,11 @@
 
 import ast
 
-from odoo import api, fields, models
-from odoo.fields import Domain
-from odoo.tools import SQL
-from odoo.exceptions import ValidationError
-from odoo.tools.translate import _
+from weth import api, fields, models
+from weth.fields import Domain
+from weth.tools import SQL
+from weth.exceptions import ValidationError
+from weth.tools.translate import _
 
 
 class ProjectProject(models.Model):

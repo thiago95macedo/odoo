@@ -1,4 +1,4 @@
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@weth/hoot";
 import { setupEditor } from "../_helpers/editor";
 import { getContent, setSelection } from "../_helpers/selection";
 import { unformat } from "../_helpers/format";
@@ -95,11 +95,11 @@ describe("findAdjacentPosition method", () => {
                 assertAdjacentPositions(
                     editor,
                     '<p data-selection-placeholder=""><br></p>' +
-                        previous +
-                        '<p data-selection-placeholder=""><br></p>',
+                    previous +
+                    '<p data-selection-placeholder=""><br></p>',
                     '<p data-selection-placeholder=""><br></p>' +
-                        next +
-                        '<p data-selection-placeholder=""><br></p>'
+                    next +
+                    '<p data-selection-placeholder=""><br></p>'
                 );
             });
             test("Should find position before filebox", async () => {

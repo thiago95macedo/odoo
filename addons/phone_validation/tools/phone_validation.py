@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.exceptions import UserError
-from odoo.tools import LazyTranslate
+from weth.exceptions import UserError
+from weth.tools import LazyTranslate
 
 import logging
 

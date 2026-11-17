@@ -1,5 +1,5 @@
-import { expect } from "@odoo/hoot";
-import { scroll } from "@odoo/hoot-dom";
+import { expect } from "@weth/hoot";
+import { scroll } from "@weth/hoot-dom";
 
 import { endTransition } from "@website/../tests/interactions/snippets/helpers";
 
@@ -22,7 +22,7 @@ export async function customScroll(scrollingElement, start, end) {
 
 /**
  *
- * @param {import("@odoo/hoot-dom").Target} header
+ * @param {import("@weth/hoot-dom").Target} header
  * @param {HTMLElement} main
  * @param {any} core
  * @param {any} expectedStatus

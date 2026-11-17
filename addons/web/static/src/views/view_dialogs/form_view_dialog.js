@@ -3,7 +3,7 @@ import { useService } from "@web/core/utils/hooks";
 import { CallbackRecorder } from "@web/search/action_hook";
 import { View } from "@web/views/view";
 
-import { Component, signal, t, useProps } from "@odoo/owl";
+import { Component, signal, t, useProps } from "@weth/owl";
 
 export const formViewDialogProps = {
     close: t.function(),
@@ -13,7 +13,7 @@ export const formViewDialogProps = {
     expandedFormRef: t.string().optional(),
     nextRecordsContext: t.object().optional(),
     readonly: t.boolean().optional(),
-    onRecordSaved: t.function().optional(() => () => {}),
+    onRecordSaved: t.function().optional(() => () => { }),
     onRecordSave: t.function().optional(),
     onRecordDiscarded: t.function().optional(),
     removeRecord: t.function().optional(),

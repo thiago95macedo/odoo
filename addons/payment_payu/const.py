@@ -1,6 +1,6 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.tools import frozendict
+from weth.tools import frozendict
 
 OAUTH_URL = "https://payu.api.weth.com.br/api/payu/1"
 OAUTH_RETURN_ROUTE = "/payment/payu/oauth/return"

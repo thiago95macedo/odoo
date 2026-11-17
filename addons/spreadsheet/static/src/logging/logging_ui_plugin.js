@@ -1,9 +1,9 @@
-/** @odoo-module */
+/** @weth-module */
 
 import { CommandResult } from "@spreadsheet/o_spreadsheet/cancelled_reason";
 import { OdooUIPlugin } from "@spreadsheet/plugins";
 import { rpc } from "@web/core/network/rpc";
-import * as spreadsheet from "@odoo/o-spreadsheet";
+import * as spreadsheet from "@weth/o-spreadsheet";
 const { cellMenuRegistry, topbarMenuRegistry, colMenuRegistry, rowMenuRegistry } =
     spreadsheet.registries;
 

@@ -3,11 +3,11 @@
 from markupsafe import Markup
 from werkzeug.exceptions import BadRequest, NotFound
 
-from odoo.fields import Command
-from odoo.http import request
+from weth.fields import Command
+from weth.http import request
 
-from odoo.addons.mail.controllers.discuss.channel import ChannelController
-from odoo.addons.mail.tools.discuss import mail_route
+from weth.addons.mail.controllers.discuss.channel import ChannelController
+from weth.addons.mail.tools.discuss import mail_route
 
 
 class LivechatChannelController(ChannelController):

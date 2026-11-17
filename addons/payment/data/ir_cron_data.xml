@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
 
     <record model="ir.cron" id="processing_cron">
         <field name="name">Payment: Run Processing</field>
@@ -25,4 +25,4 @@
     <!-- Re-enable the cron if a module update disabled it -->
     <function model="payment.provider" name="_toggle_post_processing_cron"/>
 
-</odoo>
+</weth>

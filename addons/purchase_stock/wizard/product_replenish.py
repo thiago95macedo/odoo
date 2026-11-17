@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, fields, models
-from odoo.fields import Domain
+from weth import api, fields, models
+from weth.fields import Domain
 
 
 class ProductReplenish(models.TransientModel):
@@ -71,7 +71,7 @@ class ProductReplenish(models.TransientModel):
         if order_line._name == 'purchase.order.line':
             return [{
                 'label': order_line.order_id.display_name,
-                'url': f'/odoo/action-purchase.action_rfq_form/{order_line.order_id.id}',
+                'url': f'/weth/action-purchase.action_rfq_form/{order_line.order_id.id}',
             }]
         return super()._get_replenishment_order_notification_link(order_line)
 

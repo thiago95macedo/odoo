@@ -1,6 +1,6 @@
 import { useService } from "@web/core/utils/hooks";
 import { user } from "@web/core/user";
-import { Component, onWillStart, proxy, t, useProps } from "@odoo/owl";
+import { Component, onWillStart, proxy, t, useProps } from "@weth/owl";
 
 export class RecruitmentActionHelper extends Component {
     static template = "hr_recruitment.RecruitmentActionHelper";

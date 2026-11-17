@@ -1,12 +1,12 @@
-import odoo.tests
-from odoo import Command, fields
-from odoo.addons.mail.tests.common import MailCase
-from odoo.addons.pos_online_payment_self_order.tests.test_self_order_mobile import (
+import weth.tests
+from weth import Command, fields
+from weth.addons.mail.tests.common import MailCase
+from weth.addons.pos_online_payment_self_order.tests.test_self_order_mobile import (
     TestSelfOrderMobile,
 )
 
 
-@odoo.tests.tagged("post_install", "-at_install")
+@weth.tests.tagged("post_install", "-at_install")
 class TestSelfOrderFakePayment(TestSelfOrderMobile):
 
     _test_user_groups = None  # FIXME list needed groups
@@ -88,7 +88,7 @@ class TestSelfOrderFakePayment(TestSelfOrderMobile):
         self.assertEqual(order.state, 'paid')
 
 
-@odoo.tests.tagged("post_install", "-at_install")
+@weth.tests.tagged("post_install", "-at_install")
 class TestSelfOrderFakePaymentMail(MailCase, TestSelfOrderMobile):
     _test_user_groups = None  # FIXME list needed groups
 

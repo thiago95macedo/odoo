@@ -5,7 +5,7 @@ import {
 } from "@im_livechat/../tests/livechat_test_helpers";
 
 import { click, contains, start, startServer } from "@mail/../tests/mail_test_helpers";
-import { expect } from "@odoo/hoot";
+import { expect } from "@weth/hoot";
 import { _makeUser, user } from "@web/core/user";
 import { getService, patchWithCleanup } from "@web/../tests/web_test_helpers";
 

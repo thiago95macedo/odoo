@@ -1,4 +1,4 @@
-// @odoo-module ignore
+// @weth-module ignore
 
 // The following prevents luxon objects from being made reactive by Owl, because they are immutable
 luxon.DateTime.prototype[Symbol.toStringTag] = "LuxonDateTime";

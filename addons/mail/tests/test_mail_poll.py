@@ -3,8 +3,8 @@
 from datetime import timedelta
 from pprint import pformat
 
-from odoo.addons.mail.tests.common import MailCommon
-from odoo.tests.common import HttpCase, JsonRpcException, new_test_user, tagged
+from weth.addons.mail.tests.common import MailCommon
+from weth.tests.common import HttpCase, JsonRpcException, new_test_user, tagged
 
 
 @tagged("mail_poll")
@@ -37,14 +37,14 @@ class TestMailPoll(MailCommon, HttpCase):
         self.assertEqual(poll.option_ids.mapped("option_emoji"), ["🍔", "🍕", "🌮"])
         with (
             self.assertRaises(JsonRpcException) as error_catcher,
-            self.assertLogs("odoo.http", level="WARNING") as log_catcher,
+            self.assertLogs("weth.http", level="WARNING") as log_catcher,
         ):
             self.make_jsonrpc_request(
                 "/mail/poll/vote", {"poll_id": poll.id, "option_ids": poll.option_ids.ids}
             )
-        self.assertEqual(error_catcher.exception.args[0], "odoo.exceptions.ValidationError")
+        self.assertEqual(error_catcher.exception.args[0], "weth.exceptions.ValidationError")
         self.assertIn(
-            'WARNING:odoo.http:Cannot vote on poll "What is your favorite food?": only one vote is allowed per user.',
+            'WARNING:weth.http:Cannot vote on poll "What is your favorite food?": only one vote is allowed per user.',
             log_catcher.output,
         )
         self.make_jsonrpc_request(
@@ -155,7 +155,7 @@ class TestMailPoll(MailCommon, HttpCase):
         for i in range(50):
             channel.message_post(body=f"message_{i}", message_type="comment")
         self.start_tour(
-            f"/odoo/discuss?active_id={channel.id}&test_poll_id={poll_id}",
+            f"/weth/discuss?active_id={channel.id}&test_poll_id={poll_id}",
             "mail_poll_tour.js",
             login=self.user_employee.login,
         )

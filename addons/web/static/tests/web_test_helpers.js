@@ -1,4 +1,4 @@
-import { before, withFetch } from "@odoo/hoot";
+import { before, withFetch } from "@weth/hoot";
 import { loadBundle } from "@web/core/assets";
 import { patch } from "@web/core/utils/patch";
 import * as _fields from "./_framework/mock_server/mock_fields";
@@ -179,11 +179,11 @@ export function preloadBundle(bundleName, options) {
     const once = options?.once || false;
     before(async function preloadBundle() {
         if (once) {
-            odoo.loader.preventGlobalDefine = true;
+            weth.loader.preventGlobalDefine = true;
         }
         await withFetch(globalCachedFetch, () => loadBundle(bundleName));
         if (once) {
-            odoo.loader.preventGlobalDefine = false;
+            weth.loader.preventGlobalDefine = false;
         }
     });
 }

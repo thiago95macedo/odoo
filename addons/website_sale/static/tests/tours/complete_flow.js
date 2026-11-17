@@ -190,7 +190,7 @@ registry.category("web_tour.tours").add('website_sale.complete_flow_1', {
                     });
                 });
                 def2.then(async function () {
-                    const url = await post('/web/session/logout?redirect=/shop', { csrf_token: odoo.csrf_token }, "url");
+                    const url = await post('/web/session/logout?redirect=/shop', { csrf_token: weth.csrf_token }, "url");
                     redirect(url);
                 });
             },

@@ -1,4 +1,4 @@
-import { Component, onMounted, useProps, t } from "@odoo/owl";
+import { Component, onMounted, useProps, t } from "@weth/owl";
 import { _t } from "@web/core/l10n/translation";
 
 export class DragAndDropMoveHandle extends Component {

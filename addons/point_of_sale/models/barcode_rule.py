@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import models, fields
-from odoo.tools.translate import _
+from weth import models, fields
+from weth.tools.translate import _
 
 
 class BarcodeRule(models.Model):

@@ -3,12 +3,12 @@
 
 import time
 
-from odoo.exceptions import UserError, ValidationError
-from odoo.fields import Command
-from odoo.tests import tagged
-from odoo.tools import mute_logger
+from weth.exceptions import UserError, ValidationError
+from weth.fields import Command
+from weth.tests import tagged
+from weth.tools import mute_logger
 
-from odoo.addons.base.tests.common import BaseCommon
+from weth.addons.base.tests.common import BaseCommon
 
 
 class TestProductAttributeValueCommon(BaseCommon):
@@ -323,7 +323,7 @@ class TestProductAttributeValueConfig(TestProductAttributeValueCommon):
         variant = self.computer._get_variant_for_combination(combination)
         self.assertFalse(variant)
 
-    @mute_logger('odoo.models.unlink')
+    @mute_logger('weth.models.unlink')
     def test_product_filtered_excluded_value_ids(self):
         """
             Super Computer has 18 variants total (2 ssd * 3 ram * 3 hdd)
@@ -346,7 +346,7 @@ class TestProductAttributeValueConfig(TestProductAttributeValueCommon):
         self.assertFalse(self.computer._get_variant_for_combination(computer_ssd_256 + computer_ram_16 + computer_hdd_1))
         self.assertFalse(self.computer._get_variant_for_combination(computer_ssd_512 + computer_ram_16 + computer_hdd_1))
 
-    @mute_logger('odoo.models.unlink')
+    @mute_logger('weth.models.unlink')
     def test_is_combination_possible(self):
         computer_ssd_256 = self._get_product_template_attribute_value(self.ssd_256)
         computer_ram_8 = self._get_product_template_attribute_value(self.ram_8)
@@ -404,7 +404,7 @@ class TestProductAttributeValueConfig(TestProductAttributeValueCommon):
         })
         self.assertTrue(self.computer._is_combination_possible(computer_ssd_256 + computer_ram_8 + computer_hdd_1))
 
-    @mute_logger('odoo.models.unlink')
+    @mute_logger('weth.models.unlink')
     def test_get_first_possible_combination(self):
         computer_ssd_256 = self._get_product_template_attribute_value(self.ssd_256)
         computer_ssd_512 = self._get_product_template_attribute_value(self.ssd_512)
@@ -590,7 +590,7 @@ class TestProductAttributeValueConfig(TestProductAttributeValueCommon):
         # It should be about instantaneous, 2 to avoid false positives on loaded/slow CI runners
         self.assertLess(elapsed, 2)
 
-    @mute_logger('odoo.models.unlink')
+    @mute_logger('weth.models.unlink')
     def test_get_closest_possible_combinations(self):
         computer_ssd_256 = self._get_product_template_attribute_value(self.ssd_256)
         computer_ssd_512 = self._get_product_template_attribute_value(self.ssd_512)
@@ -672,7 +672,7 @@ class TestProductAttributeValueConfig(TestProductAttributeValueCommon):
         # higher value. Before the fix it would take hours.
         self.assertLess(elapsed, 0.5)
 
-    @mute_logger('odoo.models.unlink')
+    @mute_logger('weth.models.unlink')
     def test_clear_caches(self):
         """The goal of this test is to make sure the cache is invalidated when
         it should be."""
@@ -740,7 +740,7 @@ class TestProductAttributeValueConfig(TestProductAttributeValueCommon):
         with self.assertRaises(UserError, msg="can't change the product of a product template attribute value"):
             self.computer_ram_attribute_lines.product_template_value_ids[0].product_tmpl_id = self.computer_case.id
 
-    @mute_logger('odoo.models.unlink')
+    @mute_logger('weth.models.unlink')
     def test_inactive_related_product_update(self):
         """
             Create a product and give it a product attribute then archive it, delete the product attribute,

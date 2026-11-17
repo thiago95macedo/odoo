@@ -1,17 +1,17 @@
-// @odoo-module ignore
+// @weth-module ignore
 // ! WARNING: this module must be loaded after `module_loader` but cannot have dependencies !
 
-(function (odoo) {
+(function (weth) {
     "use strict";
 
-    if (odoo.define.name.endsWith("(hoot)")) {
+    if (weth.define.name.endsWith("(hoot)")) {
         return;
     }
 
-    const name = `${odoo.define.name} (hoot)`;
-    odoo.define = {
+    const name = `${weth.define.name} (hoot)`;
+    weth.define = {
         [name](name, dependencies, factory) {
-            return odoo.loader.define(name, dependencies, factory, !name.endsWith(".hoot"));
+            return weth.loader.define(name, dependencies, factory, !name.endsWith(".hoot"));
         },
     }[name];
-})(globalThis.odoo);
+})(globalThis.weth);

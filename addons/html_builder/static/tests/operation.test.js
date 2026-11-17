@@ -8,9 +8,9 @@ import { BuilderAction } from "@html_builder/core/builder_action";
 import { ClassAction } from "@html_builder/core/core_builder_action_plugin";
 import { Operation } from "@html_builder/core/operation";
 import { HistoryPlugin } from "@html_editor/core/history_plugin";
-import { animationFrame, beforeEach, describe, expect, test } from "@odoo/hoot";
-import { advanceTime, delay, hover, press, tick } from "@odoo/hoot-dom";
-import { xml } from "@odoo/owl";
+import { animationFrame, beforeEach, describe, expect, test } from "@weth/hoot";
+import { advanceTime, delay, hover, press, tick } from "@weth/hoot-dom";
+import { xml } from "@weth/owl";
 import { contains, getService, patchWithCleanup } from "@web/../tests/web_test_helpers";
 
 describe.current.tags("desktop");

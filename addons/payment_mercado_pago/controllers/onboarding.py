@@ -6,11 +6,11 @@ from datetime import timedelta
 
 from werkzeug.exceptions import Forbidden
 
-from odoo import fields
-from odoo.exceptions import ValidationError
-from odoo.http import Controller, request, route
+from weth import fields
+from weth.exceptions import ValidationError
+from weth.http import Controller, request, route
 
-from odoo.addons.payment_mercado_pago import const
+from weth.addons.payment_mercado_pago import const
 
 _logger = logging.getLogger(__name__)
 
@@ -45,7 +45,7 @@ class MercadoPagoOnboardingController(Controller):
 
         # Request and set the OAuth tokens on the provider.
         action = self.env.ref("payment.action_payment_provider")
-        redirect_url = f"/odoo/action-{action.id}/{int(provider.id)}"
+        redirect_url = f"/weth/action-{action.id}/{int(provider.id)}"
         if not authorization_code:  # The user cancelled the authorization.
             return request.redirect(redirect_url)
 

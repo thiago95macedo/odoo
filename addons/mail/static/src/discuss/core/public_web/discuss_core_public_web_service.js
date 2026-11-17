@@ -1,4 +1,4 @@
-import { proxy } from "@odoo/owl";
+import { proxy } from "@weth/owl";
 
 import { browser } from "@web/core/browser/browser";
 import { registry } from "@web/core/registry";
@@ -32,7 +32,7 @@ export class DiscussCorePublicWeb {
                     this.store.rtc.joinCall(channel);
                 } else if (action === "POST_RTC_LOGS") {
                     const logs = data || {};
-                    logs.odooInfo = odoo.info;
+                    logs.wethInfo = weth.info;
                     const string = JSON.stringify(logs);
                     const blob = new Blob([string], { type: "application/json" });
                     const downloadLink = document.createElement("a");

@@ -1,4 +1,4 @@
-import { beforeEach, describe, expect, mockFetch, test } from "@odoo/hoot";
+import { beforeEach, describe, expect, mockFetch, test } from "@weth/hoot";
 import { CashmaticService, POST_REQUESTS } from "@pos_cashmatic/cashmatic_service";
 
 const mockFetches = [];

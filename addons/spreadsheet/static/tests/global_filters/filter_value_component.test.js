@@ -1,7 +1,7 @@
 import { render } from "@web/owl2/utils";
-import { describe, expect, test } from "@odoo/hoot";
-import { click, queryAllTexts } from "@odoo/hoot-dom";
-import { animationFrame } from "@odoo/hoot-mock";
+import { describe, expect, test } from "@weth/hoot";
+import { click, queryAllTexts } from "@weth/hoot-dom";
+import { animationFrame } from "@weth/hoot-mock";
 import { defineSpreadsheetModels } from "@spreadsheet/../tests/helpers/data";
 import {
     contains,
@@ -11,7 +11,7 @@ import {
     onRpc,
 } from "@web/../tests/web_test_helpers";
 
-import { Model } from "@odoo/o-spreadsheet";
+import { Model } from "@weth/o-spreadsheet";
 import {
     addGlobalFilter,
     editGlobalFilter,
@@ -23,7 +23,7 @@ import { FilterValue } from "@spreadsheet/global_filters/components/filter_value
 import { user } from "@web/core/user";
 
 import { OdooDataProvider } from "@spreadsheet/data_sources/odoo_data_provider";
-import { Component, onWillUnmount, t, useProps, xml } from "@odoo/owl";
+import { Component, onWillUnmount, t, useProps, xml } from "@weth/owl";
 
 describe.current.tags("headless");
 defineSpreadsheetModels();

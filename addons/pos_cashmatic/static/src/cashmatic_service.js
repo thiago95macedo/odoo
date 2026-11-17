@@ -1,4 +1,4 @@
-import { proxy } from "@odoo/owl";
+import { proxy } from "@weth/owl";
 import { _t } from "@web/core/l10n/translation";
 
 export class CashmaticError extends Error {

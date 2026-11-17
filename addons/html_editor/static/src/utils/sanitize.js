@@ -1,5 +1,5 @@
 import { containsAnyInline, selfClosingHtmlTags } from "./dom_info";
-import { markup } from "@odoo/owl";
+import { markup } from "@weth/owl";
 import { htmlReplace } from "@web/core/utils/html";
 
 export function initElementForEdition(element, options = {}) {
@@ -48,10 +48,10 @@ export function fixInvalidHTML(content) {
     const voidPattern = selfClosingHtmlTags.map((t) => `${t.toLowerCase()}\\b`).join("|");
     const regex = new RegExp(
         `<\\s*(?!${voidPattern})` +
-            `([a-zA-Z0-9:-]+)` + // tag name
-            `\\s*` +
-            `((?:(?:\\s+[\\w:-]+(?:\\s*=\\s*(?:"[^"]*"|'[^']*'|[^\\s"'=<>\\\`]+))?)*))` + // attributes
-            `\\s*\\/>`,
+        `([a-zA-Z0-9:-]+)` + // tag name
+        `\\s*` +
+        `((?:(?:\\s+[\\w:-]+(?:\\s*=\\s*(?:"[^"]*"|'[^']*'|[^\\s"'=<>\\\`]+))?)*))` + // attributes
+        `\\s*\\/>`,
         "g"
     );
     return htmlReplace(content, regex, (match, tag, attributes) => {

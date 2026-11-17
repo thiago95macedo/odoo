@@ -9,7 +9,7 @@ import { useAutofocus } from "@web/core/utils/hooks";
 import { renderToString } from "@web/core/utils/render";
 import { getDataURLFromFile } from "@web/core/utils/urls";
 
-import { Component, onWillStart, proxy, signal, t, untrack, useEffect, useProps } from "@odoo/owl";
+import { Component, onWillStart, proxy, signal, t, untrack, useEffect, useProps } from "@weth/owl";
 
 let htmlId = 0;
 export class NameAndSignature extends Component {
@@ -23,7 +23,7 @@ export class NameAndSignature extends Component {
         signatureType: t.string().optional("signature"),
         noInputName: t.boolean().optional(false),
         mode: t.string().optional(),
-        onSignatureChange: t.function().optional(() => () => {}),
+        onSignatureChange: t.function().optional(() => () => { }),
     });
 
     signNameInputRef = signal.ref(HTMLInputElement);

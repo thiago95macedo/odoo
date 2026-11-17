@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import fields, models, tools
-from odoo.fields import Domain
-from odoo.tools import SQL
+from weth import fields, models, tools
+from weth.fields import Domain
+from weth.tools import SQL
 
 
 class VendorDelayReport(models.Model):

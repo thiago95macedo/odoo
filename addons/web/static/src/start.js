@@ -1,4 +1,4 @@
-import { whenReady } from "@odoo/owl";
+import { whenReady } from "@weth/owl";
 import { hasTouch } from "@web/core/browser/feature_detection";
 import { localization } from "@web/core/l10n/localization";
 import { user } from "@web/core/user";
@@ -22,28 +22,28 @@ document.head.appendChild(chromeMetaTag);
  * It's meant to be webclient flexible so we can have a subclass of
  * webclient in enterprise with added features.
  *
- * @param {import("@odoo/owl").ComponentConstructor} Webclient
+ * @param {import("@weth/owl").ComponentConstructor} Webclient
  */
 export async function startWebClient(Webclient) {
-    odoo.info = {
+    weth.info = {
         db: session.db,
         server_version: session.server_version,
         server_version_info: session.server_version_info,
         isEnterprise: session.server_version_info.slice(-1)[0] === "e",
     };
-    odoo.isReady = false;
+    weth.isReady = false;
 
     if (window.isSecureContext && session.browser_cache_secret && !isRPCCacheDisabled()) {
         rpc.setCache(new RPCCache("rpc", session.registry_hash, session.browser_cache_secret));
     }
 
     await whenReady();
-    await mountComponent(Webclient, document.body, { name: "Odoo Web Client" });
+    await mountComponent(Webclient, document.body, { name: "WETH Web Client" });
 
     if (!window.isSecureContext) {
         console.error(
             _t(
-                "You are currently using a non-secure context. As a result, some Odoo features may be unavailable or function improperly. For more information, please visit: https://developer.mozilla.org/en-US/docs/Web/Security/Defenses/Secure_Contexts"
+                "You are currently using a non-secure context. As a result, some WETH features may be unavailable or function improperly. For more information, please visit: https://developer.mozilla.org/en-US/docs/Web/Security/Defenses/Secure_Contexts"
             )
         );
     }
@@ -55,12 +55,12 @@ export async function startWebClient(Webclient) {
     if (user.userId === 1) {
         classList.add("o_is_superuser");
     }
-    if (odoo.debug) {
+    if (weth.debug) {
         classList.add("o_debug");
     }
     if (hasTouch()) {
         classList.add("o_touch_device");
     }
-    // delete odoo.debug; // FIXME: some legacy code rely on this
-    odoo.isReady = true;
+    // delete weth.debug; // FIXME: some legacy code rely on this
+    weth.isReady = true;
 }

@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.hr_holidays.tests.common import TestHrHolidaysCommon
-from odoo.tests import tagged
+from weth.addons.hr_holidays.tests.common import TestHrHolidaysCommon
+from weth.tests import tagged
 
-from odoo.exceptions import AccessError, UserError
+from weth.exceptions import AccessError, UserError
 import time
 
 

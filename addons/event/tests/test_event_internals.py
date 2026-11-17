@@ -6,12 +6,12 @@ from urllib.parse import urlsplit
 from freezegun import freeze_time
 from lxml import html
 
-from odoo import Command
-from odoo.addons.event.tests.common import EventCase
-from odoo import exceptions
-from odoo.fields import Datetime as FieldsDatetime
-from odoo.tests import Form, HttpCase, users, tagged
-from odoo.tools import mute_logger
+from weth import Command
+from weth.addons.event.tests.common import EventCase
+from weth import exceptions
+from weth.fields import Datetime as FieldsDatetime
+from weth.tests import Form, HttpCase, users, tagged
+from weth.tools import mute_logger
 
 
 class TestEventInternalsCommon(EventCase):
@@ -109,7 +109,7 @@ class TestEventData(TestEventInternalsCommon):
             "Translated answer names should be copied.")
 
     @users('user_eventmanager')
-    @mute_logger('odoo.models.unlink')
+    @mute_logger('weth.models.unlink')
     def test_event_configuration_from_type(self):
         """ Test data computation of event coming from its event.type template. """
         self.assertEqual(self.env.user.tz, 'Europe/Brussels')

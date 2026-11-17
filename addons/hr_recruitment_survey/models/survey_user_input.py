@@ -1,6 +1,6 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import fields, models, _
+from weth import fields, models, _
 
 
 class SurveyUser_Input(models.Model):

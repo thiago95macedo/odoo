@@ -1,11 +1,11 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 import io
 import zipfile
-from odoo import _, http
-from odoo.http import request
-from odoo.http.stream import content_disposition
-from odoo.tools import OrderedSet
-from odoo.tools.mimetypes import get_extension
+from weth import _, http
+from weth.http import request
+from weth.http.stream import content_disposition
+from weth.tools import OrderedSet
+from weth.tools.mimetypes import get_extension
 
 
 def _get_headers(filename, filetype, content):

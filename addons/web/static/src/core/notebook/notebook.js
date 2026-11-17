@@ -1,5 +1,5 @@
 import { useLayoutEffect } from "@web/owl2/utils";
-import { Component, computed, proxy, signal, t, useOnChange, useProps } from "@odoo/owl";
+import { Component, computed, proxy, signal, t, useOnChange, useProps } from "@weth/owl";
 import { KeepLast } from "@web/core/utils/concurrency";
 
 /**
@@ -59,8 +59,8 @@ export const notebookProps = {
     defaultPage: t.string().optional(),
     orientation: t.string().optional("horizontal"),
     icons: t.object().optional(),
-    onPageUpdate: t.function().optional(() => () => {}),
-    onWillActivatePage: t.function().optional(() => () => {}),
+    onPageUpdate: t.function().optional(() => () => { }),
+    onWillActivatePage: t.function().optional(() => () => { }),
 };
 
 export class Notebook extends Component {

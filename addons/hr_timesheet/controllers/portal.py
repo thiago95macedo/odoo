@@ -3,13 +3,13 @@
 from dateutil.relativedelta import relativedelta
 from operator import itemgetter
 
-from odoo import fields, http, _
-from odoo.fields import Domain
-from odoo.http import request
-from odoo.tools import date_utils, groupby as groupbyelem
+from weth import fields, http, _
+from weth.fields import Domain
+from weth.http import request
+from weth.tools import date_utils, groupby as groupbyelem
 
-from odoo.addons.portal.controllers.portal import CustomerPortal, pager as portal_pager
-from odoo.addons.project.controllers.portal import ProjectCustomerPortal
+from weth.addons.portal.controllers.portal import CustomerPortal, pager as portal_pager
+from weth.addons.project.controllers.portal import ProjectCustomerPortal
 
 
 class TimesheetCustomerPortal(CustomerPortal):

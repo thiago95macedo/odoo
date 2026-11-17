@@ -1,5 +1,5 @@
-from odoo import _, api, models
-from odoo.exceptions import AccessError
+from weth import _, api, models
+from weth.exceptions import AccessError
 
 
 class PropertiesBaseDefinition(models.Model):

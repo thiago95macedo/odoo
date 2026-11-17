@@ -1,11 +1,11 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.http import request, route
-from odoo.fields import Domain
-from odoo.addons.website.controllers.main import QueryURL
-from odoo.addons.website_partner.controllers.main import WebsitePartnerPage
+from weth.http import request, route
+from weth.fields import Domain
+from weth.addons.website.controllers.main import QueryURL
+from weth.addons.website_partner.controllers.main import WebsitePartnerPage
 
-from odoo.tools.translate import LazyTranslate
+from weth.tools.translate import LazyTranslate
 
 _lt = LazyTranslate(__name__)
 

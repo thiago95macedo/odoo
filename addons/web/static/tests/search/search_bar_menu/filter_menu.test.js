@@ -1,6 +1,6 @@
-import { expect, test } from "@odoo/hoot";
-import { queryAll, queryAllTexts, queryFirst, queryOne } from "@odoo/hoot-dom";
-import { animationFrame, mockDate } from "@odoo/hoot-mock";
+import { expect, test } from "@weth/hoot";
+import { queryAll, queryAllTexts, queryFirst, queryOne } from "@weth/hoot-dom";
+import { animationFrame, mockDate } from "@weth/hoot-mock";
 import {
     addNewRule,
     clickOnButtonAddBranch,
@@ -868,7 +868,7 @@ test("Default leaf in 'Custom Filter' dialog is based on ID (if no special field
 });
 
 test("Default leaf in 'Custom Filter' dialog is based on first special field (if any special fields on model)", async () => {
-    defineModels([class Country extends models.Model {}]);
+    defineModels([class Country extends models.Model { }]);
     Foo._fields.country_id = fields.Many2one({ string: "Country", relation: "country" });
     await mountWithSearch(SearchBarMenu, {
         resModel: "foo",

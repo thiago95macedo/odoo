@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
     <data>
         <!-- Bill of Materials -->
         <record id="action_report_mrp_bom" model="ir.actions.client">
@@ -455,4 +455,4 @@
             </field>
         </record>
     </data>
-</odoo>
+</weth>

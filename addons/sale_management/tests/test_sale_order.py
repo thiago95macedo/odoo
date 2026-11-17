@@ -2,12 +2,12 @@
 
 from itertools import chain
 
-from odoo.fields import Command
-from odoo.tests import Form, tagged
+from weth.fields import Command
+from weth.tests import Form, tagged
 
-from odoo.addons.http_routing.tests.common import MockRequest
-from odoo.addons.sale_management.controllers.portal import CustomerPortal
-from odoo.addons.sale_management.tests.common import SaleManagementCommon
+from weth.addons.http_routing.tests.common import MockRequest
+from weth.addons.sale_management.controllers.portal import CustomerPortal
+from weth.addons.sale_management.tests.common import SaleManagementCommon
 
 
 @tagged("-at_install", "post_install")
@@ -508,7 +508,7 @@ class TestSaleOrder(SaleManagementCommon):
             "sale.order", "sale_order_template_id", quotation_template.id
         )
         try:
-            with self.assertLogs("odoo.tests.form.onchange") as log_catcher:
+            with self.assertLogs("weth.tests.form.onchange") as log_catcher:
                 Form(self.env["sale.order"])
         except AssertionError:
             pass

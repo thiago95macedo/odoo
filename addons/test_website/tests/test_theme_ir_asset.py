@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.tests.common import TransactionCase, tagged
-from odoo.tools import convert_file
-from odoo.tools.misc import file_path
+from weth.tests.common import TransactionCase, tagged
+from weth.tools import convert_file
+from weth.tools.misc import file_path
 
 
 @tagged('-at_install', 'post_install')

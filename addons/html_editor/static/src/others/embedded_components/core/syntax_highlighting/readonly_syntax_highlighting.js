@@ -1,4 +1,4 @@
-import { Component, onMounted, onWillStart, t, useProps, xml } from "@odoo/owl";
+import { Component, onMounted, onWillStart, t, useProps, xml } from "@weth/owl";
 import { loadBundle } from "@web/core/assets";
 import { cookie } from "@web/core/browser/cookie";
 import { DEFAULT_LANGUAGE_ID, getPreValue, highlightPre } from "./syntax_highlighting_utils";

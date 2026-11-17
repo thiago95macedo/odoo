@@ -4,7 +4,7 @@ import { _t } from "@web/core/l10n/translation";
 import { user } from "@web/core/user";
 import { useService } from "@web/core/utils/hooks";
 
-import { Component, onWillStart } from "@odoo/owl";
+import { Component, onWillStart } from "@weth/owl";
 
 export class TeamSwitcher extends Component {
     static template = "crm.team_switcher";

@@ -1,7 +1,7 @@
 import { render } from "@web/owl2/utils";
-import { expect, test, describe } from "@odoo/hoot";
-import { animationFrame } from "@odoo/hoot-mock";
-import { Component, xml } from "@odoo/owl";
+import { expect, test, describe } from "@weth/hoot";
+import { animationFrame } from "@weth/hoot-mock";
+import { Component, xml } from "@weth/owl";
 import {
     contains,
     defineModels,
@@ -32,8 +32,8 @@ async function makeExpressionEditorDialog(params = {}) {
         setup() {
             this.expressionEditorProps = {
                 expression: "1",
-                close: () => {},
-                onConfirm: () => {},
+                close: () => { },
+                onConfirm: () => { },
                 ...props,
                 resModel: "partner",
             };

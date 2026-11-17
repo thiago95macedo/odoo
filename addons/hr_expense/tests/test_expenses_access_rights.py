@@ -1,11 +1,11 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import Command
-from odoo.exceptions import AccessError, UserError
-from odoo.tests import Form, HttpCase, new_test_user, tagged
-from odoo.tools import mute_logger
+from weth import Command
+from weth.exceptions import AccessError, UserError
+from weth.tests import Form, HttpCase, new_test_user, tagged
+from weth.tools import mute_logger
 
-from odoo.addons.hr_expense.tests.common import TestExpenseCommon
+from weth.addons.hr_expense.tests.common import TestExpenseCommon
 
 
 @tagged('-at_install', 'post_install')
@@ -158,7 +158,7 @@ class TestExpensesAccessRights(TestExpenseCommon, HttpCase):
 
         with self.assertRaises(UserError):
             expense.with_user(standard_user).attachment_ids.unlink()
-        with mute_logger('odoo.http'):  # To avoid logging the AccessError raised when trying to delete the attachment.
+        with mute_logger('weth.http'):  # To avoid logging the AccessError raised when trying to delete the attachment.
             delete_response = self.url_open(
                 "/mail/attachment/delete",
                 json={'params': {'access_token_by_attachment_id': {user_response.json()[0]['id']: None}}},
@@ -169,7 +169,7 @@ class TestExpensesAccessRights(TestExpenseCommon, HttpCase):
 
         # User without any access to the expense shouldn't be able to upload an attachment on the expense.
         self.authenticate(another_standard_user.login, another_standard_user.login)
-        with mute_logger('odoo.addons.web.controllers.binary'):  # To avoid logging the AccessError raised when trying to upload the attachment.
+        with mute_logger('weth.addons.web.controllers.binary'):  # To avoid logging the AccessError raised when trying to upload the attachment.
             response = self.url_open(
                 "/web/binary/upload_attachment",
                 {
@@ -248,7 +248,7 @@ class TestExpensesAccessRights(TestExpenseCommon, HttpCase):
         self.authenticate(standard_user_manager.login, standard_user_manager.login)
         with self.assertRaises(UserError):
             expense.with_user(standard_user_manager).attachment_ids.unlink()
-        with mute_logger('odoo.http'):  # To avoid logging the AccessError raised when trying to delete the attachment.
+        with mute_logger('weth.http'):  # To avoid logging the AccessError raised when trying to delete the attachment.
             delete_response = self.url_open(
                 "/mail/attachment/delete",
                 json={'params': {'access_token_by_attachment_id': {user_response_after_approval.json()[0]['id']: None}}},

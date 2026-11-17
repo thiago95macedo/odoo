@@ -2,7 +2,7 @@ import { _t } from "@web/core/l10n/translation";
 import { patch } from "@web/core/utils/patch";
 import { useService } from "@web/core/utils/hooks";
 import { user } from "@web/core/user";
-import { t } from "@odoo/owl";
+import { t } from "@weth/owl";
 import { PhoneField, phoneField, phoneFieldProps } from "@web/views/fields/phone/phone_field";
 
 Object.assign(phoneFieldProps, {

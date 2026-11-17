@@ -2,10 +2,10 @@
 from datetime import timedelta
 from freezegun import freeze_time
 
-from odoo import Command, fields
-from odoo.tests import Form
-from odoo.addons.mrp.tests.common import TestMrpCommon
-from odoo.exceptions import UserError
+from weth import Command, fields
+from weth.tests import Form
+from weth.addons.mrp.tests.common import TestMrpCommon
+from weth.exceptions import UserError
 
 
 class TestProcurement(TestMrpCommon):

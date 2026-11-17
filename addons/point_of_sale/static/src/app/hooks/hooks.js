@@ -1,4 +1,4 @@
-import { onMounted, onPatched, proxy, signal, useListener } from "@odoo/owl";
+import { onMounted, onPatched, proxy, signal, useListener } from "@weth/owl";
 import { ConnectionLostError } from "@web/core/network/rpc";
 import { KeepLast } from "@web/core/utils/concurrency";
 

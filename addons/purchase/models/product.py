@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
-from odoo import api, fields, models, _
-from odoo.fields import Domain
-from odoo.tools.float_utils import float_round
-from odoo.exceptions import UserError
+from weth import api, fields, models, _
+from weth.fields import Domain
+from weth.tools.float_utils import float_round
+from weth.exceptions import UserError
 from dateutil.relativedelta import relativedelta
 
 

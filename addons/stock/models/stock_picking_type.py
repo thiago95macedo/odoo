@@ -2,11 +2,11 @@ import json
 from ast import literal_eval
 from datetime import timedelta
 
-from odoo import _, api, fields, models
-from odoo.exceptions import UserError, ValidationError
-from odoo.fields import Domain
-from odoo.tools import SQL
-from odoo.tools.translate import mark_as_copy
+from weth import _, api, fields, models
+from weth.exceptions import UserError, ValidationError
+from weth.fields import Domain
+from weth.tools import SQL
+from weth.tools.translate import mark_as_copy
 
 
 PRODUCT_LABEL_BARCODE_FORMATS = [

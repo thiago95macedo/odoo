@@ -1,13 +1,13 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.base.tests.test_ir_cron import CronMixinCase
-from odoo.addons.mail.tests.common import MailCommon
-from odoo.addons.test_mail.models.mail_test_lead import MailTestTLead
-from odoo.addons.test_mail.tests.common import TestRecipients
-from odoo.exceptions import AccessError, UserError, ValidationError
-from odoo.fields import Datetime as FieldDatetime
-from odoo.tests import tagged, users
-from odoo.tools import mute_logger
+from weth.addons.base.tests.test_ir_cron import CronMixinCase
+from weth.addons.mail.tests.common import MailCommon
+from weth.addons.test_mail.models.mail_test_lead import MailTestTLead
+from weth.addons.test_mail.tests.common import TestRecipients
+from weth.exceptions import AccessError, UserError, ValidationError
+from weth.fields import Datetime as FieldDatetime
+from weth.tests import tagged, users
+from weth.tools import mute_logger
 from unittest.mock import patch
 
 
@@ -174,7 +174,7 @@ class TestScheduledMessageBusiness(TestScheduledMessage, CronMixinCase):
 
             with self.mock_datetime_and_now('2022-12-24 14:00:00'),\
                 patch.object(MailTestTLead, '_message_post_after_hook', _message_post_after_hook),\
-                mute_logger('odoo.addons.mail.models.mail_scheduled_message'):
+                mute_logger('weth.addons.mail.models.mail_scheduled_message'):
                 self.env['mail.scheduled.message'].with_user(self.user_root)._post_messages_cron()
             # one scheduled message failed, only one mail should be sent
             self.assertEqual(len(self._new_mails), 1)

@@ -1,5 +1,5 @@
-import { Component, useProps, xml } from "@odoo/owl";
-import { expect, test } from "@odoo/hoot";
+import { Component, useProps, xml } from "@weth/owl";
+import { expect, test } from "@weth/hoot";
 import {
     contains,
     defineModels,
@@ -114,7 +114,7 @@ test("Display a tooltip on click", async () => {
         add(el, comp, params) {
             expect(params).toEqual({ tooltip: "Copied" });
             expect.step("copied tooltip");
-            return () => {};
+            return () => { };
         },
     });
 

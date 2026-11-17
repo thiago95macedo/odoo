@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
     <data>
         <record id="expense_attachment_selection_wizard_view" model="ir.ui.view">
             <field name="name">Attachments Selection</field>
@@ -17,4 +17,4 @@
             </field>
         </record>
     </data>
-</odoo>
+</weth>

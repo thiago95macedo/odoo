@@ -1,10 +1,10 @@
 from datetime import datetime
 from unittest.mock import patch
 
-from odoo.addons.google_calendar.models.res_users import ResUsers
-from odoo.addons.google_calendar.tests.test_sync_common import TestSyncGoogle, patch_api
-from odoo.addons.google_calendar.utils.google_event import GoogleEvent
-from odoo.tests.common import tagged
+from weth.addons.google_calendar.models.res_users import ResUsers
+from weth.addons.google_calendar.tests.test_sync_common import TestSyncGoogle, patch_api
+from weth.addons.google_calendar.utils.google_event import GoogleEvent
+from weth.tests.common import tagged
 
 
 @patch.object(ResUsers, '_get_google_calendar_token', lambda user: 'dummy-token')

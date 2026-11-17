@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, fields, models, SUPERUSER_ID, _
-from odoo.tools.misc import groupby
+from weth import api, fields, models, SUPERUSER_ID, _
+from weth.tools.misc import groupby
 
 
 class StockQuant(models.Model):

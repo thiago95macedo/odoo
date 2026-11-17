@@ -12,13 +12,13 @@ from pathlib import Path
 import netifaces
 import werkzeug
 
-from odoo.http import Controller
-from odoo.http.stream import Stream
-from odoo.tools.misc import file_path
+from weth.http import Controller
+from weth.http.stream import Stream
+from weth.tools.misc import file_path
 
-from odoo.addons.iot_drivers.connection_manager import connection_manager
-from odoo.addons.iot_drivers.main import iot_devices, unsupported_devices
-from odoo.addons.iot_drivers.tools import (
+from weth.addons.iot_drivers.connection_manager import connection_manager
+from weth.addons.iot_drivers.main import iot_devices, unsupported_devices
+from weth.addons.iot_drivers.tools import (
     certificate,
     helpers,
     route,
@@ -26,7 +26,7 @@ from odoo.addons.iot_drivers.tools import (
     upgrade,
     wifi,
 )
-from odoo.addons.iot_drivers.tools.system import (
+from weth.addons.iot_drivers.tools.system import (
     IOT_IDENTIFIER,
     IOT_SYSTEM,
     IS_RPI,
@@ -101,7 +101,7 @@ class IotBoxOwlHomePage(Controller):
 
     @route.iot_route('/iot_drivers/iot_logs', type='http', cors='*')
     def get_iot_logs(self):
-        logs_path = "/var/log/odoo/odoo-server.log" if IS_RPI else Path().absolute().parent.joinpath('odoo.log')
+        logs_path = "/var/log/weth/odoo-server.log" if IS_RPI else Path().absolute().parent.joinpath('weth.log')
         log_max_size_chars = 2000000
         log_max_size_lines = 10000
 

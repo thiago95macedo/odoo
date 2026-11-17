@@ -1,6 +1,6 @@
 import { registry } from '@web/core/registry';
 import { Interaction } from '@web/public/interaction';
-import { useListener } from "@odoo/owl";
+import { useListener } from "@weth/owl";
 
 export class PaymentButton extends Interaction {
     static selector = '[name="o_payment_submit_button"]';

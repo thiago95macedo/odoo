@@ -1,6 +1,6 @@
 import { MessagingMenu } from "@mail/core/public_web/messaging_menu/messaging_menu";
 
-import { useEffect } from "@odoo/owl";
+import { useEffect } from "@weth/owl";
 
 import { memoize } from "@web/core/utils/functions";
 import { patch } from "@web/core/utils/patch";

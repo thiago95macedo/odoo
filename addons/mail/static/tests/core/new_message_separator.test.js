@@ -16,9 +16,9 @@ import {
     MENU_ACTIVE_IDS,
 } from "@mail/../tests/mail_test_helpers";
 import { Thread } from "@mail/core/common/thread_model";
-import { describe, expect, test } from "@odoo/hoot";
-import { click as hootClick, press, queryFirst, waitUntil } from "@odoo/hoot-dom";
-import { mockDate } from "@odoo/hoot-mock";
+import { describe, expect, test } from "@weth/hoot";
+import { click as hootClick, press, queryFirst, waitUntil } from "@weth/hoot-dom";
+import { mockDate } from "@weth/hoot-mock";
 import {
     Command,
     getService,

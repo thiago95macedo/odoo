@@ -37,12 +37,12 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 # Criação do usuário odoo com UID/GID 1000 (reaproveitando ubuntu:1000 da base 24.04)
 RUN if id -u ubuntu >/dev/null 2>&1; then \
-        usermod -l odoo ubuntu && \
-        groupmod -n odoo ubuntu && \
-        usermod -d /opt/odoo -m odoo; \
+    usermod -l odoo ubuntu && \
+    groupmod -n odoo ubuntu && \
+    usermod -d /opt/odoo -m odoo; \
     else \
-        groupadd -g 1000 odoo && \
-        useradd -u 1000 -g odoo -d /opt/odoo -s /bin/bash odoo; \
+    groupadd -g 1000 odoo && \
+    useradd -u 1000 -g odoo -d /opt/odoo -s /bin/bash odoo; \
     fi && \
     mkdir -p /opt/odoo /var/lib/odoo && \
     chown -R odoo:odoo /opt/odoo /var/lib/odoo
@@ -55,10 +55,10 @@ ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 RUN pip install --no-cache-dir --upgrade pip setuptools wheel
 
 WORKDIR /opt/odoo
-COPY requirements.txt /opt/odoo/requirements.txt
-RUN pip install --no-cache-dir -r /opt/odoo/requirements.txt
+COPY requirements.txt /opt/weth/requirements.txt
+RUN pip install --no-cache-dir -r /opt/weth/requirements.txt
 
 USER odoo
 EXPOSE 8069
 
-CMD ["/opt/odoo/odoo-bin", "-c", "/opt/odoo/odoo.conf"]
+CMD ["/opt/weth/weth-bin", "-c", "/opt/weth/weth.conf"]

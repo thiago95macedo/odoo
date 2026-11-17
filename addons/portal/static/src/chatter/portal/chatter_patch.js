@@ -3,7 +3,7 @@ import { Chatter } from "@mail/chatter/web_portal_project/chatter";
 import { useMaybePlugin } from "@mail/utils/common/hooks";
 
 import { patch } from "@web/core/utils/patch";
-import { onWillPatch, signal, useEffect } from "@odoo/owl";
+import { onWillPatch, signal, useEffect } from "@weth/owl";
 
 patch(Chatter.prototype, {
     setup() {
@@ -18,8 +18,8 @@ patch(Chatter.prototype, {
                 const paddingTop = headerEl.getBoundingClientRect().height + 15 + "px";
                 this.observer = new window.IntersectionObserver(
                     ([e]) =>
-                        (e.target.style.paddingTop =
-                            e.target.getBoundingClientRect().y < 1 ? paddingTop : "20px"),
+                    (e.target.style.paddingTop =
+                        e.target.getBoundingClientRect().y < 1 ? paddingTop : "20px"),
                     {
                         threshold: [1],
                     }

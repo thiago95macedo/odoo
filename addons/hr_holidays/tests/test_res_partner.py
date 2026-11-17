@@ -2,9 +2,9 @@
 
 from freezegun import freeze_time
 
-from odoo import Command, fields
-from odoo.tests.common import new_test_user, tagged, TransactionCase, users
-from odoo.addons.mail.tools.discuss import Store
+from weth import Command, fields
+from weth.tests.common import new_test_user, tagged, TransactionCase, users
+from weth.addons.mail.tools.discuss import Store
 
 
 @tagged('post_install', '-at_install')

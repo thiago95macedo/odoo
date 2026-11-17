@@ -1,10 +1,10 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import _, api, fields, models
-from odoo.exceptions import UserError
-from odoo.tools.translate import LazyTranslate
+from weth import _, api, fields, models
+from weth.exceptions import UserError
+from weth.tools.translate import LazyTranslate
 
-from odoo.addons.payment import utils as payment_utils
+from weth.addons.payment import utils as payment_utils
 
 _lt = LazyTranslate(__name__, default_lang='en_US')
 

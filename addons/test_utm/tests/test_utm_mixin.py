@@ -2,10 +2,10 @@
 
 import json
 
-from odoo.tests.common import tagged
+from weth.tests.common import tagged
 
-from odoo.addons.base.tests.common import HttpCaseWithUserDemo
-from odoo.addons.utm.tests.common import TestUTMCommon
+from weth.addons.base.tests.common import HttpCaseWithUserDemo
+from weth.addons.utm.tests.common import TestUTMCommon
 
 
 @tagged('post_install', '-at_install', 'utm')

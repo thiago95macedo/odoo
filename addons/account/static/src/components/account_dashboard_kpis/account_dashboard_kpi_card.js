@@ -1,4 +1,4 @@
-import { Component, t, useProps } from "@odoo/owl";
+import { Component, t, useProps } from "@weth/owl";
 
 export class AccountDashboardKpiCard extends Component {
     static template = "account.AccountDashboardKpiCard";

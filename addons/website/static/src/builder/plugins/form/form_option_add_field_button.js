@@ -1,6 +1,6 @@
 import { useOperation } from "@html_builder/core/operation_plugin";
 import { BaseOptionComponent } from "@html_builder/core/base_option_component";
-import { useProps, t } from "@odoo/owl";
+import { useProps, t } from "@weth/owl";
 
 export class FormOptionAddFieldButton extends BaseOptionComponent {
     static template = "website.s_website_form_form_option_add_field_button";

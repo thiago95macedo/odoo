@@ -1,9 +1,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.tests.common import JsonRpcException, new_test_user
-from odoo.tools import mute_logger
-from odoo.addons.base.tests.common import HttpCaseWithUserPortal
-from odoo.addons.im_livechat.tests.common import TestImLivechatCommon
+from weth.tests.common import JsonRpcException, new_test_user
+from weth.tools import mute_logger
+from weth.addons.base.tests.common import HttpCaseWithUserPortal
+from weth.addons.im_livechat.tests.common import TestImLivechatCommon
 
 
 class TestImLivechatTranscript(TestImLivechatCommon, HttpCaseWithUserPortal):
@@ -26,7 +26,7 @@ class TestImLivechatTranscript(TestImLivechatCommon, HttpCaseWithUserPortal):
         chat = self.env["discuss.channel"].browse(data["channel_id"])
         self.authenticate(None, None)
         self.assertFalse(chat.is_member)
-        with mute_logger("odoo.http"):
+        with mute_logger("weth.http"):
             res = self.url_open(f"/im_livechat/download_transcript/{data['channel_id']}")
         self.assertEqual(res.status_code, 404)
 

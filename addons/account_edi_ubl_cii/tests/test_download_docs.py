@@ -2,10 +2,10 @@ from io import BytesIO
 from zipfile import ZipFile
 from lxml import etree
 
-from odoo.fields import Command
-from odoo.tests.common import tagged
-from odoo.addons.account_edi_ubl_cii.tests.common import TestUblBis3Common, TestUblCiiBECommon
-from odoo.addons.account.tests.common import AccountTestInvoicingHttpCommon
+from weth.fields import Command
+from weth.tests.common import tagged
+from weth.addons.account_edi_ubl_cii.tests.common import TestUblBis3Common, TestUblCiiBECommon
+from weth.addons.account.tests.common import AccountTestInvoicingHttpCommon
 
 
 @tagged('post_install', '-at_install')

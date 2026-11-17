@@ -5,9 +5,9 @@ from zoneinfo import ZoneInfo
 
 from freezegun import freeze_time
 
-from odoo.tests import common, tagged
+from weth.tests import common, tagged
 
-from odoo.addons.lunch.tests.common import TestsCommon
+from weth.addons.lunch.tests.common import TestsCommon
 
 
 @tagged('at_install', '-post_install')  # LEGACY at_install

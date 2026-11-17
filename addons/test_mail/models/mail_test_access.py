@@ -1,5 +1,5 @@
-from odoo import fields, models, tools
-from odoo.fields import Domain
+from weth import fields, models, tools
+from weth.fields import Domain
 
 
 class MailTestAccess(models.Model):

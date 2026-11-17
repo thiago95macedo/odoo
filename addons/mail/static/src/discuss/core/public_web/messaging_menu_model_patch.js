@@ -6,7 +6,7 @@ import {
 import { MessagingMenuEmptyChannel } from "@mail/discuss/core/public_web/messaging_menu_empty_channel";
 import { compareChannels, compareMeetings } from "@mail/discuss/core/public_web/meeting_compare";
 import { fields } from "@mail/model/export";
-import { markup } from "@odoo/owl";
+import { markup } from "@weth/owl";
 
 import { _t } from "@web/core/l10n/translation";
 import { patch } from "@web/core/utils/patch";
@@ -51,13 +51,13 @@ const messagingMenuPatch = {
                     actions:
                         this.store.self_user?.share === false
                             ? [
-                                  {
-                                      id: "new_chat",
-                                      icon: "add",
-                                      text: _t("Chat"),
-                                      onClick: () => openChannelInvitationDialog(this.store.env),
-                                  },
-                              ]
+                                {
+                                    id: "new_chat",
+                                    icon: "add",
+                                    text: _t("Chat"),
+                                    onClick: () => openChannelInvitationDialog(this.store.env),
+                                },
+                            ]
                             : [],
                 };
             },
@@ -96,17 +96,17 @@ const messagingMenuPatch = {
                     actions:
                         this.store.env.services.action && this.store.self_user?.share === false
                             ? [
-                                  {
-                                      id: "new_channel",
-                                      text: _t("Channel"),
-                                      icon: "add",
-                                      title: _t("New channel"),
-                                      onClick: () =>
-                                          this.store.env.services.action.doAction(
-                                              "mail.discuss_channel_action"
-                                          ),
-                                  },
-                              ]
+                                {
+                                    id: "new_channel",
+                                    text: _t("Channel"),
+                                    icon: "add",
+                                    title: _t("New channel"),
+                                    onClick: () =>
+                                        this.store.env.services.action.doAction(
+                                            "mail.discuss_channel_action"
+                                        ),
+                                },
+                            ]
                             : [],
                 };
             },
@@ -158,22 +158,22 @@ const messagingMenuPatch = {
                     actions:
                         this.store.self_user?.share === false
                             ? [
-                                  {
-                                      id: "start_meeting",
-                                      icon: "video_call",
-                                      iconClass: "oi-filled",
-                                      text: _t("Meeting"),
-                                      title: _t("New Meeting"),
-                                      subActions: [
-                                          {
-                                              id: "start_now",
-                                              text: _t("Start Now"),
-                                              onClick: () => this.store.requestStartMeeting(),
-                                          },
-                                          ...this.extraTabActions(MENU_TABS.MEETING),
-                                      ],
-                                  },
-                              ]
+                                {
+                                    id: "start_meeting",
+                                    icon: "video_call",
+                                    iconClass: "oi-filled",
+                                    text: _t("Meeting"),
+                                    title: _t("New Meeting"),
+                                    subActions: [
+                                        {
+                                            id: "start_now",
+                                            text: _t("Start Now"),
+                                            onClick: () => this.store.requestStartMeeting(),
+                                        },
+                                        ...this.extraTabActions(MENU_TABS.MEETING),
+                                    ],
+                                },
+                            ]
                             : [],
                 };
             },

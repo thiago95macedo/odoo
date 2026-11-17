@@ -2,7 +2,7 @@ import { registry } from "@web/core/registry";
 import { CharField, charField } from "@web/views/fields/char/char_field";
 import { useDebounced } from "@web/core/utils/timing";
 import { useService } from "@web/core/utils/hooks";
-import { onMounted, onPatched, proxy } from "@odoo/owl";
+import { onMounted, onPatched, proxy } from "@weth/owl";
 
 export const DELAY = 400;
 

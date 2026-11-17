@@ -4,11 +4,11 @@
 from lxml import etree
 import re
 
-from odoo import tools
-from odoo.addons.base.tests.common import TransactionCaseWithUserDemo
-from odoo.tests import tagged
+from weth import tools
+from weth.addons.base.tests.common import TransactionCaseWithUserDemo
+from weth.tests import tagged
 
-from odoo.addons.http_routing.tests.common import MockRequest
+from weth.addons.http_routing.tests.common import MockRequest
 
 
 @tagged('at_install', '-post_install')  # LEGACY at_install
@@ -63,7 +63,7 @@ class TestQweb(TransactionCaseWithUserDemo):
         <meta/>
         <script type="text/javascript" src="http://test.external.link/javascript1.js"></script>
         <script type="text/javascript" src="http://test.external.link/javascript2.js"></script>
-        <script type="text/javascript" src="http://test.cdn%(js)s" onerror="__odooAssetError=1"></script>
+        <script type="text/javascript" src="http://test.cdn%(js)s" onerror="__wethAssetError=1"></script>
     </head>
     <body>
         <img src="http://test.external.link/img.png" loading="lazy"/>

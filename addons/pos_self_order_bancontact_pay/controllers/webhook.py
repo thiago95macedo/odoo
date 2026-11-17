@@ -1,4 +1,4 @@
-from odoo.addons.pos_bancontact_pay.controllers.webhook import BancontactPayController
+from weth.addons.pos_bancontact_pay.controllers.webhook import BancontactPayController
 
 
 class SelfOrderBancontactPayController(BancontactPayController):

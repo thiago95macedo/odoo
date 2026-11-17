@@ -3,11 +3,11 @@ from datetime import datetime, time, UTC
 
 from dateutil.relativedelta import relativedelta
 
-from odoo import _, api, fields, models
-from odoo.exceptions import UserError
-from odoo.fields import Domain
-from odoo.tools import DEFAULT_SERVER_DATETIME_FORMAT, get_lang
-from odoo.tools.float_utils import float_compare, float_round
+from weth import _, api, fields, models
+from weth.exceptions import UserError
+from weth.fields import Domain
+from weth.tools import DEFAULT_SERVER_DATETIME_FORMAT, get_lang
+from weth.tools.float_utils import float_compare, float_round
 
 
 class PurchaseOrderLine(models.Model):

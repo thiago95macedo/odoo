@@ -1,7 +1,7 @@
 import { OverlayPlugin } from "@web/core/overlay/overlay_plugin";
-import { beforeEach, expect, test, describe, getFixture } from "@odoo/hoot";
+import { beforeEach, expect, test, describe, getFixture } from "@weth/hoot";
 import { setSelection } from "./_helpers/selection";
-import { click, hover, queryOne, waitFor, waitForNone } from "@odoo/hoot-dom";
+import { click, hover, queryOne, waitFor, waitForNone } from "@weth/hoot-dom";
 import {
     contains,
     defineModels,
@@ -10,10 +10,10 @@ import {
     mountView,
     patchWithCleanup,
 } from "@web/../tests/web_test_helpers";
-import { animationFrame } from "@odoo/hoot-mock";
+import { animationFrame } from "@weth/hoot-mock";
 import { unformat } from "./_helpers/format";
 import { Plugin } from "@html_editor/plugin";
-import { Component, onMounted, onWillUnmount, usePlugin, xml } from "@odoo/owl";
+import { Component, onMounted, onWillUnmount, usePlugin, xml } from "@weth/owl";
 import { setupEditor } from "./_helpers/editor";
 import { parseHTML } from "@html_editor/utils/html";
 import { closestScrollableY } from "@web/core/utils/scrolling";

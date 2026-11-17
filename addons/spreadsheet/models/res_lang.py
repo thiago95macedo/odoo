@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, models
+from weth import api, models
 
-from odoo.addons.spreadsheet.utils.formatting import (
+from weth.addons.spreadsheet.utils.formatting import (
     strftime_format_to_spreadsheet_date_format,
     strftime_format_to_spreadsheet_time_format,
 )

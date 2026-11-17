@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import fields
-from odoo.addons.im_livechat.tests.common import TestGetOperatorCommon
+from weth import fields
+from weth.addons.im_livechat.tests.common import TestGetOperatorCommon
 
 
 class TestUserLivechatUsername(TestGetOperatorCommon):

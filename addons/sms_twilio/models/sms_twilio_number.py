@@ -1,4 +1,4 @@
-from odoo import models, fields
+from weth import models, fields
 
 
 class SmsTwilioNumber(models.Model):

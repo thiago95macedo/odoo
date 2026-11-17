@@ -9,8 +9,8 @@ import {
     startServer,
     waitStoreFetch,
 } from "@mail/../tests/mail_test_helpers";
-import { describe, expect, test, mockUserAgent } from "@odoo/hoot";
-import { advanceTime } from "@odoo/hoot-mock";
+import { describe, expect, test, mockUserAgent } from "@weth/hoot";
+import { advanceTime } from "@weth/hoot-mock";
 
 import { DELAY_FOR_SPINNER } from "@mail/chatter/web_portal_project/chatter";
 

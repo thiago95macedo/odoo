@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import _, api, fields, models, tools
-from odoo.exceptions import ValidationError
+from weth import _, api, fields, models, tools
+from weth.exceptions import ValidationError
 
 
 class PaymentTransaction(models.Model):

@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 from psycopg2 import sql
 
-from odoo import api, fields, models, _, Command
-from odoo.exceptions import UserError, ValidationError
-from odoo.tools import frozendict
+from weth import api, fields, models, _, Command
+from weth.exceptions import UserError, ValidationError
+from weth.tools import frozendict
 
 from collections import defaultdict
 from datetime import timedelta

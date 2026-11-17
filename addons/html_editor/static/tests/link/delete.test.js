@@ -1,4 +1,4 @@
-import { describe, test, tick } from "@odoo/hoot";
+import { describe, test, tick } from "@weth/hoot";
 import { base64Img, testEditor } from "../_helpers/editor";
 import {
     deleteBackward,

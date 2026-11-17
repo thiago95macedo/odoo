@@ -3,7 +3,7 @@ import {
     waitForEndOfOperation,
     confirmAddSnippet,
 } from "@html_builder/../tests/helpers";
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@weth/hoot";
 import { contains } from "@web/../tests/web_test_helpers";
 
 describe.current.tags("desktop");

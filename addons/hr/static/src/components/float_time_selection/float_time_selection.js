@@ -1,4 +1,4 @@
-import { onWillStart, useProps, proxy } from "@odoo/owl";
+import { onWillStart, useProps, proxy } from "@weth/owl";
 import { registry } from "@web/core/registry";
 import { usePopover } from "@web/core/popover/popover_hook";
 import { FloatTimeSelectionPopover } from "./float_time_selection_popover";
@@ -94,7 +94,7 @@ export class FloatTimeSelectionField extends FloatTimeField {
     }
 
     // Remove the tooltip that shows up in the float time selection widget
-    openPopover() {}
+    openPopover() { }
 }
 
 export const charHours = {

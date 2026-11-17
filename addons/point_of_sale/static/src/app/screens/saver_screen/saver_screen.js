@@ -1,6 +1,6 @@
 import { OverlayPlugin } from "@web/core/overlay/overlay_plugin";
 import { registry } from "@web/core/registry";
-import { Component, usePlugin } from "@odoo/owl";
+import { Component, usePlugin } from "@weth/owl";
 import { useTime } from "@point_of_sale/app/hooks/time_hook";
 import { useService } from "@web/core/utils/hooks";
 
@@ -24,6 +24,6 @@ export class SaverScreen extends Component {
 registry.category("pos_pages").add("SaverScreen", {
     name: "SaverScreen",
     component: SaverScreen,
-    route: `/pos/ui/${odoo.pos_config_id}/saver`,
+    route: `/pos/ui/${weth.pos_config_id}/saver`,
     params: {},
 });

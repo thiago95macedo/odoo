@@ -28,8 +28,8 @@ import {
     test,
     tick,
     waitFor,
-} from "@odoo/hoot";
-import { onWillDestroy, proxy, signal, useProps, xml } from "@odoo/owl";
+} from "@weth/hoot";
+import { onWillDestroy, proxy, signal, useProps, xml } from "@weth/owl";
 import {
     clickModalButton,
     clickSave,
@@ -499,7 +499,7 @@ test("edit and save a html field containing JSON as some attribute values should
     const txtField = queryOne('.o_field_html[name="txt"] .odoo-editor-editable');
     expect(txtField).toHaveInnerHTML(
         '<div class="o-paragraph" data-selection-placeholder=""><br></div>' +
-            `<div data-value="{&quot;myString&quot;:&quot;myString&quot;}"><p>content</p></div><p>first</p>`
+        `<div data-value="{&quot;myString&quot;:&quot;myString&quot;}"><p>content</p></div><p>first</p>`
     );
     expect.verifySteps(["Setup Wysiwyg"]);
 
@@ -641,10 +641,8 @@ test("edit a html field with `o-contenteditable-true` or `o-contenteditable-fals
         },
     });
     const getTxtValue = (innerContent, withContentEditable = false) =>
-        `<div class="o-contenteditable-false"${
-            withContentEditable ? ' contenteditable="false"' : ""
-        }>outside<div class="o-contenteditable-true"${
-            withContentEditable ? ' contenteditable="true"' : ""
+        `<div class="o-contenteditable-false"${withContentEditable ? ' contenteditable="false"' : ""
+        }>outside<div class="o-contenteditable-true"${withContentEditable ? ' contenteditable="true"' : ""
         }><p>${innerContent}</p></div></div>`;
     Partner._records = [
         {
@@ -672,15 +670,15 @@ test("edit a html field with `o-contenteditable-true` or `o-contenteditable-fals
     expect.verifySteps(["setup_wysiwyg"]);
     expect(`[name="txt"] .odoo-editor-editable`).toHaveInnerHTML(
         '<div class="o-paragraph" data-selection-placeholder=""><br></div>' +
-            getTxtValue("inside", true) +
-            '<div class="o-paragraph" data-selection-placeholder=""><br></div>'
+        getTxtValue("inside", true) +
+        '<div class="o-paragraph" data-selection-placeholder=""><br></div>'
     );
     setSelectionInHtmlField();
     pasteOdooEditorHtml(htmlEditor, "addon");
     expect(`[name="txt"] .odoo-editor-editable`).toHaveInnerHTML(
         '<div class="o-paragraph" data-selection-placeholder=""><br></div>' +
-            getTxtValue("addoninside", true) +
-            '<div class="o-paragraph" data-selection-placeholder=""><br></div>'
+        getTxtValue("addoninside", true) +
+        '<div class="o-paragraph" data-selection-placeholder=""><br></div>'
     );
     await clickSave();
     expect.verifySteps(["update_value", "update_value", "web_save"]);
@@ -719,7 +717,7 @@ test.tags("focus required");
 test("edit html field and blur multiple time should apply 1 onchange", async () => {
     const def = Promise.withResolvers();
     Partner._onChanges = {
-        txt() {},
+        txt() { },
     };
     onRpc("partner", "onchange", async ({ args }) => {
         expect.step(`onchange: ${args[1].txt}`);
@@ -928,7 +926,7 @@ test("A new MediaDialog after switching record in a Form view should have the co
             // no call to super to avoid services dependencies
             // this test only cares about the props given to the dialog
         },
-        onTabChange() {},
+        onTabChange() { },
     });
     await mountView({
         type: "form",
@@ -2378,9 +2376,8 @@ describe("save image", () => {
             `
             <p>
                 <img
-                    class="img img-fluid o_we_custom_image o_we_image_cropped${
-                        isModified ? " o_modified_image_to_save" : ""
-                    }"
+                    class="img img-fluid o_we_custom_image o_we_image_cropped${isModified ? " o_modified_image_to_save" : ""
+                }"
                     data-attachment-id="${imageRecord.id}"
                     data-original-id="${imageRecord.id}"
                     data-original-src="${imageRecord.image_src}"

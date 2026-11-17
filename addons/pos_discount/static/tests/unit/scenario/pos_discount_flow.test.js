@@ -1,6 +1,6 @@
-import { expect, test } from "@odoo/hoot";
-import { press } from "@odoo/hoot-dom";
-import { advanceTime } from "@odoo/hoot-mock";
+import { expect, test } from "@weth/hoot";
+import { press } from "@weth/hoot-dom";
+import { advanceTime } from "@weth/hoot-mock";
 import { createTestProduct, setupAndMountPosApp } from "@point_of_sale/../tests/unit/utils";
 import { definePosModels } from "@point_of_sale/../tests/unit/data/generate_model_definitions";
 import * as PosUiUtils from "@point_of_sale/../tests/unit/ui_utils";

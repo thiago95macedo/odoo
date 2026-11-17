@@ -2,7 +2,7 @@ import * as Numpad from "@point_of_sale/../tests/generic_helpers/numpad_util";
 import * as Dialog from "@point_of_sale/../tests/generic_helpers/dialog_util";
 import { negate } from "@point_of_sale/../tests/generic_helpers/utils";
 
-export function table({ name, withClass = "", withoutClass, run = () => {}, waitForSync = true }) {
+export function table({ name, withClass = "", withoutClass, run = () => { }, waitForSync = true }) {
     let trigger = `.o_fp_canvas .o_fp_table${withClass}`;
     if (waitForSync) {
         trigger += `:not(.syncing)`;
@@ -213,7 +213,7 @@ export function linkTables(child, parent, checkAlert = true) {
             await new Promise((resolve) => setTimeout(resolve, helpers.delay));
         };
         const element = helpers.anchor;
-        const { drag } = odoo.loader.modules.get("@odoo/hoot-dom");
+        const { drag } = weth.loader.modules.get("@weth/hoot-dom");
         const { drop, moveTo } = await drag(element);
         await dragEffectDelay();
         await helpers.hover(element, {

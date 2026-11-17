@@ -1,7 +1,7 @@
 import { getInnerHtml, getOuterHtml } from "@mail/utils/common/html";
 
-import { describe, expect, test } from "@odoo/hoot";
-import { markup } from "@odoo/owl";
+import { describe, expect, test } from "@weth/hoot";
+import { markup } from "@weth/owl";
 
 import { createElementWithContent } from "@web/core/utils/html";
 

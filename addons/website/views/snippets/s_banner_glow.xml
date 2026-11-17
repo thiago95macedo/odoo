@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
 
 <template id="s_banner_glow" name="Banner Glow">
     <section class="s_banner_glow o_cc o_cc5 pt96 pb96">
@@ -21,4 +21,4 @@
     </section>
 </template>
 
-</odoo>
+</weth>

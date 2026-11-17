@@ -1,4 +1,4 @@
-<odoo>
+<weth>
     <record id="event_event_view_form" model="ir.ui.view">
         <field name="name">event.event.view.form.inherit.marketing.card.event</field>
         <field name="model">event.event</field>
@@ -12,4 +12,4 @@
             </xpath>
         </field>
     </record>
-</odoo>
+</weth>

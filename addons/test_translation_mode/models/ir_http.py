@@ -1,7 +1,7 @@
-from odoo import api, models
-from odoo.tools.misc import frozendict
+from weth import api, models
+from weth.tools.misc import frozendict
 
-from odoo.addons.test_translation_mode.tools.translate import contextualize_entry
+from weth.addons.test_translation_mode.tools.translate import contextualize_entry
 
 
 class IrHttp(models.AbstractModel):

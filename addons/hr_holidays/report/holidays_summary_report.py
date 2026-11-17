@@ -6,9 +6,9 @@ import calendar
 
 from datetime import timedelta
 from dateutil.relativedelta import relativedelta
-from odoo import api, fields, models, _
-from odoo.exceptions import UserError
-from odoo.tools.misc import format_date, get_lang
+from weth import api, fields, models, _
+from weth.exceptions import UserError
+from weth.tools.misc import format_date, get_lang
 
 COLORS_MAP = {
     0: 'lightgrey',

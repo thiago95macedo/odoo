@@ -1,6 +1,6 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.tests import TransactionCase
+from weth.tests import TransactionCase
 
 
 class TestMailUninstall(TransactionCase):

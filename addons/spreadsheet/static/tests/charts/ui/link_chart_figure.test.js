@@ -1,6 +1,6 @@
-import { click } from "@odoo/hoot-dom";
-import { animationFrame } from "@odoo/hoot-mock";
-import { expect, test, beforeEach } from "@odoo/hoot";
+import { click } from "@weth/hoot-dom";
+import { animationFrame } from "@weth/hoot-mock";
+import { expect, test, beforeEach } from "@weth/hoot";
 import { getBasicData, defineSpreadsheetModels } from "@spreadsheet/../tests/helpers/data";
 import { createBasicChart } from "@spreadsheet/../tests/helpers/commands";
 import { mountSpreadsheet } from "@spreadsheet/../tests/helpers/ui";
@@ -271,7 +271,7 @@ test("Trying to open a menu without an action sends a notification to the user",
     mockService("notification", {
         add: (message) => {
             expect.step(message);
-            return () => {};
+            return () => { };
         },
     });
 

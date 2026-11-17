@@ -1,9 +1,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.exceptions import UserError
-from odoo.tests import TransactionCase
+from weth.exceptions import UserError
+from weth.tests import TransactionCase
 
-from odoo.addons.mail.models.res_config_settings import (
+from weth.addons.mail.models.res_config_settings import (
     SFU_CLIENT_SOURCE_URL,
     SFU_CLIENT_TARGET,
 )

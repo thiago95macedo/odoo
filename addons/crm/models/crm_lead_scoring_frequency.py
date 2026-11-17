@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from random import randint
 
-from odoo import fields, models
+from weth import fields, models
 
 
 class CrmLeadScoringFrequency(models.Model):

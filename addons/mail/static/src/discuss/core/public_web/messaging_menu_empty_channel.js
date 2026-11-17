@@ -1,6 +1,6 @@
 import { MessagingMenuEmpty } from "@mail/core/public_web/messaging_menu/messaging_menu_empty";
 
-import { Component, types, untrack, useEffect, useProps } from "@odoo/owl";
+import { Component, types, untrack, useEffect, useProps } from "@weth/owl";
 
 import { _t } from "@web/core/l10n/translation";
 import { useService } from "@web/core/utils/hooks";

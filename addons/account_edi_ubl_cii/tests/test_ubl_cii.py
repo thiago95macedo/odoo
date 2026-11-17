@@ -3,11 +3,11 @@ import base64
 from io import BytesIO
 from lxml import etree
 from zipfile import ZipFile
-from odoo import fields, Command
-from odoo.tests import HttpCase, tagged
-from odoo.tools.safe_eval import datetime
+from weth import fields, Command
+from weth.tests import HttpCase, tagged
+from weth.tools.safe_eval import datetime
 
-from odoo.addons.account_edi_ubl_cii.tests.common import TestUblCiiCommon
+from weth.addons.account_edi_ubl_cii.tests.common import TestUblCiiCommon
 
 
 @tagged('post_install', '-at_install')

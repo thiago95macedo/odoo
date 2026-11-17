@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<odoo>
+<weth>
     <record id="view_zero_demand_confirmation" model="ir.ui.view">
         <field name="name">stock.zero.demand.confirmation</field>
         <field name="model">stock.zero.demand.confirmation</field>
@@ -19,4 +19,4 @@
             </form>
         </field>
     </record>
-</odoo>
+</weth>

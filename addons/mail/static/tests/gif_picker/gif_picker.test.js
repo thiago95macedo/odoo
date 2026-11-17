@@ -13,11 +13,11 @@ import {
     startServer,
     MENU_ACTIVE_IDS,
 } from "@mail/../tests/mail_test_helpers";
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@weth/hoot";
 import { getService, onRpc, patchWithCleanup, preloadBundle } from "@web/../tests/web_test_helpers";
 
 import { GifPicker } from "@mail/discuss/gif_picker/common/gif_picker";
-import { animationFrame } from "@odoo/hoot-dom";
+import { animationFrame } from "@weth/hoot-dom";
 
 describe.current.tags("desktop");
 defineMailModels();

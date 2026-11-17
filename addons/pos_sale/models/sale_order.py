@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, fields, models, _, Command
-from odoo.tools import format_date
+from weth import api, fields, models, _, Command
+from weth.tools import format_date
 
 
 class SaleOrder(models.Model):

@@ -2,9 +2,9 @@
 
 from collections import defaultdict
 
-from odoo import api, fields, models, Command
-from odoo.addons.mail.tools.discuss import Store
-from odoo.tools import SQL
+from weth import api, fields, models, Command
+from weth.addons.mail.tools.discuss import Store
+from weth.tools import SQL
 
 
 class MailFollowers(models.Model):

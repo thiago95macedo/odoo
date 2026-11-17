@@ -1,4 +1,4 @@
-import { expect, test } from "@odoo/hoot";
+import { expect, test } from "@weth/hoot";
 import {
     manuallyDispatchProgrammaticEvent,
     click,
@@ -7,8 +7,8 @@ import {
     queryOne,
     waitFor,
     waitForNone,
-} from "@odoo/hoot-dom";
-import { animationFrame } from "@odoo/hoot-mock";
+} from "@weth/hoot-dom";
+import { animationFrame } from "@weth/hoot-mock";
 import { contains, onRpc, patchWithCleanup } from "@web/../tests/web_test_helpers";
 import { CaptionPlugin } from "@html_editor/others/embedded_components/plugins/caption_plugin/caption_plugin";
 import { EMBEDDED_COMPONENT_PLUGINS } from "@html_editor/plugin_sets";

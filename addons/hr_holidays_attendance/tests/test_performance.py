@@ -6,7 +6,7 @@ from dateutil.rrule import DAILY, rrule
 import logging
 import time
 
-from odoo.tests.common import tagged, TransactionCase
+from weth.tests.common import tagged, TransactionCase
 
 _logger = logging.getLogger(__name__)
 

@@ -1,16 +1,16 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-import odoo.tests
+import weth.tests
 
-from odoo.tests.common import BaseCase
-from odoo.addons.html_editor.models.diff_utils import (
+from weth.tests.common import BaseCase
+from weth.addons.html_editor.models.diff_utils import (
     generate_patch,
     generate_comparison,
     apply_patch,
 )
 
 
-@odoo.tests.tagged("post_install", "-at_install", "html_history")
+@weth.tests.tagged("post_install", "-at_install", "html_history")
 class TestPatchUtils(BaseCase):
     def test_new_content_add_line(self):
         initial_content = "<p>foo</p><p>baz</p>"

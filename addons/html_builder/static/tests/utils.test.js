@@ -8,9 +8,9 @@ import { BuilderAction } from "@html_builder/core/builder_action";
 import { BaseOptionComponent } from "@html_builder/core/base_option_component";
 import { useDomState } from "@html_builder/core/utils";
 import { SavePlugin } from "@html_builder/core/save_plugin";
-import { describe, expect, test } from "@odoo/hoot";
-import { animationFrame, delay, queryOne, tick } from "@odoo/hoot-dom";
-import { xml } from "@odoo/owl";
+import { describe, expect, test } from "@weth/hoot";
+import { animationFrame, delay, queryOne, tick } from "@weth/hoot-dom";
+import { xml } from "@weth/owl";
 import { contains, onRpc, patchWithCleanup } from "@web/../tests/web_test_helpers";
 
 describe.current.tags("desktop");

@@ -9,7 +9,7 @@ import { MailFullComposerSuggestionPlugin } from "./mail_full_composer_suggestio
 import { ContentExpandablePlugin } from "./content_expandable_plugin";
 import { DisableBannerCommandsPlugin } from "./disable_banner_commands_plugin";
 import { fillEmpty } from "@html_editor/utils/dom";
-import { markup, onWillUnmount, useEffect } from "@odoo/owl";
+import { markup, onWillUnmount, useEffect } from "@weth/owl";
 import { SIGNATURE_CLASS } from "@html_editor/main/user_signature_plugin";
 import { COMPOSER_TYPES } from "@mail/core/common/composer";
 

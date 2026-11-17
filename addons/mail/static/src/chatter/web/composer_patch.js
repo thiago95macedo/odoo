@@ -1,4 +1,4 @@
-import { proxy, signal, t, useEffect, useOnChange, useProps } from "@odoo/owl";
+import { proxy, signal, t, useEffect, useOnChange, useProps } from "@weth/owl";
 
 import { patch } from "@web/core/utils/patch";
 

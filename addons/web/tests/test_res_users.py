@@ -1,9 +1,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.fields import Command
-from odoo.tests import TransactionCase
-from odoo.addons.base.tests.common import HttpCaseWithUserDemo
-from odoo.tests.common import tagged
+from weth.fields import Command
+from weth.tests import TransactionCase
+from weth.addons.base.tests.common import HttpCaseWithUserDemo
+from weth.tests.common import tagged
 
 
 @tagged('at_install', '-post_install')  # LEGACY at_install
@@ -52,7 +52,7 @@ class TestResUsers(TransactionCase):
 @tagged('post_install', '-at_install')
 class TestUserSettings(HttpCaseWithUserDemo):
     def test_user_group_settings(self):
-        self.start_tour('/odoo/settings?debug=assets,tests', 'test_user_group_settings', login='admin')
+        self.start_tour('/weth/settings?debug=assets,tests', 'test_user_group_settings', login='admin')
 
 
 @tagged('post_install', '-at_install')
@@ -108,13 +108,13 @@ class TestUserRoleGroupSync(HttpCaseWithUserDemo):
         self.test_user.invalidate_recordset()
 
     def _user_url(self):
-        # Not /odoo/res.users/<id>: with hr installed, that bare model URL
+        # Not /weth/res.users/<id>: with hr installed, that bare model URL
         # resolves to the *simplified* HR form (base.view_users_simple_form,
         # no Access Rights notebook, no role field) instead of the real
         # Settings > Users form (base.view_users_form) that
         # base.action_res_users explicitly uses -- going through the
         # action's own path is what makes the correct view get picked.
-        return f"/odoo/users/{self.test_user.id}?debug=1"
+        return f"/weth/users/{self.test_user.id}?debug=1"
 
     def _assert_state(self, role, marker_expected, msg):
         self.test_user.invalidate_recordset()

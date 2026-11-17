@@ -1,5 +1,5 @@
-import { expect, test } from "@odoo/hoot";
-import { press, runAllTimers } from "@odoo/hoot-dom";
+import { expect, test } from "@weth/hoot";
+import { press, runAllTimers } from "@weth/hoot-dom";
 import {
     contains,
     defineModels,

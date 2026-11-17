@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.base.tests.common import BaseCommon
+from weth.addons.base.tests.common import BaseCommon
 
 
 class UomCommon(BaseCommon):

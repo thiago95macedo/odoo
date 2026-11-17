@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
 
 <template id="s_awards_list" name="Awards List">
     <section class="s_awards_list pt72 pb72">
@@ -22,4 +22,4 @@
     </section>
 </template>
 
-</odoo>
+</weth>

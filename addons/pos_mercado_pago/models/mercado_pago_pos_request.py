@@ -2,7 +2,7 @@ import logging
 import uuid
 
 import requests
-from odoo import _
+from weth import _
 
 _logger = logging.getLogger(__name__)
 

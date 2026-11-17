@@ -3,9 +3,9 @@ from typing import Literal
 from stdnum.no import mva
 from stdnum.be import vat as be_vat
 
-from odoo import _, api, models
+from weth import _, api, models
 
-from odoo.addons.account_edi_ubl_cii.models.account_edi_xml_ubl_20 import UBL_NAMESPACES
+from weth.addons.account_edi_ubl_cii.models.account_edi_xml_ubl_20 import UBL_NAMESPACES
 
 CHORUS_PRO_SIRET = "11000201100044"
 

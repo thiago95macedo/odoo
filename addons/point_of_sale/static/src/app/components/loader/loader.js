@@ -1,4 +1,4 @@
-import { Component, onWillDestroy, signal, useApp, useEffect, useProps, t } from "@odoo/owl";
+import { Component, onWillDestroy, signal, useApp, useEffect, useProps, t } from "@weth/owl";
 import { _t } from "@web/core/l10n/translation";
 import { CriticalPOSError } from "./critical_pos_error/critical_pos_error";
 

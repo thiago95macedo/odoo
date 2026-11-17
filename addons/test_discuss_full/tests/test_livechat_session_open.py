@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.im_livechat.tests.common import TestImLivechatCommon
-from odoo.tests import new_test_user
-from odoo import fields
+from weth.addons.im_livechat.tests.common import TestImLivechatCommon
+from weth.tests import new_test_user
+from weth import fields
 
 from datetime import timedelta
 from freezegun import freeze_time
@@ -22,6 +22,6 @@ class TestImLivechatSessions(TestImLivechatCommon):
             )
         action = self.env.ref("im_livechat.discuss_channel_action_from_livechat_channel")
         self.start_tour(
-            f"/odoo/livechat/{self.livechat_channel.id}/action-{action.id}", "im_livechat_session_open",
+            f"/weth/livechat/{self.livechat_channel.id}/action-{action.id}", "im_livechat_session_open",
             login="operator",
         )

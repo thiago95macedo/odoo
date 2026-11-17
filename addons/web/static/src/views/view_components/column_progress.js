@@ -1,11 +1,11 @@
-import { Component, usePlugin, t, useProps } from "@odoo/owl";
+import { Component, usePlugin, t, useProps } from "@weth/owl";
 import { OfflinePlugin } from "@web/core/offline/offline_plugin";
 import { AnimatedNumber } from "./animated_number";
 
 export const columnProgressProps = {
     aggregate: t.object(),
     group: t.object(),
-    onBarClicked: t.function().optional(() => () => {}),
+    onBarClicked: t.function().optional(() => () => { }),
     progressBar: t.object(),
 };
 

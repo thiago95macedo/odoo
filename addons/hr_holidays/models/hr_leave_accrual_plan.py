@@ -1,11 +1,11 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 from calendar import monthrange
 
-from odoo import api, fields, models, _
-from odoo.exceptions import ValidationError
-from odoo.fields import Domain
+from weth import api, fields, models, _
+from weth.exceptions import ValidationError
+from weth.fields import Domain
 
-from odoo.addons.hr_holidays.models.hr_leave_accrual_plan_level import _get_selection_days
+from weth.addons.hr_holidays.models.hr_leave_accrual_plan_level import _get_selection_days
 
 
 class HrLeaveAccrualPlan(models.Model):

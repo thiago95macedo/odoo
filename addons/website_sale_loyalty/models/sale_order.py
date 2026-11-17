@@ -3,11 +3,11 @@
 from collections import defaultdict
 from datetime import timedelta
 
-from odoo import api, fields, models
-from odoo.exceptions import UserError
-from odoo.fields import Domain
-from odoo.http import request
-from odoo.tools import html_sanitize
+from weth import api, fields, models
+from weth.exceptions import UserError
+from weth.fields import Domain
+from weth.http import request
+from weth.tools import html_sanitize
 
 
 class SaleOrder(models.Model):

@@ -1,4 +1,4 @@
-import { Component, computed, usePlugin } from "@odoo/owl";
+import { Component, computed, usePlugin } from "@weth/owl";
 import { registry } from "@web/core/registry";
 import { OfflinePlugin } from "@web/core/offline/offline_plugin";
 import { useService } from "@web/core/utils/hooks";
@@ -55,7 +55,7 @@ class OfflineSystray extends Component {
                     item.tooltip.changes = item.tooltip.changes.map((c) => [
                         c[0],
                         value.extras.originalValues[c[0]]?.display_name ??
-                            JSON.stringify(value.extras.originalValues[c[0]]),
+                        JSON.stringify(value.extras.originalValues[c[0]]),
                         c[1],
                     ]);
                 }
@@ -148,7 +148,7 @@ class OfflineSystray extends Component {
             confirmLabel: _t("Discard"),
             cancelLabel: _t("No, keep it"),
             confirm: () => this.offlinePlugin.removeScheduledORM(id),
-            cancel: () => {},
+            cancel: () => { },
         });
     }
 

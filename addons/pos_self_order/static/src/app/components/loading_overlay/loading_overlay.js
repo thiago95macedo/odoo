@@ -1,4 +1,4 @@
-import { Component, onMounted, proxy } from "@odoo/owl";
+import { Component, onMounted, proxy } from "@weth/owl";
 
 export class LoadingOverlay extends Component {
     static template = "pos_self_order.LoadingOverlay";

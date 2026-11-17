@@ -1,9 +1,9 @@
-import { advanceTime, click, press, queryAll, queryAllTexts, queryOne } from "@odoo/hoot-dom";
+import { advanceTime, click, press, queryAll, queryAllTexts, queryOne } from "@weth/hoot-dom";
 import { setupEditor } from "./_helpers/editor";
 import { setSelection } from "./_helpers/selection";
 import { deleteBackward, insertText } from "./_helpers/user_actions";
 import { expectElementCount } from "./_helpers/ui_expectations";
-import { expect, test } from "@odoo/hoot";
+import { expect, test } from "@weth/hoot";
 import { contains } from "@web/../tests/web_test_helpers";
 import { nodeSize } from "@html_editor/utils/position";
 import { EMBEDDED_COMPONENT_PLUGINS } from "@html_editor/plugin_sets";

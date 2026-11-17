@@ -1,4 +1,4 @@
-import { Component, useProps, signal, t } from "@odoo/owl";
+import { Component, useProps, signal, t } from "@weth/owl";
 import { Dialog } from "@web/core/dialog/dialog";
 import { useAutofocus } from "@web/core/utils/hooks";
 

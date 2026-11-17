@@ -5,10 +5,10 @@ import geoip2.models
 from werkzeug.exceptions import NotFound
 from werkzeug.test import EnvironBuilder
 
-import odoo.http
-from odoo.tests import HOST, HttpCase
-from odoo.tools import DotDict, config, frozendict
-from odoo.tools.urls import urljoin as url_join
+import weth.http
+from weth.tests import HOST, HttpCase
+from weth.tools import DotDict, config, frozendict
+from weth.tools.urls import urljoin as url_join
 
 
 @contextlib.contextmanager
@@ -43,7 +43,7 @@ def MockRequest(
         httprequest=Mock(
             host='localhost',
             path=path,
-            app=odoo.http.router.root,
+            app=weth.http.router.root,
             environ=dict(
                 EnvironBuilder(
                     path=path,
@@ -62,15 +62,15 @@ def MockRequest(
             args=[],
         ),
         type='http',
-        future_response=odoo.http.response.FutureResponse(),
+        future_response=weth.http.response.FutureResponse(),
         params={},
         redirect=env['ir.http']._redirect,
         session=DotDict(
-            odoo.http.session.get_default_session(),
+            weth.http.session.get_default_session(),
             context={'lang': ''},
             force_website_id=website and website.id,
         ),
-        geoip=odoo.http.geoip.GeoIP('127.0.0.1'),
+        geoip=weth.http.geoip.GeoIP('127.0.0.1'),
         db=env.registry.db_name,
         env=env,
         registry=env.registry,
@@ -98,7 +98,7 @@ def MockRequest(
     # 'routing' attribute (routing=True) or to raise a NotFound
     # exception (routing=False).
     #
-    #   router = odoo.http.router.root.get_db_router()
+    #   router = weth.http.router.root.get_db_router()
     #   rule, args = router.bind(...).match(path)
     #   # arg routing is True => rule.endpoint.routing == {...}
     #   # arg routing is False => NotFound exception
@@ -119,8 +119,8 @@ def MockRequest(
     request.update_context = update_context
 
     with contextlib.ExitStack() as s:
-        request_reset = odoo.http.request_var.set(request)
-        s.callback(odoo.http.request_var.reset, request_reset)
-        s.enter_context(patch('odoo.http.router.root.get_db_router', router))
+        request_reset = weth.http.request_var.set(request)
+        s.callback(weth.http.request_var.reset, request_reset)
+        s.enter_context(patch('weth.http.router.root.get_db_router', router))
 
         yield request

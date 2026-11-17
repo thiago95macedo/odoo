@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import models, tools, _
-from odoo.addons.mail.tools.alias_error import AliasError
+from weth import models, tools, _
+from weth.addons.mail.tools.alias_error import AliasError
 
 
 class Base(models.AbstractModel):

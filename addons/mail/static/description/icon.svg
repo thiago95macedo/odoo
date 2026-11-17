@@ -1,1 +1,20 @@
-<svg width="50" height="50" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg"><path d="M4 25C4 13.402 13.402 4 25 4s21 9.402 21 21-9.402 21-21 21H7.111A3.111 3.111 0 0 1 4 42.889V25Z" fill="#F86126"/><path d="M5.767 45.696C23.95 43.356 38 27.819 38 9c0-.166-.001-.331-.003-.496A20.91 20.91 0 0 0 25 4C13.402 4 4 13.402 4 25v17.889c0 1.237.722 2.305 1.767 2.807Z" fill="#F78613"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
+    <defs>
+        <linearGradient id="overlayGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#000000" stop-opacity="0"/>
+            <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.2"/>
+        </linearGradient>
+        <clipPath id="wethClip">
+            <rect width="50" height="50" rx="2.35"/>
+        </clipPath>
+    </defs>
+    <g clip-path="url(#wethClip)">
+        <rect width="50" height="50" fill="#05285b"/>
+        <rect width="50" height="50" fill="url(#overlayGrad)"/>
+        <path d="M0 0h50v0.75h-50z" fill="#FFFFFF" fill-opacity="0.4"/>
+        <path d="M0 49.25h50v0.75h-50z" fill="#282F33" fill-opacity="0.4"/>
+        <svg x="7.50" y="7.50" width="35.00" height="35.00" viewBox="0 -960 960 960">
+            <path d="M880-80 720-240H320q-33 0-56.5-23.5T240-320v-40h440q33 0 56.5-23.5T760-440v-280h40q33 0 56.5 23.5T880-640v560ZM160-473l47-47h393v-280H160v327ZM80-280v-520q0-33 23.5-56.5T160-880h440q33 0 56.5 23.5T680-800v280q0 33-23.5 56.5T600-440H240L80-280Zm80-240v-280 280Z" fill="#ffffff"/>
+        </svg>
+    </g>
+</svg>

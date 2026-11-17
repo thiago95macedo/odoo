@@ -1,4 +1,4 @@
-import { expect } from "@odoo/hoot";
+import { expect } from "@weth/hoot";
 import { testEditor } from "./editor";
 
 export const TAB_WIDTH = 40;

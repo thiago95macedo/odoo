@@ -1,8 +1,8 @@
-import { onMounted, onPatched, onWillStart, onWillUnmount, signal, useProps } from "@odoo/owl";
+import { onMounted, onPatched, onWillStart, onWillUnmount, signal, useProps } from "@weth/owl";
 import { loadBundle } from "@web/core/assets";
 
 /**
- * @param {import("@odoo/owl").Signal<HTMLElement>} ref
+ * @param {import("@weth/owl").Signal<HTMLElement>} ref
  * @param {any} params
  */
 export function useFullCalendar(ref, params) {

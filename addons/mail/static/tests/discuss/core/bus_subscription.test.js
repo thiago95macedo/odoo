@@ -10,7 +10,7 @@ import {
     startServer,
     triggerHotkey,
 } from "@mail/../tests/mail_test_helpers";
-import { describe, edit, expect, mockDate, press, runAllTimers, test } from "@odoo/hoot";
+import { describe, edit, expect, mockDate, press, runAllTimers, test } from "@weth/hoot";
 
 import { Command, getService, patchWithCleanup } from "@web/../tests/web_test_helpers";
 

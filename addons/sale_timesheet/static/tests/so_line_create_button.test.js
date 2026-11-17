@@ -1,6 +1,6 @@
-import { describe, expect, runAllTimers, test } from "@odoo/hoot";
-import { click, edit, queryOne } from "@odoo/hoot-dom";
-import { animationFrame } from "@odoo/hoot-mock";
+import { describe, expect, runAllTimers, test } from "@weth/hoot";
+import { click, edit, queryOne } from "@weth/hoot-dom";
+import { animationFrame } from "@weth/hoot-mock";
 
 import { focus, mailModels } from "@mail/../tests/mail_test_helpers";
 import { clickFieldDropdownItem, contains, mountView, onRpc } from "@web/../tests/web_test_helpers";

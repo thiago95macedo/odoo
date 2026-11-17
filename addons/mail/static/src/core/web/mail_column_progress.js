@@ -1,4 +1,4 @@
-import { t, useProps } from "@odoo/owl";
+import { t, useProps } from "@weth/owl";
 
 import { ColumnProgress, columnProgressProps } from "@web/views/view_components/column_progress";
 

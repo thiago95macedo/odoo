@@ -8,14 +8,14 @@ import re
 
 from datetime import datetime, timedelta
 
-from odoo import _, api, fields, models
-from odoo.addons.base.models.res_users import check_identity
-from odoo.exceptions import AccessDenied, UserError
-from odoo.fields import Domain
-from odoo.http import request
-from odoo.tools import sql, SQL
+from weth import _, api, fields, models
+from weth.addons.base.models.res_users import check_identity
+from weth.exceptions import AccessDenied, UserError
+from weth.fields import Domain
+from weth.http import request
+from weth.tools import sql, SQL
 
-from odoo.addons.auth_totp.models.totp import TOTP, TOTP_SECRET_SIZE
+from weth.addons.auth_totp.models.totp import TOTP, TOTP_SECRET_SIZE
 
 _logger = logging.getLogger(__name__)
 

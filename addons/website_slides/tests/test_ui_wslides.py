@@ -5,13 +5,13 @@ import logging
 from dateutil.relativedelta import relativedelta
 from unittest.mock import patch
 
-from odoo import tests
-from odoo.addons.base.tests.common import HttpCaseWithUserPortal
-from odoo.addons.base.tests.files import JPG_RAW, PDF_RAW
-from odoo.addons.gamification.tests.common import HttpCaseGamification
-from odoo.addons.mail.models.mail_message import MailMessage
-from odoo.fields import Command, Datetime
-from odoo.tools import BinaryBytes, mute_logger
+from weth import tests
+from weth.addons.base.tests.common import HttpCaseWithUserPortal
+from weth.addons.base.tests.files import JPG_RAW, PDF_RAW
+from weth.addons.gamification.tests.common import HttpCaseGamification
+from weth.addons.mail.models.mail_message import MailMessage
+from weth.fields import Command, Datetime
+from weth.tools import BinaryBytes, mute_logger
 
 _logger = logging.getLogger(__name__)
 
@@ -111,7 +111,7 @@ class TestUICommon(HttpCaseGamification, HttpCaseWithUserPortal):
 @tests.common.tagged('post_install', '-at_install')
 class TestUi(TestUICommon):
 
-    @mute_logger("odoo.http", "odoo.addons.base.models.ir_access", "werkzeug")
+    @mute_logger("weth.http", "weth.addons.base.models.ir_access", "werkzeug")
     def test_course_access_fail_redirection(self):
         """Test that the user is redirected to /slides with en error displayed instead of the standard error page."""
         self.channel.visibility = "members"
@@ -150,7 +150,7 @@ class TestUi(TestUICommon):
             }
         )
         cases = [
-            ("admin", rf"^/odoo/slide.channel/.*highlight_message_id={message.id}"),
+            ("admin", rf"^/weth/slide.channel/.*highlight_message_id={message.id}"),
             ("portal", rf"^/slides/.*highlight_message_id={message.id}"),
             (None, rf"^/slides/.*highlight_message_id={message.id}"),
         ]

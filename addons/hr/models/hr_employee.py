@@ -11,18 +11,18 @@ from dateutil.relativedelta import relativedelta
 from dateutil.rrule import rrule, DAILY
 from markupsafe import Markup
 
-from odoo import api, Command, fields, models, tools
-from odoo.exceptions import AccessError, RedirectWarning, UserError, ValidationError
-from odoo.fields import Domain
-from odoo.models import Query, parse_read_group_spec
-from odoo.tools import SQL, convert, format_date, format_time
-from odoo.tools.float_utils import float_is_zero
-from odoo.tools.intervals import Intervals
-from odoo.tools.misc import SENTINEL
+from weth import api, Command, fields, models, tools
+from weth.exceptions import AccessError, RedirectWarning, UserError, ValidationError
+from weth.fields import Domain
+from weth.models import Query, parse_read_group_spec
+from weth.tools import SQL, convert, format_date, format_time
+from weth.tools.float_utils import float_is_zero
+from weth.tools.intervals import Intervals
+from weth.tools.misc import SENTINEL
 
-from odoo.addons.hr.models.hr_version import format_date_abbr
-from odoo.addons.mail.tools.discuss import Store
-from odoo.addons.resource.models.utils import extract_comodel_domain, filter_map_domain
+from weth.addons.hr.models.hr_version import format_date_abbr
+from weth.addons.mail.tools.discuss import Store
+from weth.addons.resource.models.utils import extract_comodel_domain, filter_map_domain
 
 
 from .hr_employee_location import DAYS
@@ -2248,7 +2248,7 @@ class HrEmployee(models.Model):
         hr_root_menu = self.env.ref('hr.menu_hr_root')
         for employee in employees:
             # Launch onboarding plans
-            link = Markup('<a href="/odoo/%(employee_id)s/action-hr.plan_wizard_action?active_model=hr.employee&menu_id=%(menu_id)s">%(text)s</a>') % {
+            link = Markup('<a href="/weth/%(employee_id)s/action-hr.plan_wizard_action?active_model=hr.employee&menu_id=%(menu_id)s">%(text)s</a>') % {
                 'employee_id': employee.id,
                 'menu_id': hr_root_menu.id,
                 'text': self.env._('onboarding plan'),

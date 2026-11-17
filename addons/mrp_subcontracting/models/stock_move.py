@@ -2,10 +2,10 @@
 
 from collections import defaultdict
 
-from odoo import fields, models, api, _
-from odoo.exceptions import AccessError
-from odoo.tools.float_utils import float_compare, float_is_zero, float_round
-from odoo.tools.misc import OrderedSet
+from weth import fields, models, api, _
+from weth.exceptions import AccessError
+from weth.tools.float_utils import float_compare, float_is_zero, float_round
+from weth.tools.misc import OrderedSet
 
 
 class StockMove(models.Model):

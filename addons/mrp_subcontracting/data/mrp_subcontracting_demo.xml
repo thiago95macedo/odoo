@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
     <data noupdate="1">
         <record id="mrp_bom_subcontract" model="mrp.bom">
             <field name="product_tmpl_id" ref="product.product_delivery_02_product_template"/>
@@ -26,4 +26,4 @@
         </record>
 
     </data>
-</odoo>
+</weth>

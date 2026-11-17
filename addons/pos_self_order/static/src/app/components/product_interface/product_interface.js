@@ -1,4 +1,4 @@
-import { Component, proxy, signal, t, useProps } from "@odoo/owl";
+import { Component, proxy, signal, t, useProps } from "@weth/owl";
 import { ProductTemplate } from "@point_of_sale/app/models/product_template";
 import { useScrollShadow } from "@pos_self_order/app/utils/scroll_shadow_hook";
 import { useStickyTitleObserver } from "@pos_self_order/app/utils/sticky_title_observer";
@@ -8,7 +8,7 @@ export class ProductInterface extends Component {
 
     props = useProps({
         productTemplate: t.instanceOf(ProductTemplate),
-        goBack: t.function().optional(() => {}),
+        goBack: t.function().optional(() => { }),
         class: t.string().optional(),
     });
 

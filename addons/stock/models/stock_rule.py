@@ -8,10 +8,10 @@ from dateutil.relativedelta import relativedelta
 from typing import NamedTuple
 from functools import partial
 
-from odoo import _, api, fields, models
-from odoo.exceptions import UserError, ValidationError
-from odoo.fields import Command, Domain
-from odoo.tools.misc import split_every
+from weth import _, api, fields, models
+from weth.exceptions import UserError, ValidationError
+from weth.fields import Command, Domain
+from weth.tools.misc import split_every
 
 _logger = logging.getLogger(__name__)
 
@@ -390,7 +390,7 @@ class StockRule(models.Model):
         procurement going through the rules in `self`.
 
         :param product: the product of the procurement
-        :type product: :class:`~odoo.addons.product.models.product.ProductProduct`
+        :type product: :class:`~weth.addons.product.models.product.ProductProduct`
         :return: the cumulative delay and cumulative delay's description
         :rtype: tuple[defaultdict(float), list[str, str]]
         """
@@ -434,7 +434,7 @@ class StockRule(models.Model):
         type of documents).
 
         :param procurements: the description of the procurement
-        :type procurements: list of `~odoo.addons.stock.models.stock_rule.ProcurementGroup.Procurement`
+        :type procurements: list of `~weth.addons.stock.models.stock_rule.ProcurementGroup.Procurement`
         :param raise_user_error: will raise either an UserError or a ProcurementException
         :type raise_user_error: boolan, optional
         :raises UserError: if `raise_user_error` is True and a procurement isn't fulfillable

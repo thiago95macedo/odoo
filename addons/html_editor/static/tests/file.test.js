@@ -1,7 +1,7 @@
 import { MAIN_EMBEDDINGS } from "@html_editor/others/embedded_components/embedding_sets";
 import { EMBEDDED_COMPONENT_PLUGINS } from "@html_editor/plugin_sets";
 import { isZwnbsp } from "@html_editor/utils/dom_info";
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@weth/hoot";
 import {
     animationFrame,
     click,
@@ -10,7 +10,7 @@ import {
     queryAll,
     queryOne,
     waitFor,
-} from "@odoo/hoot-dom";
+} from "@weth/hoot-dom";
 import { onRpc, patchWithCleanup } from "@web/../tests/web_test_helpers";
 import { setupEditor, testEditor } from "./_helpers/editor";
 import { deleteBackward, insertText } from "./_helpers/user_actions";

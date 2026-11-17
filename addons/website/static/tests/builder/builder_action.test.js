@@ -1,6 +1,6 @@
-import { onWillStart, xml } from "@odoo/owl";
-import { beforeEach, describe, expect, test } from "@odoo/hoot";
-import { advanceTime, animationFrame, click, press, queryOne, waitFor } from "@odoo/hoot-dom";
+import { onWillStart, xml } from "@weth/owl";
+import { beforeEach, describe, expect, test } from "@weth/hoot";
+import { advanceTime, animationFrame, click, press, queryOne, waitFor } from "@weth/hoot-dom";
 import { Builder } from "@html_builder/builder";
 import { Plugin } from "@html_editor/plugin";
 import { setSelection } from "@html_editor/../tests/_helpers/selection";

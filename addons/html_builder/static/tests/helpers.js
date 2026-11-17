@@ -10,9 +10,9 @@ import { setContent } from "@html_editor/../tests/_helpers/selection";
 import { insertText } from "@html_editor/../tests/_helpers/user_actions";
 import { LocalOverlayContainer } from "@html_editor/local_overlay_container";
 import { Plugin } from "@html_editor/plugin";
-import { after, click, queryAll, queryFirst } from "@odoo/hoot";
-import { advanceTime, animationFrame, queryOne, tick, waitFor, waitForNone } from "@odoo/hoot-dom";
-import { Component, onMounted, proxy, signal, t, useProps, xml } from "@odoo/owl";
+import { after, click, queryAll, queryFirst } from "@weth/hoot";
+import { advanceTime, animationFrame, queryOne, tick, waitFor, waitForNone } from "@weth/hoot-dom";
+import { Component, onMounted, proxy, signal, t, useProps, xml } from "@weth/owl";
 import {
     contains,
     defineModels,
@@ -39,7 +39,7 @@ export function patchWithCleanupImg() {
         template: xml`<img t-att-data-src="this.props.src" t-att-alt="this.props.alt" t-att-class="this.props.class" t-att-style="this.props.style" t-att="this.props.attrs" src="${defaultImg}"/>`,
     });
     patchWithCleanup(Image.prototype, {
-        loadImage: () => {},
+        loadImage: () => { },
         getSvg: function () {
             this.isSvg = () => false;
         },
@@ -175,7 +175,7 @@ class BuilderContainer extends Component {
         return {
             localOverlayContainerKey: this.localOverlayContainerKey,
             onEditorLoad: this.props.onEditorLoad,
-            closeEditor: () => {},
+            closeEditor: () => { },
             snippetsName: "",
             toggleMobile: () => {
                 this.state.isMobile = !this.state.isMobile;
@@ -519,8 +519,7 @@ export function getBasicSection(
         classes += ` ${additionalClassOnRoot}`;
     }
     return unformat(
-        `<section class="${classes}" data-snippet="${snippet}" ${
-            name ? `data-name="${name}"` : ""
+        `<section class="${classes}" data-snippet="${snippet}" ${name ? `data-name="${name}"` : ""
         }><div class="test_a">${content}</div></section>`
     );
 }

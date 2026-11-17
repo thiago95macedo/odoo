@@ -1,7 +1,7 @@
 import { getImStatusData, ImStatus } from "@mail/core/common/im_status";
 import { ThreadIcon } from "@mail/core/common/thread_icon";
 
-import { Component, Portal, t, useProps } from "@odoo/owl";
+import { Component, Portal, t, useProps } from "@weth/owl";
 
 import { isBrowserSafari } from "@web/core/browser/feature_detection";
 import { localization } from "@web/core/l10n/localization";

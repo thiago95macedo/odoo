@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
     <data noupdate="1">
         <record id="mail_template_sale_cart_recovery" model="mail.template">
             <field name="name">Ecommerce: Cart Recovery</field>
@@ -413,4 +413,4 @@ A withdrawal request was submitted for order <t t-out="object.order_reference">S
             <field name="auto_delete" eval="True"/>
         </record>
     </data>
-</odoo>
+</weth>

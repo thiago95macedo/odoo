@@ -5,7 +5,7 @@ import { _t } from "@web/core/l10n/translation";
 import { user } from "@web/core/user";
 import { CommonSkillsListRenderer } from "../../views/skills_list_renderer";
 import { useService } from '@web/core/utils/hooks';
-import { onWillStart } from "@odoo/owl";
+import { onWillStart } from "@weth/owl";
 
 
 export class SkillsListRenderer extends CommonSkillsListRenderer {
@@ -96,7 +96,7 @@ export class SkillsX2ManyField extends X2ManyField {
 
         this._openRecord = (params) => {
             params.title = this.getWizardTitleName();
-            openRecord({...params});
+            openRecord({ ...params });
         };
     }
 

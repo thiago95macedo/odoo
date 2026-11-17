@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.bus.tests.common import BusResult
-from odoo.addons.mail.tests.common import MailCommon
-from odoo.tests import HttpCase
+from weth.addons.bus.tests.common import BusResult
+from weth.addons.mail.tests.common import MailCommon
+from weth.tests import HttpCase
 
 
 class TestDiscussCategory(MailCommon, HttpCase):

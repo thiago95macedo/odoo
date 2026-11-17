@@ -1,4 +1,4 @@
-import { Component, status, t, useProps } from "@odoo/owl";
+import { Component, status, t, useProps } from "@weth/owl";
 import { standardWidgetProps } from "@web/views/widgets/standard_widget_props";
 import { localization } from "@web/core/l10n/localization";
 import { registry } from '@web/core/registry';

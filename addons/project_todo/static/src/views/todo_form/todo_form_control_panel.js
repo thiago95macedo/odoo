@@ -1,4 +1,4 @@
-import { useEffect, onMounted } from "@odoo/owl";
+import { useEffect, onMounted } from "@weth/owl";
 import { browser } from "@web/core/browser/browser";
 import { router } from "@web/core/browser/router";
 import { ControlPanel } from "@web/search/control_panel/control_panel";

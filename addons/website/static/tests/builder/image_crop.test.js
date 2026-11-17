@@ -1,5 +1,5 @@
-import { test } from "@odoo/hoot";
-import { press, waitFor, waitForNone } from "@odoo/hoot-dom";
+import { test } from "@weth/hoot";
+import { press, waitFor, waitForNone } from "@weth/hoot-dom";
 import { contains, patchWithCleanup } from "@web/../tests/web_test_helpers";
 import { ImageCrop } from "@html_editor/main/media/image_crop";
 import { defineWebsiteModels, setupWebsiteBuilder } from "./website_helpers";

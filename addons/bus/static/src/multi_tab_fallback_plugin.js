@@ -1,5 +1,5 @@
 import { browser } from "@web/core/browser/browser";
-import { EventBus, Plugin, signal, useListener } from "@odoo/owl";
+import { EventBus, Plugin, signal, useListener } from "@weth/owl";
 
 let multiTabId = 0;
 /**

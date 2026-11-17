@@ -25,8 +25,8 @@ import {
     triggerHotkey,
 } from "@mail/../tests/mail_test_helpers";
 import { htmlInsertText } from "@mail/../tests/mail_test_helpers_html";
-import { beforeEach, describe, expect, test } from "@odoo/hoot";
-import { advanceTime, animationFrame, tick } from "@odoo/hoot-mock";
+import { beforeEach, describe, expect, test } from "@weth/hoot";
+import { advanceTime, animationFrame, tick } from "@weth/hoot-mock";
 import {
     Command,
     destroyApp,
@@ -41,7 +41,7 @@ import {
 } from "@web/../tests/web_test_helpers";
 
 import { Composer } from "@mail/core/common/composer";
-import { edit, press, queryFirst, waitFor } from "@odoo/hoot-dom";
+import { edit, press, queryFirst, waitFor } from "@weth/hoot-dom";
 import { MailComposerFormController } from "@mail/chatter/web/mail_composer_form";
 import { getIndexedDB } from "../mail_test_helpers";
 import { waitNotifications } from "@bus/../tests/bus_test_helpers";

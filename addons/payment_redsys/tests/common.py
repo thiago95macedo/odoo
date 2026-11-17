@@ -3,7 +3,7 @@
 import base64
 import json
 
-from odoo.addons.payment.tests.common import PaymentCommon
+from weth.addons.payment.tests.common import PaymentCommon
 
 
 class RedsysCommon(PaymentCommon):

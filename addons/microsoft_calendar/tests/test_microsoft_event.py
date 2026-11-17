@@ -5,12 +5,12 @@ from unittest.mock import patch
 
 from dateutil.relativedelta import relativedelta
 
-from odoo.exceptions import UserError
-from odoo.addons.microsoft_calendar.models.microsoft_sync import MicrosoftCalendarSync
-from odoo.addons.microsoft_calendar.utils.microsoft_event import MicrosoftEvent
-from odoo.tests import tagged
+from weth.exceptions import UserError
+from weth.addons.microsoft_calendar.models.microsoft_sync import MicrosoftCalendarSync
+from weth.addons.microsoft_calendar.utils.microsoft_event import MicrosoftEvent
+from weth.tests import tagged
 
-from odoo.addons.microsoft_calendar.tests.common import TestCommon, patch_api
+from weth.addons.microsoft_calendar.tests.common import TestCommon, patch_api
 
 
 @tagged('at_install', '-post_install')  # LEGACY at_install

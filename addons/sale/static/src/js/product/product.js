@@ -1,5 +1,5 @@
 
-import { Component, t, useProps } from "@odoo/owl";
+import { Component, t, useProps } from "@weth/owl";
 import { formatCurrency } from "@web/core/currency";
 import {
     ProductTemplateAttributeLine as PTAL
@@ -65,9 +65,9 @@ export class Product extends Component {
      */
     get imageUrl() {
         const modelPath = this.props.id
-            ? `product.product/${ this.props.id }`
-            : `product.template/${ this.props.product_tmpl_id }`;
-        return `/web/image/${ modelPath }/image_256`;
+            ? `product.product/${this.props.id}`
+            : `product.template/${this.props.product_tmpl_id}`;
+        return `/web/image/${modelPath}/image_256`;
     }
 
     /**

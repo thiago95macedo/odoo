@@ -4,7 +4,7 @@ import { CustomizeTab } from "@html_builder/sidebar/customize_tab";
 import { removePlugins } from "@html_builder/utils/utils";
 import { DYNAMIC_FIELD_PLUGINS } from "@html_editor/backend/dynamic_field/dynamic_field_plugin";
 import { PowerButtonsPlugin } from "@html_editor/main/power_buttons_plugin";
-import { Component, t, useProps } from "@odoo/owl";
+import { Component, t, useProps } from "@weth/owl";
 import { registry } from "@web/core/registry";
 import { OptionsContainerWithSnippetVersionControl } from "./options/options_container";
 
@@ -63,9 +63,9 @@ export class MassMailingBuilder extends Component {
         const optionalPlugins = [
             ...(this.props.builderProps.config.dynamicPlaceholder
                 ? removePlugins(
-                      DYNAMIC_FIELD_PLUGINS,
-                      ["PromptPlugin"] // mass_mailing does not use the dependency banner plugin
-                  )
+                    DYNAMIC_FIELD_PLUGINS,
+                    ["PromptPlugin"] // mass_mailing does not use the dependency banner plugin
+                )
                 : []),
         ];
         builderProps.Plugins = [...builderEditorPlugins, ...massMailingPlugins, ...optionalPlugins];

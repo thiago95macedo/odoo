@@ -2,7 +2,7 @@
 
 from datetime import timedelta
 
-from odoo import fields, models, api
+from weth import fields, models, api
 
 
 class StockPickingBatch(models.Model):

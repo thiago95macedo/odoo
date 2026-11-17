@@ -3,12 +3,12 @@
 import re
 from contextlib import contextmanager
 
-from odoo.http.router import root
-from odoo.tests.common import TransactionCase, tagged
+from weth.http.router import root
+from weth.tests.common import TransactionCase, tagged
 
-from odoo.addons.base.tests.common import TransactionCaseWithUserDemo
-from odoo.addons.http_routing.tests.common import MockRequest
-from odoo.addons.website.tests.common import set_url_code
+from weth.addons.base.tests.common import TransactionCaseWithUserDemo
+from weth.addons.http_routing.tests.common import MockRequest
+from weth.addons.website.tests.common import set_url_code
 
 
 class TestQweb(TransactionCaseWithUserDemo):

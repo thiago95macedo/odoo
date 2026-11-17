@@ -3,10 +3,10 @@
 import ast
 from collections import defaultdict
 
-from odoo import api, fields, models, _
-from odoo.fields import Command, Domain
-from odoo.exceptions import UserError
-from odoo.addons.project.models.project_task import CLOSED_STATES
+from weth import api, fields, models, _
+from weth.fields import Command, Domain
+from weth.exceptions import UserError
+from weth.addons.project.models.project_task import CLOSED_STATES
 
 
 class SaleOrder(models.Model):

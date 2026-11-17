@@ -1,6 +1,6 @@
-/** @odoo-module */
+/** @weth-module */
 
-import { t } from "@odoo/owl";
+import { t } from "@weth/owl";
 import { isInstanceOf } from "../../hoot-dom/hoot_dom_utils";
 import {
     createMock,
@@ -18,7 +18,7 @@ import { ensureTest } from "../main_runner";
 
 const {
     Blob,
-    ClipboardItem = class NonSecureClipboardItem {},
+    ClipboardItem = class NonSecureClipboardItem { },
     navigator,
     Object: { assign: $assign },
     Set,
@@ -293,7 +293,7 @@ export class MockServiceWorker extends MockEventTarget {
     /**
      * @param {any} _message
      */
-    postMessage(_message) {}
+    postMessage(_message) { }
 }
 
 export class MockServiceWorkerContainer extends MockEventTarget {
@@ -352,7 +352,7 @@ export class MockServiceWorkerContainer extends MockEventTarget {
         return registration;
     }
 
-    startMessages() {}
+    startMessages() { }
 
     /**
      * @private
@@ -386,7 +386,7 @@ export class MockServiceWorkerRegistration {
         return true;
     }
 
-    async update() {}
+    async update() { }
 }
 
 // Naive lock that doesn't lock anything

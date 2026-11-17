@@ -2,10 +2,10 @@
 from datetime import date, datetime, timedelta
 from unittest.mock import patch
 
-from odoo.exceptions import ValidationError
-from odoo.tests import tagged
+from weth.exceptions import ValidationError
+from weth.tests import tagged
 
-from odoo.addons.hr_holidays.tests.common import TestHrHolidaysCommon
+from weth.addons.hr_holidays.tests.common import TestHrHolidaysCommon
 
 
 def _next_weekday(start, weekday):

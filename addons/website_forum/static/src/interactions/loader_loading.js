@@ -1,4 +1,4 @@
-// @odoo-module ignore
+// @weth-module ignore
 
 (function () {
 'use strict';

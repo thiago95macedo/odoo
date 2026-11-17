@@ -2,8 +2,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
 import re
-from odoo import models, fields, api, _
-from odoo.exceptions import ValidationError
+from weth import models, fields, api, _
+from weth.exceptions import ValidationError
 MAX_INT32 = 2147483647
 
 

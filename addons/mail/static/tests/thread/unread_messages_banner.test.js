@@ -10,9 +10,9 @@ import {
     start,
     startServer,
 } from "@mail/../tests/mail_test_helpers";
-import { describe, expect, test } from "@odoo/hoot";
-import { waitUntil } from "@odoo/hoot-dom";
-import { mockUserAgent, tick } from "@odoo/hoot-mock";
+import { describe, expect, test } from "@weth/hoot";
+import { waitUntil } from "@weth/hoot-dom";
+import { mockUserAgent, tick } from "@weth/hoot-mock";
 import { Command, getService, onRpc, serverState, withUser } from "@web/../tests/web_test_helpers";
 import { rpc } from "@web/core/network/rpc";
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<odoo>
+<weth>
     <template id="account.account_terms_conditions_setting_banner" name="Account Terms and Conditions Setting Banner">
         <div id="terms_conditions" t-ignore="true" class="text-center">
             <span>This is a preview of your Terms &amp; Conditions.</span>
@@ -11,7 +11,7 @@
     <template id="account_terms_conditions_page" name="Terms &amp; Conditions">
         <t t-set="o_portal_fullwidth_alert" groups="account.group_account_manager">
             <t t-call="account.account_terms_conditions_setting_banner"
-                backend_url.f="/odoo/action-account.action_open_settings"/>
+                backend_url.f="/weth/action-account.action_open_settings"/>
         </t>
         <t t-call="web.frontend_layout" o_portal_fullwidth_alert="o_portal_fullwidth_alert">
             <div class="oe_structure" id="oe_structure_terms_conditions"/>
@@ -54,4 +54,4 @@
         </div>
     </template>
 
-</odoo>
+</weth>

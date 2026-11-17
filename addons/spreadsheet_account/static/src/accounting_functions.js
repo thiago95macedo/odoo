@@ -1,7 +1,7 @@
 import { _t } from "@web/core/l10n/translation";
 
-import * as spreadsheet from "@odoo/o-spreadsheet";
-import { EvaluationError } from "@odoo/o-spreadsheet";
+import * as spreadsheet from "@weth/o-spreadsheet";
+import { EvaluationError } from "@weth/o-spreadsheet";
 import { computeFormatFromCurrency } from "@spreadsheet/currency/helpers";
 
 const { functionRegistry } = spreadsheet.registries;
@@ -50,10 +50,10 @@ function parseAccountingQuarter(dateRange) {
     const found = toString(dateRange?.value).trim().match(QuarterRegexp);
     return found
         ? {
-              rangeType: "quarter",
-              year: Number(found[2]),
-              quarter: Number(found[1]),
-          }
+            rangeType: "quarter",
+            year: Number(found[2]),
+            quarter: Number(found[1]),
+        }
         : undefined;
 }
 
@@ -77,10 +77,10 @@ function parseAccountingMonth(dateRange, locale) {
     const found = toString(dateRange?.value).trim().match(MonthRegexp);
     return found
         ? {
-              rangeType: "month",
-              year: Number(found[2]),
-              month: Number(found[1]),
-          }
+            rangeType: "month",
+            year: Number(found[2]),
+            month: Number(found[1]),
+        }
         : undefined;
 }
 

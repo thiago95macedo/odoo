@@ -2,10 +2,10 @@
 
 from datetime import datetime
 
-from odoo.fields import Command, Date
-from odoo.tests import tagged
+from weth.fields import Command, Date
+from weth.tests import tagged
 
-from odoo.addons.website_sale.tests.common import WebsiteSaleCommon
+from weth.addons.website_sale.tests.common import WebsiteSaleCommon
 
 
 @tagged("post_install", "-at_install")

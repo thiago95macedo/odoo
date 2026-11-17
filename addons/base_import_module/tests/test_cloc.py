@@ -4,8 +4,8 @@ import json
 from io import BytesIO
 from zipfile import ZipFile, ZIP_DEFLATED
 
-from odoo.tools import cloc
-from odoo.tests import tagged, TransactionCase
+from weth.tools import cloc
+from weth.tests import tagged, TransactionCase
 
 VALID_XML = """
 <templates id="template" xml:space="preserve">
@@ -18,7 +18,7 @@ VALID_XML = """
 </templates>
 """
 VALID_XML_2 = """<?xml version="1.0" encoding="UTF-8"?>
-<odoo>
+<weth>
     <template id="template_2">
         <t t-name="stock_barcode.LineComponent">
             <div t-if="line.picking_id and line.picking_id.origin" name="origin">
@@ -30,7 +30,7 @@ VALID_XML_2 = """<?xml version="1.0" encoding="UTF-8"?>
     <record id="base.view_company_form" model="ir.ui.view">
         <field name="active" eval="True"/>
     </record>
-</odoo>
+</weth>
 """
 
 JS_TEST = r'''
@@ -103,7 +103,7 @@ class TestClocFields(TransactionCase):
             'store': False,
             'compute': "for rec in self: rec['x_invoice_count'] = 10",
         })
-        # Simulate the effect of https://github.com/odoo/odoo/commit/9afce4805fc8bac45fdba817488aa867fddff69b
+        # Simulate the effect of https://github.com/weth/odoo/commit/9afce4805fc8bac45fdba817488aa867fddff69b
         # Updating a module create xml_id of the module even for manual field if it's the original module
         # of the model
         self.create_xml_id('base', name, field)

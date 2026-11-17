@@ -6,10 +6,10 @@ from unittest.mock import patch
 import io
 import requests
 
-from odoo.addons.bus.tests.common import BusResult
-from odoo.addons.mail.tests.common import MailCommon
-from odoo.addons.mail.tools import link_preview
-from odoo.tests.common import tagged
+from weth.addons.bus.tests.common import BusResult
+from weth.addons.mail.tests.common import MailCommon
+from weth.addons.mail.tools import link_preview
+from weth.tests.common import tagged
 
 
 @tagged("mail_link_preview", "mail_message")
@@ -195,24 +195,24 @@ class TestLinkPreview(MailCommon):
         ):
             urls = [
                 ("http://localhost:8069/", "http://localhost:8069/odoo", 0),
-                ("http://localhost:8069/", "http://localhost:8069/odoo/test", 0),
+                ("http://localhost:8069/", "http://localhost:8069/weth/test", 0),
                 ("http://localhost:8069/", "http://localhost:8069/web/test", 0),
                 ("http://localhost:8069/", "http://localhost:8069/", 1),
                 ("http://localhost:8069/", "http://localhost:8069/odoo-experience", 1),
                 ("http://localhost:8069/", "http://localhost:8069/chat/5/bFtIfYHRco", 0),
                 ("https://www.weth.com.br/", "https://www.weth.com.br/web", 0),
                 ("https://www.weth.com.br/", "https://www.weth.com.br/odoo", 0),
-                ("https://www.weth.com.br/", "https://www.weth.com.br/odoo/", 0),
+                ("https://www.weth.com.br/", "https://www.weth.com.br/weth/", 0),
                 ("https://www.weth.com.br/", "https://www.weth.com.br/odoo?debug=assets", 0),
                 ("https://www.weth.com.br/", "https://www.weth.com.br/odoo#anchor", 0),
                 ("https://www.weth.com.br/", "https://www.weth.com.br/odoo-experience", 1),
-                ("https://www.weth.com.br/", "https://www.weth.com.br/odoo/1519/tasks/4102866", 0),
-                ("http://www.weth.com.br/", "https://www.weth.com.br/odoo/1519/tasks/4102866", 1),
-                ("https://www.weth.com.br/", "https://wwwaodoo.com/odoo/", 1),
+                ("https://www.weth.com.br/", "https://www.weth.com.br/weth/1519/tasks/4102866", 0),
+                ("http://www.weth.com.br/", "https://www.weth.com.br/weth/1519/tasks/4102866", 1),
+                ("https://www.weth.com.br/", "https://wwwaodoo.com/weth/", 1),
                 ("https://www.weth.com.br/", "https://www.weth.com.br/chat/", 0),
                 ("https://www.weth.com.br/", "https://www.weth.com.br/chat/5/bFtIfYHRco", 0),
                 ("http://www.weth.com.br/", "https://www.weth.com.br/chat/5/bFtIfYHRco", 1),
-                ("https://clients.weth.com.br/", "https://www.weth.com.br/odoo/1519/tasks/4102866", 1),
+                ("https://clients.weth.com.br/", "https://www.weth.com.br/weth/1519/tasks/4102866", 1),
                 ("https://clients.weth.com.br/", "https://www.weth.com.br/chat/5/bFtIfYHRco", 1),
             ]
             for request_url, url, counter in urls:

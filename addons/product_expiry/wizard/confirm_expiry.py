@@ -2,8 +2,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 from datetime import datetime
 
-from odoo import api, fields, models, _
-from odoo.tools.misc import clean_context
+from weth import api, fields, models, _
+from weth.tools.misc import clean_context
 
 
 class ExpiryPickingConfirmation(models.TransientModel):

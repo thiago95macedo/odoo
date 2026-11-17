@@ -1,6 +1,6 @@
-import { expect, test, waitFor, waitForNone } from "@odoo/hoot";
-import { click, edit, pointerDown, queryAll, queryFirst } from "@odoo/hoot-dom";
-import { animationFrame } from "@odoo/hoot-mock";
+import { expect, test, waitFor, waitForNone } from "@weth/hoot";
+import { click, edit, pointerDown, queryAll, queryFirst } from "@weth/hoot-dom";
+import { animationFrame } from "@weth/hoot-mock";
 import {
     clickSave,
     contains,

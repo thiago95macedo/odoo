@@ -1,4 +1,4 @@
-import { test, expect } from "@odoo/hoot";
+import { test, expect } from "@weth/hoot";
 import { setupPosEnv } from "@point_of_sale/../tests/unit/utils";
 import { definePosModels } from "@point_of_sale/../tests/unit/data/generate_model_definitions";
 import { makeServerError, mountWithCleanup, onRpc } from "@web/../tests/web_test_helpers";
@@ -84,7 +84,7 @@ test("addLineToCurrentOrder", async () => {
 test("handleUrlParams prevents unauthorized access when POS is locked with pos_hr", async () => {
     const store = await setupPosEnv();
     store.config.module_pos_hr = true;
-    odoo.from_backend = false;
+    weth.from_backend = false;
 
     store.accessRight.resetCashier();
     expect(store.accessRight.cashier).toBe(false);

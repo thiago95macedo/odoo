@@ -1,6 +1,6 @@
 import { BusParametersPlugin } from "@bus/bus_parameters_plugin";
 import { session } from "@web/session";
-import { Plugin, usePlugin } from "@odoo/owl";
+import { Plugin, usePlugin } from "@weth/owl";
 import { services } from "@web/core/services";
 
 export class LivechatBusParametersPlugin extends Plugin {

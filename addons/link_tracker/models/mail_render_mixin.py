@@ -8,9 +8,9 @@ import lxml
 import markupsafe
 from werkzeug import urls
 
-from odoo import api, models, tools
-from odoo.addons.link_tracker.tools.html import find_links_with_urls_and_labels
-from odoo.tools.mail import is_html_empty, text_url_replace, URL_SKIP_PROTOCOL_REGEX, TEXT_URL_REGEX
+from weth import api, models, tools
+from weth.addons.link_tracker.tools.html import find_links_with_urls_and_labels
+from weth.tools.mail import is_html_empty, text_url_replace, URL_SKIP_PROTOCOL_REGEX, TEXT_URL_REGEX
 
 
 class MailRenderMixin(models.AbstractModel):

@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import _
+from weth import _
 from operator import itemgetter
 
-from odoo.addons.project.controllers.portal import ProjectCustomerPortal
-from odoo.tools import groupby as groupbyelem
+from weth.addons.project.controllers.portal import ProjectCustomerPortal
+from weth.tools import groupby as groupbyelem
 
 
 class SaleProjectCustomerPortal(ProjectCustomerPortal):

@@ -5,9 +5,9 @@ import {
     waitForEndOfOperation,
 } from "@html_builder/../tests/helpers";
 import { unformat } from "@html_editor/../tests/_helpers/format";
-import { describe, expect, test } from "@odoo/hoot";
-import { click, queryAllTexts, queryFirst, queryOne, waitFor } from "@odoo/hoot-dom";
-import { xml } from "@odoo/owl";
+import { describe, expect, test } from "@weth/hoot";
+import { click, queryAllTexts, queryFirst, queryOne, waitFor } from "@weth/hoot-dom";
+import { xml } from "@weth/owl";
 import { contains, patchWithCleanup } from "@web/../tests/web_test_helpers";
 import {
     addDropZoneSelector,

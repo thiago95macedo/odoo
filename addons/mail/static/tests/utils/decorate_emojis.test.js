@@ -2,8 +2,8 @@ import { defineMailModels } from "@mail/../tests/mail_test_helpers";
 import { decorateEmojis } from "@mail/utils/common/format";
 import { createElementFromContent, getInnerHtml } from "@mail/utils/common/html";
 
-import { beforeEach, expect, test } from "@odoo/hoot";
-import { markup } from "@odoo/owl";
+import { beforeEach, expect, test } from "@weth/hoot";
+import { markup } from "@weth/owl";
 
 import { makeTestApp, preloadBundle } from "@web/../tests/web_test_helpers";
 import { emojiLoader } from "@web/core/emoji_picker/emoji_loader";

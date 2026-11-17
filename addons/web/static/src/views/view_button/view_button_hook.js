@@ -1,4 +1,4 @@
-import { Plugin, providePlugins, useConfig, usePlugin, useScope } from "@odoo/owl";
+import { Plugin, providePlugins, useConfig, usePlugin, useScope } from "@weth/owl";
 import { ConfirmationDialog } from "@web/core/confirmation_dialog/confirmation_dialog";
 import { evaluateExpr } from "@web/core/py_js/py";
 import { useService } from "@web/core/utils/hooks";
@@ -156,7 +156,7 @@ export function useViewButtons(ref, options = {}) {
                         }),
                         body: clickParams.confirm,
                         confirm: () => execute(),
-                        cancel: () => {},
+                        cancel: () => { },
                     };
                     dialog.add(ConfirmationDialog, dialogProps, { onClose: resolve });
                 });

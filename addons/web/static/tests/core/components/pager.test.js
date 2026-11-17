@@ -1,8 +1,8 @@
-import { test, expect } from "@odoo/hoot";
-import { animationFrame, runAllTimers } from "@odoo/hoot-mock";
-import { click, press } from "@odoo/hoot-dom";
+import { test, expect } from "@weth/hoot";
+import { animationFrame, runAllTimers } from "@weth/hoot-mock";
+import { click, press } from "@weth/hoot-dom";
 import { Pager } from "@web/core/pager/pager";
-import { Component, proxy, useProps, xml } from "@odoo/owl";
+import { Component, proxy, useProps, xml } from "@weth/owl";
 import { contains, mountWithCleanup, patchWithCleanup } from "@web/../tests/web_test_helpers";
 import { config as transitionConfig } from "@web/core/transition";
 
@@ -293,7 +293,7 @@ test("updateTotal props: click on total", async () => {
             offset: 0,
             limit: 5,
             total: 10,
-            onUpdate() {},
+            onUpdate() { },
             async updateTotal() {
                 await pager.updateProps({ total: 25, updateTotal: undefined });
             },
@@ -328,7 +328,7 @@ test("updateTotal props: click next", async () => {
                 }
                 await pager.updateProps(nextProps);
             },
-            updateTotal() {},
+            updateTotal() { },
         },
     });
 
@@ -372,7 +372,7 @@ test("updateTotal props: edit input", async () => {
                 }
                 await pager.updateProps(nextProps);
             },
-            updateTotal() {},
+            updateTotal() { },
         },
     });
 
@@ -412,7 +412,7 @@ test("updateTotal props: can use next even if single page", async () => {
             async onUpdate(data) {
                 await pager.updateProps({ ...data, total: 10 });
             },
-            updateTotal() {},
+            updateTotal() { },
         },
     });
 

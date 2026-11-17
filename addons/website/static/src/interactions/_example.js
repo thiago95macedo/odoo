@@ -1,5 +1,5 @@
 // import { registry } from "@web/core/registry";
-import { Component, xml, proxy, useProps } from "@odoo/owl";
+import { Component, xml, proxy, useProps } from "@weth/owl";
 import { useService } from "@web/core/utils/hooks";
 
 // -----------------------------------------------------------------------------

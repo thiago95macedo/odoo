@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
 
 <!-- Event -->
 <template id="layout" name="Event">
@@ -102,4 +102,4 @@
     </div>
 </template>
 
-</odoo>
+</weth>

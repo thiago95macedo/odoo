@@ -1,7 +1,7 @@
 import json
 
-from odoo.addons.account.tests.test_account_journal_dashboard_common import TestAccountJournalDashboardCommon
-from odoo.tests import tagged
+from weth.addons.account.tests.test_account_journal_dashboard_common import TestAccountJournalDashboardCommon
+from weth.tests import tagged
 
 
 @tagged('post_install', '-at_install')

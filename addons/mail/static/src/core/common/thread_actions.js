@@ -18,7 +18,7 @@ import { useMaybePlugin } from "@mail/utils/common/hooks";
 
 export const threadActionsRegistry = registry.category("mail.thread/actions");
 
-/** @typedef {import("@odoo/owl").Component} Component */
+/** @typedef {import("@weth/owl").Component} Component */
 /** @typedef {import("models").Thread} Thread */
 /**
  * @typedef {Object} ThreadActionSpecificParams

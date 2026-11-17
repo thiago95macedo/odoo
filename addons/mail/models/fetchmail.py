@@ -10,10 +10,10 @@ from poplib import POP3, POP3_SSL
 from socket import gaierror, timeout
 from ssl import SSLError
 
-from odoo import api, fields, models, tools, _
-from odoo.exceptions import UserError
-from odoo.fields import Domain
-from odoo.tools import exception_to_unicode
+from weth import api, fields, models, tools, _
+from weth.exceptions import UserError
+from weth.fields import Domain
+from weth.tools import exception_to_unicode
 
 _logger = logging.getLogger(__name__)
 MAIL_TIMEOUT = 60

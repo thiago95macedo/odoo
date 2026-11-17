@@ -3,7 +3,7 @@ import { registry } from "@web/core/registry";
 import { loadBundle } from "@web/core/assets";
 import { memoize } from "@web/core/utils/functions";
 
-odoo.portalChatterReady = Promise.withResolvers();
+weth.portalChatterReady = Promise.withResolvers();
 
 const loadChatter = memoize(() => loadBundle("portal.assets_chatter"));
 

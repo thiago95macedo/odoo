@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, fields, models
-from odoo.tools import email_normalize
+from weth import api, fields, models
+from weth.tools import email_normalize
 
 
 class HrJobPlatform(models.Model):

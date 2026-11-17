@@ -1,4 +1,4 @@
-import { describe, expect, getFixture, test } from "@odoo/hoot";
+import { describe, expect, getFixture, test } from "@weth/hoot";
 import { defineSpreadsheetModels } from "@spreadsheet/../tests/helpers/data";
 import { SelectionFilterValue } from "@spreadsheet/global_filters/components/selection_filter_value/selection_filter_value";
 import { contains, mountWithCleanup } from "@web/../tests/web_test_helpers";
@@ -40,7 +40,7 @@ test("Autocomplete only provide values that are not selected", async function ()
             value: ["after"],
             resModel: "res.currency",
             field: "position",
-            onValueChanged: () => {},
+            onValueChanged: () => { },
         },
     });
     await contains("input").click();

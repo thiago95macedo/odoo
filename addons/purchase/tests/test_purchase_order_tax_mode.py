@@ -1,6 +1,6 @@
-from odoo.addons.account.tests.test_account_move_tax_mode import TestDocumentTaxModeCommon
-from odoo import Command
-from odoo.tests import tagged
+from weth.addons.account.tests.test_account_move_tax_mode import TestDocumentTaxModeCommon
+from weth import Command
+from weth.tests import tagged
 
 
 @tagged('post_install', '-at_install')

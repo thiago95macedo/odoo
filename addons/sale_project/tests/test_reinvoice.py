@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 from dateutil.relativedelta import relativedelta
-from odoo.addons.sale.tests.common import TestSaleCommon
-from odoo.tests import Form, tagged
-from odoo.fields import Command
+from weth.addons.sale.tests.common import TestSaleCommon
+from weth.tests import Form, tagged
+from weth.fields import Command
 
 
 @tagged('post_install', '-at_install')

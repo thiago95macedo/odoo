@@ -4,7 +4,7 @@
 from collections import defaultdict
 import json
 
-from odoo.fields import Domain
+from weth.fields import Domain
 
 from . import controllers
 from . import models

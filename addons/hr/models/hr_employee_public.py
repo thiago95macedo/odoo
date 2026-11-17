@@ -3,9 +3,9 @@
 from datetime import timedelta, UTC
 from zoneinfo import ZoneInfo
 
-from odoo import api, fields, models, tools
-from odoo.tools import SQL, format_time
-from odoo.addons.mail.tools.discuss import Store
+from weth import api, fields, models, tools
+from weth.tools import SQL, format_time
+from weth.addons.mail.tools.discuss import Store
 
 
 class HrEmployeePublic(models.Model):

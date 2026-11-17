@@ -1,6 +1,6 @@
-import { expect, test } from "@odoo/hoot";
-import { queryAllTexts } from "@odoo/hoot-dom";
-import { runAllTimers } from "@odoo/hoot-mock";
+import { expect, test } from "@weth/hoot";
+import { queryAllTexts } from "@weth/hoot-dom";
+import { runAllTimers } from "@weth/hoot-mock";
 import {
     clickSave,
     contains,
@@ -413,7 +413,7 @@ test("Many2ManyCheckBoxesField batches successive changes", async () => {
     Partner._fields.timmy = fields.Many2many({
         string: "pokemon",
         relation: "partner.type",
-        onChange: () => {},
+        onChange: () => { },
     });
     Partner._records[0].timmy = [];
     onRpc(({ method }) => {
@@ -449,7 +449,7 @@ test("Many2ManyCheckBoxesField sends batched changes on save", async () => {
     Partner._fields.timmy = fields.Many2many({
         string: "pokemon",
         relation: "partner.type",
-        onChange: () => {},
+        onChange: () => { },
     });
     Partner._records[0].timmy = [];
     onRpc(({ method }) => {

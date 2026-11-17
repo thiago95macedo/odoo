@@ -1,5 +1,5 @@
 import { selfClosingHtmlTags } from "@html_editor/utils/dom_info";
-import { manuallyDispatchProgrammaticEvent, animationFrame } from "@odoo/hoot-dom";
+import { manuallyDispatchProgrammaticEvent, animationFrame } from "@weth/hoot-dom";
 import { closestElement, getCommonAncestor } from "@html_editor/utils/dom_traversal";
 
 /**

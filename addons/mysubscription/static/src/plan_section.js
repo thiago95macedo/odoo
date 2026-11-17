@@ -1,4 +1,4 @@
-import { Component, computed, useProps, t } from "@odoo/owl";
+import { Component, computed, useProps, t } from "@weth/owl";
 import { useService } from "@web/core/utils/hooks";
 import { DashboardBlock } from "./components/dashboard_block";
 import { PlanBox } from "./components/plan_box"

@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import fields, models, api, _
-from odoo.exceptions import UserError
-from odoo.tools import email_normalize
+from weth import fields, models, api, _
+from weth.exceptions import UserError
+from weth.tools import email_normalize
 
 
 class MailGroupModeration(models.Model):

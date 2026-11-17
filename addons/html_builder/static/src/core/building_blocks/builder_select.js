@@ -1,4 +1,4 @@
-import { Component, onMounted, signal, t, useProps, xml } from "@odoo/owl";
+import { Component, onMounted, signal, t, useProps, xml } from "@weth/owl";
 import { Dropdown } from "@web/core/dropdown/dropdown";
 import { useDropdownState } from "@web/core/dropdown/dropdown_hooks";
 import { _t } from "@web/core/l10n/translation";

@@ -6,14 +6,14 @@ from datetime import date
 
 from lxml.builder import E
 
-from odoo import _, api, fields, models
-from odoo.exceptions import RedirectWarning, UserError, ValidationError
-from odoo.fields import Command, Domain
-from odoo.models import Query
-from odoo.tools import SQL, OrderedSet, float_compare, frozendict, groupby
+from weth import _, api, fields, models
+from weth.exceptions import RedirectWarning, UserError, ValidationError
+from weth.fields import Command, Domain
+from weth.models import Query
+from weth.tools import SQL, OrderedSet, float_compare, frozendict, groupby
 
-from odoo.addons.account.models.account_move import MAX_HASH_VERSION
-from odoo.addons.web.controllers.utils import clean_action
+from weth.addons.account.models.account_move import MAX_HASH_VERSION
+from weth.addons.web.controllers.utils import clean_action
 
 _logger = logging.getLogger(__name__)
 _ignore_tax_lock_date = object()

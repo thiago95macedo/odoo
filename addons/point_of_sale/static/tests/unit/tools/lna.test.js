@@ -1,4 +1,4 @@
-import { expect, test } from "@odoo/hoot";
+import { expect, test } from "@weth/hoot";
 import { getLNATargetAddressSpace, isPrivateIp } from "@point_of_sale/app/utils/init_lna";
 
 test("targetAddressSpace local", () => {

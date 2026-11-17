@@ -4,10 +4,10 @@ import collections
 import hashlib
 from urllib.parse import quote_plus
 
-from odoo import api, fields, models
-from odoo.exceptions import ValidationError
+from weth import api, fields, models
+from weth.exceptions import ValidationError
 
-from odoo.addons.payment_ecpay import const
+from weth.addons.payment_ecpay import const
 
 
 class PaymentProvider(models.Model):

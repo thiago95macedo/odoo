@@ -2,7 +2,7 @@
 
 from datetime import datetime
 
-from odoo.http import Controller, request, route
+from weth.http import Controller, request, route
 
 
 class SaleProductConfiguratorController(Controller):

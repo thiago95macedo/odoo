@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @weth-module **/
 
 import {
     contains,
@@ -8,9 +8,9 @@ import {
     models,
     mountView,
 } from "@web/../tests/web_test_helpers";
-import { describe, expect, test } from "@odoo/hoot";
-import { queryAll } from "@odoo/hoot-dom";
-import { animationFrame } from "@odoo/hoot-mock";
+import { describe, expect, test } from "@weth/hoot";
+import { queryAll } from "@weth/hoot-dom";
+import { animationFrame } from "@weth/hoot-mock";
 import { defineHrModels } from "@hr/../tests/hr_test_helpers";
 
 defineHrModels();

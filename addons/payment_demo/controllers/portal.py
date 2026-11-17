@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.exceptions import ValidationError
+from weth.exceptions import ValidationError
 
-from odoo.addons.payment.controllers import portal as payment_portal
+from weth.addons.payment.controllers import portal as payment_portal
 
 
 class PaymentPortal(payment_portal.PaymentPortal):

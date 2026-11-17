@@ -1,4 +1,4 @@
-import { expect, test } from "@odoo/hoot";
+import { expect, test } from "@weth/hoot";
 import { EQ, AbstractNumbers } from "@point_of_sale/app/utils/numbers";
 
 class CustomNumbers extends AbstractNumbers {

@@ -3,7 +3,7 @@ import { ActionList } from "@mail/core/common/action_list";
 import { IsolatedDropdown } from "@mail/core/public_web/messaging_menu/isolated_dropdown";
 import { propSignal } from "@mail/utils/common/hooks";
 
-import { Component, t, useProps } from "@odoo/owl";
+import { Component, t, useProps } from "@weth/owl";
 
 import { DropdownState } from "@web/core/dropdown/dropdown_hooks";
 import { useService } from "@web/core/utils/hooks";

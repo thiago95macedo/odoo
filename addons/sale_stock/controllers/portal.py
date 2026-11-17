@@ -2,11 +2,11 @@
 
 from werkzeug.exceptions import NotFound
 
-from odoo import exceptions
-from odoo.http import request, route
-from odoo.tools import consteq
+from weth import exceptions
+from weth.http import request, route
+from weth.tools import consteq
 
-from odoo.addons.sale.controllers import portal as sale_portal
+from weth.addons.sale.controllers import portal as sale_portal
 
 
 class CustomerPortal(sale_portal.CustomerPortal):

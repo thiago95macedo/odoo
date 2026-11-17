@@ -10,8 +10,8 @@ import {
     startServer,
 } from "@mail/../tests/mail_test_helpers";
 import { htmlInsertText } from "@mail/../tests/mail_test_helpers_html";
-import { animationFrame, describe, expect, test } from "@odoo/hoot";
-import { advanceTime, mockDate } from "@odoo/hoot-mock";
+import { animationFrame, describe, expect, test } from "@weth/hoot";
+import { advanceTime, mockDate } from "@weth/hoot-mock";
 import {
     Command,
     getService,

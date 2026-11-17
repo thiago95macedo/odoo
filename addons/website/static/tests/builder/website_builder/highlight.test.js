@@ -1,6 +1,6 @@
-import { expect, test } from "@odoo/hoot";
-import { click, waitFor } from "@odoo/hoot-dom";
-import { animationFrame } from "@odoo/hoot-mock";
+import { expect, test } from "@weth/hoot";
+import { click, waitFor } from "@weth/hoot-dom";
+import { animationFrame } from "@weth/hoot-mock";
 import { setupEditor } from "@html_editor/../tests/_helpers/editor";
 import { defineMailModels } from "@mail/../tests/mail_test_helpers";
 import { expandToolbar } from "@html_editor/../tests/_helpers/toolbar";
@@ -17,7 +17,7 @@ defineMailModels();
 class FakeEditInteractionPlugin extends Plugin {
     static id = "edit_interaction";
     static shared = ["stopInteraction"];
-    stopInteraction() {}
+    stopInteraction() { }
 }
 
 function checkHighlightColor(highlightStyle) {

@@ -2,9 +2,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 from json import loads
 
-from odoo.fields import Command, Domain
-from odoo.exceptions import AccessError, UserError, ValidationError
-from odoo.tests import tagged, Form, TransactionCase
+from weth.fields import Command, Domain
+from weth.exceptions import AccessError, UserError, ValidationError
+from weth.tests import tagged, Form, TransactionCase
 
 
 class TestMultiCompany(TransactionCase):

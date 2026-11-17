@@ -1,5 +1,5 @@
-from odoo import models, fields
-from odoo.addons.base.models.res_company import company_default_for
+from weth import models, fields
+from weth.addons.base.models.res_company import company_default_for
 
 
 class ResCompany(models.Model):

@@ -2,10 +2,10 @@
 
 from collections import defaultdict
 
-from odoo import Command, _, api, fields, models
-from odoo.exceptions import UserError
-from odoo.tools import float_compare, float_round
-from odoo.tools.misc import clean_context
+from weth import Command, _, api, fields, models
+from weth.exceptions import UserError
+from weth.tools import float_compare, float_round
+from weth.tools.misc import clean_context
 
 
 class MrpUnbuild(models.Model):

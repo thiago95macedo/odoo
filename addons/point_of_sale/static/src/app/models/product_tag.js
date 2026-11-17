@@ -1,5 +1,5 @@
 import { Base } from "./related_models";
-import { markup } from "@odoo/owl";
+import { markup } from "@weth/owl";
 import { registry } from "@web/core/registry";
 
 export class ProductTag extends Base {

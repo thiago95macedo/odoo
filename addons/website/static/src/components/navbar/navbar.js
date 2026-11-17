@@ -4,7 +4,7 @@ import { useService, useBus } from "@web/core/utils/hooks";
 import { registry } from "@web/core/registry";
 import { patch } from "@web/core/utils/patch";
 import { UserMenu } from "@web/webclient/user_menu/user_menu";
-import { usePlugin } from "@odoo/owl";
+import { usePlugin } from "@weth/owl";
 import { DebugModePlugin } from "@web/core/debug_mode_plugin";
 
 const websiteSystrayRegistry = registry.category("website_systray");
@@ -37,7 +37,7 @@ patch(NavBar.prototype, {
     },
 
     // Somehow a setter is needed in `patch()` to avoid an owl error.
-    set shouldDisplayWebsiteSystray(_) {},
+    set shouldDisplayWebsiteSystray(_) { },
 
     /**
      * @override

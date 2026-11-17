@@ -1,4 +1,4 @@
-import { animationFrame, advanceTime } from "@odoo/hoot-dom";
+import { animationFrame, advanceTime } from "@weth/hoot-dom";
 import { getService } from "@web/../tests/web_test_helpers";
 
 export function normalizeText(text) {

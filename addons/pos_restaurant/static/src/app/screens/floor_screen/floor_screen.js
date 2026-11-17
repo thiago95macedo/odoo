@@ -1,4 +1,4 @@
-import { Component, onMounted, useEffect } from "@odoo/owl";
+import { Component, onMounted, useEffect } from "@weth/owl";
 import { useService } from "@web/core/utils/hooks";
 import { registry } from "@web/core/registry";
 import { usePos } from "@point_of_sale/app/hooks/pos_hook";
@@ -90,6 +90,6 @@ export class FloorScreen extends Component {
 registry.category("pos_pages").add("FloorScreen", {
     name: "FloorScreen",
     component: FloorScreen,
-    route: `/pos/ui/${odoo.pos_config_id}/floor`,
+    route: `/pos/ui/${weth.pos_config_id}/floor`,
     params: {},
 });

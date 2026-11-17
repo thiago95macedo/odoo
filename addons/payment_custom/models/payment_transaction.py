@@ -2,12 +2,12 @@
 
 from markupsafe import Markup
 
-from odoo import models
-from odoo.tools import is_html_empty
+from weth import models
+from weth.tools import is_html_empty
 
-from odoo.addons.payment.logging import get_payment_logger
-from odoo.addons.payment_custom import const
-from odoo.addons.payment_custom.controllers.main import CustomController
+from weth.addons.payment.logging import get_payment_logger
+from weth.addons.payment_custom import const
+from weth.addons.payment_custom.controllers.main import CustomController
 
 _logger = get_payment_logger(__name__)
 

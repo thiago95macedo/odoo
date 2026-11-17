@@ -1,4 +1,4 @@
-import { expect, test } from "@odoo/hoot";
+import { expect, test } from "@weth/hoot";
 import {
     animationFrame,
     hover,
@@ -13,8 +13,8 @@ import {
     queryOne,
     queryRect,
     runAllTimers,
-} from "@odoo/hoot-dom";
-import { Component, xml, proxy, signal } from "@odoo/owl";
+} from "@weth/hoot-dom";
+import { Component, xml, proxy, signal } from "@weth/owl";
 
 import { contains, destroyApp, mountWithCleanup } from "@web/../tests/web_test_helpers";
 import { AutoComplete } from "@web/core/autocomplete/autocomplete";
@@ -24,7 +24,7 @@ import { AutoComplete } from "@web/core/autocomplete/autocomplete";
  * This is to make sure an element is actually visible, not just "within
  * viewport boundaries" but below or above a parent's scroll point.
  *
- * @param {import("@odoo/hoot-dom").Target} target
+ * @param {import("@weth/hoot-dom").Target} target
  * @returns {boolean}
  */
 function isInViewWithinScrollableY(target) {
@@ -885,7 +885,7 @@ test("source with option slot", async () => {
         static components = { AutoComplete };
 
         sources = buildSources(
-            () => [item("Hello", () => {}, { id: 1 }), item("World", () => {}, { id: 2 })],
+            () => [item("Hello", () => { }, { id: 1 }), item("World", () => { }, { id: 2 })],
             { optionSlot: "use_this_slot" }
         );
     }

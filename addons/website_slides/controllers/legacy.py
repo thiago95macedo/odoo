@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import http
-from odoo.http import request
-from odoo.addons.base.models.ir_qweb import keep_query
+from weth import http
+from weth.http import request
+from weth.addons.base.models.ir_qweb import keep_query
 
 
 class WebsiteSlidesLegacy(http.Controller):

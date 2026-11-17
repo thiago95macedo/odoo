@@ -1,4 +1,4 @@
-import { expect, test } from "@odoo/hoot";
+import { expect, test } from "@weth/hoot";
 import { SelectMany2X } from "@html_builder/core/building_blocks/select_many2x";
 import { contains, onRpc, patchWithCleanup } from "@web/../tests/web_test_helpers";
 import {

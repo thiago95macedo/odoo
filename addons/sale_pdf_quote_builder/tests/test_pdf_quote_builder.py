@@ -6,14 +6,14 @@ from unittest.mock import patch
 
 from werkzeug.datastructures import FileStorage
 
-from odoo.fields import Command
-from odoo.http import Response
-from odoo.tests import Form, HttpCase, tagged
-from odoo.tools.misc import file_open
+from weth.fields import Command
+from weth.http import Response
+from weth.tests import Form, HttpCase, tagged
+from weth.tools.misc import file_open
 
 from .files import forms_pdf, plain_pdf
-from odoo.addons.sale_management.tests.common import SaleManagementCommon
-from odoo.addons.sale_pdf_quote_builder.controllers.quotation_document import (
+from weth.addons.sale_management.tests.common import SaleManagementCommon
+from weth.addons.sale_pdf_quote_builder.controllers.quotation_document import (
     QuotationDocumentController,
 )
 
@@ -285,7 +285,7 @@ class TestPDFQuoteBuilder(SaleManagementCommon, HttpCase):
         if "website" not in self.env:
             self.skipTest("Module `website` not found")
         else:
-            from odoo.addons.http_routing.tests.common import MockRequest  # noqa: PLC0415
+            from weth.addons.http_routing.tests.common import MockRequest  # noqa: PLC0415
 
         # Upload document without Sale Order Template
         with (
@@ -321,7 +321,7 @@ class TestPDFQuoteBuilder(SaleManagementCommon, HttpCase):
         if "website" not in self.env:
             self.skipTest("Module `website` not found")
         else:
-            from odoo.addons.http_routing.tests.common import MockRequest  # noqa: PLC0415
+            from weth.addons.http_routing.tests.common import MockRequest  # noqa: PLC0415
 
         # Upload a document for a Sale Order Template without company id
         self.empty_order_template.company_id = False
@@ -354,7 +354,7 @@ class TestPDFQuoteBuilder(SaleManagementCommon, HttpCase):
 
     def test_custom_content_kanban_like(self):
         self.start_tour(
-            f"/odoo/sales/{self.sale_order.id}", "custom_content_kanban_like_tour", login="admin"
+            f"/weth/sales/{self.sale_order.id}", "custom_content_kanban_like_tour", login="admin"
         )
         sol = self.sale_order.order_line.filtered(lambda sol: sol.product_id == self.product)
         self.assertEqual(sol.product_document_ids, self.product_document)

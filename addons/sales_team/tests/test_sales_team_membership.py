@@ -1,10 +1,10 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import exceptions
-from odoo.tests.common import tagged, users
-from odoo.tools import mute_logger
+from weth import exceptions
+from weth.tests.common import tagged, users
+from weth.tools import mute_logger
 
-from odoo.addons.sales_team.tests.common import TestSalesCommon
+from weth.addons.sales_team.tests.common import TestSalesCommon
 
 
 @tagged('at_install', '-post_install')  # LEGACY at_install
@@ -280,7 +280,7 @@ class TestMembership(TestSalesCommon):
         self.assertFalse(admin_archived.active)
 
         # change team of membership should raise unicity constraint
-        with self.assertRaises(exceptions.UserError), mute_logger('odoo.sql_db'):
+        with self.assertRaises(exceptions.UserError), mute_logger('weth.sql_db'):
             added.write({'crm_team_id': sales_team_1.id})
 
     def test_users_sale_team_id(self):

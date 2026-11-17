@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
 
 <!-- Page -->
 <template id="index_layout" name="Partners Page Layout">
@@ -230,4 +230,4 @@
     </xpath>
 </template>
 
-</odoo>
+</weth>

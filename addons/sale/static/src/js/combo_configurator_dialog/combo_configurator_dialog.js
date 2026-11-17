@@ -1,5 +1,5 @@
 import { useSubEnv } from "@web/owl2/utils";
-import { Component, onMounted, onWillUnmount, proxy, t, useProps } from '@odoo/owl';
+import { Component, onMounted, onWillUnmount, proxy, t, useProps } from '@weth/owl';
 import { formatCurrency } from '@web/core/currency';
 import { Dialog } from '@web/core/dialog/dialog';
 import { _t } from '@web/core/l10n/translation';
@@ -84,7 +84,7 @@ export class ComboConfiguratorDialog extends Component {
                     so_date: this.props.date,
                     company_id: this.props.company_id,
                     pricelist_id: this.props.pricelist_id,
-                    ptav_ids:  product.selectedPtavIds,
+                    ptav_ids: product.selectedPtavIds,
                     only_main_product: true,
                     show_packaging: false,
                     ...this._getAdditionalRpcParams(),
@@ -113,7 +113,7 @@ export class ComboConfiguratorDialog extends Component {
                     );
                     this.state.selectedComboItems.set(comboId, selectedComboItem);
                 },
-                discard: () => {},
+                discard: () => { },
                 ...this._getAdditionalDialogProps(),
             });
         } else {

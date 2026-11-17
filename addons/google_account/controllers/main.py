@@ -5,8 +5,8 @@ import json
 from werkzeug import urls
 from werkzeug.exceptions import BadRequest
 
-from odoo import http
-from odoo.http import request
+from weth import http
+from weth.http import request
 
 
 class GoogleAuth(http.Controller):

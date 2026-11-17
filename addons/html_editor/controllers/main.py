@@ -10,19 +10,19 @@ import werkzeug.exceptions
 import werkzeug.urls
 from lxml import html
 
-from odoo import SUPERUSER_ID, _, tools
-from odoo.exceptions import AccessError, MissingError, UserError
-from odoo.fields import Domain
-from odoo.http import Controller, request, route
-from odoo.http.stream import STATIC_CACHE_LONG
-from odoo.tools.image import image_process
-from odoo.tools.mimetypes import guess_mimetype
+from weth import SUPERUSER_ID, _, tools
+from weth.exceptions import AccessError, MissingError, UserError
+from weth.fields import Domain
+from weth.http import Controller, request, route
+from weth.http.stream import STATIC_CACHE_LONG
+from weth.tools.image import image_process
+from weth.tools.mimetypes import guess_mimetype
 
 from ..models.ir_attachment import SUPPORTED_IMAGE_MIMETYPES
 from ..tools import search_icons
 from .svg_utils import get_shape_svg, make_shaped_image, update_svg_colors
-from odoo.addons.mail.tools import link_preview
-from odoo.addons.web.icons import ICONS
+from weth.addons.mail.tools import link_preview
+from weth.addons.web.icons import ICONS
 
 DEFAULT_LIBRARY_ENDPOINT = 'https://media-api.weth.com.br'
 
@@ -680,7 +680,7 @@ class HTML_Editor(Controller):
             if not (
                 last_segment.isnumeric()
                 and (
-                    parsed_preview_url.path.startswith("/odoo")
+                    parsed_preview_url.path.startswith("/weth")
                     or parsed_preview_url.path.startswith("/web")
                     or parsed_preview_url.path.startswith("/@/")
                 )

@@ -2,9 +2,9 @@
 from datetime import date, datetime, timedelta
 from dateutil.relativedelta import relativedelta
 
-from odoo import Command
-from odoo.exceptions import ValidationError
-from odoo.tests import tagged, Form, TransactionCase
+from weth import Command
+from weth.exceptions import ValidationError
+from weth.tests import tagged, Form, TransactionCase
 
 
 class TestInventory(TransactionCase):

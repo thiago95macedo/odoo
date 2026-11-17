@@ -8,9 +8,9 @@ from io import BytesIO
 import qrcode
 from PIL import Image
 
-from odoo import _, api, fields, models, modules
-from odoo.tools.image import image_data_uri
-from odoo.tools.misc import format_datetime, format_time
+from weth import _, api, fields, models, modules
+from weth.tools.image import image_data_uri
+from weth.tools.misc import format_datetime, format_time
 
 
 def _get_str_notes(note):

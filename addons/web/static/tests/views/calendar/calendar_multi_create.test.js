@@ -1,12 +1,12 @@
-import { beforeEach, expect, test } from "@odoo/hoot";
-import { click, edit, keyDown, keyUp, queryAllTexts, queryAll } from "@odoo/hoot-dom";
+import { beforeEach, expect, test } from "@weth/hoot";
+import { click, edit, keyDown, keyUp, queryAllTexts, queryAll } from "@weth/hoot-dom";
 import {
     advanceTime,
     animationFrame,
     disableAnimations,
     mockTimeZone,
     runAllTimers,
-} from "@odoo/hoot-mock";
+} from "@weth/hoot-mock";
 import {
     contains,
     defineModels,
@@ -865,10 +865,10 @@ test("multi_create: avoid trigger add/del event on specific element", async () =
 test.tags("desktop");
 test("multi_create: test required attribute in form", async () => {
     patchWithCleanup(NotificationPlugin.prototype, {
-          add(message) {
-              expect.step(message);
-          },
-      });
+        add(message) {
+            expect.step(message);
+        },
+    });
 
 
     onRpc("event", "create", ({ args: [records] }) => {

@@ -1,7 +1,7 @@
-/** @odoo-module */
+/** @weth-module */
 
-import { on, queryAll } from "@odoo/hoot-dom";
-import { t, useEffect, useListener, validateType } from "@odoo/owl";
+import { on, queryAll } from "@weth/hoot-dom";
+import { t, useEffect, useListener, validateType } from "@weth/owl";
 import { _isNode, _toSelector } from "@web/../lib/hoot-dom/helpers/dom";
 import {
     isInstanceOf,
@@ -145,9 +145,8 @@ function getFunctionString(fn) {
     const prefix = R_ASYNC_FUNCTION.test(strFn) ? "async " : "";
 
     if (R_NAMED_FUNCTION.test(strFn)) {
-        return `${
-            fn.name ? `${prefix}function ${fn.name}` : `anonymous ${prefix}function`
-        }() { ${ELLIPSIS} }`;
+        return `${fn.name ? `${prefix}function ${fn.name}` : `anonymous ${prefix}function`
+            }() { ${ELLIPSIS} }`;
     }
 
     const args = fn.length ? "...args" : "";
@@ -524,9 +523,8 @@ function _formatTechnical(value, depth, isObjectValue, cache) {
         const content = [...value].map(
             (val) => `${startIndent}${_formatTechnical(val, depth + 1, true, cache)},\n`
         );
-        return `${baseIndent}${proto}[${
-            content.length ? `\n${content.join("")}${endIndent}` : ""
-        }]`;
+        return `${baseIndent}${proto}[${content.length ? `\n${content.join("")}${endIndent}` : ""
+            }]`;
     }
 
     // Non-iterable objects
@@ -921,7 +919,7 @@ export function formatTime(value, unit) {
 /**
  *
  * @param {string} message
- * @param {import("@odoo/owl").ValidationIssue[]} issues
+ * @param {import("@weth/owl").ValidationIssue[]} issues
  * @returns
  */
 export function formatValidationIssues(message, issues) {
@@ -1708,7 +1706,7 @@ export class Callbacks {
      */
     _getAfterCallback(type) {
         if (!type.startsWith("before")) {
-            return () => {};
+            return () => { };
         }
         const relatedType = `after${type.slice(6)}`;
         return (result) => this.add(relatedType, result, true);
@@ -1864,12 +1862,12 @@ export class Markup {
             });
         return hasDiff
             ? [
-                  new Markup({ content: "Diff:" }),
-                  new Markup({
-                      content: diff,
-                      type: "technical",
-                  }),
-              ]
+                new Markup({ content: "Diff:" }),
+                new Markup({
+                    content: diff,
+                    type: "technical",
+                }),
+            ]
             : null;
     }
 

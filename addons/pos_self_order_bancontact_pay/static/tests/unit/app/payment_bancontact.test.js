@@ -1,5 +1,5 @@
-import { test, expect, describe, beforeEach, animationFrame } from "@odoo/hoot";
-import { waitFor } from "@odoo/hoot-dom";
+import { test, expect, describe, beforeEach, animationFrame } from "@weth/hoot";
+import { waitFor } from "@weth/hoot-dom";
 import { createPaymentLine } from "@point_of_sale/../tests/unit/utils";
 import { setupSelfPosEnv, getFilledSelfOrder } from "@pos_self_order/../tests/unit/utils";
 import { definePosSelfModels } from "@pos_self_order/../tests/unit/data/generate_model_definitions";
@@ -14,7 +14,7 @@ beforeEach(async () => {
         const { payment_method_id, line_uuid, order_uuid } = params;
 
         // Should normally use the `access_token` from params
-        // But we override `odoo.access_token` in `setupPosEnvForSelfOrder`
+        // But we override `weth.access_token` in `setupPosEnvForSelfOrder`
         const access_token = "test_access_token";
         const config = MockServer.env["pos.config"].find((c) => c.access_token == access_token);
         const order = MockServer.env["pos.order"].find((o) => o.uuid === order_uuid);

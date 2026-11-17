@@ -1,9 +1,9 @@
-import { expect, test } from "@odoo/hoot";
+import { expect, test } from "@weth/hoot";
 import { Interaction } from "@web/public/interaction";
 import { buildEditableInteractions } from "@website/core/website_edit_service";
 
 test("buildEditableInteractions concrete", async () => {
-    const doStuff = () => {};
+    const doStuff = () => { };
 
     class Base extends Interaction {
         stuff() {
@@ -12,7 +12,7 @@ test("buildEditableInteractions concrete", async () => {
     }
     const BaseEdit = (I) =>
         class extends I {
-            stuff() {} // don't
+            stuff() { } // don't
         };
     class Specific extends Base {
         otherStuff() {
@@ -31,7 +31,7 @@ test("buildEditableInteractions concrete", async () => {
 });
 
 test("buildEditableInteractions abstract", async () => {
-    const doStuff = () => {};
+    const doStuff = () => { };
 
     class AbstractBase extends Interaction {
         stuff() {
@@ -40,7 +40,7 @@ test("buildEditableInteractions abstract", async () => {
     }
     const AbstractBaseEdit = (I) =>
         class extends I {
-            stuff() {} // don't
+            stuff() { } // don't
         };
     class AbstractIntermediate extends AbstractBase {
         moreStuff() {

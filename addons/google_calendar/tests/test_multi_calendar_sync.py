@@ -1,12 +1,12 @@
 from unittest.mock import patch
 
-from odoo.addons.google_calendar.models.res_users import ResUsers
-from odoo.addons.google_calendar.tests.test_sync_common import TestSyncGoogle, patch_api
-from odoo.addons.google_calendar.utils.google_calendar import GoogleCalendar
-from odoo.addons.google_calendar.utils.google_calendar_service import GoogleCalendarService
-from odoo.addons.google_calendar.utils.google_event import GoogleEvent
-from odoo.exceptions import AccessError
-from odoo.tests.common import tagged, new_test_user
+from weth.addons.google_calendar.models.res_users import ResUsers
+from weth.addons.google_calendar.tests.test_sync_common import TestSyncGoogle, patch_api
+from weth.addons.google_calendar.utils.google_calendar import GoogleCalendar
+from weth.addons.google_calendar.utils.google_calendar_service import GoogleCalendarService
+from weth.addons.google_calendar.utils.google_event import GoogleEvent
+from weth.exceptions import AccessError
+from weth.tests.common import tagged, new_test_user
 
 
 @patch.object(ResUsers, "_get_google_calendar_token", lambda user: "dummy-token")

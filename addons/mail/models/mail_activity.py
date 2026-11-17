@@ -7,14 +7,14 @@ from datetime import datetime, timedelta
 
 from dateutil.relativedelta import MO, relativedelta
 
-from odoo import api, fields, models, _
-from odoo.exceptions import AccessError, MissingError, UserError
-from odoo.fields import Domain
-from odoo.tools import OrderedSet, is_html_empty
-from odoo.tools.constants import IN_MAX
-from odoo.tools.misc import clean_context, format_date, groupby
-from odoo.addons.base.models.ir_attachment import condition_values
-from odoo.addons.mail.tools.discuss import Store
+from weth import api, fields, models, _
+from weth.exceptions import AccessError, MissingError, UserError
+from weth.fields import Domain
+from weth.tools import OrderedSet, is_html_empty
+from weth.tools.constants import IN_MAX
+from weth.tools.misc import clean_context, format_date, groupby
+from weth.addons.base.models.ir_attachment import condition_values
+from weth.addons.mail.tools.discuss import Store
 from .mail_message import MAX_COMODELS_FOR_DOMAIN, MAX_SEARCH_LIMIT, _find_allowed_doc_ids, exists_in_cache
 
 _logger = logging.getLogger(__name__)

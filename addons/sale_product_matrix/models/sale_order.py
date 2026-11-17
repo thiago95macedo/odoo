@@ -2,8 +2,8 @@
 
 import json
 
-from odoo import api, fields, models
-from odoo.exceptions import ValidationError
+from weth import api, fields, models
+from weth.exceptions import ValidationError
 
 
 class SaleOrder(models.Model):

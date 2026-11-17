@@ -2,11 +2,11 @@
 import re
 from urllib.parse import urlsplit
 
-import odoo.tests
+import weth.tests
 
 
-@odoo.tests.common.tagged('post_install', '-at_install')
-class TestWebsiteAssets(odoo.tests.HttpCase):
+@weth.tests.common.tagged('post_install', '-at_install')
+class TestWebsiteAssets(weth.tests.HttpCase):
 
     def test_01_multi_domain_assets_generation(self):
         Website = self.env['website']
@@ -160,7 +160,7 @@ class TestWebsiteAssets(odoo.tests.HttpCase):
         self.assertEqual(b'wOF2', font.content[:4])
         new_version = urlsplit(font.url).path.split("/assets/")[1].split("/")[0]
         self.assertNotEqual(old_version, new_version)
-        with odoo.tools.mute_logger('odoo.addons.base.models.assetsbundle'):
+        with weth.tools.mute_logger('weth.addons.base.models.assetsbundle'):
             font = self.url_open('/web/assets/1/web.fontawsome.min.woff2')  # Non-existing asset (typo)
             self.assertEqual(font.status_code, 404)
 
@@ -190,12 +190,12 @@ class TestWebsiteAssets(odoo.tests.HttpCase):
         self.assertEqual(b'wOF2', font.content[:4])
 
 
-@odoo.tests.tagged('-at_install', 'post_install')
-class TestWebAssets(odoo.tests.HttpCase):
+@weth.tests.tagged('-at_install', 'post_install')
+class TestWebAssets(weth.tests.HttpCase):
     def test_assets_url_validation(self):
         website_id = self.env['website'].search([], limit=1, order='id desc').id
 
-        with odoo.tools.mute_logger('odoo.addons.web.controllers.binary'):
+        with weth.tools.mute_logger('weth.addons.web.controllers.binary'):
             self.assertEqual(
                 self.url_open(f'/web/assets/{website_id}/debug/hello/web.assets_frontend.css', allow_redirects=False).status_code,
                 404,

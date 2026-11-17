@@ -1,4 +1,4 @@
-import { Component, proxy, signal, t, useProps } from "@odoo/owl";
+import { Component, proxy, signal, t, useProps } from "@weth/owl";
 import { CustomColorPicker as ColorPicker } from "@html_editor/components/color_picker/custom_color_picker/custom_color_picker";
 import {
     isColorGradient,
@@ -52,7 +52,7 @@ export class GradientPicker extends Component {
 
         this.props.setOperationCallbacks?.({
             onApplyCallback: () => {
-                this.props.setOnCloseCallback(() => {});
+                this.props.setOnCloseCallback(() => { });
             },
             getPreviewColor: () => this.cssGradients[this.state.type],
             onPreviewRevertCallback: () => {

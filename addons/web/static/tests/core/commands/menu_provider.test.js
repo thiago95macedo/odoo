@@ -1,7 +1,7 @@
-import { expect, test } from "@odoo/hoot";
-import { press, queryAllTexts } from "@odoo/hoot-dom";
-import { animationFrame } from "@odoo/hoot-mock";
-import { Component, xml } from "@odoo/owl";
+import { expect, test } from "@weth/hoot";
+import { press, queryAllTexts } from "@weth/hoot-dom";
+import { animationFrame } from "@weth/hoot-mock";
+import { Component, xml } from "@weth/owl";
 import {
     contains,
     defineActions,
@@ -207,5 +207,5 @@ test("app href in command palette includes debug param when in debug mode", asyn
     await contains(".o_command_palette_search input").edit("/", { confirm: false });
     await animationFrame();
     // "Contact" is the first result, actionID 1001
-    expect(".o_command:first-child a").toHaveAttribute("href", "/odoo/action-1001?debug=assets");
+    expect(".o_command:first-child a").toHaveAttribute("href", "/weth/action-1001?debug=assets");
 });

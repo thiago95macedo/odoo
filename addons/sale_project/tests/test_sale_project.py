@@ -1,9 +1,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import Command, SUPERUSER_ID, fields
-from odoo.fields import Datetime, Domain
-from odoo.tests import Form, new_test_user, tagged
-from odoo.tools.safe_eval import safe_eval
+from weth import Command, SUPERUSER_ID, fields
+from weth.fields import Datetime, Domain
+from weth.tests import Form, new_test_user, tagged
+from weth.tools.safe_eval import safe_eval
 
 from .common import TestSaleProjectCommon
 

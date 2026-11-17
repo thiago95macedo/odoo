@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.exceptions import AccessError
-from odoo.http import Controller, route, request
-from odoo.tools.translate import _
+from weth.exceptions import AccessError
+from weth.http import Controller, route, request
+from weth.tools.translate import _
 
 
 class View(Controller):

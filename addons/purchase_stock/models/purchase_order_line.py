@@ -3,9 +3,9 @@
 from datetime import datetime, time
 from dateutil.relativedelta import relativedelta
 
-from odoo import SUPERUSER_ID, api, Command, fields, models, _
-from odoo.fields import Domain
-from odoo.exceptions import UserError
+from weth import SUPERUSER_ID, api, Command, fields, models, _
+from weth.fields import Domain
+from weth.exceptions import UserError
 
 
 class PurchaseOrderLine(models.Model):

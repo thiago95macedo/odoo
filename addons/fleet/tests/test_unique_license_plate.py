@@ -1,6 +1,6 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
-from odoo.tests import tagged, common
-from odoo.tools import mute_logger
+from weth.tests import tagged, common
+from weth.tools import mute_logger
 from psycopg2 import IntegrityError
 
 
@@ -24,7 +24,7 @@ class TestUniqueLicensePlate(common.TransactionCase):
             "license_plate": "ABC-123",
         })
         self.assertTrue(vehicle1.id)
-        with mute_logger('odoo.sql_db'), self.assertRaises(IntegrityError):
+        with mute_logger('weth.sql_db'), self.assertRaises(IntegrityError):
             self.env["fleet.vehicle"].create({
                 "model_id": self.car_model.id,
                 "license_plate": "ABC-123",

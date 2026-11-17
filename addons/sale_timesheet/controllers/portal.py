@@ -2,16 +2,16 @@
 
 from werkzeug.exceptions import NotFound
 
-from odoo import http, _
-from odoo.exceptions import AccessError, MissingError
-from odoo.fields import Domain
-from odoo.http import request
+from weth import http, _
+from weth.exceptions import AccessError, MissingError
+from weth.fields import Domain
+from weth.http import request
 
-from odoo.addons.account.controllers.portal import PortalAccount
-from odoo.addons.hr_timesheet.controllers.portal import TimesheetCustomerPortal
-from odoo.addons.portal.controllers.portal import pager as portal_pager
-from odoo.addons.project.controllers.portal import ProjectCustomerPortal
-from odoo.addons.sale.controllers.portal import CustomerPortal
+from weth.addons.account.controllers.portal import PortalAccount
+from weth.addons.hr_timesheet.controllers.portal import TimesheetCustomerPortal
+from weth.addons.portal.controllers.portal import pager as portal_pager
+from weth.addons.project.controllers.portal import ProjectCustomerPortal
+from weth.addons.sale.controllers.portal import CustomerPortal
 
 
 class PortalProjectAccount(PortalAccount, ProjectCustomerPortal):

@@ -1,5 +1,5 @@
-from odoo import _, api, models
-from odoo.exceptions import UserError
+from weth import _, api, models
+from weth.exceptions import UserError
 
 
 class MailTemplate(models.Model):

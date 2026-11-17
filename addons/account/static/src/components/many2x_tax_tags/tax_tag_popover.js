@@ -1,4 +1,4 @@
-import { Component, t, useProps } from "@odoo/owl";
+import { Component, t, useProps } from "@weth/owl";
 import { _t } from "@web/core/l10n/translation";
 
 export class TaxTagPopup extends Component {

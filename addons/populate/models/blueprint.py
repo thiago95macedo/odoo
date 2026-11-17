@@ -5,8 +5,8 @@ import re
 
 from lxml import etree
 
-from odoo import api, fields, models
-from odoo.exceptions import ValidationError
+from weth import api, fields, models
+from weth.exceptions import ValidationError
 
 from ..utils import loading, xml
 from ..utils.orm import get_model_method

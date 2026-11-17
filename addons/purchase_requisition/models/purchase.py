@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, fields, models
-from odoo.tools import DEFAULT_SERVER_DATETIME_FORMAT, get_lang
+from weth import api, fields, models
+from weth.tools import DEFAULT_SERVER_DATETIME_FORMAT, get_lang
 
 
 class PurchaseOrder(models.Model):

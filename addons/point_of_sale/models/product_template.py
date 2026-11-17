@@ -1,11 +1,11 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
-from odoo import api, fields, models, _
-from odoo.exceptions import UserError
+from weth import api, fields, models, _
+from weth.exceptions import UserError
 from collections import defaultdict
-from odoo.tools import SQL, is_html_empty
-from odoo.tools.translate import adapt_translated_field_value
+from weth.tools import SQL, is_html_empty
+from weth.tools.translate import adapt_translated_field_value
 from datetime import date
-from odoo.fields import Domain
+from weth.fields import Domain
 
 
 class ProductTemplate(models.Model):

@@ -3,9 +3,9 @@ import {
     many2ManyTagsAvatarField,
     many2ManyTagsAvatarFieldProps,
 } from "@web/views/fields/many2many_tags_avatar/many2many_tags_avatar_field";
-import {imageUrl} from "@web/core/utils/urls";
-import {registry} from "@web/core/registry";
-import { useProps, t } from "@odoo/owl";
+import { imageUrl } from "@web/core/utils/urls";
+import { registry } from "@web/core/registry";
+import { useProps, t } from "@weth/owl";
 
 export class Many2ManyImageTags extends Many2ManyTagsAvatarField {
     props = useProps({

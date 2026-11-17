@@ -1,4 +1,4 @@
-import { Component, t, useProps } from '@odoo/owl';
+import { Component, t, useProps } from '@weth/owl';
 import { Dialog } from '@web/core/dialog/dialog';
 
 export class PortalLoyaltyCardDialog extends Component {
@@ -33,6 +33,6 @@ export class PortalLoyaltyCardDialog extends Component {
     });
 
     setup() {
-        this.csrf_token = odoo.csrf_token;
+        this.csrf_token = weth.csrf_token;
     }
 }

@@ -4,8 +4,8 @@ from datetime import timedelta
 
 from markupsafe import Markup
 
-from odoo import _, api, fields, models
-from odoo.tools.sql import SQL
+from weth import _, api, fields, models
+from weth.tools.sql import SQL
 
 
 class CalendarAlarm_Manager(models.AbstractModel):

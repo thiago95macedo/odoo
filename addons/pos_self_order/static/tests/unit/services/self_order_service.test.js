@@ -1,4 +1,4 @@
-import { beforeEach, describe, expect, mockDate, test } from "@odoo/hoot";
+import { beforeEach, describe, expect, mockDate, test } from "@weth/hoot";
 import { MockServer, onRpc, patchWithCleanup } from "@web/../tests/web_test_helpers";
 import { location } from "@web/core/browser/browser";
 import { registry } from "@web/core/registry";
@@ -621,7 +621,7 @@ describe("initHardware", () => {
         const mockTerminalMethod = models["pos.payment.method"].create({
             payment_provider: "mock_terminal",
         });
-        class MockTerminal {}
+        class MockTerminal { }
         registry.category("pos_payment_providers").add("mock_terminal", MockTerminal);
 
         store.initHardware();

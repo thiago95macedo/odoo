@@ -2,8 +2,8 @@
 import logging
 import re
 
-from odoo.addons.google_calendar.utils.google_api_resource import GoogleApiResource
-from odoo.tools import email_normalize
+from weth.addons.google_calendar.utils.google_api_resource import GoogleApiResource
+from weth.tools import email_normalize
 
 _logger = logging.getLogger(__name__)
 

@@ -6,15 +6,15 @@ import re
 import datetime
 from requests.exceptions import RequestException
 
-import odoo.release
-from odoo import _, fields, http
-from odoo.exceptions import UserError
-from odoo.fields import Domain
-from odoo.http import request
-from odoo.http.session import logout, touch
-from odoo.http.stream import content_disposition
-from odoo.tools import SQL, float_round, py_to_js_locale
-from odoo.tools.image import image_data_uri
+import weth.release
+from weth import _, fields, http
+from weth.exceptions import UserError
+from weth.fields import Domain
+from weth.http import request
+from weth.http.session import logout, touch
+from weth.http.stream import content_disposition
+from weth.tools import SQL, float_round, py_to_js_locale
+from weth.tools.image import image_data_uri
 
 IMAGE_HEADER_PATTERN = re.compile(r"^data:(image/(?:jpeg|webp));base64$")
 
@@ -337,7 +337,7 @@ class HrAttendance(http.Controller):
                         'device_tracking_enabled': company.attendance_device_tracking,
                         'capture_check_in_image': company.attendance_capture_check_in,
                         'lang': py_to_js_locale(company.partner_id.lang or company.env.lang),
-                        'server_version_info': odoo.release.version_info,
+                        'server_version_info': weth.release.version_info,
                     },
                 }
             )

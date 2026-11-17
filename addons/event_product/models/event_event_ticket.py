@@ -1,5 +1,5 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
-from odoo import api, models, fields
+from weth import api, models, fields
 
 
 class EventEventTicket(models.Model):

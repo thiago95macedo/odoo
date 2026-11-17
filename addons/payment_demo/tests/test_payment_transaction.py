@@ -2,11 +2,11 @@
 
 from unittest.mock import patch
 
-from odoo.tests import tagged
-from odoo.tools import mute_logger
+from weth.tests import tagged
+from weth.tools import mute_logger
 
-from odoo.addons.payment.tests.http_common import PaymentHttpCommon
-from odoo.addons.payment_demo.tests.common import PaymentDemoCommon
+from weth.addons.payment.tests.http_common import PaymentHttpCommon
+from weth.addons.payment_demo.tests.common import PaymentDemoCommon
 
 
 @tagged("-at_install", "post_install")
@@ -58,12 +58,12 @@ class TestPaymentTransaction(PaymentDemoCommon, PaymentHttpCommon):
         include token data."""
         tx = self._create_transaction("direct", tokenize=True)
         with patch(
-            "odoo.addons.payment.models.payment_transaction.PaymentTransaction._tokenize"
+            "weth.addons.payment.models.payment_transaction.PaymentTransaction._tokenize"
         ) as tokenize_mock:
             tx.with_context(payment_safe_write=True)._apply_updates(self.payment_data)
         self.assertEqual(tokenize_mock.call_count, 1)
 
-    @mute_logger("odoo.addons.payment_demo.models.payment_transaction")
+    @mute_logger("weth.addons.payment_demo.models.payment_transaction")
     def test_apply_updates_propagates_simulated_state_to_token(self):
         """Test that the simulated state of the payment data is set on the token when
         processing payment data."""

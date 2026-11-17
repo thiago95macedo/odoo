@@ -3,7 +3,7 @@ import { SearchInput } from "@mail/core/common/search_input";
 import { ActionPanel } from "@mail/discuss/core/common/action_panel";
 import { SubChannelPreview } from "@mail/discuss/core/public_web/sub_channel_preview";
 import { useSearch, useVisible } from "@mail/utils/common/hooks";
-import { Component, signal, types, useProps } from "@odoo/owl";
+import { Component, signal, types, useProps } from "@weth/owl";
 import { useService } from "@web/core/utils/hooks";
 import { fuzzyLookup } from "@web/core/utils/search";
 

@@ -5,8 +5,8 @@ import {
     expect,
     manuallyDispatchProgrammaticEvent,
     test,
-} from "@odoo/hoot";
-import { Component, useProps, xml } from "@odoo/owl";
+} from "@weth/hoot";
+import { Component, useProps, xml } from "@weth/owl";
 import {
     assignTestEnv,
     makeTestApp,
@@ -215,7 +215,7 @@ test("originalError is the root cause of the error chain", async () => {
 });
 
 test("handle uncaught promise errors", async () => {
-    class TestError extends Error {}
+    class TestError extends Error { }
     const error = new TestError();
     error.message = "This is an error test";
     error.name = "TestError";
@@ -241,7 +241,7 @@ test("handle uncaught promise errors", async () => {
 });
 
 test("handle uncaught client errors", async () => {
-    class TestError extends Error {}
+    class TestError extends Error { }
     const error = new TestError();
     error.message = "This is an error test";
     error.name = "TestError";
@@ -266,7 +266,7 @@ test("handle uncaught client errors", async () => {
 });
 
 test("don't show dialog for errors in third-party scripts", async () => {
-    class TestError extends Error {}
+    class TestError extends Error { }
     const error = new TestError();
     error.name = "Script error.";
 
@@ -286,7 +286,7 @@ test("don't show dialog for errors in third-party scripts", async () => {
 });
 
 test("show dialog for errors in third-party scripts in debug mode", async () => {
-    class TestError extends Error {}
+    class TestError extends Error { }
     const error = new TestError();
     error.name = "Script error.";
     serverState.debug = "1";
@@ -294,7 +294,7 @@ test("show dialog for errors in third-party scripts in debug mode", async () => 
     mockService("dialog", {
         add(_dialogClass, props) {
             expect.step("Dialog: " + props.message);
-            return () => {};
+            return () => { };
         },
     });
     await makeTestApp();

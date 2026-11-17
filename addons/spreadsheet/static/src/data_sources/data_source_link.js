@@ -1,4 +1,4 @@
-import { registries } from "@odoo/o-spreadsheet";
+import { registries } from "@weth/o-spreadsheet";
 import { globalFieldMatchingRegistry } from "../global_filters/helpers";
 import { _t } from "@web/core/l10n/translation";
 import { navigateToOdooDatasource } from "../chart/odoo_chart/odoo_chart_helpers";

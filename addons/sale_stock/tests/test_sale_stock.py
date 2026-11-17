@@ -2,12 +2,12 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 from datetime import datetime, timedelta
 
-from odoo.addons.stock_account.tests.test_anglo_saxon_valuation_reconciliation_common import ValuationReconciliationTestCommon
-from odoo.addons.sale_stock.tests.common import TestSaleStockCommon
-from odoo.exceptions import RedirectWarning, UserError
-from odoo.fields import Command
-from odoo.tests import Form, tagged
-from odoo.tests.common import new_test_user
+from weth.addons.stock_account.tests.test_anglo_saxon_valuation_reconciliation_common import ValuationReconciliationTestCommon
+from weth.addons.sale_stock.tests.common import TestSaleStockCommon
+from weth.exceptions import RedirectWarning, UserError
+from weth.fields import Command
+from weth.tests import Form, tagged
+from weth.tests.common import new_test_user
 
 
 @tagged('post_install', '-at_install')

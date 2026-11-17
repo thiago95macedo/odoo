@@ -8,14 +8,14 @@ import subprocess
 import time
 import werkzeug
 
-from odoo import http
-from odoo.addons.iot_drivers.iot_handlers.interfaces.display_interface_L import DisplayInterface
-from odoo.addons.iot_drivers.browser import Browser, BrowserState
-from odoo.addons.iot_drivers.driver import Driver
-from odoo.addons.iot_drivers.main import iot_devices
-from odoo.addons.iot_drivers.tools import helpers, route, system
-from odoo.addons.iot_drivers.tools.helpers import Orientation
-from odoo.addons.iot_drivers.tools.system import IOT_IDENTIFIER
+from weth import http
+from weth.addons.iot_drivers.iot_handlers.interfaces.display_interface_L import DisplayInterface
+from weth.addons.iot_drivers.browser import Browser, BrowserState
+from weth.addons.iot_drivers.driver import Driver
+from weth.addons.iot_drivers.main import iot_devices
+from weth.addons.iot_drivers.tools import helpers, route, system
+from weth.addons.iot_drivers.tools.helpers import Orientation
+from weth.addons.iot_drivers.tools.system import IOT_IDENTIFIER
 
 _logger = logging.getLogger(__name__)
 
@@ -130,7 +130,7 @@ class DisplayDriver(Driver):
         subprocess.run(['wlr-randr', '--output', self.device_identifier, '--transform', orientation.value], check=True)
         # Update touchscreen mapping to this display
         subprocess.run(
-            ['sed', '-i', f's/HDMI-A-[12]/{self.device_identifier}/', '/home/odoo/.config/labwc/rc.xml'],
+            ['sed', '-i', f's/HDMI-A-[12]/{self.device_identifier}/', '/home/weth/.config/labwc/rc.xml'],
             check=False,
         )
         # Tell labwc to reload its configuration

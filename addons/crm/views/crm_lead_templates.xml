@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
     <template id="crm_lead_creation_message" name="crm lead creation message">
         <t t-set="has_address_line" t-value="False"/>
         <t t-if="env.context.get('import_file')">
@@ -33,4 +33,4 @@
             </span><br/>
         </t>
     </template>
-</odoo>
+</weth>

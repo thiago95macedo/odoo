@@ -6,9 +6,9 @@ import {
 } from "@html_builder/../tests/helpers";
 import { BuilderAction } from "@html_builder/core/builder_action";
 import { undo } from "@html_editor/../tests/_helpers/user_actions";
-import { before, describe, expect, test } from "@odoo/hoot";
-import { animationFrame, click, hover, press, tick, waitFor } from "@odoo/hoot-dom";
-import { xml } from "@odoo/owl";
+import { before, describe, expect, test } from "@weth/hoot";
+import { animationFrame, click, hover, press, tick, waitFor } from "@weth/hoot-dom";
+import { xml } from "@weth/owl";
 import { contains } from "@web/../tests/web_test_helpers";
 import { getIframeInput } from "@html_editor/../tests/_helpers/iframe_input";
 

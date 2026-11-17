@@ -8,9 +8,9 @@ import requests
 
 from werkzeug.urls import url_encode
 
-from odoo import _, fields, models, tools, release
-from odoo.exceptions import AccessError, UserError
-from odoo.tools.urls import urljoin as url_join
+from weth import _, fields, models, tools, release
+from weth.exceptions import AccessError, UserError
+from weth.tools.urls import urljoin as url_join
 
 GMAIL_TOKEN_REQUEST_TIMEOUT = 5
 

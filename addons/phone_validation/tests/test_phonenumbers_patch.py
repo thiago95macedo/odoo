@@ -7,7 +7,7 @@ try:
 except ImportError:
     phonenumbers = None
 
-from odoo.tests.common import tagged, BaseCase
+from weth.tests.common import tagged, BaseCase
 
 
 @tagged('at_install', '-post_install')  # LEGACY at_install

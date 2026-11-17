@@ -6,13 +6,13 @@ from datetime import datetime
 from dateutil.relativedelta import relativedelta
 from unittest.mock import patch
 
-from odoo import exceptions
-from odoo.addons.base.tests.test_ir_cron import CronMixinCase
-from odoo.addons.event.tests.common import EventCase
-from odoo.addons.event.models.event_mail import EventMail
-from odoo.addons.mail.tests.common import MailCase
-from odoo.tests import tagged, users, warmup
-from odoo.tools import formataddr, mute_logger
+from weth import exceptions
+from weth.addons.base.tests.test_ir_cron import CronMixinCase
+from weth.addons.event.tests.common import EventCase
+from weth.addons.event.models.event_mail import EventMail
+from weth.addons.mail.tests.common import MailCase
+from weth.tests import tagged, users, warmup
+from weth.tools import formataddr, mute_logger
 
 
 class EventMailCommon(EventCase, MailCase, CronMixinCase):
@@ -145,7 +145,7 @@ class TestMailSchedule(EventMailCommon):
         self.assertEqual(event_next_scheduler.mail_state, 'scheduled')
         self.assertEqual(event_next_scheduler.mail_count_done, 0)
 
-    @mute_logger('odoo.addons.base.models.ir_access', 'odoo.models')
+    @mute_logger('weth.addons.base.models.ir_access', 'weth.models')
     @users('user_eventmanager')
     def test_event_mail_schedule(self):
         """ Test mail scheduling for events """
@@ -428,7 +428,7 @@ class TestMailSchedule(EventMailCommon):
                 'subject': f"Reminder for {test_event.name}: today",
             })
 
-    @mute_logger('odoo.addons.event.models.event_mail')
+    @mute_logger('weth.addons.event.models.event_mail')
     @users('user_eventmanager')
     def test_event_mail_schedule_fail_global_composer(self):
         """ Simulate a fail during composer usage e.g. invalid field path, template
@@ -465,7 +465,7 @@ class TestMailSchedule(EventMailCommon):
                 'subtype': 'mail.mt_note',
                 'mail_mail_values': {
                     'body': f'<p>Communication for {self.test_event.name} scheduled on {before_scheduler.scheduled_date} failed. '
-                            f'This may be linked to template <a href="{before_scheduler.get_base_url()}/odoo/mail.template/{self.template_reminder.id}">'
+                            f'This may be linked to template <a href="{before_scheduler.get_base_url()}/weth/mail.template/{self.template_reminder.id}">'
                             f'{self.template_reminder.name} ({self.template_reminder.id})</a>.<br><br>It failed with error Some error.</p>',
                 },
             }]
@@ -493,7 +493,7 @@ class TestMailSchedule(EventMailCommon):
         self.assertTrue(before_scheduler.mail_done)
         self.assertFalse(before_scheduler.error_datetime)
 
-    @mute_logger('odoo.addons.event.models.event_mail', 'odoo.addons.mail.models.mail_render_mixin')
+    @mute_logger('weth.addons.event.models.event_mail', 'weth.addons.mail.models.mail_render_mixin')
     @users('user_eventmanager')
     def test_event_mail_schedule_fail_global_composer_message(self):
         """ Test message logged depending on issue when trying to send communications """
@@ -528,7 +528,7 @@ class TestMailSchedule(EventMailCommon):
                 'subtype': 'mail.mt_note',
                 'mail_mail_values': {
                     'body': f'<p>Communication for {self.test_event.name} scheduled on {before_scheduler.scheduled_date} failed. '
-                            f'This is due to an error in template <a href="{before_scheduler.get_base_url()}/odoo/mail.template/{self.template_reminder.id}">'
+                            f'This is due to an error in template <a href="{before_scheduler.get_base_url()}/weth/mail.template/{self.template_reminder.id}">'
                             f'{self.template_reminder.name} ({self.template_reminder.id})</a>.'
                             f'<br><br>There is an issue with dynamic placeholder. Actual error received is: '
                             '<br>\'event.registration\' object has no attribute \'evnetypo_id\'.</p>',
@@ -548,9 +548,9 @@ class TestMailSchedule(EventMailCommon):
         self.assertTrue(before_scheduler.mail_done)
 
     @mute_logger(
-        'odoo.addons.event.models.event_mail',
-        'odoo.addons.event.models.event_mail_registration',
-        'odoo.addons.event.models.event_registration',
+        'weth.addons.event.models.event_mail',
+        'weth.addons.event.models.event_mail_registration',
+        'weth.addons.event.models.event_registration',
     )
     def test_event_mail_schedule_fail_registration_composer(self):
         """ Simulate a fail during composer usage e.g. invalid field path, template
@@ -591,14 +591,14 @@ class TestMailSchedule(EventMailCommon):
                 'subtype': 'mail.mt_note',
                 'mail_mail_values': {
                     'body': f'<p>Communication for {self.test_event.name} scheduled on {test_dt} failed. '
-                            f'This may be linked to template <a href="{onsub_scheduler.get_base_url()}/odoo/mail.template/{onsub_scheduler.template_ref.id}">'
+                            f'This may be linked to template <a href="{onsub_scheduler.get_base_url()}/weth/mail.template/{onsub_scheduler.template_ref.id}">'
                             f'{onsub_scheduler.template_ref.name} ({onsub_scheduler.template_ref.id})</a>.<br><br>It failed with error Some error.</p>',
                 },
             }]
         )
         self.assertEqual(onsub_scheduler.error_datetime, self.reference_now.replace(microsecond=0) + relativedelta(days=3))
 
-    @mute_logger('odoo.addons.event.models.event_mail')
+    @mute_logger('weth.addons.event.models.event_mail')
     @users('user_eventmanager')
     def test_event_mail_schedule_fail_registration_template_removed(self):
         """ Test flow where scheduler fails due to template being removed. """
@@ -718,7 +718,7 @@ class TestMailSchedule(EventMailCommon):
         self.assertFalse(event_prev_scheduler.mail_done)
         self.assertSchedulerCronTriggers(capture, [slot1_before_oneday])
 
-    @mute_logger('odoo.addons.base.models.ir_access', 'odoo.models')
+    @mute_logger('weth.addons.base.models.ir_access', 'weth.models')
     @users('user_eventmanager')
     def test_event_mail_schedule_many_registrations(self):
         """ Creates 4 registrations and ensures only one mail is generated per registration. """
@@ -740,7 +740,7 @@ class TestMailSchedule(EventMailCommon):
         self.assertEqual(self.env["event.mail.registration"].search_count([("scheduler_id", "=", scheduler.id)]), 4)
         self.assertEqual(len(self._new_mails), 4)
 
-    @mute_logger('odoo.addons.base.models.ir_model', 'odoo.models')
+    @mute_logger('weth.addons.base.models.ir_model', 'weth.models')
     @users('user_eventmanager')
     @warmup
     def test_event_mail_schedule_on_subscription(self):
@@ -799,7 +799,7 @@ class TestMailSchedule(EventMailCommon):
         self.assertEqual(self.mail_mail_create_mocked.call_count, 1,
                          'EventMail: should create mails in batch for new registrations')
 
-    @mute_logger('odoo.addons.base.models.ir_access', 'odoo.models')
+    @mute_logger('weth.addons.base.models.ir_access', 'weth.models')
     @users('user_eventmanager')
     def test_event_mail_schedule_on_subscription_async(self):
         """ Async mode for schedulers activated, should not send communication
@@ -939,7 +939,7 @@ class TestMailScheduleInternals(EventMailCommon):
                     event.event_mail_ids.execute()
                 self.assertEqual(mock_exec.called, should_call)
 
-    @mute_logger('odoo.addons.base.models.ir_access', 'odoo.models')
+    @mute_logger('weth.addons.base.models.ir_access', 'weth.models')
     def test_unique_event_mail_ids(self):
         # create event with default event_mail_ids lines
         test_event = self.env['event.event'].with_user(self.user_eventmanager).create({
@@ -1037,7 +1037,7 @@ class TestMailScheduleInternals(EventMailCommon):
             },
         )
 
-    @mute_logger('odoo.addons.base.models.ir_access', 'odoo.models')
+    @mute_logger('weth.addons.base.models.ir_access', 'weth.models')
     def test_scheduler_on_archived_cancelled_event(self):
         """ Test mail scheduling for archived or cancelled events """
 
@@ -1114,7 +1114,7 @@ class TestMailScheduleInternals(EventMailCommon):
         self.assertEqual(len(self._new_mails), 0, 'No mail should be sent for cancelled event')
         self.assertFalse(event_prev_scheduler.mail_done, 'event: reminder scheduler should should have run')
 
-    @mute_logger('odoo.addons.base.models.ir_model', 'odoo.models')
+    @mute_logger('weth.addons.base.models.ir_model', 'weth.models')
     def test_scheduler_on_done_event(self):
         """ Test mail scheduling for done events """
         # deactivate other schedulers to avoid messing with crons

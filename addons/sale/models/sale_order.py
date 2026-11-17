@@ -6,15 +6,15 @@ import math
 from datetime import timedelta
 from itertools import groupby
 
-from odoo import SUPERUSER_ID, api, fields, models
-from odoo.exceptions import AccessError, UserError, ValidationError
-from odoo.fields import Command, Domain
-from odoo.http import request
-from odoo.tools import SQL, OrderedSet, float_is_zero, float_round, format_amount, is_html_empty
-from odoo.tools.mail import html_keep_url
-from odoo.tools.urls import urljoin
+from weth import SUPERUSER_ID, api, fields, models
+from weth.exceptions import AccessError, UserError, ValidationError
+from weth.fields import Command, Domain
+from weth.http import request
+from weth.tools import SQL, OrderedSet, float_is_zero, float_round, format_amount, is_html_empty
+from weth.tools.mail import html_keep_url
+from weth.tools.urls import urljoin
 
-from odoo.addons.payment import utils as payment_utils
+from weth.addons.payment import utils as payment_utils
 
 INVOICE_STATUS = [
     ("upselling", "Upselling Opportunity"),

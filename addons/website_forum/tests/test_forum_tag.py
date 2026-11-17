@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import Command
-from odoo.tests import tagged
+from weth import Command
+from weth.tests import tagged
 
-from odoo.addons.website_forum.tests.common import TestForumCommon
-from odoo.exceptions import AccessError
+from weth.addons.website_forum.tests.common import TestForumCommon
+from weth.exceptions import AccessError
 
 
 class TestForumTag(TestForumCommon):

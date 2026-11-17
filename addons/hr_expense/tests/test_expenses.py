@@ -4,13 +4,13 @@ from datetime import date
 
 from freezegun import freeze_time
 
-from odoo import Command, fields
-from odoo.exceptions import UserError, ValidationError
-from odoo.tests import Form, tagged
+from weth import Command, fields
+from weth.exceptions import UserError, ValidationError
+from weth.tests import Form, tagged
 
-from odoo.addons.base.tests.files import GIF_RAW
-from odoo.addons.hr_expense.tests.common import TestExpenseCommon
-from odoo.addons.mail.tests.common import mail_new_test_user
+from weth.addons.base.tests.files import GIF_RAW
+from weth.addons.hr_expense.tests.common import TestExpenseCommon
+from weth.addons.mail.tests.common import mail_new_test_user
 
 
 @tagged('-at_install', 'post_install')

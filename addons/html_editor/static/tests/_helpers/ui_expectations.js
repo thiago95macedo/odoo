@@ -1,5 +1,5 @@
-import { expect } from "@odoo/hoot";
-import { waitFor, waitForNone } from "@odoo/hoot-dom";
+import { expect } from "@weth/hoot";
+import { waitFor, waitForNone } from "@weth/hoot-dom";
 
 /**
  * Waits for the presence or absence of elements matching the selector,

@@ -1,4 +1,4 @@
-import { Component } from "@odoo/owl";
+import { Component } from "@weth/owl";
 import { useSelfOrder } from "@pos_self_order/app/services/self_order_service";
 import { _t } from "@web/core/l10n/translation";
 import { useService } from "@web/core/utils/hooks";

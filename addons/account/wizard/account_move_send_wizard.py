@@ -1,9 +1,9 @@
-from odoo import _, api, fields, models
-from odoo.exceptions import UserError
-from odoo.tools.mail import html_remove_xpath
-from odoo.tools.misc import get_lang
-from odoo.addons.mail.tools.parser import parse_res_ids
-from odoo.addons.mail.wizard.mail_compose_message import _reopen
+from weth import _, api, fields, models
+from weth.exceptions import UserError
+from weth.tools.mail import html_remove_xpath
+from weth.tools.misc import get_lang
+from weth.addons.mail.tools.parser import parse_res_ids
+from weth.addons.mail.wizard.mail_compose_message import _reopen
 
 
 class AccountMoveSendWizard(models.TransientModel):

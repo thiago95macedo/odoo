@@ -4,19 +4,19 @@ from datetime import datetime
 from functools import partial
 from unittest.mock import patch
 
-from odoo.exceptions import UserError
-from odoo.fields import Command
-from odoo.tests import HttpCase, JsonRpcException, tagged
-from odoo.tools.misc import mute_logger
+from weth.exceptions import UserError
+from weth.fields import Command
+from weth.tests import HttpCase, JsonRpcException, tagged
+from weth.tools.misc import mute_logger
 
-from odoo.addons.product.tests.common import ProductVariantsCommon
-from odoo.addons.website_sale.controllers.cart import Cart
-from odoo.addons.website_sale.controllers.combo_configurator import (
+from weth.addons.product.tests.common import ProductVariantsCommon
+from weth.addons.website_sale.controllers.cart import Cart
+from weth.addons.website_sale.controllers.combo_configurator import (
     WebsiteSaleComboConfiguratorController,
 )
-from odoo.addons.website_sale.controllers.main import WebsiteSale
-from odoo.addons.website_sale.models.product_template import ProductTemplate
-from odoo.addons.website_sale.tests.common import WebsiteSaleCommon
+from weth.addons.website_sale.controllers.main import WebsiteSale
+from weth.addons.website_sale.models.product_template import ProductTemplate
+from weth.addons.website_sale.tests.common import WebsiteSaleCommon
 
 
 @tagged("post_install", "-at_install")
@@ -242,7 +242,7 @@ class TestWebsiteSaleCart(ProductVariantsCommon, WebsiteSaleCommon, HttpCase):
             # The free delivery line must not be flagged as a zero-priced product during checkout.
             self.assertEqual(response.status_code, 200)
 
-    @mute_logger("odoo.http")
+    @mute_logger("weth.http")
     def test_update_cart_before_payment(self):
         with self.mock_request() as request:
             self.WebsiteSaleCartController.add_to_cart(
@@ -264,13 +264,13 @@ class TestWebsiteSaleCart(ProductVariantsCommon, WebsiteSaleCommon, HttpCase):
         sale_order._set_delivery_method(self.free_delivery)
 
         # Try processing payment with the old amount
-        with self.assertRaises(JsonRpcException, msg="odoo.exceptions.ValidationError"):
+        with self.assertRaises(JsonRpcException, msg="weth.exceptions.ValidationError"):
             self.make_jsonrpc_request(
                 f"/shop/payment/transaction/{sale_order.id}",
                 {"access_token": sale_order._portal_ensure_token(), "amount": old_amount},
             )
 
-    @mute_logger("odoo.http")
+    @mute_logger("weth.http")
     def test_check_order_delivery_before_payment(self):
         self.cart.write({
             "order_line": [Command.clear(), Command.create({"product_id": self.product.id})],
@@ -661,7 +661,7 @@ class TestWebsiteSaleCart(ProductVariantsCommon, WebsiteSaleCommon, HttpCase):
         with (
             self.mock_request(user=portal_user, path="/shop/checkout") as request,
             patch(
-                "odoo.addons.website_sale.models.sale_order.SaleOrder._get_preferred_delivery_method",
+                "weth.addons.website_sale.models.sale_order.SaleOrder._get_preferred_delivery_method",
                 return_value=self.env["delivery.carrier"],
             ),
         ):

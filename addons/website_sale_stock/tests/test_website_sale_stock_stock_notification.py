@@ -4,10 +4,10 @@ from contextlib import contextmanager
 
 from lxml import html
 
-from odoo.tests import tagged
-from odoo.tests.common import HttpCase
+from weth.tests import tagged
+from weth.tests.common import HttpCase
 
-from odoo.addons.website_sale_stock.tests.common import WebsiteSaleStockCommon
+from weth.addons.website_sale_stock.tests.common import WebsiteSaleStockCommon
 
 
 @tagged("post_install", "-at_install")

@@ -2,11 +2,11 @@
 import json
 
 from werkzeug.exceptions import NotFound
-from odoo.exceptions import UserError, ValidationError
-from odoo.tests.common import users, HttpCase, tagged, TransactionCase
-from odoo.addons.http_routing.tests.common import MockRequest
-from odoo.addons.website_blog.tests.common import TestWebsiteBlogCommon
-from odoo.addons.mail.controllers.thread import ThreadController
+from weth.exceptions import UserError, ValidationError
+from weth.tests.common import users, HttpCase, tagged, TransactionCase
+from weth.addons.http_routing.tests.common import MockRequest
+from weth.addons.website_blog.tests.common import TestWebsiteBlogCommon
+from weth.addons.mail.controllers.thread import ThreadController
 
 
 class TestWebsiteBlogFlow(TestWebsiteBlogCommon):

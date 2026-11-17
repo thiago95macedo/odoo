@@ -1,5 +1,5 @@
-from odoo import fields, models, tools
-from odoo.tools import SQL
+from weth import fields, models, tools
+from weth.tools import SQL
 
 
 class ReportProjectTaskStage(models.Model):

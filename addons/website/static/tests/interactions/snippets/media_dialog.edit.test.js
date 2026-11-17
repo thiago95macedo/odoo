@@ -1,5 +1,5 @@
-import { describe, expect, test } from "@odoo/hoot";
-import { queryOne } from "@odoo/hoot-dom";
+import { describe, expect, test } from "@weth/hoot";
+import { queryOne } from "@weth/hoot-dom";
 import { setupInteractionWhiteList, startInteractions } from "@web/../tests/public/helpers";
 import { switchToEditMode } from "../../helpers";
 

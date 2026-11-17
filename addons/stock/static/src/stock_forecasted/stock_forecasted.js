@@ -8,7 +8,7 @@ import { ForecastedButtons } from "./forecasted_buttons";
 import { ForecastedDetails } from "./forecasted_details";
 import { ForecastedHeader } from "./forecasted_header";
 import { ForecastedWarehouseFilter } from "./forecasted_warehouse_filter";
-import { Component, onWillStart, proxy, useProps } from "@odoo/owl";
+import { Component, onWillStart, proxy, useProps } from "@weth/owl";
 import { standardActionServiceProps } from "@web/webclient/actions/action_plugin";
 
 export class StockForecasted extends Component {
@@ -30,7 +30,7 @@ export class StockForecasted extends Component {
         this.productId = this.context.active_id;
         this.resModel = this.context.active_model;
         this.title = this.props.action.name || _t("Forecasted Report");
-        if(!this.context.active_id){
+        if (!this.context.active_id) {
             this.context.active_id = this.props.action.params.active_id;
             this.reloadReport();
         }
@@ -44,7 +44,7 @@ export class StockForecasted extends Component {
         const isTemplate = !this.resModel || this.resModel === 'product.template';
         this.reportModelName = `stock.forecasted_product_${isTemplate ? "template" : "product"}`;
         this.warehouses.splice(0, this.warehouses.length);
-        this.warehouses.push(...await this.orm.searchRead('stock.warehouse', [],['id', 'name', 'code']));
+        this.warehouses.push(...await this.orm.searchRead('stock.warehouse', [], ['id', 'name', 'code']));
         if (!this.context.warehouse_id) {
             this.updateWarehouse(this.warehouses[0].id);
         }
@@ -60,7 +60,7 @@ export class StockForecasted extends Component {
         };
     }
 
-    async _getResModel(){
+    async _getResModel() {
         this.resModel = this.context.active_model || this.context.params?.active_model;
         //Following is used as a fallback when the forecast is not called by an action but through browser's history
         if (!this.resModel) {
@@ -121,7 +121,7 @@ export class StockForecasted extends Component {
         return { noContentHelp: _t("Try to add some incoming or outgoing transfers.") };
     }
 
-    async openView(resModel, view, resId=false, domain = false) {
+    async openView(resModel, view, resId = false, domain = false) {
         const views = [[false, view]];
         if (view !== "form") {
             views.push([false, "form"]);
@@ -131,7 +131,7 @@ export class StockForecasted extends Component {
             res_model: resModel,
             views,
             view_mode: view,
-            res_id:  resId,
+            res_id: resId,
             domain: domain,
         };
         return this.action.doAction(action);

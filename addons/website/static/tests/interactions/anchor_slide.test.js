@@ -4,9 +4,9 @@ import {
     setupInteractionWhiteList,
 } from "@web/../tests/public/helpers";
 
-import { describe, expect, test } from "@odoo/hoot";
-import { animationFrame, click, queryOne } from "@odoo/hoot-dom";
-import { advanceTime } from "@odoo/hoot-mock";
+import { describe, expect, test } from "@weth/hoot";
+import { animationFrame, click, queryOne } from "@weth/hoot-dom";
+import { advanceTime } from "@weth/hoot-mock";
 
 setupInteractionWhiteList("website.anchor_slide");
 

@@ -1,9 +1,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import models
-from odoo.tools import float_round
+from weth import models
+from weth.tools import float_round
 
-from odoo.addons.payment_razorpay import const
+from weth.addons.payment_razorpay import const
 
 
 class PaymentToken(models.Model):

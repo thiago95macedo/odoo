@@ -1,4 +1,4 @@
-import { Component, onMounted, onPatched, proxy, signal, t, useEffect, useProps } from "@odoo/owl";
+import { Component, onMounted, onPatched, proxy, signal, t, useEffect, useProps } from "@weth/owl";
 import { useTransition } from "@web/core/transition";
 import { uniqueId } from "@web/core/utils/functions";
 import {

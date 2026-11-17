@@ -1,4 +1,4 @@
-import { test, expect } from "@odoo/hoot";
+import { test, expect } from "@weth/hoot";
 import { expectFormattedPrice, setupPosEnv } from "../utils";
 import { definePosModels } from "../data/generate_model_definitions";
 import { getFilledOrderForPriceCheck } from "./utils";

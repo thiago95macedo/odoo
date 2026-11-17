@@ -3,9 +3,9 @@
 
 from datetime import datetime, timedelta
 
-from odoo.addons.website.tests.test_website_visitor import WebsiteVisitorTestsCommon
-from odoo.addons.website_event.tests.common import TestEventOnlineCommon
-from odoo.tests import tagged
+from weth.addons.website.tests.test_website_visitor import WebsiteVisitorTestsCommon
+from weth.addons.website_event.tests.common import TestEventOnlineCommon
+from weth.tests import tagged
 
 
 @tagged('website_visitor', 'is_query_count')

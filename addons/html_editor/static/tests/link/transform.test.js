@@ -1,6 +1,6 @@
-import { describe, expect, test } from "@odoo/hoot";
-import { manuallyDispatchProgrammaticEvent } from "@odoo/hoot-dom";
-import { tick } from "@odoo/hoot-mock";
+import { describe, expect, test } from "@weth/hoot";
+import { manuallyDispatchProgrammaticEvent } from "@weth/hoot-dom";
+import { tick } from "@weth/hoot-mock";
 import { onRpc, patchWithCleanup } from "@web/../tests/web_test_helpers";
 import { setupEditor, testEditor } from "../_helpers/editor";
 import { cleanLinkArtifacts } from "../_helpers/format";

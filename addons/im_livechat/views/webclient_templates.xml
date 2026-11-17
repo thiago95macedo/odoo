@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
     <template id="im_livechat.unit_embed_suite">
         <t t-set="head">
             <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
 
             <script type="text/javascript">
-                odoo.__session_info__ = <t t-out="json.dumps(session_info)"/>;
+                weth.__session_info__ = <t t-out="json.dumps(session_info)"/>;
             </script>
 
             <t t-call-assets="im_livechat.embed_assets_unit_tests_setup" />
@@ -16,4 +16,4 @@
             title.translate="Livechat External Tests"
             head="head"/>
     </template>
-</odoo>
+</weth>

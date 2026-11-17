@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.tests.common import tagged, users
-from odoo.addons.test_mass_mailing.tests import common
-from odoo.exceptions import AccessError
+from weth.tests.common import tagged, users
+from weth.addons.test_mass_mailing.tests import common
+from weth.exceptions import AccessError
 
 
 class TestBLAccessRights(common.TestMassMailCommon):

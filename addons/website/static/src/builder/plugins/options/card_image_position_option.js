@@ -1,6 +1,6 @@
 import { BaseOptionComponent } from "@html_builder/core/base_option_component";
 import { useDomState } from "@html_builder/core/utils";
-import { useProps, t } from "@odoo/owl";
+import { useProps, t } from "@weth/owl";
 import { onceAllImagesLoaded } from "@website/utils/images";
 
 export class CardImagePositionOption extends BaseOptionComponent {

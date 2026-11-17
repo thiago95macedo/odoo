@@ -1,4 +1,4 @@
-import { Component, signal, t, useProps } from "@odoo/owl";
+import { Component, signal, t, useProps } from "@weth/owl";
 // import { omit } from "../utils/objects";
 import { dateTimePickerProps } from "./datetime_picker";
 import { useDateTimePicker } from "./datetime_picker_hook";

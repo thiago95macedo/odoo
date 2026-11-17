@@ -1,4 +1,4 @@
-import { Component, t, useProps } from "@odoo/owl";
+import { Component, t, useProps } from "@weth/owl";
 
 import { useService } from "@web/core/utils/hooks";
 
@@ -23,7 +23,7 @@ export class AvatarStack extends Component {
             containerClass: t.string().optional(),
             direction: t.selection(["h", "v"]).optional("h"),
             max: t.number().optional(4),
-            onClick: t.function([t.instanceOf(MouseEvent)]).optional(() => () => {}),
+            onClick: t.function([t.instanceOf(MouseEvent)]).optional(() => () => { }),
             personas: t.array(
                 t.or([
                     t.instanceOf(this.store["res.partner"]),

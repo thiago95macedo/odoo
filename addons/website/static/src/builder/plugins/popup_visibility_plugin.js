@@ -1,4 +1,4 @@
-import { usePlugin } from "@odoo/owl";
+import { usePlugin } from "@weth/owl";
 import { Plugin } from "@html_editor/plugin";
 import { selectElements } from "@html_editor/utils/dom_traversal";
 import { BootstrapInstance } from "@web/core/utils/bootstrap_plugin";
@@ -67,17 +67,17 @@ export class PopupVisibilityPlugin extends Plugin {
         const domObserver = this.dependencies.domObserver;
         this.unpatchModal = this.window.Modal // null in tests without loadAssetsFrontendJS
             ? patch(this.window.Modal.prototype, {
-                  _hideModal() {
-                      return domObserver.ignore(() => super._hideModal());
-                  },
-                  show() {
-                      return domObserver.ignore(() => super.show());
-                  },
-                  hide() {
-                      return domObserver.ignore(() => super.hide());
-                  },
-              })
-            : () => {};
+                _hideModal() {
+                    return domObserver.ignore(() => super._hideModal());
+                },
+                show() {
+                    return domObserver.ignore(() => super.show());
+                },
+                hide() {
+                    return domObserver.ignore(() => super.hide());
+                },
+            })
+            : () => { };
     }
 
     destroy() {

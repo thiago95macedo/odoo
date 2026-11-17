@@ -1,6 +1,6 @@
-/** @odoo-module **/
+/** @weth-module **/
 
-import { test, describe, expect } from "@odoo/hoot";
+import { test, describe, expect } from "@weth/hoot";
 import { mountWithCleanup } from "@web/../tests/web_test_helpers";
 import { EventPage } from "@pos_self_order_event/app/pages/event_page/event_page";
 import { setupSelfPosEnv } from "@pos_self_order/../tests/unit/utils";

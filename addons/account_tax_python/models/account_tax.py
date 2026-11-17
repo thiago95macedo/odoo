@@ -2,11 +2,11 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 import json
 
-from odoo import api, fields, models, _
-from odoo.exceptions import ValidationError
-from odoo.tools.safe_eval import expr_eval
+from weth import api, fields, models, _
+from weth.exceptions import ValidationError
+from weth.tools.safe_eval import expr_eval
 
-from odoo.addons.account_tax_python.tools.formula_utils import check_formula, normalize_formula
+from weth.addons.account_tax_python.tools.formula_utils import check_formula, normalize_formula
 
 
 class AccountTax(models.Model):

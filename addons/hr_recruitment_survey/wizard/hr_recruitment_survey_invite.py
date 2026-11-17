@@ -2,13 +2,13 @@
 import re
 
 from markupsafe import Markup
-from odoo import api, fields, models
-from odoo.tools.misc import clean_context
-from odoo.tools.urls import urljoin
-from odoo.exceptions import UserError
-from odoo.tools.mail import email_split_and_format
-from odoo.fields import Domain
-from odoo.tools import html_sanitize
+from weth import api, fields, models
+from weth.tools.misc import clean_context
+from weth.tools.urls import urljoin
+from weth.exceptions import UserError
+from weth.tools.mail import email_split_and_format
+from weth.fields import Domain
+from weth.tools import html_sanitize
 
 emails_split = re.compile(r"[;,\n\r]+")
 

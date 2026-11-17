@@ -13,8 +13,8 @@ import { OptionsContainer } from "@html_builder/sidebar/option_container";
 import { setContent, setSelection } from "@html_editor/../tests/_helpers/selection";
 import { redo, undo } from "@html_editor/../tests/_helpers/user_actions";
 import { Plugin } from "@html_editor/plugin";
-import { animationFrame, describe, expect, queryAllTexts, queryFirst, test } from "@odoo/hoot";
-import { Component, onWillStart, xml } from "@odoo/owl";
+import { animationFrame, describe, expect, queryAllTexts, queryFirst, test } from "@weth/hoot";
+import { Component, onWillStart, xml } from "@weth/owl";
 import { contains, onRpc, patchWithCleanup } from "@web/../tests/web_test_helpers";
 
 describe.current.tags("desktop");

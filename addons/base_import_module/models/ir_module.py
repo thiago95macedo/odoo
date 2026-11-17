@@ -13,17 +13,17 @@ from collections import defaultdict
 from io import BytesIO
 from os.path import join as opj
 
-from odoo import api, fields, models, _
-from odoo.exceptions import AccessDenied, AccessError, UserError
-from odoo.fields import Domain
-from odoo.modules.module import MANIFEST_NAMES, Manifest
-from odoo.release import major_version
-from odoo.tools import BinaryBytes, SQL, convert_file
-from odoo.tools import file_open, file_path, file_open_temporary_directory
-from odoo.tools.misc import OrderedSet, topological_sort
-from odoo.tools.translate import JAVASCRIPT_TRANSLATION_COMMENT, CodeTranslations, TranslationImporter, get_base_langs
+from weth import api, fields, models, _
+from weth.exceptions import AccessDenied, AccessError, UserError
+from weth.fields import Domain
+from weth.modules.module import MANIFEST_NAMES, Manifest
+from weth.release import major_version
+from weth.tools import BinaryBytes, SQL, convert_file
+from weth.tools import file_open, file_path, file_open_temporary_directory
+from weth.tools.misc import OrderedSet, topological_sort
+from weth.tools.translate import JAVASCRIPT_TRANSLATION_COMMENT, CodeTranslations, TranslationImporter, get_base_langs
 
-from odoo.addons.base.models.ir_asset import is_wildcard_glob
+from weth.addons.base.models.ir_asset import is_wildcard_glob
 
 _logger = logging.getLogger(__name__)
 
@@ -576,7 +576,7 @@ class IrModuleModule(models.Model):
             description += _(
                 "\nYou may need the Enterprise version to install the data module. Please visit "
                 "https://www.weth.com.br/pricing-plan for more information.\n"
-                "If you need Website themes, it can be downloaded from https://github.com/odoo/design-themes.\n"
+                "If you need Website themes, it can be downloaded from https://github.com/weth/design-themes.\n"
             )
         else:
             description = _(
@@ -694,10 +694,10 @@ class IrModuleModule(models.Model):
         for attachment in attachments.filtered('raw'):
             display_path = f'addons{attachment.url}'
             if attachment.url.endswith('js'):
-                extract_method = 'odoo.tools.babel:extract_javascript'
+                extract_method = 'weth.tools.babel:extract_javascript'
                 extract_keywords = {'_t': None}
             else:
-                extract_method = 'odoo.tools.translate:babel_extract_qweb'
+                extract_method = 'weth.tools.translate:babel_extract_qweb'
                 extract_keywords = {}
             try:
                 with attachment.raw.open() as fileobj:

@@ -1,4 +1,4 @@
-from odoo.tests.common import HttpCase, tagged
+from weth.tests.common import HttpCase, tagged
 
 
 @tagged("-at_install", "post_install")
@@ -29,7 +29,7 @@ class TestStockWarehouseOrderpoint(HttpCase):
     def test_product_replenishment(self):
         self.assertFalse(self.product.orderpoint_ids)
 
-        self.start_tour("/odoo/replenishment", "test_product_replenishment", login='admin')
+        self.start_tour("/weth/replenishment", "test_product_replenishment", login='admin')
 
         self.assertEqual(len(self.product.orderpoint_ids), 1)
         self.assertEqual(self.product.orderpoint_ids[0].route_id.name, 'Buy')

@@ -120,8 +120,8 @@ class KvmIotBuilder:
             # chroot initialization
             f'sudo chroot {BOX_MOUNT_POINT} /bin/bash -c /etc/init_image.sh',
             f'sudo cp /tmp/ca.pub {BOX_MOUNT_POINT}/etc/ssh/ca.pub',
-            f'sudo cp /tmp/iotbox_version {BOX_MOUNT_POINT}/var/odoo/',
-            f'sudo chown 1001:1001 -R {BOX_MOUNT_POINT}/home/odoo/',
+            f'sudo cp /tmp/iotbox_version {BOX_MOUNT_POINT}/var/weth/',
+            f'sudo chown 1001:1001 -R {BOX_MOUNT_POINT}/home/weth/',
             f'cd /home/{self.login}',
             'sudo umount -v /dev/loop0p1',
             'sudo umount -v /dev/loop0p2',
@@ -151,7 +151,7 @@ if __name__ == '__main__':
     parser.add_argument("--vm-login", "-l", required=True, help="Login for the VM")
     parser.add_argument("--destdir", "-d", default='/tmp', help="Directory where to put the built image (Defaults to '/tmp')")
     parser.add_argument("--odoo-branch", "-b", default="master", help="Odoo branch to clone (Defaults to master)")
-    parser.add_argument("--dev", "-x", action='store_true', help="Clone branch from odoo-dev github")
+    parser.add_argument("--dev", "-x", action='store_true', help="Clone branch from weth-dev github")
     parser.add_argument("--ca-pub-key", "-c", required=True, help="CA public key")
 
     args = parser.parse_args()

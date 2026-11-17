@@ -2,10 +2,10 @@
 
 from dateutil.relativedelta import relativedelta
 
-from odoo import fields
-from odoo.tests import Form, tagged
+from weth import fields
+from weth.tests import Form, tagged
 
-from odoo.addons.project.tests.test_project_base import TestProjectCommon
+from weth.addons.project.tests.test_project_base import TestProjectCommon
 
 @tagged('-at_install', 'post_install')
 class TestProjectUpdate(TestProjectCommon):

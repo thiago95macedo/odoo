@@ -1,6 +1,6 @@
-/** @odoo-module */
+/** @weth-module */
 
-import { Component, t, useProps, xml } from "@odoo/owl";
+import { Component, t, useProps, xml } from "@weth/owl";
 import { Tag } from "../core/tag";
 import { HootLink } from "./hoot_link";
 

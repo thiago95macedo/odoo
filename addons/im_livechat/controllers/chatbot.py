@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import fields, http
-from odoo.http import request
-from odoo.addons.mail.tools.discuss import mail_route, Store
+from weth import fields, http
+from weth.http import request
+from weth.addons.mail.tools.discuss import mail_route, Store
 
 
 class LivechatChatbotScriptController(http.Controller):

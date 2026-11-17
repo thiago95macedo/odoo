@@ -9,10 +9,10 @@ from contextlib import contextmanager
 from random import Random
 from typing import TYPE_CHECKING, Self
 
-from odoo import api, fields, models
-from odoo.exceptions import ValidationError
-from odoo.fields import Domain
-from odoo.tools import SQL
+from weth import api, fields, models
+from weth.exceptions import ValidationError
+from weth.fields import Domain
+from weth.tools import SQL
 
 from ..generators import DEFAULT_GENERATORS, Generator, generate_values
 from ..utils.expression import check_eval_args

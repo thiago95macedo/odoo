@@ -28,22 +28,22 @@ from markupsafe import Markup, escape
 from requests import Session
 from werkzeug import urls
 
-from odoo import _, api, Command, exceptions, fields, models, modules, tools
-from odoo.addons.mail.models.mail_message import SHARE_DOMAIN
-from odoo.addons.mail.tools.discuss import Store
-from odoo.addons.mail.tools.web_push import (
+from weth import _, api, Command, exceptions, fields, models, modules, tools
+from weth.addons.mail.models.mail_message import SHARE_DOMAIN
+from weth.addons.mail.tools.discuss import Store
+from weth.addons.mail.tools.web_push import (
     push_to_end_point, DeviceUnreachableError,
     ENCRYPTION_BLOCK_OVERHEAD, ENCRYPTION_HEADER_SIZE, MAX_PAYLOAD_SIZE
 )
-from odoo.exceptions import MissingError, AccessError
-from odoo.fields import Domain
-from odoo.tools import (
+from weth.exceptions import MissingError, AccessError
+from weth.fields import Domain
+from weth.tools import (
     BinaryBytes,
     is_html_empty, html_escape, html2plaintext,
     clean_context, split_every, SQL,
     OrderedSet, is_list_of,
 )
-from odoo.tools.mail import (
+from weth.tools.mail import (
     append_content_to_html, decode_message_header,
     email_normalize, email_normalize_all, email_split,
     email_split_and_format, email_split_and_format_normalize, email_split_and_normalize,
@@ -53,11 +53,11 @@ from odoo.tools.mail import (
 )
 
 if typing.TYPE_CHECKING:
-    from odoo.addons.base.models.ir_ui_view import IrUiView
-    from odoo.addons.mail.models.mail_mail import MailMail
-    from odoo.addons.mail.models.mail_message import MailMessage
-    from odoo.api import ValuesType
-    from odoo.models import BaseModel
+    from weth.addons.base.models.ir_ui_view import IrUiView
+    from weth.addons.mail.models.mail_mail import MailMail
+    from weth.addons.mail.models.mail_message import MailMessage
+    from weth.api import ValuesType
+    from weth.models import BaseModel
 
 
 MAX_DIRECT_PUSH = 5
@@ -2151,7 +2151,7 @@ class MailThread(models.AbstractModel):
 
         emails_set = set(chain.from_iterable(records_emails.values()))
 
-        # inspired notably from odoo/odoo@80a0b45df806ffecfb068b5ef05ae1931d655810; final
+        # inspired notably from weth/odoo@80a0b45df806ffecfb068b5ef05ae1931d655810; final
         # ordering is search order defined in '_find_or_create_from_emails', which is id ASC
         def sort_key(p):
             return (

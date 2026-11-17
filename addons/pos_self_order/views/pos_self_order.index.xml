@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
     <template id="pos_self_order.index" name="POS Self Order">&lt;!DOCTYPE html&gt;
         <html t-att-lang="lang and lang.replace('_', '-')">
             <head>
@@ -9,7 +9,7 @@
                 <meta http-equiv="content-type" content="text/html, charset=utf-8" />
                 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
                 <script type="text/javascript">
-                    var odoo = {
+                    var weth = {
                         csrf_token: "<t t-out="request.csrf_token(None)"/>",
                         access_token: '<t t-out="access_token" />',
                         debug: "<t t-out="debug"/>",
@@ -25,4 +25,4 @@
             </body>
         </html>
     </template>
-</odoo>
+</weth>

@@ -1,10 +1,10 @@
-import { describe, expect, test } from "@odoo/hoot";
-import { mockDate, tick } from "@odoo/hoot-mock";
+import { describe, expect, test } from "@weth/hoot";
+import { mockDate, tick } from "@weth/hoot-mock";
 import { definePosModels } from "@point_of_sale/../tests/unit/data/generate_model_definitions";
 import OrderPaymentValidation from "@point_of_sale/app/utils/order_payment_validation";
 import { getFilledOrder, setupPosEnv } from "@point_of_sale/../tests/unit/utils";
 import { MockServer, patchWithCleanup } from "@web/../tests/web_test_helpers";
-import { waitUntil } from "@odoo/hoot-dom";
+import { waitUntil } from "@weth/hoot-dom";
 import { FloorPlan } from "@pos_restaurant/app/screens/floor_screen/floor_plan/floor_plan";
 
 const { DateTime } = luxon;
@@ -673,7 +673,7 @@ describe("restaurant pos_store.js", () => {
             contentDocument: { body: { innerHTML: "" } },
             style: {},
         });
-        store.ticketPrinter.setIframeSizeFromPrinter = () => {};
+        store.ticketPrinter.setIframeSizeFromPrinter = () => { };
         store.ticketPrinter.generateImage = async () => "mock-image";
         const order = store.addNewOrder();
         const cola = store.models["product.template"].get(5);

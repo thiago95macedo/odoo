@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import _, models
-from odoo.exceptions import ValidationError
-from odoo.fields import Domain
+from weth import _, models
+from weth.exceptions import ValidationError
+from weth.fields import Domain
 
 
 class StockMove(models.Model):

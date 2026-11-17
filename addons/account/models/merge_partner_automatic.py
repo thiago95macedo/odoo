@@ -1,4 +1,4 @@
-from odoo import models
+from weth import models
 from .mail_message import bypass_token
 
 

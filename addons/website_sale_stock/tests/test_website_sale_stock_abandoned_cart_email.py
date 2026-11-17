@@ -4,10 +4,10 @@ from datetime import datetime
 
 from dateutil.relativedelta import relativedelta
 
-from odoo.tests import tagged
+from weth.tests import tagged
 
-from odoo.addons.website_sale.tests.test_abandoned_cart import TestWebsiteSaleCartAbandonedCommon
-from odoo.addons.website_sale_stock.tests.common import WebsiteSaleStockCommon
+from weth.addons.website_sale.tests.test_abandoned_cart import TestWebsiteSaleCartAbandonedCommon
+from weth.addons.website_sale_stock.tests.common import WebsiteSaleStockCommon
 
 
 @tagged("post_install", "-at_install")

@@ -1,6 +1,6 @@
 
 import { render } from "@web/owl2/utils";
-import { Component, t, useProps } from '@odoo/owl';
+import { Component, t, useProps } from '@weth/owl';
 
 export class QuantityButtons extends Component {
     static template = 'sale.QuantityButtons';

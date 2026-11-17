@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.exceptions import ValidationError
+from weth.exceptions import ValidationError
 
-from odoo.addons.website_sale.controllers.payment import PaymentPortal
+from weth.addons.website_sale.controllers.payment import PaymentPortal
 
 
 class OnSitePaymentPortal(PaymentPortal):

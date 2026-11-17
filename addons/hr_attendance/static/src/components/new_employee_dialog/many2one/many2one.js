@@ -1,7 +1,7 @@
 import { rpc } from "@web/core/network/rpc";
 import { AutoComplete } from "@web/core/autocomplete/autocomplete";
-import { Component, t, useProps } from "@odoo/owl";
-import {_t} from "@web/core/l10n/translation";
+import { Component, t, useProps } from "@weth/owl";
+import { _t } from "@web/core/l10n/translation";
 
 export class Many2One extends Component {
     static template = "hr_attendance.Many2One";

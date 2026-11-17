@@ -3,12 +3,12 @@ from datetime import date, timedelta
 from freezegun import freeze_time
 from lxml import etree
 
-from odoo.exceptions import ValidationError
-from odoo.fields import Date, Datetime
-from odoo.tests import Form, tagged, users
-from odoo.tools import format_date
+from weth.exceptions import ValidationError
+from weth.fields import Date, Datetime
+from weth.tests import Form, tagged, users
+from weth.tools import format_date
 
-from odoo.addons.hr_holidays.tests.common import TestHrHolidaysCommon
+from weth.addons.hr_holidays.tests.common import TestHrHolidaysCommon
 
 
 @tagged('allocation')

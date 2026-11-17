@@ -7,10 +7,10 @@ import logging
 
 from werkzeug.exceptions import Forbidden
 
-from odoo import _, http
-from odoo.exceptions import UserError
-from odoo.http import request
-from odoo.tools import consteq, email_normalize
+from weth import _, http
+from weth.exceptions import UserError
+from weth.http import request
+from weth.tools import consteq, email_normalize
 
 _logger = logging.getLogger(__name__)
 
@@ -28,7 +28,7 @@ class MicrosoftOutlookController(http.Controller):
             _logger.warning("Microsoft Outlook: an error occurred %s", error_description)
             return request.render('microsoft_outlook.microsoft_outlook_oauth_error', {
                 'error': error_description,
-                'redirect_url': '/odoo',
+                'redirect_url': '/weth',
             })
 
         try:
@@ -118,5 +118,5 @@ class MicrosoftOutlookController(http.Controller):
             or record != request.env.user.outgoing_mail_server_id)
             and request.env.user.has_group('base.group_system')
         ):
-            return f'/odoo/{record._name}/{record.id}'
-        return f'/odoo/my-preferences/{request.env.user.id}'
+            return f'/weth/{record._name}/{record.id}'
+        return f'/weth/my-preferences/{request.env.user.id}'

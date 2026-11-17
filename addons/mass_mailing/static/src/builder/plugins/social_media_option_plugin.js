@@ -78,7 +78,7 @@ export class MassMailingSocialMediaOptionPlugin extends Plugin {
     get baseMediaValues() {
         return {
             facebook: "https://www.facebook.com/Odoo",
-            instagram: "https://www.instagram.com/explore/tags/odoo/",
+            instagram: "https://www.instagram.com/explore/tags/weth/",
             twitter: "https://x.com/Odoo",
             linkedin: "https://www.linkedin.com/company/odoo",
             tiktok: "https://www.tiktok.com/@odoo",

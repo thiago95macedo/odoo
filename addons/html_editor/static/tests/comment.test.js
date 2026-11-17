@@ -1,4 +1,4 @@
-import { test } from "@odoo/hoot";
+import { test } from "@weth/hoot";
 import { testEditor } from "./_helpers/editor";
 
 test("should remove comment node inside editable content during sanitize (1)", async () => {

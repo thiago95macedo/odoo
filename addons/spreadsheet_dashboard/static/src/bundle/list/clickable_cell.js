@@ -1,5 +1,5 @@
 import { SEE_RECORD_LIST, SEE_RECORD_LIST_VISIBLE } from "@spreadsheet/list/list_actions";
-import { registries, components, readonlyAllowedCommands } from "@odoo/o-spreadsheet";
+import { registries, components, readonlyAllowedCommands } from "@weth/o-spreadsheet";
 import { _t } from "@web/core/l10n/translation";
 
 const { clickableCellRegistry } = registries;
@@ -25,9 +25,9 @@ function sortList(env, position, direction) {
         direction === "none"
             ? []
             : [
-                  { name: field.name, asc: direction === "asc" },
-                  ...definition.orderBy.filter((orderBy) => orderBy.name !== field.name),
-              ];
+                { name: field.name, asc: direction === "asc" },
+                ...definition.orderBy.filter((orderBy) => orderBy.name !== field.name),
+            ];
     env.model.dispatch("UPDATE_ODOO_LIST", {
         listId,
         list: {

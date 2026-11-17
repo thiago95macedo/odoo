@@ -1,9 +1,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, fields, models
-from odoo.fields import Command, Domain
+from weth import api, fields, models
+from weth.fields import Command, Domain
 
-from odoo.addons.web.controllers.utils import clean_action
+from weth.addons.web.controllers.utils import clean_action
 
 
 class StockPickingType(models.Model):

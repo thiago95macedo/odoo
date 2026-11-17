@@ -24,7 +24,7 @@ import {
     t,
     useEffect,
     usePlugin,
-} from "@odoo/owl";
+} from "@weth/owl";
 import { DebugModePlugin } from "@web/core/debug_mode_plugin";
 
 const BUNDLES_RESTRICTION = [
@@ -44,7 +44,7 @@ export class ResourceEditor extends Component {
     };
     static template = "website.ResourceEditor";
     props = useProps({
-        close: t.function().optional(() => () => {}),
+        close: t.function().optional(() => () => { }),
     });
 
     editorRef = signal.ref();
@@ -502,7 +502,7 @@ export class ResourceEditor extends Component {
             body: _t("All your custom changes will be lost. Are you sure?"),
             confirmLabel: _t("Reset"),
             confirm: () => this.resetResource(),
-            cancel: () => {},
+            cancel: () => { },
         });
     }
 

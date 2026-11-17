@@ -1,5 +1,5 @@
 import { defineMailModels } from "@mail/../tests/mail_test_helpers";
-import { expect, test, waitFor } from "@odoo/hoot";
+import { expect, test, waitFor } from "@weth/hoot";
 import {
     contains,
     defineModels,

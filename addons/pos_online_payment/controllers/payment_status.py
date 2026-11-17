@@ -1,6 +1,6 @@
-from odoo.tools.image import image_data_uri
+from weth.tools.image import image_data_uri
 
-from odoo.addons.payment.controllers.payment_status import PaymentStatus
+from weth.addons.payment.controllers.payment_status import PaymentStatus
 
 
 class PosPaymentStatus(PaymentStatus):

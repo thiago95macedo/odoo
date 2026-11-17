@@ -6,13 +6,13 @@ import qrcode
 import re
 import werkzeug.urls
 
-from odoo import _, api, fields, models
-from odoo.addons.base.models.res_users import check_identity
-from odoo.exceptions import UserError
-from odoo.http import request
-from odoo.tools import BinaryBytes
+from weth import _, api, fields, models
+from weth.addons.base.models.res_users import check_identity
+from weth.exceptions import UserError
+from weth.http import request
+from weth.tools import BinaryBytes
 
-from odoo.addons.auth_totp.models.totp import ALGORITHM, DIGITS, TIMESTEP
+from weth.addons.auth_totp.models.totp import ALGORITHM, DIGITS, TIMESTEP
 
 compress = functools.partial(re.sub, r'\s', '')
 

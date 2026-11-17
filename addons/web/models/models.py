@@ -12,19 +12,19 @@ import babel
 import babel.dates
 import psycopg2
 
-from odoo import api, models
-from odoo.fields import Command, Date, Domain
-from odoo.api import NewId
-from odoo.models import regex_order, READ_GROUP_DISPLAY_FORMAT, READ_GROUP_NUMBER_GRANULARITY, READ_GROUP_TIME_GRANULARITY, BaseModel
-from odoo.tools import DEFAULT_SERVER_DATE_FORMAT, DEFAULT_SERVER_DATETIME_FORMAT, BinaryBytes, BinaryValue, date_utils, get_lang, unique, OrderedSet
-from odoo.exceptions import AccessError, UserError, ValidationError
-from odoo.tools.date_utils import all_timezones
-from odoo.tools.misc import LazyDict
-from odoo.tools.translate import LazyTranslate
+from weth import api, models
+from weth.fields import Command, Date, Domain
+from weth.api import NewId
+from weth.models import regex_order, READ_GROUP_DISPLAY_FORMAT, READ_GROUP_NUMBER_GRANULARITY, READ_GROUP_TIME_GRANULARITY, BaseModel
+from weth.tools import DEFAULT_SERVER_DATE_FORMAT, DEFAULT_SERVER_DATETIME_FORMAT, BinaryBytes, BinaryValue, date_utils, get_lang, unique, OrderedSet
+from weth.exceptions import AccessError, UserError, ValidationError
+from weth.tools.date_utils import all_timezones
+from weth.tools.misc import LazyDict
+from weth.tools.translate import LazyTranslate
 
 if typing.TYPE_CHECKING:
     from collections.abc import Sequence
-    from odoo.api import DomainType, ValuesType
+    from weth.api import DomainType, ValuesType
 
 _lt = LazyTranslate(__name__)
 SEARCH_PANEL_ERROR_MESSAGE = _lt("Too many items to display.")

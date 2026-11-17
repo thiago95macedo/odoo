@@ -1,8 +1,8 @@
-/** @odoo-module **/
+/** @weth-module **/
 
 import { Macro } from "@web/core/macro";
-import { beforeEach, expect, test } from "@odoo/hoot";
-import { advanceTime, animationFrame, press } from "@odoo/hoot-dom";
+import { beforeEach, expect, test } from "@weth/hoot";
+import { advanceTime, animationFrame, press } from "@weth/hoot-dom";
 import {
     contains,
     defineModels,

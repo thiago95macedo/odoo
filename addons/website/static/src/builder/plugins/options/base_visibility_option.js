@@ -1,5 +1,5 @@
 import { BaseOptionComponent } from "@html_builder/core/base_option_component";
-import { useProps, t } from "@odoo/owl";
+import { useProps, t } from "@weth/owl";
 
 export class BaseVisibilityOption extends BaseOptionComponent {
     static template = "website.BaseVisibilityOption";

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
 
     <record id="view_delivery_carrier_tree" model="ir.ui.view">
         <field name="name">delivery.carrier.list</field>
@@ -246,4 +246,4 @@
         parent="sale.menu_sale_config"
         sequence="25"/>
 
-</odoo>
+</weth>

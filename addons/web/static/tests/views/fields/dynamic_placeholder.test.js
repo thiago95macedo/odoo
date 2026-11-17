@@ -1,7 +1,7 @@
-import { expect, test } from "@odoo/hoot";
-import { press, waitFor, waitUntil } from "@odoo/hoot-dom";
-import { animationFrame } from "@odoo/hoot-mock";
-import { onWillStart } from "@odoo/owl";
+import { expect, test } from "@weth/hoot";
+import { press, waitFor, waitUntil } from "@weth/hoot-dom";
+import { animationFrame } from "@weth/hoot-mock";
+import { onWillStart } from "@weth/owl";
 import {
     contains,
     defineModels,

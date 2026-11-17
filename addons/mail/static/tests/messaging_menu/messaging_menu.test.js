@@ -22,9 +22,9 @@ import { makeRecordFieldLocalId } from "@mail/model/misc";
 import { Store as StoreModel } from "@mail/model/store";
 import { toRawValue } from "@mail/utils/common/local_storage";
 
-import { describe, expect, mockPermission, queryOne, test, waitFor } from "@odoo/hoot";
-import { press } from "@odoo/hoot-dom";
-import { animationFrame, mockUserAgent } from "@odoo/hoot-mock";
+import { describe, expect, mockPermission, queryOne, test, waitFor } from "@weth/hoot";
+import { press } from "@weth/hoot-dom";
+import { animationFrame, mockUserAgent } from "@weth/hoot-mock";
 import {
     Command,
     getService,

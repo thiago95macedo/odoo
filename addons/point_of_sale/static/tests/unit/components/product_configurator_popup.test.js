@@ -1,4 +1,4 @@
-import { test, expect, animationFrame } from "@odoo/hoot";
+import { test, expect, animationFrame } from "@weth/hoot";
 import { contains, mountWithCleanup, patchWithCleanup } from "@web/../tests/web_test_helpers";
 import { setupPosEnv } from "../utils";
 import { ProductConfiguratorPopup } from "@point_of_sale/app/components/popups/product_configurator_popup/product_configurator_popup";
@@ -21,8 +21,8 @@ test("Include extra price for dynamic variants in popup", async () => {
     const popup = await mountWithCleanup(ProductConfiguratorPopup, {
         props: {
             productTemplate: productTemplate,
-            getPayload: () => {},
-            close: () => {},
+            getPayload: () => { },
+            close: () => { },
         },
     });
     expect(popup.title.includes("65")).toBe(true);
@@ -55,8 +55,8 @@ const mountConfigurator = async (rule = false) => {
     await mountWithCleanup(ProductConfiguratorPopup, {
         props: {
             productTemplate: productTemplate,
-            getPayload: () => {},
-            close: () => {},
+            getPayload: () => { },
+            close: () => { },
         },
     });
 };
@@ -84,8 +84,8 @@ test("Extra price is hidden when a fixed pricelist rule targets that specific va
     await mountWithCleanup(ProductConfiguratorPopup, {
         props: {
             productTemplate: productTemplate,
-            getPayload: () => {},
-            close: () => {},
+            getPayload: () => { },
+            close: () => { },
         },
     });
 
@@ -127,7 +127,7 @@ test("Same attribute on two lines keeps one selection per line", async () => {
         props: {
             productTemplate: productTemplate,
             getPayload: (p) => (payload = p),
-            close: () => {},
+            close: () => { },
         },
     });
     expect("input[type=radio]:checked").toHaveCount(2);
@@ -168,8 +168,8 @@ const setupAndAssertExcludedValuesConfigurator = async (displayType, selector) =
     await mountWithCleanup(ProductConfiguratorPopup, {
         props: {
             productTemplate: productTemplate,
-            getPayload: () => {},
-            close: () => {},
+            getPayload: () => { },
+            close: () => { },
         },
     });
 
@@ -276,7 +276,7 @@ test("Archived attribute line is not shown in the configurator", async () => {
         props: {
             productTemplate: productTemplate,
             getPayload: (p) => (payload = p),
-            close: () => {},
+            close: () => { },
         },
     });
     expect(".modal .attribute").toHaveCount(1);

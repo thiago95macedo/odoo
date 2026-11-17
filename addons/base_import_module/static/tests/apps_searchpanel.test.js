@@ -1,5 +1,5 @@
-import { describe, expect, test } from "@odoo/hoot";
-import { queryAllTexts } from "@odoo/hoot-dom";
+import { describe, expect, test } from "@weth/hoot";
+import { queryAllTexts } from "@weth/hoot-dom";
 import {
     contains,
     defineActions,
@@ -89,7 +89,7 @@ test("Apps search panel", async () => {
     const firstSection = `.o_search_panel_section:eq(0)`;
     expect(`${firstSection} .o_search_panel_section_header`).toHaveText(/Apps/i);
     expect(`${firstSection} .o_search_panel_category_value`).toHaveCount(3);
-    expect(`${firstSection} .o_search_panel_category_value:first-child`).toHaveStyle({display: "none",});
+    expect(`${firstSection} .o_search_panel_category_value:first-child`).toHaveStyle({ display: "none", });
     expect(queryAllTexts`${firstSection} .o_search_panel_category_value`).toEqual([
         "All",
         "Official",
@@ -103,7 +103,7 @@ test("Apps search panel", async () => {
     expect(`.o_list_table .o_data_row`).toHaveCount(1);
 
     const secondSection = `.o_search_panel_section:eq(1)`;
-    expect(`${secondSection} .o_search_panel_category_value:first-child`).not.toHaveStyle({display: "none",});
+    expect(`${secondSection} .o_search_panel_category_value:first-child`).not.toHaveStyle({ display: "none", });
     expect(queryAllTexts`${secondSection} .o_search_panel_category_value`).toEqual([
         "All",
         "Sales",

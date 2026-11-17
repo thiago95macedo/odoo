@@ -1,6 +1,6 @@
-import { describe, expect, manuallyDispatchProgrammaticEvent, test } from "@odoo/hoot";
+import { describe, expect, manuallyDispatchProgrammaticEvent, test } from "@weth/hoot";
 import { unformat } from "./_helpers/format";
-import { animationFrame } from "@odoo/hoot-mock";
+import { animationFrame } from "@weth/hoot-mock";
 import { setupEditor } from "./_helpers/editor";
 import { getContent } from "./_helpers/selection";
 

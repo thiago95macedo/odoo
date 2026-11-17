@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.mass_mailing_sms.tests.common import MassSMSCommon
-from odoo.addons.base.tests.test_ir_cron import CronMixinCase
-from odoo.tests.common import tagged, users
+from weth.addons.mass_mailing_sms.tests.common import MassSMSCommon
+from weth.addons.base.tests.test_ir_cron import CronMixinCase
+from weth.tests.common import tagged, users
 
 from unittest.mock import patch
 
@@ -31,7 +31,7 @@ class TestMailingRetrySMS(MassSMSCommon, CronMixinCase):
         def patched_sms_sms_send(sms_records, unlink_sent=True, raise_exception=False):
             sms_records.write({'state': 'error', 'failure_type':'sms_credit'})
 
-        with patch('odoo.addons.sms.models.sms_sms.SmsSms._send', patched_sms_sms_send):
+        with patch('weth.addons.sms.models.sms_sms.SmsSms._send', patched_sms_sms_send):
             self.env.ref('sms.ir_cron_sms_scheduler_action').sudo().method_direct_trigger()
 
         with self.capture_triggers('mass_mailing.ir_cron_mass_mailing_queue') as captured_triggers:

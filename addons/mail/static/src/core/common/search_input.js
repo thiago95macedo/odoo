@@ -1,6 +1,6 @@
 import { SearchState } from "@mail/utils/common/hooks";
 
-import { Component, signal, t, useEffect, useProps } from "@odoo/owl";
+import { Component, signal, t, useEffect, useProps } from "@weth/owl";
 
 import { autofocusParamsType, useAutofocus } from "@web/core/utils/hooks";
 

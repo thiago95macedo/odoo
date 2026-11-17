@@ -1,6 +1,6 @@
-import { animationFrame, expect, test } from "@odoo/hoot";
-import { queryAllTexts } from "@odoo/hoot-dom";
-import { runAllTimers } from "@odoo/hoot-mock";
+import { animationFrame, expect, test } from "@weth/hoot";
+import { queryAllTexts } from "@weth/hoot-dom";
+import { runAllTimers } from "@weth/hoot-mock";
 
 import {
     clickFieldDropdown,
@@ -119,7 +119,7 @@ test("Many2OneReferenceField with no_open option", async () => {
 
 test.tags("desktop");
 test("Many2OneReferenceField with model_field change in form view", async () => {
-     await mountView({
+    await mountView({
         type: "form",
         resModel: "partner",
         resId: 3,
@@ -142,7 +142,7 @@ test("Many2OneReferenceField with model_field change in form view", async () => 
 });
 
 test("Many2OneReferenceField server value in form view", async () => {
-     await mountView({
+    await mountView({
         type: "form",
         resModel: "partner",
         arch: `

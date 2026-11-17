@@ -1,6 +1,6 @@
-from odoo import http
-from odoo.http import request
-from odoo.addons.web.controllers.home import CREDENTIAL_PARAMS
+from weth import http
+from weth.http import request
+from weth.addons.web.controllers.home import CREDENTIAL_PARAMS
 from ..mobile_utils import _WEB_WELL_KNOW_ANDROID
 
 

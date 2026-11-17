@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, exceptions, fields, models, _
-from odoo.addons.mail.models.mail_alias import dot_atom_text
-from odoo.exceptions import UserError
+from weth import api, exceptions, fields, models, _
+from weth.addons.mail.models.mail_alias import dot_atom_text
+from weth.exceptions import UserError
 
 
 class MailAliasDomain(models.Model):
@@ -256,7 +256,7 @@ class MailAliasDomain(models.Model):
         """ Compatibility layer helping going from pre-v17 ICP to alias
         domains. Mainly used when base mail configuration is done with 'base'
         module only and 'mail' is installed afterwards: configuration should
-        not be lost (odoo.sh use case). """
+        not be lost (weth.sh use case). """
         Icp = self.env['ir.config_parameter'].sudo()
         alias_domain = Icp.get_str('mail.catchall.domain')
         if alias_domain:

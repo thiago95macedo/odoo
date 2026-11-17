@@ -1,8 +1,8 @@
 from uuid import uuid4
 
-from odoo import _, api, fields, models
-from odoo.exceptions import ValidationError
-from odoo.tools import formatLang
+from weth import _, api, fields, models
+from weth.exceptions import ValidationError
+from weth.tools import formatLang
 
 
 class PosPayment(models.Model):

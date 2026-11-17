@@ -14,7 +14,7 @@ import {
     registerDebugInfo,
     resize,
     test,
-} from "@odoo/hoot";
+} from "@weth/hoot";
 import {
     assignTestEnv,
     authenticate,
@@ -37,7 +37,7 @@ import { MENU_TABS } from "@mail/core/public_web/messaging_menu/messaging_menu_m
 import { click, contains, TIMEOUT } from "./mail_test_helpers_contains";
 
 import { closeStream, mailGlobal } from "@mail/utils/common/misc";
-import { Component, onMounted, onPatched } from "@odoo/owl";
+import { Component, onMounted, onPatched } from "@weth/owl";
 import { browser } from "@web/core/browser/browser";
 import { emojiLoader } from "@web/core/emoji_picker/emoji_loader";
 import { registry } from "@web/core/registry";
@@ -120,7 +120,7 @@ mailGlobal.isInTest = true;
 patch(useService, {
     handleCallWhenDestroyed() {
         // so that RPCs after tests do not throw error
-        return new Promise(() => {});
+        return new Promise(() => { });
     },
 });
 
@@ -534,7 +534,7 @@ function createAudioStream() {
     const dest = ctx.createMediaStreamDestination();
     after(() => {
         closeStream(dest.stream);
-        ctx.close().catch(() => {});
+        ctx.close().catch(() => { });
     });
     return dest.stream;
 }
@@ -559,8 +559,8 @@ export function mockGetMedia() {
         async query() {
             return {
                 state: "granted",
-                addEventListener: () => {},
-                removeEventListener: () => {},
+                addEventListener: () => { },
+                removeEventListener: () => { },
                 onchange: null,
             };
         },
@@ -644,8 +644,8 @@ export function mockPipWindow() {
     const outsideArea = document.createElement("div");
     getFixture().appendChild(outsideArea);
     const popoutWindow = {
-        addEventListener: () => {},
-        removeEventListener: () => {},
+        addEventListener: () => { },
+        removeEventListener: () => { },
         closed: false,
         get document() {
             const doc = popoutIframe.contentDocument;
@@ -1073,25 +1073,25 @@ export function userContext() {
     return { lang: "en", tz: "taht", uid: serverState.userId, allowed_company_ids: [1] };
 }
 class MockAnalyserNode {
-    connect() {}
-    disconnect() {}
+    connect() { }
+    disconnect() { }
 }
 class MockAudioBufferSourceNode {
     buffer;
-    connect() {}
-    disconnect() {}
-    start() {}
-    stop() {}
+    connect() { }
+    disconnect() { }
+    start() { }
+    stop() { }
 }
 class MockAudioContext {
     audioWorklet = {
-        addModule(url) {},
+        addModule(url) { },
     };
     currentTime;
     destination;
     sampleRate;
     state;
-    async close() {}
+    async close() { }
     createAnalyser() {
         return new MockAnalyserNode();
     }
@@ -1107,11 +1107,11 @@ class MockAudioContext {
     decodeAudioData(...args) {
         return new SilentAudioContext().decodeAudioData(...args);
     }
-    async resume() {}
+    async resume() { }
 }
 class MockAudioWorkletNode {
     port = {
-        onmessage(e) {},
+        onmessage(e) { },
         postMessage(data) {
             this.onmessage({ data, timeStamp: new Date().getTime() });
         },
@@ -1125,7 +1125,7 @@ class MockAudioWorkletNode {
     connect() {
         this.port.postMessage();
     }
-    disconnect() {}
+    disconnect() { }
     process(allInputs) {
         const inputs = allInputs[0][0];
         this.port.postMessage(inputs);
@@ -1133,13 +1133,13 @@ class MockAudioWorkletNode {
     }
 }
 class MockGainNode {
-    connect() {}
-    close() {}
-    disconnect() {}
+    connect() { }
+    close() { }
+    disconnect() { }
 }
 class MockMediaStreamAudioSourceNode {
-    connect(processor) {}
-    disconnect() {}
+    connect(processor) { }
+    disconnect() { }
 }
 
 /** @type {MockAudioWorkletNode | null} */
@@ -1166,8 +1166,8 @@ export function mockPermissionsPrompt() {
         async query() {
             return {
                 state: "prompt",
-                addEventListener: () => {},
-                removeEventListener: () => {},
+                addEventListener: () => { },
+                removeEventListener: () => { },
                 onchange: null,
             };
         },

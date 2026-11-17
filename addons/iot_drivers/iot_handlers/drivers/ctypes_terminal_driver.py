@@ -7,9 +7,9 @@ from queue import Queue
 from time import sleep
 
 
-from odoo.addons.iot_drivers.driver import Driver
-from odoo.addons.iot_drivers.event_manager import event_manager
-from odoo.addons.iot_drivers.tools.system import IS_WINDOWS, path_file
+from weth.addons.iot_drivers.driver import Driver
+from weth.addons.iot_drivers.event_manager import event_manager
+from weth.addons.iot_drivers.tools.system import IS_WINDOWS, path_file
 
 _logger = logging.getLogger(__name__)
 

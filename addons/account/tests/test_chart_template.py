@@ -3,11 +3,11 @@ import io
 from markupsafe import Markup
 from unittest.mock import patch
 
-from odoo import Command, fields
-from odoo.exceptions import RedirectWarning
-from odoo.tests import tagged
-from odoo.addons.account.models.chart_template import code_translations, AccountChartTemplate, TEMPLATE_MODELS
-from odoo.addons.account.tests.common import AccountTestInvoicingCommon
+from weth import Command, fields
+from weth.exceptions import RedirectWarning
+from weth.tests import tagged
+from weth.addons.account.models.chart_template import code_translations, AccountChartTemplate, TEMPLATE_MODELS
+from weth.addons.account.tests.common import AccountTestInvoicingCommon
 
 
 def _get_chart_template_mapping(self, get_all=False):
@@ -1084,7 +1084,7 @@ class TestChartTemplate(AccountTestInvoicingCommon):
         def get_rep_line_data(x):
             return (x.document_type, x.repartition_type, x.factor_percent, x.use_in_tax_closing)
 
-        with patch('odoo.addons.account.models.chart_template.file_open',
+        with patch('weth.addons.account.models.chart_template.file_open',
                    side_effect=lambda *args: io.StringIO(CSV_DATA['tax_1'])):
             data = {'account.tax': self.ChartTemplate._get_account_tax('test')}
         self.ChartTemplate._load_data(data)
@@ -1116,7 +1116,7 @@ class TestChartTemplate(AccountTestInvoicingCommon):
         with patch.object(AccountChartTemplate, '_get_chart_template_data', side_effect=local_get_data, autospec=True):
             self.env['account.chart.template'].try_loading('test', company=self.company, install_demo=False)
 
-        with patch('odoo.addons.account.models.chart_template.file_open',
+        with patch('weth.addons.account.models.chart_template.file_open',
                    side_effect=lambda *args: io.StringIO(CSV_DATA['test_fiscal_position_template'])):
             data = {'account.fiscal.position': self.ChartTemplate._get_account_fiscal_position('test')}
         self.ChartTemplate._pre_reload_data(self.company, {}, data)
@@ -1207,7 +1207,7 @@ class TestChartTemplate(AccountTestInvoicingCommon):
             }
         with (
             patch.object(AccountChartTemplate, '_get_chart_template_data', side_effect=new_module_data, autospec=True),
-            self.assertLogs('odoo.addons.account.models.chart_template', level='WARN') as log_cm,
+            self.assertLogs('weth.addons.account.models.chart_template', level='WARN') as log_cm,
         ):
             self.env['account.chart.template'].try_loading('test', company=company, install_demo=False)
         self.assertIn("reloading the CoA for 'deleted_xmlid'", log_cm.output[0])

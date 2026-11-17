@@ -3,8 +3,8 @@
 from unittest.mock import patch
 from contextlib import contextmanager
 
-from odoo.addons.account.tests.common import AccountTestInvoicingCommon
-from odoo.addons.payment.tests.common import PaymentCommon
+from weth.addons.account.tests.common import AccountTestInvoicingCommon
+from weth.addons.payment.tests.common import PaymentCommon
 
 
 class AccountPaymentCommon(PaymentCommon, AccountTestInvoicingCommon):

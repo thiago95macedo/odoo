@@ -12,7 +12,7 @@ import {
     usePlugin,
     useProps,
     useScope,
-} from "@odoo/owl";
+} from "@weth/owl";
 
 import { Reactive } from "@web/core/utils/reactive";
 import { useLayoutEffect } from "@web/owl2/utils";
@@ -30,8 +30,8 @@ import { closestScrollableY } from "@web/core/utils/scrolling";
  * Version of usePlugin() where the plugin is allowed to not be provided by any parented component.
  *
  * @template T
- * @param {T extends import("@odoo/owl").PluginConstructor} pluginType
- * @returns {import("@odoo/owl").PluginInstance<T>|undefined}
+ * @param {T extends import("@weth/owl").PluginConstructor} pluginType
+ * @returns {import("@weth/owl").PluginInstance<T>|undefined}
  */
 export function useMaybePlugin(pluginType) {
     if (useScope().pluginManager?.getPluginById(pluginType.id)) {
@@ -109,7 +109,7 @@ export function onExternalClick(ref, cb) {
  * Should provide a list of refs, and can add callbacks when elements are
  * hovered-in (onHover), hovered-out (onAway).
  *
- * @param {import("@odoo/owl").Signal<HTMLElement> | import("@odoo/owl").Signal<HTMLElement>[]} refs signal refs that determine whether this is in state "hovering".
+ * @param {import("@weth/owl").Signal<HTMLElement> | import("@weth/owl").Signal<HTMLElement>[]} refs signal refs that determine whether this is in state "hovering".
  * @param {Object} param1
  * @param {() => void} [param1.onHover] callback when hovering the refs.
  * @param {() => void} [param1.onAway] callback when stop hovering the refs.
@@ -213,7 +213,7 @@ export function useHover(refs, { onHover, onAway, stateObserver } = {}) {
 /**
  * Hook returning reactive scroll state for a given scrollable element.
  *
- * @param {import("@odoo/owl").Signal<Element>} ref - The ref of the scrollable element.
+ * @param {import("@weth/owl").Signal<Element>} ref - The ref of the scrollable element.
  * @returns {{
  *   hasScrollbar: boolean,
  *   canScrollBefore: boolean,
@@ -265,7 +265,7 @@ export function useScrollState(ref) {
  * Hook that execute the callback function each time the scrollable element hit
  * the bottom minus the threshold.
  *
- * @param {string|import("@odoo/owl").Signal<HTMLElement|null>} refOrName scrollable t-ref name or signal ref to observe
+ * @param {string|import("@weth/owl").Signal<HTMLElement|null>} refOrName scrollable t-ref name or signal ref to observe
  * @param {function} callback function to execute when scroll hit the bottom minus the threshold
  * @param {number} threshold number of threshold pixel to trigger the callback
  */
@@ -445,7 +445,7 @@ export function useMessageScrolling({
 
 export class MessageSelectionState {
     selectedMessageId;
-    /** @type {import("@odoo/owl").Signal<Set<number>>} */
+    /** @type {import("@weth/owl").Signal<Set<number>>} */
     data = signal.Set(new Set(), { type: t.number() });
 
     clearSelected() {
@@ -604,7 +604,7 @@ export class SearchState extends Reactive {
      * Backing store of {@link searchTerm}, a local signal unless the parent
      * passed one through the `searchTerm` option.
      *
-     * @type {import("@odoo/owl").Signal<string>}
+     * @type {import("@weth/owl").Signal<string>}
      */
     _searchTerm = signal("");
     /** Whether {@link _searchTerm} is ours to clear, i.e. not the parent's. */
@@ -642,7 +642,7 @@ export class SearchState extends Reactive {
      *  search is active. Defaults to "term is non-empty". Override when a
      *  non-empty term is not the right signal (e.g. a mention popover stays
      *  active for an empty term as long as a delimiter is set).
-     * @param {import("@odoo/owl").Signal<string>} [options.searchTerm] Signal
+     * @param {import("@weth/owl").Signal<string>} [options.searchTerm] Signal
      *  holding the term when it is owned elsewhere (e.g. a field of a record
      *  the rest of the UI reads). Reads and writes go straight through to it,
      *  so there is no second copy to keep in sync. Defaults to a local signal.
@@ -813,16 +813,14 @@ export function useDiscussSystray(dropdownState) {
     return {
         class: "o-mail-DiscussSystray-class",
         get contentClass() {
-            return `d-flex flex-column flex-grow-1 ${
-                ui.isSmall ? "overflow-auto o-scrollbar-thin w-100 mh-100" : ""
-            }`;
+            return `d-flex flex-column flex-grow-1 ${ui.isSmall ? "overflow-auto o-scrollbar-thin w-100 mh-100" : ""
+                }`;
         },
         get menuClass() {
-            return `p-0 o-mail-DiscussSystray ${
-                ui.isSmall
+            return `p-0 o-mail-DiscussSystray ${ui.isSmall
                     ? "o-mail-systrayFullscreenDropdownMenu start-0 w-100 mh-100 d-flex flex-column mt-0 border-0 shadow-lg"
                     : ""
-            }`;
+                }`;
         },
     };
 }
@@ -855,7 +853,7 @@ export const LONG_PRESS_DELAY = 400;
  * Subscribes to long press events on the element matching the given ref name.
  * It internally prevents false positives caused by scroll gestures.
  *
- * @param {import("@odoo/owl").Signal<Element>} ref The ref of the element to listen for long presses on.
+ * @param {import("@weth/owl").Signal<Element>} ref The ref of the element to listen for long presses on.
  * @param {Object} options
  * @param {() => void} [options.action] Function called when a long press is detected.
  * @param {() => boolean} [options.predicate] Optional function to enable long press detection.
@@ -935,7 +933,7 @@ export function useLongPress(ref, { action, predicate = () => true } = {}) {
  * @see useForwardRefsToParent
  */
 export function useChildRefs() {
-    /** @type {Map<any, import("@odoo/owl").Signal<Element>>} */
+    /** @type {Map<any, import("@weth/owl").Signal<Element>>} */
     const map = new Map();
     return proxy(map);
 }
@@ -944,7 +942,7 @@ export class UseForwardRefsToParent {
     /**
      * @param {string} propName
      * @param {(any) => any} getRefIdFn
-     * @param {import("@odoo/owl").Signal<Element>} ref
+     * @param {import("@weth/owl").Signal<Element>} ref
      */
     constructor(propName, getRefIdFn, ref) {
         const compProps = useProps();
@@ -973,7 +971,7 @@ export class UseForwardRefsToParent {
  *
  * @param {string} propName name of prop that contains a `useChildRefs()` object
  * @param {(Props) => any} getRefIdFn function whose evaluation returns the key in `useChildRefs()` object to save the `ref`, with props passed as param.
- * @param {import("@odoo/owl").Signal<Element>} ref the `ref` that is saved in `useChildRefs()` at key from `getRefIdFn` function evaluation
+ * @param {import("@weth/owl").Signal<Element>} ref the `ref` that is saved in `useChildRefs()` at key from `getRefIdFn` function evaluation
  */
 export function useForwardRefsToParent(propName, getRefIdFn, ref) {
     new UseForwardRefsToParent(propName, getRefIdFn, ref);
@@ -988,7 +986,7 @@ export function useForwardRefsToParent(propName, getRefIdFn, ref) {
  * @template S
  * @param {string} name
  * @param {S} shape shape of the final value (e.g. `t.number()`)
- * @returns {import("@odoo/owl").ReactiveValue<import("@odoo/owl").StripBrands<S>>} the resulting
+ * @returns {import("@weth/owl").ReactiveValue<import("@weth/owl").StripBrands<S>>} the resulting
  *   (read-only) signal, which always exists (never `undefined`), even when the prop is optional.
  */
 export function propComputed(name, shape) {
@@ -1006,7 +1004,7 @@ export function propComputed(name, shape) {
  * @param {S} shape shape of the final value (e.g. `t.number()`)
  * @param {object} [options]
  * @param {boolean} [options.optional]
- * @returns {import("@odoo/owl").ReactiveValue<import("@odoo/owl").StripBrands<S>>}
+ * @returns {import("@weth/owl").ReactiveValue<import("@weth/owl").StripBrands<S>>}
  */
 export function propSignal(name, shape, { optional = false } = {}) {
     const type = t.signal(shape);
@@ -1016,7 +1014,7 @@ export function propSignal(name, shape, { optional = false } = {}) {
 /**
  * This hook makes it easier to enable right-click to open a dropdown at position of cursor
  *
- * @param {import("@odoo/owl").Signal<Element>} rootRef - The root ref of the element that has right-click.
+ * @param {import("@weth/owl").Signal<Element>} rootRef - The root ref of the element that has right-click.
  *   This rootRef defines the node where the right-click should work.
  * @param {Object} param1
  * @param {() => Object} [param1.extraMenuProps={}] - Optional object of extra props provided to the context menu component.

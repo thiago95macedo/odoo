@@ -1,10 +1,10 @@
-import { beforeEach, expect, test } from "@odoo/hoot";
+import { beforeEach, expect, test } from "@weth/hoot";
 import { contains } from "@web/../tests/web_test_helpers";
 import {
     defineWebsiteModels,
     setupWebsiteBuilderWithSnippet,
 } from "@website/../tests/builder/website_helpers";
-import { queryAll } from "@odoo/hoot-dom";
+import { queryAll } from "@weth/hoot-dom";
 
 defineWebsiteModels();
 

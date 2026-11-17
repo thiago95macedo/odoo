@@ -3,7 +3,7 @@ import { Message } from "@mail/core/common/message";
 import { convertBrToLineBreak } from "@mail/utils/common/format";
 import { useMaybePlugin } from "@mail/utils/common/hooks";
 
-import { signal, useOnChange } from "@odoo/owl";
+import { signal, useOnChange } from "@weth/owl";
 import { DropdownItem } from "@web/core/dropdown/dropdown_item";
 import { rpc } from "@web/core/network/rpc";
 import { patch } from "@web/core/utils/patch";

@@ -3,13 +3,13 @@
 from unittest.mock import patch
 from datetime import date
 from dateutil.relativedelta import relativedelta
-import odoo.tests
-from odoo.addons.gamification.tests.common import HttpCaseGamification
-from odoo.addons.http_routing.tests.common import MockRequest
-from odoo.addons.website_profile.controllers.main import WebsiteProfile
+import weth.tests
+from weth.addons.gamification.tests.common import HttpCaseGamification
+from weth.addons.http_routing.tests.common import MockRequest
+from weth.addons.website_profile.controllers.main import WebsiteProfile
 
 
-@odoo.tests.tagged('post_install', '-at_install')
+@weth.tests.tagged('post_install', '-at_install')
 class TestWebsiteProfile(HttpCaseGamification):
     def test_prepare_url_from_info(self):
         controller = WebsiteProfile()
@@ -37,7 +37,7 @@ class TestWebsiteProfile(HttpCaseGamification):
                 self.assertEqual(controller._prepare_url_from_info(), {'url_from': None, 'url_from_label': None})
 
     def test_save_change_description(self):
-        odoo.tests.new_test_user(
+        weth.tests.new_test_user(
             self.env, 'test_user',
             karma=100, website_published=True
         )
@@ -51,15 +51,15 @@ class TestWebsiteProfile(HttpCaseGamification):
         self.env["gamification.karma.tracking"].search([]).unlink()
         self.env["gamification.badge.user"].search([]).unlink()
 
-        bob = odoo.tests.new_test_user(self.env, 'Bob', karma=100, website_published=True)
-        alice = odoo.tests.new_test_user(self.env, 'Alice', karma=100, website_published=True)
-        john = odoo.tests.new_test_user(self.env, 'John', karma=100)
-        odoo.tests.new_test_user(self.env, 'test_portal', groups='base.group_portal', karma=1000)
+        bob = weth.tests.new_test_user(self.env, 'Bob', karma=100, website_published=True)
+        alice = weth.tests.new_test_user(self.env, 'Alice', karma=100, website_published=True)
+        john = weth.tests.new_test_user(self.env, 'John', karma=100)
+        weth.tests.new_test_user(self.env, 'test_portal', groups='base.group_portal', karma=1000)
 
         badge_good_job = self.env.ref("gamification.badge_good_job")
         badge_problem_solver = self.env.ref("gamification.badge_problem_solver")
         # Publish the badges otherwise they do not appear on the user profile page
-        # https://github.com/odoo/odoo/blob/a5f053932a73932866e04b05ecbd2c82b84c2c62/addons/website_profile/views/website_profile.xml#L170
+        # https://github.com/weth/odoo/blob/a5f053932a73932866e04b05ecbd2c82b84c2c62/addons/website_profile/views/website_profile.xml#L170
         (badge_good_job + badge_problem_solver).website_published = True
 
         for wizard in self.env["gamification.badge.user.wizard"].create([{
@@ -79,12 +79,12 @@ class TestWebsiteProfile(HttpCaseGamification):
 
         self.start_tour("/profile/users", 'website_profile_portal_access', login="test_portal")
 
-    @patch('odoo.addons.website_profile.controllers.main.WebsiteProfile._users_per_page', 2)
+    @patch('weth.addons.website_profile.controllers.main.WebsiteProfile._users_per_page', 2)
     def test_leaderboard_pagination_by_period(self):
         """Test that pagination works correctly when grouping by week/month/all."""
         users = self.env['res.users']
         for user_name in ['a', 'b', 'c', 'd']:
-            users |= odoo.tests.new_test_user(
+            users |= weth.tests.new_test_user(
                 self.env, f'test_user_{user_name}',
                 name=f'Test User {user_name.upper()}',
                 website_published=True,

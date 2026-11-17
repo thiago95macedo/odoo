@@ -5,9 +5,9 @@ from collections import defaultdict
 from datetime import datetime
 from zoneinfo import ZoneInfo
 
-from odoo import api, fields, models
-from odoo.tools.intervals import Intervals
-from odoo.addons.mail.tools.discuss import Store
+from weth import api, fields, models
+from weth.tools.intervals import Intervals
+from weth.addons.mail.tools.discuss import Store
 
 
 class ResourceResource(models.Model):

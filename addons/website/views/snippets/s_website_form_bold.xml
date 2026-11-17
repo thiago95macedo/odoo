@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
 
 <template id="s_website_form_bold" name="Form Bold">
     <section class="s_website_form_bold pb24 pt24">
@@ -28,4 +28,4 @@
     </section>
 </template>
 
-</odoo>
+</weth>

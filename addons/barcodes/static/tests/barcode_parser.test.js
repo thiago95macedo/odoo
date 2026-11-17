@@ -1,6 +1,6 @@
-/** @odoo-module **/
+/** @weth-module **/
 
-import { expect, test } from "@odoo/hoot";
+import { expect, test } from "@weth/hoot";
 import { BarcodeParser } from "@barcodes/js/barcode_parser";
 
 test.tags("headless");

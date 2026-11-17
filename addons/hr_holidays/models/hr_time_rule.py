@@ -4,7 +4,7 @@ from collections import defaultdict
 from datetime import UTC, date
 from zoneinfo import ZoneInfo
 
-from odoo import api, fields, models
+from weth import api, fields, models
 
 
 class HrTimeRuleSourceMixin(models.AbstractModel):

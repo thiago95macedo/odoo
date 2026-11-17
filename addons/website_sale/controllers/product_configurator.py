@@ -1,9 +1,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.http import request, route
+from weth.http import request, route
 
-from odoo.addons.sale.controllers.product_configurator import SaleProductConfiguratorController
-from odoo.addons.website_sale.controllers.main import WebsiteSale
+from weth.addons.sale.controllers.product_configurator import SaleProductConfiguratorController
+from weth.addons.website_sale.controllers.main import WebsiteSale
 
 
 class WebsiteSaleProductConfiguratorController(SaleProductConfiguratorController, WebsiteSale):

@@ -12,8 +12,8 @@ import {
     MENU_ACTIVE_IDS,
 } from "@mail/../tests/mail_test_helpers";
 
-import { describe, expect, test, tick } from "@odoo/hoot";
-import { waitFor } from "@odoo/hoot-dom";
+import { describe, expect, test, tick } from "@weth/hoot";
+import { waitFor } from "@weth/hoot-dom";
 
 import { rpc } from "@web/core/network/rpc";
 import { Command, mockService, onRpc, serverState } from "@web/../tests/web_test_helpers";

@@ -1,8 +1,8 @@
 import { addToBoardItem } from "@board/add_to_board/add_to_board";
 import { defineMailModels } from "@mail/../tests/mail_test_helpers";
-import { after, beforeEach, describe, expect, test } from "@odoo/hoot";
-import { hover, press, queryOne } from "@odoo/hoot-dom";
-import { animationFrame } from "@odoo/hoot-mock";
+import { after, beforeEach, describe, expect, test } from "@weth/hoot";
+import { hover, press, queryOne } from "@weth/hoot-dom";
+import { animationFrame } from "@weth/hoot-mock";
 import * as dsHelpers from "@web/../tests/core/domain_selector/domain_selector_helpers";
 import {
     contains,
@@ -27,7 +27,7 @@ import { WebClient } from "@web/webclient/webclient";
 
 describe.current.tags("desktop");
 
-class Board extends models.Model {}
+class Board extends models.Model { }
 
 class Partner extends models.Model {
     name = fields.Char();

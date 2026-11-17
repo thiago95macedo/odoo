@@ -1,11 +1,11 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
 from markupsafe import Markup
-from odoo.addons.mail.tests.common import MailCommon, mail_new_test_user
-from odoo.exceptions import UserError, AccessError
-from odoo.fields import Command
-from odoo.tests.common import HttpCase, JsonRpcException, freeze_time, users
-from odoo.tools.misc import mute_logger
+from weth.addons.mail.tests.common import MailCommon, mail_new_test_user
+from weth.exceptions import UserError, AccessError
+from weth.fields import Command
+from weth.tests.common import HttpCase, JsonRpcException, freeze_time, users
+from weth.tools.misc import mute_logger
 
 
 class TestDiscussChannelReadonly(MailCommon, HttpCase):
@@ -146,7 +146,7 @@ class TestDiscussChannelReadonly(MailCommon, HttpCase):
         )
         self.assertFalse(subchannel.is_readonly)
 
-    @mute_logger("odoo.http")
+    @mute_logger("weth.http")
     def test_readonly_channel_user_cannot_create_subchannel(self):
         message = self.test_channel.message_post(body="Message to create subchannel")
         self.authenticate(self.test_user.login, self.test_user.login)

@@ -2,9 +2,9 @@ import logging
 import datetime
 import requests
 
-from odoo import models
-from odoo.addons.google_calendar.utils.google_calendar_service import GoogleCalendarService
-from odoo.addons.google_calendar.models.google_sync import google_calendar_token
+from weth import models
+from weth.addons.google_calendar.utils.google_calendar_service import GoogleCalendarService
+from weth.addons.google_calendar.models.google_sync import google_calendar_token
 
 _logger = logging.getLogger(__name__)
 

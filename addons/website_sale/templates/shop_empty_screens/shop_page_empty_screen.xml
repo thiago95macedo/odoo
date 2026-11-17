@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
     <template id="website_sale.shop_page_empty_screen">
         <div class="o_wsale_empty_screen_container d-none d-md-block bg-primary-subtle rounded mx-auto px-5 pt-4">
             <div
@@ -54,4 +54,4 @@
             </div>
         </div>
     </template>
-</odoo>
+</weth>

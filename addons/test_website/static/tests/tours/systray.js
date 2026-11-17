@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @weth-module **/
 import { clickOnEditAndWaitEditMode, clickOnSave } from "@website/js/tours/tour_utils";
 import { registry } from "@web/core/registry";
 

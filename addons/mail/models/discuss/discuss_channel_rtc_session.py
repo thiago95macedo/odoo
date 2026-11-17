@@ -7,9 +7,9 @@ from collections import defaultdict
 from dateutil.relativedelta import relativedelta
 from markupsafe import Markup
 
-from odoo import api, fields, models
-from odoo.addons.mail.tools import discuss, jwt
-from odoo.addons.mail.tools.discuss import Store
+from weth import api, fields, models
+from weth.addons.mail.tools import discuss, jwt
+from weth.addons.mail.tools.discuss import Store
 
 _logger = logging.getLogger(__name__)
 

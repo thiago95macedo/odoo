@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.tests import tagged, Form
-from odoo.addons.mrp.tests.common import TestMrpCommon
-from odoo import Command
+from weth.tests import tagged, Form
+from weth.addons.mrp.tests.common import TestMrpCommon
+from weth import Command
 
 
 @tagged('at_install', '-post_install')  # LEGACY at_install

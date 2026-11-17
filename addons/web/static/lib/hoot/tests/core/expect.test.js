@@ -1,8 +1,8 @@
-/** @odoo-module */
+/** @weth-module */
 
-import { describe, expect, makeExpect, test } from "@odoo/hoot";
-import { check, manuallyDispatchProgrammaticEvent, tick, waitFor } from "@odoo/hoot-dom";
-import { Component, xml } from "@odoo/owl";
+import { describe, expect, makeExpect, test } from "@weth/hoot";
+import { check, manuallyDispatchProgrammaticEvent, tick, waitFor } from "@weth/hoot-dom";
+import { Component, xml } from "@weth/owl";
 import { mountForTest, parseUrl } from "../local_helpers";
 
 import { Test } from "../../core/test";
@@ -373,7 +373,7 @@ describe(parseUrl(import.meta.url), () => {
         });
 
         test("toMatch", () => {
-            class Exception extends Error {}
+            class Exception extends Error { }
 
             expect("aaaa").toMatch(/^a{4}$/);
             expect("aaaa").toMatch("aa");

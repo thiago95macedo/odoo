@@ -1,6 +1,6 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, Command, models
+from weth import api, Command, models
 
 
 class PurchaseAlternativeCreate(models.TransientModel):

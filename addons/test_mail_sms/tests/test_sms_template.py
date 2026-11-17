@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.sms.tests.common import SMSCommon
-from odoo.tests import tagged
+from weth.addons.sms.tests.common import SMSCommon
+from weth.tests import tagged
 
-from odoo.addons.test_mail_sms.tests.common import TestSMSRecipients
+from weth.addons.test_mail_sms.tests.common import TestSMSRecipients
 
 
 @tagged('at_install', '-post_install')  # LEGACY at_install

@@ -4,7 +4,7 @@ import { getCSSRules, toInline } from "./convert_inline";
 import { ColumnPlugin } from "@html_editor/main/column_plugin";
 import { MoveNodePlugin } from "@html_editor/main/movenode_plugin";
 import { user } from "@web/core/user";
-import { t, useProps } from "@odoo/owl";
+import { t, useProps } from "@weth/owl";
 
 const cssRulesByElement = new WeakMap();
 

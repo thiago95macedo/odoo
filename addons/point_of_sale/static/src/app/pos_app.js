@@ -2,7 +2,7 @@ import { Transition } from "@web/core/transition";
 import { MainComponentsContainer } from "@web/core/main_components_container";
 import { Navbar } from "@point_of_sale/app/components/navbar/navbar";
 import { usePos } from "@point_of_sale/app/hooks/pos_hook";
-import { Component, onMounted, useProps, t, usePlugin } from "@odoo/owl";
+import { Component, onMounted, useProps, t, usePlugin } from "@weth/owl";
 import { useOwnDebugContext } from "@web/core/debug/debug_context";
 import { useIdleTimer } from "./utils/use_idle_timer";
 import { init as initDebugFormatters } from "./utils/debug-formatter";

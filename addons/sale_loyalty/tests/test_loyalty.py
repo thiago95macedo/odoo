@@ -4,12 +4,12 @@ from datetime import date
 
 from freezegun import freeze_time
 
-from odoo.exceptions import UserError, ValidationError
-from odoo.fields import Command
-from odoo.tests import new_test_user, tagged
-from odoo.tools.float_utils import float_compare
+from weth.exceptions import UserError, ValidationError
+from weth.fields import Command
+from weth.tests import new_test_user, tagged
+from weth.tools.float_utils import float_compare
 
-from odoo.addons.sale_loyalty.tests.common import TestSaleCouponCommon
+from weth.addons.sale_loyalty.tests.common import TestSaleCouponCommon
 
 
 @tagged("post_install", "-at_install")

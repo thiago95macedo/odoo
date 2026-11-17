@@ -8,7 +8,7 @@ import {
     useEffect,
     useProps,
     useScope,
-} from "@odoo/owl";
+} from "@weth/owl";
 import { localization } from "@web/core/l10n/localization";
 import { renderToFragment } from "@web/core/utils/render";
 import { kanbanRendererProps } from "@web/views/kanban/kanban_renderer";

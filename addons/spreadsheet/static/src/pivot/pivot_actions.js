@@ -1,11 +1,11 @@
 // @ts-check
 
 import { navigateTo } from "../actions/helpers";
-import { helpers } from "@odoo/o-spreadsheet";
+import { helpers } from "@weth/o-spreadsheet";
 const { getNumberOfPivotFunctions } = helpers;
 
 /**
- * @param {import("@odoo/o-spreadsheet").CellPosition} position
+ * @param {import("@weth/o-spreadsheet").CellPosition} position
  * @param {import("@spreadsheet").SpreadsheetChildEnv} env
  * @param {boolean} newWindow
  * @returns {Promise<void>}
@@ -40,7 +40,7 @@ export const SEE_RECORDS_PIVOT = async (position, env, newWindow) => {
 };
 
 /**
- * @param {import("@odoo/o-spreadsheet").CellPosition} position
+ * @param {import("@weth/o-spreadsheet").CellPosition} position
  * @param {import("@spreadsheet").OdooGetters} getters
  * @returns {boolean}
  */

@@ -10,11 +10,11 @@ import { InvitationSentDate } from "@mail/discuss/core/common/invitation_sent_da
 import { _t } from "@web/core/l10n/translation";
 import { ConfirmationDialog } from "@web/core/confirmation_dialog/confirmation_dialog";
 import { rpc } from "@web/core/network/rpc";
-import { markup } from "@odoo/owl";
+import { markup } from "@weth/owl";
 
 export const channelMemberActionsRegistry = registry.category("discuss.channel.member/actions");
 
-/** @typedef {import("@odoo/owl").Component} Component */
+/** @typedef {import("@weth/owl").Component} Component */
 /** @typedef {import("models").ChannelMember} ChannelMember */
 /**
  * @typedef {Object} ChannelMemberActionSpecificParams
@@ -79,17 +79,17 @@ registerChannelMemberAction("remove-member", {
         const isMeeting = member.channel_id.default_display_mode === "video_full_screen";
         const dialogTitle = isMeeting
             ? _t("Are you sure you want to remove %(member_name)s from the call?", {
-                  member_name: member.name,
-              })
+                member_name: member.name,
+            })
             : _t(
-                  "Are you sure you want to remove %(member_name)s from the members of '%(channel_name)s'?",
-                  { member_name: member.name, channel_name: member.channel_id.displayName }
-              );
+                "Are you sure you want to remove %(member_name)s from the members of '%(channel_name)s'?",
+                { member_name: member.name, channel_name: member.channel_id.displayName }
+            );
         const moreInfo = _t("Don't worry, they can rejoin later or be invited back at any time.");
         store.env.services.dialog.add(ConfirmationDialog, {
             body: markup`<p>${dialogTitle}</p><span class="text-muted small">${moreInfo}</span>`,
             confirmLabel: isMeeting ? _t("Remove") : _t("Remove Member"),
-            cancel: () => {},
+            cancel: () => { },
             confirm: () => {
                 rpc("/discuss/channel/remove_member", {
                     member_id: member.id,

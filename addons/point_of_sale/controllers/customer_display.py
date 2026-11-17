@@ -2,9 +2,9 @@
 
 from werkzeug.exceptions import Unauthorized
 
-from odoo import http
-from odoo.http import request
-from odoo.tools import consteq
+from weth import http
+from weth.http import request
+from weth.tools import consteq
 
 
 class PosCustomerDisplay(http.Controller):

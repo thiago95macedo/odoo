@@ -2,8 +2,8 @@ import ast
 
 import werkzeug
 
-from odoo.fields import Domain
-from odoo.http import Controller, request, route
+from weth.fields import Domain
+from weth.http import Controller, request, route
 
 
 class ModelPageController(Controller):

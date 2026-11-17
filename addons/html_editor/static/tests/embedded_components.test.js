@@ -28,7 +28,7 @@ import {
     test,
     tick,
     waitFor,
-} from "@odoo/hoot";
+} from "@weth/hoot";
 import {
     App,
     Component,
@@ -41,7 +41,7 @@ import {
     t,
     useProps,
     xml,
-} from "@odoo/owl";
+} from "@weth/owl";
 import { assignTestEnv, patchWithCleanup } from "@web/../tests/web_test_helpers";
 import { renderToElement } from "@web/core/utils/render";
 import { EmbeddedComponentPlugin } from "../src/others/embedded_component_plugin";

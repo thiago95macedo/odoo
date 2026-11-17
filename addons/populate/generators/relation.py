@@ -2,15 +2,15 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
-from odoo import Command
-from odoo.fields import Domain
+from weth import Command
+from weth.fields import Domain
 
 from ..utils import clamp
 from ..utils.orm import DynamicDomain
 from .generator import ComodelGenerator
 
 if TYPE_CHECKING:
-    from odoo.api import DomainType
+    from weth.api import DomainType
 
 
 class RelationOne(ComodelGenerator):

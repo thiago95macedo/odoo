@@ -1,4 +1,4 @@
-import { test, expect, describe } from "@odoo/hoot";
+import { test, expect, describe } from "@weth/hoot";
 import { mountWithCleanup } from "@web/../tests/web_test_helpers";
 import { ChoseComboPopup } from "@point_of_sale/app/components/popups/chose_combo_popup/chose_combo_popup";
 import { definePosModels } from "@point_of_sale/../tests/unit/data/generate_model_definitions";
@@ -44,8 +44,8 @@ describe("chose_combo_popup.js", () => {
             const choseComboPopup = await mountWithCleanup(ChoseComboPopup, {
                 props: {
                     potentialCombos,
-                    close: () => {},
-                    getPayload: () => {},
+                    close: () => { },
+                    getPayload: () => { },
                 },
             });
             let expectedLines = [];
@@ -171,7 +171,7 @@ test("popup renders with single applicable combo", async () => {
     ];
 
     const popup = await mountWithCleanup(ChoseComboPopup, {
-        props: { potentialCombos, close: () => {}, getPayload: () => {} },
+        props: { potentialCombos, close: () => { }, getPayload: () => { } },
     });
 
     expect(popup.allCombos).toHaveLength(1);
@@ -211,7 +211,7 @@ test("popup handles upsell combo correctly", async () => {
     ];
 
     const popup = await mountWithCleanup(ChoseComboPopup, {
-        props: { potentialCombos, close: () => {}, getPayload: () => {} },
+        props: { potentialCombos, close: () => { }, getPayload: () => { } },
     });
 
     expect(popup.allCombos).toHaveLength(1);
@@ -278,7 +278,7 @@ test("popup with applicable and upsell combos mixed", async () => {
     ];
 
     const popup = await mountWithCleanup(ChoseComboPopup, {
-        props: { potentialCombos, close: () => {}, getPayload: () => {} },
+        props: { potentialCombos, close: () => { }, getPayload: () => { } },
     });
 
     const upsellCombos = popup.allCombos.filter((c) => c.upsell);
@@ -329,7 +329,7 @@ test("popup lines are correctly sorted by upsell and sequence", async () => {
     ];
 
     const popup = await mountWithCleanup(ChoseComboPopup, {
-        props: { potentialCombos, close: () => {}, getPayload: () => {} },
+        props: { potentialCombos, close: () => { }, getPayload: () => { } },
     });
 
     expect(popup.allCombos).toHaveLength(1);

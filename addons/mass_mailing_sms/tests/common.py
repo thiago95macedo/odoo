@@ -5,10 +5,10 @@ import random
 import re
 import werkzeug
 
-from odoo.tools import mail
-from odoo.addons.link_tracker.tests.common import MockLinkTracker
-from odoo.addons.mass_mailing.tests.common import MassMailCommon
-from odoo.addons.sms.tests.common import SMSCase, SMSCommon
+from weth.tools import mail
+from weth.addons.link_tracker.tests.common import MockLinkTracker
+from weth.addons.mass_mailing.tests.common import MassMailCommon
+from weth.addons.sms.tests.common import SMSCase, SMSCommon
 
 
 class MassSMSCase(SMSCase, MockLinkTracker):

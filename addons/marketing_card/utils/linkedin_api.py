@@ -1,10 +1,10 @@
 import logging
 import requests
 
-from odoo import _
-from odoo.exceptions import UserError
-from odoo.tools import human_size
-from odoo.tools.urls import urljoin
+from weth import _
+from weth.exceptions import UserError
+from weth.tools import human_size
+from weth.tools.urls import urljoin
 
 from werkzeug.urls import url_encode
 

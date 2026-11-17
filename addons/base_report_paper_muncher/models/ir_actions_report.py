@@ -7,9 +7,9 @@ from contextlib import ExitStack
 from typing import Literal
 from urllib.parse import urlsplit
 
-from odoo import api, fields, models
-from odoo.http import request
-from odoo.http.session import session_store, update_session_token
+from weth import api, fields, models
+from weth.http import request
+from weth.http.session import session_store, update_session_token
 
 from ..paper_muncher import PaperMuncherServer, paper_muncher
 

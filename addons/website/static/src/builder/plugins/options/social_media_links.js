@@ -1,6 +1,6 @@
 import { BaseOptionComponent } from "@html_builder/core/base_option_component";
 import { useDomState } from "@html_builder/core/utils";
-import { onWillStart, proxy, signal } from "@odoo/owl";
+import { onWillStart, proxy, signal } from "@weth/owl";
 import { registry } from "@web/core/registry";
 import { useSortable } from "@web/core/utils/sortable_owl";
 

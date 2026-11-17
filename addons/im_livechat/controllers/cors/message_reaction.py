@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.http import route
+from weth.http import route
 
-from odoo.addons.mail.controllers.message_reaction import MessageReactionController
+from weth.addons.mail.controllers.message_reaction import MessageReactionController
 
 
 class LivechatMessageReactionController(MessageReactionController):

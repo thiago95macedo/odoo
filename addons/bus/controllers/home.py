@@ -2,9 +2,9 @@
 
 import ipaddress
 
-from odoo import _, SUPERUSER_ID
-from odoo.http import request
-from odoo.addons.web.controllers.home import Home as WebHome
+from weth import _, SUPERUSER_ID
+from weth.http import request
+from weth.addons.web.controllers.home import Home as WebHome
 
 
 def _admin_password_warn(uid):

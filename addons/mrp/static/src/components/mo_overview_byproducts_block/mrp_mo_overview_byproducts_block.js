@@ -1,4 +1,4 @@
-import { useProps, t } from "@odoo/owl";
+import { useProps, t } from "@weth/owl";
 import {
     MO_OVERVIEW_SUMMARY_SHAPE,
     MoOverviewBaseBlock,

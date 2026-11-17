@@ -9,29 +9,29 @@ import werkzeug
 import werkzeug.exceptions
 from werkzeug.urls import iri_to_uri
 
-from odoo.http import request, router
-from odoo.http.session import get_default_session, session_store
-from odoo.tools.misc import file_open
-from odoo.tools.translate import JAVASCRIPT_TRANSLATION_COMMENT
+from weth.http import request, router
+from weth.http.session import get_default_session, session_store
+from weth.tools.misc import file_open
+from weth.tools.translate import JAVASCRIPT_TRANSLATION_COMMENT
 
 _logger = logging.getLogger(__name__)
 
 
 def og_title_from_path(env, path):
     if not path:
-        return "Odoo"
-    odoo_path = urlsplit(path).path.removeprefix('/odoo')
-    if not odoo_path or odoo_path == '/':
-        return "Odoo"
+        return "WETH"
+    weth_path = urlsplit(path).path.removeprefix('/weth')
+    if not weth_path or weth_path == '/':
+        return "WETH"
     try:
-        triples = list(get_action_triples(env(su=True), odoo_path))
+        triples = list(get_action_triples(env(su=True), weth_path))
         if not triples:
-            return "Odoo"
+            return "WETH"
         _, action, _ = triples[-1]
-        return action.name or "Odoo"
+        return action.name or "WETH"
     except ValueError:
         _logger.debug("og_title_from_path failed for path %r", path, exc_info=True)
-        return "Odoo"
+        return "WETH"
     except Exception:
         _logger.warning("og_title_from_path failed for path %r", path, exc_info=True)
         return "Odoo"
@@ -160,7 +160,7 @@ def generate_views(action):
 def get_action(env, path_part):
     """
     Get a ir.actions.actions() given an action typically found in a
-    "/odoo"-like url.
+    "/weth"-like url.
 
     The action can take one of the following forms:
     * "action-" followed by a record id
@@ -204,7 +204,7 @@ def get_action(env, path_part):
 
 def get_action_triples(env, path, *, start_pos=0):
     """
-    Extract the triples (active_id, action, record_id) from a "/odoo"-like path.
+    Extract the triples (active_id, action, record_id) from a "/weth"-like path.
 
     >>> env = ...
     >>> list(get_action_triples(env, "/all-tasks/5/project.project/1/tasks"))
@@ -250,7 +250,7 @@ def _get_login_redirect_url(uid, redirect=None):
     fully logged and can proceed to the requested URL
     """
     if request.session.uid:  # fully logged
-        return redirect or ('/odoo' if is_user_internal(request.session.uid)
+        return redirect or ('/weth' if is_user_internal(request.session.uid)
                             else '/web/login_successful')
 
     # partial session (MFA)

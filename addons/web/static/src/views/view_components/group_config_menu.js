@@ -1,4 +1,4 @@
-import { Component, t, useProps } from "@odoo/owl";
+import { Component, t, useProps } from "@weth/owl";
 import { ConfirmationDialog } from "@web/core/confirmation_dialog/confirmation_dialog";
 import { Dropdown } from "@web/core/dropdown/dropdown";
 import { DropdownItem } from "@web/core/dropdown/dropdown_item";
@@ -54,7 +54,7 @@ export class GroupConfigMenu extends Component {
             body: _t("Are you sure you want to delete this column?"),
             confirm: () => this.props.deleteGroup(this.group),
             confirmLabel: _t("Delete"),
-            cancel: () => {},
+            cancel: () => { },
         });
     }
 

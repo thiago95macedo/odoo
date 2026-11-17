@@ -1,4 +1,4 @@
-import { computed, t, useProps } from "@odoo/owl";
+import { computed, t, useProps } from "@weth/owl";
 import {
     PopoverComponent,
     PopoverWidgetField,

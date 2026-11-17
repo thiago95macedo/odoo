@@ -6,10 +6,10 @@ from collections import OrderedDict
 from lxml import etree
 from re import search
 
-from odoo import Command
-from odoo.tools import mute_logger, config
-from odoo.exceptions import AccessError
-from odoo.tests import HttpCase, tagged
+from weth import Command
+from weth.tools import mute_logger, config
+from weth.exceptions import AccessError
+from weth.tests import HttpCase, tagged
 
 from .test_project_sharing import TestProjectSharingCommon
 

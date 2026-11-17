@@ -2,11 +2,11 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
 from collections import defaultdict
-from odoo.http import request, route
-from odoo.tools import float_is_zero
+from weth.http import request, route
+from weth.tools import float_is_zero
 
-from odoo.addons.portal.controllers.portal import CustomerPortal
-from odoo.addons.website_event.controllers.main import WebsiteEventController
+from weth.addons.portal.controllers.portal import CustomerPortal
+from weth.addons.website_event.controllers.main import WebsiteEventController
 
 
 class WebsiteEventSaleController(WebsiteEventController):

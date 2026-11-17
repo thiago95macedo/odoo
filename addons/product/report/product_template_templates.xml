@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
 
 <template id="report_product_label_pdf">
     <t t-call="web.basic_layout">
@@ -21,4 +21,4 @@
     <t t-call="product.report_productlabel_zpl"/>
 </template>
 
-</odoo>
+</weth>

@@ -14,12 +14,12 @@ from dateutil.relativedelta import relativedelta
 from dateutil.parser import parse
 from lxml import html
 
-from odoo import api, fields, models, modules, SUPERUSER_ID, tools
-from odoo.addons.base.models.ir_mail_server import MailDeliveryException
-from odoo.addons.mail.tools.attachment import extract_attachment_ids_from_html
-from odoo.exceptions import UserError, ValidationError
-from odoo.fields import Domain
-from odoo.modules.registry import Registry
+from weth import api, fields, models, modules, SUPERUSER_ID, tools
+from weth.addons.base.models.ir_mail_server import MailDeliveryException
+from weth.addons.mail.tools.attachment import extract_attachment_ids_from_html
+from weth.exceptions import UserError, ValidationError
+from weth.fields import Domain
+from weth.modules.registry import Registry
 
 _logger = logging.getLogger(__name__)
 _UNFOLLOW_REGEX = re.compile(r'<span\s*(t-if="show_unfollow")?\s*id="mail_unfollow".*?<\/span>', re.DOTALL)

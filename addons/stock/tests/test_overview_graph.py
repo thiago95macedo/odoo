@@ -2,8 +2,8 @@
 
 from datetime import datetime
 
-from odoo.addons.base.tests.common import BaseCommon
-from odoo.tests import tagged
+from weth.addons.base.tests.common import BaseCommon
+from weth.tests import tagged
 
 from freezegun import freeze_time
 

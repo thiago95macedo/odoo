@@ -4,10 +4,10 @@ from unittest.mock import patch
 
 from freezegun import freeze_time
 
-from odoo.tests import tagged
-from odoo.tools import mute_logger
+from weth.tests import tagged
+from weth.tools import mute_logger
 
-from odoo.addons.payment_flutterwave.tests.common import FlutterwaveCommon
+from weth.addons.payment_flutterwave.tests.common import FlutterwaveCommon
 
 
 @tagged("post_install", "-at_install")
@@ -22,7 +22,7 @@ class TestPaymentTransaction(FlutterwaveCommon):
         """Test that the rendered values are conform to the transaction fields."""
         tx = self._create_transaction(flow="redirect")
         with patch(
-            "odoo.addons.payment.models.payment_provider.PaymentProvider._send_api_request",
+            "weth.addons.payment.models.payment_provider.PaymentProvider._send_api_request",
             return_value={"link": "https://dummy.com"},
         ):
             rendering_values = tx._get_specific_rendering_values(None)
@@ -30,12 +30,12 @@ class TestPaymentTransaction(FlutterwaveCommon):
             rendering_values, {"api_url": "https://dummy.com", "http_method": "get"}
         )
 
-    @mute_logger("odoo.addons.payment.models.payment_transaction")
+    @mute_logger("weth.addons.payment.models.payment_transaction")
     def test_no_input_missing_from_redirect_form(self):
         """Test that the `api_url` key is not omitted from the rendering values."""
         tx = self._create_transaction(flow="redirect")
         with patch(
-            "odoo.addons.payment_flutterwave.models.payment_transaction.PaymentTransaction"
+            "weth.addons.payment_flutterwave.models.payment_transaction.PaymentTransaction"
             "._get_specific_rendering_values",
             return_value={"api_url": "https://dummy.com", "http_method": "get"},
         ):

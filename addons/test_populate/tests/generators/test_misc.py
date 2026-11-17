@@ -1,9 +1,9 @@
 from unittest.mock import MagicMock
 
-from odoo.tests import TransactionCase
-from odoo.tools import frozendict
+from weth.tests import TransactionCase
+from weth.tools import frozendict
 
-from odoo.addons.populate.generators import Counter, Cycle, Eval
+from weth.addons.populate.generators import Counter, Cycle, Eval
 
 
 class TestCounterGenerator(TransactionCase):

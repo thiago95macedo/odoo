@@ -1,12 +1,12 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, models, release
-from odoo.tools import format_amount
+from weth import api, models, release
+from weth.tools import format_amount
 
-from odoo.addons.payment import utils as payment_utils
-from odoo.addons.payment.logging import get_payment_logger
-from odoo.addons.payment_adyen import const
-from odoo.addons.payment_adyen import utils as adyen_utils
+from weth.addons.payment import utils as payment_utils
+from weth.addons.payment.logging import get_payment_logger
+from weth.addons.payment_adyen import const
+from weth.addons.payment_adyen import utils as adyen_utils
 
 _logger = get_payment_logger(__name__)
 

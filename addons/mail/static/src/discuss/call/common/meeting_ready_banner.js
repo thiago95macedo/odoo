@@ -1,6 +1,6 @@
 import { openChannelInvitationDialog } from "@mail/discuss/core/common/channel_invitation";
 
-import { Component } from "@odoo/owl";
+import { Component } from "@weth/owl";
 
 import { useService } from "@web/core/utils/hooks";
 

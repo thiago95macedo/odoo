@@ -2,7 +2,7 @@ import base64
 from io import BytesIO
 from PIL import Image, ImageOps
 
-from odoo import api, fields, models, _
+from weth import api, fields, models, _
 
 epos_template = """
 <s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">

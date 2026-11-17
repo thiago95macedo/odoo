@@ -1,8 +1,8 @@
-import { test } from "@odoo/hoot";
+import { test } from "@weth/hoot";
 import { testEditor } from "../_helpers/editor";
 import { unformat } from "../_helpers/format";
 import { clickCheckbox, pasteHtml } from "../_helpers/user_actions";
-import { click, manuallyDispatchProgrammaticEvent } from "@odoo/hoot-dom";
+import { click, manuallyDispatchProgrammaticEvent } from "@weth/hoot-dom";
 
 test("should do nothing if do not click on the checkbox", async () => {
     await testEditor({

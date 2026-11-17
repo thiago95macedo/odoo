@@ -5,10 +5,10 @@ from zoneinfo import ZoneInfo
 
 from dateutil.relativedelta import relativedelta
 
-from odoo import tests
-from odoo.tests import tagged
+from weth import tests
+from weth.tests import tagged
 
-from odoo.addons.mail.tests.common import MailCommon
+from weth.addons.mail.tests.common import MailCommon
 
 
 @tests.tagged('mail_activity_mixin')

@@ -13,18 +13,18 @@ from lxml import html
 from werkzeug.exceptions import UnprocessableEntity
 from werkzeug.utils import send_file
 
-import odoo
-import odoo.modules.db
-import odoo.modules.registry
-from odoo import release
-from odoo.http import Controller, Response, request, route
-from odoo.http.router import db_list
-from odoo.http.session import authenticate, logout, save_session
-from odoo.sql_db import db_connect
-from odoo.tools.misc import file_open, str2bool
-from odoo.tools.translate import _
+import weth
+import weth.modules.db
+import weth.modules.registry
+from weth import release
+from weth.http import Controller, Response, request, route
+from weth.http.router import db_list
+from weth.http.session import authenticate, logout, save_session
+from weth.sql_db import db_connect
+from weth.tools.misc import file_open, str2bool
+from weth.tools.translate import _
 
-from odoo.addons.base.models.ir_qweb import render as qweb_render
+from weth.addons.base.models.ir_qweb import render as qweb_render
 
 _logger = logging.getLogger(__name__)
 
@@ -41,7 +41,7 @@ def list_db_incompatible(databases: Iterable[str]) -> list[str]:
     for database_name in databases:
         with db_connect(database_name, readonly=True).cursor() as cr:
             incompatible = False
-            if odoo.tools.sql.table_exists(cr, 'ir_module_module'):
+            if weth.tools.sql.table_exists(cr, 'ir_module_module'):
                 cr.execute("SELECT latest_version FROM ir_module_module WHERE name=%s", ('base',))
                 base_version = cr.fetchone()
                 if not base_version or not base_version[0]:
@@ -63,7 +63,7 @@ def list_db_incompatible(databases: Iterable[str]) -> list[str]:
 
 def list_countries():
     list_countries = []
-    root = ET.parse(os.path.join(odoo.tools.config.root_path, 'addons/base/data/res_country_data.xml')).getroot()
+    root = ET.parse(os.path.join(weth.tools.config.root_path, 'addons/base/data/res_country_data.xml')).getroot()
     for country in root.find('data').findall('record[@model="res.country"]'):
         name = country.find('field[@name="name"]').text
         code = country.find('field[@name="code"]').text
@@ -94,20 +94,20 @@ def scan_languages() -> list[tuple[str, str]]:
 
 def _render_template(**d):
     d.setdefault('manage', True)
-    d['insecure'] = odoo.tools.config.verify_admin_password('admin')
-    d['list_db'] = odoo.tools.config['list_db']
+    d['insecure'] = weth.tools.config.verify_admin_password('admin')
+    d['list_db'] = weth.tools.config['list_db']
     try:
         d['langs'] = scan_languages()
     except Exception:
         _logger.exception("Could not read res.lang.csv")
         d['langs'] = []
     d['countries'] = list_countries()
-    d['pattern'] = odoo.modules.db.DB_NAME_RE.pattern
+    d['pattern'] = weth.modules.db.DB_NAME_RE.pattern
     # databases list
     try:
         d['databases'] = db_list()
         d['incompatible_databases'] = list_db_incompatible(d['databases'])
-    except odoo.exceptions.AccessDenied:
+    except weth.exceptions.AccessDenied:
         d['databases'] = [request.db] if request.db else []
 
     templates = {}
@@ -151,14 +151,14 @@ def _render_exception(exception, **d):
 
 
 def verify_access(master_pwd):
-    odoo.modules.db.verify_db_management_enabled()
-    insecure = odoo.tools.config.verify_admin_password('admin')
+    weth.modules.db.verify_db_management_enabled()
+    insecure = weth.tools.config.verify_admin_password('admin')
     if insecure and master_pwd:
         # if the .odoorc admin password is "admin", use the provided
         # master_pwd as new password.
-        odoo.tools.config.set_admin_password(master_pwd)
-        odoo.tools.config.save(['admin_passwd'])
-    odoo.modules.db.verify_admin_password(master_pwd)
+        weth.tools.config.set_admin_password(master_pwd)
+        weth.tools.config.save(['admin_passwd'])
+    weth.modules.db.verify_admin_password(master_pwd)
 
 
 class Database(Controller):
@@ -176,13 +176,13 @@ class Database(Controller):
 
     @route('/web/database/create', type='http', auth="none", methods=['POST'], csrf=False)
     def create(self, master_pwd, name, lang, password, **post):
-        if not odoo.modules.db.DB_NAME_RE.fullmatch(name):
+        if not weth.modules.db.DB_NAME_RE.fullmatch(name):
             e = "Nome de banco inválido. Utilize apenas letras, números, sublinhado (_), hífen (-) ou ponto (.)."
             res = Response(_render_template(error=e), UnprocessableEntity.code)
             raise UnprocessableEntity(response=res)
         try:
             verify_access(master_pwd)
-            odoo.modules.db.create(
+            weth.modules.db.create(
                 name,
                 demo=str2bool(post.get('demo', False)),
                 user_login=post['login'],
@@ -193,25 +193,25 @@ class Database(Controller):
             )
             # log the current user in the new database
             credential = {'login': post['login'], 'password': password, 'type': 'password'}
-            with odoo.modules.registry.Registry(name).cursor() as cr:
-                env = odoo.api.Environment(cr, None, {})
+            with weth.modules.registry.Registry(name).cursor() as cr:
+                env = weth.api.Environment(cr, None, {})
                 authenticate(request.session, env, credential)
                 save_session(request, env)
                 request.session.db = name
-            return request.redirect('/odoo')
+            return request.redirect('/weth')
         except Exception as e:
             e.error_response = _render_exception(e)
             raise
 
     @route('/web/database/duplicate', type='http', auth="none", methods=['POST'], csrf=False)
     def duplicate(self, master_pwd, name, new_name, neutralize_database=False):
-        if not odoo.modules.db.DB_NAME_RE.fullmatch(name):
+        if not weth.modules.db.DB_NAME_RE.fullmatch(name):
             e = "Nome de banco inválido. Utilize apenas letras, números, sublinhado (_), hífen (-) ou ponto (.)."
             res = Response(_render_template(error=e), UnprocessableEntity.code)
             raise UnprocessableEntity(response=res)
         try:
             verify_access(master_pwd)
-            odoo.modules.db.duplicate(
+            weth.modules.db.duplicate(
                 name,
                 new_name,
                 neutralize_database=str2bool(neutralize_database),
@@ -227,7 +227,7 @@ class Database(Controller):
     def drop(self, master_pwd, name):
         try:
             verify_access(master_pwd)
-            odoo.modules.db.drop(name)
+            weth.modules.db.drop(name)
             if request.session.db == name:
                 logout(request.session)
             return request.redirect('/web/database/manager')
@@ -237,13 +237,13 @@ class Database(Controller):
 
     @route('/web/database/rename', type='http', auth="none", methods=['POST'], csrf=False)
     def rename(self, master_pwd, name, new_name):
-        if not odoo.modules.db.DB_NAME_RE.fullmatch(name):
+        if not weth.modules.db.DB_NAME_RE.fullmatch(name):
             e = "Nome de banco inválido. Utilize apenas letras, números, sublinhado (_), hífen (-) ou ponto (.)."
             res = Response(_render_template(error=e), UnprocessableEntity.code)
             raise UnprocessableEntity(response=res)
         try:
             verify_access(master_pwd)
-            odoo.modules.db.rename(
+            weth.modules.db.rename(
                 name,
                 new_name,
             )
@@ -261,7 +261,7 @@ class Database(Controller):
             verify_access(master_pwd)
             dump_file = tempfile.TemporaryFile()  # noqa: SIM115
 
-            odoo.modules.db.dump(
+            weth.modules.db.dump(
                 name,
                 dump_file,
                 backup_format=backup_format,
@@ -290,7 +290,7 @@ class Database(Controller):
             verify_access(master_pwd)
             with tempfile.NamedTemporaryFile(delete=False) as data_file:
                 backup_file.save(data_file)
-            odoo.modules.db.restore(
+            weth.modules.db.restore(
                 name,
                 data_file.name,
                 copy=str2bool(copy),
@@ -307,9 +307,9 @@ class Database(Controller):
     @route('/web/database/change_password', type='http', auth="none", methods=['POST'], csrf=False)
     def change_password(self, master_pwd, master_pwd_new):
         try:
-            odoo.modules.db.verify_admin_password(master_pwd)
-            odoo.tools.config.set_admin_password(master_pwd_new)
-            odoo.tools.config.save(['admin_passwd'])
+            weth.modules.db.verify_admin_password(master_pwd)
+            weth.tools.config.set_admin_password(master_pwd_new)
+            weth.tools.config.save(['admin_passwd'])
             return request.redirect('/web/database/manager')
         except Exception as e:
             e.error_response = _render_exception(e)

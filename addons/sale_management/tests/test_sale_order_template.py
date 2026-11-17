@@ -1,10 +1,10 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.exceptions import UserError, ValidationError
-from odoo.fields import Command
-from odoo.tests import Form, tagged
+from weth.exceptions import UserError, ValidationError
+from weth.fields import Command
+from weth.tests import Form, tagged
 
-from odoo.addons.sale_management.tests.common import SaleManagementCommon
+from weth.addons.sale_management.tests.common import SaleManagementCommon
 
 
 @tagged("-at_install", "post_install")

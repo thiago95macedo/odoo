@@ -5,11 +5,11 @@ import logging
 import random
 import time
 
-from odoo.fields import Command
-from odoo.tests import tagged
-from odoo.tests.common import users, warmup
+from weth.fields import Command
+from weth.tests import tagged
+from weth.tests.common import users, warmup
 
-from odoo.addons.base.tests.common import TransactionCaseWithUserDemo
+from weth.addons.base.tests.common import TransactionCaseWithUserDemo
 
 _logger = logging.getLogger(__name__)
 

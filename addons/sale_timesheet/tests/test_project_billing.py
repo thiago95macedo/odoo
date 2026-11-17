@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
-from odoo.addons.sale_timesheet.tests.common import TestCommonSaleTimesheet
-from odoo.fields import Command
-from odoo.tests import Form, tagged
-from odoo.addons.mail.tests.common import mail_new_test_user
+from weth.addons.sale_timesheet.tests.common import TestCommonSaleTimesheet
+from weth.fields import Command
+from weth.tests import Form, tagged
+from weth.addons.mail.tests.common import mail_new_test_user
 
 @tagged('post_install', '-at_install')
 class TestProjectBilling(TestCommonSaleTimesheet):

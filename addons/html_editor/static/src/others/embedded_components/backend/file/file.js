@@ -1,4 +1,4 @@
-import { proxy, signal } from "@odoo/owl";
+import { proxy, signal } from "@weth/owl";
 import { useLayoutEffect } from "@web/owl2/utils";
 import {
     applyObjectPropertyDifference,

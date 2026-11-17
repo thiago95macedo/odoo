@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
 
     <!-- /shop/extra_info route -->
     <template id="website_sale.extra_info" name="Checkout Extra Info" active="False">
@@ -69,4 +69,4 @@
         </t>
     </template>
 
-</odoo>
+</weth>

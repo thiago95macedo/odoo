@@ -1,9 +1,9 @@
 from importlib import import_module
 from inspect import getmembers, ismodule, isclass, isfunction
 
-from odoo import api, fields, models, modules
-from odoo.tools.business_data import get_flag
-from odoo.tools.misc import frozendict
+from weth import api, fields, models, modules
+from weth.tools.business_data import get_flag
+from weth.tools.misc import frozendict
 
 
 def templ(env, code2country, name=None, country_code='', **kwargs):
@@ -46,7 +46,7 @@ class IrModuleModule(models.Model):
                 and (modules.Manifest.for_addon(self.name) or {}).get('installable')
             ):
                 try:
-                    python_module = import_module(f"odoo.addons.{self.name}.models")
+                    python_module = import_module(f"weth.addons.{self.name}.models")
                 except ModuleNotFoundError:
                     pass
                 else:

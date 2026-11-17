@@ -4,7 +4,7 @@ import { user } from "@web/core/user";
 import { formatNumber } from "@hr_holidays/views/hooks";
 import { formatDuration } from "@web/views/fields/formatters";
 import { useService } from "@web/core/utils/hooks";
-import { Component, computed, t, useProps } from "@odoo/owl";
+import { Component, computed, t, useProps } from "@weth/owl";
 export class TimeOffCardPopover extends Component {
     static template = "hr_holidays.TimeOffCardPopover";
 
@@ -55,9 +55,9 @@ export class TimeOffCardPopover extends Component {
         const context = isInHolidaysUserGroup
             ? {}
             : {
-                  list_view_ref: "hr_holidays.hr_leave_allocation_view_tree_my",
-                  form_view_ref: "hr_holidays.hr_leave_allocation_view_form",
-              };
+                list_view_ref: "hr_holidays.hr_leave_allocation_view_tree_my",
+                form_view_ref: "hr_holidays.hr_leave_allocation_view_form",
+            };
         const domain = [
             ["work_entry_type_id", "=", timeOffType],
             ["employee_company_id", "=", employeeCompany],
@@ -85,15 +85,15 @@ export class TimeOffCardPopover extends Component {
         ];
         const context = isInHolidaysUserGroup
             ? {
-                  search_default_group_date_from: true,
-                  expand_leave_list: true,
-              }
+                search_default_group_date_from: true,
+                expand_leave_list: true,
+            }
             : {
-                  search_default_group_date_from: true,
-                  expand_leave_list: true,
-                  list_view_ref: "hr_holidays.hr_leave_view_tree_my",
-                  form_view_ref: "hr_holidays.hr_leave_view_form",
-              };
+                search_default_group_date_from: true,
+                expand_leave_list: true,
+                list_view_ref: "hr_holidays.hr_leave_view_tree_my",
+                form_view_ref: "hr_holidays.hr_leave_view_form",
+            };
 
         openLeaveWindow(this.actionService, resModel, name, domain, context);
     }
@@ -194,15 +194,15 @@ export class TimeOffCard extends Component {
         ];
         const context = isInHolidaysUserGroup
             ? {
-                  search_default_group_date_from: true,
-                  expand_leave_list: true,
-              }
+                search_default_group_date_from: true,
+                expand_leave_list: true,
+            }
             : {
-                  list_view_ref: "hr_holidays.hr_leave_view_tree_my",
-                  form_view_ref: "hr_holidays.hr_leave_view_form",
-                  search_default_group_date_from: true,
-                  expand_leave_list: true,
-              };
+                list_view_ref: "hr_holidays.hr_leave_view_tree_my",
+                form_view_ref: "hr_holidays.hr_leave_view_form",
+                search_default_group_date_from: true,
+                expand_leave_list: true,
+            };
 
         openLeaveWindow(this.actionService, resModel, name, domain, context);
     }

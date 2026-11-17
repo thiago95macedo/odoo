@@ -1,4 +1,4 @@
-import { Component, t, useProps } from "@odoo/owl";
+import { Component, t, useProps } from "@weth/owl";
 import { useService } from "@web/core/utils/hooks";
 import { ConfirmationDialog, deleteConfirmationMessage } from "@web/core/confirmation_dialog/confirmation_dialog";
 
@@ -31,7 +31,7 @@ export class ProjectTemplateButtons extends Component {
                 await this.orm.unlink(this.props.resModel, [this.props.resId]);
                 this.action.doAction("soft_reload");
             },
-            cancel: () => {},
+            cancel: () => { },
         });
     }
 }

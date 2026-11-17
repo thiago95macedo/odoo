@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.mail.tests.common import MailCommon, mail_new_test_user
-from odoo.exceptions import UserError, AccessError
-from odoo.tests.common import tagged, users
+from weth.addons.mail.tests.common import MailCommon, mail_new_test_user
+from weth.exceptions import UserError, AccessError
+from weth.tests.common import tagged, users
 
 
 @tagged('at_install', '-post_install')  # LEGACY at_install

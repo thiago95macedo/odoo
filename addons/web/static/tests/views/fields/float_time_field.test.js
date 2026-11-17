@@ -1,5 +1,5 @@
-import { expect, test } from "@odoo/hoot";
-import { press } from "@odoo/hoot-dom";
+import { expect, test } from "@weth/hoot";
+import { press } from "@weth/hoot-dom";
 import {
     clickSave,
     contains,

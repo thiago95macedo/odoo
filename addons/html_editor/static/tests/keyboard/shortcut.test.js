@@ -1,7 +1,7 @@
 import { Plugin } from "@html_editor/plugin";
-import { expect, test } from "@odoo/hoot";
+import { expect, test } from "@weth/hoot";
 import { setupEditor } from "../_helpers/editor";
-import { press } from "@odoo/hoot-dom";
+import { press } from "@weth/hoot-dom";
 import { insertSpace, insertText } from "../_helpers/user_actions";
 import { ShortCutPlugin } from "@html_editor/core/shortcut_plugin";
 

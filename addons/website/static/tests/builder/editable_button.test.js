@@ -1,4 +1,4 @@
-import { expect, press, queryOne, test, waitFor } from "@odoo/hoot";
+import { expect, press, queryOne, test, waitFor } from "@weth/hoot";
 import { defineWebsiteModels, setupWebsiteBuilder } from "./website_helpers";
 import { contains } from "@web/../tests/web_test_helpers";
 import { setSelection } from "@html_editor/../tests/_helpers/selection";

@@ -2,9 +2,9 @@
 
 from werkzeug.exceptions import BadRequest, NotFound
 
-from odoo.http import Response, request, route
+from weth.http import Response, request, route
 
-from odoo.addons.mail.controllers.discuss.rtc import RtcController, _check_jwt
+from weth.addons.mail.controllers.discuss.rtc import RtcController, _check_jwt
 
 
 class CloudStorageRtcController(RtcController):

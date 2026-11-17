@@ -1,5 +1,5 @@
 import { services } from "@web/core/services";
-import { Plugin, usePlugin } from "@odoo/owl";
+import { Plugin, usePlugin } from "@weth/owl";
 import { OverlayPlugin } from "@web/core/overlay/overlay_plugin";
 import { Alert } from "@point_of_sale/app/components/pos_alert/pos_alert";
 

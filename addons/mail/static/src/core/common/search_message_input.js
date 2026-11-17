@@ -1,5 +1,5 @@
 import { MessageSearchState } from "@mail/core/common/message_search_hook";
-import { Component, t, useListener, useProps } from "@odoo/owl";
+import { Component, t, useListener, useProps } from "@weth/owl";
 import { browser } from "@web/core/browser/browser";
 import { SearchInput } from "@mail/core/common/search_input";
 import { Dropdown } from "@web/core/dropdown/dropdown";

@@ -2,8 +2,8 @@
 
 import logging
 
-from odoo import api, fields, models
-from odoo.fields import Domain
+from weth import api, fields, models
+from weth.fields import Domain
 
 _logger = logging.getLogger(__name__)
 

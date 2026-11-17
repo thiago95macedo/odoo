@@ -5,9 +5,9 @@ import {
 } from "@html_builder/../tests/helpers";
 import { BuilderAction } from "@html_builder/core/builder_action";
 import { BuilderUrlPicker } from "@html_builder/core/building_blocks/builder_urlpicker";
-import { describe, expect, test } from "@odoo/hoot";
-import { queryOne } from "@odoo/hoot-dom";
-import { xml } from "@odoo/owl";
+import { describe, expect, test } from "@weth/hoot";
+import { queryOne } from "@weth/hoot-dom";
+import { xml } from "@weth/owl";
 import { contains, patchWithCleanup } from "@web/../tests/web_test_helpers";
 
 describe.current.tags("desktop");

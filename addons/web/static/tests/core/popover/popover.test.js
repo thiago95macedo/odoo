@@ -9,8 +9,8 @@ import {
     scroll,
     test,
     waitFor,
-} from "@odoo/hoot";
-import { assertType, Component, htmlEscape, useProps, signal, t, xml } from "@odoo/owl";
+} from "@weth/hoot";
+import { assertType, Component, htmlEscape, useProps, signal, t, xml } from "@weth/owl";
 import {
     contains,
     defineStyle,
@@ -48,7 +48,7 @@ function isValidPopoverTarget(target) {
 test("popover can have custom class", async () => {
     await mountPopover({
         props: {
-            close: () => {},
+            close: () => { },
             target: getFixture(),
             class: "custom-popover",
             component: Content,
@@ -61,7 +61,7 @@ test("popover can have custom class", async () => {
 test("popover can have more than one custom class", async () => {
     await mountPopover({
         props: {
-            close: () => {},
+            close: () => { },
             target: getFixture(),
             class: "custom-popover popover-custom",
             component: Content,
@@ -78,7 +78,7 @@ test("popover is rendered nearby target (default)", async () => {
     );
     await mountPopover({
         props: {
-            close: () => {},
+            close: () => { },
             target: queryOne("#target"),
             component: Content,
             onPositioned: (_, { direction, variant }) => {
@@ -98,7 +98,7 @@ test("popover is rendered nearby target (bottom)", async () => {
 
     await mountPopover({
         props: {
-            close: () => {},
+            close: () => { },
             target: queryOne("#target"),
             position: "bottom",
             component: Content,
@@ -119,7 +119,7 @@ test("popover is rendered nearby target (top)", async () => {
 
     await mountPopover({
         props: {
-            close: () => {},
+            close: () => { },
             target: queryOne("#target"),
             position: "top",
             component: Content,
@@ -140,7 +140,7 @@ test("popover is rendered nearby target (left)", async () => {
 
     await mountPopover({
         props: {
-            close: () => {},
+            close: () => { },
             target: queryOne("#target"),
             position: "left",
             component: Content,
@@ -161,7 +161,7 @@ test("popover is rendered nearby target (right)", async () => {
 
     await mountPopover({
         props: {
-            close: () => {},
+            close: () => { },
             target: queryOne("#target"),
             position: "right",
             component: Content,
@@ -182,7 +182,7 @@ test("popover is rendered nearby target (bottom-start)", async () => {
 
     await mountPopover({
         props: {
-            close: () => {},
+            close: () => { },
             target: queryOne("#target"),
             position: "bottom-start",
             component: Content,
@@ -203,7 +203,7 @@ test("popover is rendered nearby target (bottom-middle)", async () => {
 
     await mountPopover({
         props: {
-            close: () => {},
+            close: () => { },
             target: queryOne("#target"),
             position: "bottom-middle",
             component: Content,
@@ -224,7 +224,7 @@ test("popover is rendered nearby target (bottom-end)", async () => {
 
     await mountPopover({
         props: {
-            close: () => {},
+            close: () => { },
             target: queryOne("#target"),
             position: "bottom-end",
             component: Content,
@@ -245,7 +245,7 @@ test("popover is rendered nearby target (bottom-fit)", async () => {
 
     await mountPopover({
         props: {
-            close: () => {},
+            close: () => { },
             target: queryOne("#target"),
             position: "bottom-fit",
             component: Content,
@@ -270,7 +270,7 @@ test("within iframe", async () => {
     const popoverTarget = await waitFor(":iframe #target");
     const comp = await mountPopover({
         props: {
-            close: () => {},
+            close: () => { },
             target: popoverTarget,
             component: Content,
             arrow: true,
@@ -324,7 +324,7 @@ test("within iframe -- wrong element class", async () => {
     const wrongElement = await waitFor(":iframe .wrong-element");
     await mountWithCleanup(TestPopover, {
         props: {
-            close: () => {},
+            close: () => { },
             target: wrongElement,
             component: Content,
         },
@@ -346,7 +346,7 @@ test("popover fixed position", async () => {
 
     await mountPopover({
         props: {
-            close: () => {},
+            close: () => { },
             target: container,
             position: "bottom-fit",
             fixedPosition: true,
@@ -379,7 +379,7 @@ test("popover with arrow and onPositioned", async () => {
     await mountPopover(
         {
             props: {
-                close: () => {},
+                close: () => { },
                 target: getFixture(),
                 component: Content,
                 arrow: true,
@@ -442,7 +442,7 @@ test("popover repositions when content changes", async () => {
 
     await mountPopover({
         props: {
-            close: () => {},
+            close: () => { },
             target: getFixture(),
             component: DynamicContent,
             onPositioned() {
@@ -573,7 +573,7 @@ test("popover can animate", async () => {
 
     await mountPopover({
         props: {
-            close: () => {},
+            close: () => { },
             target: getFixture(),
             animation: true,
             component: Content,

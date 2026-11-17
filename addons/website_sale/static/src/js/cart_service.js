@@ -1,4 +1,4 @@
-import { proxy } from "@odoo/owl";
+import { proxy } from "@weth/owl";
 import {
     ComboConfiguratorDialog
 } from '@sale/js/combo_configurator_dialog/combo_configurator_dialog';
@@ -121,20 +121,20 @@ export class CartService {
      * @returns {Number} - The product's quantity added to the cart.
      */
     async add({
-            productTemplateId,
-            productId = undefined,
-            quantity = 1,
-            uomId = undefined,
-            ptavs = [],
-            productCustomAttributeValues = [],
-            noVariantAttributeValues = [],
-            isCombo = false,
-            ...rest
-        },
+        productTemplateId,
+        productId = undefined,
+        quantity = 1,
+        uomId = undefined,
+        ptavs = [],
+        productCustomAttributeValues = [],
+        noVariantAttributeValues = [],
+        isCombo = false,
+        ...rest
+    },
         {
-            isBuyNow=false,
-            isConfigured=false,
-            showQuantity=true,
+            isBuyNow = false,
+            isConfigured = false,
+            showQuantity = true,
         } = {},
     ) {
         if (!productId && ptavs.length) {
@@ -144,7 +144,7 @@ export class CartService {
             })
         }
 
-        if(isCombo) {
+        if (isCombo) {
             const { combos, ...remainingData } = await this.rpc(
                 '/website_sale/combo_configurator/get_data',
                 {
@@ -156,9 +156,9 @@ export class CartService {
                 }
             );
             const preselectedComboItems = combos
-                 .map(combo => new ProductCombo(combo))
-                 .map(combo => combo.preselectedComboItem)
-                 .filter(Boolean);
+                .map(combo => new ProductCombo(combo))
+                .map(combo => combo.preselectedComboItem)
+                .filter(Boolean);
             // If the combo product is already fully configured (i.e. a combo item has been
             // preselected for each combo choice), then it can be added to the cart without
             // opening the combo configurator.
@@ -484,10 +484,10 @@ export class CartService {
         productTemplateId,
         productId,
         quantity,
-        uomId=undefined,
-        productCustomAttributeValues=[],
-        noVariantAttributeValues=[],
-        shouldRedirectToCart=false,
+        uomId = undefined,
+        productCustomAttributeValues = [],
+        noVariantAttributeValues = [],
+        shouldRedirectToCart = false,
         ...rest
     }) {
         const data = await this.rpc('/shop/cart/add', {
@@ -540,7 +540,7 @@ export class CartService {
         browser.sessionStorage.setItem('website_sale_cart_quantity', cartQuantity);
         // Mobile and Desktop elements have to be updated.
         const cartQuantityElements = document.querySelectorAll('.my_cart_quantity');
-        for(const cartQuantityElement of cartQuantityElements) {
+        for (const cartQuantityElement of cartQuantityElements) {
             if (cartQuantity === 0) {
                 cartQuantityElement.classList.add('d-none');
             } else {
@@ -565,7 +565,7 @@ export class CartService {
      */
     _showCartNotification(notification) {
         this.notifications.add(notification);
-        setTimeout( () => this.notifications.delete(notification), AUTOCLOSE_NOTIFICATION_DELAY );
+        setTimeout(() => this.notifications.delete(notification), AUTOCLOSE_NOTIFICATION_DELAY);
     }
 
 }

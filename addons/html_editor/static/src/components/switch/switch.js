@@ -1,6 +1,6 @@
-import { Component, useProps, t, xml } from "@odoo/owl";
+import { Component, useProps, t, xml } from "@weth/owl";
 
-const NO_OP = () => {};
+const NO_OP = () => { };
 
 export class Switch extends Component {
     props = useProps({

@@ -1,13 +1,13 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-import odoo.tests
-from odoo.tools import mute_logger
+import weth.tests
+from weth.tools import mute_logger
 
 
-@odoo.tests.common.tagged('post_install', '-at_install')
-class TestMedia(odoo.tests.HttpCase):
+@weth.tests.common.tagged('post_install', '-at_install')
+class TestMedia(weth.tests.HttpCase):
 
-    @mute_logger('odoo.addons.http_routing.models.ir_http', 'odoo.http')
+    @mute_logger('weth.addons.http_routing.models.ir_http', 'weth.http')
     def test_01_replace_media(self):
         SVG = b'<svg xmlns="http://www.w3.org/2000/svg"></svg>'
         self.env['ir.attachment'].create({

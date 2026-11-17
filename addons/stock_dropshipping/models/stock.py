@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, models, fields
-from odoo.fields import Domain
+from weth import api, models, fields
+from weth.fields import Domain
 
 
 class StockRule(models.Model):

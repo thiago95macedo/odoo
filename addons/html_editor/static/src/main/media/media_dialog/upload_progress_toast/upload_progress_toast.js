@@ -1,6 +1,6 @@
 import { _t } from "@web/core/l10n/translation";
 import { useService } from "@web/core/utils/hooks";
-import { Component, proxy, t, useProps } from "@odoo/owl";
+import { Component, proxy, t, useProps } from "@weth/owl";
 
 export class ProgressBar extends Component {
     static template = "html_editor.ProgressBar";
@@ -12,7 +12,7 @@ export class ProgressBar extends Component {
         size: t.string().optional(""),
         errorMessage: t.string().optional(""),
         mimetype: t.string().optional(""),
-        cancelUpload: t.function().optional(() => () => {}),
+        cancelUpload: t.function().optional(() => () => { }),
     });
 
     get errorMessage() {

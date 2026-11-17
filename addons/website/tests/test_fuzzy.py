@@ -7,18 +7,18 @@ from unittest.mock import patch
 from lxml import etree
 from markupsafe import Markup
 
-import odoo.tests
-from odoo.tests.common import TransactionCase
+import weth.tests
+from weth.tests.common import TransactionCase
 
-from odoo.addons.website.controllers.main import Website
-from odoo.addons.website.models.website import Website as WebsiteModel
-from odoo.addons.http_routing.tests.common import MockRequest
-from odoo.addons.website.tools import distance
+from weth.addons.website.controllers.main import Website
+from weth.addons.website.models.website import Website as WebsiteModel
+from weth.addons.http_routing.tests.common import MockRequest
+from weth.addons.website.tools import distance
 
 _logger = logging.getLogger(__name__)
 
 
-@odoo.tests.tagged('-at_install', 'post_install')
+@weth.tests.tagged('-at_install', 'post_install')
 class TestFuzzy(TransactionCase):
     def test_01_fuzzy_names(self):
         # Models from other modules commented out on commit: they make the test much longer
@@ -107,7 +107,7 @@ class TestFuzzy(TransactionCase):
         self.assertEqual(distance("", "", 10), 0)
 
 
-@odoo.tests.tagged('-at_install', 'post_install')
+@weth.tests.tagged('-at_install', 'post_install')
 class TestAutoComplete(TransactionCase):
     @classmethod
     def setUpClass(cls):

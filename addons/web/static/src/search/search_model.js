@@ -1,4 +1,4 @@
-import { computed, EventBus, proxy, signal, toRaw, usePlugin } from "@odoo/owl";
+import { computed, EventBus, proxy, signal, toRaw, usePlugin } from "@weth/owl";
 import { router } from "@web/core/browser/router";
 import { makeContext } from "@web/core/context";
 import { DebugModePlugin } from "@web/core/debug_mode_plugin";
@@ -853,9 +853,9 @@ export class SearchModel extends EventBus {
         );
         const trees =
             !tree.negate &&
-            tree.type === "connector" &&
-            tree.value === "&" &&
-            tree.children.length > 0
+                tree.type === "connector" &&
+                tree.value === "&" &&
+                tree.children.length > 0
                 ? tree.children
                 : [tree];
         const promises = trees.map(async (tree) => {
@@ -2073,8 +2073,7 @@ export class SearchModel extends EventBus {
             case "dateGroupBy":
                 return activeItem.intervalIds.map(
                     (intervalId) =>
-                        `${description}: ${
-                            this._getIntervalOptionByIntervalId(intervalId).description
+                        `${description}: ${this._getIntervalOptionByIntervalId(intervalId).description
                         }`
                 );
             case "dateFilter":
@@ -2273,8 +2272,8 @@ export class SearchModel extends EventBus {
         const groupBy = groupBys.length
             ? groupBys
             : this.globalGroupBy.length
-            ? this.globalGroupBy.slice()
-            : (fallbackOnDefault && this.defaultGroupBy?.slice()) || [];
+                ? this.globalGroupBy.slice()
+                : (fallbackOnDefault && this.defaultGroupBy?.slice()) || [];
         return typeof groupBy === "string" ? [groupBy] : groupBy;
     }
 
@@ -2523,7 +2522,7 @@ export class SearchModel extends EventBus {
                     }
                 }
                 // the following code aims to remodel this:
-                // https://github.com/odoo/odoo/blob/12.0/addons/web/static/src/js/views/search/search_inputs.js#L498
+                // https://github.com/weth/odoo/blob/12.0/addons/web/static/src/js/views/search/search_inputs.js#L498
                 // this is required for the helpdesk tour to pass
                 // this seems weird to only do that for m2o fields, but a test fails if
                 // we do it for other fields (my guess being that the test should simply

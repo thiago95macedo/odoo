@@ -1,4 +1,4 @@
-import { computed, useProps, signal, types, Component } from "@odoo/owl";
+import { computed, useProps, signal, types, Component } from "@weth/owl";
 import { CheckBox } from "@web/core/checkbox/checkbox";
 import { formatDate, parseDate, serializeDate, serializeDateTime } from "@web/core/l10n/dates";
 import { _t } from "@web/core/l10n/translation";

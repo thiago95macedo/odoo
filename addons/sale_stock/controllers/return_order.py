@@ -5,11 +5,11 @@ import json
 from markupsafe import Markup
 from werkzeug.exceptions import BadRequest
 
-from odoo.exceptions import AccessError, MissingError
-from odoo.http import request, route
-from odoo.http.stream import content_disposition
+from weth.exceptions import AccessError, MissingError
+from weth.http import request, route
+from weth.http.stream import content_disposition
 
-from odoo.addons.sale.controllers import portal as sale_portal
+from weth.addons.sale.controllers import portal as sale_portal
 
 
 class CustomerPortal(sale_portal.CustomerPortal):

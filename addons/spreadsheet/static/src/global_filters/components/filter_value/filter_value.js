@@ -3,8 +3,8 @@
 import { MultiRecordSelector } from "@web/core/record_selectors/multi_record_selector";
 import { DateFilterValue } from "../date_filter_value/date_filter_value";
 
-import { Component, onWillStart, t, useProps } from "@odoo/owl";
-import { components } from "@odoo/o-spreadsheet";
+import { Component, onWillStart, t, useProps } from "@weth/owl";
+import { components } from "@weth/o-spreadsheet";
 import { _t } from "@web/core/l10n/translation";
 import { useService } from "@web/core/utils/hooks";
 import { Domain } from "@web/core/domain";

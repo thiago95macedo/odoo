@@ -1,7 +1,7 @@
-from odoo import Command
-from odoo.tests import tagged, new_test_user
+from weth import Command
+from weth.tests import tagged, new_test_user
 
-from odoo.addons.mail.tests.common import MailCommon
+from weth.addons.mail.tests.common import MailCommon
 
 
 @tagged('post_install', '-at_install')

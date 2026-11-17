@@ -2,7 +2,7 @@ import {
     defineWebsiteModels,
     setupWebsiteBuilderWithSnippet,
 } from "@website/../tests/builder/website_helpers";
-import { expect, test } from "@odoo/hoot";
+import { expect, test } from "@weth/hoot";
 import { contains } from "@web/../tests/web_test_helpers";
 
 defineWebsiteModels();

@@ -1,11 +1,11 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, fields, models
-from odoo.fields import Domain
-from odoo.tools.sql import SQL
-from odoo.tools.translate import html_translate
+from weth import api, fields, models
+from weth.fields import Domain
+from weth.tools.sql import SQL
+from weth.tools.translate import html_translate
 
-from odoo.addons.website_sale.const import SHOP_PATH
+from weth.addons.website_sale.const import SHOP_PATH
 
 
 class ProductPublicCategory(models.Model):

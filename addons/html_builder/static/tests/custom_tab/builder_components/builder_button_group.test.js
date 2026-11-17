@@ -13,9 +13,9 @@ import {
     queryOne,
     test,
     waitFor,
-} from "@odoo/hoot";
-import { hover } from "@odoo/hoot-dom";
-import { xml } from "@odoo/owl";
+} from "@weth/hoot";
+import { hover } from "@weth/hoot-dom";
+import { xml } from "@weth/owl";
 import { contains } from "@web/../tests/web_test_helpers";
 
 describe.current.tags("desktop");

@@ -7,7 +7,7 @@ import { CallPermissionDeniedDialog } from "@mail/discuss/call/common/call_permi
 import { rpc } from "@web/core/network/rpc";
 import { assignDefined, closeStream } from "@mail/utils/common/misc";
 
-import { markup, proxy, toRaw } from "@odoo/owl";
+import { markup, proxy, toRaw } from "@weth/owl";
 
 import { browser } from "@web/core/browser/browser";
 import { ConfirmationDialog } from "@web/core/confirmation_dialog/confirmation_dialog";
@@ -63,7 +63,7 @@ const getSequence = () => sequence++;
 
 /**
  * @typedef {Object} ContextOptions
- * @property {import("@odoo/owl").Signal<Element> | (() => Element)} [rootRef]
+ * @property {import("@weth/owl").Signal<Element> | (() => Element)} [rootRef]
  */
 
 /**
@@ -1105,7 +1105,7 @@ export class Rtc extends Record {
         }
         await Promise.resolve(() =>
             loadJS(url("/mail/static/lib/selfie_segmentation/selfie_segmentation.js")).catch(
-                () => {}
+                () => { }
             )
         );
         if (this.hasPendingRequest) {
@@ -1400,8 +1400,8 @@ export class Rtc extends Record {
         const load = async () => {
             await loadSfuAssets();
             const sfuModule =
-                odoo.loader.modules.get("@_custom/mail/../lib/odoo_sfu/odoo_sfu") ??
-                odoo.loader.modules.get("@mail/../lib/odoo_sfu/odoo_sfu");
+                weth.loader.modules.get("@_custom/mail/../lib/odoo_sfu/odoo_sfu") ??
+                weth.loader.modules.get("@mail/../lib/odoo_sfu/odoo_sfu");
             this.SFU_CLIENT_STATE = sfuModule.SFU_CLIENT_STATE;
             this.sfuClient = new sfuModule.SfuClient();
         };
@@ -2825,8 +2825,8 @@ export class Rtc extends Record {
             videoType = videoType
                 ? videoType
                 : track.id === this.cameraTrack?.id
-                ? "camera"
-                : "screen";
+                    ? "camera"
+                    : "screen";
             session.videoStreams.set(videoType, stream);
             this.updateActiveSession(session, videoType, { addVideo: true });
         }
@@ -3040,14 +3040,14 @@ export const rtcService = {
                     rtc.microphonePermission = status.state;
                     status.onchange = () => (rtc.microphonePermission = status.state);
                 })
-                .catch(() => {}),
+                .catch(() => { }),
             window.navigator.permissions
                 ?.query({ name: "camera" })
                 .then((status) => {
                     rtc.cameraPermission = status.state;
                     status.onchange = () => (rtc.cameraPermission = status.state);
                 })
-                .catch(() => {}),
+                .catch(() => { }),
         ]);
         rtc.p2pService = services["discuss.p2p"];
         rtc.p2pService.acceptOffer = async (id, sequence) => {

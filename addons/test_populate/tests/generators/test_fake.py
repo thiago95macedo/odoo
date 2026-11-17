@@ -1,6 +1,6 @@
 from unittest import skipIf
 
-from odoo.tests import TransactionCase
+from weth.tests import TransactionCase
 
 try:
     from faker import Faker
@@ -9,7 +9,7 @@ except ImportError:
     Faker = None
 
 if Faker:
-    from odoo.addons.populate.generators import Generator, fake
+    from weth.addons.populate.generators import Generator, fake
 
 
 @skipIf(not Faker, "Faker library not installed.")

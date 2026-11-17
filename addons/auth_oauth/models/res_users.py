@@ -11,9 +11,9 @@ if hasattr(datastructures.WWWAuthenticate, "from_header"):
 else:
     parse_auth = http.parse_www_authenticate_header
 
-from odoo import api, fields, models
-from odoo.exceptions import AccessDenied, AccessError, UserError
-from odoo.addons.auth_signup.models.res_users import SignupError
+from weth import api, fields, models
+from weth.exceptions import AccessDenied, AccessError, UserError
+from weth.addons.auth_signup.models.res_users import SignupError
 
 
 class ResUsers(models.Model):

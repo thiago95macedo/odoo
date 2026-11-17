@@ -2,8 +2,8 @@
 
 from freezegun import freeze_time
 
-from odoo.http.session import SESSION_ROTATION_INTERVAL
-from odoo.tests import HttpCase, JsonRpcException, new_test_user, tagged
+from weth.http.session import SESSION_ROTATION_INTERVAL
+from weth.tests import HttpCase, JsonRpcException, new_test_user, tagged
 
 from .common import BusCase
 
@@ -49,7 +49,7 @@ class TestWebsocketController(HttpCase, BusCase):
 
         self.authenticate('admin', 'admin')
         # rpc with outdated session should lead to error.
-        with self.assertRaises(JsonRpcException, msg='odoo.http.session.SessionExpiredException'):
+        with self.assertRaises(JsonRpcException, msg='weth.http.session.SessionExpiredException'):
             self.make_jsonrpc_request('/websocket/peek_notifications', {
                 'channels': [],
                 'last': 0,
@@ -72,7 +72,7 @@ class TestWebsocketController(HttpCase, BusCase):
             },
         )
         # rpc with outdated session should lead to error.
-        with self.assertRaises(JsonRpcException, msg='odoo.http.session.SessionExpiredException'):
+        with self.assertRaises(JsonRpcException, msg='weth.http.session.SessionExpiredException'):
             self.make_jsonrpc_request('/websocket/peek_notifications', {
                 'channels': [],
                 'last': 0,

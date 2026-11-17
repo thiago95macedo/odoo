@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-import odoo.tests
-from odoo.addons.crm.tests.common import TestCrmCommon
+import weth.tests
+from weth.addons.crm.tests.common import TestCrmCommon
 
 
-@odoo.tests.tagged('post_install', '-at_install')
-class TestWebsiteCrm(odoo.tests.HttpCase, TestCrmCommon):
+@weth.tests.tagged('post_install', '-at_install')
+class TestWebsiteCrm(weth.tests.HttpCase, TestCrmCommon):
 
     def test_tour(self):
         all_utm_campaign = self.env['utm.campaign'].search([])
@@ -42,12 +42,12 @@ class TestWebsiteCrm(odoo.tests.HttpCase, TestCrmCommon):
         # no edit on prefilled data from logged partner : propagate partner_id on created lead
         self.start_tour(self.env['website'].get_client_action_url('/contactus', True), 'website_crm_pre_tour', login=user_login)
 
-        with odoo.tests.RecordCapturer(self.env['crm.lead']) as capt:
+        with weth.tests.RecordCapturer(self.env['crm.lead']) as capt:
             self.start_tour("/contactus", "website_crm_catch_logged_partner_info_tour", login=user_login)
         self.assertEqual(capt.records.partner_id, user_partner)
 
         # edited contact us partner info : do not propagate partner_id on lead
-        with odoo.tests.RecordCapturer(self.env['crm.lead']) as capt:
+        with weth.tests.RecordCapturer(self.env['crm.lead']) as capt:
             self.start_tour("/contactus", "website_crm_tour", login=user_login)
         self.assertFalse(capt.records.partner_id)
 

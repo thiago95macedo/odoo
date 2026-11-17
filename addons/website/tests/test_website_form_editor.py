@@ -1,13 +1,13 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.exceptions import AccessError, ValidationError
-from odoo.fields import Domain
-from odoo.http import request
-from odoo.tests.common import TransactionCase, tagged
+from weth.exceptions import AccessError, ValidationError
+from weth.fields import Domain
+from weth.http import request
+from weth.tests.common import TransactionCase, tagged
 
-from odoo.addons.base.tests.common import HttpCaseWithUserPortal
-from odoo.addons.http_routing.tests.common import MockRequest
-from odoo.addons.website.controllers.form import WebsiteForm
+from weth.addons.base.tests.common import HttpCaseWithUserPortal
+from weth.addons.http_routing.tests.common import MockRequest
+from weth.addons.website.controllers.form import WebsiteForm
 
 
 @tagged('post_install', '-at_install')

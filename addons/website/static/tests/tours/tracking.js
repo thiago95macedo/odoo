@@ -7,7 +7,7 @@ import { patch } from "@web/core/utils/patch";
  * Patch tracker to avoid waitForTimeout.
  */
 function patchOdooTracker() {
-    const { OdooTracker } = odoo.loader.modules.get('@website/interactions/odoo_tracker');
+    const { OdooTracker } = weth.loader.modules.get('@website/interactions/odoo_tracker');
     patch(OdooTracker.prototype, {
         waitForTimeout(callback, delay) {
             callback();
@@ -18,10 +18,10 @@ function patchOdooTracker() {
     });
 }
 
-if (odoo.loader.modules.has('@website/interactions/odoo_tracker')) {
+if (weth.loader.modules.has('@website/interactions/odoo_tracker')) {
     patchOdooTracker();
 } else {
-    odoo.loader.bus.addEventListener('module-started', (e) => {
+    weth.loader.bus.addEventListener('module-started', (e) => {
         if (e.detail.moduleName === '@website/interactions/odoo_tracker') patchOdooTracker();
     });
 }

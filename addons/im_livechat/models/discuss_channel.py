@@ -6,16 +6,16 @@ from zoneinfo import ZoneInfo
 
 from markupsafe import Markup
 
-from odoo import _, api, fields, models, tools
-from odoo.exceptions import UserError
-from odoo.fields import Domain
-from odoo.tools import email_split, format_list, html2plaintext, is_html_empty
-from odoo.tools.mimetypes import get_extension
-from odoo.tools.sql import SQL
-from odoo.tools.translate import LazyTranslate
+from weth import _, api, fields, models, tools
+from weth.exceptions import UserError
+from weth.fields import Domain
+from weth.tools import email_split, format_list, html2plaintext, is_html_empty
+from weth.tools.mimetypes import get_extension
+from weth.tools.sql import SQL
+from weth.tools.translate import LazyTranslate
 
-from odoo.addons.base.models.ir_qweb_fields import nl2br
-from odoo.addons.mail.tools.discuss import Store
+from weth.addons.base.models.ir_qweb_fields import nl2br
+from weth.addons.mail.tools.discuss import Store
 
 _lt = LazyTranslate(__name__)
 

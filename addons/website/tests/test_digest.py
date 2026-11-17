@@ -2,9 +2,9 @@
 
 from datetime import timedelta
 
-from odoo import Command, fields
-from odoo.addons.digest.tests.common import TestDigestCommon
-from odoo.tests import tagged
+from weth import Command, fields
+from weth.addons.digest.tests.common import TestDigestCommon
+from weth.tests import tagged
 
 
 @tagged('post_install', '-at_install')

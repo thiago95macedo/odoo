@@ -2,7 +2,7 @@
 
 from datetime import date, timedelta
 
-from odoo import fields, models
+from weth import fields, models
 
 
 class HrEmployeePublic(models.Model):

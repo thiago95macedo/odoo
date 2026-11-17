@@ -4,8 +4,8 @@ import {
     setupInteractionWhiteList,
 } from "@web/../tests/public/helpers";
 
-import { describe, expect, test } from "@odoo/hoot";
-import { animationFrame, click, queryAll, queryOne, scroll } from "@odoo/hoot-dom";
+import { describe, expect, test } from "@weth/hoot";
+import { animationFrame, click, queryAll, queryOne, scroll } from "@weth/hoot-dom";
 
 import { setupTest, simpleScroll, doubleScroll } from "./helpers";
 

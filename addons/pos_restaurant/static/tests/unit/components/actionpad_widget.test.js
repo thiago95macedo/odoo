@@ -1,4 +1,4 @@
-import { expect, test } from "@odoo/hoot";
+import { expect, test } from "@weth/hoot";
 import { getFilledOrder, setupPosEnv } from "@point_of_sale/../tests/unit/utils";
 import { mountWithCleanup } from "@web/../tests/web_test_helpers";
 import { ActionpadWidget } from "@point_of_sale/app/screens/product_screen/action_pad/action_pad";
@@ -13,7 +13,7 @@ test("highlightPay", async () => {
         props: {
             order: order,
             actionName: "Payment",
-            actionToTrigger: () => {},
+            actionToTrigger: () => { },
         },
     });
 

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
-from odoo import fields, models
-from odoo.tools.translate import html_translate
+from weth import fields, models
+from weth.tools.translate import html_translate
 
 
 class DigestTip(models.Model):

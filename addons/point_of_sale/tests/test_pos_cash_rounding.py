@@ -1,6 +1,6 @@
-from odoo import Command
-from odoo.addons.point_of_sale.tests.test_frontend import TestPointOfSaleHttpCommon
-from odoo.tests import tagged
+from weth import Command
+from weth.addons.point_of_sale.tests.test_frontend import TestPointOfSaleHttpCommon
+from weth.tests import tagged
 
 
 @tagged('post_install', '-at_install')

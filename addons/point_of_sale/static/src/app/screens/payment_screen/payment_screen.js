@@ -7,7 +7,7 @@ import { NumberPopup } from "@point_of_sale/app/components/popups/number_popup/n
 import { PriceFormatter } from "@point_of_sale/app/components/price_formatter/price_formatter";
 import { AlertDialog } from "@web/core/confirmation_dialog/confirmation_dialog";
 
-import { Component, onMounted, useProps, t, usePlugin } from "@odoo/owl";
+import { Component, onMounted, useProps, t, usePlugin } from "@weth/owl";
 import { Numpad, enhancedButtons } from "@point_of_sale/app/components/numpad/numpad";
 import { usePos } from "@point_of_sale/app/hooks/pos_hook";
 import { useRouterParamsChecker } from "@point_of_sale/app/hooks/pos_router_hook";
@@ -305,8 +305,8 @@ export class PaymentScreen extends Component {
 
         const pLine =
             this.selectedPaymentLine &&
-            (!this.selectedPaymentLine.isElectronic() ||
-                this.selectedPaymentLine.getPaymentStatus() === "pending")
+                (!this.selectedPaymentLine.isElectronic() ||
+                    this.selectedPaymentLine.getPaymentStatus() === "pending")
                 ? this.selectedPaymentLine
                 : false;
 
@@ -453,7 +453,7 @@ export class PaymentScreen extends Component {
 registry.category("pos_pages").add("PaymentScreen", {
     name: "PaymentScreen",
     component: PaymentScreen,
-    route: `/pos/ui/${odoo.pos_config_id}/payment/{string:orderUuid}`,
+    route: `/pos/ui/${weth.pos_config_id}/payment/{string:orderUuid}`,
     params: {
         orderUuid: true,
     },

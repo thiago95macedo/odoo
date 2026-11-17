@@ -1,4 +1,4 @@
-import { useProps, t } from "@odoo/owl";
+import { useProps, t } from "@weth/owl";
 import { TModelInput } from "@point_of_sale/app/components/inputs/t_model_input";
 
 export class NumericInput extends TModelInput {

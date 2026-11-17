@@ -1,10 +1,10 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import fields
-from odoo.fields import Domain
-from odoo.tests.common import freeze_time, new_test_user
+from weth import fields
+from weth.fields import Domain
+from weth.tests.common import freeze_time, new_test_user
 
-from odoo.addons.mail.tests.common import MailCommon
+from weth.addons.mail.tests.common import MailCommon
 
 
 @freeze_time("2024-05-20 10:00:00")

@@ -1,6 +1,6 @@
 import { BaseOptionComponent } from "@html_builder/core/base_option_component";
 import { registry } from "@web/core/registry";
-import { onWillStart, useProps, t } from "@odoo/owl";
+import { onWillStart, useProps, t } from "@weth/owl";
 
 export class FooterTemplateOption extends BaseOptionComponent {
     static id = "footer_template_option";

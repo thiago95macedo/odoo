@@ -6,11 +6,11 @@ from json import loads
 
 from freezegun import freeze_time
 
-from odoo import Command
-from odoo.fields import Date
-from odoo.tests import Form, tagged, new_test_user
+from weth import Command
+from weth.fields import Date
+from weth.tests import Form, tagged, new_test_user
 
-from odoo.addons.mrp_subcontracting_account.tests.test_subcontracting_account import TestAccountSubcontractingFlows
+from weth.addons.mrp_subcontracting_account.tests.test_subcontracting_account import TestAccountSubcontractingFlows
 
 _logger = logging.getLogger(__name__)
 

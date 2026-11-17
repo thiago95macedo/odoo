@@ -5,7 +5,7 @@ import { getColor, getFormattedDateSpan } from "@web/views/calendar/utils";
 import { CARD_ATTRIBUTE } from "@web/views/card/card_arch_parser";
 import { CardPopover } from "@web/views/card/card_popover/card_popover";
 
-import { Component, t, useListener, useProps } from "@odoo/owl";
+import { Component, t, useListener, useProps } from "@weth/owl";
 
 export class CalendarCommonPopover extends Component {
     static template = "web.CalendarCommonPopover";
@@ -16,8 +16,8 @@ export class CalendarCommonPopover extends Component {
         close: t.function(),
         model: t.object(),
         record: t.object(),
-        openRecord: t.function().optional(() => () => {}),
-        deleteRecord: t.function().optional(() => () => {}),
+        openRecord: t.function().optional(() => () => { }),
+        deleteRecord: t.function().optional(() => () => { }),
     });
 
     setup() {

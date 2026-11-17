@@ -1,7 +1,7 @@
 import { Store } from "@mail/../tests/mock_server/store";
 import { convertBrToLineBreak } from "@mail/utils/common/format";
 
-import { markup } from "@odoo/owl";
+import { markup } from "@weth/owl";
 
 import {
     Command,
@@ -786,15 +786,13 @@ export class DiscussChannel extends models.ServerModel {
         const id = ids[0];
         const [channel] = this.search_read([["id", "=", id]]);
         const notifBody = /* html */ `
-            <span class="o_mail_notification">You are in ${
-                channel.channel_type === "channel" ? "" : "a private conversation with"
+            <span class="o_mail_notification">You are in ${channel.channel_type === "channel" ? "" : "a private conversation with"
             }
-            <b>${
-                channel.channel_type === "channel"
-                    ? `#${channel.name}`
-                    : channel.channel_member_ids.map(
-                          (id) => DiscussChannelMember.search_read([["id", "=", id]])[0].name
-                      )
+            <b>${channel.channel_type === "channel"
+                ? `#${channel.name}`
+                : channel.channel_member_ids.map(
+                    (id) => DiscussChannelMember.search_read([["id", "=", id]])[0].name
+                )
             }</b>.<br><br>
 
             <b>@username</b> to mention someone<br>

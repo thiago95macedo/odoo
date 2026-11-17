@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import Command
-from odoo.addons.mrp.tests.common import TestMrpCommon
-from odoo.tests import Form, HttpCase
+from weth import Command
+from weth.addons.mrp.tests.common import TestMrpCommon
+from weth.tests import Form, HttpCase
 
 
 class TestTourManualConsumption(HttpCase):
@@ -43,7 +43,7 @@ class TestTourManualConsumption(HttpCase):
         self.assertEqual(move_nt.quantity, 0)
         self.assertFalse(move_nt.picked)
 
-        url = f"/odoo/action-mrp.mrp_production_action/{mo.id}"
+        url = f"/weth/action-mrp.mrp_production_action/{mo.id}"
         self.start_tour(url, "test_mrp_manual_consumption_02", login="admin", timeout=100)
 
         self.assertEqual(move_nt.picked, True)

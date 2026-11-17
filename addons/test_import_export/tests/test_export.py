@@ -2,11 +2,11 @@ import json
 from datetime import date
 from unittest.mock import patch
 
-from odoo import Command, http
-from odoo.tests import common, tagged, warmup
-from odoo.tools.constants import IN_MAX
-from odoo.tools.misc import get_lang
-from odoo.addons.web.controllers.export import ExportXlsxWriter
+from weth import Command, http
+from weth.tests import common, tagged, warmup
+from weth.tools.constants import IN_MAX
+from weth.tools.misc import get_lang
+from weth.addons.web.controllers.export import ExportXlsxWriter
 
 
 class XlsxCreatorCase(common.HttpCase):

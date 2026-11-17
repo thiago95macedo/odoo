@@ -5,13 +5,13 @@ from datetime import datetime, timedelta, UTC
 from textwrap import dedent
 from zoneinfo import ZoneInfo
 
-from odoo import api, fields, models, _
-from odoo.exceptions import UserError
-from odoo.fields import Domain
-from odoo.tools.date_utils import float_to_time
-from odoo.tools.translate import LazyTranslate
+from weth import api, fields, models, _
+from weth.exceptions import UserError
+from weth.fields import Domain
+from weth.tools.date_utils import float_to_time
+from weth.tools.translate import LazyTranslate
 
-from odoo.addons.base.models.res_partner import _tz_get
+from weth.addons.base.models.res_partner import _tz_get
 
 WEEKDAY_TO_NAME = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun']
 CRON_DEPENDS = {'name', 'active', 'send_by', 'automatic_email_time', 'tz'}

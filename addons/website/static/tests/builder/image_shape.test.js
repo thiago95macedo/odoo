@@ -1,5 +1,5 @@
-import { click, describe, expect, queryOne, test } from "@odoo/hoot";
-import { queryFirst, advanceTime, animationFrame, setInputRange } from "@odoo/hoot-dom";
+import { click, describe, expect, queryOne, test } from "@weth/hoot";
+import { queryFirst, advanceTime, animationFrame, setInputRange } from "@weth/hoot-dom";
 import { contains, onRpc } from "@web/../tests/web_test_helpers";
 import { Plugin } from "@html_editor/plugin";
 import {
@@ -36,7 +36,7 @@ test("Should set a shape on an image", async () => {
 
     await selectImageShape("html_builder/geometric/geo_shuriken");
     // ensure the shape action has been applied
-    await editor.shared.operation.next(() => {});
+    await editor.shared.operation.next(() => { });
 
     const img = queryFirst(":iframe .test-options-target img");
     expect(":iframe .test-options-target img").toHaveAttribute("data-attachment-id", "1");
@@ -394,7 +394,7 @@ describe("flip shape axis", () => {
 
         await contains(`[data-action-id="flipImageShape"]:has([data-icon="arrow_range"])`).click();
         // ensure the shape action has been applied
-        await editor.shared.operation.next(() => {});
+        await editor.shared.operation.next(() => { });
 
         expect(`:iframe .test-options-target img`).toHaveAttribute("data-shape-flip", "x");
     });
@@ -419,7 +419,7 @@ describe("flip shape axis", () => {
         await contains(`[data-action-id="flipImageShape"]:has([data-icon="arrow_range"])`).click();
         await contains(`[data-action-id="flipImageShape"]:has([data-icon="arrow_range"])`).click();
         // ensure the shape action has been applied
-        await editor.shared.operation.next(() => {});
+        await editor.shared.operation.next(() => { });
 
         expect(`:iframe .test-options-target img`).not.toHaveAttribute("data-shape-flip");
     });
@@ -443,7 +443,7 @@ describe("flip shape axis", () => {
 
         await contains(`[data-action-id="flipImageShape"]:has([data-icon="height"])`).click();
         // ensure the shape action has been applied
-        await editor.shared.operation.next(() => {});
+        await editor.shared.operation.next(() => { });
 
         expect(`:iframe .test-options-target img`).toHaveAttribute("data-shape-flip", "y");
     });
@@ -468,7 +468,7 @@ describe("flip shape axis", () => {
         await contains(`[data-action-id="flipImageShape"]:has([data-icon="arrow_range"])`).click();
         await contains(`[data-action-id="flipImageShape"]:has([data-icon="height"])`).click();
         // ensure the shape action has been applied
-        await editor.shared.operation.next(() => {});
+        await editor.shared.operation.next(() => { });
 
         expect(`:iframe .test-options-target img`).toHaveAttribute("data-shape-flip", "xy");
     });
@@ -518,7 +518,7 @@ describe("rotate shape", () => {
         await contains(`[data-action-id="rotateImageShape"]:has([data-icon="undo"])`).click();
         await contains(`[data-action-id="rotateImageShape"]:has([data-icon="redo"])`).click();
         // ensure the shape action has been applied
-        await editor.shared.operation.next(() => {});
+        await editor.shared.operation.next(() => { });
 
         expect(`:iframe .test-options-target img`).not.toHaveAttribute("data-shape-rotate");
     });
@@ -543,7 +543,7 @@ describe("rotate shape", () => {
 
         await contains(`[data-action-id="rotateImageShape"]:has([data-icon="redo"])`).click();
         // ensure the shape action has been applied
-        await editor.shared.operation.next(() => {});
+        await editor.shared.operation.next(() => { });
 
         expect(`:iframe .test-options-target img`).toHaveAttribute("data-shape-rotate", "90");
     });
@@ -582,7 +582,7 @@ test("Should change the speed of an animated shape", async () => {
     await setInputRange(`[data-action-id="setImageShapeSpeed"] input`, 2);
 
     // ensure the shape action has been applied
-    await editor.shared.operation.next(() => {});
+    await editor.shared.operation.next(() => { });
 
     expect(`:iframe .test-options-target img`).toHaveAttribute("data-shape-animation-speed", "2");
     expect(`:iframe .test-options-target img`).not.toHaveAttribute("src", originalSrc);
@@ -795,7 +795,7 @@ test("Should keep colors when changing speed and vice versa", async () => {
 
     // Change speed
     await setInputRange(`[data-action-id="setImageShapeSpeed"] input`, -1);
-    await editor.shared.operation.next(() => {});
+    await editor.shared.operation.next(() => { });
 
     // Change first color and verify speed unchanged
     await contains(`[data-label="Colors"] .o_we_color_preview:nth-child(1)`).click();
@@ -819,7 +819,7 @@ test("Should keep colors when changing speed and vice versa", async () => {
 
     // Change speed and verify colors unchanged
     await setInputRange(`[data-action-id="setImageShapeSpeed"] input`, 2);
-    await editor.shared.operation.next(() => {});
+    await editor.shared.operation.next(() => { });
 
     expect(`[data-label="Colors"] .o_we_color_preview:nth-child(1)`).toHaveStyle({
         backgroundColor: "rgb(255, 0, 0)",

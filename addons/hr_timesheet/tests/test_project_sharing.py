@@ -1,6 +1,6 @@
-from odoo.tests import tagged
+from weth.tests import tagged
 
-from odoo.addons.project.tests.test_project_sharing_ui import TestProjectSharingUi
+from weth.addons.project.tests.test_project_sharing_ui import TestProjectSharingUi
 
 
 @tagged('post_install', '-at_install')

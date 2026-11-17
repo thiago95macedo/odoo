@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
     <data noupdate="1">
         <record id="base.user_demo" model="res.users">
             <field name="group_ids" eval="[
@@ -903,4 +903,4 @@ If you have development competencies, we can propose you specific traineeships</
             <field name="manager_id" ref="employee_vad"/>
         </record>
     </data>
-</odoo>
+</weth>

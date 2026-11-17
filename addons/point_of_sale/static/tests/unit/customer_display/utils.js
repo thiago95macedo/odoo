@@ -1,4 +1,4 @@
-import { expect, runAllTimers, waitFor } from "@odoo/hoot";
+import { expect, runAllTimers, waitFor } from "@weth/hoot";
 import { mountWithCleanup, patchWithCleanup } from "@web/../tests/web_test_helpers";
 import { CustomerDisplay } from "@point_of_sale/customer_display/customer_display";
 import { CustomerDisplayTerminalPlugin } from "@point_of_sale/app/plugins/customer_display_terminal_plugin";

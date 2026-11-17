@@ -6,8 +6,8 @@ import {
     startServer,
     triggerHotkey,
 } from "@mail/../tests/mail_test_helpers";
-import { expect, test } from "@odoo/hoot";
-import { contains, defineModels, fields, onRpc, models} from "@web/../tests/web_test_helpers";
+import { expect, test } from "@weth/hoot";
+import { contains, defineModels, fields, onRpc, models } from "@web/../tests/web_test_helpers";
 import { defineAccountModels } from "./account_test_helpers";
 
 defineAccountModels();
@@ -72,8 +72,8 @@ class AccountMove extends models.Model {
 class AccountMoveLine extends models.Model {
     name = fields.Text();
     product_id = fields.Many2one({
-        string:"Product",
-        relation:"product",
+        string: "Product",
+        relation: "product",
     });
     move_id = fields.Many2one({
         string: "Journal Entry",
@@ -87,7 +87,7 @@ class Product extends models.Model {
 
 defineModels({ Product, AccountMoveLine, AccountMove });
 
-test("Update description on product line", async() => {
+test("Update description on product line", async () => {
     const pyEnv = await startServer();
     const productId = pyEnv["product"].browse([1]);
     const accountMove = pyEnv["account.move"].browse([1]);
@@ -95,7 +95,7 @@ test("Update description on product line", async() => {
         invoice_line_ids: [[0, 0, { product_id: productId[0].id }]],
     });
     await start();
-    onRpc("account.move", "web_save", () => { expect.step("save")});
+    onRpc("account.move", "web_save", () => { expect.step("save") });
     await openFormView("account.move", accountMove[0].id, {
         arch: `<form js_class="account_move_form">
             <sheet>

@@ -1,7 +1,7 @@
-import { expect, getFixture, test } from "@odoo/hoot";
+import { expect, getFixture, test } from "@weth/hoot";
 import { OfflinePlugin } from "@web/core/offline/offline_plugin";
-import { click, hover, press, queryAllTexts, queryOne } from "@odoo/hoot-dom";
-import { animationFrame, runAllTimers } from "@odoo/hoot-mock";
+import { click, hover, press, queryAllTexts, queryOne } from "@weth/hoot-dom";
+import { animationFrame, runAllTimers } from "@weth/hoot-mock";
 
 import {
     clickFieldDropdown,
@@ -2071,7 +2071,7 @@ test("Many2ManyTagsField: editing tags via dialog on dirty record", async () => 
         form: `<form><field name="name"/></form>`,
     };
     Partner._records[0].timmy = [12];
-    Partner._fields.timmy.onChange = () => {};
+    Partner._fields.timmy.onChange = () => { };
 
     onRpc("get_formview_id", () => false);
     onRpc("web_save", () => expect.step("web_save"));
@@ -2175,7 +2175,7 @@ test("search typeahead", async () => {
 test.tags("desktop");
 test("Many2ManyTagsField: press backspace multiple times to remove tag", async () => {
     Partner._records[0].timmy = [12, 14];
-    Partner._fields.timmy.onChange = () => {};
+    Partner._fields.timmy.onChange = () => { };
 
     const def = Promise.withResolvers();
     onRpc("onchange", ({ args }) => {

@@ -1,5 +1,5 @@
-from odoo import api
-from odoo.tests import TransactionCase
+from weth import api
+from weth.tests import TransactionCase
 
 
 class PopulateTestCase(TransactionCase):

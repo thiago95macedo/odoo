@@ -4,8 +4,8 @@ import {
     setupHTMLBuilder,
 } from "@html_builder/../tests/helpers";
 import { BuilderAction } from "@html_builder/core/builder_action";
-import { describe, expect, test } from "@odoo/hoot";
-import { xml } from "@odoo/owl";
+import { describe, expect, test } from "@weth/hoot";
+import { xml } from "@weth/owl";
 import { contains } from "@web/../tests/web_test_helpers";
 
 // TODO: test composite with each spec: prepare, load
@@ -148,7 +148,7 @@ test("composite action should use the first getValue", async () => {
         getValue() {
             return this.data.name;
         }
-        apply() {}
+        apply() { }
     }
     class Action2 extends BuilderAction {
         static id = "action2";
@@ -158,7 +158,7 @@ test("composite action should use the first getValue", async () => {
         getValue() {
             return this.data.name;
         }
-        apply() {}
+        apply() { }
     }
     addBuilderAction({
         Action1,
@@ -182,7 +182,7 @@ test("composite action should use the first getValue", async () => {
 test("composite action's isApplied returns true if at least one action defined it", async () => {
     class Action1 extends BuilderAction {
         static id = "action1";
-        apply() {}
+        apply() { }
     }
     class Action2 extends BuilderAction {
         static id = "action2";

@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.tests import tagged
+from weth.tests import tagged
 
-from odoo.addons.product.tests.common import ProductCommon
+from weth.addons.product.tests.common import ProductCommon
 
 
 @tagged('at_install', '-post_install')  # LEGACY at_install

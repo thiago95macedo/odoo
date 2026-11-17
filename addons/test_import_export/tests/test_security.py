@@ -1,6 +1,6 @@
-from odoo.exceptions import AccessError
-from odoo.tests import TransactionCase, new_test_user
-from odoo.tools import BinaryBytes
+from weth.exceptions import AccessError
+from weth.tests import TransactionCase, new_test_user
+from weth.tools import BinaryBytes
 
 
 class TestImportSecurity(TransactionCase):

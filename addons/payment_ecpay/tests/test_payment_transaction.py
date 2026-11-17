@@ -2,11 +2,11 @@
 
 from zoneinfo import ZoneInfo
 
-from odoo.tests import tagged
-from odoo.tools import urls
+from weth.tests import tagged
+from weth.tools import urls
 
-from odoo.addons.payment_ecpay import const
-from odoo.addons.payment_ecpay.tests.common import EcpayCommon
+from weth.addons.payment_ecpay import const
+from weth.addons.payment_ecpay.tests.common import EcpayCommon
 
 
 @tagged("post_install", "-at_install")

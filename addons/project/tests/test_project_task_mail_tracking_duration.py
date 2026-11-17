@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.mail.tests.common_tracking import MailTrackingDurationMixinCase
-from odoo.fields import Datetime
-from odoo.tests import Form, tagged
+from weth.addons.mail.tests.common_tracking import MailTrackingDurationMixinCase
+from weth.fields import Datetime
+from weth.tests import Form, tagged
 
 
 @tagged('mail_duration_mixin', 'mail_track')

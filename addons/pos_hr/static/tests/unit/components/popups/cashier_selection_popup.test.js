@@ -1,4 +1,4 @@
-import { test, expect } from "@odoo/hoot";
+import { test, expect } from "@weth/hoot";
 import { setupPosEnv } from "@point_of_sale/../tests/unit/utils";
 import { CashierSelectionPopup } from "@pos_hr/app/components/popups/cashier_selection_popup/cashier_selection_popup";
 import { mountWithCleanup } from "@web/../tests/web_test_helpers";
@@ -11,8 +11,8 @@ test("displayableOptions", async () => {
     const employees = store.models["hr.employee"].getAll();
     const comp = await mountWithCleanup(CashierSelectionPopup, {
         props: {
-            close: () => {},
-            getPayload: () => {},
+            close: () => { },
+            getPayload: () => { },
             employees,
         },
     });
@@ -32,8 +32,8 @@ test("lock", async () => {
     const employees = store.models["hr.employee"].getAll();
     const comp = await mountWithCleanup(CashierSelectionPopup, {
         props: {
-            close: () => {},
-            getPayload: () => {},
+            close: () => { },
+            getPayload: () => { },
             employees,
         },
     });

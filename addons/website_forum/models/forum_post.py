@@ -6,11 +6,11 @@ import re
 from collections.abc import Iterable
 from datetime import datetime
 
-from odoo import api, fields, models, tools, _
-from odoo.exceptions import UserError, ValidationError, AccessError
-from odoo.fields import Domain
-from odoo.tools import sql, SQL
-from odoo.tools.mail import email_normalize, formataddr
+from weth import api, fields, models, tools, _
+from weth.exceptions import UserError, ValidationError, AccessError
+from weth.fields import Domain
+from weth.tools import sql, SQL
+from weth.tools.mail import email_normalize, formataddr
 
 _logger = logging.getLogger(__name__)
 

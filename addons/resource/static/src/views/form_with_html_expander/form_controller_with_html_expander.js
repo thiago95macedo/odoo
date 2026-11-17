@@ -1,4 +1,4 @@
-import { proxy } from "@odoo/owl";
+import { proxy } from "@weth/owl";
 import { FormController } from "@web/views/form/form_controller";
 
 export class FormControllerWithHTMLExpander extends FormController {

@@ -8,14 +8,14 @@ import werkzeug.exceptions
 import werkzeug.urls
 import werkzeug.wrappers
 
-from odoo import _, http, tools
-from odoo.addons.website.models.ir_http import sitemap_qs2dom
-from odoo.addons.website_profile.controllers.main import WebsiteProfile
-from odoo.exceptions import AccessError, UserError
-from odoo.fields import Domain
-from odoo.http import request
-from odoo.tools import is_html_empty, format_datetime
-from odoo.tools.translate import LazyTranslate
+from weth import _, http, tools
+from weth.addons.website.models.ir_http import sitemap_qs2dom
+from weth.addons.website_profile.controllers.main import WebsiteProfile
+from weth.exceptions import AccessError, UserError
+from weth.fields import Domain
+from weth.http import request
+from weth.tools import is_html_empty, format_datetime
+from weth.tools.translate import LazyTranslate
 
 _lt = LazyTranslate(__name__)
 _logger = logging.getLogger(__name__)

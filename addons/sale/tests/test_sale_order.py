@@ -5,14 +5,14 @@ from unittest.mock import patch
 
 from freezegun import freeze_time
 
-from odoo import fields
-from odoo.exceptions import AccessError, UserError, ValidationError
-from odoo.fields import Command
-from odoo.tests import Form, HttpCase, tagged
+from weth import fields
+from weth.exceptions import AccessError, UserError, ValidationError
+from weth.fields import Command
+from weth.tests import Form, HttpCase, tagged
 
-from odoo.addons.account.tests.common import AccountTestInvoicingCommon
-from odoo.addons.mail.tests.common import MailCommon
-from odoo.addons.sale.tests.common import SaleCommon
+from weth.addons.account.tests.common import AccountTestInvoicingCommon
+from weth.addons.mail.tests.common import MailCommon
+from weth.addons.sale.tests.common import SaleCommon
 
 
 @tagged("post_install", "-at_install")
@@ -536,7 +536,7 @@ class TestSaleOrder(SaleCommon):
     def test_so_discount_is_not_reset(self):
         """Check that discounts are not be recomputed on order confirmation."""
         with patch(
-            "odoo.addons.sale.models.sale_order_line.SaleOrderLine._compute_discount"
+            "weth.addons.sale.models.sale_order_line.SaleOrderLine._compute_discount"
         ) as patched:
             self.sale_order.action_confirm()
             self.sale_order.order_line.flush_recordset(["discount"])
@@ -1372,7 +1372,7 @@ class TestSalesTeam(SaleCommon):
 
         # Setting a partner with the same fpos shouldn't recompute taxes.
         with patch(
-            "odoo.addons.sale.models.sale_order_line.SaleOrderLine._compute_tax_ids"
+            "weth.addons.sale.models.sale_order_line.SaleOrderLine._compute_tax_ids"
         ) as patched:
             order_form.partner_id = partner_fpos_a_2
             form_order = order_form.save()
@@ -1393,7 +1393,7 @@ class TestSaleMailComposerUI(MailCommon, HttpCase):
         cls.quotation = cls.env["sale.order"].create({"partner_id": cls.partner.id})
 
     def test_mail_attachment_removal_tour(self):
-        url = f"/odoo/sales/{self.quotation.id}"
+        url = f"/weth/sales/{self.quotation.id}"
         with self.mock_mail_app():
             self.start_tour(url, "mail_attachment_removal_tour", login="admin")
 

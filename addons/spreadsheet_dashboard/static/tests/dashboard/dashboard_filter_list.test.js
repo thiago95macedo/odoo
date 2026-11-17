@@ -1,4 +1,4 @@
-import { beforeEach, describe, expect, queryAllTexts, test } from "@odoo/hoot";
+import { beforeEach, describe, expect, queryAllTexts, test } from "@weth/hoot";
 import { defineSpreadsheetModels } from "@spreadsheet/../tests/helpers/data";
 import {
     contains,
@@ -7,7 +7,7 @@ import {
     mountWithCleanup,
 } from "@web/../tests/web_test_helpers";
 import { OdooDataProvider } from "@spreadsheet/data_sources/odoo_data_provider";
-import { Model } from "@odoo/o-spreadsheet";
+import { Model } from "@weth/o-spreadsheet";
 import { addGlobalFilter } from "@spreadsheet/../tests/helpers/commands";
 import { DashboardFilterList } from "@spreadsheet_dashboard/bundle/dashboard_action/dashboard_filter_list/dashboard_filter_list";
 import { getDefaultValue } from "@spreadsheet/global_filters/helpers";

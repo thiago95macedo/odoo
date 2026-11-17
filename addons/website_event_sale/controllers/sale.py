@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.website_sale.controllers.main import WebsiteSale
-from odoo.http import request
+from weth.addons.website_sale.controllers.main import WebsiteSale
+from weth.http import request
 
 
 class WebsiteEventSale(WebsiteSale):

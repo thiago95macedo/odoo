@@ -273,7 +273,7 @@ export class DynamicFieldPlugin extends Plugin {
     }
 
     async setFieldAttributes(el, fieldPath, fullPath, fieldInfo) {
-        if (odoo.debug) {
+        if (weth.debug) {
             el.setAttribute("title", `${fullPath}`);
         }
 

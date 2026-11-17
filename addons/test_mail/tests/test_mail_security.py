@@ -3,9 +3,9 @@
 
 from contextlib import nullcontext
 
-from odoo.addons.mail.tests.common import mail_new_test_user, MailCommon
-from odoo.exceptions import AccessError, UserError
-from odoo.tests import tagged
+from weth.addons.mail.tests.common import mail_new_test_user, MailCommon
+from weth.exceptions import AccessError, UserError
+from weth.tests import tagged
 
 
 @tagged('security')

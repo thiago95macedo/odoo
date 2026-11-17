@@ -1,6 +1,6 @@
-from odoo.addons.sms_twilio.tests.common import MockSmsTwilio
-from odoo.tests import tagged, users
-from odoo.tests.common import TransactionCase
+from weth.addons.sms_twilio.tests.common import MockSmsTwilio
+from weth.tests import tagged, users
+from weth.tests.common import TransactionCase
 
 
 @tagged('post_install', '-at_install', 'twilio', 'twilio_manage')

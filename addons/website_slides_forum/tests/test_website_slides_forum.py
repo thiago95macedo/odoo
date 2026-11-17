@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.website_forum.tests.common import TestForumCommon
-from odoo.exceptions import AccessError
+from weth.addons.website_forum.tests.common import TestForumCommon
+from weth.exceptions import AccessError
 
 
 class TestWebsiteSlidesForum(TestForumCommon):

@@ -1,8 +1,8 @@
 from contextlib import contextmanager
 
-from odoo import Command
-from odoo.addons.account.tests.common import TestTaxCommon
-from odoo.tests import tagged
+from weth import Command
+from weth.addons.account.tests.common import TestTaxCommon
+from weth.tests import tagged
 
 
 @tagged('post_install', '-at_install')

@@ -1,5 +1,5 @@
-import { expect, test } from "@odoo/hoot";
-import { Component, t, useProps, xml } from "@odoo/owl";
+import { expect, test } from "@weth/hoot";
+import { Component, t, useProps, xml } from "@weth/owl";
 import { mountWithCleanup } from "@web/../tests/web_test_helpers";
 
 import { OrderWidget } from "@pos_self_order/app/components/order_widget/order_widget";

@@ -3,13 +3,13 @@
 import logging
 from hashlib import sha256
 
-import odoo.tools
-from odoo import http, release
-from odoo.http import request
-from odoo.http.stream import STATIC_CACHE_LONG
-from odoo.modules import Manifest
-from odoo.tools import translate
-from odoo.tools.misc import file_path
+import weth.tools
+from weth import http, release
+from weth.http import request
+from weth.http.stream import STATIC_CACHE_LONG
+from weth.modules import Manifest
+from weth.tools import translate
+from weth.tools.misc import file_path
 
 
 from .utils import _local_web_translations
@@ -31,7 +31,7 @@ class WebClient(http.Controller):
         lang = request.env.context['lang'].partition('_')[0]
 
         if mods is None:
-            mods = odoo.tools.config['server_wide_modules']
+            mods = weth.tools.config['server_wide_modules']
             if request.db:
                 mods = request.env.registry._init_modules.union(mods)
 

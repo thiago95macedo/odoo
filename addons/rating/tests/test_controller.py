@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
-from odoo.tests import HttpCase, tagged, new_test_user
-from odoo.addons.base.tests.common import HttpCaseWithUserDemo, HttpCaseWithUserPortal
+from weth.tests import HttpCase, tagged, new_test_user
+from weth.addons.base.tests.common import HttpCaseWithUserDemo, HttpCaseWithUserPortal
 
 @tagged('post_install', '-at_install')
 class TestControllersRoute(HttpCaseWithUserDemo, HttpCaseWithUserPortal):

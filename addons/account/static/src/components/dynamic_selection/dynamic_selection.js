@@ -1,6 +1,6 @@
-/** @odoo-module **/
+/** @weth-module **/
 
-import { t, useProps } from "@odoo/owl";
+import { t, useProps } from "@weth/owl";
 import { registry } from "@web/core/registry";
 import {
     SelectionField,

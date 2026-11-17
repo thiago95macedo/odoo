@@ -1,15 +1,15 @@
-/** @odoo-module */
+/** @weth-module */
 
-import { after, defineTags, describe, expect, test } from "@odoo/hoot";
-import { Component, onMounted, xml } from "@odoo/owl";
+import { after, defineTags, describe, expect, test } from "@weth/hoot";
+import { Component, onMounted, xml } from "@weth/owl";
 import { Suite } from "../../core/suite";
 import { makeTestRunner, mountForTest, parseUrl } from "../local_helpers";
 
 describe(parseUrl(import.meta.url), () => {
     test("can register suites", () => {
         const runner = makeTestRunner();
-        runner.describe("a suite", () => {});
-        runner.describe("another suite", () => {});
+        runner.describe("a suite", () => { });
+        runner.describe("another suite", () => { });
 
         expect(runner.suites).toHaveLength(2);
         expect(runner.tests).toHaveLength(0);
@@ -20,7 +20,7 @@ describe(parseUrl(import.meta.url), () => {
 
     test("can register nested suites", () => {
         const runner = makeTestRunner();
-        runner.describe(["a", "b", "c"], () => {});
+        runner.describe(["a", "b", "c"], () => { });
 
         expect([...runner.suites.values()].map((s) => s.name)).toEqual(["a", "b", "c"]);
     });
@@ -28,11 +28,11 @@ describe(parseUrl(import.meta.url), () => {
     test("can register tests", () => {
         const runner = makeTestRunner();
         runner.describe("suite 1", () => {
-            runner.test("test 1", () => {});
+            runner.test("test 1", () => { });
         });
         runner.describe("suite 2", () => {
-            runner.test("test 2", () => {});
-            runner.test("test 3", () => {});
+            runner.test("test 2", () => { });
+            runner.test("test 3", () => { });
         });
 
         expect(runner.suites).toHaveLength(2);
@@ -41,8 +41,8 @@ describe(parseUrl(import.meta.url), () => {
 
     test("should not have duplicate suites", () => {
         const runner = makeTestRunner();
-        runner.describe(["parent", "child a"], () => {});
-        runner.describe(["parent", "child b"], () => {});
+        runner.describe(["parent", "child a"], () => { });
+        runner.describe(["parent", "child b"], () => { });
 
         expect([...runner.suites.values()].map((suite) => suite.name)).toEqual([
             "parent",
@@ -68,7 +68,7 @@ describe(parseUrl(import.meta.url), () => {
                 runner.test.tags(`Tag-${i}`);
             }
 
-            runner.test("tagged test", () => {});
+            runner.test("tagged test", () => { });
         });
 
         expect(runner.tags).toHaveLength(10);
@@ -92,16 +92,16 @@ describe(parseUrl(import.meta.url), () => {
         const runner = makeTestRunner();
         runner.describe("suite", () => {
             runner.test.tags("a");
-            runner.test("first test", () => {});
+            runner.test("first test", () => { });
 
             runner.test.tags("b");
-            runner.test("second test", () => {});
+            runner.test("second test", () => { });
 
             runner.test.tags("a", "b");
-            expect(() => runner.test("third test", () => {})).toThrow(`cannot apply tag "b"`);
+            expect(() => runner.test("third test", () => { })).toThrow(`cannot apply tag "b"`);
 
             runner.test.tags("a", "c");
-            runner.test("fourth test", () => {});
+            runner.test("fourth test", () => { });
         });
 
         expect(runner.tests).toHaveLength(3);

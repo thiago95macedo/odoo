@@ -1,5 +1,5 @@
-from odoo import _, api, models
-from odoo.exceptions import UserError, ValidationError
+from weth import _, api, models
+from weth.exceptions import UserError, ValidationError
 
 
 class AccountCashRounding(models.Model):

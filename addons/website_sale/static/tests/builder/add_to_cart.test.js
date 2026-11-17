@@ -1,4 +1,4 @@
-import { beforeEach, expect, test } from "@odoo/hoot";
+import { beforeEach, expect, test } from "@weth/hoot";
 import { contains, defineModels, models, fields } from "@web/../tests/web_test_helpers";
 import {
     defineWebsiteModels,
@@ -10,12 +10,12 @@ class ProductProduct extends models.Model {
     name = fields.Char();
 }
 class ProductTemplate extends models.Model {
-  _name = "product.template";
-  name = fields.Char();
-  is_published = fields.Boolean();
-  sale_ok = fields.Boolean();
-  product_variant_ids = fields.One2many({ relation: "product.product" });
-  _records = [{ name: "Table", is_published: true, sale_ok: true, product_variant_ids: [] }];
+    _name = "product.template";
+    name = fields.Char();
+    is_published = fields.Boolean();
+    sale_ok = fields.Boolean();
+    product_variant_ids = fields.One2many({ relation: "product.product" });
+    _records = [{ name: "Table", is_published: true, sale_ok: true, product_variant_ids: [] }];
 }
 defineWebsiteModels();
 defineModels([ProductProduct, ProductTemplate]);

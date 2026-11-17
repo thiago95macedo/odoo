@@ -1,4 +1,4 @@
-import { onMounted, onWillUnmount } from "@odoo/owl";
+import { onMounted, onWillUnmount } from "@weth/owl";
 
 /**
  * Detects when a category section becomes visible within a scrollable container.
@@ -17,7 +17,7 @@ export function useCategoryScrollSpy(
     categoryId,
     categoryScrollContainerRef,
     productScrollContainerRef,
-    onCategoryVisible = () => {},
+    onCategoryVisible = () => { },
     options = {}
 ) {
     const {

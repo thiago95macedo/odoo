@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 from random import randint
 
-from odoo import fields, models
+from weth import fields, models
 
 
 class HrTalentPool(models.Model):

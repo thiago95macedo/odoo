@@ -3,10 +3,10 @@
 
 import json
 
-from odoo import http
-from odoo.http import request
-from odoo.tools.misc import file_open
-from odoo.tools.translate import _
+from weth import http
+from weth.http import request
+from weth.tools.misc import file_open
+from weth.tools.translate import _
 
 
 class TrackManifest(http.Controller):

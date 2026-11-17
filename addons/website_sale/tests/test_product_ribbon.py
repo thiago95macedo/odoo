@@ -1,6 +1,6 @@
 from datetime import timedelta
 
-from odoo.addons.website_sale.tests.common import WebsiteSaleCommon
+from weth.addons.website_sale.tests.common import WebsiteSaleCommon
 
 
 class TestProductRibbon(WebsiteSaleCommon):

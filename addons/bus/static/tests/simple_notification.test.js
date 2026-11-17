@@ -1,5 +1,5 @@
-import { describe, expect, test } from "@odoo/hoot";
-import { queryFirst, waitFor } from "@odoo/hoot-dom";
+import { describe, expect, test } from "@weth/hoot";
+import { queryFirst, waitFor } from "@weth/hoot-dom";
 import {
     makeTestApp,
     MockServer,

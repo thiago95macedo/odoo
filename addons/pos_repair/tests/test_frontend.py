@@ -1,6 +1,6 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
-from odoo.tests import tagged
-from odoo.addons.pos_stock.tests.test_frontend import TestPosStockHttpCommon
+from weth.tests import tagged
+from weth.addons.pos_stock.tests.test_frontend import TestPosStockHttpCommon
 
 
 @tagged('post_install', '-at_install')

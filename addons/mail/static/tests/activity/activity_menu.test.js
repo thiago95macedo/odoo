@@ -7,8 +7,8 @@ import {
     triggerHotkey,
 } from "@mail/../tests/mail_test_helpers";
 import { ActivityMenu } from "@mail/core/web/activity_menu";
-import { describe, expect, test } from "@odoo/hoot";
-import { animationFrame, queryText } from "@odoo/hoot-dom";
+import { describe, expect, test } from "@weth/hoot";
+import { animationFrame, queryText } from "@weth/hoot-dom";
 import { mountWithCleanup } from "@web/../tests/web_test_helpers";
 
 describe.current.tags("desktop");

@@ -1,5 +1,5 @@
-import {Component, useProps} from "@odoo/owl";
-import {registry} from "@web/core/registry";
+import { Component, useProps } from "@weth/owl";
+import { registry } from "@web/core/registry";
 import { standardFieldProps } from "@web/views/fields/standard_field_props";
 
 export class AccountBatchSendingSummary extends Component {

@@ -1,4 +1,4 @@
-from odoo.addons.account.tests.test_tax import TestTaxCommon
+from weth.addons.account.tests.test_tax import TestTaxCommon
 
 
 class TestTaxCommonAccountTaxPython(TestTaxCommon):

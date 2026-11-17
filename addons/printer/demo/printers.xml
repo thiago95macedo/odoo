@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
     <data noupdate="1">
         <record id="zebra_printer_demo" model="printer.printer">
             <field name="name">Emulated Zebra</field>
@@ -12,4 +12,4 @@
             <field name="type">epos</field>
         </record>
     </data>
-</odoo>
+</weth>

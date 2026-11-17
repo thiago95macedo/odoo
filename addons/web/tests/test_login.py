@@ -2,11 +2,11 @@
 
 from unittest.mock import patch
 
-import odoo
-from odoo.http.session import session_store
-from odoo.tests.common import HOST, HttpCase, new_test_user, tagged
+import weth
+from weth.http.session import session_store
+from weth.tests.common import HOST, HttpCase, new_test_user, tagged
 
-from odoo.addons.base.tests.common import HttpCaseWithUserDemo
+from weth.addons.base.tests.common import HttpCaseWithUserDemo
 
 
 class TestWebLoginCommon(HttpCase):
@@ -51,7 +51,7 @@ class TestWebLogin(TestWebLoginCommon):
         self.assertEqual(res_post.request.path_url, '/web/login_successful')
 
     def test_web_login_does_not_invalidate_cache(self):
-        from odoo.orm.environments import Transaction  # noqa: PLC0415
+        from weth.orm.environments import Transaction  # noqa: PLC0415
 
         self.internal_user.tz = 'Europe/Brussels'
         self.assertFalse(self.internal_user.login_date)
@@ -102,7 +102,7 @@ class TestWebLogin(TestWebLoginCommon):
         self.assertURLEqual(res.headers['Location'], '/odoo')
         sid = res.cookies.get('session_id', session.sid)
         # self.assertNotEqual(sid, session.sid, "it should have a new session")
-        self.assertEqual(session_store().get(sid)['uid'], odoo.SUPERUSER_ID,
+        self.assertEqual(session_store().get(sid)['uid'], weth.SUPERUSER_ID,
             "it should had become SUPERUSER")
 
 

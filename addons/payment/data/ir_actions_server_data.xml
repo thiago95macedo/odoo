@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<odoo>
+<weth>
 
     <record id="action_start_payment_onboarding" model="ir.actions.server">
         <field name="name"/>
@@ -28,4 +28,4 @@ action = env.company._start_payment_onboarding()
         <field name="code">action = record.action_add_payment_method()</field>
     </record>
 
-</odoo>
+</weth>

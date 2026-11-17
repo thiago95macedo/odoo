@@ -1,6 +1,6 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
-from odoo import models, api
-from odoo.exceptions import AccessError
+from weth import models, api
+from weth.exceptions import AccessError
 import logging
 
 _logger = logging.getLogger(__name__)

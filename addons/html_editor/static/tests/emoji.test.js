@@ -1,6 +1,6 @@
-import { advanceTime, describe, expect, test } from "@odoo/hoot";
-import { click, manuallyDispatchProgrammaticEvent, press, waitFor } from "@odoo/hoot-dom";
-import { animationFrame, mockTouch } from "@odoo/hoot-mock";
+import { advanceTime, describe, expect, test } from "@weth/hoot";
+import { click, manuallyDispatchProgrammaticEvent, press, waitFor } from "@weth/hoot-dom";
+import { animationFrame, mockTouch } from "@weth/hoot-mock";
 import { preloadBundle } from "@web/../tests/web_test_helpers";
 import { setupEditor } from "./_helpers/editor";
 import { getContent } from "./_helpers/selection";

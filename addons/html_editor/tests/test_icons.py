@@ -2,11 +2,11 @@
 
 from unittest.mock import patch
 
-from odoo.tests.common import TransactionCase
-from odoo.tools.translate import LazyGettext
+from weth.tests.common import TransactionCase
+from weth.tools.translate import LazyGettext
 
-from odoo.addons.html_editor.tools import search_icons, translated_icon_tags
-from odoo.addons.web.icons import ICONS
+from weth.addons.html_editor.tools import search_icons, translated_icon_tags
+from weth.addons.web.icons import ICONS
 
 
 class TestIconsSearch(TransactionCase):

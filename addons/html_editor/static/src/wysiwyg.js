@@ -1,4 +1,4 @@
-import { Component, onMounted, onWillDestroy, signal, t, useProps } from "@odoo/owl";
+import { Component, onMounted, onWillDestroy, signal, t, useProps } from "@weth/owl";
 import { uniqueId } from "@web/core/utils/functions";
 import { useSpellCheck } from "@web/core/utils/hooks";
 import { render } from "@web/owl2/utils";
@@ -30,8 +30,8 @@ export const wysiwygProps = {
     style: t.string().optional(),
     iframe: t.boolean().optional(),
     copyCss: t.boolean().optional(),
-    onLoad: t.function().optional(() => () => {}),
-    onBlur: t.function().optional(() => () => {}),
+    onLoad: t.function().optional(() => () => { }),
+    onBlur: t.function().optional(() => () => { }),
     dynamicPlaceholder: t.boolean().optional(),
 };
 

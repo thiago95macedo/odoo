@@ -2,11 +2,11 @@ import itertools
 import pstats
 from cProfile import Profile
 
-from odoo import fields, Command
-from odoo.exceptions import UserError
-from odoo.tools.misc import mute_logger
-from odoo.tests import tagged, common
-from odoo.tools.translate import StoredTranslations
+from weth import fields, Command
+from weth.exceptions import UserError
+from weth.tools.misc import mute_logger
+from weth.tests import tagged, common
+from weth.tools.translate import StoredTranslations
 
 
 class CreatorCase(common.TransactionCase):
@@ -178,7 +178,7 @@ class test_string_field(CreatorCase):
     def test_within_bounds(self):
         self.assertEqual(self.export("foobar"), [["foobar"]])
 
-    @mute_logger('odoo.sql_db')
+    @mute_logger('weth.sql_db')
     def test_out_of_bounds(self):
         with self.assertRaises(Exception):
             self.export("C for Sinking, Java for Drinking, Smalltalk for Thinking. ...and Power to the Penguin!")

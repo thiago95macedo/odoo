@@ -2,7 +2,7 @@ import { AlertDialog } from "@web/core/confirmation_dialog/confirmation_dialog";
 import { _t } from "@web/core/l10n/translation";
 import { user } from "@web/core/user";
 import { CalendarController } from "@web/views/calendar/calendar_controller";
-import { onWillStart } from "@odoo/owl";
+import { onWillStart } from "@weth/owl";
 
 export class AttendanceCalendarController extends CalendarController {
 

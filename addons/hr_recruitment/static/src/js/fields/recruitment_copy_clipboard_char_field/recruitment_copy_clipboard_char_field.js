@@ -1,4 +1,4 @@
-import { useProps, t } from "@odoo/owl";
+import { useProps, t } from "@weth/owl";
 import { CopyClipboardCharField, copyClipboardCharField, copyClipboardFieldProps } from "@web/views/fields/copy_clipboard/copy_clipboard_field";
 import { CharField } from "@web/views/fields/char/char_field";
 import { GenerateContentAndCopyButton } from "../../buttons/generate_content_and_copy_button";
@@ -26,7 +26,7 @@ class RecruitmentCopyClipboardCharField extends CopyClipboardCharField {
     }
 
     get contentGenerationFunction() {
-        if(this.props.contentGenerationFunctionName) {
+        if (this.props.contentGenerationFunctionName) {
             return () => this.orm.call(
                 this.props.record._config.resModel,
                 this.props.contentGenerationFunctionName,

@@ -6,14 +6,14 @@ import hashlib
 import hmac
 import pprint
 
-from odoo import http, release
-from odoo.exceptions import ValidationError
-from odoo.http import request
-from odoo.tools import py_to_js_locale, urls
+from weth import http, release
+from weth.exceptions import ValidationError
+from weth.http import request
+from weth.tools import py_to_js_locale, urls
 
-from odoo.addons.payment import utils as payment_utils
-from odoo.addons.payment.logging import get_payment_logger
-from odoo.addons.payment_adyen import utils as adyen_utils
+from weth.addons.payment import utils as payment_utils
+from weth.addons.payment.logging import get_payment_logger
+from weth.addons.payment_adyen import utils as adyen_utils
 
 _logger = get_payment_logger(__name__)
 

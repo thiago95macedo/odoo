@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
-from odoo.tests import tagged
-from odoo.addons.pos_event.tests.test_frontend import TestUi
-from odoo import fields, Command
+from weth.tests import tagged
+from weth.addons.pos_event.tests.test_frontend import TestUi
+from weth import fields, Command
 
 
 @tagged('post_install', '-at_install')

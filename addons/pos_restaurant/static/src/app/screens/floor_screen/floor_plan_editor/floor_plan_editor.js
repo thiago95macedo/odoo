@@ -1,5 +1,5 @@
 import { useLayoutEffect } from "@web/owl2/utils";
-import { onMounted, onWillUnmount, useListener, signal, useProps, t } from "@odoo/owl";
+import { onMounted, onWillUnmount, useListener, signal, useProps, t } from "@weth/owl";
 import { EditDecorProperties } from "./edit_decor/edit_decor";
 import { EditTableProperties } from "./edit_table/edit_table";
 import { EditFloorProperties } from "./edit_floor/edit_floor";

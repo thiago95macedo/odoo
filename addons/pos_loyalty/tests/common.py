@@ -1,5 +1,5 @@
-from odoo.addons.point_of_sale.tests.common import CommonPosTest
-from odoo.fields import Command
+from weth.addons.point_of_sale.tests.common import CommonPosTest
+from weth.fields import Command
 
 
 class CommonPosLoyaltyTest(CommonPosTest):

@@ -1,4 +1,4 @@
-import { animationFrame, tick, waitFor, queryAll } from "@odoo/hoot-dom";
+import { animationFrame, tick, waitFor, queryAll } from "@weth/hoot-dom";
 import { contains } from "@web/../tests/web_test_helpers";
 import { normalizeText } from "./common";
 import { confirmDialog } from "./dialog_util";

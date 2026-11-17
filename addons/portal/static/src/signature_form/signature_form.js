@@ -1,4 +1,4 @@
-import { Component, onMounted, proxy, signal, t, useProps } from "@odoo/owl";
+import { Component, onMounted, proxy, signal, t, useProps } from "@weth/owl";
 import { _t } from "@web/core/l10n/translation";
 import { addLoadingEffect } from "@web/core/utils/ui";
 import { rpc } from "@web/core/network/rpc";
@@ -28,7 +28,7 @@ export class SignatureForm extends Component {
     rootRef = signal.ref();
 
     setup() {
-        this.csrfToken = odoo.csrf_token;
+        this.csrfToken = weth.csrf_token;
         this.state = proxy({
             error: false,
             success: false,
@@ -36,7 +36,7 @@ export class SignatureForm extends Component {
         this.signature = proxy({
             name: this.props.defaultName,
             getSignatureImage: () => "",
-            resetSignature: () => {},
+            resetSignature: () => { },
         });
         this.nameAndSignatureProps = {
             signature: this.signature,
@@ -98,7 +98,7 @@ export class SignatureForm extends Component {
                 window.location.reload();
             }
             // do not resolve if we reload the page
-            return new Promise(() => {});
+            return new Promise(() => { });
         }
         this.state.error = data.error || false;
         this.state.success = !data.error && {

@@ -17,9 +17,9 @@ try:
 except ImportError:
     websocket = None
 
-from odoo.http import request
-from odoo.tests import HttpCase
-from odoo.tests.common import (
+from weth.http import request
+from weth.tests import HttpCase
+from weth.tests.common import (
     HOST,
     TEST_CURSOR_COOKIE_NAME,
     BaseCase,
@@ -27,9 +27,9 @@ from odoo.tests.common import (
     _registry_test_lock,
 )
 
-from odoo.addons.bus.bus_dispatcher import BusDispatcher
-from odoo.addons.bus.models.bus import channel_with_db, json_dump
-from odoo.addons.bus.websocket import CloseCode, WebsocketConnectionHandler
+from weth.addons.bus.bus_dispatcher import BusDispatcher
+from weth.addons.bus.models.bus import channel_with_db, json_dump
+from weth.addons.bus.websocket import CloseCode, WebsocketConnectionHandler
 
 
 @contextlib.contextmanager

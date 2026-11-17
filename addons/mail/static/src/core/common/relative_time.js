@@ -1,7 +1,7 @@
 import { propComputed } from "@mail/utils/common/hooks";
 import { computedUntilStale } from "@mail/utils/common/signal";
 
-import { Component, types, xml } from "@odoo/owl";
+import { Component, types, xml } from "@weth/owl";
 
 import { _t } from "@web/core/l10n/translation";
 

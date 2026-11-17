@@ -1,4 +1,4 @@
-import { onMounted, onWillUnmount, signal } from "@odoo/owl";
+import { onMounted, onWillUnmount, signal } from "@weth/owl";
 import { BaseOptionComponent } from "@html_builder/core/base_option_component";
 import { useDomState } from "@html_builder/core/utils";
 import { getCSSVariableValue } from "@html_editor/utils/formatting";

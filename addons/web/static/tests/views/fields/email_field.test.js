@@ -1,4 +1,4 @@
-import { expect, getFixture, test } from "@odoo/hoot";
+import { expect, getFixture, test } from "@weth/hoot";
 import {
     contains,
     defineModels,
@@ -8,7 +8,7 @@ import {
     mountView,
     onRpc,
 } from "@web/../tests/web_test_helpers";
-import { queryAllTexts, queryFirst } from "@odoo/hoot-dom";
+import { queryAllTexts, queryFirst } from "@weth/hoot-dom";
 
 class Contact extends models.Model {
     email = fields.Char();

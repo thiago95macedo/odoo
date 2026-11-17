@@ -3,7 +3,7 @@ import threading
 from unittest.mock import patch
 from weakref import WeakSet
 
-from odoo.tests import tagged
+from weth.tests import tagged
 
 from .. import websocket as websocket_module
 from .common import WebsocketCase
@@ -11,7 +11,7 @@ from .common import WebsocketCase
 
 @tagged("-at_install", "post_install")
 class TestCloseWebsocketAfterTour(WebsocketCase):
-    @patch("odoo.tests.common.ChromeBrowser")
+    @patch("weth.tests.common.ChromeBrowser")
     def test_ensure_websocket_closed_after_tour(self, mocked_brower_class):
         """Sometimes, Chrome does not close the WebSocket connections properly after
         calling `HttpCase@_browser_js`. In such cases, the WebSocket connection

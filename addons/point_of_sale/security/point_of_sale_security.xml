@@ -1,4 +1,4 @@
-<odoo>
+<weth>
     <record model="res.groups.privilege" id="res_groups_privilege_point_of_sale">
         <field name="name">Point of Sale</field>
         <field name="sequence">21</field>
@@ -27,4 +27,4 @@
         <field name="implied_ids" eval="[(4, ref('point_of_sale.group_pos_user'))]"/>
     </record>
 
-    </odoo>
+    </weth>

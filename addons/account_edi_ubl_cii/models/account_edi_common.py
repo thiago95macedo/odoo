@@ -8,17 +8,17 @@ from markupsafe import Markup
 from lxml import etree
 from datetime import datetime
 
-from odoo import _, api, fields, models, Command
-from odoo.addons.account.tools import dict_to_xml
-from odoo.exceptions import UserError, ValidationError
-from odoo.fields import Domain
-from odoo.tools import float_compare, float_is_zero, float_repr, html2plaintext, pdf
-from odoo.tools.float_utils import float_round
-from odoo.tools.misc import formatLang, html_escape
-from odoo.tools.translate import _lt
-from odoo.tools.xml_utils import find_xml_value
+from weth import _, api, fields, models, Command
+from weth.addons.account.tools import dict_to_xml
+from weth.exceptions import UserError, ValidationError
+from weth.fields import Domain
+from weth.tools import float_compare, float_is_zero, float_repr, html2plaintext, pdf
+from weth.tools.float_utils import float_round
+from weth.tools.misc import formatLang, html_escape
+from weth.tools.translate import _lt
+from weth.tools.xml_utils import find_xml_value
 
-from odoo.addons.base.models.res_country import EUROPEAN_ECONOMIC_AREA_COUNTRY_CODES
+from weth.addons.base.models.res_country import EUROPEAN_ECONOMIC_AREA_COUNTRY_CODES
 
 _logger = logging.getLogger(__name__)
 

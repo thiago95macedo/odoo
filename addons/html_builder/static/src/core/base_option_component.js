@@ -1,5 +1,5 @@
 import { useDomState } from "@html_builder/core/utils";
-import { Component, onWillDestroy } from "@odoo/owl";
+import { Component, onWillDestroy } from "@weth/owl";
 import { useEnv } from "@web/owl2/utils";
 
 /**

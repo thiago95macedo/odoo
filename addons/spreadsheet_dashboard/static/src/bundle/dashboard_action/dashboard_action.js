@@ -1,4 +1,4 @@
-import { Registry } from "@odoo/o-spreadsheet";
+import { Registry } from "@weth/o-spreadsheet";
 import {
     Component,
     computed,
@@ -7,7 +7,7 @@ import {
     useEffect,
     useListener,
     useProps,
-} from "@odoo/owl";
+} from "@weth/owl";
 import { SpreadsheetComponent } from "@spreadsheet/actions/spreadsheet_component";
 import { SpreadsheetShareButton } from "@spreadsheet/components/share_button/share_button";
 import { _t } from "@web/core/l10n/translation";

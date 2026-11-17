@@ -4,11 +4,11 @@
 import werkzeug
 from collections import OrderedDict
 
-from odoo import http, _
-from odoo.http import request
-from odoo.exceptions import AccessError, MissingError
-from odoo.addons.portal.controllers import portal
-from odoo.addons.portal.controllers.portal import pager as portal_pager
+from weth import http, _
+from weth.http import request
+from weth.exceptions import AccessError, MissingError
+from weth.addons.portal.controllers import portal
+from weth.addons.portal.controllers.portal import pager as portal_pager
 
 
 class CustomerPortal(portal.CustomerPortal):

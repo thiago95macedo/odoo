@@ -1,4 +1,4 @@
-import { Component, useProps, t, xml } from "@odoo/owl";
+import { Component, useProps, t, xml } from "@weth/owl";
 
 export class CenteredIcon extends Component {
     props = useProps({

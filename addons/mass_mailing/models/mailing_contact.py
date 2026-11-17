@@ -5,11 +5,11 @@ import json
 from collections import defaultdict
 from itertools import product
 
-from odoo import _, api, Command, fields, models, tools
-from odoo.exceptions import UserError
-from odoo.fields import Domain
-from odoo.tools import clean_context
-from odoo.tools.float_utils import float_round
+from weth import _, api, Command, fields, models, tools
+from weth.exceptions import UserError
+from weth.fields import Domain
+from weth.tools import clean_context
+from weth.tools.float_utils import float_round
 
 MAX_FROM_PARTNERS = 500
 

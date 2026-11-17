@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.mail.tests.common import mail_new_test_user
-from odoo.exceptions import AccessError
-from odoo.tests import tagged, common, new_test_user
-from odoo.tools import mute_logger
+from weth.addons.mail.tests.common import mail_new_test_user
+from weth.exceptions import AccessError
+from weth.tests import tagged, common, new_test_user
+from weth.tools import mute_logger
 
 
 @tagged('security')
@@ -39,7 +39,7 @@ class TestAccessRating(common.TransactionCase):
             "name": "Partner to Rate :("
         })
 
-    @mute_logger('odoo.addons.base.models.ir_access')
+    @mute_logger('weth.addons.base.models.ir_access')
     def test_rating_access(self):
         """ Security test : only a employee (user group) can create and write rating object """
         # Public and portal user can't Access direclty to the ratings

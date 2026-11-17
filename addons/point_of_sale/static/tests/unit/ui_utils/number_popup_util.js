@@ -1,4 +1,4 @@
-import { animationFrame, press } from "@odoo/hoot-dom";
+import { animationFrame, press } from "@weth/hoot-dom";
 import { contains } from "@web/../tests/web_test_helpers";
 import { normalizeText } from "./common";
 

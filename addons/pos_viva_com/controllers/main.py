@@ -2,9 +2,9 @@
 import logging
 import urllib.parse
 import json
-from odoo import http, _
-from odoo.http import request
-from odoo.tools import consteq
+from weth import http, _
+from weth.http import request
+from weth.tools import consteq
 
 _logger = logging.getLogger(__name__)
 

@@ -1,7 +1,7 @@
-from odoo.fields import Command
-from odoo.tests.common import tagged
+from weth.fields import Command
+from weth.tests.common import tagged
 
-from odoo.addons.account.tests.common import AccountTestInvoicingHttpCommon
+from weth.addons.account.tests.common import AccountTestInvoicingHttpCommon
 
 
 @tagged('post_install', '-at_install')

@@ -1,7 +1,7 @@
-from odoo import api, fields, models, _, Command
-from odoo.exceptions import UserError, ValidationError
-from odoo.tools import SQL, format_date, formatLang, frozendict, date_utils
-from odoo.tools.float_utils import float_round
+from weth import api, fields, models, _, Command
+from weth.exceptions import UserError, ValidationError
+from weth.tools import SQL, format_date, formatLang, frozendict, date_utils
+from weth.tools.float_utils import float_round
 
 from dateutil.relativedelta import relativedelta
 

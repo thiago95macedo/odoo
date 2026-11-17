@@ -1,6 +1,6 @@
 from ast import literal_eval
 
-from odoo import models
+from weth import models
 
 
 class ProjectProject(models.Model):

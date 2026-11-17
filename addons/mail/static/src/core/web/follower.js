@@ -1,5 +1,5 @@
 import { useService } from "@web/core/utils/hooks";
-import { Component, types, useProps } from "@odoo/owl";
+import { Component, types, useProps } from "@weth/owl";
 import { FollowerSubtypeDialog } from "@mail/core/web/follower_subtype_dialog";
 import { AvatarCard } from "@mail/core/web/avatar_card/avatar_card";
 import { DropdownItem } from "@web/core/dropdown/dropdown_item";

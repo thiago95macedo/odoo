@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import fields, models
-from odoo.http import request
+from weth import fields, models
+from weth.http import request
 
 CLICK_AND_COLLECT_SESSION_CACHE_KEY = "website_sale_collect_pending_selection"
 

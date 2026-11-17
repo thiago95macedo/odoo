@@ -1,5 +1,5 @@
-import { describe, expect, test } from "@odoo/hoot";
-import { queryAll } from "@odoo/hoot-dom";
+import { describe, expect, test } from "@weth/hoot";
+import { queryAll } from "@weth/hoot-dom";
 import { startInteractions, setupInteractionWhiteList } from "@web/../tests/public/helpers";
 import { session } from "@web/session";
 import { patchTurnStile } from "@website_cf_turnstile/../tests/helpers";

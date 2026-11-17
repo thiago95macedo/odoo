@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.http_routing.tests.common import MockRequest
-from odoo.addons.website_forum.controllers.website_forum import WebsiteForum
-from odoo.tests import tagged
+from weth.addons.http_routing.tests.common import MockRequest
+from weth.addons.website_forum.controllers.website_forum import WebsiteForum
+from weth.tests import tagged
 
-from odoo.addons.website_forum.tests.common import KARMA, TestForumCommon
-from odoo.exceptions import AccessError
-from odoo.tests.common import HttpCase
-from odoo.tools import mute_logger
+from weth.addons.website_forum.tests.common import KARMA, TestForumCommon
+from weth.exceptions import AccessError
+from weth.tests.common import HttpCase
+from weth.tools import mute_logger
 
 
 class TestForumController(TestForumCommon, HttpCase):
@@ -76,7 +76,7 @@ class TestForumController(TestForumCommon, HttpCase):
                     self.assertIn(self.env.user, employee_2_website_2_forum_2_post.sudo().favourite_ids)
                     self.assertEqual(self._get_my_other_forums(self.forum_1_website_2), self.forum_2_website_2)
 
-    @mute_logger('odoo.http')
+    @mute_logger('weth.http')
     def test_post_comment_without_subscribed_partner_read_rights(self):
         """ Test restricted portal user comments properly notify subscribers. """
         self.forum_1.write({

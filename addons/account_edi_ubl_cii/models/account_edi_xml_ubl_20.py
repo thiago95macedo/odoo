@@ -1,14 +1,14 @@
 from lxml import etree
 
-from odoo import _, models, Command
-from odoo.tools import html2plaintext
-from odoo.tools.float_utils import float_is_zero, float_round
-from odoo.addons.account.tools import dict_to_xml
-from odoo.tools.partner_identifiers import get_tin_metadata_of_country
+from weth import _, models, Command
+from weth.tools import html2plaintext
+from weth.tools.float_utils import float_is_zero, float_round
+from weth.addons.account.tools import dict_to_xml
+from weth.tools.partner_identifiers import get_tin_metadata_of_country
 
-from odoo.addons.account_edi_ubl_cii.models.account_edi_common import FloatFmt
-from odoo.addons.account_edi_ubl_cii.tools import Invoice, CreditNote, DebitNote
-from odoo.addons.account_edi_ubl_cii.tools.ubl_20_optional_fields import PEPPOL_INVOICE_OPTIONAL_FIELDS, PEPPOL_INVOICE_OPTIONAL_LINE_FIELDS, PEPPOL_CREDIT_NOTE_OPTIONAL_FIELDS, PEPPOL_CREDIT_NOTE_OPTIONAL_LINE_FIELDS
+from weth.addons.account_edi_ubl_cii.models.account_edi_common import FloatFmt
+from weth.addons.account_edi_ubl_cii.tools import Invoice, CreditNote, DebitNote
+from weth.addons.account_edi_ubl_cii.tools.ubl_20_optional_fields import PEPPOL_INVOICE_OPTIONAL_FIELDS, PEPPOL_INVOICE_OPTIONAL_LINE_FIELDS, PEPPOL_CREDIT_NOTE_OPTIONAL_FIELDS, PEPPOL_CREDIT_NOTE_OPTIONAL_LINE_FIELDS
 
 
 UBL_NAMESPACES = {

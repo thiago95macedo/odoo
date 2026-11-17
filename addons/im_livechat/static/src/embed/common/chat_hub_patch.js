@@ -1,4 +1,4 @@
-import { useListener } from "@odoo/owl";
+import { useListener } from "@weth/owl";
 import { LivechatButton } from "@im_livechat/embed/common/livechat_button";
 import { ChatHub } from "@mail/core/common/chat_hub";
 import { patch } from "@web/core/utils/patch";

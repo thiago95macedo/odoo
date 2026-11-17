@@ -4,8 +4,8 @@
 from markupsafe import Markup
 from uuid import uuid4
 
-from odoo import fields, models, _
-from odoo.tools.urls import urljoin as url_join
+from weth import fields, models, _
+from weth.tools.urls import urljoin as url_join
 
 
 class MailingSmsTest(models.TransientModel):

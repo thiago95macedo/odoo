@@ -1,11 +1,11 @@
 from contextlib import contextmanager
 from unittest.mock import patch
 
-from odoo import Command
-from odoo.addons.mail.models.mail_activity import MailActivity
-from odoo.addons.mail.tests.common import MailCommon
-from odoo.tests import Form
-from odoo.tools.misc import format_date
+from weth import Command
+from weth.addons.mail.models.mail_activity import MailActivity
+from weth.addons.mail.tests.common import MailCommon
+from weth.tests import Form
+from weth.tools.misc import format_date
 
 
 class ActivityScheduleCase(MailCommon):

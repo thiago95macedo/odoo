@@ -1,5 +1,5 @@
 import { testEditor } from "../_helpers/editor";
-import { test, before } from "@odoo/hoot";
+import { test, before } from "@weth/hoot";
 import {
     setFontSize,
     setFontSizeClassName,

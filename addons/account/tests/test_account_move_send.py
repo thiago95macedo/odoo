@@ -4,16 +4,16 @@ from contextlib import contextmanager
 from datetime import date
 from unittest.mock import patch
 
-from odoo import Command
-from odoo.exceptions import UserError
-from odoo.tests import Form, tagged, users, warmup
-from odoo.tests.common import new_test_user
-from odoo.tests.test_cursor import TestCursor
-from odoo.tools import formataddr, mute_logger
+from weth import Command
+from weth.exceptions import UserError
+from weth.tests import Form, tagged, users, warmup
+from weth.tests.common import new_test_user
+from weth.tests.test_cursor import TestCursor
+from weth.tools import formataddr, mute_logger
 
-from odoo.addons.account.tests.common import AccountTestInvoicingCommon
-from odoo.addons.bus.models.bus import channel_with_db, json_dump
-from odoo.addons.mail.tests.common import MailCommon
+from weth.addons.account.tests.common import AccountTestInvoicingCommon
+from weth.addons.bus.models.bus import channel_with_db, json_dump
+from weth.addons.mail.tests.common import MailCommon
 
 
 @tagged('post_install_l10n', 'post_install', '-at_install', 'mail_flow')
@@ -155,7 +155,7 @@ class TestAccountComposerPerformance(AccountTestInvoicingCommon, MailCommon):
 
     @users('user_account')
     @warmup
-    @mute_logger('odoo.addons.mail.models.mail_mail', 'odoo.models.unlink')
+    @mute_logger('weth.addons.mail.models.mail_mail', 'weth.models.unlink')
     def test_move_composer_multi(self):
         """ Test with multi mode """
         test_moves = self.test_account_moves.with_env(self.env)
@@ -224,7 +224,7 @@ class TestAccountComposerPerformance(AccountTestInvoicingCommon, MailCommon):
 
     @users('user_account')
     @warmup
-    @mute_logger('odoo.addons.mail.models.mail_mail', 'odoo.models.unlink')
+    @mute_logger('weth.addons.mail.models.mail_mail', 'weth.models.unlink')
     def test_move_composer_single(self):
         """ Test single mode """
         test_move = self.test_account_moves[0].with_env(self.env)
@@ -308,7 +308,7 @@ class TestAccountComposerPerformance(AccountTestInvoicingCommon, MailCommon):
 
     @users('user_account')
     @warmup
-    @mute_logger('odoo.addons.mail.models.mail_mail', 'odoo.models.unlink')
+    @mute_logger('weth.addons.mail.models.mail_mail', 'weth.models.unlink')
     def test_move_composer_single_lang(self):
         """ Test single with another language """
         test_move = self.test_account_moves[1].with_env(self.env)
@@ -394,7 +394,7 @@ class TestAccountComposerPerformance(AccountTestInvoicingCommon, MailCommon):
 
     @users('user_account')
     @warmup
-    @mute_logger('odoo.addons.mail.models.mail_mail', 'odoo.models.unlink')
+    @mute_logger('weth.addons.mail.models.mail_mail', 'weth.models.unlink')
     def test_move_composer_with_dynamic_reports(self):
         """
         It makes sure that when an invoice is sent using a template that
@@ -602,7 +602,7 @@ class TestAccountMoveSend(TestAccountMoveSendCommon):
 
         # Send it again. The PDF must not be created again.
         wizard = self.create_send_and_print(invoice, no_invoice_reminder=True, sending_methods=['email', 'manual'])
-        with patch('odoo.addons.account.models.account_move_send.AccountMoveSend._hook_invoice_document_after_pdf_report_render') as mocked_method:
+        with patch('weth.addons.account.models.account_move_send.AccountMoveSend._hook_invoice_document_after_pdf_report_render') as mocked_method:
             results = wizard.action_send_and_print()
             mocked_method.assert_not_called()
         self.assertEqual(results['type'], 'ir.actions.act_url')
@@ -816,8 +816,8 @@ class TestAccountMoveSend(TestAccountMoveSendCommon):
             }
 
         with (
-            patch('odoo.addons.account.models.account_move_send.AccountMoveSend._get_default_extra_edis', get_default_extra_edis),
-            patch('odoo.addons.account.models.account_move_send.AccountMoveSend._get_all_extra_edis', get_all_extra_edis)
+            patch('weth.addons.account.models.account_move_send.AccountMoveSend._get_default_extra_edis', get_default_extra_edis),
+            patch('weth.addons.account.models.account_move_send.AccountMoveSend._get_all_extra_edis', get_all_extra_edis)
         ):
             wizard = self.create_send_and_print(invoice1 + invoice2)
             expected_wizard_batch_result = {
@@ -1034,7 +1034,7 @@ class TestAccountMoveSend(TestAccountMoveSendCommon):
                 invoice_data['error'] = {'error_title': "turlututu"}
 
         with patch(
-                'odoo.addons.account.models.account_move_send.AccountMoveSend._call_web_service_after_invoice_pdf_render',
+                'weth.addons.account.models.account_move_send.AccountMoveSend._call_web_service_after_invoice_pdf_render',
                 call_web_service_after_invoice_pdf_render
         ):
             try:
@@ -1056,7 +1056,7 @@ class TestAccountMoveSend(TestAccountMoveSendCommon):
 
         # Process.
         with patch(
-                'odoo.addons.account.models.account_move_send.AccountMoveSend._hook_invoice_document_before_pdf_report_render',
+                'weth.addons.account.models.account_move_send.AccountMoveSend._hook_invoice_document_before_pdf_report_render',
                 _hook_invoice_document_before_pdf_report_render
         ):
             results = wizard.action_send_and_print(allow_fallback_pdf=True)
@@ -1078,7 +1078,7 @@ class TestAccountMoveSend(TestAccountMoveSendCommon):
 
         # Process.
         with patch(
-                'odoo.addons.account.models.account_move_send.AccountMoveSend._hook_invoice_document_before_pdf_report_render',
+                'weth.addons.account.models.account_move_send.AccountMoveSend._hook_invoice_document_before_pdf_report_render',
                 _hook_invoice_document_before_pdf_report_render
         ):
             results = wizard.action_send_and_print(allow_fallback_pdf=True)
@@ -1140,7 +1140,7 @@ class TestAccountMoveSend(TestAccountMoveSendCommon):
 
         # Process.
         with patch(
-                'odoo.addons.account.models.account_move_send.AccountMoveSend._call_web_service_after_invoice_pdf_render',
+                'weth.addons.account.models.account_move_send.AccountMoveSend._call_web_service_after_invoice_pdf_render',
                 _call_web_service_after_invoice_pdf_render
         ):
             wizard.action_send_and_print(allow_fallback_pdf=True)
@@ -1162,7 +1162,7 @@ class TestAccountMoveSend(TestAccountMoveSendCommon):
 
         # Process.
         with patch(
-                'odoo.addons.account.models.account_move_send.AccountMoveSend._call_web_service_before_invoice_pdf_render',
+                'weth.addons.account.models.account_move_send.AccountMoveSend._call_web_service_before_invoice_pdf_render',
                 _call_web_service_before_invoice_pdf_render
         ):
             wizard.action_send_and_print(allow_fallback_pdf=True)
@@ -1228,7 +1228,7 @@ class TestAccountMoveSend(TestAccountMoveSendCommon):
         self.env["bus.bus"].sudo().search([]).unlink()
 
         with patch(
-            'odoo.addons.account.models.account_move_send.AccountMoveSend._hook_invoice_document_before_pdf_report_render',
+            'weth.addons.account.models.account_move_send.AccountMoveSend._hook_invoice_document_before_pdf_report_render',
             _hook_invoice_document_before_pdf_report_render,
         ), self.enter_registry_test_mode():
             self.env.ref('account.ir_cron_account_move_send').method_direct_trigger()
@@ -1385,7 +1385,7 @@ class TestAccountMoveSend(TestAccountMoveSendCommon):
         invoice = self.init_invoice("out_invoice", amounts=[1000], partner=self.partner_a, post=True)
         wizard = self.create_send_and_print(invoice)
 
-        with patch('odoo.addons.mail.models.mail_template.MailTemplate.send_mail') as patched_send_mail:
+        with patch('weth.addons.mail.models.mail_template.MailTemplate.send_mail') as patched_send_mail:
             wizard.action_send_and_print()
 
         # we send an email for every recipient individually (for separate unsubscribe links)
@@ -1487,7 +1487,7 @@ class TestAccountMoveSend(TestAccountMoveSendCommon):
             raise ValueError("Sending failed")
 
         with (
-            self.assertLogs('odoo.addons.account.tools.after_commit', level='ERROR'),
+            self.assertLogs('weth.addons.account.tools.after_commit', level='ERROR'),
             patch.object(self.registry['account.move.send'], '_hook_invoice_document_before_pdf_report_render', failing_hook),
             self._send_after_commit(),
         ):

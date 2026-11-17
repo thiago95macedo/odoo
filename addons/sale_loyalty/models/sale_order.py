@@ -6,10 +6,10 @@ from collections import defaultdict
 from functools import partial
 from zoneinfo import ZoneInfo
 
-from odoo import api, fields, models
-from odoo.exceptions import UserError, ValidationError
-from odoo.fields import Command, Domain
-from odoo.tools import SQL, float_round, lazy
+from weth import api, fields, models
+from weth.exceptions import UserError, ValidationError
+from weth.fields import Command, Domain
+from weth.tools import SQL, float_round, lazy
 
 
 def _generate_random_reward_code():

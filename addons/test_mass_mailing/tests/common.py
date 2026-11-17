@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.phone_validation.tools import phone_validation
+from weth.addons.phone_validation.tools import phone_validation
 
-from odoo.addons.mass_mailing_sms.tests.common import MassSMSCommon
+from weth.addons.mass_mailing_sms.tests.common import MassSMSCommon
 
 
 class TestMassMailCommon(MassSMSCommon):
@@ -26,9 +26,9 @@ class TestMassMailCommon(MassSMSCommon):
             'preview': 'Hi {{ object.name + "" }} :)',
             'body_html': """<div><p>Hello <t t-out="object.name"/></p>,
 <t t-set="url" t-value="'www.weth.com.br'"/>
-<t t-set="httpurl" t-value="'https://www.odoo.eu'"/>f
-<span>Website0: <a id="url0" t-attf-href="https://www.odoo.tz/my/{{object.name}}">https://www.odoo.tz/my/<t t-out="object.name"/></a></span>
-<span>Website1: <a id="url1" href="https://www.odoo.be">https://www.odoo.be</a></span>
+<t t-set="httpurl" t-value="'https://www.weth.eu'"/>f
+<span>Website0: <a id="url0" t-attf-href="https://www.weth.tz/my/{{object.name}}">https://www.weth.tz/my/<t t-out="object.name"/></a></span>
+<span>Website1: <a id="url1" href="https://www.weth.be">https://www.weth.be</a></span>
 <span>Website2: <a id="url2" t-attf-href="https://{{url}}">https://<t t-out="url"/></a></span>
 <span>Website3: <a id="url3" t-att-href="httpurl"><t t-out="httpurl"/></a></span>
 <span>External1: <a id="url4" href="https://www.example.com/foo/bar?baz=qux">Youpie</a></span>
@@ -48,8 +48,8 @@ class TestMassMailCommon(MassSMSCommon):
             'preview': 'Hi {{ object.name + "" }} :)',
             'body_html': """<div><p>Hello <t t-out="object.name"/></p>,
 <t t-set="url" t-value="'www.weth.com.br'"/>
-<t t-set="httpurl" t-value="'https://www.odoo.eu'"/>f
-<span>Website1: <a id="url1" href="https://www.odoo.be">https://www.odoo.be</a></span>
+<t t-set="httpurl" t-value="'https://www.weth.eu'"/>f
+<span>Website1: <a id="url1" href="https://www.weth.be">https://www.weth.be</a></span>
 </div>""",
             'mailing_type': 'mail',
             'mailing_model_id': cls.env['ir.model']._get('mailing.contact').id,
@@ -61,8 +61,8 @@ class TestMassMailCommon(MassSMSCommon):
             'preview': 'Hi {{ object.name + "" }} :)',
             'body_html': """<div><p>Hello <t t-out="object.name"/></p>,
 <t t-set="url" t-value="'www.weth.com.br'"/>
-<t t-set="httpurl" t-value="'https://www.odoo.eu'"/>f
-<span>Website1: <a id="url1" href="https://www.odoo.be">https://www.odoo.be</a></span>
+<t t-set="httpurl" t-value="'https://www.weth.eu'"/>f
+<span>Website1: <a id="url1" href="https://www.weth.be">https://www.weth.be</a></span>
 </div>""",
             'mailing_type': 'mail',
             'mailing_model_id': cls.env['ir.model']._get('mailing.contact').id,

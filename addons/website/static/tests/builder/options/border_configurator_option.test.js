@@ -1,8 +1,8 @@
 import { BorderConfigurator } from "@html_builder/plugins/border_configurator_option";
 import { addBuilderOption } from "@html_builder/../tests/helpers";
-import { expect, test } from "@odoo/hoot";
-import { waitFor, waitForNone, click, queryOne } from "@odoo/hoot-dom";
-import { xml } from "@odoo/owl";
+import { expect, test } from "@weth/hoot";
+import { waitFor, waitForNone, click, queryOne } from "@weth/hoot-dom";
+import { xml } from "@weth/owl";
 import { contains, patchWithCleanup } from "@web/../tests/web_test_helpers";
 import {
     defineWebsiteModels,

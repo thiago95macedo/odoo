@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
-import odoo
+import weth
 
-from odoo.addons.point_of_sale.tests.common import TestPoSCommon
+from weth.addons.point_of_sale.tests.common import TestPoSCommon
 
-@odoo.tests.tagged('post_install', '-at_install')
+@weth.tests.tagged('post_install', '-at_install')
 class TestReportPoSOrder(TestPoSCommon):
 
     _test_user_groups = None  # FIXME list needed groups
@@ -17,7 +17,7 @@ class TestReportPoSOrder(TestPoSCommon):
         """Test the margin and price_total of a PoS Order with no taxes."""
         product1 = self.create_product('Product 1', self.categ_basic, 150)
         self.categ_all = self.env['pos.category'].search([])
-        product1.write({'pos_categ_ids': [odoo.Command.set(self.categ_all.ids)]})
+        product1.write({'pos_categ_ids': [weth.Command.set(self.categ_all.ids)]})
 
         self.open_new_session()
         session = self.pos_session

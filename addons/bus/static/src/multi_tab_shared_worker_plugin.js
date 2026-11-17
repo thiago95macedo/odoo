@@ -1,5 +1,5 @@
 import { browser } from "@web/core/browser/browser";
-import { EventBus, Plugin, signal, useListener, usePlugin } from "@odoo/owl";
+import { EventBus, Plugin, signal, useListener, usePlugin } from "@weth/owl";
 import { WorkerPlugin } from "@bus/services/worker_plugin";
 
 const STATE = Object.freeze({

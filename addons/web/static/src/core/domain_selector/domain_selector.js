@@ -1,4 +1,4 @@
-import { Component, onWillStart, onWillUpdateProps, t, useProps } from "@odoo/owl";
+import { Component, onWillStart, onWillUpdateProps, t, useProps } from "@weth/owl";
 import { CheckBox } from "@web/core/checkbox/checkbox";
 import { Domain } from "@web/core/domain";
 import { getDomainDisplayedOperators } from "@web/core/domain_selector/domain_selector_operator_editor";
@@ -26,7 +26,7 @@ export const domainSelectorProps = {
     defaultConnector: t.selection(["&", "|"]).optional(),
     isDebugMode: t.boolean().optional(false),
     readonly: t.boolean().optional(true),
-    update: t.function().optional(() => () => {}),
+    update: t.function().optional(() => () => { }),
     debugUpdate: t.function().optional(),
 };
 

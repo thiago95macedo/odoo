@@ -1,8 +1,8 @@
 import { startInteractions, setupInteractionWhiteList } from "@web/../tests/public/helpers";
 
-import { describe, expect, test } from "@odoo/hoot";
-import { click, queryFirst } from "@odoo/hoot-dom";
-import { advanceTime } from "@odoo/hoot-mock";
+import { describe, expect, test } from "@weth/hoot";
+import { click, queryFirst } from "@weth/hoot-dom";
+import { advanceTime } from "@weth/hoot-mock";
 
 setupInteractionWhiteList("website.ripple_effect");
 

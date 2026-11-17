@@ -3,12 +3,12 @@
 
 from datetime import timedelta
 
-from odoo.addons.stock.tests.common import TestStockCommon
-from odoo.exceptions import UserError
+from weth.addons.stock.tests.common import TestStockCommon
+from weth.exceptions import UserError
 
-from odoo import Command
-from odoo.tests import tagged, Form
-from odoo.tools import float_is_zero, float_compare
+from weth import Command
+from weth.tests import tagged, Form
+from weth.tools import float_is_zero, float_compare
 
 from datetime import datetime
 from dateutil.relativedelta import relativedelta

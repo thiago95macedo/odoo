@@ -1,4 +1,4 @@
-import { Component } from "@odoo/owl";
+import { Component } from "@weth/owl";
 import { Dropdown } from "@web/core/dropdown/dropdown";
 import { DropdownItem } from "@web/core/dropdown/dropdown_item";
 import { ImStatus } from "./im_status";

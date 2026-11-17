@@ -4,7 +4,7 @@ import { rpc } from "@web/core/network/rpc";
 import { registry } from "@web/core/registry";
 import { CheckBox } from "@web/core/checkbox/checkbox";
 import { useService, useBus } from "@web/core/utils/hooks";
-import { Component, proxy, useProps } from "@odoo/owl";
+import { Component, proxy, useProps } from "@weth/owl";
 import { OptimizeSEODialog } from "@website/components/dialog/seo";
 import { RelativePublishTime } from "./relative_publish_time";
 
@@ -130,8 +130,8 @@ export class PublishSystrayItem extends Component {
         this.state.scheduled = !!publishOn;
         this.state.publishOn = publishOn
             ? deserializeDateTime(publishOn, {
-                  tz: this.website.currentWebsite.metadata?.mainObject?.tz,
-              })
+                tz: this.website.currentWebsite.metadata?.mainObject?.tz,
+            })
             : false;
         this.state.formattedPublishAt = formatDateTime(this.state.publishOn) || false;
     };

@@ -8,7 +8,7 @@ import {
     mockDate,
     test,
 } from "@web/../lib/hoot/hoot";
-import { disableAnimations } from "@odoo/hoot-mock";
+import { disableAnimations } from "@weth/hoot-mock";
 import { editSelectMenu, mountView } from "@web/../tests/_framework/view_test_helpers";
 import {
     clickEvent,
@@ -19,7 +19,7 @@ import {
 import { CalendarController } from "@web/views/calendar/calendar_controller";
 import { defineResourceModels } from "../resource_test_helpers";
 import { ResourceCalendarAttendance } from "../mock_server/mock_models/resource_calendar_attendance";
-import { waitFor } from "@odoo/hoot-dom";
+import { waitFor } from "@weth/hoot-dom";
 
 defineResourceModels();
 beforeEach(async () => {

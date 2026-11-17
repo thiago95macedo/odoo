@@ -1,11 +1,11 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 import unittest
 
-from odoo import fields
-from odoo.fields import Command
-from odoo.tests import tagged
+from weth import fields
+from weth.fields import Command
+from weth.tests import tagged
 
-from odoo.addons.payment_custom.tests.common import PaymentCustomCommon
+from weth.addons.payment_custom.tests.common import PaymentCustomCommon
 
 
 @tagged("-at_install", "post_install")

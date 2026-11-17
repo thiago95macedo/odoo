@@ -10,8 +10,8 @@ import {
     queryOne,
     queryText,
     test,
-} from "@odoo/hoot";
-import { Component, xml } from "@odoo/owl";
+} from "@weth/hoot";
+import { Component, xml } from "@weth/owl";
 import {
     assignDialogTestEnv,
     clearRegistry,
@@ -150,7 +150,7 @@ describe("DebugMenu", () => {
     test("Don't display the DebugMenu if debug mode is disabled", async () => {
         assignDialogTestEnv();
         await mountWithCleanup(ActionDialog, {
-            props: { close: () => {} },
+            props: { close: () => { } },
         });
         expect(".o_dialog").toHaveCount(1);
         expect(".o_dialog .o_debug_manager [data-icon='bug_report']").toHaveCount(0);
@@ -193,7 +193,7 @@ describe("DebugMenu", () => {
         serverState.debug = "1";
         assignDialogTestEnv();
         await mountWithCleanup(WithCustom, {
-            props: { close: () => {} },
+            props: { close: () => { } },
         });
         expect(".o_dialog").toHaveCount(1);
         expect(".o_dialog .o_debug_manager [data-icon='bug_report']").toHaveCount(1);

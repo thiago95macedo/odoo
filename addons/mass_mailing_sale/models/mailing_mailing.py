@@ -2,9 +2,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
 from markupsafe import Markup
-from odoo import api, fields, models, _, tools
-from odoo.fields import Domain
-from odoo.tools import SQL
+from weth import api, fields, models, _, tools
+from weth.fields import Domain
+from weth.tools import SQL
 
 
 class MailingMailing(models.Model):

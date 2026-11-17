@@ -1,10 +1,10 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.fields import Command
-from odoo.tests import HttpCase, tagged
+from weth.fields import Command
+from weth.tests import HttpCase, tagged
 
-from odoo.addons.account.tests.common import AccountTestInvoicingCommon
-from odoo.addons.product.tests.test_product_attribute_value_config import (
+from weth.addons.account.tests.common import AccountTestInvoicingCommon
+from weth.addons.product.tests.test_product_attribute_value_config import (
     TestProductAttributeValueCommon,
 )
 

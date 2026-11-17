@@ -1,4 +1,4 @@
-import { Component, proxy, t, useEffect, useProps } from "@odoo/owl";
+import { Component, proxy, t, useEffect, useProps } from "@weth/owl";
 import { useService } from "@web/core/utils/hooks";
 import { user } from "@web/core/user";
 import { formatDuration } from "@web/views/fields/formatters";

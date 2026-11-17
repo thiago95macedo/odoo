@@ -1,4 +1,4 @@
-import { Component, EventBus, t, useProps } from "@odoo/owl";
+import { Component, EventBus, t, useProps } from "@weth/owl";
 import { DropdownItem } from "@web/core/dropdown/dropdown_item";
 import { useBus, useService } from "@web/core/utils/hooks";
 import { render } from "@web/owl2/utils";

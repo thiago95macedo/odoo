@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.exceptions import AccessDenied
+from weth.exceptions import AccessDenied
 
-from odoo import models
-from odoo.modules.registry import Registry
+from weth import models
+from weth.modules.registry import Registry
 
 
 class ResUsers(models.Model):

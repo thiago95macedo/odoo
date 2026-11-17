@@ -1,4 +1,4 @@
-import { test, expect, getFixture } from "@odoo/hoot";
+import { test, expect, getFixture } from "@weth/hoot";
 import { getFilledOrder, setupPosEnv } from "../utils";
 import { definePosModels } from "../data/generate_model_definitions";
 import { patchWithCleanup } from "@web/../tests/web_test_helpers";

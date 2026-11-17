@@ -1,4 +1,4 @@
-import { onWillDestroy } from "@odoo/owl";
+import { onWillDestroy } from "@weth/owl";
 import { registry } from "@web/core/registry";
 import { useService } from "../utils/hooks";
 import { FileViewer } from "./file_viewer";
@@ -13,7 +13,7 @@ const fileViewerService = {
      */
     start(_env, { overlay }) {
         /**
-         * @param {import("@odoo/owl").Signal<HTMLElement | null>} [ref]
+         * @param {import("@weth/owl").Signal<HTMLElement | null>} [ref]
          */
         function createFileViewer(ref) {
             function close() {
@@ -49,7 +49,7 @@ const fileViewerService = {
                 }
             }
 
-            let closeFn = () => {};
+            let closeFn = () => { };
 
             return { open, close };
         }
@@ -60,7 +60,7 @@ const fileViewerService = {
 registry.category("services").add("fileViewer", fileViewerService);
 
 /**
- * @param {import("@odoo/owl").Signal<HTMLElement | null>} [ref]
+ * @param {import("@weth/owl").Signal<HTMLElement | null>} [ref]
  */
 export function useFileViewer(ref) {
     const createFileViewer = useService("fileViewer");

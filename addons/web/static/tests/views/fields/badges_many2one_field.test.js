@@ -1,5 +1,5 @@
-import { animationFrame, expect, test } from "@odoo/hoot";
-import { click, queryAllTexts } from "@odoo/hoot-dom";
+import { animationFrame, expect, test } from "@weth/hoot";
+import { click, queryAllTexts } from "@weth/hoot-dom";
 import {
     clickSave,
     contains,

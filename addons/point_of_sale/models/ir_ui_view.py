@@ -1,4 +1,4 @@
-from odoo import api, models
+from weth import api, models
 
 
 class IrUiView(models.Model):

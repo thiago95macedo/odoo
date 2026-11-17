@@ -1,6 +1,6 @@
-import { animationFrame } from "@odoo/hoot-mock";
-import { expect, test, beforeEach } from "@odoo/hoot";
-import { click } from "@odoo/hoot-dom";
+import { animationFrame } from "@weth/hoot-mock";
+import { expect, test, beforeEach } from "@weth/hoot";
+import { click } from "@weth/hoot-dom";
 
 import {
     defineSpreadsheetActions,

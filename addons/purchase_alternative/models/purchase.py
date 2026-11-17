@@ -2,7 +2,7 @@
 
 from collections import defaultdict
 
-from odoo import Command, _, api, fields, models
+from weth import Command, _, api, fields, models
 
 
 class PurchaseOrderGroup(models.Model):

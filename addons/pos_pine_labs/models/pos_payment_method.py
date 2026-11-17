@@ -1,5 +1,5 @@
-from odoo import api, fields, models,  _
-from odoo.exceptions import UserError
+from weth import api, fields, models,  _
+from weth.exceptions import UserError
 
 from .pine_labs_pos_request import call_pine_labs
 

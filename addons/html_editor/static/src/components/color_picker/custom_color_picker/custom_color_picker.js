@@ -8,7 +8,7 @@ import {
     t,
     useEffect,
     useListener,
-} from "@odoo/owl";
+} from "@weth/owl";
 import { getActiveHotkey } from "@web/core/hotkeys/hotkey_utils";
 import { _t } from "@web/core/l10n/translation";
 import {
@@ -36,9 +36,9 @@ export class CustomColorPicker extends Component {
         selectedColor: t.string().optional(),
         noTransparency: t.boolean().optional(false),
         stopClickPropagation: t.boolean().optional(false),
-        onColorSelect: t.function().optional(() => () => {}),
-        onColorPreview: t.function().optional(() => () => {}),
-        onInputEnter: t.function().optional(() => () => {}),
+        onColorSelect: t.function().optional(() => () => { }),
+        onColorPreview: t.function().optional(() => () => { }),
+        onInputEnter: t.function().optional(() => () => { }),
         defaultOpacity: t.number().optional(100),
         setOnCloseCallback: t.function().optional(),
         setOperationCallbacks: t.function().optional(),

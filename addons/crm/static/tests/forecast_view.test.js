@@ -1,6 +1,6 @@
 import { defineMailModels } from "@mail/../tests/mail_test_helpers";
-import { expect, test } from "@odoo/hoot";
-import { mockDate } from "@odoo/hoot-mock";
+import { expect, test } from "@weth/hoot";
+import { mockDate } from "@weth/hoot-mock";
 import {
     defineModels,
     fields,
@@ -23,7 +23,7 @@ class Foo extends models.Model {
     };
 }
 
-class Partner extends models.Model {}
+class Partner extends models.Model { }
 
 defineModels([Foo, Partner]);
 defineMailModels();

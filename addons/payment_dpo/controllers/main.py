@@ -2,11 +2,11 @@
 
 import pprint
 
-from odoo import http
-from odoo.exceptions import ValidationError
-from odoo.http import request
+from weth import http
+from weth.exceptions import ValidationError
+from weth.http import request
 
-from odoo.addons.payment.logging import get_payment_logger
+from weth.addons.payment.logging import get_payment_logger
 
 _logger = get_payment_logger(__name__)
 

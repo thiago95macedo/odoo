@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
 
 <template id="event_track_location_display_speaker" name="Location Display Speaker">
     <div t-if="track.image or track.partner_name"
@@ -150,4 +150,4 @@
     </xpath>
 </template>
 
-</odoo>
+</weth>

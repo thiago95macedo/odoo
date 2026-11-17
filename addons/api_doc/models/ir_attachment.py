@@ -1,6 +1,6 @@
 import logging
 
-from odoo import api, models
+from weth import api, models
 
 _logger = logging.getLogger(__name__)
 

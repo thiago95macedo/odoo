@@ -1,6 +1,6 @@
-import { expect, test } from "@odoo/hoot";
-import { queryAllTexts, resize } from "@odoo/hoot-dom";
-import { mockTimeZone, runAllTimers } from "@odoo/hoot-mock";
+import { expect, test } from "@weth/hoot";
+import { queryAllTexts, resize } from "@weth/hoot-dom";
+import { mockTimeZone, runAllTimers } from "@weth/hoot-mock";
 import {
     mockService,
     mountWithCleanup,
@@ -14,9 +14,9 @@ import { CalendarYearRenderer } from "@web/views/calendar/calendar_year/calendar
 const FAKE_PROPS = {
     model: FAKE_MODEL,
     initialDate: FAKE_MODEL.date,
-    createRecord() {},
-    deleteRecord() {},
-    editRecord() {},
+    createRecord() { },
+    deleteRecord() { },
+    editRecord() { },
 };
 
 async function start(props = {}) {
@@ -69,7 +69,7 @@ test(`display events`, async () => {
     mockService("popover", () => ({
         add(target, component, props) {
             expect.step(`${props.date.toISODate()} ${props.records[0].title}`);
-            return () => {};
+            return () => { };
         },
     }));
 

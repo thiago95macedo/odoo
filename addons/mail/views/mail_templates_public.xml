@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
     <template id="mail.public_layout">
         <t t-set="head">
             <t t-call-assets="web.assets_frontend" t-js="false"/>
@@ -29,4 +29,4 @@
             </div>
         </t>
     </template>
-</odoo>
+</weth>

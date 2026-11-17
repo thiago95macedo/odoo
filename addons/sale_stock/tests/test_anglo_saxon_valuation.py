@@ -5,12 +5,12 @@ from datetime import timedelta
 
 from freezegun import freeze_time
 
-from odoo import Command, fields
-from odoo.exceptions import UserError
-from odoo.tests import Form, tagged
+from weth import Command, fields
+from weth.exceptions import UserError
+from weth.tests import Form, tagged
 
-from odoo.addons.stock_account.tests.common import TestStockValuationCommon
-from odoo.addons.sale_stock.tests.common import TestSaleStockCommon
+from weth.addons.stock_account.tests.common import TestStockValuationCommon
+from weth.addons.sale_stock.tests.common import TestSaleStockCommon
 
 
 @tagged('post_install', '-at_install')

@@ -2,11 +2,11 @@
 
 from freezegun import freeze_time
 
-from odoo.http.session import SESSION_ROTATION_INTERVAL
-from odoo.tests import HttpCase, tagged
+from weth.http.session import SESSION_ROTATION_INTERVAL
+from weth.tests import HttpCase, tagged
 
-from odoo.addons.bus.tests.common import BusCase
-from odoo.addons.mail.tests.common import mail_new_test_user
+from weth.addons.bus.tests.common import BusCase
+from weth.addons.mail.tests.common import mail_new_test_user
 
 
 @tagged('at_install', '-post_install')  # LEGACY at_install

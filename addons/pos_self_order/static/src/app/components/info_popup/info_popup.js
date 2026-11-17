@@ -1,4 +1,4 @@
-import { Component, useProps, t } from "@odoo/owl";
+import { Component, useProps, t } from "@weth/owl";
 
 export class InfoPopup extends Component {
     static template = "pos_self_order.InfoPopup";

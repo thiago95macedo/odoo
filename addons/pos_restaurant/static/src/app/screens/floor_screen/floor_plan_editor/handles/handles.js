@@ -1,4 +1,4 @@
-import { Component, onMounted, onWillPatch, proxy, useProps, signal, t } from "@odoo/owl";
+import { Component, onMounted, onWillPatch, proxy, useProps, signal, t } from "@weth/owl";
 import { setElementTransform } from "@pos_restaurant/app/services/floor_plan/utils/utils";
 import { computeRotationHandlePosition } from "@pos_restaurant/app/screens/floor_screen/floor_plan_editor/handles/utils";
 import { FloorElement } from "@pos_restaurant/app/services/floor_plan/elements";

@@ -7,14 +7,14 @@ import time
 import lxml.html
 from werkzeug import urls
 
-import odoo
+import weth
 
-from odoo.addons.base.tests.common import HttpCaseWithUserDemo
+from weth.addons.base.tests.common import HttpCaseWithUserDemo
 
 _logger = logging.getLogger(__name__)
 
 
-@odoo.tests.common.tagged('post_install', '-at_install', 'crawl')
+@weth.tests.common.tagged('post_install', '-at_install', 'crawl')
 class Crawler(HttpCaseWithUserDemo):
     """ Test suite crawling an Odoo CMS instance and checking that all
     internal links lead to a 200 response.
@@ -31,7 +31,7 @@ class Crawler(HttpCaseWithUserDemo):
             'social_linkedin': 'https://www.linkedin.com/company/odoo',
             'social_youtube': 'https://www.youtube.com/user/OpenERPonline',
             'social_github': 'https://github.com/odoo',
-            'social_instagram': 'https://www.instagram.com/explore/tags/odoo/',
+            'social_instagram': 'https://www.instagram.com/explore/tags/weth/',
             'social_tiktok': 'https://www.tiktok.com/@odoo',
             'social_discord': 'https://discord.com/servers/discord-town-hall-169256939211980800',
         })

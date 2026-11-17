@@ -1,10 +1,10 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import http
-from odoo.fields import Domain
-from odoo.http import request
+from weth import http
+from weth.fields import Domain
+from weth.http import request
 
-from odoo.addons.mail.tools.discuss import Store, mail_route
+from weth.addons.mail.tools.discuss import Store, mail_route
 
 
 class SearchController(http.Controller):

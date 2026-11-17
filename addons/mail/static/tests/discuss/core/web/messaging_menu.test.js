@@ -11,7 +11,7 @@ import {
     startServer,
     MENU_ACTIVE_IDS,
 } from "@mail/../tests/mail_test_helpers";
-import { describe, disableAnimations, expect, mockPermission, mockTouch, test } from "@odoo/hoot";
+import { describe, disableAnimations, expect, mockPermission, mockTouch, test } from "@weth/hoot";
 import {
     Command,
     contains as webContains,

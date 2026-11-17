@@ -8,11 +8,11 @@ from collections import defaultdict
 from markupsafe import escape
 from psycopg2 import Error
 
-from odoo import _, api, fields, models
-from odoo.exceptions import UserError, ValidationError
-from odoo.fields import Domain
-from odoo.models import TableSQL
-from odoo.tools import SQL
+from weth import _, api, fields, models
+from weth.exceptions import UserError, ValidationError
+from weth.fields import Domain
+from weth.models import TableSQL
+from weth.tools import SQL
 
 _logger = logging.getLogger(__name__)
 

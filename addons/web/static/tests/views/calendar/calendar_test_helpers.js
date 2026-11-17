@@ -1,6 +1,6 @@
-import { advanceFrame, advanceTime, animationFrame } from "@odoo/hoot";
-import { click, drag, edit, hover, queryFirst, queryRect } from "@odoo/hoot-dom";
-import { EventBus } from "@odoo/owl";
+import { advanceFrame, advanceTime, animationFrame } from "@weth/hoot";
+import { click, drag, edit, hover, queryFirst, queryRect } from "@weth/hoot-dom";
+import { EventBus } from "@weth/owl";
 import { contains, isSmall, swipeLeft, swipeRight } from "@web/../tests/web_test_helpers";
 import { hasTouch } from "@web/core/browser/feature_detection";
 import { createElement } from "@web/core/utils/xml";
@@ -225,13 +225,13 @@ export const FAKE_MODEL = {
     scale: "month",
     scales: ["day", "week", "month", "year"],
     unusualDays: [],
-    load() {},
-    createFilter() {},
-    createRecord() {},
-    unlinkFilter() {},
-    unlinkRecord() {},
-    updateFilter() {},
-    updateRecord() {},
+    load() { },
+    createFilter() { },
+    createRecord() { },
+    unlinkFilter() { },
+    unlinkRecord() { },
+    updateFilter() { },
+    updateRecord() { },
 };
 
 // DOM Utils

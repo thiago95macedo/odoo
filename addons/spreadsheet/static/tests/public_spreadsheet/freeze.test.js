@@ -1,5 +1,5 @@
-import { animationFrame, describe, expect, test } from "@odoo/hoot";
-import { Model, registries, constants, helpers } from "@odoo/o-spreadsheet";
+import { animationFrame, describe, expect, test } from "@weth/hoot";
+import { Model, registries, constants, helpers } from "@weth/o-spreadsheet";
 import { createSpreadsheetWithChart } from "@spreadsheet/../tests/helpers/chart";
 import {
     addGlobalFilter,

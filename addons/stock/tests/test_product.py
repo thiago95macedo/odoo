@@ -7,10 +7,10 @@
 from unittest import skip
 from freezegun import freeze_time
 
-from odoo.addons.stock.tests.common import TestStockCommon
-from odoo.exceptions import UserError
-from odoo.fields import Command
-from odoo.tests import Form, tagged
+from weth.addons.stock.tests.common import TestStockCommon
+from weth.exceptions import UserError
+from weth.fields import Command
+from weth.tests import Form, tagged
 
 
 class TestVirtualAvailable(TestStockCommon):

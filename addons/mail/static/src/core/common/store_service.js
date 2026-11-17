@@ -2,7 +2,7 @@ import { Store as BaseStore, fields, makeStore } from "@mail/model/export";
 import { formatLocalDateTime, resolveTimeZoneName } from "@mail/utils/common/dates";
 import { attClassObjectToString, generateEmojisOnHtml } from "@mail/utils/common/format";
 
-import { proxy, usePlugin } from "@odoo/owl";
+import { proxy, usePlugin } from "@weth/owl";
 
 import { location } from "@web/core/browser/browser";
 import { cookie } from "@web/core/browser/cookie";
@@ -286,7 +286,7 @@ export class Store extends BaseStore {
                     model === "discuss.channel"
                         ? thread?.channel?.self_member_id?.seen_message_id?.id >= message_id
                         : thread?.messages.some((m) => m.id === message_id) ||
-                          this["mail.message"].get(message_id)?.needaction === false;
+                        this["mail.message"].get(message_id)?.needaction === false;
                 if (
                     this.self_user?.im_status === "busy" ||
                     (isTabFocused && thread?.channel?.isDisplayed) ||
@@ -506,7 +506,7 @@ export class Store extends BaseStore {
                 // Ignore invalid URLs
                 return false;
             }
-            if (location.host === url.host && location.pathname.startsWith("/odoo")) {
+            if (location.host === url.host && location.pathname.startsWith("/weth")) {
                 this.ChatWindow.get({ channel: thread.channel })?.fold();
             }
         }
@@ -604,9 +604,9 @@ export class Store extends BaseStore {
         const validMentions = {};
         const segments = isMarkup(body)
             ? Array.from(
-                  createDocumentFragmentFromContent(body).querySelectorAll("a"),
-                  (a) => a.textContent
-              )
+                createDocumentFragmentFromContent(body).querySelectorAll("a"),
+                (a) => a.textContent
+            )
             : [body];
         // Longest mention text first, so e.g. "@John" inside "@John Doe" isn't kept.
         const mentionTexts = (partner) => {

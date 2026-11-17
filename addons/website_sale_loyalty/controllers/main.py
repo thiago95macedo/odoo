@@ -2,10 +2,10 @@
 
 from werkzeug.urls import url_encode, url_parse
 
-from odoo.exceptions import UserError
-from odoo.http import request, route
+from weth.exceptions import UserError
+from weth.http import request, route
 
-from odoo.addons.website_sale.controllers import main
+from weth.addons.website_sale.controllers import main
 
 
 class WebsiteSale(main.WebsiteSale):

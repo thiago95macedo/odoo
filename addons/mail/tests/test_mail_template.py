@@ -3,10 +3,10 @@ from lxml.etree import LIBXML_VERSION
 from markupsafe import Markup
 from unittest.mock import patch
 
-from odoo.addons.mail.tests.common import MailCommon, mail_new_test_user
-from odoo.exceptions import AccessError, ValidationError, UserError
-from odoo.tests import Form, HttpCase, tagged, users
-from odoo.tools import convert_file, mute_logger
+from weth.addons.mail.tests.common import MailCommon, mail_new_test_user
+from weth.exceptions import AccessError, ValidationError, UserError
+from weth.tests import Form, HttpCase, tagged, users
+from weth.tools import convert_file, mute_logger
 
 
 @tagged('mail_template')
@@ -44,8 +44,8 @@ class TestMailTemplate(MailCommon):
         )
 
     @users('admin')
-    @mute_logger('odoo.addons.mail.models.mail_template')
-    @mute_logger('odoo.addons.mail.models.mail_render_mixin')
+    @mute_logger('weth.addons.mail.models.mail_template')
+    @mute_logger('weth.addons.mail.models.mail_render_mixin')
     def test_invalid_template_on_save(self):
         mail_template = self.env['mail.template'].create({
                 'name': 'Test template',
@@ -274,8 +274,8 @@ class TestMailTemplate(MailCommon):
             })
             self.assertFalse(self.env['mail.render.mixin']._has_unsafe_expression_template_qweb(expression, 'res.partner'))
 
-            with (patch('odoo.addons.base.models.ir_qweb.IrQweb._render', side_effect=o_qweb_render) as qweb_render,
-                patch('odoo.addons.base.models.ir_qweb.unsafe_eval', side_effect=eval) as unsafe_eval):
+            with (patch('weth.addons.base.models.ir_qweb.IrQweb._render', side_effect=o_qweb_render) as qweb_render,
+                patch('weth.addons.base.models.ir_qweb.unsafe_eval', side_effect=eval) as unsafe_eval):
                 rendered = template._render_field('body_html', record.ids)[record.id]
                 self.assertNotIn('t-out', rendered)
                 self.assertFalse(qweb_render.called)
@@ -283,21 +283,21 @@ class TestMailTemplate(MailCommon):
 
         # double check that we can detect the qweb rendering
         mail_template.body_html = '<t t-out="1+1"/>'
-        with (patch('odoo.addons.base.models.ir_qweb.IrQweb._render', side_effect=o_qweb_render) as qweb_render,
-            patch('odoo.addons.base.models.ir_qweb.unsafe_eval', side_effect=eval) as unsafe_eval):
+        with (patch('weth.addons.base.models.ir_qweb.IrQweb._render', side_effect=o_qweb_render) as qweb_render,
+            patch('weth.addons.base.models.ir_qweb.unsafe_eval', side_effect=eval) as unsafe_eval):
             rendered = mail_template._render_field('body_html', record.ids)[record.id]
             self.assertNotIn('t-out', rendered)
             self.assertTrue(qweb_render.called)
             self.assertTrue(unsafe_eval.called)
 
         employee_template.email_to = 'Test {{ object.name }}'
-        with patch('odoo.tools.safe_eval.evaluation.unsafe_eval', side_effect=eval) as unsafe_eval:
+        with patch('weth.tools.safe_eval.evaluation.unsafe_eval', side_effect=eval) as unsafe_eval:
             employee_template._render_field('email_to', record.ids)
             self.assertFalse(unsafe_eval.called)
 
         # double check that we can detect the eval call
         mail_template.email_to = 'Test {{ 1+1 }}'
-        with patch('odoo.tools.safe_eval.evaluation.unsafe_eval', side_effect=eval) as unsafe_eval:
+        with patch('weth.tools.safe_eval.evaluation.unsafe_eval', side_effect=eval) as unsafe_eval:
             mail_template._render_field('email_to', record.ids)
             self.assertTrue(unsafe_eval.called)
 
@@ -315,14 +315,14 @@ class TestMailTemplate(MailCommon):
         o_render = self.env['mail.render.mixin']._render_template_qweb_regex
         for template, excepted in templates:
             mail_template.body_html = template
-            with patch('odoo.addons.mail.models.mail_render_mixin.MailRenderMixin._render_template_qweb_regex', side_effect=o_render) as render:
+            with patch('weth.addons.mail.models.mail_render_mixin.MailRenderMixin._render_template_qweb_regex', side_effect=o_render) as render:
                 rendered = mail_template._render_field('body_html', record.ids)[record.id]
                 self.assertEqual(rendered, excepted)
                 self.assertTrue(render.called)
 
         record.name = '<b> test </b>'
         mail_template.body_html = '<t t-out="object.name"/>'
-        with patch('odoo.addons.mail.models.mail_render_mixin.MailRenderMixin._render_template_qweb_regex', side_effect=o_render) as render:
+        with patch('weth.addons.mail.models.mail_render_mixin.MailRenderMixin._render_template_qweb_regex', side_effect=o_render) as render:
             rendered = mail_template._render_field('body_html', record.ids)[record.id]
             self.assertEqual(rendered, "&lt;b&gt; test &lt;/b&gt;")
             self.assertTrue(render.called)
@@ -555,7 +555,7 @@ class TestMailTemplateReset(MailCommon):
                     'name':  {'mail.mail_template_test': {'fr_FR': "Mail: Test Mail Template FR"}},
                 }
 
-        with patch('odoo.tools.translate.TranslationImporter.load_file', fake_load_file):
+        with patch('weth.tools.translate.TranslationImporter.load_file', fake_load_file):
             mail_template_reset = self.env['mail.template.reset'].with_context(context).create({})
             reset_action = mail_template_reset.reset_template()
         self.assertTrue(reset_action)
@@ -569,8 +569,8 @@ class TestMailTemplateReset(MailCommon):
         self.assertEqual(mail_template.with_context(lang='fr_FR').name, 'Mail: Test Mail Template FR')
 
     @mute_logger(
-        'odoo.addons.mail.models.mail_template',
-        'odoo.addons.mail.models.mail_render_mixin',
+        'weth.addons.mail.models.mail_template',
+        'weth.addons.mail.models.mail_render_mixin',
     )
     def test_mail_template_reset_invalid_translation(self):
         """ Ensure wrong current translation doesn't prevent template reset """

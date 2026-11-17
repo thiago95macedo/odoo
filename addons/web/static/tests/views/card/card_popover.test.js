@@ -1,6 +1,6 @@
-import { expect, test } from "@odoo/hoot";
-import { click } from "@odoo/hoot-dom";
-import { Component, t, useProps, xml } from "@odoo/owl";
+import { expect, test } from "@weth/hoot";
+import { click } from "@weth/hoot-dom";
+import { Component, t, useProps, xml } from "@weth/owl";
 import { defineModels, fields, models, mountWithCleanup } from "@web/../tests/web_test_helpers";
 
 import { parseXML } from "@web/core/utils/xml";
@@ -35,7 +35,7 @@ defineModels([Partner]);
  */
 async function mountCardPopover(props = {}) {
     const cardPopoverProps = {
-        close: () => {},
+        close: () => { },
         resModel: "partner",
         fields: Partner._fields,
         resId: 1,

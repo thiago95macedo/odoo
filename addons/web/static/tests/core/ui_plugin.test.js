@@ -1,8 +1,8 @@
 import { render } from "@web/owl2/utils";
-import { describe, expect, test } from "@odoo/hoot";
-import { press, queryOne } from "@odoo/hoot-dom";
-import { animationFrame } from "@odoo/hoot-mock";
-import { Component, proxy, signal, xml } from "@odoo/owl";
+import { describe, expect, test } from "@weth/hoot";
+import { press, queryOne } from "@weth/hoot-dom";
+import { animationFrame } from "@weth/hoot-mock";
+import { Component, proxy, signal, xml } from "@weth/owl";
 import { getService, mountWithCleanup } from "../web_test_helpers";
 
 import { MainComponentsContainer } from "@web/core/main_components_container";

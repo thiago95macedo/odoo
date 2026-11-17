@@ -1,5 +1,5 @@
-import { beforeEach, expect, test } from "@odoo/hoot";
-import { click } from "@odoo/hoot-dom";
+import { beforeEach, expect, test } from "@weth/hoot";
+import { click } from "@weth/hoot-dom";
 import { Plugin } from "@html_editor/plugin";
 import { contains, onRpc } from "@web/../tests/web_test_helpers";
 import {

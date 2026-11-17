@@ -2,10 +2,10 @@
 
 from collections import defaultdict
 
-from odoo import api, fields, models
-from odoo.exceptions import ValidationError
+from weth import api, fields, models
+from weth.exceptions import ValidationError
 
-from odoo.addons.sale.models.res_company import SALE_INVOICE_POLICY
+from weth.addons.sale.models.res_company import SALE_INVOICE_POLICY
 
 
 class ProductTemplate(models.Model):

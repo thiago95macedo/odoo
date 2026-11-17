@@ -1,4 +1,4 @@
-import { proxy, signal, t, usePlugin, useProps } from "@odoo/owl";
+import { proxy, signal, t, usePlugin, useProps } from "@weth/owl";
 import { _t } from "@web/core/l10n/translation";
 import { rpc } from "@web/core/network/rpc";
 import { KeepLast } from "@web/core/utils/concurrency";

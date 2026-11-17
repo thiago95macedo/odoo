@@ -1,7 +1,7 @@
-from odoo.fields import Command
-from odoo.tests import Form, tagged
+from weth.fields import Command
+from weth.tests import Form, tagged
 
-from odoo.addons.mrp.tests.common import TestMrpCommon
+from weth.addons.mrp.tests.common import TestMrpCommon
 
 
 @tagged('post_install', '-at_install')

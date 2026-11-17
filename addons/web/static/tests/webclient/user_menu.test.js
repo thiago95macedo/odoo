@@ -1,7 +1,7 @@
-import { beforeEach, describe, expect, test } from "@odoo/hoot";
-import { click, queryAllAttributes, queryAllProperties, queryAllTexts } from "@odoo/hoot-dom";
-import { animationFrame, mockMatchMedia } from "@odoo/hoot-mock";
-import { Component, xml } from "@odoo/owl";
+import { beforeEach, describe, expect, test } from "@weth/hoot";
+import { click, queryAllAttributes, queryAllProperties, queryAllTexts } from "@weth/hoot-dom";
+import { animationFrame, mockMatchMedia } from "@weth/hoot-mock";
+import { Component, xml } from "@weth/owl";
 import {
     clearRegistry,
     contains,
@@ -67,7 +67,7 @@ test("can be rendered", async () => {
         type: "item",
         id: "hidden",
         description: "Hidden Power",
-        callback: () => {},
+        callback: () => { },
         sequence: 5,
         hide: true,
     }));

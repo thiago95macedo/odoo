@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import tools
-import odoo
-from odoo.addons.point_of_sale.tests.common import TestPoSCommon
-from odoo.exceptions import ValidationError
+from weth import tools
+import weth
+from weth.addons.point_of_sale.tests.common import TestPoSCommon
+from weth.exceptions import ValidationError
 
-@odoo.tests.tagged('post_install', '-at_install')
+@weth.tests.tagged('post_install', '-at_install')
 class TestPoSSetup(TestPoSCommon):
     """ This group of tests is for sanity check in setting up global records which will be used
     in each testing.

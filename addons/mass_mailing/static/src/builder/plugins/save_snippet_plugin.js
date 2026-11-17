@@ -1,5 +1,5 @@
 import { Plugin } from "@html_editor/plugin";
-import { markup } from "@odoo/owl";
+import { markup } from "@weth/owl";
 import { _t } from "@web/core/l10n/translation";
 import { registry } from "@web/core/registry";
 

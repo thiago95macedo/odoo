@@ -4,8 +4,8 @@
 from datetime import timedelta
 from dateutil.relativedelta import relativedelta
 
-from odoo import api, exceptions, fields, models, _
-from odoo.tools import format_list
+from weth import api, exceptions, fields, models, _
+from weth.tools import format_list
 
 
 class ResConfigSettings(models.TransientModel):

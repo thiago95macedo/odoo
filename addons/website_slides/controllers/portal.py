@@ -1,4 +1,4 @@
-from odoo.addons.portal.controllers.portal import CustomerPortal
+from weth.addons.portal.controllers.portal import CustomerPortal
 
 
 class WebsiteSlidesPortal(CustomerPortal):

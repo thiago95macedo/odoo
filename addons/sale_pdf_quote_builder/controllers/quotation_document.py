@@ -5,8 +5,8 @@ import logging
 import traceback
 from http import HTTPStatus
 
-from odoo.exceptions import UserError
-from odoo.http import Controller, request, route
+from weth.exceptions import UserError
+from weth.http import Controller, request, route
 
 logger = logging.getLogger(__name__)
 

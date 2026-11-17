@@ -3,11 +3,11 @@
 import logging
 from ast import literal_eval
 
-from odoo import _, api, fields, models, tools
-from odoo.exceptions import ValidationError, UserError
-from odoo.fields import Domain
-from odoo.tools import BinaryBytes, SQL, email_normalize, unique
-from odoo.tools.safe_eval import safe_eval, time
+from weth import _, api, fields, models, tools
+from weth.exceptions import ValidationError, UserError
+from weth.fields import Domain
+from weth.tools import BinaryBytes, SQL, email_normalize, unique
+from weth.tools.safe_eval import safe_eval, time
 
 _logger = logging.getLogger(__name__)
 

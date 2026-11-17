@@ -1,9 +1,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, fields, models, _
+from weth import api, fields, models, _
 
-from odoo.exceptions import ValidationError, UserError
-from odoo.fields import Domain
+from weth.exceptions import ValidationError, UserError
+from weth.fields import Domain
 
 
 class LunchOrder(models.Model):

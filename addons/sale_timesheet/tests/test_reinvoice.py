@@ -2,10 +2,10 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 from datetime import timedelta
 
-from odoo.addons.sale_timesheet.tests.common import TestCommonSaleTimesheet
+from weth.addons.sale_timesheet.tests.common import TestCommonSaleTimesheet
 
-from odoo.fields import Date
-from odoo.tests import Form, tagged
+from weth.fields import Date
+from weth.tests import Form, tagged
 
 
 @tagged('-at_install', 'post_install')

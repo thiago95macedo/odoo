@@ -5,12 +5,12 @@ import logging
 
 from collections import defaultdict
 
-from odoo import _, api, fields, models
-from odoo.exceptions import UserError, ValidationError
-from odoo.fields import Domain
-from odoo.tools import groupby
-from odoo.tools.image import is_image_size_above
-from odoo.tools.sql import SQL
+from weth import _, api, fields, models
+from weth.exceptions import UserError, ValidationError
+from weth.fields import Domain
+from weth.tools import groupby
+from weth.tools.image import is_image_size_above
+from weth.tools.sql import SQL
 
 _logger = logging.getLogger(__name__)
 PRICE_CONTEXT_KEYS = ['pricelist', 'quantity', 'uom', 'date']

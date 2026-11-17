@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.mail.tests.common import mail_new_test_user
-from odoo.tests.common import RecordCapturer, TransactionCase
+from weth.addons.mail.tests.common import mail_new_test_user
+from weth.tests.common import RecordCapturer, TransactionCase
 
 
 class TestHrSkillsSlides(TransactionCase):

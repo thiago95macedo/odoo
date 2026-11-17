@@ -3,9 +3,9 @@
 from collections import defaultdict
 from datetime import date, datetime
 
-from odoo import api, models
-from odoo.fields import Domain
-from odoo.tools import format_date, OrderedSet
+from weth import api, models
+from weth.fields import Domain
+from weth.tools import format_date, OrderedSet
 
 
 class StockForecasted_Product_Product(models.AbstractModel):

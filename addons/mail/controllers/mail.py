@@ -7,15 +7,15 @@ from PIL import Image, ImageColor, ImageDraw, ImageFont
 from werkzeug.exceptions import NotFound
 from werkzeug.urls import url_encode
 
-from odoo import _, http
-from odoo.exceptions import AccessError
-from odoo.http import Response, request
-from odoo.http.stream import STATIC_CACHE
-from odoo.tools import consteq
-from odoo.tools.misc import file_open
+from weth import _, http
+from weth.exceptions import AccessError
+from weth.http import Response, request
+from weth.http.stream import STATIC_CACHE
+from weth.tools import consteq
+from weth.tools.misc import file_open
 
-from odoo.addons.mail.tools.discuss import add_guest_to_context
-from odoo.addons.web.icons import ICONS
+from weth.addons.mail.tools.discuss import add_guest_to_context
+from weth.addons.web.icons import ICONS
 
 try:
     from werkzeug.utils import send_file
@@ -38,7 +38,7 @@ class MailController(http.Controller):
 
     @classmethod
     def _redirect_to_messaging(cls):
-        url = '/odoo/action-mail.action_discuss'
+        url = '/weth/action-mail.action_discuss'
         return request.redirect(url)
 
     @classmethod
@@ -181,7 +181,7 @@ class MailController(http.Controller):
         # @see router.js: heuristics to discrimate a model name from an action path
         # is the presence of dots, or the prefix m- for models
         model_in_url = model if "." in model else "m-" + model
-        url = f'/odoo/{model_in_url}/{res_id}?{url_encode(url_params, sort=True)}'
+        url = f'/weth/{model_in_url}/{res_id}?{url_encode(url_params, sort=True)}'
         return request.redirect(url)
 
     @staticmethod

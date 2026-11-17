@@ -1,6 +1,6 @@
-import { after, expect, test } from "@odoo/hoot";
-import { click, queryOne, queryValue, setInputFiles, waitFor } from "@odoo/hoot-dom";
-import { animationFrame } from "@odoo/hoot-mock";
+import { after, expect, test } from "@weth/hoot";
+import { click, queryOne, queryValue, setInputFiles, waitFor } from "@weth/hoot-dom";
+import { animationFrame } from "@weth/hoot-mock";
 import {
     clickSave,
     contains,
@@ -396,7 +396,7 @@ test("new record has no download button", async () => {
 
 test("filename doesn't exceed 255 bytes", async () => {
     const data = "A".repeat(MAX_FILENAME_SIZE_BYTES + 1);
-    const LARGE_BINARY_FILE = {filename: data, content: data, size: data.length};
+    const LARGE_BINARY_FILE = { filename: data, content: data, size: data.length };
 
     Partner._fields.document.default = LARGE_BINARY_FILE;
     await mountView({
@@ -505,7 +505,7 @@ test("should accept file with allowed MIME type and reject others", async () => 
 test("doesn't crash if value is not a string", async () => {
     class Dummy extends models.Model {
         document = fields.Binary();
-        _applyComputesAndValidate() {}
+        _applyComputesAndValidate() { }
     }
     defineModels([Dummy]);
     Dummy._records.push({ id: 1, document: {} });

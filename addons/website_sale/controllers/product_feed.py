@@ -2,8 +2,8 @@
 
 from werkzeug.exceptions import BadRequest, Forbidden, NotFound
 
-from odoo.http import Controller, request, route
-from odoo.tools import consteq
+from weth.http import Controller, request, route
+from weth.tools import consteq
 
 
 class ProductFeed(Controller):

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
 
     <!-- /shop/confirmation route -->
     <template id="website_sale.confirmation">
@@ -139,4 +139,4 @@
         </div>
     </template>
 
-</odoo>
+</weth>

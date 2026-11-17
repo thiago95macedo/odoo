@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import models, _
-from odoo.fields import Domain
+from weth import models, _
+from weth.fields import Domain
 
 
 class ProjectProject(models.Model):

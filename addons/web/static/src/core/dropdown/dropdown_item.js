@@ -1,4 +1,4 @@
-import { Component, t, useProps } from "@odoo/owl";
+import { Component, t, useProps } from "@weth/owl";
 import { useDropdownCloser } from "@web/core/dropdown/dropdown_hooks";
 
 const ClosingMode = {

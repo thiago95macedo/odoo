@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 import contextlib
 
-from odoo.addons.account.tests.common import AccountTestInvoicingCommon
-from odoo.tests import Form, tagged, new_test_user
-from odoo import Command, fields
-from odoo.exceptions import UserError, RedirectWarning
+from weth.addons.account.tests.common import AccountTestInvoicingCommon
+from weth.tests import Form, tagged, new_test_user
+from weth import Command, fields
+from weth.exceptions import UserError, RedirectWarning
 
 from dateutil.relativedelta import relativedelta
 from freezegun import freeze_time

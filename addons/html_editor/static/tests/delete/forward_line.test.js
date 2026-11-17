@@ -1,8 +1,8 @@
-import { test } from "@odoo/hoot";
-import { press } from "@odoo/hoot-dom";
+import { test } from "@weth/hoot";
+import { press } from "@weth/hoot-dom";
 import { testEditor } from "../_helpers/editor";
 import { unformat } from "../_helpers/format";
-import { mockUserAgent } from "@odoo/hoot-mock";
+import { mockUserAgent } from "@weth/hoot-mock";
 
 const ctrlShiftDelete = () => press(["Ctrl", "Shift", "Delete"]);
 

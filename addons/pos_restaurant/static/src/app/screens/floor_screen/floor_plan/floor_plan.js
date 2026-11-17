@@ -1,6 +1,6 @@
 import { useLayoutEffect } from "@web/owl2/utils";
 import { FloorPlanBase } from "@pos_restaurant/app/screens/floor_screen/floor_plan_base";
-import { markRaw, onWillUnmount, useListener, proxy } from "@odoo/owl";
+import { markRaw, onWillUnmount, useListener, proxy } from "@weth/owl";
 import { useDebounced } from "@web/core/utils/timing";
 import { makeDraggableHook } from "@web/core/utils/draggable_hook_builder_owl";
 import { setElementTransform } from "@pos_restaurant/app/services/floor_plan/utils/utils";
@@ -268,8 +268,8 @@ export class FloorPlan extends FloorPlanBase {
                         ? "right"
                         : "left"
                     : dy > 0
-                    ? "bottom"
-                    : "top";
+                        ? "bottom"
+                        : "top";
 
             const snapPos = table.computeLinkedPosition(targetTable, side);
             dndContext.targetSide = side;
@@ -289,7 +289,7 @@ export class FloorPlan extends FloorPlanBase {
             ref: this.canvasRef,
             elements: ".table",
             enabled: true,
-            onDragStart: ({ addClass, element }) => {},
+            onDragStart: ({ addClass, element }) => { },
 
             onWillStartDrag: ({ addClass, element, x, y }) => {
                 addClass(element, "shadow");

@@ -1,6 +1,6 @@
-from odoo import api, fields, models, _
-from odoo.exceptions import UserError, ValidationError
-from odoo.tools import float_is_zero
+from weth import api, fields, models, _
+from weth.exceptions import UserError, ValidationError
+from weth.tools import float_is_zero
 
 
 class StockPicking(models.Model):

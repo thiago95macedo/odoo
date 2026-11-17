@@ -2,9 +2,9 @@
 
 from urllib.parse import urlparse
 
-from odoo import api, fields, models
-from odoo.exceptions import ValidationError
-from odoo.tools.image import is_image_size_above
+from weth import api, fields, models
+from weth.exceptions import ValidationError
+from weth.tools.image import is_image_size_above
 
 
 class ProductImage(models.Model):

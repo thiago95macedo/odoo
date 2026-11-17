@@ -4,9 +4,9 @@ from json import dumps
 from dateutil.relativedelta import relativedelta
 
 
-from odoo import api, fields, models, SUPERUSER_ID, _
-from odoo.tools.float_utils import float_round
-from odoo.tools.misc import format_date
+from weth import api, fields, models, SUPERUSER_ID, _
+from weth.tools.float_utils import float_round
+from weth.tools.misc import format_date
 
 
 class StockReplenishmentInfo(models.TransientModel):

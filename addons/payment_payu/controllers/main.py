@@ -2,12 +2,12 @@
 
 import pprint
 
-from odoo import http
-from odoo.http import request
+from weth import http
+from weth.http import request
 
-from odoo.addons.payment import utils as payment_utils
-from odoo.addons.payment.logging import get_payment_logger
-from odoo.addons.payment_payu import const
+from weth.addons.payment import utils as payment_utils
+from weth.addons.payment.logging import get_payment_logger
+from weth.addons.payment_payu import const
 
 _logger = get_payment_logger(__name__)
 
@@ -48,7 +48,7 @@ class PayuController(http.Controller):
         """Process the payment data sent by PayU through the webhook.
 
         :return: An empty response to acknowledge the notification.
-        :rtype: odoo.http.Response
+        :rtype: weth.http.Response
         """
         _logger.info("Notification received from PayU with data:\n%s", pprint.pformat(data))
         tx_sudo = self.env["payment.transaction"].sudo()._search_by_reference("payu", data)

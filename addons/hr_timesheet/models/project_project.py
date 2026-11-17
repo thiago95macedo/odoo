@@ -1,10 +1,10 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 from collections import defaultdict
 
-from odoo import api, fields, models
-from odoo.exceptions import RedirectWarning, ValidationError
-from odoo.tools import SQL, float_round
-from odoo.tools.translate import _
+from weth import api, fields, models
+from weth.exceptions import RedirectWarning, ValidationError
+from weth.tools import SQL, float_round
+from weth.tools.translate import _
 
 
 class ProjectProject(models.Model):

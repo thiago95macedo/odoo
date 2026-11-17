@@ -1,4 +1,4 @@
-import { onWillUnmount, useListener, usePlugin } from "@odoo/owl";
+import { onWillUnmount, useListener, usePlugin } from "@weth/owl";
 import {
     ConfirmationDialog,
     deleteConfirmationMessage,
@@ -64,9 +64,9 @@ export function useActionLinks(resModel, reload) {
                 views = resId
                     ? [[false, "form"]]
                     : [
-                          [false, "list"],
-                          [false, "form"],
-                      ];
+                        [false, "list"],
+                        [false, "form"],
+                    ];
             }
             const action = {
                 name: target.getAttribute("title") || target.textContent.trim(),
@@ -194,7 +194,7 @@ export function useDeleteRecords(model) {
         }
         return {
             body,
-            cancel: () => {},
+            cancel: () => { },
             cancelLabel: _t("No, keep it"),
             confirm,
             confirmLabel: _t("Delete"),

@@ -12,17 +12,17 @@ from html import escape
 from lxml import html
 from typing import Self
 
-from odoo import _, api, fields, models, modules, tools
-from odoo.exceptions import AccessError, MissingError, UserError
-from odoo.fields import Domain
-from odoo.tools import clean_context, groupby, SQL
-from odoo.tools.constants import IN_MAX
-from odoo.tools.misc import OrderedSet
-from odoo.addons.base.models.ir_attachment import condition_values
-from odoo.addons.mail.tools.discuss import Store
+from weth import _, api, fields, models, modules, tools
+from weth.exceptions import AccessError, MissingError, UserError
+from weth.fields import Domain
+from weth.tools import clean_context, groupby, SQL
+from weth.tools.constants import IN_MAX
+from weth.tools.misc import OrderedSet
+from weth.addons.base.models.ir_attachment import condition_values
+from weth.addons.mail.tools.discuss import Store
 
 if typing.TYPE_CHECKING:
-    from odoo.addons.mail.models.mail_followers import MailFollowers
+    from weth.addons.mail.models.mail_followers import MailFollowers
 
 
 _logger = logging.getLogger(__name__)

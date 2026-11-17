@@ -3,10 +3,10 @@
 
 import datetime
 
-from odoo import Command
-from odoo.addons.survey.tests import common
-from odoo.tests.common import tagged, HttpCase
-from odoo.tools import mute_logger
+from weth import Command
+from weth.addons.survey.tests import common
+from weth.tests.common import tagged, HttpCase
+from weth.tools import mute_logger
 
 
 @tagged('at_install', '-post_install')  # LEGACY at_install
@@ -163,7 +163,7 @@ class TestSurveyController(common.TestSurveyCommon, HttpCase):
         # User not member of survey groups cannot go to the next question
         self.authenticate('user_emp', 'user_emp')
         self.assertEqual(survey.session_question_id, questions[0])
-        with mute_logger('odoo.http'):
+        with mute_logger('weth.http'):
             self._session_next_question(survey)
         self.assertEqual(survey.session_question_id, questions[0], "Only survey user go to the next question")
 
@@ -192,7 +192,7 @@ class TestSurveyController(common.TestSurveyCommon, HttpCase):
 
         # User not member of survey groups cannot set the result state
         self.authenticate('user_emp', 'user_emp')
-        with mute_logger('odoo.http'):
+        with mute_logger('weth.http'):
             self._session_disable_answers(survey)
         self.assertTrue(survey.session_question_can_answer, "Only survey user can change session_question_can_answer")
 

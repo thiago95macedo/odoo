@@ -3,9 +3,9 @@
 
 from datetime import datetime, timedelta
 
-from odoo import fields, tests
-from odoo.fields import Command
-from odoo.tests import tagged, Form
+from weth import fields, tests
+from weth.fields import Command
+from weth.tests import tagged, Form
 from freezegun import freeze_time
 
 

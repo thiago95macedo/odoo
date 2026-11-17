@@ -1,6 +1,6 @@
 import { importRecordsItem } from "@base_import/import_records/import_records";
-import { before, expect, test } from "@odoo/hoot";
-import { animationFrame, press } from "@odoo/hoot-dom";
+import { before, expect, test } from "@weth/hoot";
+import { animationFrame, press } from "@weth/hoot-dom";
 import { range } from "@web/core/utils/numbers";
 import {
     clearRegistry,

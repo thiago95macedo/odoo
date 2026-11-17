@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
 
     <template id="payment.form" name="Payment Form">
         <!-- Form customization parameters:
@@ -451,7 +451,7 @@
                     <a
                         t-if="onboarding_provider and not providers_sudo"
                         name="start_payment_onboarding"
-                        href="/odoo/action-payment.action_start_payment_onboarding"
+                        href="/weth/action-payment.action_start_payment_onboarding"
                         role="button"
                         class="btn btn-primary"
                     >
@@ -467,7 +467,7 @@
                         role="button"
                         type="action"
                         class="btn btn-outline-primary alert-warning"
-                        href="/odoo/action-payment.action_payment_provider"
+                        href="/weth/action-payment.action_payment_provider"
                     >
                         Find a Payment Provider
                     </a>
@@ -476,7 +476,7 @@
                         role="button"
                         type="action"
                         class="btn btn-outline-primary alert-warning"
-                        href="/odoo/action-payment.action_payment_method"
+                        href="/weth/action-payment.action_payment_method"
                     >
                         Payment Methods
                     </a>
@@ -606,4 +606,4 @@
         </form>
     </template>
 
-</odoo>
+</weth>

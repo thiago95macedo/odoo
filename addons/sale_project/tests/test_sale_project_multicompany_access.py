@@ -1,5 +1,5 @@
-from odoo import Command
-from odoo.tests import Form, TransactionCase
+from weth import Command
+from weth.tests import Form, TransactionCase
 
 
 class TestSaleOrderAccess(TransactionCase):

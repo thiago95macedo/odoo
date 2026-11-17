@@ -1,10 +1,10 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import _, fields, models
+from weth import _, fields, models
 
-from odoo.exceptions import UserError, ValidationError
-from odoo.tools.float_utils import float_round
-from odoo.tools.misc import groupby
+from weth.exceptions import UserError, ValidationError
+from weth.tools.float_utils import float_round
+from weth.tools.misc import groupby
 
 from .delivery_request_objects import DeliveryCommodity, DeliveryPackage
 

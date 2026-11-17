@@ -1,4 +1,4 @@
-import { Component, useProps, proxy, t } from "@odoo/owl";
+import { Component, useProps, proxy, t } from "@weth/owl";
 import { _t } from "@web/core/l10n/translation";
 import { useService } from "@web/core/utils/hooks";
 import { rpc } from "@web/core/network/rpc";
@@ -28,14 +28,14 @@ export class NewEmployeeDialog extends Component {
     onSelectEmployee(emp) {
         this.state.searchName = emp?.name ?? "";
         this.state.badgeId = "";
-        if(emp?.isNew){
+        if (emp?.isNew) {
             this.state.searchName = emp.name;
             this.state.employeeName = emp.name;
             this.state.value = null;
             this.state.employeeHasBadge = false;
             this.onCreate();
         }
-        else if(this.state.searchName == ""){
+        else if (this.state.searchName == "") {
             this.state.value = null;
         } else {
             this.state.value = emp;
@@ -59,7 +59,7 @@ export class NewEmployeeDialog extends Component {
             const is_created = result.status;
             const created_emp = result.employee;
             if (is_created) {
-                this.notification.add(_t("Employee created successfully!"), {type: "success"});
+                this.notification.add(_t("Employee created successfully!"), { type: "success" });
                 this.state.value = created_emp
             } else {
                 this.notification.add(_t("Failed to create employee."), {

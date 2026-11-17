@@ -1,4 +1,4 @@
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@weth/hoot";
 import {
     makeServerError,
     mockService,
@@ -34,8 +34,8 @@ import { CommandResult } from "@spreadsheet/o_spreadsheet/cancelled_reason";
 import { LoadingDataError } from "@spreadsheet/o_spreadsheet/errors";
 import { toRangeData } from "@spreadsheet/../tests/helpers/zones";
 
-import { animationFrame } from "@odoo/hoot-mock";
-import * as spreadsheet from "@odoo/o-spreadsheet";
+import { animationFrame } from "@weth/hoot-mock";
+import * as spreadsheet from "@weth/o-spreadsheet";
 import {
     defineSpreadsheetActions,
     defineSpreadsheetModels,

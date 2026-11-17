@@ -1,9 +1,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
-from odoo import fields, Command
+from weth import fields, Command
 
-from odoo.addons.account.tests.common import AccountTestInvoicingCommon
-from odoo.tests import tagged
-from odoo.tools import file_open
+from weth.addons.account.tests.common import AccountTestInvoicingCommon
+from weth.tests import tagged
+from weth.tools import file_open
 
 
 @tagged('post_install', '-at_install')

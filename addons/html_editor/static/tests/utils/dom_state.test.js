@@ -1,7 +1,7 @@
 import { CTYPES } from "@html_editor/utils/content_types";
 import { enforceWhitespace, getState, restoreState } from "@html_editor/utils/dom_state";
 import { childNodeIndex, DIRECTIONS } from "@html_editor/utils/position";
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@weth/hoot";
 import { setupEditor } from "../_helpers/editor";
 import { splitTextNode } from "@html_editor/utils/dom";
 

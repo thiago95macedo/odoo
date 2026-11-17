@@ -1,4 +1,4 @@
-import { beforeEach, describe, expect, test } from "@odoo/hoot";
+import { beforeEach, describe, expect, test } from "@weth/hoot";
 import { ContrastPlugin, adjustColorContrast } from "@html_editor/main/font/contrast_plugin";
 import { testEditor } from "./_helpers/editor";
 import { setColor } from "./_helpers/user_actions";

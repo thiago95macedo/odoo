@@ -1,6 +1,6 @@
 import { Loader } from "@point_of_sale/app/components/loader/loader";
 import { getTemplate } from "@web/core/templates";
-import { mount, whenReady, proxy } from "@odoo/owl";
+import { mount, whenReady, proxy } from "@weth/owl";
 import { appTranslateFn } from "@web/core/l10n/translation";
 import { hasTouch } from "@web/core/browser/feature_detection";
 import { browser } from "@web/core/browser/browser";
@@ -21,7 +21,7 @@ whenReady(() => {
 });
 
 (async function startPosApp() {
-    odoo.info = {
+    weth.info = {
         db: session.db,
         server_version: session.server_version,
         server_version_info: session.server_version_info,
@@ -31,7 +31,7 @@ whenReady(() => {
     // If a deletion beacon was sent on unload for this exact session, reload once so
     // pos_web assigns a clean session. Removing the flag before reloading prevents looping.
     const recoverySessionId = browser.sessionStorage.getItem("pos_reload_recovery");
-    if (recoverySessionId && parseInt(recoverySessionId) === odoo.pos_session_id) {
+    if (recoverySessionId && parseInt(recoverySessionId) === weth.pos_session_id) {
         browser.sessionStorage.removeItem("pos_reload_recovery");
         window.location.reload();
         return;
@@ -49,7 +49,7 @@ whenReady(() => {
         if (user.userId === 1) {
             classList.add("o_is_superuser");
         }
-        if (odoo.debug) {
+        if (weth.debug) {
             classList.add("o_debug");
         }
         if (hasTouch()) {
@@ -67,7 +67,7 @@ whenReady(() => {
 
 function registerServiceWorker() {
     // Register the service worker for the POS
-    const urlsToCache = JSON.parse(odoo.urls_to_cache);
+    const urlsToCache = JSON.parse(weth.urls_to_cache);
     urlsToCache.push("/web/static/lib/zxing-library/zxing-library.js");
 
     navigator.serviceWorker?.register("/pos/service-worker.js").then((registration) => {

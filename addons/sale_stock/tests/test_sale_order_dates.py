@@ -4,11 +4,11 @@ from datetime import timedelta
 
 from freezegun import freeze_time
 
-from odoo import fields
-from odoo.fields import Command
-from odoo.tests import tagged
+from weth import fields
+from weth.fields import Command
+from weth.tests import tagged
 
-from odoo.addons.stock_account.tests.test_anglo_saxon_valuation_reconciliation_common import (
+from weth.addons.stock_account.tests.test_anglo_saxon_valuation_reconciliation_common import (
     ValuationReconciliationTestCommon,
 )
 

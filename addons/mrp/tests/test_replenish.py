@@ -4,10 +4,10 @@ from datetime import datetime, timedelta
 from freezegun import freeze_time
 from json import loads
 
-from odoo.tests import Form
-from odoo.tests.common import new_test_user
-from odoo.addons.mrp.tests.common import TestMrpCommon
-from odoo import fields, Command
+from weth.tests import Form
+from weth.tests.common import new_test_user
+from weth.addons.mrp.tests.common import TestMrpCommon
+from weth import fields, Command
 
 
 class TestMrpReplenish(TestMrpCommon):

@@ -1,9 +1,9 @@
-import { Model, Spreadsheet, stores } from "@odoo/o-spreadsheet";
+import { Model, Spreadsheet, stores } from "@weth/o-spreadsheet";
 import { loadBundle } from "@web/core/assets";
 
-import { getFixture } from "@odoo/hoot";
-import { animationFrame } from "@odoo/hoot-mock";
-import { Component, onMounted, onWillUnmount, t, useProps, xml } from "@odoo/owl";
+import { getFixture } from "@weth/hoot";
+import { animationFrame } from "@weth/hoot-mock";
+import { Component, onMounted, onWillUnmount, t, useProps, xml } from "@weth/owl";
 import { useSpreadsheetNotificationStore } from "@spreadsheet/hooks";
 import { mountWithCleanup } from "@web/../tests/web_test_helpers";
 import { MainComponentsContainer } from "@web/core/main_components_container";

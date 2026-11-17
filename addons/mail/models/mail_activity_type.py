@@ -3,8 +3,8 @@
 
 from dateutil.relativedelta import relativedelta
 
-from odoo import api, exceptions, fields, models, _
-from odoo.exceptions import UserError
+from weth import api, exceptions, fields, models, _
+from weth.exceptions import UserError
 
 
 class MailActivityType(models.Model):

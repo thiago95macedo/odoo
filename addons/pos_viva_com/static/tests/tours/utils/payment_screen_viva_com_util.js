@@ -1,4 +1,4 @@
-/** @odoo-module */
+/** @weth-module */
 
 export function simulateKioskNamelessCashier() {
     return [

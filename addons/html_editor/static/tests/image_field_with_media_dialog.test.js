@@ -1,5 +1,5 @@
-import { expect, test } from "@odoo/hoot";
-import { click, manuallyDispatchProgrammaticEvent, queryOne, waitFor } from "@odoo/hoot-dom";
+import { expect, test } from "@weth/hoot";
+import { click, manuallyDispatchProgrammaticEvent, queryOne, waitFor } from "@weth/hoot-dom";
 import { defineModels, fields, models, mountView, onRpc } from "@web/../tests/web_test_helpers";
 
 const MY_IMAGE =

@@ -1,8 +1,8 @@
-from odoo import Command, fields
+from weth import Command, fields
 
-from odoo.addons.purchase.tests.test_purchase_invoice import TestPurchaseToInvoiceCommon
-from odoo.fields import Domain
-from odoo.tests import tagged
+from weth.addons.purchase.tests.test_purchase_invoice import TestPurchaseToInvoiceCommon
+from weth.fields import Domain
+from weth.tests import tagged
 
 
 @tagged('-at_install', 'post_install')

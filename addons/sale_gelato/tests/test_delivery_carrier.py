@@ -2,10 +2,10 @@
 
 from unittest.mock import patch
 
-from odoo.tests import tagged
+from weth.tests import tagged
 
-from odoo.addons.delivery.tests.common import DeliveryCommon
-from odoo.addons.sale_gelato.tests.common import GelatoCommon
+from weth.addons.delivery.tests.common import DeliveryCommon
+from weth.addons.sale_gelato.tests.common import GelatoCommon
 
 
 @tagged("post_install", "-at_install")
@@ -67,7 +67,7 @@ class TestDeliveryCarrier(GelatoCommon, DeliveryCommon):
 
     def test_get_cheapest_normal_delivery_price(self):
         with patch(
-            "odoo.addons.sale_gelato.utils.make_request", return_value=self.shipping_response
+            "weth.addons.sale_gelato.utils.make_request", return_value=self.shipping_response
         ):
             delivery_price = self.gelato_delivery.gelato_rate_shipment(self.gelato_order)
             self.assertEqual(delivery_price["price"], 5)
@@ -75,7 +75,7 @@ class TestDeliveryCarrier(GelatoCommon, DeliveryCommon):
     def test_get_cheapest_express_delivery_price(self):
         self.gelato_delivery.gelato_shipping_service_type = "express"
         with patch(
-            "odoo.addons.sale_gelato.utils.make_request", return_value=self.shipping_response
+            "weth.addons.sale_gelato.utils.make_request", return_value=self.shipping_response
         ):
             delivery_price = self.gelato_delivery.gelato_rate_shipment(self.gelato_order)
             self.assertEqual(delivery_price["price"], 20)

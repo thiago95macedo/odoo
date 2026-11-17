@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.exceptions import ValidationError
-from odoo.tests.common import TransactionCase
-from odoo.tests import tagged, Form
+from weth.exceptions import ValidationError
+from weth.tests.common import TransactionCase
+from weth.tests import tagged, Form
 
 
 class TestMrpAnalyticAccount(TransactionCase):

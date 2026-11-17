@@ -1,5 +1,5 @@
-import { beforeEach, expect, test } from "@odoo/hoot";
-import { animationFrame, runAllTimers } from "@odoo/hoot-mock";
+import { beforeEach, expect, test } from "@weth/hoot";
+import { animationFrame, runAllTimers } from "@weth/hoot-mock";
 import {
     contains,
     makeMockServer,
@@ -28,12 +28,12 @@ beforeEach(async () => {
         { plan_id: plan2, name: "Belgium" },
     ])
     env["account.analytic.line"].create([
-        { x_plan1_id: accounts[0], analytic_distribution: {[accounts[0]]: 100}, amount: 1 },
-        { x_plan1_id: accounts[1], analytic_distribution: {[accounts[1]]: 100}, amount: 10 },
-        { x_plan1_id: accounts[2], analytic_distribution: {[accounts[2]]: 100}, amount: 100 },
-        { x_plan1_id: accounts[3], analytic_distribution: {[accounts[3]]: 100}, amount: 1000 },
-        { x_plan1_id: accounts[4], analytic_distribution: {[accounts[4]]: 100}, amount: 10000 },
-        { x_plan1_id: accounts[5], analytic_distribution: {[accounts[5]]: 100}, amount: 100000 },
+        { x_plan1_id: accounts[0], analytic_distribution: { [accounts[0]]: 100 }, amount: 1 },
+        { x_plan1_id: accounts[1], analytic_distribution: { [accounts[1]]: 100 }, amount: 10 },
+        { x_plan1_id: accounts[2], analytic_distribution: { [accounts[2]]: 100 }, amount: 100 },
+        { x_plan1_id: accounts[3], analytic_distribution: { [accounts[3]]: 100 }, amount: 1000 },
+        { x_plan1_id: accounts[4], analytic_distribution: { [accounts[4]]: 100 }, amount: 10000 },
+        { x_plan1_id: accounts[5], analytic_distribution: { [accounts[5]]: 100 }, amount: 100000 },
     ]);
 });
 
@@ -77,7 +77,7 @@ test("Analytic dynamic multi-edit", async () => {
     onRpc("account.analytic.line", "web_save", (params) => {
         expect(params.args[1].analytic_distribution.__update__).toEqual(to_update);
         if (write_step === 1) {
-            params.args[1].analytic_distribution = {"1,7": 100};
+            params.args[1].analytic_distribution = { "1,7": 100 };
         }
         if (write_step === 2) {
             delete params.args[1].analytic_distribution;
@@ -121,7 +121,7 @@ test("Analytic dynamic multi-edit", async () => {
     await contains(".analytic_distribution_popup .o_list_table thead th:first a").click();
     expect(".analytic_distribution_popup tbody tr:first .o_field_many2one").toHaveCount(1);
     await contains(".analytic_distribution_popup tbody tr:first .o_field_many2one").click();
-    await contains(".analytic_distribution_popup tbody tr:first .o_field_many2one input").edit("Brussels", {confirm: false});
+    await contains(".analytic_distribution_popup tbody tr:first .o_field_many2one input").edit("Brussels", { confirm: false });
     await runAllTimers();
     await contains(".analytic_distribution_popup tbody tr:first .o_field_many2one .o_input_dropdown a").click();
     await contains(".o_list_renderer").click();  // close the widget

@@ -1,5 +1,5 @@
-from odoo import api, models, _
-from odoo.exceptions import UserError
+from weth import api, models, _
+from weth.exceptions import UserError
 
 
 class StockMove(models.Model):

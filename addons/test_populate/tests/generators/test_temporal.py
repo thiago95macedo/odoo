@@ -1,8 +1,8 @@
 import re
 
-from odoo.tests import TransactionCase
+from weth.tests import TransactionCase
 
-from odoo.addons.populate.generators import Date, Datetime
+from weth.addons.populate.generators import Date, Datetime
 
 
 class TestDateGenerator(TransactionCase):

@@ -3,7 +3,7 @@
 
 from ast import literal_eval
 
-from odoo import fields, models, api
+from weth import fields, models, api
 
 
 class StockQuantRelocate(models.TransientModel):

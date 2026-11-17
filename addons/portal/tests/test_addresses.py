@@ -2,11 +2,11 @@
 
 from unittest.mock import patch
 
-from odoo.tests import HttpCase, tagged
-from odoo.tests.common import JsonRpcException
-from odoo.tools import mute_logger, urls
+from weth.tests import HttpCase, tagged
+from weth.tests.common import JsonRpcException
+from weth.tools import mute_logger, urls
 
-from odoo.addons.base.tests.common import BaseCommon
+from weth.addons.base.tests.common import BaseCommon
 
 
 @tagged('-at_install', 'post_install')
@@ -175,7 +175,7 @@ class TestPortalAddresses(BaseCommon, HttpCase):
         csrf_token = self.csrf_token()
 
         with patch(
-            "odoo.addons.portal.models.res_partner.ResPartner._has_confirmed_documents",
+            "weth.addons.portal.models.res_partner.ResPartner._has_confirmed_documents",
             return_value=True
         ):
             res = self._submit_address_values({
@@ -403,7 +403,7 @@ class TestPortalAddresses(BaseCommon, HttpCase):
             )
 
         # Cannot archive main address of customer
-        with self.assertRaises(JsonRpcException), mute_logger('odoo.http'):
+        with self.assertRaises(JsonRpcException), mute_logger('weth.http'):
             self.make_jsonrpc_request(
                 self.archive_url, params={'partner_id': self.account_a.partner_id.id},
             )

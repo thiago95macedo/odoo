@@ -9,8 +9,8 @@ import { Builder } from "@html_builder/builder";
 import { SetupEditorPlugin } from "@html_builder/core/setup_editor_plugin";
 import { Plugin } from "@html_editor/plugin";
 import { defineMailModels, startServer } from "@mail/../tests/mail_test_helpers";
-import { describe } from "@odoo/hoot";
-import { advanceTime, animationFrame, click, queryOne, tick, waitFor } from "@odoo/hoot-dom";
+import { describe } from "@weth/hoot";
+import { advanceTime, animationFrame, click, queryOne, tick, waitFor } from "@weth/hoot-dom";
 import {
     contains,
     defineModels,
@@ -123,8 +123,8 @@ export async function setupWebsiteBuilder(
         translateMode = false,
         enableIframeTransitions = false,
         withIframeRegistry,
-        onIframeLoaded = () => {},
-        delayReload = async () => {},
+        onIframeLoaded = () => { },
+        delayReload = async () => { },
     } = {}
 ) {
     loadIframeBuilderTemplates ||= withIframeRegistry;
@@ -139,13 +139,12 @@ export async function setupWebsiteBuilder(
     let editableContent;
     const comp = await mountWithCleanup(WebClient);
     let originalIframeLoaded;
-    let resolveIframeLoaded = async () => {};
+    let resolveIframeLoaded = async () => { };
     const bodyHTML = `${beforeWrapwrapContent}
-        <div id="wrapwrap">${headerContent} <div id="wrap" class="oe_structure oe_empty" ${
-        translateMode
+        <div id="wrapwrap">${headerContent} <div id="wrap" class="oe_structure oe_empty" ${translateMode
             ? ""
             : `data-oe-model="ir.ui.view" data-oe-id="${setupWebsiteBuilderOeId}" data-oe-field="arch"`
-    }>${websiteContent}</div> ${footerContent}</div>`;
+        }>${websiteContent}</div> ${footerContent}</div>`;
     const iframeLoaded = new Promise((resolve) => {
         resolveIframeLoaded = async (el) => {
             const iframe = el;
@@ -178,7 +177,7 @@ export async function setupWebsiteBuilder(
             resolve(el);
         };
     });
-    let resolveEditAssetsLoaded = () => {};
+    let resolveEditAssetsLoaded = () => { };
     const editAssetsLoaded = new Promise((resolve) => {
         resolveEditAssetsLoaded = () => resolve();
     });
@@ -201,7 +200,7 @@ export async function setupWebsiteBuilder(
         // in tests, which prevents any Hoot builder test from working.
         // Reimplement this method the day interactions within the iframe work
         // with Hoot.
-        preparePublicRootReady() {},
+        preparePublicRootReady() { },
         async loadAssetsEditBundle() {
             const { contentDocument: targetDoc, contentWindow } = queryOne(
                 "iframe[data-src^='/website/force/1']"
@@ -217,12 +216,12 @@ export async function setupWebsiteBuilder(
                 // Load the builder's *.edit.xml, needed for some options
                 await loadBundle("website.assets_inside_builder_iframe_tests", { targetDoc });
                 // Reuse the translation in the iframe to avoid loading them
-                const translation = contentWindow.odoo.loader.require("@web/core/l10n/translation");
+                const translation = contentWindow.weth.loader.require("@web/core/l10n/translation");
                 translation.translatedTerms[translation.translationLoaded] =
                     translatedTerms[translationLoaded];
 
                 withIframeRegistry?.(
-                    contentWindow.odoo.loader.require("@web/core/registry").registry
+                    contentWindow.weth.loader.require("@web/core/registry").registry
                 );
             }
             await resolveEditAssetsLoaded();
@@ -255,10 +254,10 @@ export async function setupWebsiteBuilder(
             // See loadAssetsEditBundle override in WebsiteBuilderClientAction
             // patch.
             this.websiteEditService = {
-                update: () => {},
-                refresh: () => {},
-                stop: () => {},
-                stopInteraction: () => {},
+                update: () => { },
+                refresh: () => { },
+                stop: () => { },
+                stopInteraction: () => { },
             };
         },
     });
@@ -345,7 +344,7 @@ export async function setupWebsiteBuilder(
         sessionScriptEl.type = "text/javascript";
         sessionScriptEl.textContent = `
             odoo = {};
-            odoo.__session_info__ = ${JSON.stringify(session)}
+            weth.__session_info__ = ${JSON.stringify(session)}
         `;
         targetDoc.head.append(sessionScriptEl);
         await loadBundle("web.assets_frontend", {
@@ -454,8 +453,7 @@ export async function setupWebsiteBuilderWithDummySnippet(content) {
 
 export async function insertCategorySnippet({ group, snippet } = {}) {
     await contains(
-        `.o-snippets-menu #snippet_groups .o_snippet${
-            group ? `[data-snippet-group=${group}]` : ""
+        `.o-snippets-menu #snippet_groups .o_snippet${group ? `[data-snippet-group=${group}]` : ""
         } .o_snippet_thumbnail .o_snippet_thumbnail_area`
     ).click();
     await confirmAddSnippet(snippet);

@@ -6,7 +6,7 @@ import {
     buildM2OFieldDescription,
     many2OneFieldProps,
 } from "@web/views/fields/many2one/many2one_field";
-import { Component, useProps } from "@odoo/owl";
+import { Component, useProps } from "@weth/owl";
 import { Many2XAutocomplete, useOpenMany2XRecord } from "@web/views/fields/relational_utils";
 
 import { usePartnerAutocomplete } from "@partner_autocomplete/js/partner_autocomplete_core";
@@ -73,9 +73,9 @@ export class PartnerAutoCompleteMany2one extends Component {
                 options: async (request, shouldSearchWorldWide) => {
                     if (this.validateSearchTerm(request)) {
                         let queryCountryId = false;
-                    	if (shouldSearchWorldWide){
-							queryCountryId = 0;
-						}
+                        if (shouldSearchWorldWide) {
+                            queryCountryId = 0;
+                        }
                         const suggestions = await this.partnerAutocomplete.autocomplete("name", request, queryCountryId);
                         return suggestions.map((suggestion) => ({
                             cssClass: "partner_autocomplete_dropdown_many2one",
@@ -96,9 +96,9 @@ export class PartnerAutoCompleteMany2one extends Component {
 
     async onSelectPartnerAutocompleteOption(option) {
         const data = await this.partnerAutocomplete.getCreateData(option);
-		if (!data?.company) {
-			return;
-		}
+        if (!data?.company) {
+            return;
+        }
         let context = {
             'default_is_company': true
         };

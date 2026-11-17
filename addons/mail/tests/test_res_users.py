@@ -7,14 +7,14 @@ from unittest.mock import patch
 from freezegun import freeze_time
 from psycopg2 import IntegrityError
 
-from odoo import Command
-from odoo.exceptions import AccessError
-from odoo.tests import HttpCase, RecordCapturer, tagged, users
-from odoo.tools import mute_logger
+from weth import Command
+from weth.exceptions import AccessError
+from weth.tests import HttpCase, RecordCapturer, tagged, users
+from weth.tools import mute_logger
 
-from odoo.addons.base.models.res_users import NO_GROUP_CHANGE_LOG, ResUsersPatchedInTest
-from odoo.addons.bus.tests.common import BusResult
-from odoo.addons.mail.tests.common import MailCommon, mail_new_test_user
+from weth.addons.base.models.res_users import NO_GROUP_CHANGE_LOG, ResUsersPatchedInTest
+from weth.addons.bus.tests.common import BusResult
+from weth.addons.mail.tests.common import MailCommon, mail_new_test_user
 
 
 @tagged('mail_tools', 'res_users')
@@ -93,7 +93,7 @@ class TestUser(MailCommon):
         super().setUpClass()
         cls.portal_user = cls._create_portal_user()
 
-    @mute_logger('odoo.sql_db')
+    @mute_logger('weth.sql_db')
     def test_notification_type_constraint(self):
         with self.assertRaises(IntegrityError, msg='Portal user can not receive notification in Odoo'):
             mail_new_test_user(

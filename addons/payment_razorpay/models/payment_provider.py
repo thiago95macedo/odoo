@@ -6,13 +6,13 @@ import uuid
 from datetime import timedelta
 from urllib.parse import urlencode
 
-from odoo import api, fields, models, tools
-from odoo.exceptions import RedirectWarning, ValidationError
-from odoo.http import request
+from weth import api, fields, models, tools
+from weth.exceptions import RedirectWarning, ValidationError
+from weth.http import request
 
-from odoo.addons.payment.logging import get_payment_logger
-from odoo.addons.payment_razorpay import const
-from odoo.addons.payment_razorpay.controllers.onboarding import RazorpayController
+from weth.addons.payment.logging import get_payment_logger
+from weth.addons.payment_razorpay import const
+from weth.addons.payment_razorpay.controllers.onboarding import RazorpayController
 
 _logger = get_payment_logger(__name__)
 

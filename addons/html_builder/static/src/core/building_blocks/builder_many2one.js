@@ -1,4 +1,4 @@
-import { Component, t, useProps } from "@odoo/owl";
+import { Component, t, useProps } from "@weth/owl";
 import { useCachedModel } from "../cached_model_utils";
 import {
     basicContainerBuilderComponentProps,

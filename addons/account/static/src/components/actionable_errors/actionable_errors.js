@@ -1,5 +1,5 @@
 import { registry } from "@web/core/registry";
-import { Component, t, useProps } from "@odoo/owl";
+import { Component, t, useProps } from "@weth/owl";
 import { standardFieldProps } from "@web/views/fields/standard_field_props";
 import { useService } from "@web/core/utils/hooks";
 
@@ -22,7 +22,7 @@ export class ActionableErrors extends Component {
         return this.props.errorData;
     }
 
-    async handleOnClick(errorData){
+    async handleOnClick(errorData) {
         if (errorData.action?.view_mode) {
             // view_mode is not handled JS side
             errorData.action['views'] = errorData.action.view_mode.split(',').map(mode => [false, mode]);
@@ -56,5 +56,5 @@ export class ActionableErrorsField extends ActionableErrors {
     }
 }
 
-export const actionableErrorsField = {component: ActionableErrorsField};
+export const actionableErrorsField = { component: ActionableErrorsField };
 registry.category("fields").add("actionable_errors", actionableErrorsField);

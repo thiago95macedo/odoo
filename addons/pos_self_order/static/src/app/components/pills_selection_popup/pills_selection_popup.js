@@ -1,4 +1,4 @@
-import { Component, proxy, useProps, t, signal } from "@odoo/owl";
+import { Component, proxy, useProps, t, signal } from "@weth/owl";
 import { scrollToSelected } from "@pos_self_order/app/utils/scroll_to_selected";
 import { Dialog } from "@web/core/dialog/dialog";
 import { useService } from "@web/core/utils/hooks";

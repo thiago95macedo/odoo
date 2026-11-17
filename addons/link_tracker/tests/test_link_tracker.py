@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.link_tracker.tests.common import MockLinkTracker
-from odoo.exceptions import UserError
-from odoo.tests import common, tagged
+from weth.addons.link_tracker.tests.common import MockLinkTracker
+from weth.exceptions import UserError
+from weth.tests import common, tagged
 
 
 @tagged('link_tracker')
@@ -58,7 +58,7 @@ class TestLinkTracker(common.TransactionCase, MockLinkTracker):
     def test_search_or_create(self):
         values_1, values_2, values_3 = [
             {'url': 'https://weth.com.br', 'title': 'WETH'},
-            {'url': 'https://odoo.be', 'title': 'WETH'},
+            {'url': 'https://weth.be', 'title': 'WETH'},
             {'url': 'https://weth.com.br', 'title': 'Odoo New', 'label': 'New one!'}  # title is not in unique constraint
         ]
         expected_values_1, expected_values_2, expected_values_3 = [
@@ -75,7 +75,7 @@ class TestLinkTracker(common.TransactionCase, MockLinkTracker):
                 'medium_id': self.env['utm.medium'],
                 'source_id': self.env['utm.source'],
                 'title': 'WETH',
-                'url': 'https://odoo.be',
+                'url': 'https://weth.be',
             }, {
                 'campaign_id': self.env['utm.campaign'],
                 'label': 'New one!',

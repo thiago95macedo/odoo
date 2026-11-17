@@ -1,6 +1,6 @@
-from odoo import api, models, fields, _
-from odoo.exceptions import UserError
-from odoo.tools.misc import format_date
+from weth import api, models, fields, _
+from weth.exceptions import UserError
+from weth.tools.misc import format_date
 
 import io
 import zipfile

@@ -17,7 +17,7 @@
  *
  * 3. Update hooks:
  *    - replace all `useEffect` with `useLayoutEffect`
- *      import { useLayoutEffect } from "@odoo/owl";
+ *      import { useLayoutEffect } from "@weth/owl";
  *
  * ---------------------------------------------------------------------------
  * Migration (once the app builds successfully)
@@ -44,8 +44,8 @@ class Component extends owl.Component {
         if (this.constructor.props || this.constructor.defaultProps) {
             throw new Error(
                 `Component "${this.constructor.name}" defines a static "props" or "defaultProps", ` +
-                    `which Owl 3 ignores. Declare the props schema through "useProps" instead, ` +
-                    `e.g. "props = useProps({ someProp: t.string().optional(defaultValue) })".`
+                `which Owl 3 ignores. Declare the props schema through "useProps" instead, ` +
+                `e.g. "props = useProps({ someProp: t.string().optional(defaultValue) })".`
             );
         }
         this.env = useEnv();
@@ -61,7 +61,7 @@ owl.props = owl.useProps;
  * @param {any} component
  * @returns {"new" | "mounted" | "destroyed"}
  * @deprecated read the status of the component scope instead: `useScope().status`
- *  (to compare with `STATUS` from "@odoo/owl")
+ *  (to compare with `STATUS` from "@weth/owl")
  */
 owl.status = function status(component) {
     switch (component.__owl__.status) {

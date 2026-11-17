@@ -1,4 +1,4 @@
-import { test, expect, waitFor } from "@odoo/hoot";
+import { test, expect, waitFor } from "@weth/hoot";
 import { setupPosEnv, getFilledOrder, mountPosDialog } from "@point_of_sale/../tests/unit/utils";
 import { definePosModels } from "@point_of_sale/../tests/unit/data/generate_model_definitions";
 import { OrderDetailsDialog } from "@point_of_sale/app/screens/ticket_screen/order_details_dialog/order_details_dialog";
@@ -16,8 +16,8 @@ test("OrderDetailsDialog opens without currency error", async () => {
 
     const dialog = await mountPosDialog(OrderDetailsDialog, {
         order,
-        editPayment: () => {},
-        close: () => {},
+        editPayment: () => { },
+        close: () => { },
     });
     await waitFor(".o_dialog");
 

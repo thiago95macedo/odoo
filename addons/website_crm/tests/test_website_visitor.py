@@ -3,10 +3,10 @@
 
 from datetime import datetime, timedelta
 
-from odoo.addons.crm.tests.common import TestCrmCommon
-from odoo.addons.website.tests.test_website_visitor import WebsiteVisitorTestsCommon
-from odoo.tests import tagged
-from odoo.tests.common import users
+from weth.addons.crm.tests.common import TestCrmCommon
+from weth.addons.website.tests.test_website_visitor import WebsiteVisitorTestsCommon
+from weth.tests import tagged
+from weth.tests.common import users
 
 
 @tagged('website_visitor', 'is_query_count')

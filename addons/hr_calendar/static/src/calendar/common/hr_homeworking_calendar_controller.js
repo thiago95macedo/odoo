@@ -5,7 +5,7 @@ import { ConfirmationDialog } from "@web/core/confirmation_dialog/confirmation_d
 import { AttendeeCalendarController } from "@calendar/views/attendee_calendar/attendee_calendar_controller"
 import { serializeDate } from "@web/core/l10n/dates";
 import { user } from "@web/core/user";
-import { onWillStart } from "@odoo/owl";
+import { onWillStart } from "@weth/owl";
 
 patch(AttendeeCalendarController.prototype, {
     setup() {
@@ -22,7 +22,7 @@ patch(AttendeeCalendarController.prototype, {
             return this.action.doAction('hr_calendar.set_location_wizard_action', {
                 additionalContext: {
                     'default_date': serializeDate(record.start),
-                    'default_work_location_id' : record.work_location_id,
+                    'default_work_location_id': record.work_location_id,
                     'dialog_size': 'medium',
                 },
                 onClose: async (closeInfo) => {
@@ -41,7 +41,7 @@ patch(AttendeeCalendarController.prototype, {
                     confirm: async () => {
                         const dayName = record.start.setLocale("en").weekdayLong.toLowerCase();
                         const locationField = `${dayName}_location_id`;
-                        await this.orm.write('res.users', [record.rawRecord.user_id], {[locationField]: false})
+                        await this.orm.write('res.users', [record.rawRecord.user_id], { [locationField]: false })
                         this.model.load();
                     },
                     cancel: () => {
@@ -63,7 +63,7 @@ patch(AttendeeCalendarController.prototype, {
             super.deleteRecord(...arguments)
         }
     },
-    async openWorkLocationWizard(startDate, locationId = undefined, ghostRecord= undefined) {
+    async openWorkLocationWizard(startDate, locationId = undefined, ghostRecord = undefined) {
         const [employeeRecord] = await this.orm.read("res.users", [user.userId], ["employee_id"]);
         if (!employeeRecord.employee_id) {
             this.displayDialog(ConfirmationDialog, {
@@ -73,29 +73,29 @@ patch(AttendeeCalendarController.prototype, {
                 ),
                 confirm: this.canCreateEmployee
                     ? async () => {
-                          const newEmployees = await this.orm.call(
-                              "res.users",
-                              "action_create_employee",
-                              [user.userId]
-                          );
-                          if (newEmployees?.length) {
-                              this.action.doAction({
-                                  type: "ir.actions.act_window",
-                                  res_model: "hr.employee",
-                                  res_id: newEmployees[0],
-                                  views: [[false, "form"]],
-                              });
-                          }
-                      }
-                    : () => {},
+                        const newEmployees = await this.orm.call(
+                            "res.users",
+                            "action_create_employee",
+                            [user.userId]
+                        );
+                        if (newEmployees?.length) {
+                            this.action.doAction({
+                                type: "ir.actions.act_window",
+                                res_model: "hr.employee",
+                                res_id: newEmployees[0],
+                                views: [[false, "form"]],
+                            });
+                        }
+                    }
+                    : () => { },
                 confirmLabel: this.canCreateEmployee ? _t("Create Employee") : _t("Ok"),
-                cancel: this.canCreateEmployee ? () => {} : undefined, // undefined = no button
+                cancel: this.canCreateEmployee ? () => { } : undefined, // undefined = no button
                 cancelLabel: this.canCreateEmployee ? _t("Close") : undefined,
             });
             return;
         }
 
-        this.action.doAction('hr_calendar.set_location_wizard_action',{
+        this.action.doAction('hr_calendar.set_location_wizard_action', {
             additionalContext: {
                 'default_date': serializeDate(startDate),
                 'default_work_location_id': locationId,

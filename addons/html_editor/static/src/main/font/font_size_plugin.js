@@ -1,4 +1,4 @@
-import { proxy } from "@odoo/owl";
+import { proxy } from "@weth/owl";
 import { Plugin } from "@html_editor/plugin";
 import { removeClass, unwrapContents } from "@html_editor/utils/dom";
 import { headingTags, isRedundantElement } from "@html_editor/utils/dom_info";
@@ -334,9 +334,8 @@ export class FontSizePlugin extends Plugin {
             // existing inline override.
             return null;
         }
-        const size = `clamp(8px, 1em + ${uiValue.toFixed(4)}vw, ${
-            this.config.maxFontSize || MAX_FONT_SIZE
-        }px)`;
+        const size = `clamp(8px, 1em + ${uiValue.toFixed(4)}vw, ${this.config.maxFontSize || MAX_FONT_SIZE
+            }px)`;
         if (this.config.responsiveFontSizeFallback ?? false) {
             return { size };
         }

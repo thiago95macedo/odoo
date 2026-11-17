@@ -1,5 +1,5 @@
-from odoo import Command, models, fields, api, _
-from odoo.exceptions import UserError
+from weth import Command, models, fields, api, _
+from weth.exceptions import UserError
 
 
 class ValidateAccountMove(models.TransientModel):

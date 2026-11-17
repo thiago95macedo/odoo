@@ -1,12 +1,12 @@
 from unittest.mock import patch
 
-from odoo.addons.populate import start_populate
-from odoo.addons.populate.models.job import MAX_RECORD_COMMIT_SIZE
-from odoo.addons.populate.utils.profiling import (
+from weth.addons.populate import start_populate
+from weth.addons.populate.models.job import MAX_RECORD_COMMIT_SIZE
+from weth.addons.populate.utils.profiling import (
     get_profile_description,
     get_profile_session_name,
 )
-from odoo.addons.test_populate.tests.common import PopulateTestCase
+from weth.addons.test_populate.tests.common import PopulateTestCase
 
 
 class TestSessionFieldGeneration(PopulateTestCase):
@@ -978,7 +978,7 @@ class TestProfilerIntegration(PopulateTestCase):
         super().setUp()
         # Profiler saves rows through its own db_connect(). Route that cursor
         # through the test registry so rows stay inside TestCursor savepoints.
-        self.startPatcher(patch('odoo.sql_db.db_connect', return_value=self.registry))
+        self.startPatcher(patch('weth.sql_db.db_connect', return_value=self.registry))
 
     def _profiles_for_session(self, session):
         return self.env['ir.profile'].search([

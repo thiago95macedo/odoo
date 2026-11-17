@@ -2,17 +2,17 @@
 
 import json
 
-import odoo
-from odoo import Command, fields
-from odoo.http.stream import STATIC_CACHE_LONG
-from odoo.tests import tagged, users
-from odoo.tools import mute_logger
+import weth
+from weth import Command, fields
+from weth.http.stream import STATIC_CACHE_LONG
+from weth.tests import tagged, users
+from weth.tools import mute_logger
 
-from odoo.addons.base.tests.common import HttpCase
-from odoo.addons.mail.tests.common import MailCommon, mail_new_test_user
+from weth.addons.base.tests.common import HttpCase
+from weth.addons.mail.tests.common import MailCommon, mail_new_test_user
 
 
-@odoo.tests.tagged("mail_controller")
+@weth.tests.tagged("mail_controller")
 class TestMessageController(HttpCase, MailCommon):
     @classmethod
     def setUpClass(cls):
@@ -46,7 +46,7 @@ class TestMessageController(HttpCase, MailCommon):
         cls.guest = cls.env["mail.guest"].create({"name": "Guest"})
         cls.channel._add_members(guests=cls.guest)
 
-    @mute_logger("odoo.addons.http_routing.models.ir_http", "odoo.http")
+    @mute_logger("weth.addons.http_routing.models.ir_http", "weth.http")
     def test_channel_message_attachments(self):
         self.authenticate(None, None)
         self.opener.cookies[self.guest._cookie_name] = self.guest._format_auth_cookie()
@@ -232,7 +232,7 @@ class TestMessageController(HttpCase, MailCommon):
             "guest should be allowed to add attachment with token when updating message",
         )
 
-    @mute_logger("odoo.addons.http_routing.models.ir_http", "odoo.http")
+    @mute_logger("weth.addons.http_routing.models.ir_http", "weth.http")
     def test_mail_partner_from_email_unauthenticated(self):
         self.authenticate(None, None)
         self.opener.cookies[self.guest._cookie_name] = self.guest._format_auth_cookie()
@@ -363,7 +363,7 @@ class TestMessageLinks(MailCommon, HttpCase):
         ).id
         self.authenticate('employee', 'employee')
         with self.subTest(channel_message=channel_message):
-            expected_url = self.base_url() + f'/odoo/action-mail.action_discuss?active_id={channel_message.res_id}&highlight_message_id={channel_message.id}'
+            expected_url = self.base_url() + f'/weth/action-mail.action_discuss?active_id={channel_message.res_id}&highlight_message_id={channel_message.id}'
             res = self.url_open(f'/mail/message/{channel_message.id}')
             self.assertEqual(res.url, expected_url)
         with self.subTest(private_message_id=private_message_id):

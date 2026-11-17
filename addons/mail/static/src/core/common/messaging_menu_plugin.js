@@ -1,3 +1,3 @@
-import { Plugin } from "@odoo/owl";
+import { Plugin } from "@weth/owl";
 
-export class MessagingMenuPlugin extends Plugin {}
+export class MessagingMenuPlugin extends Plugin { }

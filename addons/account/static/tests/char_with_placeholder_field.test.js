@@ -1,5 +1,5 @@
-import { expect, test } from "@odoo/hoot";
-import { queryFirst } from "@odoo/hoot-dom";
+import { expect, test } from "@weth/hoot";
+import { queryFirst } from "@weth/hoot-dom";
 import {
     contains,
     defineModels,

@@ -1,6 +1,6 @@
 import { Plugin } from "@html_editor/plugin";
-import { expect, test } from "@odoo/hoot";
-import { xml } from "@odoo/owl";
+import { expect, test } from "@weth/hoot";
+import { xml } from "@weth/owl";
 import { addBuilderOption } from "@html_builder/../tests/helpers";
 import { contains } from "@web/../tests/web_test_helpers";
 import { uniqueId } from "@web/core/utils/functions";

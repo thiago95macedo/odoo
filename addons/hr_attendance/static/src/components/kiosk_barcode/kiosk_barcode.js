@@ -1,4 +1,4 @@
-import { proxy, t, useProps } from "@odoo/owl";
+import { proxy, t, useProps } from "@weth/owl";
 import { BarcodeScanner } from "@barcodes/components/barcode_scanner";
 import { scanBarcode } from "@web/core/barcode/barcode_dialog";
 import { isDisplayStandalone } from "@web/core/browser/feature_detection";

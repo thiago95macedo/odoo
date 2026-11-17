@@ -4,9 +4,9 @@
 from collections import defaultdict
 from dateutil.relativedelta import relativedelta
 
-from odoo import api, fields, models, _
-from odoo.exceptions import ValidationError
-from odoo.tools.float_utils import float_round
+from weth import api, fields, models, _
+from weth.exceptions import ValidationError
+from weth.tools.float_utils import float_round
 
 
 class UtmCampaign(models.Model):

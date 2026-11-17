@@ -1,9 +1,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import Command
-from odoo.tests.common import tagged
+from weth import Command
+from weth.tests.common import tagged
 
-from odoo.addons.sale_loyalty.tests.common import TestSaleCouponCommon
+from weth.addons.sale_loyalty.tests.common import TestSaleCouponCommon
 
 
 @tagged("-at_install", "post_install")

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo noupdate="1">
+<weth noupdate="1">
     <record model="utm.source" id="utm_source_google">
         <field name="name">Google</field>
     </record>
@@ -43,4 +43,4 @@
     <record model="utm.source" id="utm_source_youtube">
         <field name="name">YouTube</field>
     </record>
-</odoo>
+</weth>

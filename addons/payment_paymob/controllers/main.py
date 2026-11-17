@@ -7,12 +7,12 @@ import pprint
 
 from werkzeug.exceptions import Forbidden
 
-from odoo import http
-from odoo.http import request
+from weth import http
+from weth.http import request
 
-from odoo.addons.payment import utils as payment_utils
-from odoo.addons.payment.logging import get_payment_logger
-from odoo.addons.payment_paymob import const
+from weth.addons.payment import utils as payment_utils
+from weth.addons.payment.logging import get_payment_logger
+from weth.addons.payment_paymob import const
 
 _logger = get_payment_logger(__name__)
 

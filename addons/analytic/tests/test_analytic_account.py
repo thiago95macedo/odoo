@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 
-from odoo.tests import Form, tagged
-from odoo import Command
-from odoo.exceptions import RedirectWarning
+from weth.tests import Form, tagged
+from weth import Command
+from weth.exceptions import RedirectWarning
 
-from odoo.addons.analytic.tests.common import AnalyticCommon
+from weth.addons.analytic.tests.common import AnalyticCommon
 
 
 @tagged('post_install', '-at_install')

@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-import odoo
-from odoo.addons.point_of_sale.tests.common import TestPoSCommon
-from odoo.addons.point_of_sale.tests.test_frontend import TestPointOfSaleHttpCommon
+import weth
+from weth.addons.point_of_sale.tests.common import TestPoSCommon
+from weth.addons.point_of_sale.tests.test_frontend import TestPointOfSaleHttpCommon
 
 
-@odoo.tests.tagged('post_install', '-at_install')
+@weth.tests.tagged('post_install', '-at_install')
 class TestPoSSaleReport(TestPoSCommon, TestPointOfSaleHttpCommon):
     _test_user_groups = None  # FIXME list needed groups
 

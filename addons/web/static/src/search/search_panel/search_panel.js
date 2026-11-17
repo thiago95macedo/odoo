@@ -1,4 +1,4 @@
-import { Component, onWillStart, onWillUpdateProps, proxy, signal, useEffect } from "@odoo/owl";
+import { Component, onWillStart, onWillUpdateProps, proxy, signal, useEffect } from "@weth/owl";
 import { browser } from "@web/core/browser/browser";
 import { Dropdown } from "@web/core/dropdown/dropdown";
 import { useBus, useService } from "@web/core/utils/hooks";

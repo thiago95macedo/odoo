@@ -4,8 +4,8 @@ import json
 
 from freezegun import freeze_time
 
-from odoo.addons.bus.tests.common import WebsocketCase
-from odoo.addons.bus.bus_dispatcher import ChannelTopic
+from weth.addons.bus.tests.common import WebsocketCase
+from weth.addons.bus.bus_dispatcher import ChannelTopic
 
 
 class TestWebsocketDispatching(WebsocketCase):

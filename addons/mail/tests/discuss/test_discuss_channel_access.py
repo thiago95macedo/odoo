@@ -2,10 +2,10 @@
 
 from psycopg2.errors import UniqueViolation
 
-from odoo.addons.mail.tests.common import mail_new_test_user
-from odoo.addons.mail.tests.common import MailCommon
-from odoo.exceptions import AccessError, UserError
-from odoo.tools import mute_logger
+from weth.addons.mail.tests.common import mail_new_test_user
+from weth.addons.mail.tests.common import MailCommon
+from weth.exceptions import AccessError, UserError
+from weth.tools import mute_logger
 
 
 class TestDiscussChannelAccess(MailCommon):
@@ -336,9 +336,9 @@ class TestDiscussChannelAccess(MailCommon):
                 try:
                     with (
                         self.assertRaises(AccessError),
-                        mute_logger("odoo.sql_db"),
-                        mute_logger("odoo.addons.base.models.ir_access"),
-                        mute_logger("odoo.models.unlink"),
+                        mute_logger("weth.sql_db"),
+                        mute_logger("weth.addons.base.models.ir_access"),
+                        mute_logger("weth.models.unlink"),
                     ):
                         self._execute_action_channel(
                             user_key, channel_key, membership, operation, result, for_sub_channel
@@ -419,9 +419,9 @@ class TestDiscussChannelAccess(MailCommon):
                 try:
                     with (
                         self.assertRaises(AccessError),
-                        mute_logger("odoo.sql_db"),
-                        mute_logger("odoo.addons.base.models.ir_access"),
-                        mute_logger("odoo.models.unlink"),
+                        mute_logger("weth.sql_db"),
+                        mute_logger("weth.addons.base.models.ir_access"),
+                        mute_logger("weth.models.unlink"),
                     ):
                         try:
                             self._execute_action_member(

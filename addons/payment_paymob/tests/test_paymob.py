@@ -2,12 +2,12 @@
 
 from unittest.mock import patch
 
-from odoo.tests import tagged
-from odoo.tools import mute_logger
+from weth.tests import tagged
+from weth.tools import mute_logger
 
-from odoo.addons.payment.tests.http_common import PaymentHttpCommon
-from odoo.addons.payment_paymob.controllers.main import PaymobController
-from odoo.addons.payment_paymob.tests.common import PaymobCommon
+from weth.addons.payment.tests.http_common import PaymentHttpCommon
+from weth.addons.payment_paymob.controllers.main import PaymobController
+from weth.addons.payment_paymob.tests.common import PaymobCommon
 
 
 @tagged("post_install", "-at_install")
@@ -17,7 +17,7 @@ class PaymobTest(PaymobCommon, PaymentHttpCommon):
         URL_PARAMS corresponding to the response of API request."""
         tx = self._create_transaction("redirect")
         with patch(
-            "odoo.addons.payment.models.payment_provider.PaymentProvider._send_api_request",
+            "weth.addons.payment.models.payment_provider.PaymentProvider._send_api_request",
             return_value={"intention_order_id": self.order_id, "client_secret": "dummy_secret"},
         ):
             rendering_values = tx.with_context(
@@ -34,7 +34,7 @@ class PaymobTest(PaymobCommon, PaymentHttpCommon):
         self._disable_process_patcher()
         tx = self._create_transaction("redirect")
         with patch(
-            "odoo.addons.payment.models.payment_provider.PaymentProvider._send_api_request",
+            "weth.addons.payment.models.payment_provider.PaymentProvider._send_api_request",
             return_value={"intention_order_id": self.order_id},
         ):
             tx.with_context(payment_safe_write=True)._get_specific_rendering_values(
@@ -45,7 +45,7 @@ class PaymobTest(PaymobCommon, PaymentHttpCommon):
             tx.with_context(payment_safe_write=True)._process(self.redirection_data)
             self.assertEqual(tx.state, "done")
 
-    @mute_logger("odoo.addons.payment_paymob.controllers.main")
+    @mute_logger("weth.addons.payment_paymob.controllers.main")
     def test_compute_signature(self):
         """Test the computation of the signature sent by paymob."""
         computed_hmac = PaymobController._compute_signature(
@@ -68,7 +68,7 @@ class PaymobTest(PaymobCommon, PaymentHttpCommon):
         tx.with_context(payment_safe_write=True)._process(payment_data)
         self.assertEqual(tx.state, "done")
 
-    @mute_logger("odoo.addons.payment.models.payment_transaction")
+    @mute_logger("weth.addons.payment.models.payment_transaction")
     def test_non_visa_payment_is_validated_with_currency_decimals(self):
         """Test that the amount of a non-Visa payment is still validated with the decimals of the
         currency as per the ISO 4217 norm."""

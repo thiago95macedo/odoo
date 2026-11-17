@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.http import route
+from weth.http import route
 
-from odoo.addons.mail.controllers.link_preview import LinkPreviewController
+from weth.addons.mail.controllers.link_preview import LinkPreviewController
 
 
 class LivechatLinkPreviewController(LinkPreviewController):

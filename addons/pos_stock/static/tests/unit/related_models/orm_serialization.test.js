@@ -1,4 +1,4 @@
-import { expect, test } from "@odoo/hoot";
+import { expect, test } from "@weth/hoot";
 import { getRelatedModelsInstance } from "@point_of_sale/../tests/unit/data/get_model_definitions";
 import { makeMockServer } from "@web/../tests/web_test_helpers";
 import { definePosStockModels } from "@pos_stock/../tests/unit/data/generate_model_definitions";

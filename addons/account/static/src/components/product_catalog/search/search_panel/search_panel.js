@@ -1,4 +1,4 @@
-import { proxy, signal } from "@odoo/owl";
+import { proxy, signal } from "@weth/owl";
 import { formatCurrency } from "@web/core/currency";
 import { getActiveHotkey } from "@web/core/hotkeys/hotkey_utils";
 import { useBus, useService } from "@web/core/utils/hooks";

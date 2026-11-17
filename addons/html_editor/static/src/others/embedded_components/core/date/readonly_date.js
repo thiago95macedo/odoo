@@ -1,5 +1,5 @@
 import { getEmbeddedProps } from "@html_editor/others/embedded_component_utils";
-import { Component, t, useProps } from "@odoo/owl";
+import { Component, t, useProps } from "@weth/owl";
 const { DateTime } = luxon;
 
 export class ReadonlyEmbeddedDateComponent extends Component {

@@ -1,4 +1,4 @@
-from odoo.tests import TransactionCase, tagged
+from weth.tests import TransactionCase, tagged
 
 
 @tagged("mail_message")

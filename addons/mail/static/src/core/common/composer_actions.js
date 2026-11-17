@@ -1,4 +1,4 @@
-import { signal } from "@odoo/owl";
+import { signal } from "@weth/owl";
 import { CreatePollDialog } from "@mail/core/common/create_poll_dialog";
 
 import { EmojiPicker, useEmojiPickerStoreScroll } from "@web/core/emoji_picker/emoji_picker";
@@ -20,7 +20,7 @@ import { markEventHandled } from "@web/core/utils/misc";
 
 export const composerActionsRegistry = registry.category("mail.composer/actions");
 
-/** @typedef {import("@odoo/owl").Component} Component */
+/** @typedef {import("@weth/owl").Component} Component */
 /** @typedef {import("models").Composer} Composer */
 /**
  * @typedef {Object} ComposerActionSpecificParams
@@ -71,10 +71,10 @@ registerComposerAction("send-message", {
         composer.message
             ? _t("Save editing")
             : composer.targetThread?.channel
-            ? _t("Send")
-            : owner.props.type === "note"
-            ? _t("Log")
-            : _t("Send"),
+                ? _t("Send")
+                : owner.props.type === "note"
+                    ? _t("Log")
+                    : _t("Send"),
     onSelected: ({ owner }) => owner.sendMessage(),
     sequenceQuick: 30,
     tags: ({ action }) => (action.isActive ? ACTION_TAGS.PRIMARY : undefined),

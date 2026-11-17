@@ -11,8 +11,8 @@ import {
     normalizeRem,
     toInline,
 } from "@mail/views/web/fields/html_mail_field/convert_inline";
-import { beforeEach, describe, expect, getFixture, test } from "@odoo/hoot";
-import { enableTransitions } from "@odoo/hoot-mock";
+import { beforeEach, describe, expect, getFixture, test } from "@weth/hoot";
+import { enableTransitions } from "@weth/hoot-mock";
 import {
     getGridHtml,
     getRegularGridHtml,
@@ -463,29 +463,29 @@ describe("Convert Bootstrap grids to tables", () => {
                 .replace(
                     /<td[^>]*>\(0, 0\)<\/td>/,
                     `<td>` +
-                        `<table cellspacing="0" cellpadding="0" border="0" width="100%" align="center" ` +
-                        `role="presentation" style="width: 100% !important; border-collapse: separate; border-spacing: 0px; text-align: inherit; ` +
-                        `font-size: unset; line-height: inherit; height: 100%;"><tr>` +
-                        `<td class="card-header"><span>HEADER</span></td>` +
-                        `</tr></table></td>`
+                    `<table cellspacing="0" cellpadding="0" border="0" width="100%" align="center" ` +
+                    `role="presentation" style="width: 100% !important; border-collapse: separate; border-spacing: 0px; text-align: inherit; ` +
+                    `font-size: unset; line-height: inherit; height: 100%;"><tr>` +
+                    `<td class="card-header"><span>HEADER</span></td>` +
+                    `</tr></table></td>`
                 )
                 .replace(
                     /<td[^>]*>\(1, 0\)<\/td>/,
                     `<td>` +
-                        `<table cellspacing="0" cellpadding="0" border="0" width="100%" align="center" ` +
-                        `role="presentation" style="width: 100% !important; border-collapse: separate; border-spacing: 0px; text-align: inherit; ` +
-                        `font-size: unset; line-height: inherit; height: 100%;"><tr>` +
-                        `<td class="card-body"><h2 class="card-title">TITLE</h2><small>BODY <img></small></td>` +
-                        `</tr></table></td>`
+                    `<table cellspacing="0" cellpadding="0" border="0" width="100%" align="center" ` +
+                    `role="presentation" style="width: 100% !important; border-collapse: separate; border-spacing: 0px; text-align: inherit; ` +
+                    `font-size: unset; line-height: inherit; height: 100%;"><tr>` +
+                    `<td class="card-body"><h2 class="card-title">TITLE</h2><small>BODY <img></small></td>` +
+                    `</tr></table></td>`
                 )
                 .replace(
                     /<td[^>]*>\(2, 0\)<\/td>/,
                     `<td>` +
-                        `<table cellspacing="0" cellpadding="0" border="0" width="100%" align="center" ` +
-                        `role="presentation" style="width: 100% !important; border-collapse: separate; border-spacing: 0px; text-align: inherit; ` +
-                        `font-size: unset; line-height: inherit; height: 100%;"><tr>` +
-                        `<td class="card-footer"><a href="#" class="btn">FOOTER</a></td>` +
-                        `</tr></table></td>`
+                    `<table cellspacing="0" cellpadding="0" border="0" width="100%" align="center" ` +
+                    `role="presentation" style="width: 100% !important; border-collapse: separate; border-spacing: 0px; text-align: inherit; ` +
+                    `font-size: unset; line-height: inherit; height: 100%;"><tr>` +
+                    `<td class="card-footer"><a href="#" class="btn">FOOTER</a></td>` +
+                    `</tr></table></td>`
                 ),
         });
     });
@@ -591,10 +591,10 @@ describe("Normalize styles", () => {
         normalizeRem(editable);
         expect(editable).toHaveInnerHTML(
             `<div style="font-size: 32px;">` +
-                `<div class="a" style="color: #000000; padding: 40px" width="100%">` +
-                `<p style="border: 19.2px #aaaaaa solid; margin: 60.64px;">Test</p>` +
-                `</div>` +
-                `</div>`,
+            `<div class="a" style="color: #000000; padding: 40px" width="100%">` +
+            `<p style="border: 19.2px #aaaaaa solid; margin: 60.64px;">Test</p>` +
+            `</div>` +
+            `</div>`,
             {
                 message: "should have converted several rem sizes to px using the default rem size",
             }
@@ -604,10 +604,10 @@ describe("Normalize styles", () => {
         normalizeRem(editable, 20);
         expect(editable).toHaveInnerHTML(
             `<div style="font-size: 40px;">` +
-                `<div class="a" style="color: #000000; padding: 50px" width="100%">` +
-                `<p style="border: 24px #aaaaaa solid; margin: 75.8px;">Test</p>` +
-                `</div>` +
-                `</div>`,
+            `<div class="a" style="color: #000000; padding: 50px" width="100%">` +
+            `<p style="border: 24px #aaaaaa solid; margin: 75.8px;">Test</p>` +
+            `</div>` +
+            `</div>`,
             {
                 message: "should have converted several rem sizes to px using a set rem size",
             }
@@ -812,10 +812,10 @@ describe("Convert snippets and mailing bodies to tables", () => {
                 .replace(
                     /<td[^>]*>\(0, 0\)/,
                     "<td>" +
-                        getRegularTableHtml(1, 1, 12, 100).replace(
-                            /<td[^>]*>\(0, 0\)/,
-                            "<td><div>Snippet</div>"
-                        )
+                    getRegularTableHtml(1, 1, 12, 100).replace(
+                        /<td[^>]*>\(0, 0\)/,
+                        "<td><div>Snippet</div>"
+                    )
                 ),
             {
                 message:
@@ -854,10 +854,10 @@ describe("Convert snippets and mailing bodies to tables", () => {
                 .replace(
                     /<td[^>]*>\(0, 0\)/,
                     "<td>" +
-                        getRegularTableHtml(1, 1, 12, 100).replace(
-                            /<td[^>]*>\(0, 0\)/,
-                            "<td><div>Mailing</div>"
-                        )
+                    getRegularTableHtml(1, 1, 12, 100).replace(
+                        /<td[^>]*>\(0, 0\)/,
+                        "<td><div>Mailing</div>"
+                    )
                 ),
             {
                 message:
@@ -923,8 +923,8 @@ describe("Convert classes to inline styles", () => {
         const colStyle = `border-radius: 0px; border-style: none; box-sizing: border-box; border-width: 0px; margin-top: 0px; padding-left: 16px; padding-right: 16px; max-width: 100%; width: 100%; border-color: ${borderColor};`;
         expect(editable).toHaveInnerHTML(
             `<div class="container" style="${containerStyle}" width="100%">` +
-                `<div class="row" style="${rowStyle}">` +
-                `<div class="col" style="${colStyle}" width="100%">Hello</div></div></div>`,
+            `<div class="row" style="${rowStyle}">` +
+            `<div class="col" style="${colStyle}" width="100%">Hello</div></div></div>`,
             {
                 message:
                     "should have converted the classes of a simple Bootstrap grid to inline styles",

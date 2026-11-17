@@ -10,7 +10,7 @@ import {
     startServer,
     mailModels,
 } from "@mail/../tests/mail_test_helpers";
-import { beforeEach, describe, expect, getFixture, test } from "@odoo/hoot";
+import { beforeEach, describe, expect, getFixture, test } from "@weth/hoot";
 import { onRpc, defineModels } from "@web/../tests/web_test_helpers";
 import { analyticModels } from "@analytic/../tests/analytic_test_helpers";
 import { ProjectTask } from "@project/../tests/mock_server/mock_models/project_task";

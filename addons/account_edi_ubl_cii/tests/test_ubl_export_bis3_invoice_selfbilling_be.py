@@ -1,6 +1,6 @@
-from odoo import Command, fields
+from weth import Command, fields
 from .common import TestUblBis3Common, TestUblCiiBECommon
-from odoo.tests import tagged
+from weth.tests import tagged
 
 
 @tagged('post_install_l10n', 'post_install', '-at_install', *TestUblBis3Common.extra_tags)

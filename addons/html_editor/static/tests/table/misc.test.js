@@ -1,4 +1,4 @@
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@weth/hoot";
 import { setupEditor, testEditor } from "../_helpers/editor";
 import {
     advanceTime,
@@ -8,8 +8,8 @@ import {
     queryFirst,
     queryOne,
     waitFor,
-} from "@odoo/hoot-dom";
-import { animationFrame, tick } from "@odoo/hoot-mock";
+} from "@weth/hoot-dom";
+import { animationFrame, tick } from "@weth/hoot-mock";
 import { getContent, setSelection, waitForSelectionChange } from "../_helpers/selection";
 import { execCommand } from "../_helpers/userCommands";
 import { expandToolbar } from "../_helpers/toolbar";

@@ -4,12 +4,12 @@ from datetime import date, timedelta
 
 from freezegun import freeze_time
 
-from odoo import Command
-from odoo.tests import tagged
-from odoo.tools import mute_logger
+from weth import Command
+from weth.tests import tagged
+from weth.tools import mute_logger
 
-from odoo.addons.payment.tests.http_common import PaymentHttpCommon
-from odoo.addons.sale_loyalty.tests.common import TestSaleCouponCommon
+from weth.addons.payment.tests.http_common import PaymentHttpCommon
+from weth.addons.sale_loyalty.tests.common import TestSaleCouponCommon
 
 
 @tagged("post_install", "-at_install")
@@ -31,7 +31,7 @@ class TestShopLoyaltyPayment(PaymentHttpCommon, TestSaleCouponCommon):
             cls.website = cls.env.ref("base.default_website")
             cls.website.company_id = cls.env.company
 
-    @mute_logger("odoo.http")
+    @mute_logger("weth.http")
     def test_expired_reward_validation(self):
         """Ensure payments don't process if any applied reward is no longer valid."""
         program = self.program_gift_card

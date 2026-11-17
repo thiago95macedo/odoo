@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import fields, models, api
-from odoo.tools import SQL
+from weth import fields, models, api
+from weth.tools import SQL
 
 
 class TimesheetsAnalysisReport(models.Model):

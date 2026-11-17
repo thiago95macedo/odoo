@@ -1,9 +1,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, fields, models
-from odoo.http import request
-from odoo.tools import urls
-from odoo.tools.json import scriptsafe as json_scriptsafe
+from weth import api, fields, models
+from weth.http import request
+from weth.tools import urls
+from weth.tools.json import scriptsafe as json_scriptsafe
 
 
 class IrActionsServer(models.Model):

@@ -3,13 +3,13 @@
 
 from freezegun import freeze_time
 
-from odoo import Command
-from odoo.exceptions import AccessError, UserError
-from odoo.tests import Form
-from odoo.tests.common import TransactionCase
-from odoo.addons.mrp_subcontracting.tests.common import TestMrpSubcontractingCommon
+from weth import Command
+from weth.exceptions import AccessError, UserError
+from weth.tests import Form
+from weth.tests.common import TransactionCase
+from weth.addons.mrp_subcontracting.tests.common import TestMrpSubcontractingCommon
 
-from odoo.tests import tagged
+from weth.tests import tagged
 from dateutil.relativedelta import relativedelta
 
 

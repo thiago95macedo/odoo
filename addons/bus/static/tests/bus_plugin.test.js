@@ -11,9 +11,9 @@ import {
     WebsocketWorker,
     WORKER_STATE,
 } from "@bus/workers/websocket_worker";
-import { advanceTime, describe, expect, test } from "@odoo/hoot";
-import { manuallyDispatchProgrammaticEvent, runAllTimers } from "@odoo/hoot-dom";
-import { mockWebSocket } from "@odoo/hoot-mock";
+import { advanceTime, describe, expect, test } from "@weth/hoot";
+import { manuallyDispatchProgrammaticEvent, runAllTimers } from "@weth/hoot-dom";
+import { mockWebSocket } from "@weth/hoot-mock";
 import {
     getMockEnv,
     getService,
@@ -306,7 +306,7 @@ test("no disconnect on offline/online when bus is inactive", async () => {
         ["BUS:DISCONNECT", () => expect.step("BUS:DISCONNECT")]
     );
     mockService("bus_service", {
-        addChannel() {},
+        addChannel() { },
     });
     await makeTestApp();
     expect(getService(BusPlugin).isActive()).toBe(false);

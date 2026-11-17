@@ -3,9 +3,9 @@
 
 from dateutil.relativedelta import relativedelta
 
-from odoo.fields import Date
+from weth.fields import Date
 
-from odoo.tests.common import TransactionCase, tagged
+from weth.tests.common import TransactionCase, tagged
 
 
 @tagged('post_install', '-at_install', 'data_recycle')

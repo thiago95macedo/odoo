@@ -1,11 +1,11 @@
 from datetime import UTC, date, datetime, timedelta
 from zoneinfo import ZoneInfo
 
-from odoo import fields
-from odoo.addons.hr_attendance.controllers.main import HrAttendance
-from odoo.exceptions import ValidationError
-from odoo.tests import Form, new_test_user
-from odoo.tests.common import HttpCase, tagged, TransactionCase, freeze_time
+from weth import fields
+from weth.addons.hr_attendance.controllers.main import HrAttendance
+from weth.exceptions import ValidationError
+from weth.tests import Form, new_test_user
+from weth.tests.common import HttpCase, tagged, TransactionCase, freeze_time
 
 
 @tagged('attendance_process')

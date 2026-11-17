@@ -1,4 +1,4 @@
-import { Spreadsheet } from "@odoo/o-spreadsheet";
+import { Spreadsheet } from "@weth/o-spreadsheet";
 import { patch } from "@web/core/utils/patch";
 import { useSpreadsheetCommandPalette } from "./command_provider";
 

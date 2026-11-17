@@ -4,13 +4,13 @@ import werkzeug
 import werkzeug.utils
 import werkzeug.exceptions
 
-from odoo import _
-from odoo import http
-from odoo.exceptions import AccessError
-from odoo.fields import Domain
-from odoo.http import request
+from weth import _
+from weth import http
+from weth.exceptions import AccessError
+from weth.fields import Domain
+from weth.http import request
 
-from odoo.addons.website_slides.controllers.main import WebsiteSlides
+from weth.addons.website_slides.controllers.main import WebsiteSlides
 
 
 class WebsiteSlidesSurvey(WebsiteSlides):

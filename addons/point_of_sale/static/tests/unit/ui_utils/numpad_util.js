@@ -1,4 +1,4 @@
-import { animationFrame } from "@odoo/hoot-dom";
+import { animationFrame } from "@weth/hoot-dom";
 import { contains, getService } from "@web/../tests/web_test_helpers";
 import { PosNumberBufferPlugin } from "@point_of_sale/app/plugins/pos_number_buffer_plugin";
 import { ensurePane } from "./common";

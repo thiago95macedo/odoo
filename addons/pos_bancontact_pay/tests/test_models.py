@@ -5,20 +5,20 @@ from unittest.mock import patch
 
 from requests import Response
 
-from odoo import Command
-from odoo.exceptions import (
+from weth import Command
+from weth.exceptions import (
     AccessDenied,
     AccessError,
     MissingError,
     UserError,
     ValidationError,
 )
-from odoo.tests.common import tagged
-from odoo.tools import mute_logger
+from weth.tests.common import tagged
+from weth.tools import mute_logger
 
-from odoo.addons.point_of_sale.tests.common import CommonPosTest
-from odoo.addons.pos_bancontact_pay import const
-from odoo.addons.pos_bancontact_pay.tests.common import TestBancontactPay
+from weth.addons.point_of_sale.tests.common import CommonPosTest
+from weth.addons.pos_bancontact_pay import const
+from weth.addons.pos_bancontact_pay.tests.common import TestBancontactPay
 
 
 @tagged("post_install", "-at_install")
@@ -147,7 +147,7 @@ class TestModels(TestBancontactPay, CommonPosTest):
             result = self.payment_method_display.create_bancontact_payment({})
             self.assertEqual(result, {"bancontact_id": generated_bancontact_id, "qr_code": generated_qr_code + "&f=SVG"})
 
-    @mute_logger("odoo.addons.pos_bancontact_pay.models.pos_payment_method")
+    @mute_logger("weth.addons.pos_bancontact_pay.models.pos_payment_method")
     def test_create_bancontact_payment_api_error(self):
         codes = [(400, MissingError), (401, AccessDenied), (403, AccessDenied),
                  (404, UserError), (422, ValidationError), (429, AccessDenied),
@@ -168,7 +168,7 @@ class TestModels(TestBancontactPay, CommonPosTest):
         with self.mock_bancontact_call():
             self.payment_method_display.cancel_bancontact_payment("bancontact_id")
 
-    @mute_logger("odoo.addons.pos_bancontact_pay.models.pos_payment_method")
+    @mute_logger("weth.addons.pos_bancontact_pay.models.pos_payment_method")
     def test_cancel_bancontact_payment_api_error(self):
         codes = [(400, MissingError), (401, AccessDenied), (403, AccessDenied),
                  (404, UserError), (422, ValidationError), (429, AccessDenied),
@@ -255,8 +255,8 @@ class TestModels(TestBancontactPay, CommonPosTest):
             response.status_code = delete_status_code
             return response
 
-        with (patch("odoo.addons.pos_bancontact_pay.models.pos_payment_method.requests.post", mock_post),
-              patch("odoo.addons.pos_bancontact_pay.models.pos_payment_method.requests.delete", mock_delete)):
+        with (patch("weth.addons.pos_bancontact_pay.models.pos_payment_method.requests.post", mock_post),
+              patch("weth.addons.pos_bancontact_pay.models.pos_payment_method.requests.delete", mock_delete)):
             yield
 
     def _generate_bancontact_id(self):

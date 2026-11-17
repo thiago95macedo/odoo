@@ -3,10 +3,10 @@
 from datetime import datetime, timedelta, UTC
 from zoneinfo import ZoneInfo
 
-from odoo import api, fields, models
-from odoo.tools import is_html_empty
-from odoo.tools.date_utils import float_to_time
-from odoo.tools.translate import html_translate
+from weth import api, fields, models
+from weth.tools import is_html_empty
+from weth.tools.date_utils import float_to_time
+from weth.tools.translate import html_translate
 
 
 class EventSponsor(models.Model):

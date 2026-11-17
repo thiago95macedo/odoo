@@ -2,10 +2,10 @@
 
 import uuid
 
-from odoo import api, fields, models
-from odoo.addons.mail.tools.discuss import Store
-from odoo.addons.rating.models import rating_data
-from odoo.tools import BinaryBytes, file_open
+from weth import api, fields, models
+from weth.addons.mail.tools.discuss import Store
+from weth.addons.rating.models import rating_data
+from weth.tools import BinaryBytes, file_open
 
 
 class RatingRating(models.Model):

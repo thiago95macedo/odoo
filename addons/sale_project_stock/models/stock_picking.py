@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import _, models
-from odoo.exceptions import UserError
+from weth import _, models
+from weth.exceptions import UserError
 
 
 class StockPicking(models.Model):

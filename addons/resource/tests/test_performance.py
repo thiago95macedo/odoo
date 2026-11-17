@@ -2,8 +2,8 @@
 from datetime import date, datetime, timedelta
 from zoneinfo import ZoneInfo
 
-from odoo.tests import warmup
-from odoo.tests.common import TransactionCase
+from weth.tests import warmup
+from weth.tests.common import TransactionCase
 
 
 class TestVariableResourceCalendarPerformance(TransactionCase):

@@ -1,5 +1,5 @@
-import { test, expect } from "@odoo/hoot";
-import { animationFrame } from "@odoo/hoot-dom";
+import { test, expect } from "@weth/hoot";
+import { animationFrame } from "@weth/hoot-dom";
 import { renderToElement } from "@web/core/utils/render";
 import { setupPosEnv, setupAndMountPosApp, createComboSetup } from "../utils";
 import { definePosModels } from "../data/generate_model_definitions";

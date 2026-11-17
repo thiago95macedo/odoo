@@ -4,10 +4,10 @@ import json
 
 from datetime import timedelta
 
-from odoo.tests import Form, TransactionCase, tagged
-from odoo.addons.account.tests.common import AccountTestInvoicingCommon
-from odoo import fields
-from odoo.fields import Command
+from weth.tests import Form, TransactionCase, tagged
+from weth.addons.account.tests.common import AccountTestInvoicingCommon
+from weth import fields
+from weth.fields import Command
 
 
 @tagged('post_install', '-at_install')

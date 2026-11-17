@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
 
     <template id="report_stock_body_print" inherit_id="stock.report_stock_body_print">
         <xpath expr="//table" position="before">
@@ -13,4 +13,4 @@
         </xpath>
     </template>
 
-</odoo>
+</weth>

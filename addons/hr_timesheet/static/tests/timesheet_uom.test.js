@@ -1,4 +1,4 @@
-import { beforeEach, expect, test } from "@odoo/hoot";
+import { beforeEach, expect, test } from "@weth/hoot";
 import { mountView, serverState } from "@web/../tests/web_test_helpers";
 
 import { HRTimesheet, defineTimesheetModels, patchSession } from "./hr_timesheet_models";

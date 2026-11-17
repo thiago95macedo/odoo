@@ -1,4 +1,4 @@
-import { Component, useProps } from "@odoo/owl";
+import { Component, useProps } from "@weth/owl";
 import { CheckBox } from "@web/core/checkbox/checkbox";
 import {
     clickableBuilderComponentProps,

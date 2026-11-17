@@ -1,6 +1,6 @@
-from odoo.tests.common import BaseCase
+from weth.tests.common import BaseCase
 
-from odoo.addons.populate.utils.expression import get_undefined_names
+from weth.addons.populate.utils.expression import get_undefined_names
 
 
 class TestGetUndefinedNames(BaseCase):

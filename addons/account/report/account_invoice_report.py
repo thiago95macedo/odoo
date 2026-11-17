@@ -1,8 +1,8 @@
-from odoo import api, fields, models
-from odoo.models import TableSQL
-from odoo.tools import SQL
+from weth import api, fields, models
+from weth.models import TableSQL
+from weth.tools import SQL
 
-from odoo.addons.account.models.account_move import PAYMENT_STATE_SELECTION
+from weth.addons.account.models.account_move import PAYMENT_STATE_SELECTION
 
 
 class AccountInvoiceReport(models.Model):

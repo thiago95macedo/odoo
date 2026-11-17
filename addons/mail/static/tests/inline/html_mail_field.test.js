@@ -2,9 +2,9 @@ import { setSelection } from "@html_editor/../tests/_helpers/selection";
 import { insertText } from "@html_editor/../tests/_helpers/user_actions";
 import { expectElementCount } from "@html_editor/../tests/_helpers/ui_expectations";
 import { HtmlMailField } from "@mail/views/web/fields/html_mail_field/html_mail_field";
-import { after, before, beforeEach, expect, test } from "@odoo/hoot";
-import { press, queryOne } from "@odoo/hoot-dom";
-import { animationFrame, enableTransitions } from "@odoo/hoot-mock";
+import { after, before, beforeEach, expect, test } from "@weth/hoot";
+import { press, queryOne } from "@weth/hoot-dom";
+import { animationFrame, enableTransitions } from "@weth/hoot-mock";
 import {
     clickSave,
     contains,

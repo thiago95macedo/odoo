@@ -1,9 +1,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import Command
-from odoo.tests import tagged, Form
+from weth import Command
+from weth.tests import tagged, Form
 
-from odoo.addons.stock.tests.common import TestStockBatchCommon
+from weth.addons.stock.tests.common import TestStockBatchCommon
 
 
 @tagged('-at_install', 'post_install')

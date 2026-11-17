@@ -29,7 +29,7 @@ import {
     useListener,
     usePlugin,
     useProps,
-} from "@odoo/owl";
+} from "@weth/owl";
 import { standardActionServiceProps } from "@web/webclient/actions/action_plugin";
 import { fuzzyLevenshteinLookup } from "@web/core/utils/search";
 import { isBrowserSafari } from "@web/core/browser/feature_detection";
@@ -702,7 +702,7 @@ export class PaletteSelectionScreen extends Component {
                     updateRecommendedThemes(this.state, themes);
                 }
             })
-            .catch(() => {});
+            .catch(() => { });
     }
 
     async fetchStyleRecommendation() {
@@ -1005,7 +1005,7 @@ export class ApplyConfiguratorScreen extends Component {
                     window.sessionStorage.setItem("website.first_configurator_edit", "1");
                     const defaultLanguagePath = encodeURIComponent("/website/lang/default?r=/");
                     redirect(
-                        `/odoo/action-website.website_preview?website_id=${encodeURIComponent(
+                        `/weth/action-website.website_preview?website_id=${encodeURIComponent(
                             resp.website_id
                         )}&path=${defaultLanguagePath}&enable_editor=1`
                     );
@@ -1552,9 +1552,8 @@ export class Configurator extends Component {
     }
 
     get pathname() {
-        return `/website/configurator${
-            this.state.currentStep ? `/${encodeURIComponent(this.state.currentStep)}` : ""
-        }`;
+        return `/website/configurator${this.state.currentStep ? `/${encodeURIComponent(this.state.currentStep)}` : ""
+            }`;
     }
 
     get storageItemName() {
@@ -1715,7 +1714,7 @@ export class Configurator extends Component {
         this.website.redirectOutFromLoader({
             redirectAction: () => {
                 redirect(
-                    `/odoo/action-website.website_preview?website_id=${encodeURIComponent(
+                    `/weth/action-website.website_preview?website_id=${encodeURIComponent(
                         this.websiteId
                     )}&path=${defaultLanguagePath}&enable_editor=1`
                 );

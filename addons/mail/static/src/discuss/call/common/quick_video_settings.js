@@ -1,4 +1,4 @@
-import { Component } from "@odoo/owl";
+import { Component } from "@weth/owl";
 
 import { CallSettingsDialog } from "@mail/discuss/call/common/call_settings";
 import { DeviceSelect } from "@mail/discuss/call/common/device_select";

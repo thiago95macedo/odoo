@@ -1,4 +1,4 @@
-import { Component, signal, t, useProps, xml } from "@odoo/owl";
+import { Component, signal, t, useProps, xml } from "@weth/owl";
 import { browser } from "@web/core/browser/browser";
 
 export class DocCopyablePre extends Component {

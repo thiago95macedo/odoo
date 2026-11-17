@@ -2,9 +2,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime, timedelta
-from odoo.addons.stock.tests.common import TestStockCommon
-from odoo.tests import tagged, Form
-from odoo.exceptions import UserError
+from weth.addons.stock.tests.common import TestStockCommon
+from weth.tests import tagged, Form
+from weth.exceptions import UserError
 
 
 class TestStockLot(TestStockCommon):

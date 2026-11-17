@@ -1,5 +1,5 @@
 export default class DeviceIdentifierSequence {
-    static uniqueDeviceIdentifierKey = `${odoo.access_token}-unique_device_identifier`;
+    static uniqueDeviceIdentifierKey = `${weth.access_token}-unique_device_identifier`;
 
     constructor({ orm }) {
         this.orm = orm;
@@ -34,7 +34,7 @@ export default class DeviceIdentifierSequence {
 
         if (!deviceIdentifier) {
             const data = await this.orm.call("pos.config", "register_new_device_identifier", [
-                odoo.pos_config_id,
+                weth.pos_config_id,
             ]);
 
             this.device_identifier = data.device_identifier;
@@ -123,7 +123,7 @@ export default class DeviceIdentifierSequence {
             return;
         }
         // pos_reference is `${year2Digits}${device}-${config}-${number}`
-        const prefix = `${data.device_identifier}-${odoo.pos_config_id}-`;
+        const prefix = `${data.device_identifier}-${weth.pos_config_id}-`;
         const used = new Set(
             orders
                 .filter((o) => o.pos_reference?.slice(2).startsWith(prefix))

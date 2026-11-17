@@ -1,9 +1,9 @@
-import odoo.tests
+import weth.tests
 from ..tools import create_image_attachment
 
 
-@odoo.tests.common.tagged('post_install', '-at_install')
-class TestWebsiteAttachment(odoo.tests.HttpCase):
+@weth.tests.common.tagged('post_install', '-at_install')
+class TestWebsiteAttachment(weth.tests.HttpCase):
 
     def test_01_type_url_301_image(self):
         IMD = self.env['ir.model.data']

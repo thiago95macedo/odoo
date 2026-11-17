@@ -1,4 +1,4 @@
-import { EventBus, Plugin, useListener } from "@odoo/owl";
+import { EventBus, Plugin, useListener } from "@weth/owl";
 
 export class TimeOffPlugin extends Plugin {
     bus = new EventBus();

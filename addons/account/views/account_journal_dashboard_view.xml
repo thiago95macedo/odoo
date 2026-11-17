@@ -1,4 +1,4 @@
-<odoo>
+<weth>
     <record id="account_journal_dashboard_kanban_view" model="ir.ui.view">
         <field name="name">account.journal.dashboard.kanban</field>
         <field name="model">account.journal</field>
@@ -414,4 +414,4 @@
         </field>
     </record>
 
-</odoo>
+</weth>

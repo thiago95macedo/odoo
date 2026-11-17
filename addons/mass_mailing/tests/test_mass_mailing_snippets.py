@@ -1,5 +1,5 @@
-from odoo.exceptions import AccessError
-from odoo.tests import users, tagged
+from weth.exceptions import AccessError
+from weth.tests import users, tagged
 from .common import MassMailCommon
 
 

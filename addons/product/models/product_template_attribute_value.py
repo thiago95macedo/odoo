@@ -3,9 +3,9 @@
 from itertools import islice
 from random import randint
 
-from odoo import api, fields, models, tools, _
-from odoo.exceptions import UserError, ValidationError
-from odoo.fields import Command
+from weth import api, fields, models, tools, _
+from weth.exceptions import UserError, ValidationError
+from weth.fields import Command
 
 
 class ProductTemplateAttributeValue(models.Model):
@@ -149,7 +149,7 @@ class ProductTemplateAttributeValue(models.Model):
         ptav_to_archive = self.env['product.template.attribute.value']
         for ptav in self:
             try:
-                with self.env.cr.savepoint(), tools.mute_logger('odoo.sql_db'):
+                with self.env.cr.savepoint(), tools.mute_logger('weth.sql_db'):
                     super(ProductTemplateAttributeValue, ptav).unlink()
             except Exception:
                 # We catch all kind of exceptions to be sure that the operation

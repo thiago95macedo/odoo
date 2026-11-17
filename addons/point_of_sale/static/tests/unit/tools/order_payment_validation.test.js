@@ -1,4 +1,4 @@
-import { expect, test, tick } from "@odoo/hoot";
+import { expect, test, tick } from "@weth/hoot";
 import OrderPaymentValidation from "@point_of_sale/app/utils/order_payment_validation";
 import { getFilledOrder, setupPosEnv } from "../utils";
 import { definePosModels } from "../data/generate_model_definitions";

@@ -1,4 +1,4 @@
-import { EventBus, Plugin, signal, useListener, usePlugin } from "@odoo/owl";
+import { EventBus, Plugin, signal, useListener, usePlugin } from "@weth/owl";
 import { browser } from "@web/core/browser/browser";
 import { registry } from "@web/core/registry";
 import { services } from "@web/core/services";
@@ -11,7 +11,7 @@ export class PresencePlugin extends Plugin {
     /** @private */
     lastPresenceTime = signal(
         browser.localStorage.getItem(`${LOCAL_STORAGE_PREFIX}.lastPresence`) ||
-            luxon.DateTime.now().ts
+        luxon.DateTime.now().ts
     );
     /** @private */
     env = useEnv();

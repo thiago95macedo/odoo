@@ -1,10 +1,10 @@
-from odoo import api, fields, models, _
-from odoo.exceptions import UserError, ValidationError
-from odoo.fields import Command, Domain
+from weth import api, fields, models, _
+from weth.exceptions import UserError, ValidationError
+from weth.fields import Command, Domain
 
 from xmlrpc.client import MAXINT
 
-from odoo.tools import SQL
+from weth.tools import SQL
 
 
 class AccountBankStatementLine(models.Model):

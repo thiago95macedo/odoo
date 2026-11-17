@@ -2,7 +2,7 @@
 
 from lxml import html as lxml_html
 
-from odoo import tests
+from weth import tests
 
 
 @tests.tagged("post_install", "-at_install")

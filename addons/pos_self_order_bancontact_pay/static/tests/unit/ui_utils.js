@@ -1,6 +1,6 @@
-import { animationFrame, waitFor } from "@odoo/hoot-dom";
-import { advanceTime } from "@odoo/hoot-mock";
-import { expect } from "@odoo/hoot";
+import { animationFrame, waitFor } from "@weth/hoot-dom";
+import { advanceTime } from "@weth/hoot-mock";
+import { expect } from "@weth/hoot";
 import { MockServer, mountWithCleanup, onRpc, contains } from "@web/../tests/web_test_helpers";
 import { registry } from "@web/core/registry";
 import { PaymentPage } from "@pos_self_order/app/pages/payment_page/payment_page";

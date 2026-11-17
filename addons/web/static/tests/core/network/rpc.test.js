@@ -1,6 +1,6 @@
-import { after, describe, expect, test } from "@odoo/hoot";
-import { on } from "@odoo/hoot-dom";
-import { mockFetch } from "@odoo/hoot-mock";
+import { after, describe, expect, test } from "@weth/hoot";
+import { on } from "@weth/hoot-dom";
+import { mockFetch } from "@weth/hoot-mock";
 
 import {
     ConnectionAbortedError,
@@ -119,7 +119,7 @@ test("check trigger RPC:REQUEST and RPC:RESPONSE for a rpc with an error", async
 });
 
 test("check connection aborted", async () => {
-    mockFetch(() => new Promise(() => {}));
+    mockFetch(() => new Promise(() => { }));
     onRpcRequest(() => expect.step("RPC:REQUEST"));
     onRpcResponse(() => expect.step("RPC:RESPONSE"));
 

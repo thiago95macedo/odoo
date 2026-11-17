@@ -1,4 +1,4 @@
-import { expect, test } from "@odoo/hoot";
+import { expect, test } from "@weth/hoot";
 import {
     dblclick,
     pointerDown,
@@ -7,8 +7,8 @@ import {
     queryAllTexts,
     queryFirst,
     select,
-} from "@odoo/hoot-dom";
-import { animationFrame, runAllTimers } from "@odoo/hoot-mock";
+} from "@weth/hoot-dom";
+import { animationFrame, runAllTimers } from "@weth/hoot-mock";
 import {
     contains,
     defineModels,
@@ -505,7 +505,7 @@ test("Export dialog: interacting with available fields", async () => {
     expect(queryAllTexts(".o_right_field_panel .o_export_field")).toEqual(["Activities", "Foo"]);
     await contains(
         firstField +
-            ".o_export_tree_item[data-field_id='activity_ids/partner_ids/name'] .o_add_field"
+        ".o_export_tree_item[data-field_id='activity_ids/partner_ids/name'] .o_add_field"
     ).click();
     expect(queryAllTexts(".o_right_field_panel .o_export_field")).toEqual([
         "Activities",

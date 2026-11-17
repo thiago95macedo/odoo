@@ -7,17 +7,17 @@ from urllib.parse import urlencode, urlparse
 
 from psycopg2 import sql
 
-from odoo import Command, api, fields, models
-from odoo.exceptions import UserError, ValidationError
-from odoo.fields import Domain
-from odoo.http import request
-from odoo.modules.db import FunctionStatus
-from odoo.tools import float_round, is_html_empty, lazy
-from odoo.tools.sql import SQL
-from odoo.tools.translate import adapt_translated_field_value, html_translate
+from weth import Command, api, fields, models
+from weth.exceptions import UserError, ValidationError
+from weth.fields import Domain
+from weth.http import request
+from weth.modules.db import FunctionStatus
+from weth.tools import float_round, is_html_empty, lazy
+from weth.tools.sql import SQL
+from weth.tools.translate import adapt_translated_field_value, html_translate
 
-from odoo.addons.website.tools import text_from_html
-from odoo.addons.website_sale.const import SHOP_PATH
+from weth.addons.website.tools import text_from_html
+from weth.addons.website_sale.const import SHOP_PATH
 
 # A delimiter that users aren't likely to search for in product codes.
 RARE_DELIMITER = "\u241e"

@@ -6,7 +6,7 @@ import { handleCheckIdentity } from "@portal/interactions/portal_security";
 import { user } from "@web/core/user";
 import { _t } from "@web/core/l10n/translation";
 
-import { markup } from "@odoo/owl";
+import { markup } from "@weth/owl";
 
 /**
  * Replaces specific <field> elements by normal HTML, strip out the rest entirely
@@ -162,8 +162,8 @@ export class TOTPEnable extends Interaction {
                 try {
                     await handleCheckIdentity(
                         this.waitFor(this.services.orm.call(model, "enable",
-                            [ record.id ],
-                            { 'context': {'code': inputEl.value} },
+                            [record.id],
+                            { 'context': { 'code': inputEl.value } },
                         )),
                         this.services.orm,
                         this.services.dialog

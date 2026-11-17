@@ -6,7 +6,7 @@ import * as tourUtils from "@website_sale/js/tours/tour_utils";
  * Patch tracking to avoid third party calls during tests.
  */
 function patchTracking() {
-    const { Tracking } = odoo.loader.modules.get('@website_sale/interactions/tracking');
+    const { Tracking } = weth.loader.modules.get('@website_sale/interactions/tracking');
     patch(Tracking.prototype, {
         // Don't call super to avoid third party calls (GA).
         setup() {
@@ -68,10 +68,10 @@ function patchTracking() {
     });
 }
 
-if (odoo.loader.modules.has('@website_sale/interactions/tracking')) {
+if (weth.loader.modules.has('@website_sale/interactions/tracking')) {
     patchTracking();
 } else {
-    odoo.loader.bus.addEventListener('module-started', (e) => {
+    weth.loader.bus.addEventListener('module-started', (e) => {
         if (e.detail.moduleName === '@website_sale/interactions/tracking') patchTracking();
     });
 }

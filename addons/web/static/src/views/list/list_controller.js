@@ -7,7 +7,7 @@ import {
     signal,
     t,
     useProps,
-} from "@odoo/owl";
+} from "@weth/owl";
 import { DropdownItem } from "@web/core/dropdown/dropdown_item";
 import { _t } from "@web/core/l10n/translation";
 import { OfflinePlugin } from "@web/core/offline/offline_plugin";
@@ -63,8 +63,8 @@ export class ListController extends Component {
         Renderer: t.function(),
         buttonTemplate: t.string(),
         archInfo: t.object(),
-        createRecord: t.function().optional(() => () => {}),
-        selectRecord: t.function().optional(() => () => {}),
+        createRecord: t.function().optional(() => () => { }),
+        selectRecord: t.function().optional(() => () => { }),
     });
 
     rootRef = signal.ref();
@@ -110,8 +110,8 @@ export class ListController extends Component {
             "active" in this.props.fields
                 ? !this.props.fields.active.readonly
                 : "x_active" in this.props.fields
-                ? !this.props.fields.x_active.readonly
-                : false;
+                    ? !this.props.fields.x_active.readonly
+                    : false;
         useSubEnv({ model: this.model }); // do this in useModelWithSampleData?
         useViewButtons(this.rootRef, {
             beforeExecuteAction: this.beforeExecuteActionButton.bind(this),
@@ -337,7 +337,7 @@ export class ListController extends Component {
      * is invalid or if a server error is thrown.
      * @param {Record} record
      */
-    async onRecordSaved(record) {}
+    async onRecordSaved(record) { }
 
     async onSelectionChanged() {
         if (this.props.onSelectionChanged) {
@@ -352,7 +352,7 @@ export class ListController extends Component {
      * If it returns false, it will prevent the save.
      * @param {Record} record
      */
-    async onWillSaveRecord(record) {}
+    async onWillSaveRecord(record) { }
 
     async createRecord({ group } = {}) {
         if (!this.model.isReady() && !this.model.config.groupBy.length && this.editable) {
@@ -555,7 +555,7 @@ export class ListController extends Component {
         }
     }
 
-    async afterExecuteActionButton(clickParams) {}
+    async afterExecuteActionButton(clickParams) { }
 
     onAskMultiSaveConfirmation(changes, validSelectedRecords) {
         if (this.model.root.selection.length > 1 && validSelectedRecords.length > 0) {

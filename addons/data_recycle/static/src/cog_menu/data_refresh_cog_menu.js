@@ -1,6 +1,6 @@
 import { DropdownItem } from "@web/core/dropdown/dropdown_item";
 import { registry } from "@web/core/registry";
-import { Component } from "@odoo/owl";
+import { Component } from "@weth/owl";
 import { useService } from "@web/core/utils/hooks";
 
 const cogMenuRegistry = registry.category("cogMenu");

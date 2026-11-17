@@ -3,8 +3,8 @@
 
 from datetime import datetime
 
-from odoo.addons.crm.tests.common import TestCrmCommon
-from odoo.addons.website.tests.test_website_visitor import MockVisitor
+from weth.addons.crm.tests.common import TestCrmCommon
+from weth.addons.website.tests.test_website_visitor import MockVisitor
 
 
 class TestCrmFullCommon(TestCrmCommon, MockVisitor):

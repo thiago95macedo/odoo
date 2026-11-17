@@ -1,4 +1,4 @@
-import { useProps, proxy, t } from "@odoo/owl";
+import { useProps, proxy, t } from "@weth/owl";
 import { useCommand } from "@web/core/commands/command_hook";
 import { _t } from "@web/core/l10n/translation";
 import { registry } from "@web/core/registry";

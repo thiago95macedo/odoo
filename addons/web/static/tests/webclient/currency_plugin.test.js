@@ -1,5 +1,5 @@
-import { expect, test } from "@odoo/hoot";
-import { animationFrame } from "@odoo/hoot-dom";
+import { expect, test } from "@weth/hoot";
+import { animationFrame } from "@weth/hoot-dom";
 import {
     defineModels,
     getService,
@@ -19,7 +19,7 @@ class Currency extends models.Model {
         };
     }
 }
-class Notcurrency extends models.Model {}
+class Notcurrency extends models.Model { }
 
 defineModels([Currency, Notcurrency]);
 

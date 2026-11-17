@@ -1,7 +1,7 @@
-from odoo import api, fields, models, _
-from odoo.fields import Domain
-from odoo.tools import SQL
-from odoo.exceptions import UserError
+from weth import api, fields, models, _
+from weth.fields import Domain
+from weth.tools import SQL
+from weth.exceptions import UserError
 
 
 class AccountAccountTag(models.Model):

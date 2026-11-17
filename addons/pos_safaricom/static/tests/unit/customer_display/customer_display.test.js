@@ -1,5 +1,5 @@
-import { expect, test } from "@odoo/hoot";
-import { queryOne, waitFor } from "@odoo/hoot-dom";
+import { expect, test } from "@weth/hoot";
+import { queryOne, waitFor } from "@weth/hoot-dom";
 import { registry } from "@web/core/registry";
 import { definePosModels } from "@point_of_sale/../tests/unit/data/generate_model_definitions";
 import { setupCustomerDisplay } from "@point_of_sale/../tests/unit/customer_display/utils";

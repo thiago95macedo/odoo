@@ -5,10 +5,10 @@ import requests
 import json
 import logging
 
-from odoo import fields
-from odoo.addons.google_calendar.utils.google_calendar import GoogleCalendar
-from odoo.addons.google_calendar.utils.google_event import GoogleEvent
-from odoo.addons.google_account.models.google_service import TIMEOUT
+from weth import fields
+from weth.addons.google_calendar.utils.google_calendar import GoogleCalendar
+from weth.addons.google_calendar.utils.google_event import GoogleEvent
+from weth.addons.google_account.models.google_service import TIMEOUT
 
 
 _logger = logging.getLogger(__name__)

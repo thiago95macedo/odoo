@@ -1,4 +1,4 @@
-import { Component, onPatched, useProps, signal, t } from "@odoo/owl";
+import { Component, onPatched, useProps, signal, t } from "@weth/owl";
 
 export const ACCORDION = Symbol("Accordion");
 export class AccordionItem extends Component {
@@ -11,7 +11,7 @@ export class AccordionItem extends Component {
         description: t.string(),
         selected: t.boolean().optional(false),
         class: t.string().optional(""),
-        onWillToggle: t.function().optional(() => () => {}),
+        onWillToggle: t.function().optional(() => () => { }),
         open: t.boolean().optional(),
     });
 

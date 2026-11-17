@@ -1,4 +1,4 @@
-from odoo.addons.pos_restaurant.tests.test_frontend import TestFrontendCommon
+from weth.addons.pos_restaurant.tests.test_frontend import TestFrontendCommon
 
 
 class TestFrontend(TestFrontendCommon):

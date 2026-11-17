@@ -3,7 +3,7 @@ import { user } from "@web/core/user";
 import { useBus, useService } from "@web/core/utils/hooks";
 import { Many2XAutocomplete } from "@web/views/fields/relational_utils";
 import { DateTimeInput } from '@web/core/datetime/datetime_input';
-import { Component, onWillStart, markup, xml, proxy, t, useProps } from "@odoo/owl";
+import { Component, onWillStart, markup, xml, proxy, t, useProps } from "@weth/owl";
 const { DateTime } = luxon;
 
 export class LunchCurrency extends Component {
@@ -42,7 +42,7 @@ export class LunchOrderLine extends Component {
         return this.props.line;
     }
 
-    get canAdd(){
+    get canAdd() {
         let price = this.line.product[3]
         this.line.toppings.forEach((line) => price += line[3])
         const unpaid = parseFloat(this.props.infos.unpaid_subtotal)
@@ -54,7 +54,7 @@ export class LunchOrderLine extends Component {
     }
 
     get badgeClass() {
-        const mapping = {'new': 'secondary', 'confirmed': 'success', 'sent': 'info', 'ordered': 'primary'};
+        const mapping = { 'new': 'secondary', 'confirmed': 'success', 'sent': 'info', 'ordered': 'primary' };
         return mapping[this.line.raw_state];
     }
 

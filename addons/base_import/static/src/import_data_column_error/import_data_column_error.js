@@ -1,4 +1,4 @@
-import { Component, proxy, t, useProps } from "@odoo/owl";
+import { Component, proxy, t, useProps } from "@weth/owl";
 import { useService } from "@web/core/utils/hooks";
 
 export class ImportDataColumnError extends Component {

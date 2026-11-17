@@ -7,8 +7,8 @@ from collections import OrderedDict
 from werkzeug.urls import url_quote
 from markupsafe import Markup
 
-from odoo import api, models, fields
-from odoo.tools import html_escape as escape
+from weth import api, models, fields
+from weth.tools import html_escape as escape
 
 
 class IrQwebFieldImage(models.AbstractModel):

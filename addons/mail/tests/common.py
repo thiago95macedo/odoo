@@ -17,23 +17,23 @@ from random import randint
 from unittest.mock import patch
 from urllib.parse import urlparse, urlencode, parse_qsl
 
-from odoo import tools
-from odoo.addons.base.models.ir_mail_server import IrMail_Server
-from odoo.addons.base.models.ir_mail_server import MailDeliveryException
-from odoo.addons.base.tests.common import MockSmtplibCase
-from odoo.addons.bus.models.bus import BusBus
-from odoo.addons.bus.tests.common import BusCase, BusResult
-from odoo.addons.mail.models import mail_thread
-from odoo.addons.mail.models.mail_mail import MailMail
-from odoo.addons.mail.models.mail_message import MailMessage
-from odoo.addons.mail.models.mail_notification import MailNotification
-from odoo.addons.mail.models.res_users import ResUsers
-from odoo.addons.mail.tools.discuss import Store
-from odoo.tests import common, RecordCapturer, new_test_user
-from odoo.tools import LazyTranslate, mute_logger, mail as mail_lib
-from odoo.tools.mail import email_normalize, email_split_and_format_normalize, formataddr
-from odoo.tools.misc import formatLang, format_amount
-from odoo.tools.translate import code_translations
+from weth import tools
+from weth.addons.base.models.ir_mail_server import IrMail_Server
+from weth.addons.base.models.ir_mail_server import MailDeliveryException
+from weth.addons.base.tests.common import MockSmtplibCase
+from weth.addons.bus.models.bus import BusBus
+from weth.addons.bus.tests.common import BusCase, BusResult
+from weth.addons.mail.models import mail_thread
+from weth.addons.mail.models.mail_mail import MailMail
+from weth.addons.mail.models.mail_message import MailMessage
+from weth.addons.mail.models.mail_notification import MailNotification
+from weth.addons.mail.models.res_users import ResUsers
+from weth.addons.mail.tools.discuss import Store
+from weth.tests import common, RecordCapturer, new_test_user
+from weth.tools import LazyTranslate, mute_logger, mail as mail_lib
+from weth.tools.mail import email_normalize, email_split_and_format_normalize, formataddr
+from weth.tools.misc import formatLang, format_amount
+from weth.tools.translate import code_translations
 
 _logger = logging.getLogger(__name__)
 _test_lt = LazyTranslate(__name__)
@@ -69,7 +69,7 @@ class MockEmail(common.BaseCase, MockSmtplibCase):
     @contextmanager
     def mock_push_to_end_point(self, max_direct_push=5):
         with patch.object(mail_thread, 'push_to_end_point') as patched_push, \
-             patch('odoo.addons.mail.models.mail_thread.MAX_DIRECT_PUSH', max_direct_push):
+             patch('weth.addons.mail.models.mail_thread.MAX_DIRECT_PUSH', max_direct_push):
             self.push_to_end_point_mocked = patched_push
             yield
 
@@ -2117,7 +2117,7 @@ class MailCommon(MailCase):
         """
         # activate translations
         cls.env['res.lang']._activate_lang(lang_code)
-        with mute_logger("odoo.addons.base.models.ir_module", "odoo.tools.translate"):
+        with mute_logger("weth.addons.base.models.ir_module", "weth.tools.translate"):
             cls.env.ref('base.module_base')._update_translations([lang_code])
             cls.env.ref('base.module_mail')._update_translations([lang_code])
             cls.env.ref('base.module_test_mail')._update_translations([lang_code])

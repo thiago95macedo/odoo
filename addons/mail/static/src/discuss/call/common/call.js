@@ -27,7 +27,7 @@ import {
     t,
     useEffect,
     useProps,
-} from "@odoo/owl";
+} from "@weth/owl";
 
 import { isMobileOS } from "@web/core/browser/feature_detection";
 import { useHotkey } from "@web/core/hotkeys/hotkey_hook";
@@ -431,8 +431,8 @@ export class Call extends Component {
     hasSelfInset(session) {
         return Boolean(
             this.profile.allowsSelfInset &&
-                this.rtc.selfSession &&
-                session.notEq(this.rtc.selfSession)
+            this.rtc.selfSession &&
+            session.notEq(this.rtc.selfSession)
         );
     }
 
@@ -490,8 +490,8 @@ export class Call extends Component {
     get hasCallNotifications() {
         return Boolean(
             (!this.props.compact || this.rtc.isFullscreen) &&
-                this.isActiveCall &&
-                this.rtc.notifications.size
+            this.isActiveCall &&
+            this.rtc.notifications.size
         );
     }
 

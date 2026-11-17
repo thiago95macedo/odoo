@@ -1,6 +1,6 @@
-from odoo.tests import tagged
+from weth.tests import tagged
 
-from odoo.addons.hr_recruitment_survey.tests.recruitment_survey_common import (
+from weth.addons.hr_recruitment_survey.tests.recruitment_survey_common import (
     RecruitmentSurveyCommon,
 )
 

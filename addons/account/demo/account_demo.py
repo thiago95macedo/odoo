@@ -3,11 +3,11 @@ import time
 from datetime import timedelta
 from dateutil.relativedelta import relativedelta
 
-from odoo import api, fields, models, Command
-from odoo.tools.misc import formatLang
-from odoo.exceptions import UserError, ValidationError
-from odoo.addons.account.models.chart_template import template
-from odoo.tools import BinaryBytes, file_open
+from weth import api, fields, models, Command
+from weth.tools.misc import formatLang
+from weth.exceptions import UserError, ValidationError
+from weth.addons.account.models.chart_template import template
+from weth.tools import BinaryBytes, file_open
 
 
 _logger = logging.getLogger(__name__)

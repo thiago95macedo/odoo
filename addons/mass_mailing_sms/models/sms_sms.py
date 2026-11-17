@@ -3,8 +3,8 @@
 
 import re
 
-from odoo import fields, models
-from odoo.tools.mail import text_url_replace, TEXT_URL_REGEX
+from weth import fields, models
+from weth.tools.mail import text_url_replace, TEXT_URL_REGEX
 
 
 class SmsSms(models.Model):

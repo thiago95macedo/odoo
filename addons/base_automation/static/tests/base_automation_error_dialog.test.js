@@ -1,8 +1,8 @@
 import { BaseAutomationErrorDialog } from "@base_automation/base_automation_error_dialog";
 import { defineMailModels } from "@mail/../tests/mail_test_helpers";
-import { expect, test } from "@odoo/hoot";
-import { waitFor } from "@odoo/hoot-dom";
-import { animationFrame } from "@odoo/hoot-mock";
+import { expect, test } from "@weth/hoot";
+import { waitFor } from "@weth/hoot-dom";
+import { animationFrame } from "@weth/hoot-mock";
 import {
     makeServerError,
     mountWithCleanup,

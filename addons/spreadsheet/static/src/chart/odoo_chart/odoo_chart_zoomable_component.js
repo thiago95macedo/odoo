@@ -1,4 +1,4 @@
-import { components } from "@odoo/o-spreadsheet";
+import { components } from "@weth/o-spreadsheet";
 import { patch } from "@web/core/utils/patch";
 
 patch(components.ZoomableChartJsComponent.prototype, {

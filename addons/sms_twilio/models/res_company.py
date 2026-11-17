@@ -1,9 +1,9 @@
 import re
 
-from odoo import fields, models, _
-from odoo.exceptions import UserError
+from weth import fields, models, _
+from weth.exceptions import UserError
 
-from odoo.addons.sms_twilio.tools.sms_api import SmsApiTwilio
+from weth.addons.sms_twilio.tools.sms_api import SmsApiTwilio
 
 
 class ResCompany(models.Model):

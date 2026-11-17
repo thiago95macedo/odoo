@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import Command
-from odoo.exceptions import UserError, ValidationError
-from odoo.tests.common import tagged, TransactionCase
+from weth import Command
+from weth.exceptions import UserError, ValidationError
+from weth.tests.common import tagged, TransactionCase
 
 
 class TestRobustness(TransactionCase):

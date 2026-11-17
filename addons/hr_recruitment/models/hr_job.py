@@ -3,9 +3,9 @@
 import ast
 from collections import defaultdict
 
-from odoo import SUPERUSER_ID, Command, _, api, fields, models
-from odoo.tools import SQL
-from odoo.tools.convert import convert_file
+from weth import SUPERUSER_ID, Command, _, api, fields, models
+from weth.tools import SQL
+from weth.tools.convert import convert_file
 
 
 class HrJob(models.Model):

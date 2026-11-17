@@ -3,11 +3,11 @@
 
 from freezegun import freeze_time
 
-from odoo import Command
-from odoo.tests import tagged
+from weth import Command
+from weth.tests import tagged
 
-from odoo.addons.account.tests.test_taxes_downpayment import TestTaxesDownPayment
-from odoo.addons.sale.tests.common import TestTaxCommonSale
+from weth.addons.account.tests.test_taxes_downpayment import TestTaxesDownPayment
+from weth.addons.sale.tests.common import TestTaxCommonSale
 
 
 @tagged("post_install", "-at_install")

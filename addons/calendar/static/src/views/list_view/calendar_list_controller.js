@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @weth-module **/
 
 import { ListController } from "@web/views/list/list_controller";
 import { useArchiveOrUnlinkCalendarEvents } from "@calendar/views/hooks";

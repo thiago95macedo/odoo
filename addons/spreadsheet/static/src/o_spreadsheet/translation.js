@@ -1,4 +1,4 @@
-import * as spreadsheet from "@odoo/o-spreadsheet";
+import * as spreadsheet from "@weth/o-spreadsheet";
 import { _t, appTranslateFn } from "@web/core/l10n/translation";
 import { OdooEvaluationPlugin } from "@spreadsheet/plugins";
 

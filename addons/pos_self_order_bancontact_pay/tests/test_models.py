@@ -1,8 +1,8 @@
-from odoo import Command
-from odoo.exceptions import ValidationError
-from odoo.tests.common import tagged
+from weth import Command
+from weth.exceptions import ValidationError
+from weth.tests.common import tagged
 
-from odoo.addons.pos_bancontact_pay.tests.common import TestBancontactPay
+from weth.addons.pos_bancontact_pay.tests.common import TestBancontactPay
 
 
 @tagged("post_install", "-at_install")

@@ -1,4 +1,4 @@
-import { Component, onWillDestroy, proxy, signal, t, useProps } from "@odoo/owl";
+import { Component, onWillDestroy, proxy, signal, t, useProps } from "@weth/owl";
 import { normalizedMatch } from "@web/core/l10n/utils";
 import { useService } from "@web/core/utils/hooks";
 import { isVisible } from "@web/core/utils/ui";

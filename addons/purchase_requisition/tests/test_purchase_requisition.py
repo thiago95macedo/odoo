@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.purchase_requisition.tests.common import TestPurchaseRequisitionCommon
-from odoo import Command
-from odoo.tests import Form
+from weth.addons.purchase_requisition.tests.common import TestPurchaseRequisitionCommon
+from weth import Command
+from weth.tests import Form
 
-from odoo.tests.common import tagged
+from weth.tests.common import tagged
 
 
 @tagged('post_install', '-at_install')

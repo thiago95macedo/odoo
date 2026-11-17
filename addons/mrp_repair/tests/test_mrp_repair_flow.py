@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.fields import Command
-from odoo.tests import tagged
-from odoo.addons.mrp.tests.common import TestMrpCommon
+from weth.fields import Command
+from weth.tests import tagged
+from weth.addons.mrp.tests.common import TestMrpCommon
 
 
 @tagged('post_install', '-at_install')

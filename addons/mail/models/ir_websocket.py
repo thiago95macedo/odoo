@@ -4,9 +4,9 @@ import logging
 import re
 from collections import defaultdict
 
-from odoo import models
-from odoo.addons.mail.tools.discuss import add_guest_to_context
-from odoo.tools.misc import verify_limited_field_access_token
+from weth import models
+from weth.addons.mail.tools.discuss import add_guest_to_context
+from weth.tools.misc import verify_limited_field_access_token
 
 
 PRESENCE_CHANNEL_PREFIX = "odoo-presence-"

@@ -1,6 +1,6 @@
-/** @odoo-module */
+/** @weth-module */
 
-import { registries } from "@odoo/o-spreadsheet";
+import { registries } from "@weth/o-spreadsheet";
 
 const { urlRegistry } = registries;
 const NEUTRALIZED_LINK = "neutralized:link";

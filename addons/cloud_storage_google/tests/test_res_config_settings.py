@@ -2,8 +2,8 @@
 
 import json
 
-from odoo.tests.common import TransactionCase
-from odoo.tools.binary import BinaryBytes
+from weth.tests.common import TransactionCase
+from weth.tools.binary import BinaryBytes
 
 
 class TestResConfigSettings(TransactionCase):

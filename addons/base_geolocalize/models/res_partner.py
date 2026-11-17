@@ -1,5 +1,5 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
-from odoo import api, fields, models, modules, _
+from weth import api, fields, models, modules, _
 
 
 class ResPartner(models.Model):

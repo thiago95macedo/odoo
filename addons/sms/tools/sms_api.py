@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.exceptions import UserError
-from odoo.tools.translate import _, LazyTranslate
+from weth.exceptions import UserError
+from weth.tools.translate import _, LazyTranslate
 
 _lt = LazyTranslate(__name__)
 

@@ -1,4 +1,4 @@
-import { beforeEach, expect, test } from "@odoo/hoot";
+import { beforeEach, expect, test } from "@weth/hoot";
 import { BreakDurationDialog } from "@hr_attendance/components/break_duration_dialog/break_duration_dialog";
 import { KioskGreetings } from "@hr_attendance/components/greetings/greetings";
 import { defineMailModels } from "@mail/../tests/mail_test_helpers";
@@ -146,7 +146,7 @@ test("check-out greeting hides the extra hours without overtime", async () => {
         total_overtime: 0,
     };
     await mountWithCleanup(KioskGreetings, {
-        props: { employeeData, kioskReturn: () => {} },
+        props: { employeeData, kioskReturn: () => { } },
     });
     expect(".o_hr_attendance_kiosk_card").not.toHaveText(/extra hours/i);
 });
@@ -162,7 +162,7 @@ test("check-out greeting shows the extra hours of the day", async () => {
         total_overtime: 0,
     };
     await mountWithCleanup(KioskGreetings, {
-        props: { employeeData, kioskReturn: () => {} },
+        props: { employeeData, kioskReturn: () => { } },
     });
     expect(".o_hr_attendance_kiosk_card").toHaveText(/extra hours/i);
     expect(".o_hr_attendance_kiosk_card").not.toHaveText(/Total/);

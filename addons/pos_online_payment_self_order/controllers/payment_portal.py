@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import http
-from odoo.http import request
-from odoo.addons.pos_online_payment.controllers.payment_portal import PaymentPortal
+from weth import http
+from weth.http import request
+from weth.addons.pos_online_payment.controllers.payment_portal import PaymentPortal
 
 class PaymentPortalSelfOrder(PaymentPortal):
     @http.route()

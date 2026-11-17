@@ -3,12 +3,12 @@
 from datetime import timedelta
 from freezegun.api import freeze_time
 
-from odoo import fields
-from odoo.exceptions import UserError
-from odoo.fields import Command
-from odoo.tests import Form, tagged
+from weth import fields
+from weth.exceptions import UserError
+from weth.fields import Command
+from weth.tests import Form, tagged
 
-from odoo.addons.sale.tests.common import TestSaleCommon
+from weth.addons.sale.tests.common import TestSaleCommon
 
 
 @tagged('post_install', '-at_install')

@@ -1,6 +1,6 @@
-import { describe, expect, test } from "@odoo/hoot";
-import { click } from "@odoo/hoot-dom";
-import { advanceTime } from "@odoo/hoot-mock";
+import { describe, expect, test } from "@weth/hoot";
+import { click } from "@weth/hoot-dom";
+import { advanceTime } from "@weth/hoot-mock";
 import { location } from "@web/core/browser/browser";
 import { startInteractions, setupInteractionWhiteList } from "@web/../tests/public/helpers";
 

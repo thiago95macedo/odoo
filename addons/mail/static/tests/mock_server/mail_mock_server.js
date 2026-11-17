@@ -1,6 +1,6 @@
 import { Store } from "@mail/../tests/mock_server/store";
 import { storeHandlerRegistry } from "@mail/../tests/mock_server/store_handler";
-import { markup } from "@odoo/owl";
+import { markup } from "@weth/owl";
 import {
     authenticate,
     logout,
@@ -72,8 +72,8 @@ export const parseRequestParams = async (request) => {
     return response.params;
 };
 
-const onRpcBeforeGlobal = { cb: (route, args) => {} };
-const onRpcAfterGlobal = { cb: (route, args) => {} };
+const onRpcBeforeGlobal = { cb: (route, args) => { } };
+const onRpcAfterGlobal = { cb: (route, args) => { } };
 // using a registry category to not expose for manual import
 // We should use `onRpcBefore`/`onRpcAfter` with 1st parameter being (route, args) callback function
 registry.category("mail.on_rpc_before_global").add(true, onRpcBeforeGlobal);
@@ -449,7 +449,7 @@ async function discuss_channel_notify_typing(request) {
 
 registerRoute("/discuss/channel/ping", channel_ping);
 /** @type {RouteCallback} */
-async function channel_ping(request) {}
+async function channel_ping(request) { }
 
 registerRoute("/discuss/channel/mark_as_read", discuss_channel_mark_as_read);
 /** @type {RouteCallback} */
@@ -652,7 +652,7 @@ async function mail_message_reaction(request) {
 
 registerRoute("/mail/message/translate", translate);
 /** @type {RouteCallback} */
-async function translate(request) {}
+async function translate(request) { }
 
 registerRoute("/mail/message/update_content", mail_message_update_content);
 /** @type {RouteCallback} */
@@ -896,9 +896,9 @@ async function search(request) {
     const currentPartnerId = this.env.user?.partner_id;
     const favoriteChannelIds = currentPartnerId
         ? DiscussChannelMember._filter([
-              ["partner_id", "=", currentPartnerId],
-              ["is_favorite", "=", true],
-          ]).map((m) => m.channel_id)
+            ["partner_id", "=", currentPartnerId],
+            ["is_favorite", "=", true],
+        ]).map((m) => m.channel_id)
         : [];
     const priority_conditions = [
         [["id", "in", favoriteChannelIds], ...base_domain],

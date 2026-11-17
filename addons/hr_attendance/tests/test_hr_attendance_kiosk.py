@@ -3,10 +3,10 @@ import json
 from datetime import timedelta
 from unittest.mock import patch
 
-from odoo import fields
-from odoo.http.requestlib import Request
-from odoo.tests.common import HttpCase, JsonRpcException, tagged
-from odoo.tools import mute_logger
+from weth import fields
+from weth.http.requestlib import Request
+from weth.tests.common import HttpCase, JsonRpcException, tagged
+from weth.tools import mute_logger
 
 
 @tagged('post_install', '-at_install', 'hr_attendance_overtime')
@@ -135,7 +135,7 @@ class TestHrAttendanceKiosk(HttpCase):
             break_duration=0.5,
         ))
         latest_attendance.check_out = now
-        with self.assertRaises(JsonRpcException), mute_logger('odoo.http'):
+        with self.assertRaises(JsonRpcException), mute_logger('weth.http'):
             self._update_break(
                 employee_id=self.employee_A.id,
                 attendance_id=latest_attendance.id,

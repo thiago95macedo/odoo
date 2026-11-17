@@ -1,4 +1,4 @@
-import { proxy } from "@odoo/owl";
+import { proxy } from "@weth/owl";
 const { DateTime } = luxon;
 
 const REFRESH_DELAY = 1000;

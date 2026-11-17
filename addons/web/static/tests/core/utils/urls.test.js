@@ -1,4 +1,4 @@
-import { beforeEach, describe, expect, test } from "@odoo/hoot";
+import { beforeEach, describe, expect, test } from "@weth/hoot";
 import { patchWithCleanup } from "@web/../tests/web_test_helpers";
 
 import { location } from "@web/core/browser/browser";

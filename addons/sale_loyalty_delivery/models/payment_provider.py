@@ -1,6 +1,6 @@
-from odoo import _, models
+from weth import _, models
 
-from odoo.addons.payment import utils as payment_utils
+from weth.addons.payment import utils as payment_utils
 
 
 class PaymentProvider(models.Model):

@@ -8,7 +8,7 @@ import {
     fill,
     queryAll,
     test,
-} from "@odoo/hoot";
+} from "@weth/hoot";
 import {
     defineModels,
     models,

@@ -3,11 +3,11 @@ import mimetypes
 
 from urllib.parse import unquote, urlencode
 
-from odoo import http, modules
-from odoo.exceptions import AccessError
-from odoo.http import request
-from odoo.tools import BinaryBytes, file_open, file_path
-from odoo.tools.image import image_process
+from weth import http, modules
+from weth.exceptions import AccessError
+from weth.http import request
+from weth.tools import BinaryBytes, file_open, file_path
+from weth.tools.image import image_process
 
 
 class WebManifest(http.Controller):
@@ -29,7 +29,7 @@ class WebManifest(http.Controller):
             if data:
                 shortcuts.append({
                     'name': module.display_name,
-                    'url': '/odoo?menu_id=%s' % data.mapped('res_id')[0],
+                    'url': '/weth?menu_id=%s' % data.mapped('res_id')[0],
                     'description': module.summary,
                     'icons': [{
                         'sizes': '100x100',
@@ -43,8 +43,8 @@ class WebManifest(http.Controller):
         web_app_name = request.env['ir.config_parameter'].sudo().get_str('web.web_app_name') or 'WETH'
         manifest = {
             'name': web_app_name,
-            'scope': '/odoo',
-            'start_url': '/odoo',
+            'scope': '/weth',
+            'start_url': '/weth',
             'display': 'standalone',
             'background_color': '#05285b',
             'theme_color': '#05285b',
@@ -59,7 +59,7 @@ class WebManifest(http.Controller):
         manifest['shortcuts'] = self._get_shortcuts()
         if self._has_share_target():
             manifest['share_target'] = {
-                'action': '/odoo?share_target=trigger',
+                'action': '/weth?share_target=trigger',
                 'method': 'POST',
                 'enctype': 'multipart/form-data',
                 'params': {
@@ -90,13 +90,13 @@ class WebManifest(http.Controller):
             self._get_service_worker_content(),
             [
                 ('Content-Type', 'text/javascript'),
-                ('Service-Worker-Allowed', '/odoo'),
+                ('Service-Worker-Allowed', '/weth'),
             ]
         )
         return response
 
     def _get_service_worker_content(self):
-        """ Returns a ServiceWorker javascript file scoped for the backend (aka. '/odoo')
+        """ Returns a ServiceWorker javascript file scoped for the backend (aka. '/weth')
         """
         with file_open('web/static/src/service_worker.js') as f:
             body = f.read()
@@ -105,7 +105,7 @@ class WebManifest(http.Controller):
     def _icon_path(self):
         return 'web/static/img/odoo-icon-192x192.png'
 
-    @http.route('/odoo/offline', type='http', auth='public', methods=['GET'], readonly=True)
+    @http.route('/weth/offline', type='http', auth='public', methods=['GET'], readonly=True)
     def offline(self):
         """ Returns the offline page delivered by the service worker """
         with file_open(self._icon_path(), 'rb') as f:

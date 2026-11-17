@@ -1,4 +1,4 @@
-import { usePlugin } from "@odoo/owl";
+import { usePlugin } from "@weth/owl";
 import { registry } from "@web/core/registry";
 import { Interaction } from "@web/public/interaction";
 import { BootstrapInstance } from "@web/core/utils/bootstrap_plugin";

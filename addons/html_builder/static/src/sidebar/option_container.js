@@ -1,5 +1,5 @@
 import { getSnippetName, useOptionsSubEnv } from "@html_builder/utils/utils";
-import { asyncComputed, onMounted, onWillStart, useProps, signal, t, useListener } from "@odoo/owl";
+import { asyncComputed, onMounted, onWillStart, useProps, signal, t, useListener } from "@weth/owl";
 import { browser } from "@web/core/browser/browser";
 import { user } from "@web/core/user";
 import { uniqueId } from "@web/core/utils/functions";
@@ -14,7 +14,7 @@ export class OptionsContainer extends BaseOptionComponent {
     static template = "html_builder.OptionsContainer";
     static dependencies = ["builderOptions", "remove", "clone"];
     props = useProps({
-        toggleOverlayPreview: t.function().optional(() => () => {}),
+        toggleOverlayPreview: t.function().optional(() => () => { }),
         options: t.array(),
         editingElement: t.any(), // HTMLElement from iframe
         isRemovable: t.boolean().optional(false),

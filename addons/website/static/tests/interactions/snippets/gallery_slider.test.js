@@ -1,9 +1,9 @@
 import { startInteractions, setupInteractionWhiteList } from "@web/../tests/public/helpers";
 import { contains } from "@web/../tests/web_test_helpers";
 
-import { describe, expect, getFixture, test } from "@odoo/hoot";
-import { animationFrame, click, leave, press, queryOne } from "@odoo/hoot-dom";
-import { advanceTime } from "@odoo/hoot-mock";
+import { describe, expect, getFixture, test } from "@weth/hoot";
+import { animationFrame, click, leave, press, queryOne } from "@weth/hoot-dom";
+import { advanceTime } from "@weth/hoot-mock";
 
 import { onceAllImagesLoaded } from "@website/utils/images";
 
@@ -22,9 +22,8 @@ const SLIDE_DURATION = 1000;
 function getDefaultGallery(bsRide = false, bsInterval = 0, showPopup = false) {
     return /*xml*/ `
         <div id="wrapwrap">
-            <section class="s_image_gallery o_slideshow pt24 pb24 s_image_gallery_controllers_outside s_image_gallery_controllers_outside_arrows_right s_image_gallery_indicators_dots s_image_gallery_arrows_default ${
-                showPopup ? " o_image_popup" : ""
-            }" data-vcss="002" data-columns="3">
+            <section class="s_image_gallery o_slideshow pt24 pb24 s_image_gallery_controllers_outside s_image_gallery_controllers_outside_arrows_right s_image_gallery_indicators_dots s_image_gallery_arrows_default ${showPopup ? " o_image_popup" : ""
+        }" data-vcss="002" data-columns="3">
                 <div class="o_container_small overflow-hidden">
                     <div id="slideshow_sample" class="carousel carousel-dark slide" data-bs-ride="${bsRide}" data-bs-interval="${bsInterval}">
                         <div class="o_carousel_controllers">

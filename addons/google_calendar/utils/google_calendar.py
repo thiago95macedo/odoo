@@ -1,4 +1,4 @@
-from odoo.addons.google_calendar.utils.google_api_resource import GoogleApiResource
+from weth.addons.google_calendar.utils.google_api_resource import GoogleApiResource
 
 
 class GoogleCalendar(GoogleApiResource):

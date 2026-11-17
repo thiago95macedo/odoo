@@ -1,4 +1,4 @@
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@weth/hoot";
 import { allowTranslations, patchWithCleanup } from "@web/../tests/web_test_helpers";
 import { appTranslateFn } from "@web/core/l10n/translation";
 import { encodeTranslation, parseTranslatedText } from "../src/translation.patch";
@@ -30,9 +30,9 @@ test("encodeTranslation", () => {
 
     expect(encoded).toHaveLength(
         1 + // translated bit
-            4 + // byte count
-            JSON.stringify(metadata).length * 2 + // encoded metadata
-            translation.length // translation
+        4 + // byte count
+        JSON.stringify(metadata).length * 2 + // encoded metadata
+        translation.length // translation
     );
     expect(encoded).toMatch(/Component$/);
 });

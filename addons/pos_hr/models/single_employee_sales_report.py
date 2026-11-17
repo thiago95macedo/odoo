@@ -1,6 +1,6 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
-from odoo import api, models
-from odoo.fields import Domain
+from weth import api, models
+from weth.fields import Domain
 
 
 class ReportPos_HrSingle_Employee_Sales_Report(models.AbstractModel):

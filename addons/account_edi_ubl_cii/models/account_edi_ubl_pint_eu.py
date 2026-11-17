@@ -1,6 +1,6 @@
-from odoo import _, models
-from odoo.addons.account.tools import dict_to_xml
-from odoo.addons.account_edi_ubl_cii.models.account_edi_common import EUROPEAN_ECONOMIC_AREA_COUNTRY_CODES
+from weth import _, models
+from weth.addons.account.tools import dict_to_xml
+from weth.addons.account_edi_ubl_cii.models.account_edi_common import EUROPEAN_ECONOMIC_AREA_COUNTRY_CODES
 
 
 class AccountEdiUBLPintEU(models.AbstractModel):

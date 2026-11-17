@@ -3,7 +3,7 @@ import { useService } from "@web/core/utils/hooks";
 import { Dialog } from "@web/core/dialog/dialog";
 import { Notebook } from "@web/core/notebook/notebook";
 
-import { Component, useProps, proxy, signal, t } from "@odoo/owl";
+import { Component, useProps, proxy, signal, t } from "@weth/owl";
 import { TABS, renderMedia } from "./media_dialog_utils";
 
 const DEFAULT_SEQUENCE = 50;
@@ -194,7 +194,7 @@ export class MediaDialog extends Component {
         }
     }
 
-    async preProcessSave() {}
+    async preProcessSave() { }
 
     async save() {
         const tab = this.activeTab();

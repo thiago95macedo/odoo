@@ -1,6 +1,6 @@
 import { BaseOptionComponent } from "@html_builder/core/base_option_component";
 import { useDynamicSnippetOption } from "./dynamic_snippet_hook";
-import { useProps, t } from "@odoo/owl";
+import { useProps, t } from "@weth/owl";
 import { registry } from "@web/core/registry";
 
 export class DynamicSnippetOption extends BaseOptionComponent {

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
 
     <!-- Emptied but kept for backward compatibility: existing databases still point to this view
          through the noupdate `inline_form_view_id` on the provider record, which prevents deleting
@@ -8,4 +8,4 @@
         <t/>
     </template>
 
-</odoo>
+</weth>

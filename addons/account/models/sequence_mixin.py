@@ -1,11 +1,11 @@
 from datetime import date
 
-from odoo import api, fields, models, _
-from odoo.exceptions import ValidationError
-from odoo.models import Query
-from odoo.tools.misc import format_date
-from odoo.tools import frozendict, date_utils, SQL
-from odoo.tools.sql import index_exists
+from weth import api, fields, models, _
+from weth.exceptions import ValidationError
+from weth.models import Query
+from weth.tools.misc import format_date
+from weth.tools import frozendict, date_utils, SQL
+from weth.tools.sql import index_exists
 
 import logging
 import re

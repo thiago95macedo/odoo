@@ -1,6 +1,6 @@
 import { defineMailModels } from "@mail/../tests/mail_test_helpers";
-import { beforeEach, expect, test } from "@odoo/hoot";
-import { animationFrame, mockDate } from "@odoo/hoot-mock";
+import { beforeEach, expect, test } from "@weth/hoot";
+import { animationFrame, mockDate } from "@weth/hoot-mock";
 import { defineActions, defineModels, fields, getService, models, mountWebClient, onRpc, serverState, switchView } from "@web/../tests/web_test_helpers";
 
 class CalendarEvent extends models.Model {

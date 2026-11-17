@@ -5,7 +5,7 @@ import {
     mockService,
     mountView,
 } from "@web/../tests/web_test_helpers";
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@weth/hoot";
 import { defineHrModels } from "@hr/../tests/hr_test_helpers";
 
 describe.current.tags("desktop");

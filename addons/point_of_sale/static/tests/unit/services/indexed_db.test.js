@@ -1,4 +1,4 @@
-import { afterEach, expect, test } from "@odoo/hoot";
+import { afterEach, expect, test } from "@weth/hoot";
 import IndexedDB from "@point_of_sale/app/models/utils/indexed_db";
 
 const openedDbNames = new Set();

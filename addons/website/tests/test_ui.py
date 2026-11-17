@@ -4,17 +4,17 @@ import json
 
 from werkzeug.urls import url_encode
 
-import odoo.tests
-from odoo import http
-from odoo.addons.base.tests.common import HttpCaseWithUserDemo
-from odoo.addons.html_editor.controllers.main import HTML_Editor
-from odoo.addons.website.tests.common import HttpCaseWithWebsiteUser, set_url_code
-from odoo.fields import Command
-from odoo.tools import mute_logger
+import weth.tests
+from weth import http
+from weth.addons.base.tests.common import HttpCaseWithUserDemo
+from weth.addons.html_editor.controllers.main import HTML_Editor
+from weth.addons.website.tests.common import HttpCaseWithWebsiteUser, set_url_code
+from weth.fields import Command
+from weth.tools import mute_logger
 
 
-@odoo.tests.tagged('-at_install', 'post_install')
-class TestUiCustomizeTheme(odoo.tests.HttpCase):
+@weth.tests.tagged('-at_install', 'post_install')
+class TestUiCustomizeTheme(weth.tests.HttpCase):
     def test_01_attachment_website_unlink(self):
         ''' Some ir.attachment needs to be unlinked when a website is unlink,
             otherwise some flows will just crash. That's the case when 2 website
@@ -62,7 +62,7 @@ class TestUiCustomizeTheme(odoo.tests.HttpCase):
         self.assertFalse(so_attachment.website_id, 'Website should be removed')
 
 
-@odoo.tests.tagged('-at_install', 'post_install')
+@weth.tests.tagged('-at_install', 'post_install')
 class TestUiHtmlEditor(HttpCaseWithUserDemo):
 
     def test_html_editor_language(self):
@@ -211,14 +211,14 @@ class TestUiHtmlEditor(HttpCaseWithUserDemo):
         self.start_tour(self.env["website"].get_client_action_url("/", False), 'website_code_editor_usable', login='admin')
 
 
-@odoo.tests.tagged('external', '-standard', '-at_install', 'post_install')
+@weth.tests.tagged('external', '-standard', '-at_install', 'post_install')
 class TestUiHtmlEditorWithExternal(HttpCaseWithUserDemo):
     def test_media_dialog_external_library(self):
         self.start_tour(self.env['website'].get_client_action_url('/', True), 'website_media_dialog_external_library', login='admin')
 
 
-@odoo.tests.tagged('-at_install', 'post_install')
-class TestUiTranslate(odoo.tests.HttpCase):
+@weth.tests.tagged('-at_install', 'post_install')
+class TestUiTranslate(weth.tests.HttpCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
@@ -424,7 +424,7 @@ class TestUiTranslate(odoo.tests.HttpCase):
         self.start_tour(self.env['website'].get_client_action_url("/", False), "create_page_from_template_in_language", login="admin")
 
 
-@odoo.tests.common.tagged('post_install', '-at_install')
+@weth.tests.common.tagged('post_install', '-at_install')
 class TestUi(HttpCaseWithWebsiteUser):
 
     def test_01_admin_tour_homepage(self):
@@ -477,7 +477,7 @@ class TestUi(HttpCaseWithWebsiteUser):
         self.assertNotEqual(new_website_bundle_modified.get_version('js'), base_website_js_version, "js version for new website should now have been changed")
 
         url_params = url_encode({'path': '/@/'})
-        self.start_tour(f'/odoo/action-website.website_preview?{url_params}&enable_editor=1', "generic_website_editor", login="website_user")
+        self.start_tour(f'/weth/action-website.website_preview?{url_params}&enable_editor=1', "generic_website_editor", login="website_user")
         self.start_tour(f'/website/force/{new_website.id}?{url_params}', "specific_website_editor", login="website_user")
 
     def test_07_snippet_version(self):
@@ -635,7 +635,7 @@ class TestUi(HttpCaseWithWebsiteUser):
         self.env['website'].create({
             'name': 'Test Website',
         })
-        self.start_tour("/odoo/action-website.action_website_menu", "parent_child_menu", login="admin")
+        self.start_tour("/weth/action-website.action_website_menu", "parent_child_menu", login="admin")
 
     def test_34_website_page_breadcrumb(self):
         self.start_tour(self.env['website'].get_client_action_url("/contactus", False), 'website_page_breadcrumb', login='admin')
@@ -958,7 +958,7 @@ class TestUi(HttpCaseWithWebsiteUser):
             login="admin",
         )
 
-    @mute_logger("odoo.http")
+    @mute_logger("weth.http")
     def test_website_replace_remove_image(self):
         self.start_tour(self.env['website'].get_client_action_url("/", True), "website_replace_remove_image", login="admin")
 

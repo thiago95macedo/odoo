@@ -1,4 +1,4 @@
-import { mount, whenReady, proxy } from "@odoo/owl";
+import { mount, whenReady, proxy } from "@weth/owl";
 import { selfOrderIndex as Index } from "./self_order_index";
 import { mountComponent } from "@web/env";
 import { Loader } from "@point_of_sale/app/components/loader/loader";

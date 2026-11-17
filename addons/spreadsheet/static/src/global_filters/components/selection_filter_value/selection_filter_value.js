@@ -8,7 +8,7 @@ import {
     t,
     onMounted,
     useProps,
-} from "@odoo/owl";
+} from "@weth/owl";
 import { AutoComplete } from "@web/core/autocomplete/autocomplete";
 import { BadgeTag } from "@web/core/tags_list/badge_tag";
 import { useService } from "@web/core/utils/hooks";

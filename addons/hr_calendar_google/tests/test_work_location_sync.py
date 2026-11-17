@@ -1,10 +1,10 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.tools import frozendict
-from odoo.tests.common import new_test_user
-from odoo.addons.google_calendar.models.res_users import ResUsers
-from odoo.addons.google_calendar.tests.test_sync_common import TestSyncGoogle, patch_api
-from odoo.addons.google_calendar.utils.google_calendar_service import GoogleEvent
+from weth.tools import frozendict
+from weth.tests.common import new_test_user
+from weth.addons.google_calendar.models.res_users import ResUsers
+from weth.addons.google_calendar.tests.test_sync_common import TestSyncGoogle, patch_api
+from weth.addons.google_calendar.utils.google_calendar_service import GoogleEvent
 from unittest.mock import patch
 
 

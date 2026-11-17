@@ -1,5 +1,5 @@
-import { beforeEach, expect, getFixture, test } from "@odoo/hoot";
-import { microTick, tick } from "@odoo/hoot-dom";
+import { beforeEach, expect, getFixture, test } from "@weth/hoot";
+import { microTick, tick } from "@weth/hoot-dom";
 import { patchWithCleanup } from "@web/../tests/web_test_helpers";
 
 beforeEach(() => {
@@ -12,7 +12,7 @@ beforeEach(() => {
 });
 
 /** @type {typeof OdooModuleLoader} */
-const ModuleLoader = Object.getPrototypeOf(odoo.loader.constructor);
+const ModuleLoader = Object.getPrototypeOf(weth.loader.constructor);
 
 test.tags("headless");
 test("define: simple case", async () => {
@@ -81,8 +81,8 @@ test("define: missing module", async () => {
     const loader = new ModuleLoader(getFixture());
     loader.debug = false;
 
-    loader.define("b", ["a"], () => {});
-    loader.define("c", ["a"], () => {});
+    loader.define("b", ["a"], () => { });
+    loader.define("c", ["a"], () => { });
 
     await microTick();
 
@@ -104,9 +104,9 @@ test("define: dependency cycle", async () => {
     const loader = new ModuleLoader(getFixture());
     loader.debug = true;
 
-    loader.define("a", ["b"], () => {});
-    loader.define("b", ["c"], () => {});
-    loader.define("c", ["a"], () => {});
+    loader.define("a", ["b"], () => { });
+    loader.define("b", ["c"], () => { });
+    loader.define("c", ["a"], () => { });
 
     await microTick();
 

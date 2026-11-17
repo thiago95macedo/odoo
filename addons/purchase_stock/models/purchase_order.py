@@ -3,11 +3,11 @@
 from dateutil.relativedelta import relativedelta
 from markupsafe import Markup
 
-from odoo import api, Command, fields, models, SUPERUSER_ID, _
-from odoo.fields import Domain
-from odoo.tools.float_utils import float_compare, float_repr
-from odoo.exceptions import UserError
-from odoo.tools.misc import OrderedSet
+from weth import api, Command, fields, models, SUPERUSER_ID, _
+from weth.fields import Domain
+from weth.tools.float_utils import float_compare, float_repr
+from weth.exceptions import UserError
+from weth.tools.misc import OrderedSet
 
 
 class PurchaseOrder(models.Model):

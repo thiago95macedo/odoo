@@ -1,10 +1,10 @@
 from datetime import datetime, UTC
 from zoneinfo import ZoneInfo
 
-from odoo import _, api, fields, models
-from odoo.exceptions import UserError, ValidationError
-from odoo.tools.date_utils import float_to_time
-from odoo.tools import (
+from weth import _, api, fields, models
+from weth.exceptions import UserError, ValidationError
+from weth.tools.date_utils import float_to_time
+from weth.tools import (
     format_date,
     formatLang,
     format_time,

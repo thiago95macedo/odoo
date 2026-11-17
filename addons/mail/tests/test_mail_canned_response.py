@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.mail.tests.common import MailCommon
-from odoo.tests.common import tagged
+from weth.addons.mail.tests.common import MailCommon
+from weth.tests.common import tagged
 
 
 @tagged("mail_canned_response")

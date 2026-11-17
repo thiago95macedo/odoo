@@ -13,7 +13,7 @@ import { CALL_GRID_LAYOUT } from "@mail/discuss/call/common/call_layout";
 import { CALL_PROFILE_TYPE } from "@mail/discuss/call/common/call_profile";
 import { INSET_MARGIN } from "@mail/discuss/call/common/stage/layout_engine";
 
-import { beforeEach, describe, expect, mockUserAgent, test } from "@odoo/hoot";
+import { beforeEach, describe, expect, mockUserAgent, test } from "@weth/hoot";
 import { getService, mountWithCleanup } from "@web/../tests/web_test_helpers";
 
 /**

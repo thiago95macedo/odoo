@@ -5,12 +5,12 @@ import { rpc } from "@web/core/network/rpc";
 
 export const unpatchSelf = patch(PosDataPlugin.prototype, {
     async loadInitialData() {
-        if (odoo.debug === "assets") {
+        if (weth.debug === "assets") {
             window.performance.mark("pos_data_service_init");
         }
         const configId = session.data.config_id;
         const data = await rpc(`/pos-self/data/${parseInt(configId)}`, {
-            access_token: odoo.access_token,
+            access_token: weth.access_token,
         });
         const params = this.getFieldsAndRelations(data);
         await this.initIndexedDB(params);
@@ -20,7 +20,7 @@ export const unpatchSelf = patch(PosDataPlugin.prototype, {
         return Object.fromEntries(Object.entries(data).map(([key, value]) => [key, value.records]));
     },
     get databaseName() {
-        return `pos-self-order-${odoo.access_token}`;
+        return `pos-self-order-${weth.access_token}`;
     },
     onRpcResponse() {
         return false;

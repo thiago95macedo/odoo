@@ -1,6 +1,6 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.payment.tests.http_common import PaymentHttpCommon
+from weth.addons.payment.tests.http_common import PaymentHttpCommon
 
 
 class NuveiCommon(PaymentHttpCommon):

@@ -1,4 +1,4 @@
-import { Component, signal, t, useEffect, useListener, useProps } from "@odoo/owl";
+import { Component, signal, t, useEffect, useListener, useProps } from "@weth/owl";
 
 export class MobileTablePicker extends Component {
     static template = "html_editor.MobileTablePicker";

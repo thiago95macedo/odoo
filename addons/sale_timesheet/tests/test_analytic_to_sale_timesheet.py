@@ -1,4 +1,4 @@
-from odoo.addons.sale_timesheet.tests.common import TestCommonSaleTimesheet
+from weth.addons.sale_timesheet.tests.common import TestCommonSaleTimesheet
 
 
 class TestAnalyticToSaleTimesheet(TestCommonSaleTimesheet):

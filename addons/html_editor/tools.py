@@ -4,13 +4,13 @@ import functools
 import logging
 import re
 
-from odoo import _
-from odoo.exceptions import ValidationError
-from odoo.http import request
-from odoo.tools import remove_accents
-from odoo.tools.translate import adapt_translated_field_value
+from weth import _
+from weth.exceptions import ValidationError
+from weth.http import request
+from weth.tools import remove_accents
+from weth.tools.translate import adapt_translated_field_value
 
-from odoo.addons.web.icons import ICONS
+from weth.addons.web.icons import ICONS
 
 logger = logging.getLogger(__name__)
 diverging_history_regex = 'data-last-history-commits="([0-9,]+)"'

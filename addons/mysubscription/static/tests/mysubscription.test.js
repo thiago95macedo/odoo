@@ -1,4 +1,4 @@
-import { expect, queryAllTexts, test } from "@odoo/hoot";
+import { expect, queryAllTexts, test } from "@weth/hoot";
 import {
     contains,
     defineMenus,

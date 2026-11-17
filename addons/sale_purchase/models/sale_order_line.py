@@ -2,11 +2,11 @@
 
 from dateutil.relativedelta import relativedelta
 
-from odoo import api, fields, models, _
-from odoo.fields import Domain
-from odoo.exceptions import UserError
-from odoo.tools import float_compare
-from odoo.tools.misc import get_lang
+from weth import api, fields, models, _
+from weth.fields import Domain
+from weth.exceptions import UserError
+from weth.tools import float_compare
+from weth.tools.misc import get_lang
 
 
 class SaleOrderLine(models.Model):

@@ -3,9 +3,9 @@
 
 from collections import namedtuple
 
-from odoo import api, fields, models
-from odoo.exceptions import UserError, RedirectWarning
-from odoo.tools.translate import _, LazyTranslate
+from weth import api, fields, models
+from weth.exceptions import UserError, RedirectWarning
+from weth.tools.translate import _, LazyTranslate
 
 _lt = LazyTranslate(__name__)
 

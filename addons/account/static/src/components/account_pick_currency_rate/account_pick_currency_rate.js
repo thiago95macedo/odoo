@@ -1,4 +1,4 @@
-import { Component, signal, proxy, useProps, types as t } from "@odoo/owl";
+import { Component, signal, proxy, useProps, types as t } from "@weth/owl";
 import { registry } from "@web/core/registry";
 import { useDateTimePicker } from "@web/core/datetime/datetime_picker_hook";
 import { useService } from "@web/core/utils/hooks";
@@ -49,7 +49,7 @@ export class AccountCurrencyExchangeRate extends Component {
     setup() {
         this._swapKey = "account.currency_exchange_rate.swapped";
         this.state = proxy({
-            swapped: localStorage.getItem(this._swapKey) === "true" 
+            swapped: localStorage.getItem(this._swapKey) === "true"
         });
     }
 
@@ -107,5 +107,5 @@ export const accountCurrencyExchangeRate = {
     }),
 };
 
-registry.category("view_widgets").add("account_pick_currency_date",  accountPickCurrencyDate);
+registry.category("view_widgets").add("account_pick_currency_date", accountPickCurrencyDate);
 registry.category("view_widgets").add("account_currency_exchange_rate", accountCurrencyExchangeRate);

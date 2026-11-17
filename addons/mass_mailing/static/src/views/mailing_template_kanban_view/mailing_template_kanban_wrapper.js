@@ -1,4 +1,4 @@
-import { Component, t, useProps, useScope } from "@odoo/owl";
+import { Component, t, useProps, useScope } from "@weth/owl";
 import { MailingTemplateKanbanRenderer } from "./mailing_template_kanban_renderer";
 import { useViewButtons } from "@web/views/view_button/view_button_hook";
 

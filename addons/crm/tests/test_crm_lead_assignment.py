@@ -8,13 +8,13 @@ from datetime import datetime, timedelta
 from dateutil.relativedelta import relativedelta
 from unittest.mock import patch
 
-from odoo import fields
-from odoo.addons.crm.models.crm_lead import CrmLead
-from odoo.addons.crm.models.crm_team import CrmTeam
-from odoo.addons.crm.tests.common import TestLeadConvertCommon
-from odoo.tests.common import tagged
-from odoo.tools import mute_logger
-from odoo.fields import Datetime
+from weth import fields
+from weth.addons.crm.models.crm_lead import CrmLead
+from weth.addons.crm.models.crm_team import CrmTeam
+from weth.addons.crm.tests.common import TestLeadConvertCommon
+from weth.tests.common import tagged
+from weth.tools import mute_logger
+from weth.fields import Datetime
 
 
 class TestLeadAssignCommon(TestLeadConvertCommon):
@@ -33,7 +33,7 @@ class TestLeadAssignCommon(TestLeadConvertCommon):
         # don't mess with existing leads, unlink those assigned to users used here to make tests
         # repeatable (archive is not sufficient because of lost leads)
 
-        with mute_logger('odoo.models.unlink'):
+        with mute_logger('weth.models.unlink'):
             cls.env['crm.lead'].with_context(active_test=False).search(['|', ('team_id', '=', False), ('user_id', 'in', cls.sales_teams.member_ids.ids)]).unlink()
         cls.bundle_size = 50
         cls.env['ir.config_parameter'].set_int('crm.assignment.commit.bundle', '%s' % cls.bundle_size)
@@ -206,7 +206,7 @@ class TestLeadAssign(TestLeadAssignCommon):
         self.assertEqual(self.sales_team_1_m2.lead_month_count, 0)  # opt-out through assignment_max = 0
         self.assertEqual(self.sales_team_1_m3.lead_month_count, 16)  # ignore actual quota (round(45/30) => +2) + existing 14 and not capped anymore
 
-    @mute_logger('odoo.models.unlink')
+    @mute_logger('weth.models.unlink')
     def test_assign_duplicates(self):
         """ Test assign process with duplicates on partner. Allow to ensure notably
         that de duplication is effectively performed. """
@@ -265,7 +265,7 @@ class TestLeadAssign(TestLeadAssignCommon):
         ])
         self.assertEqual(len(new_assigned_leads_wpartner), 2)
 
-    @mute_logger('odoo.models.unlink')
+    @mute_logger('weth.models.unlink')
     def test_assign_no_duplicates(self):
         # fix the seed and avoid randomness
         random.seed(1945)
@@ -311,7 +311,7 @@ class TestLeadAssign(TestLeadAssignCommon):
         self.assertMemberAssign(self.sales_team_convert_m1, 1)  # 30 max on one month -> 1 daily
         self.assertMemberAssign(self.sales_team_convert_m2, 2)  # 60 max on one month -> 2 daily
 
-    @mute_logger('odoo.models.unlink')
+    @mute_logger('weth.models.unlink')
     def test_assign_iterative(self):
         """ Test iterative process and logs on assign """
         # fix the seed and avoid randomness
@@ -344,7 +344,7 @@ class TestLeadAssign(TestLeadAssignCommon):
         checkpoint_logs = [l for l in cm.output if '-checkpoint-' in l]
         self.assertEqual(len(checkpoint_logs), 7, 'Should have 7 intermediate commits and logs')
 
-    @mute_logger('odoo.models.unlink')
+    @mute_logger('weth.models.unlink')
     def test_assign_iterative_crash_allocate(self):
         """ Test defensive behavior when allocation crashes (memory error, other
         unexpected issue, ...) """
@@ -386,7 +386,7 @@ class TestLeadAssign(TestLeadAssignCommon):
         self.assertIn(f'Error while assigning lead {leads[0].id}', error_log[0], 'Should log error + some stats')
         self.assertIn('Error: My Error Message', error_log[0], 'Should log error + some stats')
 
-    @mute_logger('odoo.models.unlink')
+    @mute_logger('weth.models.unlink')
     def test_assign_iterative_crash_assign(self):
         """ Test defensive behavior when assign / convert crashes (memory error, other
         unexpected issue, ...) """
@@ -428,7 +428,7 @@ class TestLeadAssign(TestLeadAssignCommon):
         self.assertIn(f'Error while assigning lead {leads[2].id}', error_log[0], 'Should log error + some stats')
         self.assertIn('Error: My Error Message', error_log[0], 'Should log error + some stats')
 
-    @mute_logger('odoo.models.unlink')
+    @mute_logger('weth.models.unlink')
     def test_assign_populated(self):
         """ Test assignment on a more high volume oriented test set in order to
         test more real life use cases. """
@@ -721,7 +721,7 @@ class TestLeadAssign(TestLeadAssignCommon):
         self.assertEqual(duplicate_lead.team_id, sales_team)
         self.assertTrue(duplicate_lead.user_id)
 
-    @mute_logger('odoo.models.unlink')
+    @mute_logger('weth.models.unlink')
     def test_merge_assign_keep_master_team(self):
         """ Check existing opportunity keep its team and salesman when merged with a new lead """
         sales_team_dupe = self.env['crm.team'].create({
@@ -825,7 +825,7 @@ class TestLeadAssign(TestLeadAssignCommon):
                     'probability': 50,
                     'team_id': test_team.id,
                 })
-                with mute_logger('odoo.addons.crm.models.crm_team'):
+                with mute_logger('weth.addons.crm.models.crm_team'):
                     test_team._assign_and_convert_leads()
 
         senior_leads = self.env['crm.lead'].search_count([

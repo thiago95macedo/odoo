@@ -5,11 +5,11 @@ from unittest.mock import patch
 
 from werkzeug.exceptions import Forbidden
 
-from odoo.fields import Command
-from odoo.tests import tagged
+from weth.fields import Command
+from weth.tests import tagged
 
-from odoo.addons.website_sale.controllers.main import WebsiteSale
-from odoo.addons.website_sale.tests.common import MockRequest, WebsiteSaleCommon
+from weth.addons.website_sale.controllers.main import WebsiteSale
+from weth.addons.website_sale.tests.common import MockRequest, WebsiteSaleCommon
 
 
 @tagged("post_install", "-at_install")
@@ -191,7 +191,7 @@ class TestCheckoutAddress(WebsiteSaleCommon):
         with (
             self.mock_request(sale_order_id=self.cart.id),
             patch(
-                "odoo.addons.delivery.models.delivery_carrier.DeliveryCarrier.rate_shipment",
+                "weth.addons.delivery.models.delivery_carrier.DeliveryCarrier.rate_shipment",
                 return_value={"success": True, "price": 10, "warning_message": ""},
             ) as rate_shipment_mock,
         ):

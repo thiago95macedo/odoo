@@ -2,14 +2,14 @@
 
 from datetime import timedelta
 
-from odoo import Command
-from odoo.exceptions import ValidationError
-from odoo.fields import Datetime
-from odoo.tests import tagged
-from odoo.tools import mute_logger
+from weth import Command
+from weth.exceptions import ValidationError
+from weth.fields import Datetime
+from weth.tests import tagged
+from weth.tools import mute_logger
 
-from odoo.addons.base.tests.common import HttpCaseWithUserDemo
-from odoo.addons.payment.tests.http_common import PaymentHttpCommon
+from weth.addons.base.tests.common import HttpCaseWithUserDemo
+from weth.addons.payment.tests.http_common import PaymentHttpCommon
 from .common import TestWebsiteEventSaleCommon
 
 
@@ -137,7 +137,7 @@ class TestRoutes(HttpCaseWithUserDemo, TestWebsiteEventSaleCommon, PaymentHttpCo
 
     _test_user_name = 'Test Sales & Product Manager'
 
-    @mute_logger('odoo.http')
+    @mute_logger('weth.http')
     def test_check_seats_avail_before_purchase(self):
         """Check that payments fails when there aren't enough seats available.
         - First check payment fails due to exceeding the ticket's limit

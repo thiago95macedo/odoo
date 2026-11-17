@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
     <template id="location_barcode_4x7_label">
         <td t-att-style="label['invisible'] and 'visibility:hidden;'">
             <div class="o_label_full o_label_4x7">
@@ -33,4 +33,4 @@
             </t>
         </t>
     </template>
-</odoo>
+</weth>

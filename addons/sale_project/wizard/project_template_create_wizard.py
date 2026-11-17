@@ -1,5 +1,5 @@
-from odoo import api, Command, fields, models
-from odoo.tools import OrderedSet
+from weth import api, Command, fields, models
+from weth.tools import OrderedSet
 
 
 class ProjectTemplateCreateWizard(models.TransientModel):

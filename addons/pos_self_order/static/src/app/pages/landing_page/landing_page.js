@@ -1,4 +1,4 @@
-import { Component, onWillStart, signal } from "@odoo/owl";
+import { Component, onWillStart, signal } from "@weth/owl";
 import { useSelfOrder } from "@pos_self_order/app/services/self_order_service";
 import { useService } from "@web/core/utils/hooks";
 import { LanguagePopup } from "@pos_self_order/app/components/language_popup/language_popup";

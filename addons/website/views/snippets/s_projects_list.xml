@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
 
 <template id="s_projects_list" name="Projects List">
     <section class="s_projects_list pt48 pb48">
@@ -50,4 +50,4 @@
     </section>
 </template>
 
-</odoo>
+</weth>

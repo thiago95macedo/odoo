@@ -1,4 +1,4 @@
-import { Component, onWillUpdateProps, proxy, signal, t, useProps } from "@odoo/owl";
+import { Component, onWillUpdateProps, proxy, signal, t, useProps } from "@weth/owl";
 import { Dropdown } from "@web/core/dropdown/dropdown";
 import { useDropdownState } from "@web/core/dropdown/dropdown_hooks";
 import { DropdownItem } from "@web/core/dropdown/dropdown_item";
@@ -24,8 +24,8 @@ export const timePickerProps = {
     value: t
         .or([t.string(), t.instanceOf(Time), t.literal(false), t.literal(null)])
         .optional("00:00"),
-    onChange: t.function().optional(() => () => {}),
-    onInvalid: t.function().optional(() => () => {}),
+    onChange: t.function().optional(() => () => { }),
+    onInvalid: t.function().optional(() => () => { }),
     showSeconds: t.boolean().optional(false),
     minutesRounding: t.number().optional(5),
     placeholder: t.string().optional(),
@@ -279,8 +279,8 @@ export class TimePicker extends Component {
         if (this.navigator) {
             const index = this.state.value
                 ? this.suggestions.findIndex((s) =>
-                      s.equals(this.state.value, this.props.showSeconds)
-                  )
+                    s.equals(this.state.value, this.props.showSeconds)
+                )
                 : 0;
             this.navigator.items[index]?.setActive();
         }

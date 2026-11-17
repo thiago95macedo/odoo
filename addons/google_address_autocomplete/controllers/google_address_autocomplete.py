@@ -5,10 +5,10 @@ from pprint import pformat
 
 import requests
 
-from odoo import _, http
-from odoo.exceptions import AccessError
-from odoo.http import request
-from odoo.tools import html2plaintext
+from weth import _, http
+from weth.exceptions import AccessError
+from weth.http import request
+from weth.tools import html2plaintext
 
 _logger = logging.getLogger(__name__)
 

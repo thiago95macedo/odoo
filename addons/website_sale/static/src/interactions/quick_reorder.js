@@ -1,4 +1,4 @@
-import { markup } from '@odoo/owl';
+import { markup } from '@weth/owl';
 import { ProductCombo } from '@sale/js/models/product_combo';
 import { serializeComboItem } from '@sale/js/sale_utils';
 import { serializeDateTime } from '@web/core/l10n/dates';

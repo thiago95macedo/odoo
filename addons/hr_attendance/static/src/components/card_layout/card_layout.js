@@ -1,4 +1,4 @@
-import { Component, onWillUnmount, useProps, proxy, t } from "@odoo/owl";
+import { Component, onWillUnmount, useProps, proxy, t } from "@weth/owl";
 import { useService } from "@web/core/utils/hooks";
 
 const { DateTime } = luxon;

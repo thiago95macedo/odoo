@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import Command
-from odoo.addons.website_livechat.tests.test_chatbot_ui import TestLivechatChatbotUI
+from weth import Command
+from weth.addons.website_livechat.tests.test_chatbot_ui import TestLivechatChatbotUI
 
 
 class TestImLivechatPortal(TestLivechatChatbotUI):

@@ -1,11 +1,11 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.fields import Command
-from odoo.tests import tagged
+from weth.fields import Command
+from weth.tests import tagged
 
-from odoo.addons.base.tests.common import HttpCaseWithUserDemo, HttpCaseWithUserPortal
-from odoo.addons.sale.tests.product_configurator_common import TestProductConfiguratorCommon
-from odoo.addons.website.tests.common import HttpCaseWithWebsiteUser
+from weth.addons.base.tests.common import HttpCaseWithUserDemo, HttpCaseWithUserPortal
+from weth.addons.sale.tests.product_configurator_common import TestProductConfiguratorCommon
+from weth.addons.website.tests.common import HttpCaseWithWebsiteUser
 
 
 @tagged("post_install", "-at_install")

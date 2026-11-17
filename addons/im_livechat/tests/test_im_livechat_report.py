@@ -4,11 +4,11 @@ from datetime import datetime, timedelta
 from freezegun import freeze_time
 from unittest.mock import patch
 
-from odoo import Command
-from odoo import fields
-from odoo.addons.im_livechat.tests.common import TestImLivechatCommon
-from odoo.addons.mail.tests.common import mail_new_test_user
-from odoo.tests.common import new_test_user
+from weth import Command
+from weth import fields
+from weth.addons.im_livechat.tests.common import TestImLivechatCommon
+from weth.addons.mail.tests.common import mail_new_test_user
+from weth.tests.common import new_test_user
 
 
 class TestImLivechatReport(TestImLivechatCommon):
@@ -147,12 +147,12 @@ class TestImLivechatReport(TestImLivechatCommon):
         agent_report_action = self.env.ref("im_livechat.im_livechat_agent_history_action")
         session_report_action = self.env.ref("im_livechat.im_livechat_report_channel_action")
         self.start_tour(
-            f"/odoo/action-{agent_report_action.id}?view_type=pivot",
+            f"/weth/action-{agent_report_action.id}?view_type=pivot",
             "im_livechat_agents_report_pivot_redirect_tour",
             login="operator_1",
         )
         self.start_tour(
-            f"/odoo/action-{session_report_action.id}?view_type=pivot",
+            f"/weth/action-{session_report_action.id}?view_type=pivot",
             "im_livechat_sessions_report_pivot_redirect_tour",
             login="operator_1",
         )

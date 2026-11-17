@@ -1,8 +1,8 @@
 /* global ace */
 
-import { expect, getFixture, test, queryAll } from "@odoo/hoot";
-import { queryOne } from "@odoo/hoot-dom";
-import { animationFrame } from "@odoo/hoot-mock";
+import { expect, getFixture, test, queryAll } from "@weth/hoot";
+import { queryOne } from "@weth/hoot-dom";
+import { animationFrame } from "@weth/hoot-mock";
 
 import {
     clickSave,
@@ -147,7 +147,7 @@ test("leaving an untouched record with an unset ace field should not write", asy
 
 test.tags("focus required");
 test("AceEditorField only trigger onchanges when blurred", async () => {
-    Partner._onChanges.foo = () => {};
+    Partner._onChanges.foo = () => { };
     for (const record of Partner._records) {
         record.foo = false;
     }
@@ -190,7 +190,7 @@ test("Save and Discard buttons are displayed when necessary", async () => {
 });
 
 test("AceEditorField preserves python code when lineWrapping=false", async () => {
-    Partner._onChanges.foo = () => {};
+    Partner._onChanges.foo = () => { };
     for (const record of Partner._records) {
         record.foo = false;
     }
@@ -229,7 +229,7 @@ if true:
 });
 
 test("AceEditorField preserves python code and wraps lines when lineWrapping=true", async () => {
-    Partner._onChanges.foo = () => {};
+    Partner._onChanges.foo = () => { };
     for (const record of Partner._records) {
         record.foo = false;
     }

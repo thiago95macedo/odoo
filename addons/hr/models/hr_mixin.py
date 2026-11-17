@@ -1,6 +1,6 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, models
+from weth import api, models
 
 from .hr_employee import _ALLOW_READ_HR_EMPLOYEE
 

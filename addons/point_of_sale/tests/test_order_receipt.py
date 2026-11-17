@@ -6,16 +6,16 @@ from unittest.mock import patch
 
 from freezegun import freeze_time
 
-from odoo import Command
-from odoo.tests import tagged
-from odoo.tools import (
+from weth import Command
+from weth.tests import tagged
+from weth.tools import (
     DEFAULT_SERVER_DATE_FORMAT,
     DEFAULT_SERVER_DATETIME_FORMAT,
     BinaryBytes,
 )
-from odoo.addons.point_of_sale.tests.common import CommonPosTest
-from odoo.addons.point_of_sale.tests.common_setup_methods import setup_product_combo_items
-from odoo.addons.point_of_sale.tests.test_frontend import TestPointOfSaleHttpCommon
+from weth.addons.point_of_sale.tests.common import CommonPosTest
+from weth.addons.point_of_sale.tests.common_setup_methods import setup_product_combo_items
+from weth.addons.point_of_sale.tests.test_frontend import TestPointOfSaleHttpCommon
 
 _logger = logging.getLogger(__name__)
 

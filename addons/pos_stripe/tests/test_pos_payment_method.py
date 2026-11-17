@@ -1,12 +1,12 @@
 from unittest.mock import patch
 
-from odoo.exceptions import AccessError, ValidationError
-from odoo.tests import new_test_user, tagged
+from weth.exceptions import AccessError, ValidationError
+from weth.tests import new_test_user, tagged
 
-from odoo.addons.point_of_sale.tests.test_frontend import TestPointOfSaleHttpCommon
+from weth.addons.point_of_sale.tests.test_frontend import TestPointOfSaleHttpCommon
 
 SEND_API_REQUEST = (
-    "odoo.addons.payment.models.payment_provider.PaymentProvider._send_api_request"
+    "weth.addons.payment.models.payment_provider.PaymentProvider._send_api_request"
 )
 
 

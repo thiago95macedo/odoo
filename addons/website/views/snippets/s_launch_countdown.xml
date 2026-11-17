@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
 
 <template id="s_launch_countdown" name="Launch Countdown">
     <section class="s_launch_countdown o_full_screen_height oe_img_bg o_bg_img_center o_bg_img_origin_border_box o_cc o_cc5 pt88 pb88" style="background-image: url('/web/image/website.s_launch_countdown_default_image');">
@@ -46,4 +46,4 @@
     </section>
 </template>
 
-</odoo>
+</weth>

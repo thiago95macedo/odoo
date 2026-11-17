@@ -48,7 +48,7 @@ import {
     t,
     usePlugin,
     useProps,
-} from "@odoo/owl";
+} from "@weth/owl";
 import { OfflinePlugin } from "@web/core/offline/offline_plugin";
 import { FetchRecordError } from "@web/model/relational_model/errors";
 
@@ -142,9 +142,9 @@ export const formControllerProps = {
     preventCreate: t.boolean().optional(false),
     preventEdit: t.boolean().optional(false),
     onDiscard: t.function().optional(),
-    onSave: t.function().optional(() => () => {}),
+    onSave: t.function().optional(() => () => { }),
     offlineId: t.string().optional(),
-    updateActionState: t.function().optional(() => () => {}),
+    updateActionState: t.function().optional(() => () => { }),
 };
 
 export class FormController extends Component {
@@ -222,7 +222,7 @@ export class FormController extends Component {
         this.model = proxy(useModel(this.props.Model, this.modelParams, { beforeFirstLoad }));
         useSubEnv({ model: this.model });
 
-        let disposeEffect = () => {};
+        let disposeEffect = () => { };
         onMounted(() => {
             disposeEffect = effect(() => {
                 this.props.updateActionState({ resId: this.model.root.resId });
@@ -233,7 +233,7 @@ export class FormController extends Component {
         onError((error) => {
             const suggestedCompany = error.data?.context?.suggested_company;
             if (
-                error.data?.name === "odoo.exceptions.AccessError" &&
+                error.data?.name === "weth.exceptions.AccessError" &&
                 suggestedCompany &&
                 !this.env.inDialog
             ) {
@@ -473,13 +473,13 @@ export class FormController extends Component {
      * If it returns false, it will prevent the save.
      * @param {Record} record
      */
-    async onWillSaveRecord() {}
+    async onWillSaveRecord() { }
 
     async onSaveError(error, { discard, retry }, leaving) {
         const suggestedCompany = error.data?.context?.suggested_company;
         const activeCompanyIds = user.activeCompanies.map((c) => c.id);
         if (
-            error.data?.name === "odoo.exceptions.AccessError" &&
+            error.data?.name === "weth.exceptions.AccessError" &&
             suggestedCompany &&
             !activeCompanyIds.includes(suggestedCompany.id)
         ) {
@@ -662,7 +662,7 @@ export class FormController extends Component {
             body: _t("Are you sure that you want to archive this record?"),
             confirmLabel: _t("Archive"),
             confirm: () => this.model.root.archive(),
-            cancel: () => {},
+            cancel: () => { },
         };
     }
 
@@ -688,8 +688,8 @@ export class FormController extends Component {
         return "active" in this.model.root.activeFields
             ? !this.props.fields.active.readonly
             : "x_active" in this.model.root.activeFields
-            ? !this.props.fields.x_active.readonly
-            : false;
+                ? !this.props.fields.x_active.readonly
+                : false;
     }
 
     async shouldExecuteAction(item) {
@@ -748,7 +748,7 @@ export class FormController extends Component {
         }
     }
 
-    async afterExecuteActionButton(clickParams) {}
+    async afterExecuteActionButton(clickParams) { }
 
     async create() {
         const dirty = await this.model.root.isDirty();

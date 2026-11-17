@@ -391,9 +391,9 @@ export class Thread extends Record {
         return this.messages.find((msg) => msg.persistent);
     }
 
-    computeComposerDisabled() {}
+    computeComposerDisabled() { }
 
-    composerDisabledonUpdate() {}
+    composerDisabledonUpdate() { }
 
     get isEmpty() {
         return this.messages.length === 0;
@@ -594,8 +594,8 @@ export class Thread extends Record {
                 after === undefined && fetched.length === this.initialFetchLimit
                     ? true
                     : after === undefined && fetched.length !== this.initialFetchLimit
-                    ? false
-                    : this.loadOlder,
+                        ? false
+                        : this.loadOlder,
         });
     }
 
@@ -798,7 +798,7 @@ export class Thread extends Record {
     }
 
     /**
-     *  @param {ReturnType<import("@odoo/owl").markup>} body
+     *  @param {ReturnType<import("@weth/owl").markup>} body
      *  @param {Object} extraData
      */
     async post(body, postData = {}, extraData = {}) {

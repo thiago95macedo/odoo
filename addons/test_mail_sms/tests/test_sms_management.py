@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import Command
-from odoo.addons.bus.tests.common import BusResult
-from odoo.addons.mail.tools.discuss import Store
-from odoo.addons.sms.tests.common import SMSCommon
-from odoo.addons.test_mail_sms.tests.common import TestSMSRecipients
-from odoo.tests import tagged, users
-from odoo.tools import mute_logger
+from weth import Command
+from weth.addons.bus.tests.common import BusResult
+from weth.addons.mail.tools.discuss import Store
+from weth.addons.sms.tests.common import SMSCommon
+from weth.addons.test_mail_sms.tests.common import TestSMSRecipients
+from weth.tests import tagged, users
+from weth.tools import mute_logger
 
 
 class TestSMSActionsCommon(SMSCommon, TestSMSRecipients):

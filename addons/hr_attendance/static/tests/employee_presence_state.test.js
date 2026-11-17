@@ -1,7 +1,7 @@
-/** @odoo-module */
+/** @weth-module */
 
-import { expect, test } from "@odoo/hoot";
-import { runAllTimers } from "@odoo/hoot-dom";
+import { expect, test } from "@weth/hoot";
+import { runAllTimers } from "@weth/hoot-dom";
 import { waitForChannels, waitNotifications } from "@bus/../tests/bus_test_helpers";
 
 import {

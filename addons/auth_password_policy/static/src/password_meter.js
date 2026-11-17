@@ -1,6 +1,6 @@
 import { _t } from "@web/core/l10n/translation";
 import { computeScore } from "./password_policy";
-import { Component, t, useProps, xml } from "@odoo/owl";
+import { Component, t, useProps, xml } from "@weth/owl";
 
 export class Meter extends Component {
     static template = xml`

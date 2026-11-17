@@ -1,4 +1,4 @@
-import { animationFrame, describe, expect, queryAll, queryOne, test } from "@odoo/hoot";
+import { animationFrame, describe, expect, queryAll, queryOne, test } from "@weth/hoot";
 import { setupInteractionWhiteList, startInteractions } from "@web/../tests/public/helpers";
 
 setupInteractionWhiteList("website.state_form_field");

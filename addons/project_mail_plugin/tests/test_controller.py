@@ -3,9 +3,9 @@
 import json
 from unittest.mock import patch
 
-from odoo.tests import tagged
+from weth.tests import tagged
 
-from odoo.addons.mail_plugin.tests.common import TestMailPluginControllerCommon
+from weth.addons.mail_plugin.tests.common import TestMailPluginControllerCommon
 
 
 class TestMailPluginProjectController(TestMailPluginControllerCommon):

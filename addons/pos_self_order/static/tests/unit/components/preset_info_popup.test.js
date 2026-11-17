@@ -1,4 +1,4 @@
-import { test, expect } from "@odoo/hoot";
+import { test, expect } from "@weth/hoot";
 import { mountWithCleanup, onRpc } from "@web/../tests/web_test_helpers";
 import { PresetInfoPopup } from "@pos_self_order/app/components/preset_info_popup/preset_info_popup";
 import { setupSelfPosEnv, getFilledSelfOrder } from "../utils";

@@ -2,8 +2,8 @@ from datetime import date
 
 from dateutil.relativedelta import relativedelta
 
-from odoo import fields
-from odoo.tests import Form, TransactionCase, tagged
+from weth import fields
+from weth.tests import Form, TransactionCase, tagged
 
 
 @tagged("recruitment")

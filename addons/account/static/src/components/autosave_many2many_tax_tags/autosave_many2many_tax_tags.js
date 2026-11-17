@@ -2,7 +2,7 @@ import {
     Many2ManyTaxTagsField,
     many2ManyTaxTagsField,
 } from "@account/components/many2x_tax_tags/many2x_tax_tags";
-import { useEffect } from "@odoo/owl";
+import { useEffect } from "@weth/owl";
 import { registry } from "@web/core/registry";
 
 export class AutosaveMany2ManyTaxTagsField extends Many2ManyTaxTagsField {

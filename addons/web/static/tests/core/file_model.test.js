@@ -1,4 +1,4 @@
-import { expect, test } from "@odoo/hoot";
+import { expect, test } from "@weth/hoot";
 
 import { FileModel } from "@web/core/file_viewer/file_model";
 

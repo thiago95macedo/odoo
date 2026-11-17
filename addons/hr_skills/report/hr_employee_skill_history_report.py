@@ -1,6 +1,6 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import fields, models, tools
+from weth import fields, models, tools
 
 
 class HrEmployeeSkillReport(models.BaseModel):

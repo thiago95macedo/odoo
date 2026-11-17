@@ -2,7 +2,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 import datetime
 
-from odoo import models, _
+from weth import models, _
 
 
 class StockPicking(models.Model):

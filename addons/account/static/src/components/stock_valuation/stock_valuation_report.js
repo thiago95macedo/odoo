@@ -7,7 +7,7 @@ import { formatMonetary } from "@web/views/fields/formatters";
 import { standardActionServiceProps } from "@web/webclient/actions/action_plugin";
 import { serializeDate } from "@web/core/l10n/dates";
 
-import { Component, onWillStart, proxy, useProps } from "@odoo/owl";
+import { Component, onWillStart, proxy, useProps } from "@weth/owl";
 
 import { StockValuationReportButtonsBar } from "./buttons_bar/buttons_bar"
 import { StockValuationReportController } from "./controller"
@@ -80,7 +80,7 @@ export class StockValuationReport extends Component {
     }
 
     // On Click Methods --------------------------------------------------------
-    async openAccountMoves(accountIds=false) {
+    async openAccountMoves(accountIds = false) {
         const action = await this.actionService.loadAction("account.action_account_moves_all");
         const domain = [...(action.domain || [])];
         if (accountIds) {

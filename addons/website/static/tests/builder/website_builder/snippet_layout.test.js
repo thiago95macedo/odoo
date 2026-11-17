@@ -1,10 +1,10 @@
-import { expect, test } from "@odoo/hoot";
+import { expect, test } from "@weth/hoot";
 import {
     defineWebsiteModels,
     setupWebsiteBuilderWithSnippet,
 } from "@website/../tests/builder/website_helpers";
 import { contains } from "@web/../tests/web_test_helpers";
-import { queryOne } from "@odoo/hoot-dom";
+import { queryOne } from "@weth/hoot-dom";
 
 defineWebsiteModels();
 

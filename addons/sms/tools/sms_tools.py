@@ -4,8 +4,8 @@ import re
 
 import markupsafe
 
-from odoo.tools import html_escape
-from odoo.tools.mail import create_link, TEXT_URL_REGEX
+from weth.tools import html_escape
+from weth.tools.mail import create_link, TEXT_URL_REGEX
 
 
 def sms_content_to_rendered_html(text):

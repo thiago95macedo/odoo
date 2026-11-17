@@ -1,8 +1,8 @@
 from datetime import datetime, date, timedelta
 from freezegun import freeze_time
 
-from odoo.addons.mail.tests.common_activity import ActivityScheduleCase
-from odoo.tests import tagged, users
+from weth.addons.mail.tests.common_activity import ActivityScheduleCase
+from weth.tests import tagged, users
 
 
 @tagged('mail_activity_mixin', 'mail_activity', 'post_install', '-at_install')

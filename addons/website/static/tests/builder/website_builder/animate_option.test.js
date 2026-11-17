@@ -1,13 +1,13 @@
 import { expandToolbar } from "@html_editor/../tests/_helpers/toolbar";
-import { describe, expect, test, waitFor } from "@odoo/hoot";
-import { queryFirst, queryOne } from "@odoo/hoot-dom";
+import { describe, expect, test, waitFor } from "@weth/hoot";
+import { queryFirst, queryOne } from "@weth/hoot-dom";
 import { contains, onRpc } from "@web/../tests/web_test_helpers";
 import {
     defineWebsiteModels,
     setupWebsiteBuilder,
 } from "@website/../tests/builder/website_helpers";
 import { setSelection, thirdClick } from "@html_editor/../tests/_helpers/selection";
-import { advanceTime } from "@odoo/hoot-mock";
+import { advanceTime } from "@weth/hoot-mock";
 
 defineWebsiteModels();
 

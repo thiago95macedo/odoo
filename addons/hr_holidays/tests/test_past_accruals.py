@@ -2,9 +2,9 @@
 from datetime import date
 from freezegun import freeze_time
 
-from odoo.tests import tagged
+from weth.tests import tagged
 
-from odoo.addons.hr_holidays.tests.common import TestHrHolidaysCommon
+from weth.addons.hr_holidays.tests.common import TestHrHolidaysCommon
 
 
 @tagged('post_install', '-at_install', 'accruals')

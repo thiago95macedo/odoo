@@ -2,17 +2,17 @@
 
 from datetime import datetime, timedelta
 
-from odoo.tests.common import TransactionCase, new_test_user
-from odoo.tests import tagged, Form
-from odoo.exceptions import AccessError
-from odoo.tools import mute_logger
+from weth.tests.common import TransactionCase, new_test_user
+from weth.tests import tagged, Form
+from weth.exceptions import AccessError
+from weth.tools import mute_logger
 
 
 @tagged('at_install', '-post_install')  # LEGACY at_install
 class TestAccessRights(TransactionCase):
 
     @classmethod
-    @mute_logger('odoo.tests', 'odoo.addons.auth_signup.models.res_users')
+    @mute_logger('weth.tests', 'weth.addons.auth_signup.models.res_users')
     def setUpClass(cls):
         super().setUpClass()
         cls.john = new_test_user(cls.env, login='john', groups='base.group_user')
@@ -41,7 +41,7 @@ class TestAccessRights(TransactionCase):
         return [r[field] for r in data]
 
     # don't spam logs with ACL failures from portal
-    @mute_logger('odoo.addons.base.models.ir_access')
+    @mute_logger('weth.addons.base.models.ir_access')
     def test_privacy(self):
         event = self.create_event(
             self.john,

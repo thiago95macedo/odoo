@@ -1,4 +1,4 @@
-import { describe, expect, test, getFixture } from "@odoo/hoot";
+import { describe, expect, test, getFixture } from "@weth/hoot";
 import { createSpreadsheetDashboard } from "@spreadsheet_dashboard/../tests/helpers/dashboard_action";
 import {
     defineSpreadsheetDashboardModels,

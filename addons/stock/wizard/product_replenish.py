@@ -1,9 +1,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import _, api, fields, models
-from odoo.exceptions import UserError
-from odoo.fields import Domain
-from odoo.tools.misc import clean_context
+from weth import _, api, fields, models
+from weth.exceptions import UserError
+from weth.fields import Domain
+from weth.tools.misc import clean_context
 
 
 class ProductReplenish(models.TransientModel):
@@ -131,7 +131,7 @@ class ProductReplenish(models.TransientModel):
             action = self.env.ref('stock.stock_picking_action_picking_type')
             return [{
                 'label': move.picking_id.name,
-                'url': f'/odoo/action-stock.stock_picking_action_picking_type/{move.picking_id.id}'
+                'url': f'/weth/action-stock.stock_picking_action_picking_type/{move.picking_id.id}'
             }]
         return False
 

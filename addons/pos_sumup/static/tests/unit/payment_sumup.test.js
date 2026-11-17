@@ -1,5 +1,5 @@
-import { test, expect, describe, beforeEach, waitUntil } from "@odoo/hoot";
-import { advanceTime } from "@odoo/hoot-mock";
+import { test, expect, describe, beforeEach, waitUntil } from "@weth/hoot";
+import { advanceTime } from "@weth/hoot-mock";
 import { setupPosEnv, createPaymentLine, getFilledOrder } from "@point_of_sale/../tests/unit/utils";
 import { definePosModels } from "@point_of_sale/../tests/unit/data/generate_model_definitions";
 import { onRpc } from "@web/../tests/web_test_helpers";

@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 import logging
 
-from odoo import models, fields, tools, api
+from weth import models, fields, tools, api
 
 _logger = logging.getLogger(__name__)
 

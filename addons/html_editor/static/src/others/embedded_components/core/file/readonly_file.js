@@ -9,7 +9,7 @@ import {
 } from "@html_editor/others/embedded_components/core/embedded_component_toolbar/embedded_component_toolbar";
 import { StateFileModel } from "@html_editor/others/embedded_components/core/file/state_file_model";
 import { getEmbeddedProps } from "@html_editor/others/embedded_component_utils";
-import { Component, proxy, t, useProps } from "@odoo/owl";
+import { Component, proxy, t, useProps } from "@weth/owl";
 
 export class ReadonlyEmbeddedFileComponent extends Component {
     static components = {
@@ -46,7 +46,7 @@ export class ReadonlyEmbeddedFileComponent extends Component {
                     this.fileModel.name
                 ),
                 title: _t("Missing File"),
-                confirm: () => {},
+                confirm: () => { },
                 confirmLabel: _t("Close"),
             });
         }

@@ -1,4 +1,4 @@
-import { Component, onMounted, onPatched, useProps, signal, t } from "@odoo/owl";
+import { Component, onMounted, onPatched, useProps, signal, t } from "@weth/owl";
 import { useHorizontalScrollShadow } from "../../utils/scroll_shadow_hook";
 import { useDraggableScroll } from "../../utils/scroll_dnd_hook";
 import { scrollItemIntoViewX } from "../../utils/scroll";

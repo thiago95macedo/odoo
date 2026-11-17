@@ -1,4 +1,4 @@
-<odoo noupdate="1">
+<weth noupdate="1">
 
     <!--
         Multi-company/Multi-website compliant:
@@ -14,4 +14,4 @@
     <record id="product.product_pricelist_item_comp_rule" model="ir.access">
         <field name="active" eval="False"/>
     </record>
-</odoo>
+</weth>

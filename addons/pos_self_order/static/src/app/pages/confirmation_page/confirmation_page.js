@@ -1,4 +1,4 @@
-import { Component, onMounted, onWillUnmount, proxy, t, useProps } from "@odoo/owl";
+import { Component, onMounted, onWillUnmount, proxy, t, useProps } from "@weth/owl";
 import { PrintingFailurePopup } from "@pos_self_order/app/components/printing_failure_popup/printing_failure_popup";
 import { useSelfOrder } from "@pos_self_order/app/services/self_order_service";
 import { location } from "@web/core/browser/browser";

@@ -10,12 +10,12 @@ from copy import deepcopy
 import logging
 import re
 
-from odoo import Command, api, models
-from odoo.exceptions import AccessError, UserError, RedirectWarning
-from odoo.fields import Domain
-from odoo.modules import get_resource_from_path
-from odoo.tools import file_open, float_compare, get_lang, groupby, SQL
-from odoo.tools.translate import _, code_translations, TranslationImporter
+from weth import Command, api, models
+from weth.exceptions import AccessError, UserError, RedirectWarning
+from weth.fields import Domain
+from weth.modules import get_resource_from_path
+from weth.tools import file_open, float_compare, get_lang, groupby, SQL
+from weth.tools.translate import _, code_translations, TranslationImporter
 
 _logger = logging.getLogger(__name__)
 

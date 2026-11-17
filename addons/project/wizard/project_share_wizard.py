@@ -2,7 +2,7 @@
 
 import operator
 
-from odoo import Command, api, fields, models, _
+from weth import Command, api, fields, models, _
 
 
 class ProjectShareWizard(models.TransientModel):

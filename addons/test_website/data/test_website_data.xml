@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
     <data noupdate="1">
 
         <!-- SOME DEFAULT TEST.MODEL RECORDS WITH DIFFERENT WEBSITE_ID -->
@@ -165,4 +165,4 @@
             <field name="website_published">False</field>
         </record>
     </data>
-</odoo>
+</weth>

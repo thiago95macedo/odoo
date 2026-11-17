@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
     <record id="fleet.vehicle_1" model="fleet.vehicle">
         <field name="driver_employee_id" ref="hr.employee_qdp"/>
     </record>
@@ -50,4 +50,4 @@
         <value model="fleet.vehicle.assignation.log" eval="obj().search([('driver_employee_id', '=', False), ('driver_id', '!=', False)]).ids"/>
     </function>
 
-</odoo>
+</weth>

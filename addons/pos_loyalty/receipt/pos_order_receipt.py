@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import _, models
-from odoo.tools import float_round
-from odoo.tools.image import image_data_uri
+from weth import _, models
+from weth.tools import float_round
+from weth.tools.image import image_data_uri
 
 
 class PosOrderReceipt(models.AbstractModel):

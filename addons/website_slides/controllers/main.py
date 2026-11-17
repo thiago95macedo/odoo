@@ -8,18 +8,18 @@ import logging
 import math
 import werkzeug
 
-from odoo import fields, http, tools, _
-from odoo.addons.base.models.ir_qweb import keep_query
-from odoo.addons.portal.controllers.thread import PortalWebClientController
-from odoo.addons.website.controllers.main import QueryURL
-from odoo.addons.website.models.ir_http import sitemap_qs2dom
-from odoo.addons.website_profile.controllers.main import WebsiteProfile
-from odoo.exceptions import AccessError, ValidationError, UserError, MissingError
-from odoo.fields import Domain
-from odoo.http import request, Response
-from odoo.http.session import touch
-from odoo.tools import consteq, email_normalize_all
-from odoo.tools.translate import LazyTranslate
+from weth import fields, http, tools, _
+from weth.addons.base.models.ir_qweb import keep_query
+from weth.addons.portal.controllers.thread import PortalWebClientController
+from weth.addons.website.controllers.main import QueryURL
+from weth.addons.website.models.ir_http import sitemap_qs2dom
+from weth.addons.website_profile.controllers.main import WebsiteProfile
+from weth.exceptions import AccessError, ValidationError, UserError, MissingError
+from weth.fields import Domain
+from weth.http import request, Response
+from weth.http.session import touch
+from weth.tools import consteq, email_normalize_all
+from weth.tools.translate import LazyTranslate
 
 _lt = LazyTranslate(__name__)
 _logger = logging.getLogger(__name__)

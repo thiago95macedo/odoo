@@ -22,7 +22,7 @@ import {
     types,
     useOnChange,
     useProps,
-} from "@odoo/owl";
+} from "@weth/owl";
 
 import { _t } from "@web/core/l10n/translation";
 import { useService } from "@web/core/utils/hooks";
@@ -115,7 +115,7 @@ export class CallPreview extends Component {
                 (deviceId) => {
                     this.audioRef()
                         ?.setSinkId?.(deviceId)
-                        .catch(() => {});
+                        .catch(() => { });
                 },
                 { initialRun: false }
             );

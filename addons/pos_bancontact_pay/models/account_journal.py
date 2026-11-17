@@ -1,7 +1,7 @@
-from odoo import _, api, models
-from odoo.exceptions import ValidationError
+from weth import _, api, models
+from weth.exceptions import ValidationError
 
-from odoo.addons.pos_bancontact_pay import const
+from weth.addons.pos_bancontact_pay import const
 
 
 class AccountJournal(models.Model):

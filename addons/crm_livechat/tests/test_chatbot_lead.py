@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import Command
-from odoo.addons.crm_livechat.tests import chatbot_common
+from weth import Command
+from weth.addons.crm_livechat.tests import chatbot_common
 
 
 class CrmChatbotCase(chatbot_common.CrmChatbotCase):

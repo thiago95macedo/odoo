@@ -3,12 +3,12 @@
 import json
 from re import search
 
-from odoo.tests import tagged, HttpCase
+from weth.tests import tagged, HttpCase
 
-from odoo.addons.mail.controllers.thread import ThreadController
-from odoo.addons.project.tests.test_project_sharing import TestProjectSharingCommon
-from odoo.addons.website_project.controllers.main import WebsiteForm
-from odoo.addons.http_routing.tests.common import MockRequest
+from weth.addons.mail.controllers.thread import ThreadController
+from weth.addons.project.tests.test_project_sharing import TestProjectSharingCommon
+from weth.addons.website_project.controllers.main import WebsiteForm
+from weth.addons.http_routing.tests.common import MockRequest
 
 
 class TestProjectPortalAccess(TestProjectSharingCommon, HttpCase):

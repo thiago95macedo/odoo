@@ -1,4 +1,4 @@
-import { Component, proxy, useProps, t } from "@odoo/owl";
+import { Component, proxy, useProps, t } from "@weth/owl";
 import { resetLocalData } from "./reset_local_data";
 
 export class CriticalPOSError extends Component {

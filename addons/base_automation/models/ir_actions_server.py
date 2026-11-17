@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
-from odoo.tools.json import scriptsafe as json_scriptsafe
+from weth.tools.json import scriptsafe as json_scriptsafe
 
-from odoo import api, fields, models, _
-from odoo.fields import Domain
+from weth import api, fields, models, _
+from weth.fields import Domain
 
 from .base_automation import get_webhook_request_payload
 

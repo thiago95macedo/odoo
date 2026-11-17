@@ -8,13 +8,13 @@ from http import HTTPStatus
 from werkzeug.exceptions import Forbidden
 from werkzeug.urls import url_encode
 
-import odoo
-import odoo.modules.registry
-from odoo.exceptions import AccessError
-from odoo.http import Controller, request, route
-from odoo.http.response import Response
-from odoo.http.router import db_filter
-from odoo.http.session import (
+import weth
+import weth.modules.registry
+from weth.exceptions import AccessError
+from weth.http import Controller, request, route
+from weth.http.response import Response
+from weth.http.router import db_filter
+from weth.http.session import (
     authenticate,
     logout,
     save_session,
@@ -43,8 +43,8 @@ class Session(Controller):
             if not request.db or request.db != db:
                 # Use a new env only when no db on the request, which means the env was not set on in through `serve_db`
                 # or the db is different than the request db
-                cr = stack.enter_context(odoo.modules.registry.Registry(db).cursor())
-                env = odoo.api.Environment(cr, None, {})
+                cr = stack.enter_context(weth.modules.registry.Registry(db).cursor())
+                env = weth.api.Environment(cr, None, {})
             else:
                 env = request.env
 
@@ -85,7 +85,7 @@ class Session(Controller):
         logout(request.session)
 
     @route('/web/session/logout', type='http', auth='none', methods=['POST'], readonly=True)
-    def logout(self, redirect='/odoo'):
+    def logout(self, redirect='/weth'):
         logout(request.session, keep_db=True)
         return request.redirect(redirect, 303)
 

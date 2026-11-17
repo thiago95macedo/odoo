@@ -1,4 +1,4 @@
-import { blockDom, markup, TemplateSet } from "@odoo/owl";
+import { blockDom, markup, TemplateSet } from "@weth/owl";
 import { appTranslateFn } from "@web/core/l10n/translation";
 import { getTemplate } from "@web/core/templates";
 
@@ -13,8 +13,8 @@ export function renderToElement(template, context = {}) {
     if (el?.nextElementSibling) {
         throw new Error(
             `The rendered template '${template}' contains multiple root ` +
-                `nodes that will be ignored using renderToElement, you should ` +
-                `consider using renderToFragment or refactoring the template.`
+            `nodes that will be ignored using renderToElement, you should ` +
+            `consider using renderToFragment or refactoring the template.`
         );
     }
     el?.remove();

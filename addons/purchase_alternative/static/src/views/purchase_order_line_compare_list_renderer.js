@@ -1,4 +1,4 @@
-import { onWillStart, proxy } from "@odoo/owl";
+import { onWillStart, proxy } from "@weth/owl";
 import { ListRenderer } from "@web/views/list/list_renderer";
 import {
     provideViewButtonHandler,
@@ -25,8 +25,8 @@ export class PurchaseOrderLineCompareListRenderer extends ListRenderer {
 
     async updateBestFields() {
         [this.bestFields.best_price_ids,
-         this.bestFields.best_date_ids,
-         this.bestFields.best_price_unit_ids] = await this.props.list.model.orm.call(
+        this.bestFields.best_date_ids,
+        this.bestFields.best_price_unit_ids] = await this.props.list.model.orm.call(
             "purchase.order",
             "get_tender_best_lines",
             [this.props.list.context.purchase_order_id || this.props.list.context.active_id],

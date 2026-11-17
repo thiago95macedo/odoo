@@ -1,4 +1,4 @@
-from odoo.tests import common
+from weth.tests import common
 
 
 class TestPurchaseAlternativeCommon(common.TransactionCase):

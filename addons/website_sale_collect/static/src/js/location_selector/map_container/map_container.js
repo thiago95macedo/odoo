@@ -1,4 +1,4 @@
-import { t, useProps } from '@odoo/owl';
+import { t, useProps } from '@weth/owl';
 import { deserializeDate, toLocaleDateString } from '@web/core/l10n/dates';
 import { patch } from '@web/core/utils/patch';
 

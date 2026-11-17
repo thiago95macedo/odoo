@@ -1,4 +1,4 @@
-import { expect, test } from "@odoo/hoot";
+import { expect, test } from "@weth/hoot";
 import { defineModels, mountView } from "@web/../tests/web_test_helpers";
 import { defineMailModels } from "@mail/../tests/mail_test_helpers";
 import { HrLeaveAccrualPlan } from "@hr_holidays/../tests/mock_server/mock_models/hr_leave_accrual_plan";

@@ -1,11 +1,11 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
-from odoo import api, fields, Command
-from odoo.models import BaseModel
-from odoo.tests import HttpCase, new_test_user, tagged, save_test_file
-from odoo.tools import BinaryValue, config, file_path, file_open
-from odoo.tools.float_utils import float_round
+from weth import api, fields, Command
+from weth.models import BaseModel
+from weth.tests import HttpCase, new_test_user, tagged, save_test_file
+from weth.tools import BinaryValue, config, file_path, file_open
+from weth.tools.float_utils import float_round
 
-from odoo.addons.product.tests.common import ProductCommon
+from weth.addons.product.tests.common import ProductCommon
 
 import json
 import copy

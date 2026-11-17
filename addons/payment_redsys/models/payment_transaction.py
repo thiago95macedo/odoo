@@ -3,14 +3,14 @@
 import base64
 import json
 
-from odoo import api, fields, models
-from odoo.tools.urls import urljoin
+from weth import api, fields, models
+from weth.tools.urls import urljoin
 
-from odoo.addons.payment import utils as payment_utils
-from odoo.addons.payment.const import COUNTRY_NUMERIC_CODES
-from odoo.addons.payment.logging import get_payment_logger
-from odoo.addons.payment_redsys import const
-from odoo.addons.payment_redsys.controllers.main import RedsysController
+from weth.addons.payment import utils as payment_utils
+from weth.addons.payment.const import COUNTRY_NUMERIC_CODES
+from weth.addons.payment.logging import get_payment_logger
+from weth.addons.payment_redsys import const
+from weth.addons.payment_redsys.controllers.main import RedsysController
 
 _logger = get_payment_logger(__name__)
 

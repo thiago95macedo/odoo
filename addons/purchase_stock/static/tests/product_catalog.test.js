@@ -1,5 +1,5 @@
-import { expect, test, runAllTimers } from "@odoo/hoot";
-import { click } from "@odoo/hoot-dom";
+import { expect, test, runAllTimers } from "@weth/hoot";
+import { click } from "@weth/hoot-dom";
 import { defineModels, fields, models, mountView, onRpc } from "@web/../tests/web_test_helpers";
 import { defineMailModels } from "@mail/../tests/mail_test_helpers";
 

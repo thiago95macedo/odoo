@@ -1,6 +1,6 @@
-import { beforeEach, expect, test, waitFor } from "@odoo/hoot";
-import { click, edit, queryAll, queryAllTexts, queryOne } from "@odoo/hoot-dom";
-import { animationFrame, mockDate } from "@odoo/hoot-mock";
+import { beforeEach, expect, test, waitFor } from "@weth/hoot";
+import { click, edit, queryAll, queryAllTexts, queryOne } from "@weth/hoot-dom";
+import { animationFrame, mockDate } from "@weth/hoot-mock";
 import { getPickerCell } from "@web/../tests/core/datetime/datetime_test_helpers";
 import {
     contains,

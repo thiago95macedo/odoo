@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
     <!-- A Populate demo for the Account module -->
     <record id="account_populate_demo" model="populate.blueprint">
         <field name="name">Account - Populate Demo</field>
@@ -234,4 +234,4 @@
             </create>
         </field>
     </record>
-</odoo>
+</weth>

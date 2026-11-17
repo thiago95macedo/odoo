@@ -1,7 +1,7 @@
 import { session } from "@web/session";
 import { browser } from "@web/core/browser/browser";
 import { registry } from "@web/core/registry";
-import { EventBus, usePlugin, Plugin, useListener, onWillDestroy } from "@odoo/owl";
+import { EventBus, usePlugin, Plugin, useListener, onWillDestroy } from "@weth/owl";
 import { services } from "@web/core/services";
 import { isBrowserChrome, isMobileOS } from "@web/core/browser/feature_detection";
 
@@ -61,7 +61,7 @@ export class BarcodePlugin extends Plugin {
     }
 
     handleBarcode(barcode) {
-        this.bus.trigger('barcode_scanned', {barcode});
+        this.bus.trigger('barcode_scanned', { barcode });
     }
 
     /**

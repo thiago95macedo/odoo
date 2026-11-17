@@ -2,7 +2,7 @@ import {
     accountProductField,
     AccountProductField,
 } from "@account/components/account_product_field/account_product_field";
-import { useEffect } from "@odoo/owl";
+import { useEffect } from "@weth/owl";
 import { saleProductMixin } from "@sale/js/sale_product_mixin";
 import { serializeDateTime, today } from "@web/core/l10n/dates";
 import { registry } from "@web/core/registry";
@@ -44,9 +44,9 @@ export class SaleOrderTemplateLineProductField extends AccountProductField {
     }
 
     // Hooks for saleProductMixin
-    _onProductTemplateUpdate() {}
-    _onProductUpdate() {}
-    onEditConfiguration() {}
+    _onProductTemplateUpdate() { }
+    _onProductUpdate() { }
+    onEditConfiguration() { }
 
     get isProductClickable() {
         return false;

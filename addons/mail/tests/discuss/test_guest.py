@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import fields
-from odoo.addons.bus.tests.common import BusResult
-from odoo.addons.mail.tests.common import MailCase
+from weth import fields
+from weth.addons.bus.tests.common import BusResult
+from weth.addons.mail.tests.common import MailCase
 
 
 class TestGuest(MailCase):

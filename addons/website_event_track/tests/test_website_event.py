@@ -1,9 +1,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.tests import tagged
-from odoo.tests.common import TransactionCase
-from odoo.tools import BinaryBytes
-from odoo.tools.image import binary_to_image
+from weth.tests import tagged
+from weth.tests.common import TransactionCase
+from weth.tools import BinaryBytes
+from weth.tools.image import binary_to_image
 from io import BytesIO
 from PIL import Image
 

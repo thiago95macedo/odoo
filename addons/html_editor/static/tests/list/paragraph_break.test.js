@@ -1,4 +1,4 @@
-import { describe, test, before } from "@odoo/hoot";
+import { describe, test, before } from "@weth/hoot";
 import { testEditor } from "../_helpers/editor";
 import { unformat } from "../_helpers/format";
 import { insertText, splitBlock } from "../_helpers/user_actions";
@@ -1004,8 +1004,8 @@ describe("Selection collapsed", () => {
         });
     });
     describe("Mixed", () => {
-        describe("Ordered to unordered", () => {});
-        describe("Unordered to ordered", () => {});
+        describe("Ordered to unordered", () => { });
+        describe("Unordered to ordered", () => { });
     });
 });
 describe("Selection not collapsed", () => {

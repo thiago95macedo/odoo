@@ -1,4 +1,4 @@
-import { describe, test } from "@odoo/hoot";
+import { describe, test } from "@weth/hoot";
 import { Command, serverState } from "@web/../tests/web_test_helpers";
 import {
     click,

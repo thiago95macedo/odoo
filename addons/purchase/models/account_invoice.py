@@ -6,8 +6,8 @@ import time
 from collections import defaultdict
 from markupsafe import Markup
 
-from odoo import api, fields, models, Command, _
-from odoo.tools import OrderedSet, SQL
+from weth import api, fields, models, Command, _
+from weth.tools import OrderedSet, SQL
 
 _logger = logging.getLogger(__name__)
 

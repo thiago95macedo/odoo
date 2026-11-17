@@ -1,7 +1,7 @@
-/** @odoo-module */
+/** @weth-module */
 
-import { on } from "@odoo/hoot-dom";
-import { proxy, signal, t, untrack } from "@odoo/owl";
+import { on } from "@weth/hoot-dom";
+import { proxy, signal, t, untrack } from "@weth/owl";
 import { _cleanupDOM, _defineRootNode } from "@web/../lib/hoot-dom/helpers/dom";
 import { _cleanupEvents, _enableEventLogs } from "@web/../lib/hoot-dom/helpers/events";
 import {
@@ -56,7 +56,7 @@ import { Test, testError } from "./test";
 import { EXCLUDE_PREFIX, createUrlFromId } from "./url";
 
 // Import all helpers for debug mode
-import * as _hootDom from "@odoo/hoot-dom";
+import * as _hootDom from "@weth/hoot-dom";
 import * as _animation from "../mock/animation";
 import * as _date from "../mock/date";
 import * as _math from "../mock/math";
@@ -410,12 +410,12 @@ export class Runner {
      * @private
      * @type {() => void}
      */
-    _pushPendingTest = () => {};
+    _pushPendingTest = () => { };
     /**
      * @private
      * @type {(test: Test) => void}
      */
-    _pushTest = () => {};
+    _pushTest = () => { };
     /**
      * @private
      */
@@ -1221,7 +1221,7 @@ export class Runner {
             test.runCount++;
 
             if (this.debug) {
-                return new Promise(() => {});
+                return new Promise(() => { });
             }
             if (this.config.bail() && this._failed >= this.config.bail()) {
                 return this.stop();

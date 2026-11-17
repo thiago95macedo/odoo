@@ -1,11 +1,11 @@
 from datetime import datetime, timedelta
 from markupsafe import Markup
 
-from odoo import Command
-from odoo.addons.test_mail.tests.test_performance import BaseMailPostPerformance
-from odoo.tests.common import users, warmup
-from odoo.tests import tagged
-from odoo.tools import mute_logger
+from weth import Command
+from weth.addons.test_mail.tests.test_performance import BaseMailPostPerformance
+from weth.tests.common import users, warmup
+from weth.tests import tagged
+from weth.tools import mute_logger
 
 
 @tagged('mail_performance', 'post_install', '-at_install')
@@ -65,7 +65,7 @@ class TestMailPerformance(FullBaseMailPerformance):
                          self.user_follower_emp_email.partner_id + self.user_admin.partner_id + self.customers + self.user_follower_portal.partner_id)
         self.assertEqual(len(record_ticket.message_ids), 1)
 
-    @mute_logger('odoo.tests', 'odoo.addons.mail.models.mail_mail', 'odoo.models.unlink')
+    @mute_logger('weth.tests', 'weth.addons.mail.models.mail_mail', 'weth.models.unlink')
     @users('employee')
     @warmup
     def test_message_post_w_followers(self):
@@ -230,7 +230,7 @@ class TestPortalFormatPerformance(FullBaseMailPerformance):
         self.assertEqual(len(self.messages_all), 5 * 2)
         self.assertEqual(len(self.ratings_all), len(self.messages_all) * 2)
 
-    @mute_logger('odoo.tests', 'odoo.addons.mail.models.mail_mail', 'odoo.models.unlink')
+    @mute_logger('weth.tests', 'weth.addons.mail.models.mail_mail', 'weth.models.unlink')
     @users('employee')
     @warmup
     def test_portal_message_format_norating(self):
@@ -289,7 +289,7 @@ class TestPortalFormatPerformance(FullBaseMailPerformance):
             self.assertNotIn('rating_stats', format_res)
             self.assertNotIn('rating_value', format_res)
 
-    @mute_logger('odoo.tests', 'odoo.addons.mail.models.mail_mail', 'odoo.models.unlink')
+    @mute_logger('weth.tests', 'weth.addons.mail.models.mail_mail', 'weth.models.unlink')
     @users('employee')
     @warmup
     def test_portal_message_format_rating(self):
@@ -311,7 +311,7 @@ class TestPortalFormatPerformance(FullBaseMailPerformance):
             )
             self.assertEqual(format_res['rating_value'], 4)
 
-    @mute_logger('odoo.tests', 'odoo.addons.mail.models.mail_mail', 'odoo.models.unlink')
+    @mute_logger('weth.tests', 'weth.addons.mail.models.mail_mail', 'weth.models.unlink')
     @users('employee')
     @warmup
     def test_portal_message_format_monorecord(self):
@@ -322,7 +322,7 @@ class TestPortalFormatPerformance(FullBaseMailPerformance):
 
         self.assertEqual(len(res), 1)
 
-    @mute_logger("odoo.tests", "odoo.addons.mail.models.mail_mail", "odoo.models.unlink")
+    @mute_logger("weth.tests", "weth.addons.mail.models.mail_mail", "weth.models.unlink")
     @users("employee")
     @warmup
     def test_portal_attachment_as_author(self):

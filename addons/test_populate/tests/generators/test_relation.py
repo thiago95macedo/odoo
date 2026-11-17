@@ -1,10 +1,10 @@
-from odoo.fields import Domain
-from odoo.tests import TransactionCase
+from weth.fields import Domain
+from weth.tests import TransactionCase
 
-from odoo.addons.populate import start_populate
-from odoo.addons.populate.generators import RelationMany, RelationOne
-from odoo.addons.populate.utils.orm import DynamicDomain, ValueTarget
-from odoo.addons.test_populate.tests.common import PopulateTestCase
+from weth.addons.populate import start_populate
+from weth.addons.populate.generators import RelationMany, RelationOne
+from weth.addons.populate.utils.orm import DynamicDomain, ValueTarget
+from weth.addons.test_populate.tests.common import PopulateTestCase
 
 
 class TestRelationOne(TransactionCase):

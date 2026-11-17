@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import Command
-from odoo.tests import HttpCase, new_test_user
+from weth import Command
+from weth.tests import HttpCase, new_test_user
 
 
 class TestUi(HttpCase):
@@ -46,7 +46,7 @@ class TestUi(HttpCase):
             subtype_xmlid="mail.mt_comment",
         )
         self.start_tour(
-            f"/odoo/discuss?active_id=discuss.channel_{group_chat.id}&fullscreen=1",
+            f"/weth/discuss?active_id=discuss.channel_{group_chat.id}&fullscreen=1",
             "discuss.meeting_view_tour",
             login="john",
         )

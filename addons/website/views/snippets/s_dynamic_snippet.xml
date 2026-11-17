@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
     <template id="website.s_dynamic_snippet_template">
         <t t-set="snippet_title_default">Our latest content</t>
         <t t-set="snippet_description_default">Check out what's new in our company !</t>
@@ -60,4 +60,4 @@
     <path>website/static/src/snippets/s_dynamic_snippet/000.xml</path>
 </asset>
 
-</odoo>
+</weth>

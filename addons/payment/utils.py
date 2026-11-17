@@ -5,13 +5,13 @@ from urllib.parse import parse_qsl, urlparse
 
 from werkzeug.exceptions import Forbidden
 
-from odoo import api, fields
-from odoo.http import request
-from odoo.tools import consteq, float_round
-from odoo.tools.misc import hmac as hmac_tool
+from weth import api, fields
+from weth.http import request
+from weth.tools import consteq, float_round
+from weth.tools.misc import hmac as hmac_tool
 
-from odoo.addons.payment.const import CURRENCY_MINOR_UNITS, SENSITIVE_KEYS
-from odoo.addons.payment.logging import get_payment_logger
+from weth.addons.payment.const import CURRENCY_MINOR_UNITS, SENSITIVE_KEYS
+from weth.addons.payment.logging import get_payment_logger
 
 # Pass the possibly empty set of sensitive keys to the logger in case a provider module extends it.
 _logger = get_payment_logger(__name__, sensitive_keys=SENSITIVE_KEYS)

@@ -5,9 +5,9 @@ from zoneinfo import ZoneInfo
 
 from freezegun import freeze_time
 
-from odoo import fields
-from odoo.addons.mrp.tests.common import TestMrpCommon
-from odoo.tests import Form
+from weth import fields
+from weth.addons.mrp.tests.common import TestMrpCommon
+from weth.tests import Form
 
 
 class TestOee(TestMrpCommon):

@@ -6,8 +6,8 @@ from unittest.mock import patch
 
 from freezegun import freeze_time
 
-from odoo.addons.bus.tests.common import WebsocketCase
-from odoo.addons.bus.websocket import Frame, Opcode, TimeoutManager, Websocket
+from weth.addons.bus.tests.common import WebsocketCase
+from weth.addons.bus.websocket import Frame, Opcode, TimeoutManager, Websocket
 
 
 class TestWebsocketTimeouts(WebsocketCase):
@@ -76,7 +76,7 @@ class TestWebsocketTimeouts(WebsocketCase):
             terminate_done_event.set()
 
         with (
-            patch('odoo.addons.bus.websocket.TimeoutManager.KEEP_ALIVE_TIMEOUT', 0),
+            patch('weth.addons.bus.websocket.TimeoutManager.KEEP_ALIVE_TIMEOUT', 0),
             patch.object(Websocket, '_disconnect', disconnect_wrapper),
             patch.object(Websocket, '_terminate', terminate_wrapper),
             freeze_time('2022-08-19') as frozen_time,

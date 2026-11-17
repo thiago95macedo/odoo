@@ -1,4 +1,4 @@
-from odoo.addons.mass_mailing.tests.common import MassMailCommon
+from weth.addons.mass_mailing.tests.common import MassMailCommon
 
 
 class TestMailRenderMixin(MassMailCommon):

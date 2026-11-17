@@ -1,13 +1,13 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 from collections import defaultdict
 
-from odoo import _, api, fields, models
-from odoo.exceptions import UserError, ValidationError
-from odoo.fields import Domain
-from odoo.models import Query
-from odoo.tools import SQL, frozendict, unique
-from odoo.tools.float_utils import float_compare, float_round
-from odoo.tools.sql import table_exists
+from weth import _, api, fields, models
+from weth.exceptions import UserError, ValidationError
+from weth.fields import Domain
+from weth.models import Query
+from weth.tools import SQL, frozendict, unique
+from weth.tools.float_utils import float_compare, float_round
+from weth.tools.sql import table_exists
 
 
 class AnalyticMixin(models.AbstractModel):

@@ -9,7 +9,7 @@ const patchStep = {
     content: "Patch upload service",
     trigger: "body",
     run: () => {
-        const uploadService = odoo.__WOWL_DEBUG__.root.env.services.uploadLocalFiles;
+        const uploadService = weth.__WOWL_DEBUG__.root.env.services.uploadLocalFiles;
         unpatch = patch(uploadService, {
             async upload() {
                 // hardcoded id for test_03_link_to_document

@@ -1,6 +1,6 @@
 import { contains, openDiscuss, start, startServer } from "@mail/../tests/mail_test_helpers";
 
-import { describe, test } from "@odoo/hoot";
+import { describe, test } from "@weth/hoot";
 
 import { Command, serverState } from "@web/../tests/web_test_helpers";
 import { url } from "@web/core/utils/urls";
@@ -28,8 +28,7 @@ test("Discuss header shows visitor avatar", async () => {
     const [guest] = pyEnv["mail.guest"].search_read([["id", "=", guestId]]);
     await contains(
         `.o-mail-DiscussContent-header img[data-src='${url(
-            `/web/image/mail.guest/${guestId}/avatar_128?unique=${
-                deserializeDateTime(guest.write_date).ts
+            `/web/image/mail.guest/${guestId}/avatar_128?unique=${deserializeDateTime(guest.write_date).ts
             }`
         )}']`
     );

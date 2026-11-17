@@ -2,14 +2,14 @@
 
 import logging
 
-from odoo import models
-from odoo.http import request
-from odoo.http.session import check
-from odoo.tools.misc import OrderedSet
+from weth import models
+from weth.http import request
+from weth.http.session import check
+from weth.tools.misc import OrderedSet
 
-from odoo.addons.bus.bus_dispatcher import dispatch
-from odoo.addons.bus.models.bus import channel_with_db
-from odoo.addons.bus.websocket import wsrequest
+from weth.addons.bus.bus_dispatcher import dispatch
+from weth.addons.bus.models.bus import channel_with_db
+from weth.addons.bus.websocket import wsrequest
 
 _logger = logging.getLogger(__name__)
 

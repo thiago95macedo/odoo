@@ -1,5 +1,5 @@
-import { beforeEach, expect, test } from "@odoo/hoot";
-import { advanceTime, animationFrame, runAllTimers } from "@odoo/hoot-mock";
+import { beforeEach, expect, test } from "@weth/hoot";
+import { advanceTime, animationFrame, runAllTimers } from "@weth/hoot-mock";
 import {
     getService,
     mountWithCleanup,

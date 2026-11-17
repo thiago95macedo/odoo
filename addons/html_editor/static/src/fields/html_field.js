@@ -30,7 +30,7 @@ import {
     useApp,
     useEffect,
     useProps,
-} from "@odoo/owl";
+} from "@weth/owl";
 import { localization } from "@web/core/l10n/localization";
 import { _t } from "@web/core/l10n/translation";
 import { registry } from "@web/core/registry";
@@ -218,7 +218,7 @@ export class HtmlField extends Component {
                     this.isDirty = false;
                 }
             },
-            () => {}
+            () => { }
         );
         this.props.record.model.bus.trigger("FIELD_IS_DIRTY", this.isDirty);
     }
@@ -486,7 +486,7 @@ export const htmlField = {
                 "embedded_components" in options ? Boolean(options.embedded_components) : true,
             sandboxedPreview: Boolean(options.sandboxedPreview),
             cssReadonlyAssetId: options.cssReadonly,
-            codeview: Boolean(odoo.debug && options.codeview),
+            codeview: Boolean(weth.debug && options.codeview),
         };
 
         if (viewType === "list") {

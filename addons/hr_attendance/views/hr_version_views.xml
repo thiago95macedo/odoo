@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<odoo>
+<weth>
     <record id="hr_version_list_view_enhanced_hr_attendance_base" model="ir.ui.view">
         <field name="name">hr.version.list.view.enhanced.hr.attendance.base</field>
         <field name="model">hr.version</field>
@@ -28,4 +28,4 @@
             </xpath>
         </field>
     </record>
-</odoo>
+</weth>

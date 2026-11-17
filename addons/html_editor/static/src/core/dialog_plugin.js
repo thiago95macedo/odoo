@@ -1,7 +1,7 @@
 import { Plugin } from "../plugin";
 
 /**
- * @typedef {typeof import("@odoo/owl").Component} Component
+ * @typedef {typeof import("@weth/owl").Component} Component
  * @typedef {import("@web/core/dialog/dialog_plugin").DialogOptionSchema} DialogOptionSchema
  */
 

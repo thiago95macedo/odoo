@@ -8,20 +8,20 @@ from urllib.parse import parse_qs, urlencode, urlparse, urlsplit
 from werkzeug.exceptions import Forbidden, NotFound
 from werkzeug.urls import url_decode, url_encode, url_parse
 
-from odoo import fields
-from odoo.exceptions import ValidationError
-from odoo.fields import Command, Domain
-from odoo.http import request, route
-from odoo.http.stream import content_disposition
-from odoo.tools import SQL, clean_context, float_round, lazy, str2bool
-from odoo.tools.translate import LazyTranslate
+from weth import fields
+from weth.exceptions import ValidationError
+from weth.fields import Command, Domain
+from weth.http import request, route
+from weth.http.stream import content_disposition
+from weth.tools import SQL, clean_context, float_round, lazy, str2bool
+from weth.tools.translate import LazyTranslate
 
-from odoo.addons.payment.controllers import portal as payment_portal
-from odoo.addons.sale.controllers import portal as sale_portal
-from odoo.addons.website.controllers.main import QueryURL
-from odoo.addons.website.models.ir_http import sitemap_qs2dom
-from odoo.addons.website_sale.const import MAX_EXPANDED_FILTER_SECTIONS, SHOP_PATH
-from odoo.addons.website_sale.models.website import PRICELIST_SELECTED_SESSION_CACHE_KEY
+from weth.addons.payment.controllers import portal as payment_portal
+from weth.addons.sale.controllers import portal as sale_portal
+from weth.addons.website.controllers.main import QueryURL
+from weth.addons.website.models.ir_http import sitemap_qs2dom
+from weth.addons.website_sale.const import MAX_EXPANDED_FILTER_SECTIONS, SHOP_PATH
+from weth.addons.website_sale.models.website import PRICELIST_SELECTED_SESSION_CACHE_KEY
 
 _lt = LazyTranslate(__name__)
 

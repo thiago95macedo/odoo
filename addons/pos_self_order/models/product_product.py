@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 from __future__ import annotations
 
-from odoo import models
+from weth import models
 
 
 class ProductProduct(models.Model):

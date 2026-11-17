@@ -13,13 +13,13 @@ from freezegun import freeze_time
 from markupsafe import Markup
 from OpenSSL.SSL import Error as SSLError
 
-from odoo import api, Command, fields, SUPERUSER_ID
-from odoo.addons.base.models.ir_mail_server import MailDeliveryException
-from odoo.addons.mail.tests.common import MailCommon
-from odoo.exceptions import AccessError, LockError
-from odoo.fields import Domain
-from odoo.tests import common, tagged, users
-from odoo.tools import formataddr, mute_logger
+from weth import api, Command, fields, SUPERUSER_ID
+from weth.addons.base.models.ir_mail_server import MailDeliveryException
+from weth.addons.mail.tests.common import MailCommon
+from weth.exceptions import AccessError, LockError
+from weth.fields import Domain
+from weth.tests import common, tagged, users
+from weth.tools import formataddr, mute_logger
 
 
 @tagged('mail_mail')
@@ -123,7 +123,7 @@ class TestMailMail(MailCommon):
             self.assertEqual(mail.sudo().restricted_attachment_count, 2)
             self.assertEqual(len(mail.sudo().unrestricted_attachment_ids), 0)
 
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_mail_mail_headers(self):
         """ Test headers management when set on outgoing mail. """
         # mail without thread-enabled record
@@ -152,7 +152,7 @@ class TestMailMail(MailCommon):
                     self.assertIn(key, self._mails[0]['headers'])
                     self.assertEqual(self._mails[0]['headers'][key], value)
 
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_mail_mail_recipients(self):
         """ Partner_ids is a field used from mail_message, but not from mail_mail. """
         mail = self.env['mail.mail'].sudo().create({
@@ -176,7 +176,7 @@ class TestMailMail(MailCommon):
         self.assertSentEmail(mail.env.user.partner_id, [self.user_employee.email_formatted])
         self.assertEqual(len(self._mails), 2)
 
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_mail_mail_recipients_cc(self):
         """ Partner_ids is a field used from mail_message, but not from mail_mail. """
         mail = self.env['mail.mail'].sudo().create({
@@ -198,7 +198,7 @@ class TestMailMail(MailCommon):
                              email_cc=[])
         self.assertEqual(len(self._mails), 2)
 
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_mail_mail_recipients_formatting(self):
         """ Check support of email / formatted email """
         mail = self.env['mail.mail'].sudo().create({
@@ -304,7 +304,7 @@ class TestMailMail(MailCommon):
                         msg_to_lst=exp_msg_to_lst,
                     )
 
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_mail_mail_recipients_no_trailing_comma(self):
         """ Test sending an email to a single contact with no followers
         must not produce a trailing comma in the To header """
@@ -350,7 +350,7 @@ class TestMailMail(MailCommon):
             f"Unexpected To header value in raw EML: {to_header!r}"
         )
 
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_mail_mail_return_path(self):
         # mail without thread-enabled record
         base_values = {
@@ -372,7 +372,7 @@ class TestMailMail(MailCommon):
             mail.send()
         self.assertEqual(self._mails[0]['headers']['Return-Path'], '%s@%s' % (self.alias_bounce, self.alias_domain))
 
-    @mute_logger('odoo.addons.mail.models.mail_mail', 'odoo.tests')
+    @mute_logger('weth.addons.mail.models.mail_mail', 'weth.tests')
     def test_mail_mail_schedule(self):
         """Test that a mail scheduled in the past/future are sent or not"""
         now = datetime(2022, 6, 28, 14, 0, 0)
@@ -422,7 +422,7 @@ class TestMailMail(MailCommon):
             for mail, expected_state in zip(mails, expected_states):
                 self.assertEqual(mail.state, expected_state)
 
-    @mute_logger('odoo.addons.mail.models.mail_mail', 'odoo.tests')
+    @mute_logger('weth.addons.mail.models.mail_mail', 'weth.tests')
     def test_mail_mail_send_configuration(self):
         """ Test configuration and control of email queue """
         self.env['mail.mail'].search([]).unlink()  # cleanup queue
@@ -476,7 +476,7 @@ class TestMailMail(MailCommon):
                 self.assertEqual(self.mail_mail_private_send_mocked.call_count, exp_call_count)
                 mails.write({'state': 'sent'})  # avoid conflicts between batch
 
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_mail_mail_send_exceptions_origin(self):
         """ Test various use case with exceptions and errors and see how they are
         managed and stored at mail and notification level. """
@@ -486,7 +486,7 @@ class TestMailMail(MailCommon):
         for default_from in [False, '']:
             self.mail_alias_domain.default_from = default_from
             self._reset_data()
-            with self.mock_mail_gateway(), mute_logger('odoo.addons.mail.models.mail_mail'):
+            with self.mock_mail_gateway(), mute_logger('weth.addons.mail.models.mail_mail'):
                 mail.send(raise_exception=False)
             self.assertEqual(len(self._mails), 0)  # email not send at all
             self.assertEqual(
@@ -517,7 +517,7 @@ class TestMailMail(MailCommon):
             self.assertEqual(notification.failure_type, 'mail_from_invalid')
             self.assertEqual(notification.notification_status, 'exception')
 
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_mail_mail_send_exceptions_recipients_emails(self):
         """ Test various use case with exceptions and errors and see how they are
         managed and stored at mail and notification level. """
@@ -587,7 +587,7 @@ class TestMailMail(MailCommon):
                 self.assertFalse(notification.failure_type)
                 self.assertEqual(notification.notification_status, 'sent')
 
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_mail_mail_send_exceptions_recipients_partners(self):
         """ Test various use case with exceptions and errors and see how they are
         managed and stored at mail and notification level. """
@@ -671,7 +671,7 @@ class TestMailMail(MailCommon):
                 self.assertFalse(notification.failure_type)
                 self.assertEqual(notification.notification_status, 'sent')
 
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_mail_mail_send_exceptions_recipients_partners_mixed(self):
         """ Test various use case with exceptions and errors and see how they are
         managed and stored at mail and notification level. """
@@ -750,7 +750,7 @@ class TestMailMail(MailCommon):
                 self.assertEqual(notification2.failure_type, 'mail_email_invalid')
                 self.assertEqual(notification2.notification_status, 'exception')
 
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_mail_mail_send_exceptions_raise_management(self):
         """ Test various use case with exceptions and errors and see how they are
         managed and stored at mail and notification level. """
@@ -848,7 +848,7 @@ class TestMailMailServer(MailCommon):
             'email_from': 'ignasse@example.com',
         }).with_context({})
 
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_mail_mail_send_server(self):
         """Test that the mails are send in batch.
 
@@ -918,7 +918,7 @@ class TestMailMailServer(MailCommon):
         self.assertSMTPEmailsSent(message_from='user_2@test_2.com', emails_count=5, mail_server=self.mail_server_domain_2)
         self.assertSMTPEmailsSent(message_from='user_1@test_2.com', emails_count=5, mail_server=self.mail_server_domain)
 
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_mail_mail_values_email_formatted(self):
         """ Test outgoing email values, with formatting """
         customer = self.env['res.partner'].create({
@@ -949,7 +949,7 @@ class TestMailMailServer(MailCommon):
             'Mail: currently always removing formatting in email_cc'
         )
 
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_mail_mail_values_email_multi(self):
         """ Test outgoing email values, with email field holding multi emails """
         # Multi
@@ -1012,7 +1012,7 @@ class TestMailMailServer(MailCommon):
             [['test.cc.1@test.example.com', 'test.cc.2@test.example.com'], [], []],
         )
 
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_mail_mail_values_email_unicode(self):
         """ Unicode should be fine. """
         mail = self.env['mail.mail'].create({
@@ -1027,7 +1027,7 @@ class TestMailMailServer(MailCommon):
         self.assertEqual(self._mails[0]['email_to'], ['test.😊@example.com'])
 
     @users('admin')
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_mail_mail_values_email_uppercase(self):
         """ Test uppercase support when comparing emails, notably due to
         'send_validated_to' introduction that checks emails before sending them. """
@@ -1061,8 +1061,8 @@ class TestMailMailServer(MailCommon):
                 for exp_to, exp_cc in exp_recipients:
                     self.assertSentEmail('"Forced From" <forced.from@test.example.com>', exp_to, email_cc=exp_cc)
 
-    @mute_logger('odoo.addons.mail.models.mail_mail')
-    @patch('odoo.addons.base.models.ir_attachment.IrAttachment.file_size', new_callable=PropertyMock)
+    @mute_logger('weth.addons.mail.models.mail_mail')
+    @patch('weth.addons.base.models.ir_attachment.IrAttachment.file_size', new_callable=PropertyMock)
     def test_mail_mail_send_server_attachment_to_download_link(self, mock_attachment_file_size):
         """ Test that when the mail size exceeds the max email size limit,
         attachments are turned into download links added at the end of the
@@ -1149,7 +1149,7 @@ class TestMailMailServer(MailCommon):
 @tagged('mail_mail')
 class TestMailMailRace(MailCommon):
 
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_mail_bounce_during_send(self):
         cr = self.registry.cursor()
         env = api.Environment(cr, SUPERUSER_ID, {})
@@ -1188,7 +1188,7 @@ class TestMailMailRace(MailCommon):
         bounce_deferred = []
         @api.model
         def send_email(self, message, *args, **kwargs):
-            with this.registry.cursor() as cr, mute_logger('odoo.sql_db'):
+            with this.registry.cursor() as cr, mute_logger('weth.sql_db'):
                 try:
                     # try ro aquire lock (no wait) on notification (should fail)
                     notif.with_env(notif.env(cr=cr)).lock_for_update()

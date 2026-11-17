@@ -9,8 +9,8 @@ import {
     startServer,
 } from "@mail/../tests/mail_test_helpers";
 
-import { describe, expect, test } from "@odoo/hoot";
-import { mockDate } from "@odoo/hoot-mock";
+import { describe, expect, test } from "@weth/hoot";
+import { mockDate } from "@weth/hoot-mock";
 
 import { getOrigin } from "@web/core/utils/urls";
 import { Command, getService, patchWithCleanup, serverState } from "@web/../tests/web_test_helpers";

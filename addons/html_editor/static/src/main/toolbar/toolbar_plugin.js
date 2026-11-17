@@ -1,4 +1,4 @@
-import { proxy } from "@odoo/owl";
+import { proxy } from "@weth/owl";
 import { Plugin } from "@html_editor/plugin";
 import { isEmptyTextNode, isZWS } from "@html_editor/utils/dom_info";
 import { composeToolbarButton, Toolbar } from "./toolbar";
@@ -511,7 +511,7 @@ export class ToolbarPlugin extends Plugin {
         const shouldPreventClosing =
             !force &&
             anchor?.closest?.("[data-prevent-closing-overlay]")?.dataset?.preventClosingOverlay ===
-                "true";
+            "true";
         if (!shouldPreventClosing) {
             this.overlay.close();
             this.isToolbarExpanded = false;
@@ -537,9 +537,9 @@ export class ToolbarPlugin extends Plugin {
                         ...(button.Component
                             ? pick(button, "Component", "props")
                             : {
-                                  ...pick(button, "run", "icon", "iconClass", "text"),
-                                  isActive: !!button.isActive?.(selection, targetedNodes),
-                              }),
+                                ...pick(button, "run", "icon", "iconClass", "text"),
+                                isActive: !!button.isActive?.(selection, targetedNodes),
+                            }),
                     })),
             }))
             // Filter out groups left empty

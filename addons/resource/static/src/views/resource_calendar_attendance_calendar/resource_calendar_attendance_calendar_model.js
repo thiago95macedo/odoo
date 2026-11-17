@@ -1,4 +1,4 @@
-import { usePlugin, providePlugins, useScope } from "@odoo/owl";
+import { usePlugin, providePlugins, useScope } from "@weth/owl";
 import { CalendarModel } from "@web/views/calendar/calendar_model";
 import { deserializeDate, serializeDate } from "@web/core/l10n/dates";
 import { _t } from "@web/core/l10n/translation";

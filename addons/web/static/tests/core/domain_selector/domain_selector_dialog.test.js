@@ -1,7 +1,7 @@
-import { describe, expect, test } from "@odoo/hoot";
-import { queryOne } from "@odoo/hoot-dom";
-import { animationFrame } from "@odoo/hoot-mock";
-import { Component, xml } from "@odoo/owl";
+import { describe, expect, test } from "@weth/hoot";
+import { queryOne } from "@weth/hoot-dom";
+import { animationFrame } from "@weth/hoot-mock";
+import { Component, xml } from "@weth/owl";
 import {
     Country,
     Partner,
@@ -32,8 +32,8 @@ async function makeDomainSelectorDialog(params = {}) {
             this.domainSelectorProps = {
                 readonly: false,
                 domain: "[]",
-                close: () => {},
-                onConfirm: () => {},
+                close: () => { },
+                onConfirm: () => { },
                 ...props,
                 resModel: "partner",
             };

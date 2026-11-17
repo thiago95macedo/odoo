@@ -1,8 +1,8 @@
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@weth/hoot";
 import { getFilledOrder, setupPosEnv } from "../utils";
 import { definePosModels } from "../data/generate_model_definitions";
 import { onRpc } from "@web/../tests/web_test_helpers";
-import { tick } from "@odoo/hoot-mock";
+import { tick } from "@weth/hoot-mock";
 
 definePosModels();
 

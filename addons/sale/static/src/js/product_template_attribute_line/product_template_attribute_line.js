@@ -1,5 +1,5 @@
 import { _t } from "@web/core/l10n/translation";
-import { Component, t, useProps } from "@odoo/owl";
+import { Component, t, useProps } from "@weth/owl";
 import { formatCurrency } from "@web/core/currency";
 import { BadgeExtraPrice } from "../badge_extra_price/badge_extra_price";
 import { getSelectedCustomPtav } from "../sale_utils";
@@ -80,7 +80,7 @@ export class ProductTemplateAttributeLine extends Component {
      * @return {String} - The template name to use.
      */
     getPTAVTemplate() {
-        switch(this.props.attribute.display_type) {
+        switch (this.props.attribute.display_type) {
             case 'select':
                 return 'sale.ptav_select';
             case 'radio':
@@ -112,7 +112,7 @@ export class ProductTemplateAttributeLine extends Component {
         if (ptav.price_extra) {
             const sign = ptav.price_extra > 0 ? '+' : '-';
             const price = formatCurrency(Math.abs(ptav.price_extra), this.env.currencyId);
-            return ptav.name +" ("+ sign + " " + price + ")";
+            return ptav.name + " (" + sign + " " + price + ")";
         } else {
             return ptav.name;
         }
@@ -147,4 +147,4 @@ export class ProductTemplateAttributeLine extends Component {
             ptav => ptav.is_custom
         );
     }
- }
+}

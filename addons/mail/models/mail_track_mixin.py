@@ -5,13 +5,13 @@ import typing
 
 from datetime import datetime
 
-from odoo import _, api, fields, models
-from odoo.exceptions import MissingError
-from odoo.tools import babel_locale_parse, clean_context, format_datetime, format_date, format_amount, formatLang
+from weth import _, api, fields, models
+from weth.exceptions import MissingError
+from weth.tools import babel_locale_parse, clean_context, format_datetime, format_date, format_amount, formatLang
 
 if typing.TYPE_CHECKING:
-    from odoo.api import ValuesType
-    from odoo.models import BaseModel
+    from weth.api import ValuesType
+    from weth.models import BaseModel
     from collections.abc import Collection, Iterable
     from markupsafe import Markup
 

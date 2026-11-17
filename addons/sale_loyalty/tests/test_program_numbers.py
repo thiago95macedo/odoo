@@ -1,11 +1,11 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.exceptions import ValidationError
-from odoo.fields import Command
-from odoo.tests import tagged
-from odoo.tools.float_utils import float_compare
+from weth.exceptions import ValidationError
+from weth.fields import Command
+from weth.tests import tagged
+from weth.tools.float_utils import float_compare
 
-from odoo.addons.sale_loyalty.tests.common import TestSaleCouponNumbersCommon
+from weth.addons.sale_loyalty.tests.common import TestSaleCouponNumbersCommon
 
 
 @tagged("post_install", "-at_install")

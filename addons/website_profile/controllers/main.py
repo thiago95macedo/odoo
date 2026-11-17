@@ -10,11 +10,11 @@ import math
 from dateutil.relativedelta import relativedelta
 from operator import itemgetter
 
-from odoo import _, fields, http, tools
-from odoo.exceptions import UserError
-from odoo.fields import Domain
-from odoo.http import request
-from odoo.tools.translate import LazyTranslate
+from weth import _, fields, http, tools
+from weth.exceptions import UserError
+from weth.fields import Domain
+from weth.http import request
+from weth.tools.translate import LazyTranslate
 
 _lt = LazyTranslate(__name__)
 

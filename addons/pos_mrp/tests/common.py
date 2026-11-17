@@ -1,5 +1,5 @@
-from odoo.addons.pos_stock.tests.common import CommonPosStockTest
-from odoo.fields import Command
+from weth.addons.pos_stock.tests.common import CommonPosStockTest
+from weth.fields import Command
 
 
 class CommonPosMrpTest(CommonPosStockTest):

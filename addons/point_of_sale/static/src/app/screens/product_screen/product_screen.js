@@ -16,7 +16,7 @@ import {
     t,
     signal,
     usePlugin,
-} from "@odoo/owl";
+} from "@weth/owl";
 import { PosNumberBufferPlugin } from "@point_of_sale/app/plugins/pos_number_buffer_plugin";
 import { CategorySelector } from "@point_of_sale/app/components/category_selector/category_selector";
 import { Input } from "@point_of_sale/app/components/inputs/input/input";
@@ -516,7 +516,7 @@ export class ProductScreen extends Component {
 registry.category("pos_pages").add("ProductScreen", {
     name: "ProductScreen",
     component: ProductScreen,
-    route: `/pos/ui/${odoo.pos_config_id}/product/{string:orderUuid}`,
+    route: `/pos/ui/${weth.pos_config_id}/product/{string:orderUuid}`,
     params: {
         orderUuid: true,
         orderFinalized: false,

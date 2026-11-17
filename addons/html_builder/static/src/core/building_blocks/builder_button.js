@@ -1,4 +1,4 @@
-import { Component, t, useProps, xml } from "@odoo/owl";
+import { Component, t, useProps, xml } from "@weth/owl";
 import { Image } from "../img";
 import {
     clickableBuilderComponentProps,

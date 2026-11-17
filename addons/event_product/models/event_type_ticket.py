@@ -2,9 +2,9 @@
 
 import logging
 
-from odoo import api, fields, models
-from odoo.addons.product.models.product_template import PRICE_CONTEXT_KEYS
-from odoo.tools import SQL
+from weth import api, fields, models
+from weth.addons.product.models.product_template import PRICE_CONTEXT_KEYS
+from weth.tools import SQL
 
 _logger = logging.getLogger(__name__)
 

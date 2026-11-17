@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.exceptions import AccessError
-from odoo.fields import Command
-from odoo.tests import TransactionCase, tagged
+from weth.exceptions import AccessError
+from weth.fields import Command
+from weth.tests import TransactionCase, tagged
 
 
 @tagged("post_install", "-at_install")

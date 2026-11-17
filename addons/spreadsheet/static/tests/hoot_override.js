@@ -1,5 +1,5 @@
-import { __debug__ } from "@odoo/hoot";
-import { stores } from "@odoo/o-spreadsheet";
+import { __debug__ } from "@weth/hoot";
+import { stores } from "@weth/o-spreadsheet";
 import { patch } from "@web/core/utils/patch";
 
 const { RendererStore } = stores;

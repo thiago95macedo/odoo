@@ -1,6 +1,6 @@
 
-from odoo import _, models
-from odoo.addons.account.tools import dict_to_xml
+from weth import _, models
+from weth.addons.account.tools import dict_to_xml
 
 
 class AccountEdiUBLCenEn16931(models.AbstractModel):

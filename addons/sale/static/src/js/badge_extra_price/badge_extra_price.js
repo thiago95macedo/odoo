@@ -1,4 +1,4 @@
-import { Component, t, useProps } from "@odoo/owl";
+import { Component, t, useProps } from "@weth/owl";
 import { formatCurrency } from "@web/core/currency";
 
 export class BadgeExtraPrice extends Component {
@@ -14,6 +14,6 @@ export class BadgeExtraPrice extends Component {
      * @return {String} - The price, in the format of the given currency.
      */
     getFormattedPrice() {
-        return formatCurrency( Math.abs(this.props.price), this.props.currencyId);
+        return formatCurrency(Math.abs(this.props.price), this.props.currencyId);
     }
 }

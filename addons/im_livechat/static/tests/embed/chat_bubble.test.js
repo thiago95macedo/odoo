@@ -3,7 +3,7 @@ import {
     loadDefaultEmbedConfig,
 } from "@im_livechat/../tests/livechat_test_helpers";
 import { contains, setupChatHub, start, startServer } from "@mail/../tests/mail_test_helpers";
-import { describe, test } from "@odoo/hoot";
+import { describe, test } from "@weth/hoot";
 import { assignTestEnv, Command } from "@web/../tests/web_test_helpers";
 
 describe.current.tags("desktop");

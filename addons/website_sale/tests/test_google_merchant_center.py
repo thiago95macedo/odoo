@@ -5,10 +5,10 @@ from urllib.parse import urlparse
 
 from lxml import etree
 
-from odoo.fields import Command
-from odoo.tests import HttpCase, tagged
+from weth.fields import Command
+from weth.tests import HttpCase, tagged
 
-from odoo.addons.website_sale.tests.common_gmc import WebsiteSaleGMCCommon
+from weth.addons.website_sale.tests.common_gmc import WebsiteSaleGMCCommon
 
 
 @tagged("post_install", "-at_install")

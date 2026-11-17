@@ -8,8 +8,8 @@ import {
     waitForEndOfOperation,
     waitForSnippetDialog,
 } from "@html_builder/../tests/helpers";
-import { beforeEach, expect, test, describe } from "@odoo/hoot";
-import { animationFrame, click, queryAll, queryAllTexts, queryFirst } from "@odoo/hoot-dom";
+import { beforeEach, expect, test, describe } from "@weth/hoot";
+import { animationFrame, click, queryAll, queryAllTexts, queryFirst } from "@weth/hoot-dom";
 import { contains } from "@web/../tests/web_test_helpers";
 
 describe.current.tags("desktop");
@@ -446,8 +446,7 @@ test("insert snippet structure", async () => {
     await waitForEndOfOperation();
 
     expect(contentEl).toHaveInnerHTML(
-        `<section><p>Text</p></section>${
-            createTestSnippets({ snippets, withName: true })[0].content
+        `<section><p>Text</p></section>${createTestSnippets({ snippets, withName: true })[0].content
         }`
     );
 });
@@ -489,8 +488,7 @@ test("Drag & drop snippet structure", async () => {
     await waitForEndOfOperation();
 
     expect(contentEl).toHaveInnerHTML(
-        `${
-            createTestSnippets({ snippets, withName: true })[0].content
+        `${createTestSnippets({ snippets, withName: true })[0].content
         }<section><p>Text</p></section>`
     );
 });

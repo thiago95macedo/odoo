@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
 
 <!-- EVENT A4 FOLDABLE BADGE (A4_french_fold) -->
 
@@ -423,4 +423,4 @@
     <span t-else="" t-out="event.address_id.name">1000 Brussels</span>
 </template>
 
-</odoo>
+</weth>

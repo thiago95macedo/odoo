@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import http
-from odoo.http import request
+from weth import http
+from weth.http import request
 
 
 class HrOrgChartController(http.Controller):

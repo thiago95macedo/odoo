@@ -1,5 +1,5 @@
 import { useSubEnv } from "@web/owl2/utils";
-import { Component, onMounted, proxy, useEffect, useListener } from "@odoo/owl";
+import { Component, onMounted, proxy, useEffect, useListener } from "@weth/owl";
 import { ModelStore } from "@api_doc/doc_model_store";
 import { useDocUI } from "@api_doc/utils/doc_ui_store";
 import { ApiKeyModal } from "@api_doc/components/doc_modal_api_key";
@@ -75,7 +75,7 @@ export class DocClient extends Component {
         if (this.ui.isSmall) {
             this.state.showSidebar = false;
         }
-        if (this.ui.isMedium){
+        if (this.ui.isMedium) {
             this.state.showAside = false;
         }
     }
@@ -121,6 +121,6 @@ export class DocClient extends Component {
         const traceback = this.modelStore.error.traceback instanceof Object
             ? this.modelStore.error.traceback.stack
             : this.modelStore.error.traceback;
-        return {name, status, traceback};
+        return { name, status, traceback };
     }
 }

@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 from datetime import datetime, timedelta
-from odoo import fields
-from odoo.tests import tagged, common
-from odoo.addons.lunch.tests.common import TestsCommon
+from weth import fields
+from weth.tests import tagged, common
+from weth.addons.lunch.tests.common import TestsCommon
 
 
 @tagged('at_install', '-post_install')  # LEGACY at_install

@@ -6,7 +6,7 @@ import { Tooltip } from "@web/core/tooltip/tooltip";
 import { usePopover } from "@web/core/popover/popover_hook";
 import { useService } from "@web/core/utils/hooks";
 import { capitalize } from "../utils/strings";
-import { Component, markup, proxy, signal, t, useProps } from "@odoo/owl";
+import { Component, markup, proxy, signal, t, useProps } from "@weth/owl";
 
 const { DateTime } = luxon;
 
@@ -26,17 +26,17 @@ export const standardErrorDialogProps = {
     close: t.function(), // prop added by the Dialog service
 };
 
-export const odooExceptionTitleMap = new Map(
+export const wethExceptionTitleMap = new Map(
     Object.entries({
-        "odoo.addons.base.models.ir_mail_server.MailDeliveryException": _t("MailDeliveryException"),
-        "odoo.exceptions.AccessDenied": _t("Access Denied"),
-        "odoo.exceptions.MissingError": _t("Missing Record"),
-        "odoo.addons.web.controllers.action.MissingActionError": _t("Missing Action"),
-        "odoo.addons.base.models.ir_actions.ServerActionWithWarningsError": _t("Invalid Operation"),
-        "odoo.exceptions.UserError": _t("Invalid Operation"),
-        "odoo.exceptions.ValidationError": _t("Validation Error"),
-        "odoo.exceptions.AccessError": _t("Access Error"),
-        "odoo.exceptions.Warning": _t("Warning"),
+        "weth.addons.base.models.ir_mail_server.MailDeliveryException": _t("MailDeliveryException"),
+        "weth.exceptions.AccessDenied": _t("Access Denied"),
+        "weth.exceptions.MissingError": _t("Missing Record"),
+        "weth.addons.web.controllers.action.MissingActionError": _t("Missing Action"),
+        "weth.addons.base.models.ir_actions.ServerActionWithWarningsError": _t("Invalid Operation"),
+        "weth.exceptions.UserError": _t("Invalid Operation"),
+        "weth.exceptions.ValidationError": _t("Validation Error"),
+        "weth.exceptions.AccessError": _t("Access Error"),
+        "weth.exceptions.Warning": _t("Warning"),
     })
 );
 
@@ -121,8 +121,8 @@ export class RPCErrorDialog extends ErrorDialog {
     }
     inferTitle() {
         // If the server provides an exception name that we have in a registry.
-        if (this.props.exceptionName && odooExceptionTitleMap.has(this.props.exceptionName)) {
-            this.title = odooExceptionTitleMap.get(this.props.exceptionName).toString();
+        if (this.props.exceptionName && wethExceptionTitleMap.has(this.props.exceptionName)) {
+            this.title = wethExceptionTitleMap.get(this.props.exceptionName).toString();
             return;
         }
         // Fall back to a name based on the error type.
@@ -173,8 +173,8 @@ export class WarningDialog extends Component {
         }
     }
     inferTitle() {
-        if (this.props.exceptionName && odooExceptionTitleMap.has(this.props.exceptionName)) {
-            return odooExceptionTitleMap.get(this.props.exceptionName).toString();
+        if (this.props.exceptionName && wethExceptionTitleMap.has(this.props.exceptionName)) {
+            return wethExceptionTitleMap.get(this.props.exceptionName).toString();
         }
         return this.props.title || _t("Odoo Warning");
     }
@@ -315,15 +315,15 @@ export class SessionExpiredDialog extends Component {
 
 registry
     .category("error_dialogs")
-    .add("odoo.exceptions.AccessDenied", WarningDialog)
-    .add("odoo.exceptions.AccessError", WarningDialog)
-    .add("odoo.exceptions.MissingError", WarningDialog)
-    .add("odoo.addons.web.controllers.action.MissingActionError", WarningDialog)
-    .add("odoo.addons.base.models.ir_actions.ServerActionWithWarningsError", WarningDialog)
-    .add("odoo.exceptions.UserError", WarningDialog)
-    .add("odoo.exceptions.ValidationError", WarningDialog)
-    .add("odoo.exceptions.RedirectWarning", RedirectWarningDialog)
-    .add("odoo.addons.web.models.models.UnlinkBlockedError", UnlinkBlockedErrorDialog)
-    .add("odoo.http.session.SessionExpiredException", SessionExpiredDialog)
+    .add("weth.exceptions.AccessDenied", WarningDialog)
+    .add("weth.exceptions.AccessError", WarningDialog)
+    .add("weth.exceptions.MissingError", WarningDialog)
+    .add("weth.addons.web.controllers.action.MissingActionError", WarningDialog)
+    .add("weth.addons.base.models.ir_actions.ServerActionWithWarningsError", WarningDialog)
+    .add("weth.exceptions.UserError", WarningDialog)
+    .add("weth.exceptions.ValidationError", WarningDialog)
+    .add("weth.exceptions.RedirectWarning", RedirectWarningDialog)
+    .add("weth.addons.web.models.models.UnlinkBlockedError", UnlinkBlockedErrorDialog)
+    .add("weth.http.session.SessionExpiredException", SessionExpiredDialog)
     .add("werkzeug.exceptions.Forbidden", SessionExpiredDialog)
     .add("504", Error504Dialog);

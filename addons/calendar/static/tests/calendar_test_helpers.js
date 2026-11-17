@@ -11,9 +11,9 @@ import { mailModels } from "@mail/../tests/mail_test_helpers";
 import { defineModels } from "@web/../tests/web_test_helpers";
 import { findFilterPanelSection } from "@web/../tests/views/calendar/calendar_test_helpers";
 
-import { animationFrame } from "@odoo/hoot";
-import { click, fill, queryFirst } from "@odoo/hoot-dom";
-import { runAllTimers } from "@odoo/hoot-mock";
+import { animationFrame } from "@weth/hoot";
+import { click, fill, queryFirst } from "@weth/hoot-dom";
+import { runAllTimers } from "@weth/hoot-mock";
 
 export const calendarModels = {
     CalendarAttendee,

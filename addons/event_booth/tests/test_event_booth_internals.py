@@ -3,9 +3,9 @@
 
 from datetime import datetime, timedelta
 
-from odoo.addons.event_booth.tests.common import TestEventBoothCommon
-from odoo.fields import Datetime as FieldsDatetime
-from odoo.tests.common import users, tagged
+from weth.addons.event_booth.tests.common import TestEventBoothCommon
+from weth.fields import Datetime as FieldsDatetime
+from weth.tests.common import users, tagged
 
 
 @tagged('post_install', '-at_install', 'event_booth')

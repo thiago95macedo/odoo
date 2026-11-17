@@ -1,7 +1,7 @@
-from odoo.tests import tagged, users
+from weth.tests import tagged, users
 
-from odoo.addons.test_mail.tests.test_mail_composer import TestMailComposer
-from odoo.addons.test_mass_mailing.tests import common
+from weth.addons.test_mail.tests.test_mail_composer import TestMailComposer
+from weth.addons.test_mass_mailing.tests import common
 
 
 @tagged('mail_message', 'mail_tracking')

@@ -4,7 +4,7 @@
  * converted to Hoot tests without any additional checks.
  */
 
-import { test, expect } from "@odoo/hoot";
+import { test, expect } from "@weth/hoot";
 import { setupPosEnv } from "../utils";
 import { definePosModels } from "../data/generate_model_definitions";
 import { prepareRoundingVals } from "./utils";

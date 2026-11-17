@@ -4,11 +4,11 @@
 from ast import literal_eval
 from uuid import uuid4
 
-from odoo import api, fields, models, _
-from odoo.addons.mail.tools.discuss import Store
-from odoo.addons.sms.tools.sms_tools import sms_content_to_rendered_html
-from odoo.tools import html2plaintext, plaintext2html
-from odoo.exceptions import UserError
+from weth import api, fields, models, _
+from weth.addons.mail.tools.discuss import Store
+from weth.addons.sms.tools.sms_tools import sms_content_to_rendered_html
+from weth.tools import html2plaintext, plaintext2html
+from weth.exceptions import UserError
 
 
 class SmsComposer(models.TransientModel):

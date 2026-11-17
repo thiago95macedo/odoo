@@ -3,13 +3,13 @@
 from datetime import date
 from psycopg2.errors import CheckViolation
 
-from odoo.tests import tagged
-from odoo.tests.common import freeze_time
-from odoo.exceptions import AccessError, ValidationError
-from odoo.tools import mute_logger
+from weth.tests import tagged
+from weth.tests.common import freeze_time
+from weth.exceptions import AccessError, ValidationError
+from weth.tools import mute_logger
 
-from odoo.addons.hr.tests.common import TestHrCommon
-from odoo.addons.mail.tests.common import mail_new_test_user
+from weth.addons.hr.tests.common import TestHrCommon
+from weth.addons.mail.tests.common import mail_new_test_user
 
 
 @tagged('post_install', '-at_install')
@@ -43,7 +43,7 @@ class TestHrVersion(TestHrCommon):
         self.assertFalse(employee.contract_date_start)
         self.assertFalse(employee.contract_date_end)
 
-        with self.assertRaises(CheckViolation), mute_logger('odoo.sql_db'):
+        with self.assertRaises(CheckViolation), mute_logger('weth.sql_db'):
             employee.write({
                 'contract_date_start': False,
                 'contract_date_end': '2020-12-31'

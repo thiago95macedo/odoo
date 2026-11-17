@@ -1,6 +1,6 @@
-import { describe, expect, test } from "@odoo/hoot";
-import { press, queryAllTexts, queryFirst } from "@odoo/hoot-dom";
-import { animationFrame, runAllTimers } from "@odoo/hoot-mock";
+import { describe, expect, test } from "@weth/hoot";
+import { press, queryAllTexts, queryFirst } from "@weth/hoot-dom";
+import { animationFrame, runAllTimers } from "@weth/hoot-mock";
 
 import {
     Command,
@@ -27,7 +27,7 @@ import { useService } from "@web/core/utils/hooks";
 import { X2ManyField, x2ManyField } from "@web/views/fields/x2many/x2many_field";
 import { Many2XAutocomplete, many2XAutocompleteProps } from "@web/views/fields/relational_utils";
 import { cookie } from "@web/core/browser/cookie";
-import { t } from "@odoo/owl";
+import { t } from "@weth/owl";
 import { ListRenderer } from "@web/views/list/list_renderer";
 
 describe.current.tags("desktop");
@@ -1382,7 +1382,7 @@ test("many2many list with onchange and edition of a record", async () => {
     Partner._fields.turtles = fields.Many2many({
         relation: "turtle",
         relation_field: "turtle_trululu",
-        onChange: function () {},
+        onChange: function () { },
     });
 
     Turtle._views = {
@@ -1420,7 +1420,7 @@ test("many2many concurrency edition", async () => {
     Partner._fields.turtles = fields.Many2many({
         relation: "turtle",
         relation_field: "turtle_trululu",
-        onChange: function () {},
+        onChange: function () { },
     });
     Turtle._records.push({
         id: 4,
@@ -1636,7 +1636,7 @@ test("onchange with 40+ commands for a many2many on desktop", async () => {
 
 test("default_get, onchange, onchange on m2m", async () => {
     expect.assertions(1);
-    Partner._fields.int_field = fields.Integer({ onChange: function () {} });
+    Partner._fields.int_field = fields.Integer({ onChange: function () { } });
 
     let firstOnChange = true;
     onRpc("onchange", (args) => {

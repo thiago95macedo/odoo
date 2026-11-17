@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
     <data>
         <record id="action_work_orders" model="ir.actions.act_window">
             <field name="name">Work Orders</field>
@@ -594,4 +594,4 @@
           groups="group_mrp_routings"
           sequence="12"/>
     </data>
-</odoo>
+</weth>

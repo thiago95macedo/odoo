@@ -3,12 +3,12 @@ from freezegun import freeze_time
 from markupsafe import Markup
 from unittest.mock import patch
 
-from odoo import Command, fields
-from odoo.tests import new_test_user, users
-from odoo.addons.im_livechat.tests.common import TestImLivechatCommon, TestGetOperatorCommon
-from odoo.addons.bus.tests.common import BusResult
-from odoo.addons.mail.tests.common import MailCase
-from odoo.addons.mail.tools.discuss import Store
+from weth import Command, fields
+from weth.tests import new_test_user, users
+from weth.addons.im_livechat.tests.common import TestImLivechatCommon, TestGetOperatorCommon
+from weth.addons.bus.tests.common import BusResult
+from weth.addons.mail.tests.common import MailCase
+from weth.addons.mail.tools.discuss import Store
 
 
 class TestDiscussChannel(TestImLivechatCommon, TestGetOperatorCommon, MailCase):

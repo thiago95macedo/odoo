@@ -2,11 +2,11 @@ from pathlib import Path
 
 from lxml import etree
 
-from odoo.modules import Manifest
-from odoo.tests import TransactionCase
-from odoo.tests.case import TestCase
+from weth.modules import Manifest
+from weth.tests import TransactionCase
+from weth.tests.case import TestCase
 
-from odoo.addons.populate.utils import xml
+from weth.addons.populate.utils import xml
 
 
 class TestXMLEnsureRoot(TransactionCase):

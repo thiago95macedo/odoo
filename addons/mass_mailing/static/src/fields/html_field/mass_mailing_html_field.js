@@ -17,7 +17,7 @@ import {
     useOnChange,
     usePlugin,
     useProps,
-} from "@odoo/owl";
+} from "@weth/owl";
 import { loadBundle } from "@web/core/assets";
 import { DebugModePlugin } from "@web/core/debug_mode_plugin";
 import { Domain } from "@web/core/domain";
@@ -320,7 +320,7 @@ export class MassMailingHtmlField extends HtmlField {
                                 );
                                 this.state.isNewlySelectedTheme = true;
                             },
-                            () => {}
+                            () => { }
                         );
                 });
             },
@@ -439,7 +439,7 @@ export class MassMailingHtmlField extends HtmlField {
                 () => {
                     record.model.bus.trigger("FIELD_IS_DIRTY", this.lastChangeId !== changeId);
                 },
-                () => {}
+                () => { }
             );
         this.lastValue = normalizeHTML(value, this.clearElementToCompare.bind(this));
         const valueFragment = parseHTML(document, value);
@@ -464,7 +464,7 @@ export class MassMailingHtmlField extends HtmlField {
                     this.isDirty = false;
                 }
             },
-            () => {}
+            () => { }
         );
         record.model.bus.trigger("FIELD_IS_DIRTY", this.isDirty);
     }

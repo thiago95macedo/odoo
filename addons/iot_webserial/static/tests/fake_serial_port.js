@@ -1,4 +1,4 @@
-import { expect, microTick } from "@odoo/hoot";
+import { expect, microTick } from "@weth/hoot";
 
 export class FakeSerialPort {
     constructor() {

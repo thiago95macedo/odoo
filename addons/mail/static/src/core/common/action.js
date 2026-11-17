@@ -1,5 +1,5 @@
 import { isRecord, STORE_SYM } from "@mail/model/misc";
-import { Component, computed, proxy, signal, useScope } from "@odoo/owl";
+import { Component, computed, proxy, signal, useScope } from "@weth/owl";
 import { DropdownState } from "@web/core/dropdown/dropdown_hooks";
 import { useService } from "@web/core/utils/hooks";
 import { markEventHandled } from "@web/core/utils/misc";
@@ -31,13 +31,13 @@ function toArray(val) {
     return Array.isArray(val) ? val : [val];
 }
 
-/** @typedef {import("@odoo/owl").Component} Component */
+/** @typedef {import("@weth/owl").Component} Component */
 /** @typedef {import("@mail/model/record").Record} Record */
 /** @typedef {Component|Record} ActionOwner */
 
 /**
  * @typedef {Object} ActionRootRefParam
- * @property {import("@odoo/owl").Signal<HTMLElement>} [rootRef] Signal pointing at the owner's root
+ * @property {import("@weth/owl").Signal<HTMLElement>} [rootRef] Signal pointing at the owner's root
  *   element, used to anchor popovers and `querySelector` action buttons. The concrete element type is up
  *   to the caller.
  */
@@ -130,7 +130,7 @@ export class Action {
     popover = null;
     /** @type {string} Unique id of this action. */
     id;
-    /** @type {import("@odoo/owl").Signal<HTMLElement>} */
+    /** @type {import("@weth/owl").Signal<HTMLElement>} */
     rootRef;
     /** @type {import("models").Store} */
     store;
@@ -145,7 +145,7 @@ export class Action {
      * @param {string} params0.id
      * @param {ActionDefinition<ActionParams, Action>} params0.definition
      * @param {import("models").Store} [params0.store]
-     * @param {import("@odoo/owl").Signal<HTMLElement>} [params0.rootRef] @see ActionRootRefParam
+     * @param {import("@weth/owl").Signal<HTMLElement>} [params0.rootRef] @see ActionRootRefParam
      */
     constructor({ actions, owner, id, definition, store, rootRef }) {
         this.actions = actions;
@@ -223,7 +223,7 @@ export class Action {
     }
 
     /** @param {Action} action @returns {string|undefined} */
-    _actionPanelName(action) {}
+    _actionPanelName(action) { }
     /** Name of this action, displayed to the user. */
     get actionPanelName() {
         return (
@@ -267,7 +267,7 @@ export class Action {
     }
 
     /** @param {Action} action @returns {boolean|undefined} */
-    _badge(action) {}
+    _badge(action) { }
     /** Condition for showing badge on this action */
     get badge() {
         return (
@@ -279,7 +279,7 @@ export class Action {
     }
 
     /** @param {Action} action @returns {string|undefined} */
-    _badgeIcon(action) {}
+    _badgeIcon(action) { }
     /** When action shows badge @see badge this property tells the icon inside badge */
     get badgeIcon() {
         return (
@@ -291,7 +291,7 @@ export class Action {
     }
 
     /** @param {Action} action @returns {string|undefined} */
-    _badgeIconClass(action) {}
+    _badgeIconClass(action) { }
     /** When action shows badge @see badge this property tells the class of the icon inside badge */
     get badgeIconClass() {
         return (
@@ -303,7 +303,7 @@ export class Action {
     }
 
     /** @param {Action} action @returns {string|undefined} */
-    _badgeText(action) {}
+    _badgeText(action) { }
     /** When action shows badge @see badge this property tells the text inside badge. */
     get badgeText() {
         return (
@@ -315,7 +315,7 @@ export class Action {
     }
 
     /** @param {Action} action @returns {Object|undefined} */
-    _btnAttrs(action) {}
+    _btnAttrs(action) { }
     get btnAttrs() {
         return (
             this._btnAttrs(this.params) ??
@@ -326,7 +326,7 @@ export class Action {
     }
 
     /** @param {Action} action @returns {string|undefined} */
-    _btnClass(action) {}
+    _btnClass(action) { }
     get btnClass() {
         return (
             this._btnClass(this.params) ??
@@ -337,14 +337,14 @@ export class Action {
     }
 
     /** @param {Action} action @returns {Component|undefined} */
-    _component(action) {}
+    _component(action) { }
     /** When provided, this component is mounted for this action. UI/UX of action is fully managed by the component */
     get component() {
         return this._component(this.params) ?? this.definition.component;
     }
 
     /** @param {Action} action @returns {boolean|undefined} */
-    _componentCondition(action) {}
+    _componentCondition(action) { }
     /** When provided, action.component is conditionally picked based on this condition. When condition is false, the usual UI/UX of action from other explicit definitions is chosen */
     get componentCondition() {
         return (
@@ -356,7 +356,7 @@ export class Action {
     }
 
     /** @param {Action} action @returns {Object|undefined} */
-    _componentProps(action) {}
+    _componentProps(action) { }
     /** Props to pass to the component of this action. */
     get componentProps() {
         return (
@@ -366,7 +366,7 @@ export class Action {
     }
 
     /** @param {Action} action @returns {boolean|undefined} */
-    _condition(action) {}
+    _condition(action) { }
     _computeCondition() {
         return (
             this._condition(this.params) ??
@@ -381,19 +381,19 @@ export class Action {
     }
 
     /** @param {Action} action @returns {boolean|undefined} */
-    _disabledCondition(action) {}
+    _disabledCondition(action) { }
     /** Condition to disable the button of this action (but still display it). */
     get disabledCondition() {
         return Boolean(
             this._disabledCondition(this.params) ??
-                (typeof this.definition.disabledCondition === "function"
-                    ? this.definition.disabledCondition.call(this, this.params)
-                    : this.definition.disabledCondition)
+            (typeof this.definition.disabledCondition === "function"
+                ? this.definition.disabledCondition.call(this, this.params)
+                : this.definition.disabledCondition)
         );
     }
 
     /** @param {Action} action @returns {boolean|undefined} */
-    _dropdownTrigger(action) {}
+    _dropdownTrigger(action) { }
     /** Determines whether this action opens a dropdown on selection. */
     get dropdownTrigger() {
         return (
@@ -405,20 +405,20 @@ export class Action {
     }
 
     /** @param {Action} action @returns {Component|undefined} */
-    _dropdownComponent(action) {}
+    _dropdownComponent(action) { }
     /** When action is a dropdown @see dropdownTrigger, this determines an optional component to use for the content slot */
     get dropdownComponent() {
         return (
             this._dropdownComponent(this.params) ??
             (typeof this.definition.dropdownComponent === "function" &&
-            Object.getPrototypeOf(this.definition.dropdownComponent) !== Component
+                Object.getPrototypeOf(this.definition.dropdownComponent) !== Component
                 ? this.definition.dropdownComponent.call(this, this.params)
                 : this.definition.dropdownComponent)
         );
     }
 
     /** @param {Action} action @returns {Object|undefined} */
-    _dropdownComponentProps(action) {}
+    _dropdownComponentProps(action) { }
     /** When action is a dropdown @see dropdownTrigger, this determines optional props to pass to component of the content slot of dropdown. */
     get dropdownComponentProps() {
         return (
@@ -430,7 +430,7 @@ export class Action {
     }
 
     /** @param {Action} action @returns {string|undefined} */
-    _dropdownMenuClass(action) {}
+    _dropdownMenuClass(action) { }
     /** When action is a dropdown @see dropdownTrigger, this determines an optional menu class for the dropdown, in addition to default dropdown menu classes */
     get dropdownMenuClass() {
         return (
@@ -442,7 +442,7 @@ export class Action {
     }
 
     /** @param {Action} action @returns {string|undefined} */
-    _dropdownPosition(action) {}
+    _dropdownPosition(action) { }
     /** When action is a dropdown @see dropdownTrigger, this determines the preferred position of the dropdown */
     get dropdownPosition() {
         return (
@@ -454,7 +454,7 @@ export class Action {
     }
 
     /** @param {Action} action @returns {DropdownState|undefined} */
-    _dropdownState(action) {}
+    _dropdownState(action) { }
     /** When action is a dropdown @see dropdownTrigger, this determines the preferred position of the dropdown */
     get dropdownState() {
         return (
@@ -466,7 +466,7 @@ export class Action {
     }
 
     /** @param {Action} action @returns {string|undefined} */
-    _dropdownTemplate(action) {}
+    _dropdownTemplate(action) { }
     /** When action is a dropdown @see dropdownTrigger, this determines an optional template to use for the content slot */
     get dropdownTemplate() {
         return (
@@ -478,7 +478,7 @@ export class Action {
     }
 
     /** @param {Action} action @returns {Object|undefined} */
-    _dropdownTemplateParams(action) {}
+    _dropdownTemplateParams(action) { }
     /**
      * When action is a dropdown @see dropdownTrigger, this determines optional params to pass to template of the content slot of dropdown.
      * The params are provided to template in object `templateParams` with named parameters as given by explicit definition.
@@ -494,14 +494,14 @@ export class Action {
     }
 
     /** @param {Action} action @returns {Component|undefined} */
-    _extraContentComponent(action) {}
+    _extraContentComponent(action) { }
     /** When action needs a small widget on the action button (toggle, checkbox, etc), this allows loading an extra widget that gets aligned to the right */
     get extraContentComponent() {
         return this._extraContentComponent(this.params) ?? this.definition.extraContentComponent;
     }
 
     /** @param {Action} action @returns {Object|undefined} */
-    _extraContentComponentProps(action) {}
+    _extraContentComponentProps(action) { }
     /** When action needs a small widget on the action button (toggle, checkbox, etc), this determines optional props to pass to the widget. */
     get extraContentComponentProps() {
         return (
@@ -511,7 +511,7 @@ export class Action {
     }
 
     /** @param {Action} action @returns {boolean|undefined} */
-    _hasBtnBg(action) {}
+    _hasBtnBg(action) { }
     get hasBtnBg() {
         return (
             this._hasBtnBg(this.params) ??
@@ -522,7 +522,7 @@ export class Action {
     }
 
     /** @param {Action} action @returns {string|undefined} */
-    _hotkey(action) {}
+    _hotkey(action) { }
     /** Determines whether this action has a keyboard hotkey to trigger the onSelected */
     get hotkey() {
         return (
@@ -534,7 +534,7 @@ export class Action {
     }
 
     /** @param {Action} action @returns {string|Object|undefined} */
-    _icon(action) {}
+    _icon(action) { }
     /**
      * Icon for the button this action.
      * - When a string, this is considered an icon with classname (.oi).
@@ -551,7 +551,7 @@ export class Action {
     }
 
     /** @param {Action} action @returns {string|Object|undefined} */
-    _iconClass(action) {}
+    _iconClass(action) { }
     /**
      * Icon classes for the button this action.
      * - When a string, this is considered as classes for icon
@@ -565,7 +565,7 @@ export class Action {
     }
 
     /** @param {Action} action @returns {string|undefined} */
-    _inlineName(action) {}
+    _inlineName(action) { }
     /** If set, when action is used in inline, shows action name in addition to icon. */
     get inlineName() {
         return (
@@ -578,7 +578,7 @@ export class Action {
     }
 
     /** @param {Action} action @returns {boolean|undefined} */
-    _isActive(action) {}
+    _isActive(action) { }
     /** States whether this action is currently active. */
     get isActive() {
         if (this.actions && this.actionPanel) {
@@ -593,7 +593,7 @@ export class Action {
     }
 
     /** @param {Action} action @returns {string|undefined} */
-    _name(action) {}
+    _name(action) { }
     /** Name of this action, displayed to the user. */
     get name() {
         return (
@@ -612,7 +612,7 @@ export class Action {
     }
 
     /** @param {Action} action @param {Event} ev @returns {true|undefined} */
-    _onSelected(action, ev) {}
+    _onSelected(action, ev) { }
     /** Action to execute when this action is selected @param {Event} ev */
     onSelected(ev, { keepPrevious } = {}) {
         if (ev) {
@@ -632,7 +632,7 @@ export class Action {
     }
 
     /** @param {Action} action @returns {number|undefined} */
-    _sequence(action) {}
+    _sequence(action) { }
     _computeSequence() {
         return (
             this._sequence(this.params) ??
@@ -647,7 +647,7 @@ export class Action {
     }
 
     /** @param {Action} action @returns {ActionGroupId|undefined} */
-    _sequenceGroup(action) {}
+    _sequenceGroup(action) { }
     _computeSequenceGroup() {
         return (
             this._sequenceGroup(this.params) ??
@@ -661,7 +661,7 @@ export class Action {
     }
 
     /** @param {Action} action @returns {number|undefined} */
-    _sequenceQuick(action) {}
+    _sequenceQuick(action) { }
     _computeSequenceQuick() {
         return (
             this._sequenceQuick(this.params) ??
@@ -675,14 +675,14 @@ export class Action {
     }
 
     /** @param {Action} action @returns {true|undefined} */
-    _setup(action) {}
+    _setup(action) { }
     /** setup is executed when the owner is being setup. */
     setup() {
         return this._setup(this.params) ?? this.definition.setup?.call(this, this.params);
     }
 
     /** @param {Action} action @returns {string|string[]|undefined} */
-    _tags(action) {}
+    _tags(action) { }
     /** If set, list of tags of this action. */
     get tags() {
         const res =

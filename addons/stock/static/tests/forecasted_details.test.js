@@ -1,5 +1,5 @@
-import { before, expect, test } from "@odoo/hoot";
-import { xml } from "@odoo/owl";
+import { before, expect, test } from "@weth/hoot";
+import { xml } from "@weth/owl";
 import { ForecastedDetails } from "@stock/stock_forecasted/forecasted_details";
 import { mountWithCleanup, patchWithCleanup } from "@web/../tests/web_test_helpers";
 import { registry } from "@web/core/registry";
@@ -42,8 +42,8 @@ test("forecast detail sameDocument receipt date", async () => {
     const forecast1 = await mountWithCleanup(ForecastedDetails, {
         props: {
             docs: doc1,
-            openView: () => {},
-            reloadReport: () => {},
+            openView: () => { },
+            reloadReport: () => { },
         },
     });
     forecast1.OnHandLinesPerProduct = {};
@@ -58,8 +58,8 @@ test("forecast detail sameDocument receipt date", async () => {
     const forecast2 = await mountWithCleanup(ForecastedDetails, {
         props: {
             docs: doc2,
-            openView: () => {},
-            reloadReport: () => {},
+            openView: () => { },
+            reloadReport: () => { },
         },
     });
     forecast2.OnHandLinesPerProduct = {};

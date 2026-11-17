@@ -1,7 +1,7 @@
-import { expect, test, describe } from "@odoo/hoot";
-import { click, edit } from "@odoo/hoot-dom";
+import { expect, test, describe } from "@weth/hoot";
+import { click, edit } from "@weth/hoot-dom";
 import { contains, mountView, onRpc } from "@web/../tests/web_test_helpers";
-import { mockDate, animationFrame } from "@odoo/hoot-mock";
+import { mockDate, animationFrame } from "@weth/hoot-mock";
 
 import { defineTodoModels } from "./todo_test_helpers";
 import { ProjectTask } from "./mock_server/mock_models/project_task";

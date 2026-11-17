@@ -1,4 +1,4 @@
-import { proxy } from "@odoo/owl";
+import { proxy } from "@weth/owl";
 import { useSubEnv } from "@web/owl2/utils";
 import { KanbanRenderer } from "@web/views/kanban/kanban_renderer";
 import { AccountDashboardKpis } from "@account/components/account_dashboard_kpis/account_dashboard_kpis";
@@ -16,7 +16,7 @@ export class DashboardKanbanRenderer extends KanbanRenderer {
     setup() {
         super.setup();
         useSubEnv({
-            dashboardState: proxy({isDragging: false}),
+            dashboardState: proxy({ isDragging: false }),
             setDragging: this.setDragging.bind(this),
         });
     }
@@ -27,7 +27,7 @@ export class DashboardKanbanRenderer extends KanbanRenderer {
 
     kanbanDragLeave(e) {
         const mouseX = e.clientX, mouseY = e.clientY;
-        const {x, y, width, height} = this.rootRef().getBoundingClientRect();
+        const { x, y, width, height } = this.rootRef().getBoundingClientRect();
         const mouseInsideKanbanRenderer = mouseX > x && mouseX <= x + width && mouseY > y && mouseY <= y + height;
         if (!mouseInsideKanbanRenderer || !e.dataTransfer.types.includes("Files")) {
             // if the mouse position is outside the kanban renderer, all cards should hide their dropzones.

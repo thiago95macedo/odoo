@@ -1,6 +1,6 @@
-/** @odoo-module */
+/** @weth-module */
 
-import { Component, signal, t, xml } from "@odoo/owl";
+import { Component, signal, t, xml } from "@weth/owl";
 import { refresh } from "../core/url";
 import { STORAGE, storageSet } from "../hoot_utils";
 import { HootLink } from "./hoot_link";

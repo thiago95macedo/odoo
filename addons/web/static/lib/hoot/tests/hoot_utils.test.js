@@ -1,7 +1,7 @@
-/** @odoo-module */
+/** @weth-module */
 
-import { describe, expect, test } from "@odoo/hoot";
-import { queryOne } from "@odoo/hoot-dom";
+import { describe, expect, test } from "@weth/hoot";
+import { queryOne } from "@weth/hoot-dom";
 import { isInstanceOf, isIterable } from "@web/../lib/hoot-dom/hoot_dom_utils";
 import {
     deepCopy,
@@ -161,8 +161,8 @@ describe(parseUrl(import.meta.url), () => {
         expect(formatHumanReadable(true)).toBe(`true`);
         expect(formatHumanReadable(null)).toBe(`null`);
         // Functions & classes
-        expect(formatHumanReadable(async function oui() {})).toBe(`async function oui() { … }`);
-        expect(formatHumanReadable(class Oui {})).toBe(`class Oui { … }`);
+        expect(formatHumanReadable(async function oui() { })).toBe(`async function oui() { … }`);
+        expect(formatHumanReadable(class Oui { })).toBe(`class Oui { … }`);
         // Iterators
         expect(formatHumanReadable([1, 2, 3])).toBe(`[1, 2, 3]`);
         expect(formatHumanReadable(new Set([1, 2, 3]))).toBe(`Set [1, 2, 3]`);
@@ -226,7 +226,7 @@ describe(parseUrl(import.meta.url), () => {
 ]`.trim()
         );
 
-        class List extends Array {}
+        class List extends Array { }
 
         expect(formatTechnical(new List("a", "b"))).toBe(
             `List [
@@ -269,10 +269,10 @@ describe(parseUrl(import.meta.url), () => {
         expect(isInstanceOf(24, Number)).toBe(false);
         expect(isInstanceOf(true, Boolean)).toBe(false);
 
-        class List extends Array {}
+        class List extends Array { }
 
-        class A {}
-        class B extends A {}
+        class A { }
+        class B extends A { }
 
         expect(isInstanceOf([], Array)).toBe(true);
         expect(isInstanceOf(new List(), Array)).toBe(true);

@@ -1,4 +1,4 @@
-import { expect, test } from "@odoo/hoot";
+import { expect, test } from "@weth/hoot";
 import { contains, mockService } from "@web/../tests/web_test_helpers";
 import { mountWithCleanup } from "@web/../tests/_framework/component_test_helpers";
 import { defineMailModels } from "@mail/../tests/mail_test_helpers";

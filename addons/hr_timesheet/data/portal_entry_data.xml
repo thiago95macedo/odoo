@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo noupdate="1">
+<weth noupdate="1">
     <record id="portal_timesheets" model="portal.entry">
         <field name="name">Timesheets</field>
         <field name="description">Review all timesheets related to your projects</field>
@@ -9,4 +9,4 @@
         <field name="category">service_category</field>
         <field name="sequence" eval="110"/>
     </record>
-</odoo>
+</weth>

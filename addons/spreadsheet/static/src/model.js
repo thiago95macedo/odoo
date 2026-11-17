@@ -1,4 +1,4 @@
-import { Model } from "@odoo/o-spreadsheet";
+import { Model } from "@weth/o-spreadsheet";
 
 /**
  * An o-spreadsheet model with all custom Odoo plugins

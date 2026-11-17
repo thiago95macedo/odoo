@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
     <record id="product_value_form_view" model="ir.ui.view">
         <field name="name">product.value.form.view</field>
         <field name="model">product.value</field>
@@ -79,4 +79,4 @@
 
     <menuitem action="product_value_list_action" id="valuation_adjustments_menu" name="Valuation Adjustments" parent="stock.menu_warehouse_report" sequence="300" groups="base.group_no_one"/>
 
-</odoo>
+</weth>

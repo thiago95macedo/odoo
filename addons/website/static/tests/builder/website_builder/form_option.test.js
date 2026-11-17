@@ -16,8 +16,8 @@ import {
     queryOne,
     test,
     waitFor,
-} from "@odoo/hoot";
-import { animationFrame } from "@odoo/hoot-dom";
+} from "@weth/hoot";
+import { animationFrame } from "@weth/hoot-dom";
 import {
     contains,
     defineModels,

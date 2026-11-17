@@ -11,7 +11,7 @@ import {
     MENU_ACTIVE_IDS,
 } from "@mail/../tests/mail_test_helpers";
 
-import { describe, expect, test, waitFor } from "@odoo/hoot";
+import { describe, expect, test, waitFor } from "@weth/hoot";
 
 import { Command, mockService, serverState } from "@web/../tests/web_test_helpers";
 

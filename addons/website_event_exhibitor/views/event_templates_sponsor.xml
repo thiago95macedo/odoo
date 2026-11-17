@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
 
 <template name="Sponsors" id="event_sponsor" inherit_id="website_event.layout">
     <xpath expr="//div[@id='wrap']" position="inside">
@@ -39,4 +39,4 @@
             t-field="sponsor.sudo().sponsor_type_id" t-attf-class="o_ribbon d-block w-100 ribbon_#{sponsor.sudo().sponsor_type_id.display_ribbon_style}"/>
 </template>
 
-</odoo>
+</weth>

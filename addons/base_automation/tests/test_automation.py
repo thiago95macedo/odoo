@@ -3,9 +3,9 @@
 
 from datetime import datetime
 
-from odoo import Command
-from odoo.addons.base.tests.common import TransactionCaseWithUserDemo
-from odoo.tests import Form, tagged
+from weth import Command
+from weth.addons.base.tests.common import TransactionCaseWithUserDemo
+from weth.tests import Form, tagged
 
 
 @tagged('post_install', '-at_install')

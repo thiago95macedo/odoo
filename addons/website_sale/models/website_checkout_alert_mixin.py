@@ -3,7 +3,7 @@
 import bisect
 from typing import Literal
 
-from odoo import fields, models
+from weth import fields, models
 
 
 class WebsiteCheckoutAlertMixin(models.AbstractModel):

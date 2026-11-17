@@ -1,5 +1,5 @@
-import { describe, expect, test } from "@odoo/hoot";
-import { queryAllTexts } from "@odoo/hoot-dom";
+import { describe, expect, test } from "@weth/hoot";
+import { queryAllTexts } from "@weth/hoot-dom";
 import {
     contains,
     makeMockServer,
@@ -15,7 +15,7 @@ import {
 import { defineHrModels } from "@hr/../tests/hr_test_helpers";
 import { cookie } from "@web/core/browser/cookie";
 import { user } from "@web/core/user";
-import { animationFrame } from "@odoo/hoot-mock";
+import { animationFrame } from "@weth/hoot-mock";
 
 describe.current.tags("desktop");
 defineHrModels();

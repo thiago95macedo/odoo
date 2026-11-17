@@ -1,5 +1,5 @@
 declare module "@spreadsheet" {
-    import { AddFunctionDescription, Arg, EvalContext } from "@odoo/o-spreadsheet";
+    import { AddFunctionDescription, Arg, EvalContext } from "@weth/o-spreadsheet";
 
     export interface CustomFunctionDescription extends AddFunctionDescription {
         compute: (this: ExtendedEvalContext, ...args: Arg[]) => any;

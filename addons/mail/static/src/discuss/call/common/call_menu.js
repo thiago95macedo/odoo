@@ -1,5 +1,5 @@
 import { useSubEnv } from "@web/owl2/utils";
-import { Component, signal } from "@odoo/owl";
+import { Component, signal } from "@weth/owl";
 
 import { ActionList } from "@mail/core/common/action_list";
 import { useCallActions } from "@mail/discuss/call/common/call_actions";
@@ -22,7 +22,7 @@ export class CallMenu extends Component {
         this.callActions = useCallActions({ channel: () => this.rtc.channel });
         useSubEnv({ inCallMenu: true });
         this.dropdownState = useDropdownState();
-        this.isEnterprise = odoo.info && odoo.info.isEnterprise;
+        this.isEnterprise = weth.info && weth.info.isEnterprise;
     }
 
     get lastSelfAction() {

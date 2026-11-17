@@ -1,4 +1,4 @@
-import { Component, onMounted, signal, t, useEffect, useProps } from "@odoo/owl";
+import { Component, onMounted, signal, t, useEffect, useProps } from "@weth/owl";
 
 export class AutoresizeInput extends Component {
     static template = "mail.AutoresizeInput";
@@ -8,7 +8,7 @@ export class AutoresizeInput extends Component {
         enabled: t.boolean().optional(true),
         inputClassName: t.string().optional(""),
         inputRef: t.signal(t.instanceOf(HTMLInputElement)).optional(() => signal.ref()),
-        onValidate: t.function([t.string()]).optional(() => () => {}),
+        onValidate: t.function([t.string()]).optional(() => () => { }),
         placeholder: t.string().optional(""),
         value: t.signal(t.string()),
     });

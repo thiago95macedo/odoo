@@ -1,4 +1,4 @@
-import { test, expect } from "@odoo/hoot";
+import { test, expect } from "@weth/hoot";
 import { makeServerError, mountWithCleanup, onRpc } from "@web/../tests/web_test_helpers";
 import { location } from "@web/core/browser/browser";
 import { patch } from "@web/core/utils/patch";

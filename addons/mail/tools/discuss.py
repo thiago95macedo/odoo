@@ -11,14 +11,14 @@ from typing import Generic, TypeVar
 
 from markupsafe import Markup
 
-import odoo
-from odoo import models
-from odoo.exceptions import MissingError
-from odoo.http import request, route
-from odoo.tools import OrderedSet
-from odoo.tools.misc import hmac
+import weth
+from weth import models
+from weth.exceptions import MissingError
+from weth.http import request, route
+from weth.tools import OrderedSet
+from weth.tools.misc import hmac
 
-from odoo.addons.bus.websocket import wsrequest
+from weth.addons.bus.websocket import wsrequest
 
 T = TypeVar("T")
 
@@ -425,9 +425,9 @@ class Store:
             if isinstance(val, Store.Relation):
                 val._add_to_store(self, target, key)
             elif isinstance(val, datetime):
-                target[key] = odoo.fields.Datetime.to_string(val)
+                target[key] = weth.fields.Datetime.to_string(val)
             elif isinstance(val, date):
-                target[key] = odoo.fields.Date.to_string(val)
+                target[key] = weth.fields.Date.to_string(val)
             elif isinstance(val, Markup):
                 target[key] = ["markup", str(val)]
             else:

@@ -4,9 +4,9 @@ from hashlib import sha1
 
 from werkzeug import urls
 
-from odoo import fields, models
+from weth import fields, models
 
-from odoo.addons.payment_buckaroo import const
+from weth.addons.payment_buckaroo import const
 
 
 class PaymentProvider(models.Model):

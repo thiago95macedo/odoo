@@ -2,10 +2,10 @@ import base64
 
 from lxml import etree
 
-from odoo.tests.common import TransactionCase, tagged
-from odoo.tools.mimetypes import guess_mimetype
+from weth.tests.common import TransactionCase, tagged
+from weth.tools.mimetypes import guess_mimetype
 
-from odoo.addons.base.tests.files import JPG_RAW
+from weth.addons.base.tests.files import JPG_RAW
 
 
 @tagged('at_install', '-post_install')  # LEGACY at_install

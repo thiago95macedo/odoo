@@ -3,11 +3,11 @@ from ast import literal_eval
 from contextlib import closing
 from datetime import datetime, timedelta
 
-from odoo import Command, fields
-from odoo.addons.mail.tests.common import mail_new_test_user
-from odoo.addons.stock.tests.common import TestStockCommon
-from odoo.exceptions import AccessError, UserError, ValidationError
-from odoo.tests import tagged, Form
+from weth import Command, fields
+from weth.addons.mail.tests.common import mail_new_test_user
+from weth.addons.stock.tests.common import TestStockCommon
+from weth.exceptions import AccessError, UserError, ValidationError
+from weth.tests import tagged, Form
 
 
 class TestStockQuant(TestStockCommon):
@@ -666,7 +666,7 @@ class TestStockQuant(TestStockCommon):
             'product_id': self.product_lot.id,
         })
 
-        from odoo.fields import Datetime
+        from weth.fields import Datetime
         in_date1 = Datetime.now()
         self.env['stock.quant']._update_available_quantity(self.product_lot, self.stock_location, 1.0, lot_id=lot1, in_date=in_date1)
 

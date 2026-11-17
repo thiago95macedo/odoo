@@ -1,4 +1,4 @@
-import { computed, useProps, types, Component } from "@odoo/owl";
+import { computed, useProps, types, Component } from "@weth/owl";
 import { useService } from "@web/core/utils/hooks";
 
 import { OutLine } from "../out_line/out_line";

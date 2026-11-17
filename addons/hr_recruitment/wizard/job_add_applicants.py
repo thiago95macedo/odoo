@@ -1,4 +1,4 @@
-from odoo import Command, fields, models
+from weth import Command, fields, models
 
 
 class JobAddApplicants(models.TransientModel):

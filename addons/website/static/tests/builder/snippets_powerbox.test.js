@@ -1,5 +1,5 @@
 import { defineWebsiteModels, setupWebsiteBuilder } from "./website_helpers";
-import { animationFrame, describe, expect, queryAllTexts, queryOne, test } from "@odoo/hoot";
+import { animationFrame, describe, expect, queryAllTexts, queryOne, test } from "@weth/hoot";
 import { setSelection } from "@html_editor/../tests/_helpers/selection";
 import { insertText } from "@html_editor/../tests/_helpers/user_actions";
 import { execCommand } from "@html_editor/../tests/_helpers/userCommands";

@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.tools.rendering_tools import template_env_globals
-from odoo.http import request
+from weth.tools.rendering_tools import template_env_globals
+from weth.http import request
 
 template_env_globals.update({
     'slug': lambda value: request.env['ir.http']._slug(value)  # noqa: PLW0108

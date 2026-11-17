@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
 
 <!-- Job Card -->
 <template id="job_card" name="Job Card">
@@ -1086,4 +1086,4 @@
     </xpath>
 </template>
 
-</odoo>
+</weth>

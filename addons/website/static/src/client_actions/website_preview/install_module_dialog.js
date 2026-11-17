@@ -1,4 +1,4 @@
-import { Component, useProps, t } from "@odoo/owl";
+import { Component, useProps, t } from "@weth/owl";
 import { _t } from "@web/core/l10n/translation";
 import { WebsiteDialog } from "@website/components/dialog/dialog";
 

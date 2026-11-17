@@ -3,9 +3,9 @@ from unittest.mock import MagicMock
 
 from psycopg2 import OperationalError
 
-from odoo import fields, release
-from odoo.addons.base_setup.controllers import kpi as kpi_controller
-from odoo.tests import HttpCase, new_test_user, patch, tagged, TransactionCase
+from weth import fields, release
+from weth.addons.base_setup.controllers import kpi as kpi_controller
+from weth.tests import HttpCase, new_test_user, patch, tagged, TransactionCase
 
 
 @tagged('post_install', '-at_install')
@@ -20,14 +20,14 @@ class KpiTest(HttpCase):
             scope='rpc', name='test', expiration_date=fields.Datetime.now() + timedelta(days=0.5))
 
         # Make db_connect return the current cursor, so that it sees the prepared transaction without needing a commit
-        cls.startClassPatcher(patch('odoo.addons.base_setup.controllers.kpi.db_connect',
+        cls.startClassPatcher(patch('weth.addons.base_setup.controllers.kpi.db_connect',
                                     **{'return_value.cursor.return_value.__enter__.return_value': cls.env.cr}))
 
     def setUp(self):
         super().setUp()
 
         # Mock the KPI providers with the test's ones
-        self.mock_kpi_providers = self.startClassPatcher(patch('odoo.addons.base_setup.controllers.kpi._get_kpi_providers',
+        self.mock_kpi_providers = self.startClassPatcher(patch('weth.addons.base_setup.controllers.kpi._get_kpi_providers',
                                                                return_value=[]))
 
     def _make_json_request(self, url, json=None):
@@ -75,12 +75,12 @@ class KpiTest(HttpCase):
 
     def test_get_kpi_summary_on_nonexistant_database(self):
         # Avoid leaking information about missing database to prevent scanning databases hosted on the same server
-        self.startPatcher(patch('odoo.addons.base_setup.controllers.kpi.db_connect', side_effect=OperationalError))
+        self.startPatcher(patch('weth.addons.base_setup.controllers.kpi.db_connect', side_effect=OperationalError))
 
         params = {
             'credentials': [['missing-database', 'any_token']],
         }
-        with self.assertNoLogs('odoo.addons.base_setup.controllers.kpi', level='ERROR'):
+        with self.assertNoLogs('weth.addons.base_setup.controllers.kpi', level='ERROR'):
             result = self._make_json_request('/kpi/summary', json={'params': params})
         self.assertEqual(result, {}, "The route shouldn't leak information about database existence")
 
@@ -88,7 +88,7 @@ class KpiTest(HttpCase):
         params = {
             'credentials': [[self.env.cr.dbname, 'invalid_token']],
         }
-        with self.assertLogs('odoo.addons.base_setup.controllers.kpi', level='ERROR') as log_catcher:
+        with self.assertLogs('weth.addons.base_setup.controllers.kpi', level='ERROR') as log_catcher:
             result = self._make_json_request('/kpi/summary', json={'params': params})
         self.assertEqual(result, {}, "The route should behave as if the database does not exist")
         self.assertEqual(len(log_catcher.output), 1)
@@ -102,12 +102,12 @@ class KpiTest(HttpCase):
         # Having an error message would reveal the existence of the database even if we have no access
         # Therefore the best solution is to behave as if this server doesn't know about this database,
         # and let the client try to retrieve the KPI summary via dedicated RPC calls.
-        self.startPatcher(patch('odoo.addons.base_setup.controllers.kpi.release_series', new='saas~9.11'))
+        self.startPatcher(patch('weth.addons.base_setup.controllers.kpi.release_series', new='saas~9.11'))
 
         params = {
             'credentials': [[self.env.cr.dbname, self.kpi_user_api_key]],
         }
-        with self.assertLogs('odoo.addons.base_setup.controllers.kpi', level='ERROR') as log_catcher:
+        with self.assertLogs('weth.addons.base_setup.controllers.kpi', level='ERROR') as log_catcher:
             result = self._make_json_request('/kpi/summary', json={'params': params})
         self.assertEqual(result, {}, "The route should behave as if the databases does not exist")
         self.assertEqual(len(log_catcher.output), 1)
@@ -117,7 +117,7 @@ class KpiTest(HttpCase):
     def test_get_kpi_summary_limits_credentials_count(self):
         credentials = [['some-db', 'some_token']] * 501
         params = {'credentials': credentials}
-        with self.assertLogs('odoo.http', 'WARNING') as log_catcher:
+        with self.assertLogs('weth.http', 'WARNING') as log_catcher:
             response = self.url_open('/kpi/summary', json={'params': params})
         response.raise_for_status()
         result = response.json()
@@ -138,7 +138,7 @@ class KpiTest(HttpCase):
             'credentials': [[self.env.cr.dbname, self.kpi_user_api_key]],
         }
 
-        with self.assertLogs('odoo.addons.base_setup.controllers.kpi', level='ERROR') as log_catcher:
+        with self.assertLogs('weth.addons.base_setup.controllers.kpi', level='ERROR') as log_catcher:
             result = self._make_json_request('/kpi/summary', json={'params': params})
 
         db_result = result[self.env.cr.dbname]
@@ -179,7 +179,7 @@ class TestKpiProviderLoading(TransactionCase):
         ]
 
         fake_module = MagicMock()
-        fake_module.__name__ = "odoo.addons.test_addon.sub.module"
+        fake_module.__name__ = "weth.addons.test_addon.sub.module"
         fake_module.func = lambda: None
         fake_module.root_func = lambda: None
 
@@ -187,7 +187,7 @@ class TestKpiProviderLoading(TransactionCase):
             return fake_module
 
         fake_root_module = MagicMock()
-        fake_root_module.__name__ = "odoo.addons.test_addon"
+        fake_root_module.__name__ = "weth.addons.test_addon"
 
         def fake_import_root(name, package=None):
             return fake_root_module
@@ -204,7 +204,7 @@ class TestKpiProviderLoading(TransactionCase):
         ))
 
     def test_get_kpi_providers_parsing_and_filtering(self):
-        with self.assertLogs('odoo.addons.base_setup.controllers.kpi', level='WARNING') as log_catcher:
+        with self.assertLogs('weth.addons.base_setup.controllers.kpi', level='WARNING') as log_catcher:
             result = kpi_controller._get_kpi_providers()
 
         # Only valid entries should survive

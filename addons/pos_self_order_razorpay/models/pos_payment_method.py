@@ -1,7 +1,7 @@
 from hashlib import sha1
 
-from odoo import models
-from odoo.tools.misc import hmac
+from weth import models
+from weth.tools.misc import hmac
 
 
 class PosPaymentMethod(models.Model):

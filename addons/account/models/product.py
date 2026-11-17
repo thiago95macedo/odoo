@@ -1,11 +1,11 @@
 from difflib import SequenceMatcher
 
-from odoo import api, fields, models, _, Command
-from odoo.exceptions import UserError, ValidationError
-from odoo.fields import Domain
-from odoo.tools import format_amount, frozendict
-from odoo.tools.misc import split_every
-from odoo.tools.constants import IN_MAX
+from weth import api, fields, models, _, Command
+from weth.exceptions import UserError, ValidationError
+from weth.fields import Domain
+from weth.tools import format_amount, frozendict
+from weth.tools.misc import split_every
+from weth.tools.constants import IN_MAX
 
 ACCOUNT_DOMAIN = "[('account_type', 'not in', ('asset_receivable','liability_payable','asset_cash','liability_credit_card','off_balance'))]"
 

@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import models, fields
-from odoo.addons.mail.tools.discuss import Store
+from weth import models, fields
+from weth.addons.mail.tools.discuss import Store
 
 
 class ChatbotMessage(models.Model):

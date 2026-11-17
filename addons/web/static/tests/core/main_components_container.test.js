@@ -1,10 +1,10 @@
-import { beforeEach, expect, onError, test } from "@odoo/hoot";
-import { animationFrame } from "@odoo/hoot-mock";
+import { beforeEach, expect, onError, test } from "@weth/hoot";
+import { animationFrame } from "@weth/hoot-mock";
 import { clearRegistry, mountWithCleanup, patchWithCleanup } from "@web/../tests/web_test_helpers";
 import { MainComponentsContainer } from "@web/core/main_components_container";
 import { registry } from "@web/core/registry";
 
-import { Component, onWillStart, proxy, xml } from "@odoo/owl";
+import { Component, onWillStart, proxy, xml } from "@weth/owl";
 
 const mainComponentsRegistry = registry.category("main_components");
 

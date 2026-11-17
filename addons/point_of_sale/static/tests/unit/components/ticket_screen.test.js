@@ -1,7 +1,7 @@
-import { test, expect, describe, waitFor, waitForNone } from "@odoo/hoot";
+import { test, expect, describe, waitFor, waitForNone } from "@weth/hoot";
 import { mountWithCleanup, onRpc, patchWithCleanup } from "@web/../tests/web_test_helpers";
-import { click, animationFrame } from "@odoo/hoot-dom";
-import { advanceTime } from "@odoo/hoot-mock";
+import { click, animationFrame } from "@weth/hoot-dom";
+import { advanceTime } from "@weth/hoot-mock";
 import { session } from "@web/session";
 import { BarcodePlugin } from "@barcodes/barcode_plugin";
 import { setupPosEnv, makeOrder, getFilledOrder } from "@point_of_sale/../tests/unit/utils";
@@ -577,7 +577,7 @@ test("reprint all prints the last preparation ticket again", async () => {
             printed.push(data);
             return document.createElement("iframe");
         },
-        setIframeSizeFromPrinter() {},
+        setIframeSizeFromPrinter() { },
         async generateImage() {
             return "fake_image_data";
         },

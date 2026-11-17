@@ -1,4 +1,4 @@
-import { Component, signal, t, useProps } from "@odoo/owl";
+import { Component, signal, t, useProps } from "@weth/owl";
 import { useNavigation } from "@web/core/navigation/navigation";
 
 export class SuggestionList extends Component {

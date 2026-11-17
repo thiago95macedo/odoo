@@ -2,9 +2,9 @@ import { useService } from "@web/core/utils/hooks";
 import { FileUploader } from "@web/views/fields/file_handler";
 import { standardWidgetProps } from "@web/views/widgets/standard_widget_props";
 
-import { Component, markup, t, useProps } from "@odoo/owl";
+import { Component, markup, t, useProps } from "@weth/owl";
 
-export const AbstractDocumentFileUploader = (T = Component)  => class AbstractDocumentFileUploader extends T {
+export const AbstractDocumentFileUploader = (T = Component) => class AbstractDocumentFileUploader extends T {
 
     setup() {
         super.setup();
@@ -26,7 +26,7 @@ export const AbstractDocumentFileUploader = (T = Component)  => class AbstractDo
             mimetype: file.type,
             raw: file.data,
         };
-        const [att_id] = await this.orm.create("ir.attachment", [att_data], {context: this.cleanContext});
+        const [att_id] = await this.orm.create("ir.attachment", [att_data], { context: this.cleanContext });
         this.attachmentIdsToProcess.push(att_id);
     }
 
@@ -51,7 +51,7 @@ export const AbstractDocumentFileUploader = (T = Component)  => class AbstractDo
                 resModal,
                 "create_document_from_attachment",
                 ["", this.attachmentIdsToProcess],
-                { context: this.onUploadCompleteContext  }
+                { context: this.onUploadCompleteContext }
             );
         } finally {
             // ensures attachments are cleared on success as well as on error
@@ -97,6 +97,6 @@ export class DocumentFileUploader extends AbstractDocumentFileUploader() {
     }
 
     get onUploadCompleteContext() {
-        return {...this.extraContext, ...this.env.searchModel.context};
+        return { ...this.extraContext, ...this.env.searchModel.context };
     }
 }

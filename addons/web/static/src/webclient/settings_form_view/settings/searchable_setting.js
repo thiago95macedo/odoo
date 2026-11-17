@@ -1,4 +1,4 @@
-import { onMounted, proxy, signal, t, useProps } from "@odoo/owl";
+import { onMounted, proxy, signal, t, useProps } from "@weth/owl";
 import { location } from "@web/core/browser/browser";
 import { normalize } from "@web/core/l10n/utils";
 import { Setting, settingProps } from "@web/views/form/setting/setting";
@@ -41,8 +41,8 @@ export class SearchableSetting extends Setting {
         const settingRef = this.settingRef();
         const fieldLabels = settingRef
             ? this.props.fieldLabels
-                  .filter((fl) => settingRef.querySelector(`#${fl.fieldId}`))
-                  .map((fl) => fl.string)
+                .filter((fl) => settingRef.querySelector(`#${fl.fieldId}`))
+                .map((fl) => fl.string)
             : this.props.fieldLabels.map((fl) => fl.string);
 
         return [this.labelString, ...fieldLabels, this.props.help].filter(Boolean);

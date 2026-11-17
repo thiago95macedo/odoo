@@ -1,9 +1,9 @@
-import { useProps, t } from "@odoo/owl";
+import { useProps, t } from "@weth/owl";
 import { FormViewDialog, formViewDialogProps } from "@web/views/view_dialogs/form_view_dialog";
 
 export const massMailingFormViewDialogProps = {
     ...formViewDialogProps,
-    onRecordSavedForLater: t.function().optional(() => () => {}),
+    onRecordSavedForLater: t.function().optional(() => () => { }),
 };
 
 export class MailingFilterFormViewDialog extends FormViewDialog {

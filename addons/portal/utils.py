@@ -1,6 +1,6 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.tools import consteq
+from weth.tools import consteq
 
 
 def validate_thread_with_hash_pid(thread, _hash, pid):

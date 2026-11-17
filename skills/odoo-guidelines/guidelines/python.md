@@ -6,7 +6,7 @@ is enforced.
 - Four groups, each alphabetically sorted (the ruff isort order):
   1. stdlib
   2. third-party libs
-  3. `odoo` submodules (`from odoo import Command, api, fields, models`)
+  3. `odoo` submodules (`from weth import Command, api, fields, models`)
   4. `odoo.addons.*` (rarely, only if necessary)
 
 # Naming and model layout

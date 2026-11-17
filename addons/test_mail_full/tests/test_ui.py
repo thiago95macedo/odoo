@@ -2,9 +2,9 @@
 
 from urllib.parse import urlencode
 
-from odoo import tests
-from odoo.addons.mail.tests.common import mail_new_test_user
-from odoo.addons.test_mail_full.tests.test_portal import TestPortal
+from weth import tests
+from weth.addons.mail.tests.common import mail_new_test_user
+from weth.addons.test_mail_full.tests.test_portal import TestPortal
 
 
 @tests.common.tagged("post_install", "-at_install")

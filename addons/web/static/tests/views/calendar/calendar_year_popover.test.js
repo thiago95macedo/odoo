@@ -1,5 +1,5 @@
-import { describe, expect, test } from "@odoo/hoot";
-import { queryAllTexts } from "@odoo/hoot-dom";
+import { describe, expect, test } from "@weth/hoot";
+import { queryAllTexts } from "@weth/hoot-dom";
 import { contains, mountWithCleanup, preloadBundle } from "@web/../tests/web_test_helpers";
 import { DEFAULT_DATE, FAKE_MODEL } from "./calendar_test_helpers";
 
@@ -49,10 +49,10 @@ const FAKE_PROPS = {
     model: FAKE_MODEL,
     date: DEFAULT_DATE,
     records: FAKE_RECORDS,
-    createRecord() {},
-    deleteRecord() {},
-    editRecord() {},
-    close() {},
+    createRecord() { },
+    deleteRecord() { },
+    editRecord() { },
+    close() { },
 };
 
 async function start(props = {}) {

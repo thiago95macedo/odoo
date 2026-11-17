@@ -1,9 +1,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import Command
-from odoo.addons.stock.tests.test_packing import TestPackingCommon
-from odoo.exceptions import UserError
-from odoo.tests import tagged, Form
+from weth import Command
+from weth.addons.stock.tests.test_packing import TestPackingCommon
+from weth.exceptions import UserError
+from weth.tests import tagged, Form
 from unittest.mock import patch
 
 
@@ -243,7 +243,7 @@ class TestPackingDelivery(TestPackingCommon):
 
         # Mock carrier delivery method
         with patch(
-            'odoo.addons.stock_delivery.models.delivery_carrier.DeliveryCarrier.fixed_send_shipping',
+            'weth.addons.stock_delivery.models.delivery_carrier.DeliveryCarrier.fixed_send_shipping',
             return_value=[{'exact_price': 0, 'tracking_number': "666"}]
         ):
             picking_ship.send_to_shipper()

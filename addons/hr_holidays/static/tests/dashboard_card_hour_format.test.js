@@ -1,5 +1,5 @@
-import { expect, test, describe } from "@odoo/hoot";
-import { animationFrame } from "@odoo/hoot-mock";
+import { expect, test, describe } from "@weth/hoot";
+import { animationFrame } from "@weth/hoot-mock";
 import { mountWithCleanup } from "@web/../tests/web_test_helpers"
 import { TimeOffCard } from "@hr_holidays/dashboard/time_off_card"
 import { defineHrHolidaysModels } from "./hr_holidays_test_helpers";

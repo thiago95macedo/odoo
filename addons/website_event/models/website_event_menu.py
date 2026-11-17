@@ -3,7 +3,7 @@
 
 from datetime import datetime
 
-from odoo import api, fields, models
+from weth import api, fields, models
 
 
 class WebsiteEventMenu(models.Model):

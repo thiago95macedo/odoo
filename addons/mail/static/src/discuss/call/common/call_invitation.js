@@ -9,7 +9,7 @@ import {
 } from "@mail/discuss/call/common/call_actions";
 import { CallPreview } from "@mail/discuss/call/common/call_preview";
 
-import { Component, computed, proxy, signal, types, useProps } from "@odoo/owl";
+import { Component, computed, proxy, signal, types, useProps } from "@weth/owl";
 
 import { _t } from "@web/core/l10n/translation";
 import { useService } from "@web/core/utils/hooks";

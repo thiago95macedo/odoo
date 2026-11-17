@@ -8,14 +8,14 @@ from datetime import datetime, timedelta
 import werkzeug
 from dateutil.relativedelta import relativedelta
 
-from odoo import _, fields, http
-from odoo.exceptions import UserError
-from odoo.fields import Domain
-from odoo.http import request
-from odoo.http.stream import content_disposition
-from odoo.tools import format_date, format_datetime, is_html_empty
+from weth import _, fields, http
+from weth.exceptions import UserError
+from weth.fields import Domain
+from weth.http import request
+from weth.http.stream import content_disposition
+from weth.tools import format_date, format_datetime, is_html_empty
 
-from odoo.addons.base.models.ir_qweb import keep_query
+from weth.addons.base.models.ir_qweb import keep_query
 
 _logger = logging.getLogger(__name__)
 

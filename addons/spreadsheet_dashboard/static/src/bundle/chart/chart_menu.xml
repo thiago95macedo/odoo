@@ -1,4 +1,4 @@
-<odoo>
+<weth>
     <div t-name="spreadsheet_dashboard.ChartMenu" t-inherit="o-spreadsheet-ChartMenu"
         t-inherit-mode="extension">
         <xpath
@@ -17,4 +17,4 @@
             </t>
         </xpath>
     </div>
-</odoo>
+</weth>

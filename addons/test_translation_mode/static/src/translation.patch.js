@@ -122,7 +122,7 @@ export function encodeTranslation(isTranslated, metadata, translation) {
 }
 
 export function isTranslationModeEnabled() {
-    return (odoo.debug ?? "").includes("translate");
+    return (weth.debug ?? "").includes("translate");
 }
 
 /**

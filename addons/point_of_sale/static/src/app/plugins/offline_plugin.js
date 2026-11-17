@@ -13,7 +13,7 @@ import { session } from "@web/session";
  */
 patch(OfflinePlugin.prototype, {
     setup() {
-        if (odoo.pos_config_id || session.data?.config_id) {
+        if (weth.pos_config_id || session.data?.config_id) {
             this._crypto = false;
             return;
         }

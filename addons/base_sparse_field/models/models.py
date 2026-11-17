@@ -2,8 +2,8 @@
 
 from collections import defaultdict
 
-from odoo import models, fields, api, _
-from odoo.exceptions import UserError
+from weth import models, fields, api, _
+from weth.exceptions import UserError
 
 
 class Base(models.AbstractModel):

@@ -1,5 +1,5 @@
 import { _t } from "@web/core/l10n/translation";
-import { Component, useProps, proxy, t, usePlugin } from "@odoo/owl";
+import { Component, useProps, proxy, t, usePlugin } from "@weth/owl";
 import { Dialog } from "@web/core/dialog/dialog";
 import { Numpad, buttonsType } from "@point_of_sale/app/components/numpad/numpad";
 import { useHotkey } from "@web/core/hotkeys/hotkey_hook";

@@ -4,10 +4,10 @@ from collections import defaultdict
 
 from markupsafe import Markup
 
-from odoo import _, api, fields, models
-from odoo.fields import Domain
-from odoo.tools import SQL
-from odoo.tools.translate import html_translate
+from weth import _, api, fields, models
+from weth.fields import Domain
+from weth.tools import SQL
+from weth.tools.translate import html_translate
 
 MOST_USED_TAGS_COUNT = 5  # Number of tags to track as "most used" to display on frontend
 

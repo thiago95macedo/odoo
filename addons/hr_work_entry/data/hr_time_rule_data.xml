@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
     <data noupdate="1">
         <record id="hr_time_rule_employee_schedule" model="hr.time.rule">
             <field name="name">Employee Schedule Rule</field>
@@ -516,4 +516,4 @@
             <field name="work_entry_type_id" ref="hr_work_entry.za_work_entry_type_overtime_public_holidays"/>
         </record>
     </data>
-</odoo>
+</weth>

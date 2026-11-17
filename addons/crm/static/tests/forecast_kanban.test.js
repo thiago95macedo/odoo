@@ -1,7 +1,7 @@
 import { defineMailModels } from "@mail/../tests/mail_test_helpers";
-import { expect, test } from "@odoo/hoot";
-import { queryAll, queryAllTexts, runAllTimers } from "@odoo/hoot-dom";
-import { mockDate } from "@odoo/hoot-mock";
+import { expect, test } from "@weth/hoot";
+import { queryAll, queryAllTexts, runAllTimers } from "@weth/hoot-dom";
+import { mockDate } from "@weth/hoot-mock";
 import {
     contains,
     defineModels,

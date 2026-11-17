@@ -9,11 +9,11 @@ import textwrap
 import werkzeug.urls
 from dateutil.relativedelta import relativedelta
 
-from odoo import api, fields, models, tools, _
-from odoo.addons.website.tools import text_from_html
-from odoo.exceptions import UserError, ValidationError
-from odoo.fields import Domain
-from odoo.tools.misc import get_lang, format_date
+from weth import api, fields, models, tools, _
+from weth.addons.website.tools import text_from_html
+from weth.exceptions import UserError, ValidationError
+from weth.fields import Domain
+from weth.tools.misc import get_lang, format_date
 
 GOOGLE_CALENDAR_URL = 'https://www.google.com/calendar/render?'
 

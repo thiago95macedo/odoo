@@ -7,13 +7,13 @@ from urllib.parse import parse_qsl, urlencode, urlsplit
 
 from requests import RequestException
 
-from odoo import SUPERUSER_ID, api, fields, models
-from odoo.exceptions import MissingError
-from odoo.fields import Domain
-from odoo.http import request
-from odoo.tools import SQL, BinaryBytes, file_open, lazy, split_every
+from weth import SUPERUSER_ID, api, fields, models
+from weth.exceptions import MissingError
+from weth.fields import Domain
+from weth.http import request
+from weth.tools import SQL, BinaryBytes, file_open, lazy, split_every
 
-from odoo.addons.website_sale import const
+from weth.addons.website_sale import const
 
 logger = logging.getLogger(__name__)
 

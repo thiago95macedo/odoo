@@ -1,7 +1,7 @@
-from odoo import Command
-from odoo.exceptions import UserError
-from odoo.tests import tagged, freeze_time
-from odoo.addons.account.tests.common import AccountTestInvoicingCommon
+from weth import Command
+from weth.exceptions import UserError
+from weth.tests import tagged, freeze_time
+from weth.addons.account.tests.common import AccountTestInvoicingCommon
 
 
 @freeze_time('2023-12-31')

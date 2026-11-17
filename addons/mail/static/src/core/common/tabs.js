@@ -1,6 +1,6 @@
 import { useLayoutEffect, useSubEnv } from "@web/owl2/utils";
 import { useChildRefs, useScrollState } from "@mail/utils/common/hooks";
-import { Component, Portal, signal, t, useEffect, useProps } from "@odoo/owl";
+import { Component, Portal, signal, t, useEffect, useProps } from "@weth/owl";
 
 export class Tabs extends Component {
     static template = "mail.Tabs";

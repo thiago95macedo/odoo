@@ -4,8 +4,8 @@ from datetime import datetime, timedelta
 from collections import defaultdict
 from calendar import monthrange
 
-from odoo import api, models, fields
-from odoo.tools import format_date
+from weth import api, models, fields
+from weth.tools import format_date
 
 
 class HrExportWorkEntries(models.TransientModel):

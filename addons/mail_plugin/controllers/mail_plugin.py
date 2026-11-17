@@ -6,13 +6,13 @@ import logging
 from markupsafe import Markup
 from werkzeug.exceptions import BadRequest, Forbidden
 
-from odoo import http, tools, _
-from odoo.addons.portal.controllers.mail import MailController
-from odoo.fields import Domain
-from odoo.exceptions import AccessError
-from odoo.http import request
-from odoo.tools.image import image_data_uri
-from odoo.tools.misc import format_date
+from weth import http, tools, _
+from weth.addons.portal.controllers.mail import MailController
+from weth.fields import Domain
+from weth.exceptions import AccessError
+from weth.http import request
+from weth.tools.image import image_data_uri
+from weth.tools.misc import format_date
 
 _logger = logging.getLogger(__name__)
 

@@ -1,4 +1,4 @@
-import { Component, onMounted, onWillStart, proxy, useListener, usePlugin } from "@odoo/owl";
+import { Component, onMounted, onWillStart, proxy, useListener, usePlugin } from "@weth/owl";
 import { location, browser } from "@web/core/browser/browser";
 import { router, routerBus } from "@web/core/browser/router";
 import { useOwnDebugContext } from "@web/core/debug/debug_context";
@@ -173,7 +173,7 @@ export class WebClient extends Component {
     registerServiceWorker() {
         if (navigator.serviceWorker) {
             navigator.serviceWorker
-                .register("/web/service-worker.js", { scope: "/odoo" })
+                .register("/web/service-worker.js", { scope: "/weth" })
                 .then((registration) => {
                     if (registration.active && registration.active.state === "activated") {
                         this.serviceWorkerActivationResolvers.resolve();

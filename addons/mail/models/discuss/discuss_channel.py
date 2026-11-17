@@ -8,19 +8,19 @@ from secrets import choice
 import psycopg2
 from markupsafe import Markup
 
-from odoo import Command, SUPERUSER_ID, _, api, fields, models, tools
-from odoo.exceptions import AccessError, UserError, ValidationError
-from odoo.fields import Domain
-from odoo.modules.registry import Registry
-from odoo.tools import BinaryBytes, email_normalize, format_list, html_escape
-from odoo.tools.misc import OrderedSet, hash_sign, limited_field_access_token
-from odoo.tools.sql import SQL
+from weth import Command, SUPERUSER_ID, _, api, fields, models, tools
+from weth.exceptions import AccessError, UserError, ValidationError
+from weth.fields import Domain
+from weth.modules.registry import Registry
+from weth.tools import BinaryBytes, email_normalize, format_list, html_escape
+from weth.tools.misc import OrderedSet, hash_sign, limited_field_access_token
+from weth.tools.sql import SQL
 
-from odoo.addons.base.models.avatar_mixin import generate_text_avatar_svg, get_random_ui_color_from_seed
-from odoo.addons.base.models.ir_mail_server import MailDeliveryException
-from odoo.addons.mail.models.discuss.discuss_channel_member import POST_LEAVE_MESSAGE
-from odoo.addons.mail.tools.discuss import Store
-from odoo.addons.mail.tools.web_push import PUSH_NOTIFICATION_TYPE
+from weth.addons.base.models.avatar_mixin import generate_text_avatar_svg, get_random_ui_color_from_seed
+from weth.addons.base.models.ir_mail_server import MailDeliveryException
+from weth.addons.mail.models.discuss.discuss_channel_member import POST_LEAVE_MESSAGE
+from weth.addons.mail.tools.discuss import Store
+from weth.addons.mail.tools.web_push import PUSH_NOTIFICATION_TYPE
 
 group_avatar = '''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 530.06 530.06">
 <rect width="530.06" height="530.06" fill="#05285b"/>
@@ -344,7 +344,7 @@ class DiscussChannel(models.Model):
         - other conversation kinds defer to the correspondent's avatar.
 
         :return: the SVG avatar bytes, or ``False`` to defer to another avatar.
-        :rtype: odoo.tools.BinaryBytes | bool
+        :rtype: weth.tools.BinaryBytes | bool
         """
         if self.channel_type not in ("channel", "group"):
             return False
@@ -788,7 +788,7 @@ class DiscussChannel(models.Model):
                         env = api.Environment(new_cr, SUPERUSER_ID, {})
                         synced = env["discuss.channel"]._sync_last_interest_dt(channel_ids)
                         if len(synced) == len(channel_ids):
-                            with tools.mute_logger('odoo.models.unlink'):
+                            with tools.mute_logger('weth.models.unlink'):
                                 env["ir.cron.trigger"].browse(trigger.id).unlink()
                 except psycopg2.OperationalError:  # transient (serialization/lock/connection): leave the trigger so the cron drains the durable rows
                     pass
@@ -821,7 +821,7 @@ class DiscussChannel(models.Model):
             max_dt = max_by_channel_id.get(channel.id)
             if max_dt and (not channel.last_interest_dt or channel.last_interest_dt < max_dt):
                 channel.last_interest_dt = max_dt
-        with tools.mute_logger('odoo.models.unlink'):
+        with tools.mute_logger('weth.models.unlink'):
             pending.unlink()
         return lockable
 
@@ -837,7 +837,7 @@ class DiscussChannel(models.Model):
         """
         LastInterestUpdate = self.env["discuss.channel.last.interest.update"]
         cron = self.env.ref("mail.ir_cron_discuss_channel_sync_last_interest_dt")
-        with tools.mute_logger('odoo.models.unlink'):
+        with tools.mute_logger('weth.models.unlink'):
             self.env["ir.cron.trigger"].search([("cron_id", "=", cron.id)]).unlink()
         channel_ids = LastInterestUpdate.search_fetch([], limit=batch_size).channel_id.ids
         if not channel_ids:
@@ -1572,7 +1572,7 @@ class DiscussChannel(models.Model):
             }
         return {
             "type": "ir.actions.act_url",
-            "url": f"/odoo/action-mail.action_discuss?active_id={self.id}",
+            "url": f"/weth/action-mail.action_discuss?active_id={self.id}",
             "target": "self",
         }
 

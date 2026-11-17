@@ -1,8 +1,8 @@
 import { addBuilderOption, setupHTMLBuilder } from "@html_builder/../tests/helpers";
 import { BaseOptionComponent } from "@html_builder/core/base_option_component";
-import { describe, expect, test } from "@odoo/hoot";
-import { advanceTime, animationFrame } from "@odoo/hoot-mock";
-import { xml, proxy } from "@odoo/owl";
+import { describe, expect, test } from "@weth/hoot";
+import { advanceTime, animationFrame } from "@weth/hoot-mock";
+import { xml, proxy } from "@weth/owl";
 import { contains, defineModels, fields, models, onRpc } from "@web/../tests/web_test_helpers";
 import { delay } from "@web/core/utils/concurrency";
 

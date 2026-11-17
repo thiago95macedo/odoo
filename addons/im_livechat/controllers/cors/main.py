@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.http import route
+from weth.http import route
 
-from odoo.addons.im_livechat.controllers.main import LivechatController
+from weth.addons.im_livechat.controllers.main import LivechatController
 
 
 class CorsLivechatController(LivechatController):

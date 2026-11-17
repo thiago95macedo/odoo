@@ -4,8 +4,8 @@ import {
     unfoldAllOptionsGroups,
     waitForEndOfOperation,
 } from "@html_builder/../tests/helpers";
-import { beforeEach, describe, expect, test } from "@odoo/hoot";
-import { animationFrame, click, queryAll, queryOne, waitFor } from "@odoo/hoot-dom";
+import { beforeEach, describe, expect, test } from "@weth/hoot";
+import { animationFrame, click, queryAll, queryOne, waitFor } from "@weth/hoot-dom";
 import { contains, dataURItoBlob, onRpc, patchWithCleanup } from "@web/../tests/web_test_helpers";
 import { uniqueId } from "@web/core/utils/functions";
 import {

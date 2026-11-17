@@ -1,5 +1,5 @@
 import { removeClass } from "@html_editor/utils/dom";
-import { markup, onMounted, useProps, t, useListener } from "@odoo/owl";
+import { markup, onMounted, useProps, t, useListener } from "@weth/owl";
 import { BASIC_PLUGINS, FULL_EDIT_PLUGINS } from "../../plugins/plugin_sets";
 import { useResizer } from "./resizer_hook";
 import { Wysiwyg } from "@html_editor/wysiwyg";
@@ -15,8 +15,8 @@ export class WebsiteForumWysiwyg extends Wysiwyg {
         style: t.string().optional(),
         iframe: t.boolean().optional(),
         copyCss: t.boolean().optional(),
-        onLoad: t.function().optional(() => () => {}),
-        onBlur: t.function().optional(() => () => {}),
+        onLoad: t.function().optional(() => () => { }),
+        onBlur: t.function().optional(() => () => { }),
         dynamicPlaceholder: t.boolean().optional(),
         textareaEl: t.instanceOf(HTMLElement),
         fullEdit: t.boolean(),

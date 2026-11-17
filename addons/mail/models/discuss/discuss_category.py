@@ -1,9 +1,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, fields, models
+from weth import api, fields, models
 
-from odoo.addons.mail.tools.discuss import Store
-from odoo.tools.misc import limited_field_access_token
+from weth.addons.mail.tools.discuss import Store
+from weth.tools.misc import limited_field_access_token
 
 
 class DiscussCategory(models.Model):

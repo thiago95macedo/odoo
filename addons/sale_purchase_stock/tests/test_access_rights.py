@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import Command
-from odoo.addons.sale_purchase.tests.common import TestCommonSalePurchaseNoChart
-from odoo.exceptions import AccessError
-from odoo.tests import tagged
+from weth import Command
+from weth.addons.sale_purchase.tests.common import TestCommonSalePurchaseNoChart
+from weth.exceptions import AccessError
+from weth.tests import tagged
 
 
 @tagged('post_install', '-at_install')

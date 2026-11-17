@@ -1,8 +1,8 @@
 import { Image } from "@html_builder/core/img";
 import { ImgGroup } from "@html_builder/core/img_group";
-import { expect, test, describe } from "@odoo/hoot";
-import { animationFrame } from "@odoo/hoot-dom";
-import { Component, xml, useProps } from "@odoo/owl";
+import { expect, test, describe } from "@weth/hoot";
+import { animationFrame } from "@weth/hoot-dom";
+import { Component, xml, useProps } from "@weth/owl";
 import { mountWithCleanup, patchWithCleanup } from "@web/../tests/web_test_helpers";
 
 describe.current.tags("desktop");

@@ -1,9 +1,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import fields, models
-from odoo.exceptions import UserError, ValidationError
+from weth import fields, models
+from weth.exceptions import UserError, ValidationError
 
-from odoo.addons.sale_gelato import utils
+from weth.addons.sale_gelato import utils
 
 
 class ProviderGelato(models.Model):

@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.http import request
-from odoo.tools import file_open
-from odoo.addons.web.controllers import webmanifest
+from weth.http import request
+from weth.tools import file_open
+from weth.addons.web.controllers import webmanifest
 
 
 class WebManifest(webmanifest.WebManifest):

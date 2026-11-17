@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-from odoo import Command
-from odoo.exceptions import UserError
-from odoo.tests import HttpCase, tagged, new_test_user
+from weth import Command
+from weth.exceptions import UserError
+from weth.tests import HttpCase, tagged, new_test_user
 
 from .test_project_base import TestProjectCommon
 

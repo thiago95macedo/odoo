@@ -2,7 +2,7 @@
 
 import json
 
-from odoo.http import Controller, request, route
+from weth.http import Controller, request, route
 
 
 class BusController(Controller):

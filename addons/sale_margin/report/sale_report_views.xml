@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
 
     <record id="sale_report_projected_margins_list" model="ir.ui.view">
         <field name="name">sale.report.view.list</field>
@@ -107,4 +107,4 @@
         <field name="act_window_id" ref="action_order_report_projected_margins"/>
     </record>
 
-</odoo>
+</weth>

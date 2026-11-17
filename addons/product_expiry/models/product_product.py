@@ -2,7 +2,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 import datetime
 
-from odoo import fields, models
+from weth import fields, models
 
 
 class ProductProduct(models.Model):

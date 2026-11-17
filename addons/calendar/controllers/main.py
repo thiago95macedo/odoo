@@ -1,11 +1,11 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-import odoo.http as http
+import weth.http as http
 
-from odoo.http import request
-from odoo.http.stream import content_disposition
-from odoo.tools import consteq
-from odoo.tools.misc import get_lang
+from weth.http import request
+from weth.http.stream import content_disposition
+from weth.tools import consteq
+from weth.tools.misc import get_lang
 
 
 class CalendarController(http.Controller):
@@ -70,7 +70,7 @@ class CalendarController(http.Controller):
         # If user is internal and logged, redirect to form view of event
         # otherwise, display the simplifyed web page with event informations
         if request.env.user._is_internal():
-            return request.redirect('/odoo/calendar.event/%s?db=%s' % (id, request.env.cr.dbname))
+            return request.redirect('/weth/calendar.event/%s?db=%s' % (id, request.env.cr.dbname))
 
         # NOTE : we don't use request.render() since:
         # - we need a template rendering which is not lazy, to render before cursor closing

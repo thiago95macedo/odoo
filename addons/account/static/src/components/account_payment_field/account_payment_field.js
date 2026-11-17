@@ -1,4 +1,4 @@
-import { t, Component, useProps } from "@odoo/owl";
+import { t, Component, useProps } from "@weth/owl";
 import { deserializeDate, formatDate } from "@web/core/l10n/dates";
 import { localization } from "@web/core/l10n/localization";
 import { _t } from "@web/core/l10n/translation";

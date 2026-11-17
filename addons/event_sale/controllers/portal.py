@@ -1,6 +1,6 @@
-from odoo.addons.event.controllers.portal import EventPortal
-from odoo.fields import Domain
-from odoo.http import request
+from weth.addons.event.controllers.portal import EventPortal
+from weth.fields import Domain
+from weth.http import request
 
 
 class WebsiteEventPortal(EventPortal):

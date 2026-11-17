@@ -1,7 +1,7 @@
-import { Component, proxy, xml } from "@odoo/owl";
-import { expect, test, getFixture } from "@odoo/hoot";
-import { click, press, keyDown, keyUp, queryAll, queryFirst } from "@odoo/hoot-dom";
-import { animationFrame } from "@odoo/hoot-mock";
+import { Component, proxy, xml } from "@weth/owl";
+import { expect, test, getFixture } from "@weth/hoot";
+import { click, press, keyDown, keyUp, queryAll, queryFirst } from "@weth/hoot-dom";
+import { animationFrame } from "@weth/hoot-mock";
 import {
     contains,
     defineModels,
@@ -175,7 +175,7 @@ test("pager", async () => {
         offset: 0,
         limit: 10,
         total: 50,
-        onUpdate: () => {},
+        onUpdate: () => { },
     });
 
     await mountWithSearch(ControlPanel, { resModel: "foo" }, { pagerProps });

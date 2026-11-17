@@ -2,7 +2,7 @@ import { AttendeeCalendarActivityListPopoverItem } from "@calendar/views/attende
 import { Dialog } from "@web/core/dialog/dialog";
 import { useService } from "@web/core/utils/hooks";
 
-import { Component, onWillStart, t, useProps } from "@odoo/owl";
+import { Component, onWillStart, t, useProps } from "@weth/owl";
 import { useSubEnv } from "@web/owl2/utils";
 
 /**
@@ -44,7 +44,7 @@ export class AttendeeCalendarActivityListPopover extends Component {
         useSubEnv({
             dialogData: {
                 close: this.props.close,
-                scrollToOrigin: () => {},
+                scrollToOrigin: () => { },
             },
         });
 

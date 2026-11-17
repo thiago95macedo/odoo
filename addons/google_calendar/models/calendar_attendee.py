@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import models
+from weth import models
 
-from odoo.addons.google_calendar.utils.google_calendar_service import GoogleCalendarService
+from weth.addons.google_calendar.utils.google_calendar_service import GoogleCalendarService
 
 
 class CalendarAttendee(models.Model):

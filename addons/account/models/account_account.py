@@ -6,11 +6,11 @@ import itertools
 import re
 import json
 
-from odoo import api, fields, models, _, Command
-from odoo.fields import Domain
-from odoo.exceptions import UserError, ValidationError, RedirectWarning
-from odoo.models import Query, TableSQL
-from odoo.tools import SQL
+from weth import api, fields, models, _, Command
+from weth.fields import Domain
+from weth.exceptions import UserError, ValidationError, RedirectWarning
+from weth.models import Query, TableSQL
+from weth.tools import SQL
 
 
 ACCOUNT_REGEX = re.compile(r'(?:(\S*\d+\S*))?(.*)')

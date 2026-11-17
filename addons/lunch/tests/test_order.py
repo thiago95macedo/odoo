@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.tests import common
-from odoo.addons.lunch.tests.common import TestsCommon
+from weth.tests import common
+from weth.addons.lunch.tests.common import TestsCommon
 
 
 class TestOrder(TestsCommon):

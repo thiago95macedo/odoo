@@ -1,9 +1,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import Command
-from odoo.addons.sale.tests.common import TestSaleCommon
-from odoo.tests import tagged
-from odoo.tools import file_open
+from weth import Command
+from weth.addons.sale.tests.common import TestSaleCommon
+from weth.tests import tagged
+from weth.tools import file_open
 
 from lxml import etree
 

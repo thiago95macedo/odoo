@@ -7,11 +7,11 @@ import requests
 
 from werkzeug.exceptions import Forbidden
 
-from odoo import _, http
-from odoo.exceptions import UserError
-from odoo.http import request
-from odoo.tools import consteq, email_normalize
-from odoo.addons.google_gmail.models.google_gmail_mixin import GMAIL_TOKEN_REQUEST_TIMEOUT
+from weth import _, http
+from weth.exceptions import UserError
+from weth.http import request
+from weth.tools import consteq, email_normalize
+from weth.addons.google_gmail.models.google_gmail_mixin import GMAIL_TOKEN_REQUEST_TIMEOUT
 
 _logger = logging.getLogger(__name__)
 
@@ -29,7 +29,7 @@ class GoogleGmailController(http.Controller):
             _logger.warning("Google Gmail: an error occurred %s", error)
             return request.render('google_gmail.google_gmail_oauth_error', {
                 'error': _('An error occurred during the authentication process.'),
-                'redirect_url': '/odoo',
+                'redirect_url': '/weth',
             })
 
         try:
@@ -121,5 +121,5 @@ class GoogleGmailController(http.Controller):
             or record != request.env.user.outgoing_mail_server_id)
             and request.env.user.has_group('base.group_system')
         ):
-            return f'/odoo/{record._name}/{record.id}'
-        return f'/odoo/my-preferences/{request.env.user.id}'
+            return f'/weth/{record._name}/{record.id}'
+        return f'/weth/my-preferences/{request.env.user.id}'

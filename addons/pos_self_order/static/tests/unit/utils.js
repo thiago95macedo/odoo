@@ -145,21 +145,21 @@ export const setupSelfPosEnv = async (
     configOverrides = {},
     sessionOpened = false
 ) => {
-    odoo.pos_config_id = 1;
-    odoo.self_ordering_mode = mode;
-    odoo.access_token = uuidv4();
-    odoo.info = {
+    weth.pos_config_id = 1;
+    weth.self_ordering_mode = mode;
+    weth.access_token = uuidv4();
+    weth.info = {
         isEnterprise: true,
     };
 
     if (sessionOpened) {
-        odoo.pos_session_id = 1;
+        weth.pos_session_id = 1;
         PosSession._records = PosSession._records.map((r) => ({
             ...r,
             state: "opened",
         }));
     } else {
-        odoo.pos_session_id = null;
+        weth.pos_session_id = null;
     }
 
     patchWithCleanup(session, {

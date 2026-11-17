@@ -1,10 +1,10 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import Command
-import odoo.tests
+from weth import Command
+import weth.tests
 
 
-class TestSnippets(odoo.tests.HttpCase):
+class TestSnippets(weth.tests.HttpCase):
 
     @classmethod
     def setUpClass(cls):

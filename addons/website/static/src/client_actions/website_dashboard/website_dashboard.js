@@ -2,7 +2,7 @@ import { useLayoutEffect } from "@web/owl2/utils";
 import { rpc } from "@web/core/network/rpc";
 import { registry } from "@web/core/registry";
 import { Layout } from "@web/search/layout";
-import { Component, proxy } from "@odoo/owl";
+import { Component, proxy } from "@weth/owl";
 import { KeepLast } from "@web/core/utils/concurrency";
 import { DocumentationLink } from "@web/views/widgets/documentation_link/documentation_link";
 

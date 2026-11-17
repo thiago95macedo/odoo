@@ -6,7 +6,7 @@ import {
 import { BuilderAction } from "@html_builder/core/builder_action";
 import { Image } from "@html_builder/core/img";
 import { setSelection } from "@html_editor/../tests/_helpers/selection";
-import { expect, test, describe, before, getFixture } from "@odoo/hoot";
+import { expect, test, describe, before, getFixture } from "@weth/hoot";
 import {
     animationFrame,
     click,
@@ -15,8 +15,8 @@ import {
     queryFirst,
     runAllTimers,
     tick,
-} from "@odoo/hoot-dom";
-import { xml } from "@odoo/owl";
+} from "@weth/hoot-dom";
+import { xml } from "@weth/owl";
 import { contains, onRpc, patchWithCleanup } from "@web/../tests/web_test_helpers";
 
 describe.current.tags("desktop");

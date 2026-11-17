@@ -4,14 +4,14 @@ import pprint
 
 from werkzeug.exceptions import Forbidden
 
-from odoo import http
-from odoo.exceptions import ValidationError
-from odoo.http import request
+from weth import http
+from weth.exceptions import ValidationError
+from weth.http import request
 
-from odoo.addons.payment import utils as payment_utils
-from odoo.addons.payment.logging import get_payment_logger
-from odoo.addons.payment_paypal import const
-from odoo.addons.payment_paypal import utils as paypal_utils
+from weth.addons.payment import utils as payment_utils
+from weth.addons.payment.logging import get_payment_logger
+from weth.addons.payment_paypal import const
+from weth.addons.payment_paypal import utils as paypal_utils
 
 _logger = get_payment_logger(__name__)
 

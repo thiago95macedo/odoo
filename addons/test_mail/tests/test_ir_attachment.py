@@ -1,5 +1,5 @@
-from odoo.addons.mail.tests.common import MailCommon
-from odoo.tests import tagged, users
+from weth.addons.mail.tests.common import MailCommon
+from weth.tests import tagged, users
 
 
 @tagged("ir_attachment")

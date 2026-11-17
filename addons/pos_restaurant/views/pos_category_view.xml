@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
     <record id="view_pos_category_form_inherit_course" model="ir.ui.view">
         <field name="name">pos.category.form.inherit.course</field>
         <field name="model">pos.category</field>
@@ -41,4 +41,4 @@
             </xpath>
         </field>
     </record>
-</odoo>
+</weth>

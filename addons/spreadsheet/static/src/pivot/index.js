@@ -1,6 +1,6 @@
 import { _t } from "@web/core/l10n/translation";
 
-import * as spreadsheet from "@odoo/o-spreadsheet";
+import * as spreadsheet from "@weth/o-spreadsheet";
 
 import { SEE_RECORDS_PIVOT, SEE_RECORDS_PIVOT_VISIBLE } from "./pivot_actions";
 import { PivotOdooCorePlugin } from "./plugins/pivot_odoo_core_plugin";

@@ -1,10 +1,10 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.fields import Command
+from weth.fields import Command
 
-from odoo.addons.account.tests.common import AccountTestInvoicingCommon, TestTaxCommon
-from odoo.addons.product.tests.common import ProductCommon
-from odoo.addons.sales_team.tests.common import SalesTeamCommon
+from weth.addons.account.tests.common import AccountTestInvoicingCommon, TestTaxCommon
+from weth.addons.product.tests.common import ProductCommon
+from weth.addons.sales_team.tests.common import SalesTeamCommon
 
 
 class SaleCommon(

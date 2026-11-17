@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import Command, tools
-from odoo.addons.mail.tests.common import mail_new_test_user
-from odoo.addons.mail.tests.common import MailCommon
+from weth import Command, tools
+from weth.addons.mail.tests.common import mail_new_test_user
+from weth.addons.mail.tests.common import MailCommon
 
 
 class TestMailListCommon(MailCommon):

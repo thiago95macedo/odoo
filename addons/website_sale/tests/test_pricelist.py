@@ -5,14 +5,14 @@ from unittest.mock import patch
 
 from freezegun import freeze_time
 
-from odoo.exceptions import AccessError
-from odoo.fields import Command
-from odoo.http.session import session_store
-from odoo.tests import tagged
-from odoo.tools import SQL
+from weth.exceptions import AccessError
+from weth.fields import Command
+from weth.http.session import session_store
+from weth.tests import tagged
+from weth.tools import SQL
 
-from odoo.addons.base.tests.common import HttpCaseWithUserPortal, TransactionCaseWithUserDemo
-from odoo.addons.website_sale.tests.common import WebsiteSaleCommon
+from weth.addons.base.tests.common import HttpCaseWithUserPortal, TransactionCaseWithUserDemo
+from weth.addons.website_sale.tests.common import WebsiteSaleCommon
 
 r""" /!\/!\
 Calling `get_pricelist_available` after setting `property_product_pricelist` on
@@ -118,7 +118,7 @@ class TestWebsitePriceList(WebsiteSaleCommon):
     def setUp(self):
         super().setUp()
         patcher = patch(
-            "odoo.addons.website_sale.models.website.Website.get_pricelist_available",
+            "weth.addons.website_sale.models.website.Website.get_pricelist_available",
             wraps=self._get_pricelist_available,
         )
         self.startPatcher(patcher)

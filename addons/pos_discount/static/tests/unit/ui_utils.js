@@ -1,4 +1,4 @@
-import { waitFor } from "@odoo/hoot-dom";
+import { waitFor } from "@weth/hoot-dom";
 import { clickControlButton } from "@point_of_sale/../tests/unit/ui_utils";
 
 export async function openDiscountPopup() {

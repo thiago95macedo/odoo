@@ -78,7 +78,7 @@ export class PosOrder extends PosOrderAccounting {
     }
 
     get config() {
-        return this.models["pos.config"].get(odoo.pos_config_id);
+        return this.models["pos.config"].get(weth.pos_config_id);
     }
 
     get currency() {
@@ -94,7 +94,7 @@ export class PosOrder extends PosOrderAccounting {
     }
 
     get session() {
-        return this.models["pos.session"].get(odoo.pos_session_id);
+        return this.models["pos.session"].get(weth.pos_session_id);
     }
 
     get finalized() {

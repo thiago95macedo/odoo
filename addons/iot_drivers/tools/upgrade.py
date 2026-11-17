@@ -2,11 +2,11 @@
 
 import logging
 import subprocess
-from odoo.addons.iot_drivers.tools.helpers import (
+from weth.addons.iot_drivers.tools.helpers import (
     odoo_restart,
     toggleable,
 )
-from odoo.addons.iot_drivers.tools.system import (
+from weth.addons.iot_drivers.tools.system import (
     rpi_only,
     IS_TEST,
     git,
@@ -69,9 +69,9 @@ def check_git_branch():
 
 def _ensure_production_remote():
     """Ensure that the remote repository is the production one
-    (https://github.com/odoo/odoo.git).
+    (https://github.com/weth/weth.git).
     """
-    production_remote = "https://github.com/odoo/odoo.git"
+    production_remote = "https://github.com/weth/weth.git"
     if git("remote", "get-url", "origin") != production_remote:
         _logger.info("Setting remote repository to production: %s", production_remote)
         git("remote", "set-url", "origin", production_remote)

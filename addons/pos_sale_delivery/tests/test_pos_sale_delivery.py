@@ -1,10 +1,10 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.tests import tagged
+from weth.tests import tagged
 
-from odoo.addons.delivery.tests.cash_on_delivery_common import CashOnDeliveryCommon
-from odoo.addons.point_of_sale.tests.common import TestPoSCommon
-from odoo.addons.pos_sale.tests.test_pos_sale_flow import PoSSaleSyncCommon
+from weth.addons.delivery.tests.cash_on_delivery_common import CashOnDeliveryCommon
+from weth.addons.point_of_sale.tests.common import TestPoSCommon
+from weth.addons.pos_sale.tests.test_pos_sale_flow import PoSSaleSyncCommon
 
 
 @tagged("post_install", "-at_install")

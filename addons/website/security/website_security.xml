@@ -1,4 +1,4 @@
-<odoo>
+<weth>
     <record model="res.groups.privilege" id="res_groups_privilege_website">
         <field name="name">Website</field>
         <field name="sequence">23</field>
@@ -35,4 +35,4 @@
         <field name="implied_ids" eval="[(4, ref('website.website_page_controller_expose'))]"/>
     </record>
 
-    </odoo>
+    </weth>

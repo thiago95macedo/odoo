@@ -3,9 +3,9 @@
 
 import time
 
-from odoo.tests import tagged, Form, TransactionCase
-from odoo.tools import mute_logger
-from odoo import Command
+from weth.tests import tagged, Form, TransactionCase
+from weth.tools import mute_logger
+from weth import Command
 
 
 @tagged('at_install', '-post_install')  # LEGACY at_install
@@ -27,7 +27,7 @@ class TestSaleMrpProcurement(TransactionCase):
         # In order to test the sale_mrp module in OpenERP, I start by creating a new product 'Slider Mobile'
         # I define product category Mobile Products Sellable.
 
-        with mute_logger('odoo.tests.common.onchange'):
+        with mute_logger('weth.tests.common.onchange'):
             # Suppress warning on "Changing your cost method" when creating a
             # product category
             pc = Form(self.env['product.category'])

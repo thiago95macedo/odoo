@@ -8,7 +8,7 @@ import {
     mockUserAgent,
     queryOne,
     test,
-} from "@odoo/hoot";
+} from "@weth/hoot";
 import {
     Component,
     onMounted,
@@ -21,7 +21,7 @@ import {
     usePlugin,
     useProps,
     xml,
-} from "@odoo/owl";
+} from "@weth/owl";
 import {
     contains,
     destroyApp,

@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.survey.tests import common
-from odoo.tests import tagged
-from odoo.tests.common import warmup, HttpCase
+from weth.addons.survey.tests import common
+from weth.tests import tagged
+from weth.tests.common import warmup, HttpCase
 
 
 @tagged('post_install', '-at_install')

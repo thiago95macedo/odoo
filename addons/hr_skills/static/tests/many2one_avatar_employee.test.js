@@ -2,8 +2,8 @@ import { createPublicEmployee } from "@hr/../tests/hr_test_helpers";
 
 import { click, contains, start, startServer } from "@mail/../tests/mail_test_helpers";
 import { mountView, onRpc } from "@web/../tests/web_test_helpers";
-import { describe, expect, test } from "@odoo/hoot";
-import { queryAttribute } from "@odoo/hoot-dom";
+import { describe, expect, test } from "@weth/hoot";
+import { queryAttribute } from "@weth/hoot-dom";
 import { defineHrSkillModels } from "@hr_skills/../tests/hr_skills_test_helpers";
 
 describe.current.tags("desktop");

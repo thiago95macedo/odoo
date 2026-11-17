@@ -1,7 +1,7 @@
-from odoo.tests import tagged
+from weth.tests import tagged
 
-from odoo.addons.project.tests.test_project_sharing import TestProjectSharingCommon
-from odoo.addons.sale_timesheet.tests.common import TestCommonSaleTimesheet
+from weth.addons.project.tests.test_project_sharing import TestProjectSharingCommon
+from weth.addons.sale_timesheet.tests.common import TestCommonSaleTimesheet
 
 
 @tagged('post_install', '-at_install')

@@ -1,5 +1,5 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
-from odoo import fields, models, api
+from weth import fields, models, api
 
 
 class L10n_LatamDocumentType(models.Model):

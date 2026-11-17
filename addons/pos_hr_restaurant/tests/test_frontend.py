@@ -1,6 +1,6 @@
-from odoo.tests import tagged
-from odoo.addons.pos_hr.tests.test_frontend import TestPosHrHttpCommon
-from odoo.addons.pos_restaurant.tests.test_frontend import TestFrontendCommon
+from weth.tests import tagged
+from weth.addons.pos_hr.tests.test_frontend import TestPosHrHttpCommon
+from weth.addons.pos_restaurant.tests.test_frontend import TestFrontendCommon
 
 
 @tagged("post_install", "-at_install")

@@ -5,7 +5,7 @@ import {
     useColorPicker,
 } from "@html_editor/components/color_picker/color_picker";
 import { ColorSelector } from "@html_editor/main/font/color_selector";
-import { Component, signal, t, useProps } from "@odoo/owl";
+import { Component, signal, t, useProps } from "@weth/owl";
 import { isCSSColor, isColorGradient } from "@web/core/utils/colors";
 import { useEnv } from "@web/owl2/utils";
 import {
@@ -125,7 +125,7 @@ function useColorPickerBuilderComponent(props) {
     return {
         state,
         onApply,
-        onPreview: hasPreview(props, getAllActions) ? onPreview : () => {},
+        onPreview: hasPreview(props, getAllActions) ? onPreview : () => { },
         onPreviewRevert: () => {
             previewValue = null;
             revertPreview(env.editor);

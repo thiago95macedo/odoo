@@ -1,6 +1,6 @@
-from odoo import http, _
-from odoo.http import request
-from odoo.exceptions import UserError
+from weth import http, _
+from weth.http import request
+from weth.exceptions import UserError
 
 
 class DashboardShareRoute(http.Controller):

@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.mail.tests.common import MailCommon
-from odoo.tests import tagged
-from odoo.tools import mute_logger
+from weth.addons.mail.tests.common import MailCommon
+from weth.tests import tagged
+from weth.tools import mute_logger
 
 
 @tagged('mail_followers')
 class TestInvite(MailCommon):
 
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_invite_email(self):
         test_record = self.env['mail.test.simple'].create({'name': 'Test', 'email_from': 'ignasse@example.com'})
         test_partner = self.env['res.partner'].create({

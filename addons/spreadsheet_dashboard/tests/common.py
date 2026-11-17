@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import Command
-from odoo.tests.common import TransactionCase, new_test_user
+from weth import Command
+from weth.tests.common import TransactionCase, new_test_user
 
 
 class DashboardTestCommon(TransactionCase):

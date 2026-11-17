@@ -1,4 +1,4 @@
-import { EventBus, Plugin, signal, useListener, usePlugin } from "@odoo/owl";
+import { EventBus, Plugin, signal, useListener, usePlugin } from "@weth/owl";
 import { browser } from "@web/core/browser/browser";
 import { registry } from "@web/core/registry";
 import { user } from "@web/core/user";
@@ -156,9 +156,8 @@ export class BusPlugin extends Plugin {
         }
         await this.workerService.registerHandler((ev) => this.handleMessage(ev));
         this.workerService.send("BUS:INITIALIZE_CONNECTION", {
-            websocketURL: `${this.params.serverURL().replace("http", "ws")}/websocket?version=${
-                session.bus_info.worker_version
-            }`,
+            websocketURL: `${this.params.serverURL().replace("http", "ws")}/websocket?version=${session.bus_info.worker_version
+                }`,
             db: session.db,
             lastNotificationId: session.bus_info.last_id ?? null,
             uid,

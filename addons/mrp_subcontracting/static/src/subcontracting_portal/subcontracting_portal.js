@@ -3,7 +3,7 @@ import { ActionContainer } from '@web/webclient/actions/action_container';
 import { MainComponentsContainer } from "@web/core/main_components_container";
 import { useOwnDebugContext } from "@web/core/debug/debug_context";
 import { session } from '@web/session';
-import { Component, onMounted, useListener } from "@odoo/owl";
+import { Component, onMounted, useListener } from "@weth/owl";
 
 export class SubcontractingPortalWebClient extends Component {
     static components = { ActionContainer, MainComponentsContainer };
@@ -38,7 +38,7 @@ export class SubcontractingPortalWebClient extends Component {
     /**
      * @param {MouseEvent} ev
      */
-     onGlobalClick(ev) {
+    onGlobalClick(ev) {
         // When a ctrl-click occurs inside an <a href/> element
         // we let the browser do the default behavior and
         // we do not want any other listener to execute.

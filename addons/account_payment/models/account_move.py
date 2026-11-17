@@ -1,11 +1,11 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, fields, models
-from odoo.tools import format_date
-from odoo.tools.translate import _
+from weth import api, fields, models
+from weth.tools import format_date
+from weth.tools.translate import _
 
-from odoo.addons.payment import utils as payment_utils
-from odoo.tools.image import image_data_uri
+from weth.addons.payment import utils as payment_utils
+from weth.tools.image import image_data_uri
 
 
 class AccountMove(models.Model):

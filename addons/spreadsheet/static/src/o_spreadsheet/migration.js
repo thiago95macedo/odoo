@@ -1,4 +1,4 @@
-import * as spreadsheet from "@odoo/o-spreadsheet";
+import * as spreadsheet from "@weth/o-spreadsheet";
 const { tokenize, parse, convertAstNodes, astToFormula, helpers } = spreadsheet;
 const { migrationStepRegistry } = spreadsheet.registries;
 const { schemeToColorScale } = helpers;

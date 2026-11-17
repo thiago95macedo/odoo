@@ -3,7 +3,7 @@ import { _t } from "@web/core/l10n/translation";
 import { rpc } from "@web/core/network/rpc";
 import { useService } from "@web/core/utils/hooks";
 import { AddPageDialog } from "@website/components/dialog/add_page_dialog";
-import { onWillStart, proxy, usePlugin } from "@odoo/owl";
+import { onWillStart, proxy, usePlugin } from "@weth/owl";
 import { DebugModePlugin } from "@web/core/debug_mode_plugin";
 
 /**

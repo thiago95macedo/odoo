@@ -11,7 +11,7 @@ import { insertThousandsSep, formatFloat } from '@web/core/utils/numbers';
 import { renderToFragment } from '@web/core/utils/render';
 import { isEmail } from '@web/core/utils/strings';
 import { throttleForAnimation } from '@web/core/utils/timing';
-import { htmlEscape, markup, usePlugin } from '@odoo/owl';
+import { htmlEscape, markup, usePlugin } from '@weth/owl';
 import wSaleUtils from '@website_sale/js/website_sale_utils';
 import { ProductImageViewer } from '@website_sale/js/components/website_sale_image_viewer';
 import { BootstrapInstance } from '@web/core/utils/bootstrap_plugin';
@@ -166,7 +166,7 @@ export class ProductPage extends Interaction {
      * Highlight the selected attributes (Color, Image, or Thumbnail).
      * @param {MouseEvent} ev - The event object.
      */
-    onChangeAttribute( ev) {
+    onChangeAttribute(ev) {
         const target = ev.target;
         const parent = target.closest('.js_product');
 
@@ -218,9 +218,9 @@ export class ProductPage extends Interaction {
             parent
                 .querySelector("p[name='packaging_price_value']")
                 .querySelector(".oe_currency_value").textContent = this._priceToStr(
-                hoveredPackagingPrice,
-                false
-            );
+                    hoveredPackagingPrice,
+                    false
+                );
             parent.querySelector("span[name='packaging_price']").classList.remove("d-none");
         }
     }
@@ -779,7 +779,7 @@ export class ProductPage extends Interaction {
         }
 
         if (notifyMeButton) {
-            notifyMeButton.disabled=false;
+            notifyMeButton.disabled = false;
         }
 
         const price = parent.querySelector('.oe_price')?.querySelector('.oe_currency_value');
@@ -1023,7 +1023,7 @@ export class ProductPage extends Interaction {
             this.onClickSubmitProductStockNotificationForm(ev);
         } else {
             const notifyMeButton = document.querySelector("#stock_notification_button");
-            notifyMeButton.disabled=true;
+            notifyMeButton.disabled = true;
             this._handleClickStockNotificationMessage(ev);
         }
     }

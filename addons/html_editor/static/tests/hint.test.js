@@ -1,6 +1,6 @@
-import { expect, test } from "@odoo/hoot";
-import { animationFrame, tick } from "@odoo/hoot-mock";
-import { waitFor } from "@odoo/hoot-dom";
+import { expect, test } from "@weth/hoot";
+import { animationFrame, tick } from "@weth/hoot-mock";
+import { waitFor } from "@weth/hoot-dom";
 import { setupEditor } from "./_helpers/editor";
 import { unformat } from "./_helpers/format";
 import {
@@ -83,8 +83,8 @@ test("should not display hint in a non-editable paragraph", async () => {
     // Unchanged, no empty paragraph hint.
     expect(getContent(el)).toBe(
         '<p data-selection-placeholder=""><br></p>' +
-            content +
-            '<p data-selection-placeholder=""><br></p>'
+        content +
+        '<p data-selection-placeholder=""><br></p>'
     );
 });
 

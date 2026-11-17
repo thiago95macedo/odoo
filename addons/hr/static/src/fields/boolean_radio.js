@@ -1,7 +1,7 @@
 import { _t } from "@web/core/l10n/translation";
 import { registry } from "@web/core/registry";
 import { RadioField, radioField, radioFieldProps } from "@web/views/fields/radio/radio_field";
-import { onMounted, useProps, t } from "@odoo/owl";
+import { onMounted, useProps, t } from "@weth/owl";
 
 export class BooleanRadio extends RadioField {
     props = useProps({

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
     <record id="ir_actions_dashboard_action" model="ir.actions.client">
         <field name="name">Dashboards</field>
         <field name="path">dashboards</field>
@@ -85,4 +85,4 @@
         groups="spreadsheet_dashboard.group_dashboard_manager"
         sequence="1"/>
 
-</odoo>
+</weth>

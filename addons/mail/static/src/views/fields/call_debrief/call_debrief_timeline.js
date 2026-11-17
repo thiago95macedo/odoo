@@ -1,4 +1,4 @@
-import { Component, onWillUnmount, signal, t, proxy, useProps } from "@odoo/owl";
+import { Component, onWillUnmount, signal, t, proxy, useProps } from "@weth/owl";
 import { formatDuration } from "@mail/views/fields/call_debrief/call_debrief_utils";
 
 export const callDebriefTimelineProps = {
@@ -95,7 +95,7 @@ export class CallDebriefTimeline extends Component {
         }
 
         // Capture LAST GAP
-        if (previousMediaSegEnd < totalDuration ) {
+        if (previousMediaSegEnd < totalDuration) {
             timelineSegments.push(silentSegment(previousMediaSegEnd, totalDuration));
         }
 

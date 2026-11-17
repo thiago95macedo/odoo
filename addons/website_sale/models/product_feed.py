@@ -7,13 +7,13 @@ from datetime import UTC
 from dateutil.relativedelta import relativedelta
 from werkzeug.urls import url_encode, url_parse
 
-from odoo import SUPERUSER_ID, api, fields, models
-from odoo.exceptions import ValidationError
-from odoo.fields import Domain
-from odoo.http import request
-from odoo.tools import BinaryBytes, float_is_zero, float_round, urls
+from weth import SUPERUSER_ID, api, fields, models
+from weth.exceptions import ValidationError
+from weth.fields import Domain
+from weth.http import request
+from weth.tools import BinaryBytes, float_is_zero, float_round, urls
 
-from odoo.addons.website_sale import const, utils
+from weth.addons.website_sale import const, utils
 
 
 class ProductFeed(models.Model):

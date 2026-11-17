@@ -3,9 +3,9 @@
 
 from markupsafe import Markup
 
-from odoo import _, api, Command, fields, models, tools
-from odoo.exceptions import UserError
-from odoo.tools.sql import SQL
+from weth import _, api, Command, fields, models, tools
+from weth.exceptions import UserError
+from weth.tools.sql import SQL
 
 
 class MailingList(models.Model):

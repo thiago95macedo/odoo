@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
     <data>
         <!-- Add PIX code string below QR code for Brazilian invoices -->
         <template id="report_invoice_document" inherit_id="account.report_invoice_document" primary="True">
@@ -27,4 +27,4 @@
             </xpath>
         </template>
     </data>
-</odoo>
+</weth>

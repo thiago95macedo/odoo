@@ -73,7 +73,7 @@ registry.category("web_tour.tours").add('website_sale.add_to_cart_snippet', {
         // Since 18.2, even if a specific variant is selected, the product configuration modal is displayed
         // The variant set on the modal used the default variants attributes (so will not correspond to the selected variant)
         // TODO: fix this misbahvior by setting the variant attributes based on the chosen variant
-        // https://github.com/odoo/odoo/pull/201217#issuecomment-2721871718
+        // https://github.com/weth/odoo/pull/201217#issuecomment-2721871718
         {
             content: "Check if the red variant is selected",
             trigger: ":iframe .modal li:contains(Red) input:checked",

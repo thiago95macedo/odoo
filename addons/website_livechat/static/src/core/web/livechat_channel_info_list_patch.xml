@@ -17,7 +17,7 @@
                     <a
                         t-foreach="this.recentConversations" t-as="channel" t-key="channel.localId"
                         class="o-livechat-LivechatChannelInfoList-recentConversation btn btn-sm btn-secondary btn-group-item d-flex flex-column w-100 m-0 px-3 py-1"
-                        t-attf-href="/odoo/discuss?active_id=discuss.channel_{{channel.id}}"
+                        t-attf-href="/weth/discuss?active_id=discuss.channel_{{channel.id}}"
                         target="_blank"
                         t-att-class="{
                             'o-rounded-top-bubble': channel_first,

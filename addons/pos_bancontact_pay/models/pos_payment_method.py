@@ -3,11 +3,11 @@ from json import JSONDecodeError
 
 import requests
 
-from odoo import _, api, fields, models
-from odoo.exceptions import ValidationError
+from weth import _, api, fields, models
+from weth.exceptions import ValidationError
 
-from odoo.addons.pos_bancontact_pay import const
-from odoo.addons.pos_bancontact_pay.errors.http import HTTP_ERRORS
+from weth.addons.pos_bancontact_pay import const
+from weth.addons.pos_bancontact_pay.errors.http import HTTP_ERRORS
 
 _logger = logging.getLogger(__name__)
 

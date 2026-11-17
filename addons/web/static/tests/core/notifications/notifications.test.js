@@ -1,7 +1,7 @@
-import { expect, queryRect, test } from "@odoo/hoot";
-import { click, hover, leave, waitFor } from "@odoo/hoot-dom";
-import { advanceTime, animationFrame, runAllTimers } from "@odoo/hoot-mock";
-import { effect, markup } from "@odoo/owl";
+import { expect, queryRect, test } from "@weth/hoot";
+import { click, hover, leave, waitFor } from "@weth/hoot-dom";
+import { advanceTime, animationFrame, runAllTimers } from "@weth/hoot-mock";
+import { effect, markup } from "@weth/owl";
 import { getService, makeTestApp, mountWithCleanup } from "@web/../tests/web_test_helpers";
 
 import { registry } from "@web/core/registry";
@@ -408,21 +408,21 @@ test("notification with button on mobile", async () => {
     await mountWithCleanup(NotificationContainer, { props, noMainContainer: true });
 
     getService(NotificationPlugin).add("I'm a basic notification", {
-        buttons: [{ name: "I'm a button", onClick: () => {} }],
+        buttons: [{ name: "I'm a button", onClick: () => { } }],
     });
     await animationFrame();
     // Check if both the text and the button are on the same line
     expect(
         Math.abs(
             queryRect(".o_notification_content").bottom -
-                queryRect(".o_notification_buttons").bottom
+            queryRect(".o_notification_buttons").bottom
         )
     ).toBeWithin(0, 1);
     await click(".o_notification .o_notification_close");
     await animationFrame();
 
     getService(NotificationPlugin).add("I'm a basic notification", {
-        buttons: [{ name: "I'm a button with a longer text", onClick: () => {} }],
+        buttons: [{ name: "I'm a button with a longer text", onClick: () => { } }],
     });
     await animationFrame();
     const notificationBodyRect = queryRect(".o_notification_body");

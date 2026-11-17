@@ -1,4 +1,4 @@
-import { expect, getFixture, test } from "@odoo/hoot";
+import { expect, getFixture, test } from "@weth/hoot";
 import {
     click,
     getNextFocusableElement,
@@ -7,10 +7,10 @@ import {
     queryAllTexts,
     queryFirst,
     queryOne,
-} from "@odoo/hoot-dom";
-import { advanceTime, animationFrame, mockTimeZone, runAllTimers } from "@odoo/hoot-mock";
+} from "@weth/hoot-dom";
+import { advanceTime, animationFrame, mockTimeZone, runAllTimers } from "@weth/hoot-mock";
 
-import { Component, onWillDestroy, onWillStart, proxy, useProps, xml } from "@odoo/owl";
+import { Component, onWillDestroy, onWillStart, proxy, useProps, xml } from "@weth/owl";
 import { getPickerCell } from "@web/../tests/core/datetime/datetime_test_helpers";
 import {
     clickFieldDropdown,
@@ -1117,7 +1117,7 @@ test.tags("desktop");
 test("embedded one2many with handle widget", async () => {
     Partner._records[0].turtles = [1, 2, 3];
     Partner._onChanges = {
-        turtles: function () {},
+        turtles: function () { },
     };
     onRpc("onchange", () => {
         expect.step("onchange");
@@ -1449,7 +1449,7 @@ test("onchange for embedded one2many with handle widget (more records)", async (
     ids.push(1, 2, 3);
     Partner._records[0].turtles = ids;
     Partner._onChanges = {
-        turtles: function (obj) {},
+        turtles: function (obj) { },
     };
 
     await mountView({
@@ -1503,7 +1503,7 @@ test("onchange with modifiers for embedded one2many on the second page", async (
     ids.push(1, 2, 3);
     Partner._records[0].turtles = ids;
     Partner._onChanges = {
-        turtles: function (obj) {},
+        turtles: function (obj) { },
     };
 
     await mountView({
@@ -1567,7 +1567,7 @@ test("onchange followed by edition on the second page", async () => {
     ids.splice(41, 0, 1, 2, 3);
     Partner._records[0].turtles = ids;
     Partner._onChanges = {
-        turtles: function (obj) {},
+        turtles: function (obj) { },
     };
 
     await mountView({
@@ -1649,7 +1649,7 @@ test("onchange followed by edition on the second page (part 2)", async () => {
     ids.splice(41, 0, 1, 2, 3);
     Partner._records[0].turtles = ids;
     Partner._onChanges = {
-        turtles: function (obj) {},
+        turtles: function (obj) { },
     };
 
     // bottom order
@@ -3095,7 +3095,7 @@ test("edition of one2many field, with onchange and not inline sub view", async (
     Turtle._onChanges.turtle_int = function (obj) {
         obj.turtle_foo = String(obj.turtle_int);
     };
-    Partner._onChanges.turtles = function () {};
+    Partner._onChanges.turtles = function () { };
     Turtle._views = {
         list: `
                 <list>
@@ -3134,7 +3134,7 @@ test("edition of one2many field, with onchange and not inline sub view", async (
 
 test.tags("desktop");
 test("onchange specification complete after open sub form view not inline", async () => {
-    Partner._onChanges.name = () => {};
+    Partner._onChanges.name = () => { };
     Turtle._views = {
         form: `
                 <form>
@@ -4618,7 +4618,7 @@ test("pressing escape in editable o2m list in dialog", async () => {
 test.tags("desktop");
 test("editable o2m with onchange and required field: delete an invalid line", async () => {
     Partner._onChanges = {
-        turtles: function () {},
+        turtles: function () { },
     };
     Partner._records[0].turtles = [1];
     Turtle._records[0].product_id = 37;
@@ -4656,7 +4656,7 @@ test("onchange in a one2many", async () => {
         foo: "relational record 1",
     });
     Partner._records[1].p = [3];
-    Partner._onChanges = { p: () => {} };
+    Partner._onChanges = { p: () => { } };
     onRpc("onchange", (args) => ({
         value: {
             p: [
@@ -4693,7 +4693,7 @@ test("one2many, default_get and onchange (basic)", async () => {
         relation_field: "trululu",
         default: [],
     });
-    Partner._onChanges = { p: () => {} };
+    Partner._onChanges = { p: () => { } };
     onRpc("onchange", (args) => ({
         value: {
             p: [
@@ -4743,7 +4743,7 @@ test("one2many and default_get (with date)", async () => {
 
 test("one2many and onchange (with integer)", async () => {
     Turtle._onChanges = {
-        turtle_int: function () {},
+        turtle_int: function () { },
     };
     onRpc((args) => {
         expect.step(args.method);
@@ -4769,7 +4769,7 @@ test("one2many and onchange (with integer)", async () => {
 
 test("one2many and onchange (with date)", async () => {
     Partner._onChanges = {
-        date: function () {},
+        date: function () { },
     };
     Partner._records[0].p = [2];
     onRpc((args) => {
@@ -4982,7 +4982,7 @@ test("editable one2many with sub widgets are rendered in readonly", async () => 
 test("one2many editable list with onchange keeps the order", async () => {
     Partner._records[0].p = [1, 2, 4];
     Partner._onChanges = {
-        p: function () {},
+        p: function () { },
     };
 
     await mountView({
@@ -5101,7 +5101,7 @@ test("one2many list with a many2one", async () => {
     let checkOnchange = false;
     Partner._records[0].p = [2];
     Partner._records[1].product_id = 37;
-    Partner._onChanges.p = () => {};
+    Partner._onChanges.p = () => { };
     Partner._views.form = '<form><field name="product_id"/></form>';
     onRpc("onchange", (args) => {
         if (checkOnchange) {
@@ -5786,8 +5786,8 @@ test("parent data is properly sent on an onchange rpc (existing x2many record)",
     expect.assertions(4);
 
     Partner._onChanges = {
-        name: function () {},
-        foo: function () {},
+        name: function () { },
+        foo: function () { },
     };
     Partner._records[0].p = [1];
     Partner._records[0].turtles = [2];
@@ -5843,7 +5843,7 @@ test("parent data is properly sent on an onchange rpc (existing x2many record)",
 test("parent data is properly sent on an onchange rpc, new record", async () => {
     expect.assertions(2);
 
-    Turtle._onChanges = { turtle_bar: function () {} };
+    Turtle._onChanges = { turtle_bar: function () { } };
     onRpc((args) => {
         expect.step(args.method);
     });
@@ -6128,7 +6128,7 @@ test("many2one and many2many in one2many", async () => {
 
 test("many2manytag in one2many, onchange, some modifiers, and more than one page", async () => {
     Partner._records[0].turtles = [1, 2, 3];
-    Partner._onChanges.turtles = function () {};
+    Partner._onChanges.turtles = function () { };
     onRpc((args) => {
         expect.step(args.method);
     });
@@ -6201,9 +6201,9 @@ test("onchange many2many in one2many list editable", async () => {
                     product_id: [1, "xenomorphe"],
                     partner_ids: rec.turtles[0][2].partner_ids.length
                         ? [
-                              [3, 1],
-                              [4, 2],
-                          ]
+                            [3, 1],
+                            [4, 2],
+                        ]
                         : [[4, 2]],
                 },
             ],
@@ -7343,7 +7343,7 @@ test("one2many list editable: add new line before onchange returns", async () =>
     // the editable list must wait for the onchange to return before trying to
     // unselect the first row, otherwise it will be detected as invalid.
     Turtle._onChanges = {
-        turtle_trululu: function () {},
+        turtle_trululu: function () { },
     };
 
     let def;
@@ -7386,7 +7386,7 @@ test("one2many list editable: add new line before onchange returns", async () =>
 
 test("editable list: multiple clicks on Add an item do not create invalid rows", async () => {
     Turtle._onChanges = {
-        turtle_trululu: function () {},
+        turtle_trululu: function () { },
     };
 
     let def;
@@ -7467,7 +7467,7 @@ test("editable list: value reset by an onchange", async () => {
 
 test("editable list: onchange that returns a warning", async () => {
     Turtle._onChanges = {
-        name: function () {},
+        name: function () { },
     };
 
     const warning = {
@@ -7746,7 +7746,7 @@ test("multi level of nested x2manys, onchange", async () => {
     expect.assertions(7);
     Partner._records[0].p = [1];
     Partner._onChanges = {
-        name: function () {},
+        name: function () { },
     };
     onRpc("web_save", (args) => {
         expect(args.args[1].p[0][2]).toEqual({
@@ -7804,7 +7804,7 @@ test("multi level of nested x2manys, onchange", async () => {
 
 test("onchange and required fields with override in arch", async () => {
     Partner._onChanges = {
-        turtles: function () {},
+        turtles: function () { },
     };
     Turtle._fields.turtle_foo = fields.Char({ required: true });
     Partner._records[0].turtles = [];
@@ -7837,7 +7837,7 @@ test("onchange on a one2many containing a one2many", async () => {
     expect.assertions(1);
 
     Partner._onChanges = {
-        p: function () {},
+        p: function () { },
     };
     let checkOnchange = false;
     onRpc("onchange", (args) => {
@@ -8016,7 +8016,7 @@ test("editing tabbed one2many (editable=top)", async () => {
 test.tags("desktop");
 test("one2many field: change value before pending onchange returns", async () => {
     Partner._onChanges = {
-        int_field: function () {},
+        int_field: function () { },
     };
     let def;
     onRpc("onchange", () => def?.promise);
@@ -8053,7 +8053,7 @@ test("one2many field: change value before pending onchange returns", async () =>
 
 test("deleting lines on a slow connection does not send a virtual delete", async () => {
     Partner._onChanges = {
-        p: function () {},
+        p: function () { },
     };
     let slowOnchange = null;
     onRpc("partner", "onchange", ({ args }) => {
@@ -8105,7 +8105,7 @@ test("deleting lines on a slow connection does not send a virtual delete", async
 test.tags("desktop");
 test("focus is correctly reset after an onchange in an x2many", async () => {
     Partner._onChanges = {
-        int_field: function () {},
+        int_field: function () { },
     };
 
     let def;
@@ -8147,7 +8147,7 @@ test("focus is correctly reset after an onchange in an x2many", async () => {
 
 test("checkbox in an x2many that triggers an onchange", async () => {
     Partner._onChanges = {
-        bar: function () {},
+        bar: function () { },
     };
 
     await mountView({
@@ -8275,14 +8275,14 @@ test("display correct value after validation error", async () => {
     expect.assertions(5);
 
     function validationHandler(env, error, originalError) {
-        if (originalError.data.name === "odoo.exceptions.ValidationError") {
+        if (originalError.data.name === "weth.exceptions.ValidationError") {
             return true;
         }
     }
     const errorHandlerRegistry = registry.category("error_handlers");
     errorHandlerRegistry.add("validationHandler", validationHandler, { sequence: 1 });
 
-    Partner._onChanges.turtles = function () {};
+    Partner._onChanges.turtles = function () { };
     onRpc("onchange", (args) => {
         if (args.args[1].turtles[0][2].turtle_foo === "pinky") {
             throw makeServerError({ type: "ValidationError" });
@@ -8470,7 +8470,7 @@ test("onchange on nested one2manys", async () => {
 
 test("one2many with multiple pages and sequence field", async () => {
     Partner._records[0].turtles = [3, 2, 1];
-    Partner._onChanges.turtles = function () {};
+    Partner._onChanges.turtles = function () { };
     onRpc("onchange", () => ({
         value: {
             turtles: [
@@ -8502,7 +8502,7 @@ test("one2many with multiple pages and sequence field", async () => {
 
 test("one2many with multiple pages and sequence field, part2", async () => {
     Partner._records[0].turtles = [3, 2, 1];
-    Partner._onChanges.turtles = function () {};
+    Partner._onChanges.turtles = function () { };
     onRpc("onchange", () => ({
         value: {
             turtles: [
@@ -8876,7 +8876,7 @@ test("new record, with one2many with more default values than limit", async () =
 test("add a new line after limit is reached should behave nicely", async () => {
     Partner._records[0].turtles = [1, 2, 3];
     Partner._onChanges = {
-        turtles: function () {},
+        turtles: function () { },
     };
 
     await mountView({
@@ -8906,7 +8906,7 @@ test("onchange in a one2many with non inline view on an existing record", async 
     Partner._fields.sequence = fields.Integer({ string: "Sequence", type: "integer" });
     Partner._records[0].sequence = 1;
     Partner._records[1].sequence = 2;
-    Partner._onChanges = { sequence: function () {} };
+    Partner._onChanges = { sequence: function () { } };
 
     PartnerType._fields.partner_ids = fields.One2many({
         string: "Partner",
@@ -9452,7 +9452,7 @@ test("one2many form view with action button", async () => {
     // onClose handler, executed because the python method does not return
     // any action, or an ir.action.act_window_close) ; this test ensures that
     // it reloads the fields of the opened view (i.e. the form in this case).
-    // See https://github.com/odoo/odoo/issues/24189
+    // See https://github.com/weth/odoo/issues/24189
     mockService("action", {
         doActionButton(params) {
             for (const record of MockServer.env["partner"].browse(params.resIds)) {
@@ -9782,7 +9782,7 @@ test("o2m add a line custom control create editable with 'tab'", async () => {
 
 test("one2many with onchange, required field, shortcut enter", async () => {
     Turtle._onChanges = {
-        turtle_foo: function () {},
+        turtle_foo: function () { },
     };
 
     let def;
@@ -9836,7 +9836,7 @@ test("one2many with onchange, required field, shortcut enter", async () => {
 
 test("edit a field with a slow onchange in one2many", async () => {
     Turtle._onChanges = {
-        turtle_foo: function () {},
+        turtle_foo: function () { },
     };
 
     let def;
@@ -10167,7 +10167,7 @@ test("one2many kanban with widget handle", async () => {
 
 test("one2many editable list: edit and click on add a line", async () => {
     Turtle._onChanges = {
-        turtle_int: function () {},
+        turtle_int: function () { },
     };
     onRpc("onchange", (args) => {
         expect.step("onchange");
@@ -10267,7 +10267,7 @@ test("two one2many fields with same relation and _onChanges", async () => {
                 }
             }
         },
-        turtles2: () => {}, // simulate an onchange on turtles2 as well
+        turtles2: () => { }, // simulate an onchange on turtles2 as well
     };
 
     await mountView({
@@ -10326,7 +10326,7 @@ test("one2many reset by onchange (of another field) while being edited", async (
 
     const def = Promise.withResolvers();
     Partner._onChanges = {
-        trululu: () => {},
+        trululu: () => { },
     };
     onRpc("name_create", () => def.promise);
     await mountView({
@@ -10570,8 +10570,8 @@ test("nested one2many, onchange, no command value", async () => {
         relation: "partner",
         relation_field: "trululu",
     });
-    Partner._onChanges.turtles = function (obj) {};
-    Turtle._onChanges.turtle_bar = function (obj) {};
+    Partner._onChanges.turtles = function (obj) { };
+    Turtle._onChanges.turtle_bar = function (obj) { };
 
     let step = 1;
     onRpc((args) => {
@@ -10941,7 +10941,7 @@ test("delete a record while adding another one in a multipage", async () => {
 
 test("one2many, onchange, edition and multipage...", async () => {
     Partner._onChanges = {
-        turtles: function () {},
+        turtles: function () { },
     };
 
     Partner._records[0].turtles = [1, 2, 3];
@@ -12113,10 +12113,10 @@ test("one2many can delete a new record", async () => {
 
 test("toggle boolean in o2m with the formView in edition", async () => {
     Partner._onChanges = {
-        turtles: () => {},
+        turtles: () => { },
     };
     Turtle._onChanges = {
-        turtle_bar: () => {},
+        turtle_bar: () => { },
     };
     onRpc((args) => {
         expect.step(args.method + " " + args.model);
@@ -13016,7 +13016,7 @@ test("add a row to an x2many and ask canBeRemoved twice", async () => {
 
 test("one2many: save a record before the onchange is complete in a form dialog", async () => {
     Turtle._onChanges = {
-        name: function () {},
+        name: function () { },
     };
 
     Turtle._views = {
@@ -13061,7 +13061,7 @@ test("one2many: save a record before the onchange is complete in a form dialog",
 
 test("onchange create a record in an invisible x2many", async () => {
     Partner._onChanges = {
-        foo: function () {},
+        foo: function () { },
     };
     Partner._records[0].p = [2];
     onRpc("onchange", () => ({
@@ -13335,7 +13335,7 @@ test("one2many with default_order on id, but id not in view", async () => {
 
 test("one2many causes an onchange on the parent which fails", async () => {
     Partner._onChanges = {
-        turtles: function () {},
+        turtles: function () { },
     };
     onRpc("partner", "onchange", () => {
         throw makeServerError();
@@ -13566,7 +13566,7 @@ test("onchange on x2many returning a create command with only readonly fields", 
 test("onchange on x2many add and delete x2m record, returning to initial state", async () => {
     Turtle._fields.name = fields.Char({ readonly: true });
     Partner._onChanges = {
-        turtles: function () {},
+        turtles: function () { },
     };
 
     let onchangeCount = 0;
@@ -13668,7 +13668,7 @@ test("expand with middleClick", async () => {
             }
             super.doAction(params);
         },
-        loadState() {},
+        loadState() { },
     });
     Turtle._views["form, false"] = `<form><field name="name"/></form>`;
     await mountView({

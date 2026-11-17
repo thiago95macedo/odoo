@@ -10,7 +10,7 @@ import {
     t,
     useEffect,
     usePlugin,
-} from "@odoo/owl";
+} from "@weth/owl";
 import { Dialog } from "@web/core/dialog/dialog";
 import { localization } from "@web/core/l10n/localization";
 import { _t } from "@web/core/l10n/translation";
@@ -32,7 +32,7 @@ export class ProfileDialog extends Component {
     };
     props = useProps({
         close: t.function(),
-        confirm: t.function().optional(() => () => {}),
+        confirm: t.function().optional(() => () => { }),
         focusWebsiteDescription: t.boolean().optional(false),
         userId: t.number(),
         canEditCountry: t.boolean().optional(true),

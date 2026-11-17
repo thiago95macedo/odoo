@@ -2,13 +2,13 @@
 
 import logging
 
-from odoo import api, fields, models, _
-from odoo.exceptions import UserError
-from odoo.fields import Domain
-from odoo.tools import SQL
-from odoo.tools.urls import urljoin
+from weth import api, fields, models, _
+from weth.exceptions import UserError
+from weth.fields import Domain
+from weth.tools import SQL
+from weth.tools.urls import urljoin
 
-from odoo.addons.link_tracker.models.link_tracker import LINK_TRACKER_MIN_CODE_LENGTH
+from weth.addons.link_tracker.models.link_tracker import LINK_TRACKER_MIN_CODE_LENGTH
 
 _logger = logging.getLogger(__name__)
 

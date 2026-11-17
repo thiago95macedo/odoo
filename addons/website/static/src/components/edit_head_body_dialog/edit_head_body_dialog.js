@@ -1,5 +1,5 @@
 import { useService } from "@web/core/utils/hooks";
-import { Component, onWillStart, proxy, useProps, t } from "@odoo/owl";
+import { Component, onWillStart, proxy, useProps, t } from "@weth/owl";
 import { Dialog } from "@web/core/dialog/dialog";
 import { CodeEditor } from "@web/core/code_editor/code_editor";
 

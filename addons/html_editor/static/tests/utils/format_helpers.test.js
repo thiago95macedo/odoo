@@ -1,4 +1,4 @@
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@weth/hoot";
 import { unformat } from "../_helpers/format";
 import { base64Img } from "../_helpers/editor";
 
@@ -78,28 +78,28 @@ describe("unformat", () => {
             `)
         ).toBe(
             `<div>` +
-                `abc
+            `abc
                     \ufeff` +
-                `<span ` +
-                `class="something" ` +
-                `contenteditable ` +
-                `style='font-size: 5px; font-family:"Helvetica Neue";' ` +
-                `data-attr="console.log('it works')"` +
-                `/>` +
-                `def ghi` +
-                `<br><br>` +
-                `</div>` +
-                `<p>jkl</p>` +
-                `<div class="hello"/>` +
-                `<fake-node fake="true" ` +
-                `style='font-size: 5px; font-family:"Helvetica Neue";'>` +
-                `<div>mno</div>` +
-                `<p><span>pqr</span>` +
-                `stu<b>` +
-                `vwx` +
-                `</b>` +
-                `</p>` +
-                `</fake-node>`
+            `<span ` +
+            `class="something" ` +
+            `contenteditable ` +
+            `style='font-size: 5px; font-family:"Helvetica Neue";' ` +
+            `data-attr="console.log('it works')"` +
+            `/>` +
+            `def ghi` +
+            `<br><br>` +
+            `</div>` +
+            `<p>jkl</p>` +
+            `<div class="hello"/>` +
+            `<fake-node fake="true" ` +
+            `style='font-size: 5px; font-family:"Helvetica Neue";'>` +
+            `<div>mno</div>` +
+            `<p><span>pqr</span>` +
+            `stu<b>` +
+            `vwx` +
+            `</b>` +
+            `</p>` +
+            `</fake-node>`
         );
     });
 });

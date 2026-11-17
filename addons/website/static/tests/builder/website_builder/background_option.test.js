@@ -1,7 +1,7 @@
 import { BackgroundOption } from "@html_builder/plugins/background_option/background_option";
 import { addBuilderOption } from "@html_builder/../tests/helpers";
 import { Plugin } from "@html_editor/plugin";
-import { t } from "@odoo/owl";
+import { t } from "@weth/owl";
 import {
     advanceTime,
     click,
@@ -11,8 +11,8 @@ import {
     queryAttribute,
     test,
     waitForNone,
-} from "@odoo/hoot";
-import { animationFrame, queryOne, scroll, waitFor } from "@odoo/hoot-dom";
+} from "@weth/hoot";
+import { animationFrame, queryOne, scroll, waitFor } from "@weth/hoot-dom";
 import { contains } from "@web/../tests/web_test_helpers";
 import { PLATFORMS } from "@html_editor/main/media/media_dialog/video_selector";
 import {
@@ -731,7 +731,7 @@ test("Change the background position when multiple background layer is applied",
     await contains("[data-label='Position'] .dropdown-toggle").click();
     await contains("[data-action-value='repeat-pattern']").click();
     expect(section).toHaveClass("o_bg_img_opt_repeat");
-    expect(section).toHaveStyle({"background-size": /^100px.+cover$/});
+    expect(section).toHaveStyle({ "background-size": /^100px.+cover$/ });
     expect("[data-action-value='repeat-pattern']").toHaveClass("active");
 });
 

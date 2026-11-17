@@ -1,5 +1,5 @@
 import { Image } from "@html_builder/core/img";
-import { Component, useProps, t } from "@odoo/owl";
+import { Component, useProps, t } from "@weth/owl";
 
 export class Snippet extends Component {
     static template = "html_builder.Snippet";

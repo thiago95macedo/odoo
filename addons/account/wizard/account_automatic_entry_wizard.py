@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-from odoo import api, fields, models, _
-from odoo.exceptions import UserError, ValidationError
-from odoo.tools.misc import format_date, formatLang
-from odoo.tools.float_utils import float_repr
-from odoo.tools import groupby
+from weth import api, fields, models, _
+from weth.exceptions import UserError, ValidationError
+from weth.tools.misc import format_date, formatLang
+from weth.tools.float_utils import float_repr
+from weth.tools import groupby
 
 from collections import defaultdict
 from markupsafe import Markup, escape
-from odoo.tools import frozendict
+from weth.tools import frozendict
 import json
 
 

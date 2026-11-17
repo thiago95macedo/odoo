@@ -1,4 +1,4 @@
-import { Component, proxy, signal, t, useEffect, useProps } from "@odoo/owl";
+import { Component, proxy, signal, t, useEffect, useProps } from "@weth/owl";
 import { useActionInfo } from "../utils";
 
 /**

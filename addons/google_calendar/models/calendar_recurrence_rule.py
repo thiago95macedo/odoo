@@ -3,11 +3,11 @@
 import re
 import logging
 
-from odoo import api, models
-from odoo.fields import Command, Domain
-from odoo.tools import email_normalize
+from weth import api, models
+from weth.fields import Command, Domain
+from weth.tools import email_normalize
 
-from odoo.addons.google_calendar.utils.google_calendar_service import GoogleCalendarService
+from weth.addons.google_calendar.utils.google_calendar_service import GoogleCalendarService
 
 _logger = logging.getLogger(__name__)
 

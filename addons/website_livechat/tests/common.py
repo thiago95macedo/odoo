@@ -3,9 +3,9 @@
 import datetime
 import random
 
-from odoo import fields
-from odoo.addons.mail.tests.common import MailCommon
-from odoo.addons.website.models.ir_http import IrHttp
+from weth import fields
+from weth.addons.mail.tests.common import MailCommon
+from weth.addons.website.models.ir_http import IrHttp
 
 
 class TestLivechatCommon(MailCommon):

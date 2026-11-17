@@ -5,15 +5,15 @@ import os
 import re
 from collections import Counter
 
-from odoo import api, fields, models, tools
-from odoo.exceptions import UserError
-from odoo.fields import Domain
-from odoo.http import Response
-from odoo.tools.sql import SQL, escape_like_value
+from weth import api, fields, models, tools
+from weth.exceptions import UserError
+from weth.fields import Domain
+from weth.http import Response
+from weth.tools.sql import SQL, escape_like_value
 
-from odoo.addons.base.models.ir_http import EXTENSION_TO_WEB_MIMETYPES
-from odoo.addons.website.tools import text_from_html
-from odoo.tools.translate import adapt_translated_field_value
+from weth.addons.base.models.ir_http import EXTENSION_TO_WEB_MIMETYPES
+from weth.addons.website.tools import text_from_html
+from weth.tools.translate import adapt_translated_field_value
 
 
 logger = logging.getLogger(__name__)

@@ -2,10 +2,10 @@
 
 import re
 
-from odoo import Command
-from odoo.tests.common import TransactionCase
-from odoo.addons.mail.tests.common import mail_new_test_user
-from odoo.addons.product.tests.common import ProductVariantsCommon
+from weth import Command
+from weth.tests.common import TransactionCase
+from weth.addons.mail.tests.common import mail_new_test_user
+from weth.addons.product.tests.common import ProductVariantsCommon
 
 
 class TestStockCommon(ProductVariantsCommon):

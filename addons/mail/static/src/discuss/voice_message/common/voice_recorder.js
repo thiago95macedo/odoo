@@ -1,4 +1,4 @@
-import { Component, onWillUnmount, proxy, types, useProps, useScope } from "@odoo/owl";
+import { Component, onWillUnmount, proxy, types, useProps, useScope } from "@weth/owl";
 
 import { CallPermissionDeniedDialog } from "@mail/discuss/call/common/call_permission_denied_dialog";
 import { loadLamejs } from "@mail/discuss/voice_message/common/voice_message_service";
@@ -232,7 +232,7 @@ export function useVoiceRecorder(params = {}, options = {}) {
                 }
                 return onRecordReady(file);
             })
-            .catch(() => {});
+            .catch(() => { });
         cleanUp();
         return promise;
     }

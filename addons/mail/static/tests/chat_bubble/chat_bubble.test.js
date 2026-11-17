@@ -1,4 +1,4 @@
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@weth/hoot";
 import {
     advanceTime,
     animationFrame,
@@ -8,7 +8,7 @@ import {
     queryOne,
     queryRect,
     runAllTimers,
-} from "@odoo/hoot-dom";
+} from "@weth/hoot-dom";
 import { Command, serverState, withUser } from "@web/../tests/web_test_helpers";
 import {
     assertChatHub,

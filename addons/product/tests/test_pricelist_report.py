@@ -2,9 +2,9 @@
 
 import json
 
-from odoo.tests import HttpCase, tagged
+from weth.tests import HttpCase, tagged
 
-from odoo.addons.product.tests.common import ProductCommon
+from weth.addons.product.tests.common import ProductCommon
 
 
 @tagged('post_install', '-at_install')

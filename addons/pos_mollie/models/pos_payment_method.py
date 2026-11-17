@@ -1,8 +1,8 @@
-from odoo import fields, models
-from odoo.exceptions import AccessError, ValidationError
-from odoo.addons.payment_mollie import const
+from weth import fields, models
+from weth.exceptions import AccessError, ValidationError
+from weth.addons.payment_mollie import const
 
-from odoo.tools import hash_sign
+from weth.tools import hash_sign
 
 
 class PosPaymentMethod(models.Model):

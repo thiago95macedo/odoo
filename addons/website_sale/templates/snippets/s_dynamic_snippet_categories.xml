@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<odoo>
+<weth>
 
     <template id="website_sale.s_dynamic_snippet_category_list" name="Category List">
         <t t-set="snippet_heading_extra_classes" t-valuef="flex-column"/>
@@ -15,4 +15,4 @@
             <t t-call="website_sale.s_dynamic_snippet_category_preview_data"/>
         </t>
     </template>
-</odoo>
+</weth>

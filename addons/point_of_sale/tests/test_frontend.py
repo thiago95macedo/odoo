@@ -8,15 +8,15 @@ from PIL import Image
 from contextlib import contextmanager
 from unittest.mock import patch
 from unittest import skip
-from odoo import Command, api
+from weth import Command, api
 
-from odoo.tools import BinaryBytes, DEFAULT_SERVER_DATE_FORMAT
-from odoo.tests import tagged, loaded_demo_data
-from odoo.addons.account.tests.common import TestTaxCommon, AccountTestInvoicingHttpCommon
-from odoo.addons.point_of_sale.tests.common_setup_methods import setup_product_combo_items
+from weth.tools import BinaryBytes, DEFAULT_SERVER_DATE_FORMAT
+from weth.tests import tagged, loaded_demo_data
+from weth.addons.account.tests.common import TestTaxCommon, AccountTestInvoicingHttpCommon
+from weth.addons.point_of_sale.tests.common_setup_methods import setup_product_combo_items
 from datetime import date, timedelta
-from odoo.addons.point_of_sale.tests.common import archive_products
-from odoo.exceptions import UserError
+from weth.addons.point_of_sale.tests.common import archive_products
+from weth.exceptions import UserError
 from freezegun import freeze_time
 
 _logger = logging.getLogger(__name__)
@@ -2482,7 +2482,7 @@ class TestUi(TestPointOfSaleHttpCommon):
     def test_pos_open_ui_button(self):
         """ Test the Open Register button click behavior in the dashboard. """
         self.env['pos.session'].create({'name': 'Test Session', 'config_id': self.main_pos_config.id, 'user_id': self.pos_user.id})  # Skip the tax inclusion selection if not the first session opening
-        self.start_tour("/odoo/point-of-sale", 'test_pos_open_ui_button', login="pos_user")
+        self.start_tour("/weth/point-of-sale", 'test_pos_open_ui_button', login="pos_user")
 
     def test_customer_search_prefilled_on_create(self):
         self.main_pos_config.with_user(self.pos_user).open_ui()

@@ -7,13 +7,13 @@ from urllib.parse import urlparse
 
 from markupsafe import Markup
 
-from odoo import Command
-from odoo.addons.mail.models.mail_mail import _UNFOLLOW_REGEX
-from odoo.addons.mail.tests.common import MailCommon
-from odoo.exceptions import AccessError
-from odoo.tests import tagged, users
-from odoo.tests.common import HttpCase
-from odoo.tools import mute_logger
+from weth import Command
+from weth.addons.mail.models.mail_mail import _UNFOLLOW_REGEX
+from weth.addons.mail.tests.common import MailCommon
+from weth.exceptions import AccessError
+from weth.tests import tagged, users
+from weth.tests.common import HttpCase
+from weth.tools import mute_logger
 
 
 @tagged('mail_followers')
@@ -184,7 +184,7 @@ class BaseFollowersTest(MailCommon):
         self.assertNotIn(public_partner, test_record.message_partner_ids)
 
     @users('employee')
-    @mute_logger('odoo.models.unlink')
+    @mute_logger('weth.models.unlink')
     def test_followers_inverse_message_partner(self):
         test_record = self.test_record.with_env(self.env)
         partner0, partner1, partner2, partner3 = self.env['res.partner'].create(
@@ -235,7 +235,7 @@ class BaseFollowersTest(MailCommon):
         records.message_partner_ids -= partner2
         self.assertEqual(records.message_partner_ids, partner3)
 
-    @mute_logger('odoo.addons.base.models.ir_access', 'odoo.models')
+    @mute_logger('weth.addons.base.models.ir_access', 'weth.models')
     def test_followers_inverse_message_partner_access_rights(self):
         """ Make sure we're not bypassing security checks by setting a partner
         instead of a follower """
@@ -409,7 +409,7 @@ class AdvancedFollowersTest(MailCommon):
                     new_rec = self.env['mail.test.track'].with_user(user).create({})
                 self.assertEqual(new_rec.message_partner_ids, user.partner_id if should_subscribe else self.env['res.partner'])
 
-    @mute_logger('odoo.models.unlink')
+    @mute_logger('weth.models.unlink')
     def test_auto_subscribe_inactive(self):
         """ Test inactive are not added as followers in automated subscription """
         self.test_track.user_id = False
@@ -472,7 +472,7 @@ class AdvancedFollowersTest(MailCommon):
         self.assertNotIn(self.user_admin.partner_id.id, suggested_partner_ids,
                          'Current user should not appear in suggested recipients after unsubscribing')
 
-    @mute_logger('odoo.models.unlink')
+    @mute_logger('weth.models.unlink')
     def test_auto_subscribe_defaults(self):
         """ Test auto subscription based on an container record. This mimics
         the behavior of addons like project and task where subscribing to
@@ -724,7 +724,7 @@ class RecipientsNotificationTest(MailCommon):
                                   partner_to_users={self.common_partner.id: self.user_2})
 
     @users('employee')
-    @mute_logger('odoo.models.unlink')
+    @mute_logger('weth.models.unlink')
     def test_notification_unlink(self):
         """ Check that we unlink the created user_notification after unlinked the
         related document. """
@@ -1010,7 +1010,7 @@ class UnfollowLinkTest(MailCommon, HttpCase):
                 self.assertNotIn('/mail/unfollow', re.sub(_UNFOLLOW_REGEX, '', mail_template_arch))
 
     @users('employee')
-    @mute_logger('odoo.models')
+    @mute_logger('weth.models')
     def test_inbox_unfollow_information(self):
         """ Check follow-up information for displaying inbox messages used to
         implement "unfollow" in the inbox.
@@ -1048,7 +1048,7 @@ class UnfollowLinkTest(MailCommon, HttpCase):
         ])
         self.assertEqual(data["mail.thread"][0]["selfFollower"], follower.id, "Should have follower ID")
 
-    @mute_logger('odoo.addons.base.models', 'odoo.addons.mail.controllers.mail', 'odoo.http', 'odoo.models')
+    @mute_logger('weth.addons.base.models', 'weth.addons.mail.controllers.mail', 'weth.http', 'weth.models')
     def test_notification_email_unfollow_link(self):
         """ Internal user must receive an unfollow URL, that cannot be tampered
         and redirects to the correct page.

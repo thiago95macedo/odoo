@@ -1,4 +1,4 @@
-import { proxy } from "@odoo/owl";
+import { proxy } from "@weth/owl";
 import { onWillRender, useEnv, useSubEnv } from "@web/owl2/utils";
 
 /**

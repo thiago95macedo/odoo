@@ -6,14 +6,14 @@ from collections import defaultdict
 
 from markupsafe import Markup
 
-from odoo import _, api, fields, models, modules
-from odoo.exceptions import UserError, ValidationError
-from odoo.fields import Domain
-from odoo.tools.func import deprecated
-from odoo.tools.misc import clean_context
+from weth import _, api, fields, models, modules
+from weth.exceptions import UserError, ValidationError
+from weth.fields import Domain
+from weth.tools.func import deprecated
+from weth.tools.misc import clean_context
 
 from .mail_message import MAX_SEARCH_LIMIT, _find_allowed_doc_ids
-from odoo.addons.mail.tools.discuss import Store
+from weth.addons.mail.tools.discuss import Store
 
 _logger = logging.getLogger(__name__)
 

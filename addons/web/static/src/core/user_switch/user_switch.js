@@ -1,4 +1,4 @@
-import { Component, Portal, proxy, signal, useOnChange } from "@odoo/owl";
+import { Component, Portal, proxy, signal, useOnChange } from "@weth/owl";
 import { registry } from "@web/core/registry";
 import { getLastConnectedUsers, setLastConnectedUsers } from "@web/core/user";
 import { imageUrl } from "@web/core/utils/urls";

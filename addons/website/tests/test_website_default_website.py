@@ -1,9 +1,9 @@
 from unittest.mock import patch
 
-from odoo.fields import Domain
-from odoo.tests import TransactionCase, tagged
+from weth.fields import Domain
+from weth.tests import TransactionCase, tagged
 
-from odoo.addons.website.models.website import Website
+from weth.addons.website.models.website import Website
 
 
 @tagged("post_install", "-at_install")

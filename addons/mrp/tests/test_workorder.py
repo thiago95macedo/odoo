@@ -1,9 +1,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 from datetime import datetime
 
-from odoo import Command
-from odoo.addons.mrp.tests.common import TestMrpCommon
-from odoo.tests import Form
+from weth import Command
+from weth.addons.mrp.tests.common import TestMrpCommon
+from weth.tests import Form
 
 
 class TestWorkorder(TestMrpCommon):

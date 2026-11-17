@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
-from odoo.tools import profiler
+from weth.tools import profiler
 
 if TYPE_CHECKING:
     from contextlib import AbstractContextManager

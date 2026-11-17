@@ -3,9 +3,9 @@
 
 from werkzeug.urls import url_encode
 
-from odoo import api, fields, models, _
-from odoo.exceptions import ValidationError
-from odoo.tools.mimetypes import get_extension
+from weth import api, fields, models, _
+from weth.exceptions import ValidationError
+from weth.tools.mimetypes import get_extension
 
 
 class SlideSlideResource(models.Model):

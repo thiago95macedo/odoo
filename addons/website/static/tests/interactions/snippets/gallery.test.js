@@ -1,8 +1,8 @@
 import { startInteractions, setupInteractionWhiteList } from "@web/../tests/public/helpers";
 
-import { describe, expect, test } from "@odoo/hoot";
-import { animationFrame, click, press, queryAll } from "@odoo/hoot-dom";
-import { advanceTime } from "@odoo/hoot-mock";
+import { describe, expect, test } from "@weth/hoot";
+import { animationFrame, click, press, queryAll } from "@weth/hoot-dom";
+import { advanceTime } from "@weth/hoot-mock";
 
 setupInteractionWhiteList(["website.gallery", "website.base_lightbox"]);
 

@@ -33,7 +33,7 @@ const FONT_SIZED_SPAN_SELECTOR = [
 ].join(", ");
 const FONT_SIZED_BUTTON_CLASS = "o_btn_with_font_size";
 
-/** @typedef {import("@odoo/owl").Component} Component */
+/** @typedef {import("@weth/owl").Component} Component */
 /** @typedef {import("plugins").CSSSelector} CSSSelector */
 /** @typedef {import("plugins").LazyTranslatedString} LazyTranslatedString */
 /**

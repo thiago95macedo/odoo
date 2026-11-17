@@ -1,8 +1,8 @@
 import { EmbeddedComponentPlugin } from "@html_editor/others/embedded_component_plugin";
 import { fixInvalidHTML } from "@html_editor/utils/sanitize";
 import { Wysiwyg } from "@html_editor/wysiwyg";
-import { animationFrame, expect, getFixture, queryOne, tick } from "@odoo/hoot";
-import { Component, markup, onWillDestroy, t, useApp, useProps, xml } from "@odoo/owl";
+import { animationFrame, expect, getFixture, queryOne, tick } from "@weth/hoot";
+import { Component, markup, onWillDestroy, t, useApp, useProps, xml } from "@weth/owl";
 import { toExplicitString } from "@web/../lib/hoot/hoot_utils";
 import { destroyApp, mountWithCleanup } from "@web/../tests/web_test_helpers";
 import { processThroughCleanForSave } from "./dispatch";
@@ -206,9 +206,8 @@ export async function testEditor(config) {
     if (!compareFunction) {
         compareFunction = (content, expected, phase) => {
             expect(content).toBe(expected, {
-                message: `(testEditor) ${
-                    phase + (reverseSelection ? " (reversed selection)" : "")
-                } should be strictly equal to ${toExplicitString(expected)}`,
+                message: `(testEditor) ${phase + (reverseSelection ? " (reversed selection)" : "")
+                    } should be strictly equal to ${toExplicitString(expected)}`,
             });
         };
     }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
 
 <!-- ======   Template: Posts Loop    ==========================================
 Loop through post and call sub-templates (tags, cover..) in different position
@@ -395,4 +395,4 @@ according to the enabled options.
 <template id="opt_blog_grid_columns_3" name="Grid: 3 Columns" inherit_id="website_blog.posts_loop" active="True"/>
 <template id="opt_blog_grid_columns_4" name="Grid: 4 Columns" inherit_id="website_blog.posts_loop" active="False"/>
 
-</odoo>
+</weth>

@@ -1,6 +1,6 @@
-import { beforeEach, describe, expect, test } from "@odoo/hoot";
-import { keyDown, press, queryAllTexts } from "@odoo/hoot-dom";
-import { advanceFrame, advanceTime, animationFrame, mockUserAgent } from "@odoo/hoot-mock";
+import { beforeEach, describe, expect, test } from "@weth/hoot";
+import { keyDown, press, queryAllTexts } from "@weth/hoot-dom";
+import { advanceFrame, advanceTime, animationFrame, mockUserAgent } from "@weth/hoot-mock";
 import {
     contains,
     getService,
@@ -9,7 +9,7 @@ import {
     patchWithCleanup,
 } from "@web/../tests/web_test_helpers";
 
-import { Component, proxy, signal, useProps, xml } from "@odoo/owl";
+import { Component, proxy, signal, useProps, xml } from "@weth/owl";
 
 import { useCommand } from "@web/core/commands/command_hook";
 import { HotkeyCommandItem } from "@web/core/commands/default_providers";
@@ -62,7 +62,7 @@ test("commands evilness 👹", async () => {
         getService("command").add("");
     }).toThrow(/A Command must have a name and an action function/);
     expect(function () {
-        getService("command").add("", function action() {});
+        getService("command").add("", function action() { });
     }).toThrow(/A Command must have a name and an action function/);
     expect(function () {
         getService("command").add("command", null);
@@ -99,8 +99,8 @@ test("useCommand hook", async () => {
 test("useCommand hook when the activeElement change", async () => {
     class MyComponent extends TestComponent {
         setup() {
-            useCommand("Take the throne", () => {});
-            useCommand("Lose the throne", () => {}, { global: true });
+            useCommand("Take the throne", () => { });
+            useCommand("Lose the throne", () => { }, { global: true });
         }
     }
 
@@ -109,7 +109,7 @@ test("useCommand hook when the activeElement change", async () => {
         activeRef = signal.ref();
         setup() {
             useActiveElement(this.activeRef);
-            useCommand("I'm taking the throne", () => {});
+            useCommand("I'm taking the throne", () => { });
         }
     }
 
@@ -132,7 +132,7 @@ test("useCommand hook with isAvailable", async () => {
     let available = false;
     class MyComponent extends TestComponent {
         setup() {
-            useCommand("Take the throne", () => {}, {
+            useCommand("Take the throne", () => { }, {
                 isAvailable: () => available,
             });
         }
@@ -318,7 +318,7 @@ test("useCommand hook with hotkey and isAvailable", async () => {
 
 test("open command palette with command config", async () => {
     const hotkey = "alt+a";
-    const action = () => {};
+    const action = () => { };
     const provide = () => [
         {
             name: "Command1",
@@ -449,7 +449,7 @@ test("can be searched", async () => {
     // Register some commands
     const names = ["Cersei Lannister", "Jaime Lannister", "Tyrion Lannister", "Tywin Lannister"];
     for (const name of names) {
-        getService("command").add(name, function action() {});
+        getService("command").add(name, function action() { });
     }
     await animationFrame();
 
@@ -575,7 +575,7 @@ test("footer displays the right tips", async () => {
 });
 
 test("namespaces display in the footer are still clickable", async () => {
-    const action = () => {};
+    const action = () => { };
     commandProviderRegistry.add("@", {
         namespace: "@",
         provide: () => [
@@ -632,7 +632,7 @@ test("namespaces display in the footer are still clickable", async () => {
 });
 
 test("defined multiple providers with the same namespace", async () => {
-    const action = () => {};
+    const action = () => { };
 
     const defaultNames = ["John", "Snow"];
     commandProviderRegistry.add("default", {
@@ -665,7 +665,7 @@ test("defined multiple providers with the same namespace", async () => {
 });
 
 test("can switch between command providers", async () => {
-    const action = () => {};
+    const action = () => { };
 
     const defaultNames = ["John", "Snow"];
     commandProviderRegistry.add("default", {
@@ -724,7 +724,7 @@ test("multi level commands", async () => {
                 provide: () =>
                     otherNames.map((name) => ({
                         name,
-                        action: () => {},
+                        action: () => { },
                     })),
             },
         ],
@@ -777,7 +777,7 @@ test("multi level commands with hotkey", async () => {
                 provide: () =>
                     otherNames.map((name) => ({
                         name,
-                        action: () => {},
+                        action: () => { },
                     })),
             },
         ],
@@ -826,7 +826,7 @@ test("command categories", async () => {
     await mountWithCleanup(TestComponent);
 
     // Register some commands
-    function action() {}
+    function action() { }
     getService("command").add("a", action, { category: "custom-nolabel" });
     getService("command").add("b", action, { category: "custom" });
     getService("command").add("c", action);
@@ -887,7 +887,7 @@ test("display shortcuts correctly for non-MacOS ", async () => {
     await mountWithCleanup(MyComponent);
 
     // Register some commands
-    function action() {}
+    function action() { }
     getService("command").add("a", action);
     getService("command").add("b", action, { hotkey: "alt+b" });
     getService("command").add("c", action, { hotkey: "c" });
@@ -929,7 +929,7 @@ test("display shortcuts correctly for MacOS ", async () => {
     await mountWithCleanup(MyComponent);
 
     // Register some commands
-    function action() {}
+    function action() { }
     getService("command").add("a", action);
     getService("command").add("b", action, { hotkey: "alt+b" });
     getService("command").add("c", action, { hotkey: "c" });
@@ -1017,7 +1017,7 @@ test("openMainPalette with onClose", async () => {
 });
 
 test("uses openPalette to modify the config used by the command palette", async () => {
-    const action = () => {};
+    const action = () => { };
     getService("command").add("Command1", action);
 
     await mountWithCleanup(TestComponent);
@@ -1049,7 +1049,7 @@ test("uses openPalette to modify the config used by the command palette", async 
 test("ensure that calling openPalette multiple times successfully loads the last config for the command palette", async () => {
     const providePromise1 = Promise.withResolvers();
     const providePromise2 = Promise.withResolvers();
-    const action = () => {};
+    const action = () => { };
 
     await mountWithCleanup(TestComponent);
 

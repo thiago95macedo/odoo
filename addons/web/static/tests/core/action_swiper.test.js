@@ -1,7 +1,7 @@
-/** @odoo-module alias=@web/../tests/mobile/core/action_swiper_tests default=false */
+/** @weth-module alias=@web/../tests/mobile/core/action_swiper_tests default=false */
 
-import { beforeEach, expect, hover, mockTouch, queryFirst, test } from "@odoo/hoot";
-import { Component, xml } from "@odoo/owl";
+import { beforeEach, expect, hover, mockTouch, queryFirst, test } from "@weth/hoot";
+import { Component, xml } from "@weth/owl";
 import {
     contains,
     defineParams,
@@ -59,7 +59,7 @@ test("only render the necessary divs", async () => {
     await mountWithCleanup(ActionSwiper, {
         props: {
             onRightSwipe: {
-                action: () => {},
+                action: () => { },
                 icon: "circle",
                 iconClass: "oi-filled",
                 bgColor: "bg-warning",
@@ -72,7 +72,7 @@ test("only render the necessary divs", async () => {
     await mountWithCleanup(ActionSwiper, {
         props: {
             onLeftSwipe: {
-                action: () => {},
+                action: () => { },
                 icon: "circle",
                 iconClass: "oi-filled",
                 bgColor: "bg-warning",

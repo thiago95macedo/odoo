@@ -1,9 +1,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
-from odoo import Command, fields
-from odoo.exceptions import AccessError
-from odoo.tests import new_test_user, tagged
+from weth import Command, fields
+from weth.exceptions import AccessError
+from weth.tests import new_test_user, tagged
 
-from odoo.addons.website.tests.test_website_visitor import WebsiteVisitorTestsCommon
+from weth.addons.website.tests.test_website_visitor import WebsiteVisitorTestsCommon
 
 
 @tagged('website_visitor')

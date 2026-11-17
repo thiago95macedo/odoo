@@ -1,4 +1,4 @@
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@weth/hoot";
 import { patchWithCleanup } from "@web/../tests/web_test_helpers";
 
 import { memoize, uniqueId } from "@web/core/utils/functions";
@@ -39,9 +39,9 @@ test("memoize", () => {
 });
 
 test("memoized function inherit function name if possible", () => {
-    const memoized1 = memoize(function test() {});
+    const memoized1 = memoize(function test() { });
     expect(memoized1.name).toBe("test (memoized)");
-    const memoized2 = memoize(function () {});
+    const memoized2 = memoize(function () { });
     expect(memoized2.name).toBe("memoized");
 });
 

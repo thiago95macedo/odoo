@@ -3,7 +3,7 @@ import { useService } from "@web/core/utils/hooks";
 
 import { ConfirmationDialog } from "@web/core/confirmation_dialog/confirmation_dialog";
 
-import { stores } from "@odoo/o-spreadsheet";
+import { stores } from "@weth/o-spreadsheet";
 
 const { useStore, useStoreProvider, NotificationStore } = stores;
 
@@ -22,7 +22,7 @@ export function useSpreadsheetNotificationStore() {
             title: _t("Odoo Spreadsheet"),
             body,
             confirm,
-            cancel: cancel || (() => {}), // Must be defined to display the Cancel button
+            cancel: cancel || (() => { }), // Must be defined to display the Cancel button
             confirmLabel,
             cancelLabel,
         });

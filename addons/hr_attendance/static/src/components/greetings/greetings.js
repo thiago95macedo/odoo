@@ -1,4 +1,4 @@
-import { Component, computed, onWillDestroy, t, useProps } from "@odoo/owl";
+import { Component, computed, onWillDestroy, t, useProps } from "@weth/owl";
 import { deserializeDateTime } from "@web/core/l10n/dates";
 import { formatDateTime, formatFloatTime } from "@web/views/fields/formatters";
 
@@ -7,7 +7,7 @@ export class KioskGreetings extends Component {
     props = useProps({
         employeeData: t.object(),
         kioskReturn: t.function(),
-        kioskContinueBreak: t.function().optional(() => () => {}),
+        kioskContinueBreak: t.function().optional(() => () => { }),
     });
 
     setup() {

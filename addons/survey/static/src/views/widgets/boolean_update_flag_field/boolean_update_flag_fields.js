@@ -1,4 +1,4 @@
-import { t, useProps } from "@odoo/owl";
+import { t, useProps } from "@weth/owl";
 import { _t } from "@web/core/l10n/translation";
 import { registry } from "@web/core/registry";
 import {
@@ -32,7 +32,8 @@ export class BooleanUpdateFlagField extends BooleanField {
     async onChange(newValue) {
         super.onChange(...arguments);
         await this.props.record._update({
-            [this.props.flagFieldName]: newValue !== this.props.referenceValue}
+            [this.props.flagFieldName]: newValue !== this.props.referenceValue
+        }
         );
     }
 }
@@ -41,7 +42,7 @@ export const booleanUpdateFlagField = {
     ...booleanField,
     component: BooleanUpdateFlagField,
     displayName: _t("Checkbox updating comparison flag"),
-    extractProps ({ options }, { context: { referenceValue } }) {
+    extractProps({ options }, { context: { referenceValue } }) {
         return {
             flagFieldName: options.flagFieldName,
             referenceValue: referenceValue,

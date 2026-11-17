@@ -1,6 +1,6 @@
-import { describe, expect, test } from "@odoo/hoot";
-import { tick } from "@odoo/hoot-mock";
-import { press } from "@odoo/hoot-dom";
+import { describe, expect, test } from "@weth/hoot";
+import { tick } from "@weth/hoot-mock";
+import { press } from "@weth/hoot-dom";
 import { patchWithCleanup } from "@web/../tests/web_test_helpers";
 import { setupEditor, testEditor } from "../_helpers/editor";
 import { getContent } from "../_helpers/selection";
@@ -236,7 +236,7 @@ describe("with strikeThrough", () => {
             contentBefore: `<p>ab<u><s>cd[]ef</s></u></p>`,
             stepFunction: async (editor) => {
                 /** @todo fix warnings */
-                patchWithCleanup(console, { warn: () => {} });
+                patchWithCleanup(console, { warn: () => { } });
 
                 underline(editor);
                 await insertText(editor, "A");
@@ -340,7 +340,7 @@ describe("with italic", () => {
             contentBefore: `<p>ab<u><em>cd[]ef</em></u></p>`,
             stepFunction: async (editor) => {
                 /** @todo fix warnings */
-                patchWithCleanup(console, { warn: () => {} });
+                patchWithCleanup(console, { warn: () => { } });
 
                 underline(editor);
                 await insertText(editor, "A");
@@ -371,7 +371,7 @@ describe("with italic", () => {
 test("should not add history commit for underline on collapsed selection", async () => {
     const { editor, el } = await setupEditor("<p>abcd[]</p>");
 
-    patchWithCleanup(console, { warn: () => {} });
+    patchWithCleanup(console, { warn: () => { } });
 
     // Collapsed formatting shortcuts (e.g. Ctrl+U) shouldn’t create a history
     // commit. The empty inline tag is temporary: auto-cleaned if unused. We want

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import fields, models, _
+from weth import fields, models, _
 
 
 class SmsTemplateReset(models.TransientModel):

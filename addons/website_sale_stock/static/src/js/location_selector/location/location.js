@@ -1,7 +1,7 @@
 import {
     LocationSchedule
 } from '@website_sale_stock/js/location_selector/location_schedule/location_schedule';
-import { Component, t, useProps } from '@odoo/owl';
+import { Component, t, useProps } from '@weth/owl';
 import { _t } from '@web/core/l10n/translation';
 
 export class Location extends Component {

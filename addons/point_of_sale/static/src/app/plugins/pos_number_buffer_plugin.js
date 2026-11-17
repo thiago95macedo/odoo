@@ -1,4 +1,4 @@
-import { usePlugin, Plugin, onWillDestroy, useScope, proxy, signal, EventBus } from "@odoo/owl";
+import { usePlugin, Plugin, onWillDestroy, useScope, proxy, signal, EventBus } from "@weth/owl";
 import { services } from "@web/core/services";
 import { BarcodePlugin } from "@barcodes/barcode_plugin";
 import { session } from "@web/session";

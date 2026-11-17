@@ -1,5 +1,5 @@
-import { describe, expect, test } from "@odoo/hoot";
-import { load, helpers } from "@odoo/o-spreadsheet";
+import { describe, expect, test } from "@weth/hoot";
+import { load, helpers } from "@weth/o-spreadsheet";
 import { defineSpreadsheetActions, defineSpreadsheetModels } from "../helpers/data";
 
 const { schemeToColorScale } = helpers;

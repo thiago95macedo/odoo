@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.payment.logging import get_payment_logger
-from odoo.addons.payment_paypal import const
+from weth.addons.payment.logging import get_payment_logger
+from weth.addons.payment_paypal import const
 
 _logger = get_payment_logger(__name__)
 

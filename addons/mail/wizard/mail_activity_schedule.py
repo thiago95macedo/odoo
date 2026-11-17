@@ -3,12 +3,12 @@
 import logging
 from markupsafe import Markup
 
-from odoo import api, fields, models, _
-from odoo.addons.mail.tools.parser import parse_res_ids
-from odoo.exceptions import UserError, ValidationError
-from odoo.fields import Domain
-from odoo.tools import html2plaintext
-from odoo.tools.misc import clean_context, format_date
+from weth import api, fields, models, _
+from weth.addons.mail.tools.parser import parse_res_ids
+from weth.exceptions import UserError, ValidationError
+from weth.fields import Domain
+from weth.tools import html2plaintext
+from weth.tools.misc import clean_context, format_date
 _logger = logging.getLogger(__name__)
 
 

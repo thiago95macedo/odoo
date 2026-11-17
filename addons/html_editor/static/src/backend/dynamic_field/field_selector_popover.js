@@ -1,4 +1,4 @@
-import { Component, proxy, signal, t, usePlugin, useProps } from "@odoo/owl";
+import { Component, proxy, signal, t, usePlugin, useProps } from "@weth/owl";
 import { DebugModePlugin } from "@web/core/debug_mode_plugin";
 import { useHotkey } from "@web/core/hotkeys/hotkey_hook";
 import { ModelFieldSelectorPopover } from "@web/core/model_field_selector/model_field_selector_popover";

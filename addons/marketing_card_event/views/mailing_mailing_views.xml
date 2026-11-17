@@ -1,4 +1,4 @@
-<odoo>
+<weth>
     <record id="mailing_mailing_view_form_event_send_card" model="ir.ui.view">
         <field name="name">mailing.mailing.view.form.event.send.card</field>
         <field name="mode">primary</field>
@@ -14,4 +14,4 @@
             </field>
         </field>
     </record>
-</odoo>
+</weth>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
     <template id="mail_installation_request_template">
         <div style="margin: 0px; padding: 0px;">
             <p style="margin: 0px; padding: 0px; font-size: 13px;">
@@ -16,11 +16,11 @@
                     </div>
                 </t>
                 <a id="review_request_button" t-attf-style="background-color: {{user_id.company_id.email_secondary_color or '#05285B'}}; padding:8px 16px 8px 16px; text-decoration:none; color: {{user_id.company_id.email_primary_color or '#FFFFFF'}}; border-radius:5px"
-                   t-attf-href="/odoo/{{ module_id.id }}/action-base_install_request.action_base_module_install_review?menu_id={{ menu_id }}">
+                   t-attf-href="/weth/{{ module_id.id }}/action-base_install_request.action_base_module_install_review?menu_id={{ menu_id }}">
                     Review Request
                 </a>
                 <br/><br/>
             </p>
         </div>
      </template>
-</odoo>
+</weth>

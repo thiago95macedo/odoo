@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, models
-from odoo.tools import html2plaintext
+from weth import api, models
+from weth.tools import html2plaintext
 
 
 class ProjectTask(models.Model):

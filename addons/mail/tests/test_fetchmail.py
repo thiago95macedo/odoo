@@ -3,7 +3,7 @@
 from datetime import timedelta
 from unittest.mock import patch
 
-from odoo.tests import tagged, TransactionCase, mute_logger
+from weth.tests import tagged, TransactionCase, mute_logger
 
 
 class MockedConnection:
@@ -88,8 +88,8 @@ class TestFetchmail(TransactionCase):
             self.enter_registry_test_mode(),
             self.registry.cursor() as cr,
             patch.object(self.registry['fetchmail.server'], '_connect__', side_effect=_connect__, autospec=True),
-            mute_logger('odoo.addons.mail.models'),
-            self.assertLogs('odoo.addons.base.models.ir_cron') as cron_log_catcher,
+            mute_logger('weth.addons.mail.models'),
+            self.assertLogs('weth.addons.base.models.ir_cron') as cron_log_catcher,
         ):
             server = mail_server.with_env(mail_server.env(cr=cr))
             self.assertFalse(server.error_date)
@@ -104,4 +104,4 @@ class TestFetchmail(TransactionCase):
             exc = server._fetch_mail()
             self.assertIs(exc, connection_failed_exception)
             self.assertEqual(server.state, 'draft')
-            self.assertIn('WARNING:odoo.addons.base.models.ir_cron:Deactivating fetchmail imap server test deactivation server (too many failures)', cron_log_catcher.output)
+            self.assertIn('WARNING:weth.addons.base.models.ir_cron:Deactivating fetchmail imap server test deactivation server (too many failures)', cron_log_catcher.output)

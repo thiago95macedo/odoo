@@ -2,9 +2,9 @@
 
 from unittest.mock import patch
 
-from odoo.tests import tagged
+from weth.tests import tagged
 
-from odoo.addons.payment_dpo.tests.common import DPOCommon
+from weth.addons.payment_dpo.tests.common import DPOCommon
 
 
 @tagged("post_install", "-at_install")
@@ -19,7 +19,7 @@ class TestPaymentTransaction(DPOCommon):
             "url_params": {"ID": transaction_token},
         }
         with patch(
-            "odoo.addons.payment_dpo.models.payment_transaction.PaymentTransaction"
+            "weth.addons.payment_dpo.models.payment_transaction.PaymentTransaction"
             "._dpo_create_token",
             return_value="dummy_token",
         ):

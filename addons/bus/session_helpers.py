@@ -4,14 +4,14 @@ import os
 import time
 import typing
 
-from odoo.api import SUPERUSER_ID, Environment
-from odoo.http.session import session_store
-from odoo.sql_db import SQL
-from odoo.tools.lru import LRU
-from odoo.tools.misc import consteq
+from weth.api import SUPERUSER_ID, Environment
+from weth.http.session import session_store
+from weth.sql_db import SQL
+from weth.tools.lru import LRU
+from weth.tools.misc import consteq
 
 if typing.TYPE_CHECKING:
-    from odoo.http.session import Session
+    from weth.http.session import Session
     OldSID = typing.NewType("OldSID", str)
     ResolvedSession = typing.NewType("ResolvedSession", Session)
 
@@ -52,7 +52,7 @@ def _get_session_token_query_params(cr, uids):
 
 
 def check_sessions(cr, sessions):
-    """Counterpart of ``odoo.http.session.check`` that must not build a registry.
+    """Counterpart of ``weth.http.session.check`` that must not build a registry.
 
     Verify that the sessions are not expired and that the token saved in each one
     still matches the session token computed for its user.

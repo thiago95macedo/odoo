@@ -1,11 +1,11 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-import odoo
+import weth
 
-from odoo.addons.pos_stock.tests.common import CommonPosStockTest
+from weth.addons.pos_stock.tests.common import CommonPosStockTest
 
 
-@odoo.tests.tagged('post_install', '-at_install')
+@weth.tests.tagged('post_install', '-at_install')
 class TestPosPickingBackorder(CommonPosStockTest):
 
     _test_user_groups = None  # FIXME list needed groups

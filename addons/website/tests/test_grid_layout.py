@@ -1,11 +1,11 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-import odoo.tests
-from odoo.addons.website.tools import create_image_attachment
+import weth.tests
+from weth.addons.website.tools import create_image_attachment
 
 
-@odoo.tests.common.tagged('post_install', '-at_install')
-class TestWebsiteGridLayout(odoo.tests.HttpCase):
+@weth.tests.common.tagged('post_install', '-at_install')
+class TestWebsiteGridLayout(weth.tests.HttpCase):
 
     def test_01_replace_grid_image(self):
         create_image_attachment(self.env, '/web/image/website.landscape_md_1', 'landscape_md_1.jpg')

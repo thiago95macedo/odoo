@@ -1,4 +1,4 @@
-from odoo.tests import TransactionCase
+from weth.tests import TransactionCase
 
 
 class TestBlueprintImport(TransactionCase):

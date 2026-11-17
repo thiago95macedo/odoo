@@ -1,7 +1,7 @@
 from collections.abc import Collection
 
-from odoo import api, models
-from odoo.exceptions import AccessError
+from weth import api, models
+from weth.exceptions import AccessError
 
 
 class IrAttachment(models.Model):

@@ -8,7 +8,7 @@ import { registry } from "@web/core/registry";
 import { session } from "@web/session";
 import { Interaction } from "@web/public/interaction";
 import { findSlide, insertHtmlContent } from "@website_slides/js/utils";
-import { markup } from "@odoo/owl";
+import { markup } from "@weth/owl";
 import { unhideConditionalElements } from "@website/utils/misc";
 import { TextHighlight } from "@website/interactions/text_highlights";
 import { exprToBoolean } from "@web/core/utils/strings";
@@ -402,7 +402,7 @@ export class WebsiteSlidesFullscreen extends WebsiteSlidesCommon {
             slideData.hasNext = index < slidesDataList.length - 1;
             // compute embed url
             if (slideData.category === "video" && slideData.videoSourceType !== "vimeo") {
-                // embedCode contains an iframe tag, where src attribute is the url (youtube or embed document from odoo)
+                // embedCode contains an iframe tag, where src attribute is the url (youtube or embed document from weth)
                 slideData.embedCode = this.stringToElements(slideData.embedCode)[0]?.src || "";
                 const scheme = slideData.embedCode.indexOf("//") === 0 ? "https:" : "";
                 if (slideData.embedCode) {

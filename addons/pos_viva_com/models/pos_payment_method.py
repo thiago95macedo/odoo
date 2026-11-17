@@ -3,8 +3,8 @@
 import logging
 import requests
 
-from odoo import api, fields, models, modules, _
-from odoo.exceptions import UserError, AccessError
+from weth import api, fields, models, modules, _
+from weth.exceptions import UserError, AccessError
 
 _logger = logging.getLogger(__name__)
 TIMEOUT = 10

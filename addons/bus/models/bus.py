@@ -3,10 +3,10 @@ import logging
 import math
 import os
 
-import odoo
-from odoo import api, fields, models
-from odoo.tools import SQL, config
-from odoo.tools.misc import OrderedSet
+import weth
+from weth import api, fields, models
+from weth.tools import SQL, config
+from weth.tools.misc import OrderedSet
 
 from ..tools.notifications import fetch_bus_notifications, json_dump
 
@@ -159,7 +159,7 @@ class BusBus(models.Model):
                         "The imbus notification payload was too large, it's been split into %d payloads.",
                         len(payloads),
                     )
-                with odoo.sql_db.db_connect(config['db_system']).cursor() as cr:
+                with weth.sql_db.db_connect(config['db_system']).cursor() as cr:
                     for payload in payloads:
                         cr.execute(
                             SQL(

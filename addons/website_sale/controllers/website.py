@@ -2,13 +2,13 @@
 
 import json
 
-from odoo.exceptions import ValidationError
-from odoo.http import request, route
+from weth.exceptions import ValidationError
+from weth.http import request, route
 
-from odoo.addons.base.models.ir_qweb_fields import nl2br_enclose
-from odoo.addons.website.controllers import main
-from odoo.addons.website.controllers.form import WebsiteForm
-from odoo.addons.website_sale.models.website import (
+from weth.addons.base.models.ir_qweb_fields import nl2br_enclose
+from weth.addons.website.controllers import main
+from weth.addons.website.controllers.form import WebsiteForm
+from weth.addons.website_sale.models.website import (
     FISCAL_POSITION_SESSION_CACHE_KEY,
     PRICELIST_SELECTED_SESSION_CACHE_KEY,
     PRICELIST_SESSION_CACHE_KEY,

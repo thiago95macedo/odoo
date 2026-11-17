@@ -1,10 +1,10 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
 
-from odoo.fields import Command
-from odoo.tests import Form, tagged
+from weth.fields import Command
+from weth.tests import Form, tagged
 
-from odoo.addons.sale.tests.common import SaleCommon
+from weth.addons.sale.tests.common import SaleCommon
 
 DISCOUNT = 50
 NO_TAX_INCL_VALUES = [

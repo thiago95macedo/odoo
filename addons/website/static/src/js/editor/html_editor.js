@@ -1,7 +1,7 @@
 import { LinkPopover } from "@html_editor/main/link/link_popover";
 import { _t } from "@web/core/l10n/translation";
 import { AutoComplete, autoCompleteProps } from "@web/core/autocomplete/autocomplete";
-import { useProps, signal, t, onMounted } from "@odoo/owl";
+import { useProps, signal, t, onMounted } from "@weth/owl";
 import { patch } from "@web/core/utils/patch";
 import wUtils from "@website/js/utils";
 import { location, browser } from "@web/core/browser/browser";
@@ -101,7 +101,7 @@ patch(LinkPopover.prototype, {
             (location.hostname === parsedUrl.hostname ||
                 // Also check if the odoo-hosted domain is the current domain of the url
                 new RegExp(`^https?://${session.db}\\.odoo\\.com(/.*)?$`).test(parsedUrl.origin)) &&
-            !parsedUrl.pathname.startsWith("/odoo") &&
+            !parsedUrl.pathname.startsWith("/weth") &&
             !parsedUrl.pathname.startsWith("/web") &&
             !parsedUrl.pathname.startsWith("/@/")
         );

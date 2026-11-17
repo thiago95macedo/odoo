@@ -6,9 +6,9 @@ from zoneinfo import ZoneInfo
 
 from dateutil.relativedelta import relativedelta
 
-from odoo import api, models
-from odoo.tools.date_utils import sum_intervals
-from odoo.tools.intervals import Intervals
+from weth import api, models
+from weth.tools.date_utils import sum_intervals
+from weth.tools.intervals import Intervals
 
 
 def _to_local_date(employee, value):

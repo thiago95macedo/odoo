@@ -1,5 +1,5 @@
 import { localization } from "@web/core/l10n/localization";
-import { Component, useProps, t } from "@odoo/owl";
+import { Component, useProps, t } from "@weth/owl";
 
 export class PriceFormatter extends Component {
     static template = "point_of_sale.PriceFormatter";

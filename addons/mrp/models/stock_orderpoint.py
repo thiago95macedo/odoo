@@ -3,8 +3,8 @@
 from collections import defaultdict
 from datetime import datetime, time
 
-from odoo import _, api, fields, models
-from odoo.fields import Domain
+from weth import _, api, fields, models
+from weth.fields import Domain
 
 
 class StockWarehouseOrderpoint(models.Model):
@@ -42,7 +42,7 @@ class StockWarehouseOrderpoint(models.Model):
                     'message': '%s',
                     'links': [{
                         'label': production.name,
-                        'url': f'/odoo/action-mrp.action_mrp_production_form/{production.id}'
+                        'url': f'/weth/action-mrp.action_mrp_production_form/{production.id}'
                     }],
                     'sticky': False,
                     'next': {'type': 'ir.actions.act_window_close'},

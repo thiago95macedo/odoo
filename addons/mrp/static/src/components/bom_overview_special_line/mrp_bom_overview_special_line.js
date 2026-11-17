@@ -1,5 +1,5 @@
 import { formatFloat, formatFloatTime, formatMonetary } from "@web/views/fields/formatters";
-import { Component, useProps, t } from "@odoo/owl";
+import { Component, useProps, t } from "@weth/owl";
 
 export class BomOverviewSpecialLine extends Component {
     static template = "mrp.BomOverviewSpecialLine";
@@ -13,7 +13,7 @@ export class BomOverviewSpecialLine extends Component {
         }),
         data: t.object(),
         precision: t.number(),
-        toggleFolded: t.function().optional(() => () => {}),
+        toggleFolded: t.function().optional(() => () => { }),
     });
 
     setup() {

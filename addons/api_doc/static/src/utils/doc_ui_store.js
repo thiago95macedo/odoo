@@ -1,4 +1,4 @@
-import { proxy, useListener } from "@odoo/owl";
+import { proxy, useListener } from "@weth/owl";
 import { useEnv, useSubEnv } from "@web/owl2/utils";
 
 function isSmall() {

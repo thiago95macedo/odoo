@@ -17,7 +17,7 @@ import {
     proxy,
     t,
     usePlugin,
-} from "@odoo/owl";
+} from "@weth/owl";
 import { FormController, formControllerProps } from "@web/views/form/form_controller";
 import { registry } from "@web/core/registry";
 import { addLoadingEffect } from "@web/core/utils/ui";
@@ -242,7 +242,7 @@ registry.category("views").add("page_properties_dialog_form", {
 export class PagePropertiesDialog extends FormViewDialog {
     props = useProps({
         ...formViewDialogProps,
-        onClose: t.function().optional(() => () => {}),
+        onClose: t.function().optional(() => () => { }),
         resModel: t.string().optional(),
         title: t.string().optional(_t("Page Properties")),
         size: t.selection(["sm", "md", "lg", "xl", "fs", "fullscreen"]).optional("md"),
@@ -268,10 +268,10 @@ export class PagePropertiesDialog extends FormViewDialog {
             ),
             ...(this.isPage
                 ? {
-                      buttonDialogTemplate: "website.PagePropertiesDialogButtons",
-                      clonePage: this.clonePage.bind(this),
-                      deletePage: this.deletePage.bind(this),
-                  }
+                    buttonDialogTemplate: "website.PagePropertiesDialogButtons",
+                    clonePage: this.clonePage.bind(this),
+                    deletePage: this.deletePage.bind(this),
+                }
                 : {}),
         };
     }

@@ -6,7 +6,7 @@ import { KioskBarcodeScanner } from "@hr_attendance/components/kiosk_barcode/kio
 import { KioskManualSelection } from "@hr_attendance/components/manual_selection/manual_selection";
 import { NewEmployeeDialog } from "@hr_attendance/components/new_employee_dialog/new_employee_dialog";
 import { KioskPinCode } from "@hr_attendance/components/pin_code/pin_code";
-import { Component, proxy, t, usePlugin, useProps, whenReady } from "@odoo/owl";
+import { Component, proxy, t, usePlugin, useProps, whenReady } from "@weth/owl";
 import { browser } from "@web/core/browser/browser";
 import { deserializeDateTime } from "@web/core/l10n/dates";
 import { _t } from "@web/core/l10n/translation";
@@ -225,7 +225,7 @@ class kioskAttendanceApp extends Component {
 
         let result;
         try {
-            result = await this.makeRpcWithGeolocation('attendance_barcode_scanned',{
+            result = await this.makeRpcWithGeolocation('attendance_barcode_scanned', {
                 barcode: barcode,
                 token: this.props.token,
                 check_in_image: checkInImage,

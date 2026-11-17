@@ -1,5 +1,5 @@
 import { defineMailModels } from "@mail/../tests/mail_test_helpers";
-import { advanceTime, expect, freezeTime, test, waitFor, waitForNone } from "@odoo/hoot";
+import { advanceTime, expect, freezeTime, test, waitFor, waitForNone } from "@weth/hoot";
 import {
     defineModels,
     fieldInput,

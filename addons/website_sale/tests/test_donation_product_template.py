@@ -1,7 +1,7 @@
-from odoo.exceptions import UserError
-from odoo.tests import tagged
+from weth.exceptions import UserError
+from weth.tests import tagged
 
-from odoo.addons.base.tests.common import BaseCommon
+from weth.addons.base.tests.common import BaseCommon
 
 
 @tagged("post_install", "-at_install")

@@ -1,8 +1,8 @@
 import { Plugin } from "@html_editor/plugin";
 import { parseHTML } from "@html_editor/utils/html";
-import { describe, expect, test, freezeTime } from "@odoo/hoot";
-import { click, pointerDown, pointerUp, press, queryOne, microTick } from "@odoo/hoot-dom";
-import { animationFrame, mockUserAgent, tick } from "@odoo/hoot-mock";
+import { describe, expect, test, freezeTime } from "@weth/hoot";
+import { click, pointerDown, pointerUp, press, queryOne, microTick } from "@weth/hoot-dom";
+import { animationFrame, mockUserAgent, tick } from "@weth/hoot-mock";
 import { setupEditor, testEditor } from "./_helpers/editor";
 import { getContent, setSelection } from "./_helpers/selection";
 import { expectElementCount } from "./_helpers/ui_expectations";

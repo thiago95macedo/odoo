@@ -1,9 +1,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 from datetime import UTC
 
-from odoo import models, fields, tools, _
-from odoo.tools import format_list, is_html_empty
-from odoo.addons.mail.tools.discuss import Store
+from weth import models, fields, tools, _
+from weth.tools import format_list, is_html_empty
+from weth.addons.mail.tools.discuss import Store
 
 
 class MailActivity(models.Model):

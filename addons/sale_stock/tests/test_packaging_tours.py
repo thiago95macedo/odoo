@@ -1,13 +1,13 @@
-from odoo import Command
-from odoo.tests import HttpCase, tagged
-from odoo.tools import mute_logger
+from weth import Command
+from weth.tests import HttpCase, tagged
+from weth.tools import mute_logger
 
 
 @tagged('-at_install', 'post_install')
 class TestPackagingTours(HttpCase):
 
     def _get_product_url(self, product_id):
-        return '/odoo/action-stock.product_template_action_product/%s' % (product_id)
+        return '/weth/action-stock.product_template_action_product/%s' % (product_id)
 
     def test_barcode_duplication_error(self):
         """ Test the barcode duplication error when creating a new product with an existing barcode """
@@ -25,5 +25,5 @@ class TestPackagingTours(HttpCase):
         self.env['res.config.settings'].create({
             'group_uom': True,
         }).execute()
-        with mute_logger('odoo.sql_db', 'odoo.http'):
+        with mute_logger('weth.sql_db', 'weth.http'):
             self.start_tour(url, 'test_barcode_duplication_error', login='admin', timeout=60)

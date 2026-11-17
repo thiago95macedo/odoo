@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
     <data>
         <record id="mail.favorite_food_poll_message_demo" model="mail.message">
             <field name="model">discuss.channel</field>
@@ -35,4 +35,4 @@
             <field name="create_uid" ref="base.user_admin"/>
         </record>
     </data>
-</odoo>
+</weth>

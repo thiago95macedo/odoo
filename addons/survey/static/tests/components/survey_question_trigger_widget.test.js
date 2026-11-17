@@ -1,6 +1,6 @@
 import { defineMailModels } from "@mail/../tests/mail_test_helpers";
-import { expect, test } from "@odoo/hoot";
-import { animationFrame } from "@odoo/hoot-dom";
+import { expect, test } from "@weth/hoot";
+import { animationFrame } from "@weth/hoot-dom";
 import { contains, defineModels, fields, models, mountView } from "@web/../tests/web_test_helpers";
 
 class Survey extends models.Model {

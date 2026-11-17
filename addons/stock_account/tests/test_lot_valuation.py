@@ -1,10 +1,10 @@
 from datetime import timedelta
 from freezegun import freeze_time
 
-from odoo import Command, fields
-from odoo.addons.stock_account.tests.common import TestStockValuationCommon
-from odoo.exceptions import UserError
-from odoo.tests import users
+from weth import Command, fields
+from weth.addons.stock_account.tests.common import TestStockValuationCommon
+from weth.exceptions import UserError
+from weth.tests import users
 
 
 class TestLotValuation(TestStockValuationCommon):

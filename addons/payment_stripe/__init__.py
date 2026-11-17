@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
 from . import controllers, models
-from odoo.addons import payment  # prevent circular import error with payment
+from weth.addons import payment  # prevent circular import error with payment
 
 
 def post_init_hook(env):

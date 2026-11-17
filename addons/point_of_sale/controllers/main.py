@@ -3,12 +3,12 @@
 import logging
 import json
 
-from odoo import http, _
-from odoo.fields import Domain
-from odoo.http import request
-from odoo.tools import format_amount, file_open
-from odoo.addons.account.controllers.portal import PortalAccount
-from odoo.exceptions import UserError
+from weth import http, _
+from weth.fields import Domain
+from weth.http import request
+from weth.tools import format_amount, file_open
+from weth.addons.account.controllers.portal import PortalAccount
+from weth.exceptions import UserError
 from datetime import timedelta, datetime
 
 _logger = logging.getLogger(__name__)
@@ -89,7 +89,7 @@ class PosController(PortalAccount):
             pos_session = request.env['pos.session'].sudo().search(domain, limit=1)
 
         if not pos_config or not pos_config.active or pos_config.current_session_id and not pos_session:
-            return request.redirect('/odoo/action-point_of_sale.action_client_pos_menu')
+            return request.redirect('/weth/action-point_of_sale.action_client_pos_menu')
 
         if not pos_config.current_session_id:
             pos_config.open_session_if_not_opened()  # Create a session after doing the necessary checks.

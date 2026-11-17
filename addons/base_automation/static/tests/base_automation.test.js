@@ -1,5 +1,5 @@
 import { defineMailModels } from "@mail/../tests/mail_test_helpers";
-import { animationFrame, expect, test, waitFor } from "@odoo/hoot";
+import { animationFrame, expect, test, waitFor } from "@weth/hoot";
 import { Model } from "@web/../tests/_framework/mock_server/mock_model";
 import {
     contains,

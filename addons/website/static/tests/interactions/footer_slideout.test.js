@@ -1,8 +1,8 @@
 import { startInteractions, setupInteractionWhiteList } from "@web/../tests/public/helpers";
 
-import { describe, expect, test } from "@odoo/hoot";
-import { queryAll, queryFirst } from "@odoo/hoot-dom";
-import { mockUserAgent } from "@odoo/hoot-mock";
+import { describe, expect, test } from "@weth/hoot";
+import { queryAll, queryFirst } from "@weth/hoot-dom";
+import { mockUserAgent } from "@weth/hoot-mock";
 
 setupInteractionWhiteList("website.footer_slideout");
 

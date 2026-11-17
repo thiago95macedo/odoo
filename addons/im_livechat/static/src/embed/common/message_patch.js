@@ -1,6 +1,6 @@
 import { Message } from "@mail/core/common/message";
 
-import { useProps, t } from "@odoo/owl";
+import { useProps, t } from "@weth/owl";
 
 import { patch } from "@web/core/utils/patch";
 import { url } from "@web/core/utils/urls";

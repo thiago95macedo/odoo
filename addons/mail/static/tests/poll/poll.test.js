@@ -8,7 +8,7 @@ import {
     startServer,
     triggerEvents,
 } from "@mail/../tests/mail_test_helpers";
-import { advanceTime, describe, mockTouch, test } from "@odoo/hoot";
+import { advanceTime, describe, mockTouch, test } from "@weth/hoot";
 
 import { Command } from "@web/../tests/web_test_helpers";
 

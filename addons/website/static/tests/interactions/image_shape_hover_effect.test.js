@@ -1,8 +1,8 @@
 import { setupInteractionWhiteList, startInteractions } from "@web/../tests/public/helpers";
 
-import { describe, expect, test } from "@odoo/hoot";
-import { hover, queryOne } from "@odoo/hoot-dom";
-import { advanceTime } from "@odoo/hoot-mock";
+import { describe, expect, test } from "@weth/hoot";
+import { hover, queryOne } from "@weth/hoot-dom";
+import { advanceTime } from "@weth/hoot-mock";
 
 import { onRpc, patchWithCleanup } from "@web/../tests/web_test_helpers";
 import { onceAllImagesLoaded } from "@website/utils/images";

@@ -5,14 +5,14 @@ from ast import literal_eval
 from collections import Counter
 from werkzeug.exceptions import NotFound
 
-from odoo import fields, http, _
-from odoo.addons.website.controllers.main import QueryURL
-from odoo.fields import Domain
-from odoo.http import request
-from odoo.tools.misc import get_lang
-from odoo.tools import lazy
-from odoo.tools.translate import LazyTranslate
-from odoo.exceptions import UserError, ValidationError
+from weth import fields, http, _
+from weth.addons.website.controllers.main import QueryURL
+from weth.fields import Domain
+from weth.http import request
+from weth.tools.misc import get_lang
+from weth.tools import lazy
+from weth.tools.translate import LazyTranslate
+from weth.exceptions import UserError, ValidationError
 
 _lt = LazyTranslate(__name__)
 

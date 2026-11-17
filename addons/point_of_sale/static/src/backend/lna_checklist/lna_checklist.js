@@ -1,6 +1,6 @@
-/** @odoo-module **/
+/** @weth-module **/
 
-import { Component, onMounted, onWillStart, onWillUnmount, proxy, useProps } from "@odoo/owl";
+import { Component, onMounted, onWillStart, onWillUnmount, proxy, useProps } from "@weth/owl";
 import { registry } from "@web/core/registry";
 import { standardWidgetProps } from "@web/views/widgets/standard_widget_props";
 

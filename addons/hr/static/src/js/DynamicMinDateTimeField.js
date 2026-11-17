@@ -1,6 +1,6 @@
-/** @odoo-module **/
+/** @weth-module **/
 
-import { useProps, t } from "@odoo/owl";
+import { useProps, t } from "@weth/owl";
 import {
     DateTimeField,
     dateField,

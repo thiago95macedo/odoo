@@ -1,4 +1,4 @@
-import { advanceTime, animationFrame, scroll } from "@odoo/hoot-dom";
+import { advanceTime, animationFrame, scroll } from "@weth/hoot-dom";
 import { defineStyle } from "@web/../tests/web_test_helpers";
 
 export async function endTransition() {

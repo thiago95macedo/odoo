@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
     <data>
 
         <record id="view_payment_term_search" model="ir.ui.view">
@@ -123,4 +123,4 @@
         </record>
 
     </data>
-</odoo>
+</weth>

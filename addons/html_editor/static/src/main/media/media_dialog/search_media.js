@@ -1,7 +1,7 @@
 import { useDebounced } from "@web/core/utils/timing";
 import { useAutofocus } from "@web/core/utils/hooks";
 
-import { Component, signal, t, useEffect, useProps } from "@odoo/owl";
+import { Component, signal, t, useEffect, useProps } from "@weth/owl";
 
 export class SearchMedia extends Component {
     static template = "html_editor.SearchMedia";

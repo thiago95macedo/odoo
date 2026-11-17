@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
     <data noupdate="1">
 
         <record id="base.default_user_group" model="res.groups">
@@ -383,4 +383,4 @@
         <function model="pos.session" name="close_session_from_ui"
             eval="[[ref('pos_closed_session_4')]]" />
     </data>
-</odoo>
+</weth>

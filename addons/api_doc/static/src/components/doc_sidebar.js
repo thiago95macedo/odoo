@@ -1,4 +1,4 @@
-import { Component, proxy, signal, t, useOnChange, useProps } from "@odoo/owl";
+import { Component, proxy, signal, t, useOnChange, useProps } from "@weth/owl";
 import { simplifyString } from "@api_doc/utils/doc_model_search";
 
 export class DocSidebar extends Component {

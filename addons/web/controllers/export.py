@@ -11,13 +11,13 @@ from collections import OrderedDict, defaultdict
 
 from werkzeug.exceptions import InternalServerError
 
-from odoo.exceptions import UserError
-from odoo.http import Controller, request, route
-from odoo.http.dispatcher import serialize_exception
-from odoo.http.stream import content_disposition
-from odoo.tools import BinaryBytes, BinaryValue, osutil
-from odoo.tools.misc import split_every
-from odoo.tools.constants import IN_MAX
+from weth.exceptions import UserError
+from weth.http import Controller, request, route
+from weth.http.dispatcher import serialize_exception
+from weth.http.stream import content_disposition
+from weth.tools import BinaryBytes, BinaryValue, osutil
+from weth.tools.misc import split_every
+from weth.tools.constants import IN_MAX
 
 _logger = logging.getLogger(__name__)
 

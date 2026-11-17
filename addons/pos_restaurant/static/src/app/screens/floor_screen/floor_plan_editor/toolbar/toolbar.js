@@ -1,4 +1,4 @@
-import { Component, useProps, t } from "@odoo/owl";
+import { Component, useProps, t } from "@weth/owl";
 import { useFloorPlanStore } from "@pos_restaurant/app/hooks/floor_plan_hook";
 import { AddTablePopup } from "@pos_restaurant/app/screens/floor_screen/floor_plan_editor/add_table_popup/add_table_popup";
 import { AddDecorPopup } from "@pos_restaurant/app/screens/floor_screen/floor_plan_editor/add_decor_popup/add_decor_popup";

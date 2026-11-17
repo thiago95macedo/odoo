@@ -1,15 +1,15 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import Command
+from weth import Command
 
 import json
 from datetime import datetime, timedelta
 from freezegun import freeze_time
 from unittest.mock import ANY, patch
 
-from odoo.tests.common import HttpCase, new_test_user
-from odoo.exceptions import UserError, ValidationError
-from odoo.addons.mail.tests.common import mail_new_test_user
+from weth.tests.common import HttpCase, new_test_user
+from weth.exceptions import UserError, ValidationError
+from weth.addons.mail.tests.common import mail_new_test_user
 
 
 class TestDiscussSubChannels(HttpCase):
@@ -96,7 +96,7 @@ class TestDiscussSubChannels(HttpCase):
         for i in range(100):
             channel._create_sub_channel(name=f"Sub Channel {i}")
         self.start_tour(
-            f"/odoo/discuss?active_id=discuss.channel_{channel.id}",
+            f"/weth/discuss?active_id=discuss.channel_{channel.id}",
             "test_discuss_sub_channel_search",
             login="bob_user",
         )

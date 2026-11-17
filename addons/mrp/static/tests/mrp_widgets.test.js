@@ -1,5 +1,5 @@
 import { SampleServer } from "@web/model/sample_server";
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@weth/hoot";
 
 import { openFormView, start, startServer } from "@mail/../tests/mail_test_helpers";
 import { defineMrpModels } from "@mrp/../tests/mrp_test_helpers";
@@ -27,10 +27,10 @@ test("ensure the rendering is based on hours, minutes and seconds", async () => 
 test("timer field in list view: don't crash when leaving sample mode", async () => {
     ResFake._fields.state = fields.Selection({
         selection: [["blocked", "Blocked"],
-            ["ready", "To Do"],
-            ["progress", "In Progress"],
-            ["done", "Done"],
-            ["cancel", "Cancelled"],
+        ["ready", "To Do"],
+        ["progress", "In Progress"],
+        ["done", "Done"],
+        ["cancel", "Cancelled"],
         ],
     });
     const pyEnv = await startServer();

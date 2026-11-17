@@ -1,7 +1,7 @@
 import { editInput, startServer } from "@mail/../tests/mail_test_helpers";
-import { beforeEach, expect, test } from "@odoo/hoot";
-import { click, queryAll, queryFirst } from "@odoo/hoot-dom";
-import { animationFrame } from "@odoo/hoot-mock";
+import { beforeEach, expect, test } from "@weth/hoot";
+import { click, queryAll, queryFirst } from "@weth/hoot-dom";
+import { animationFrame } from "@weth/hoot-mock";
 import { defineSMSModels } from "@sms/../tests/sms_test_helpers";
 import { contains, MockServer, mockService, mountView } from "@web/../tests/web_test_helpers";
 

@@ -1,4 +1,4 @@
-import { beforeEach, describe, expect, test } from "@odoo/hoot";
+import { beforeEach, describe, expect, test } from "@weth/hoot";
 import { onRpc } from "@web/../tests/web_test_helpers";
 import { jsToPyLocale } from "@web/core/l10n/utils";
 import { user } from "@web/core/user";
@@ -46,8 +46,8 @@ async function setupKiosk({ defaultUserLang = "fr_FR", failing = [] } = {}) {
         addPrinter(store, "Label", "label"),
     ];
     Object.assign(store.ticketPrinter, {
-        generateIframe: async () => {},
-        setIframeSizeFromPrinter: async () => {},
+        generateIframe: async () => { },
+        setIframeSizeFromPrinter: async () => { },
         generateImage: async () => CLIENT_IMAGE,
     });
     return { store, order };

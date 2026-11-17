@@ -2,8 +2,8 @@
 
 from datetime import date, datetime
 
-from odoo import Command
-from odoo.addons.point_of_sale.tests.test_frontend import TestPointOfSaleHttpCommon
+from weth import Command
+from weth.addons.point_of_sale.tests.test_frontend import TestPointOfSaleHttpCommon
 
 
 class TestPosStockHttpCommon(TestPointOfSaleHttpCommon):

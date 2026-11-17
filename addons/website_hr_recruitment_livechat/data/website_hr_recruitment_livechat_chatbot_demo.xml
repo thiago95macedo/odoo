@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<odoo>
+<weth>
     <data noupdate="1">
         <record id="chatbot_script_website_hr_recruitment" model="chatbot.script">
             <field name="title">Jobs Bot</field>
@@ -406,4 +406,4 @@
             ]"/>
         </record>
     </data>
-</odoo>
+</weth>

@@ -4,12 +4,12 @@ from datetime import timedelta
 
 from freezegun import freeze_time
 
-from odoo import fields
-from odoo.fields import Command
-from odoo.tests import Form, tagged
-from odoo.tools import float_compare, float_round, mute_logger
+from weth import fields
+from weth.fields import Command
+from weth.tests import Form, tagged
+from weth.tools import float_compare, float_round, mute_logger
 
-from odoo.addons.sale.tests.common import SaleCommon
+from weth.addons.sale.tests.common import SaleCommon
 
 
 @tagged("post_install", "-at_install")
@@ -306,7 +306,7 @@ class TestSalePrices(SaleCommon):
             "currency_id": currency_eur.id,
             "company_id": self.env.company.id,
         })
-        with mute_logger("odoo.models.unlink"):
+        with mute_logger("weth.models.unlink"):
             self.env["res.currency.rate"].sudo().search([
                 ("currency_id", "=", self.env.company.currency_id.id)
             ]).unlink()
@@ -426,7 +426,7 @@ class TestSalePrices(SaleCommon):
             ),
         })
         user_in_other_company.group_ids += self.env.ref("product.group_product_manager")
-        with mute_logger("odoo.models.unlink"):
+        with mute_logger("weth.models.unlink"):
             self.env["res.currency.rate"].sudo().search([]).unlink()
         self.env["res.currency.rate"].sudo().create({
             "name": "2009-12-31",

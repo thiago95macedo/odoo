@@ -9,8 +9,8 @@ import {
     mountWithCleanup,
     switchView,
 } from "@web/../tests/web_test_helpers";
-import { animationFrame } from "@odoo/hoot-mock";
-import { expect, test } from "@odoo/hoot";
+import { animationFrame } from "@weth/hoot-mock";
+import { expect, test } from "@weth/hoot";
 import { WebClient } from "@web/webclient/webclient";
 
 class Users extends models.Model {
@@ -54,10 +54,10 @@ class Team extends models.Model {
                     name: team.name,
                     switcher_domain: [
                         "|",
-                            ["team_id", "=", team.id],
-                            "&",
-                                ["team_id", "=", false],
-                                ["stage_id", "in", [...teamStageIds, ...sharedStageIds]],
+                        ["team_id", "=", team.id],
+                        "&",
+                        ["team_id", "=", false],
+                        ["stage_id", "in", [...teamStageIds, ...sharedStageIds]],
                     ],
                 };
             }),

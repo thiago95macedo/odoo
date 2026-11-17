@@ -1,7 +1,7 @@
-from odoo.exceptions import UserError
-from odoo.tests import new_test_user, tagged
+from weth.exceptions import UserError
+from weth.tests import new_test_user, tagged
 
-from odoo.addons.hr_timesheet.tests.test_timesheet import TestCommonTimesheet
+from weth.addons.hr_timesheet.tests.test_timesheet import TestCommonTimesheet
 
 
 @tagged('post_install', '-at_install')

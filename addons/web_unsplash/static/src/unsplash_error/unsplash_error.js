@@ -1,4 +1,4 @@
-import { Component, t, useProps } from "@odoo/owl";
+import { Component, t, useProps } from "@weth/owl";
 import { UnsplashCredentials } from "../unsplash_credentials/unsplash_credentials";
 
 export class UnsplashError extends Component {

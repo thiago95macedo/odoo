@@ -1,6 +1,6 @@
-import { afterEach, expect, test } from "@odoo/hoot";
-import { animationFrame } from "@odoo/hoot-dom";
-import { Component, onMounted, onPatched, proxy, t, useProps, xml } from "@odoo/owl";
+import { afterEach, expect, test } from "@weth/hoot";
+import { animationFrame } from "@weth/hoot-dom";
+import { Component, onMounted, onPatched, proxy, t, useProps, xml } from "@weth/owl";
 import {
     WithLazyGetterTrap,
     clearGettersCache,
@@ -97,7 +97,7 @@ class WithStore extends Component {
         onPatched(() => this.trackRender());
     }
 
-    trackRender() {}
+    trackRender() { }
 }
 
 class A extends WithStore {

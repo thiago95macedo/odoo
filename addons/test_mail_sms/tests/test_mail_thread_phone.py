@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.sms.tests.common import SMSCommon
-from odoo.addons.test_mail_sms.tests.common import TestSMSRecipients
-from odoo.tests import tagged, users
+from weth.addons.sms.tests.common import SMSCommon
+from weth.addons.test_mail_sms.tests.common import TestSMSRecipients
+from weth.tests import tagged, users
 
 
 @tagged('mail_thread')

@@ -1,6 +1,6 @@
-from odoo.addons.event_crm.tests.common import TestEventCrmCommon
-from odoo.tests import tagged
-from odoo import Command, fields
+from weth.addons.event_crm.tests.common import TestEventCrmCommon
+from weth.tests import tagged
+from weth import Command, fields
 
 from datetime import timedelta
 

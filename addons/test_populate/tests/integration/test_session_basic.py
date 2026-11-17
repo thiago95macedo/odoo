@@ -1,10 +1,10 @@
 from psycopg2 import IntegrityError
 
-from odoo.tests import TransactionCase
-from odoo.tools import mute_logger
+from weth.tests import TransactionCase
+from weth.tools import mute_logger
 
-from odoo.addons.populate import start_populate
-from odoo.addons.test_populate.tests.common import PopulateTestCase
+from weth.addons.populate import start_populate
+from weth.addons.test_populate.tests.common import PopulateTestCase
 
 
 class TestSessionCreation(TransactionCase):
@@ -59,7 +59,7 @@ class TestSessionCreation(TransactionCase):
         self.assertEqual(job.record_count, 2)
         self.assertEqual(job.session_id, session)
 
-    @mute_logger('odoo.sql_db')
+    @mute_logger('weth.sql_db')
     def test_create_job_with_domain_fails(self):
         blueprint = self.env['populate.blueprint'].create({
             'name': 'Create Domain Blueprint',
@@ -79,7 +79,7 @@ class TestSessionCreation(TransactionCase):
                 'blueprint_id': blueprint.id,
             })
 
-    @mute_logger('odoo.sql_db')
+    @mute_logger('weth.sql_db')
     def test_blueprint_constraint_validation(self):
         with self.assertRaises(IntegrityError):
             self.env['populate.blueprint'].create({

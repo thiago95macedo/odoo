@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 from unittest.mock import patch
 
-from odoo.addons.pos_stock.tests.test_frontend import TestPosStockHttpCommon
-from odoo.addons.point_of_sale.tests.test_order_receipt import TestPosOrderReceipt
+from weth.addons.pos_stock.tests.test_frontend import TestPosStockHttpCommon
+from weth.addons.point_of_sale.tests.test_order_receipt import TestPosOrderReceipt
 
 
 class TestPosStockOrderReceipt(TestPosStockHttpCommon, TestPosOrderReceipt):

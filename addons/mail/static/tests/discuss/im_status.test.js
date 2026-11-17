@@ -8,8 +8,8 @@ import {
 } from "@mail/../tests/mail_test_helpers";
 import { AWAY_DELAY } from "@mail/core/common/im_status_service";
 
-import { beforeEach, describe, expect, test } from "@odoo/hoot";
-import { advanceTime, freezeTime } from "@odoo/hoot-dom";
+import { beforeEach, describe, expect, test } from "@weth/hoot";
+import { advanceTime, freezeTime } from "@weth/hoot-dom";
 
 import { getService, makeTestApp, mockService, serverState } from "@web/../tests/web_test_helpers";
 

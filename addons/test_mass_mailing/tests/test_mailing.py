@@ -1,17 +1,17 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.test_mass_mailing.data.mail_test_data import MAIL_TEMPLATE
-from odoo.addons.test_mass_mailing.tests.common import TestMassMailCommon
-from odoo.tests import tagged
-from odoo.tests.common import users
-from odoo.tools import mute_logger, email_normalize
+from weth.addons.test_mass_mailing.data.mail_test_data import MAIL_TEMPLATE
+from weth.addons.test_mass_mailing.tests.common import TestMassMailCommon
+from weth.tests import tagged
+from weth.tests.common import users
+from weth.tools import mute_logger, email_normalize
 
 
 @tagged('mass_mailing')
 class TestMassMailing(TestMassMailCommon):
 
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_mailing_author(self):
         """ Check the author of the mails sent by a mailing. """
         mailing = self.env['mailing.mailing'].with_user(self.user_marketing).create({
@@ -39,7 +39,7 @@ class TestMassMailing(TestMassMailCommon):
         )
 
     @users('user_marketing')
-    @mute_logger('odoo.addons.mail.models.mail_thread')
+    @mute_logger('weth.addons.mail.models.mail_thread')
     def test_mailing_gateway_reply(self):
         customers = self.env['res.partner']
         for x in range(0, 3):
@@ -94,7 +94,7 @@ class TestMassMailing(TestMassMailCommon):
         self.assertEqual(mailing.replied, 2)
 
     @users('user_marketing')
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_mailing_gateway_update(self):
         mailing = self.env['mailing.mailing'].browse(self.mailing_bl.ids)
         recipients = self._create_mailing_test_records(model='mailing.test.optout', count=5)
@@ -119,10 +119,10 @@ class TestMassMailing(TestMassMailCommon):
              } for record in recipients],
             mailing, recipients,
             mail_links_info=[[
-                ('url0', 'https://www.odoo.tz/my/%s' % record.name, True, {}),
-                ('url1', 'https://www.odoo.be', True, {}),
+                ('url0', 'https://www.weth.tz/my/%s' % record.name, True, {}),
+                ('url1', 'https://www.weth.be', True, {}),
                 ('url2', 'https://www.weth.com.br', True, {}),
-                ('url3', 'https://www.odoo.eu', True, {}),
+                ('url3', 'https://www.weth.eu', True, {}),
                 ('url4', 'https://www.example.com/foo/bar?baz=qux', True, {'baz': 'qux'}),
                 ('url5', '%s/event/dummy-event-0' % mailing.get_base_url(), True, {}),
                 # view is not shortened and parsed at sending
@@ -136,7 +136,7 @@ class TestMassMailing(TestMassMailCommon):
         self.assertMailingStatistics(mailing, expected=5, delivered=5, sent=5)
 
         # simulate a click
-        self.gateway_mail_trace_click(mailing, recipients[0], 'https://www.odoo.be')
+        self.gateway_mail_trace_click(mailing, recipients[0], 'https://www.weth.be')
         mailing.invalidate_recordset()
         self.assertMailingStatistics(mailing, expected=5, delivered=5, sent=5, opened=1, clicked=1)
 
@@ -169,7 +169,7 @@ class TestMassMailing(TestMassMailCommon):
         }], mailing, recipients[2], check_mail=False)
 
     @users('user_marketing')
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_mailing_recipients(self):
         """ Test recipient-specific computation, with email, formatting,
         multi-emails, ... to test corner cases. Blacklist mixin impact is
@@ -354,7 +354,7 @@ class TestMassMailing(TestMassMailCommon):
                 )
 
     @users('user_marketing')
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_mailing_reply_to_mode_new(self):
         mailing = self.env['mailing.mailing'].browse(self.mailing_bl.ids)
         recipients = self._create_mailing_test_records(model='mailing.test.blacklist', count=5)
@@ -385,7 +385,7 @@ class TestMassMailing(TestMassMailCommon):
         self.assertMailingStatistics(mailing, expected=5, delivered=5, sent=5, opened=1, replied=1)
 
     @users('user_marketing')
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_mailing_reply_to_mode_update(self):
         mailing = self.env['mailing.mailing'].browse(self.mailing_bl.ids)
         recipients = self._create_mailing_test_records(model='mailing.test.blacklist', count=5)
@@ -416,7 +416,7 @@ class TestMassMailing(TestMassMailCommon):
         self.assertMailingStatistics(mailing, expected=5, delivered=5, sent=5, opened=1, replied=1)
 
     @users('user_marketing')
-    @mute_logger('odoo.addons.mail.models.mail_thread')
+    @mute_logger('weth.addons.mail.models.mail_thread')
     def test_mailing_trace_utm(self):
         """ Test mailing UTMs are caught on reply"""
         self._create_mailing_list()
@@ -457,7 +457,7 @@ class TestMassMailing(TestMassMailCommon):
             self.assertEqual(test_utm.utm_reference, mailing)
 
     @users('user_marketing')
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_mailing_w_blacklist(self):
         mailing = self.env['mailing.mailing'].browse(self.mailing_bl.ids)
         recipients = self._create_mailing_test_records(count=5)
@@ -510,7 +510,7 @@ class TestMassMailing(TestMassMailCommon):
         self.assertEqual(mailing.canceled, 0)
 
     @users('user_marketing')
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_mailing_w_blacklist_reset(self):
         """Check that we automatically use the exclusion list for mailing lists and contacts."""
         self.assertTrue(self.mailing_bl.use_exclusion_list)
@@ -521,7 +521,7 @@ class TestMassMailing(TestMassMailCommon):
             self.assertTrue(mailing.use_exclusion_list)
 
     @users('user_marketing')
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_mailing_w_blacklist_nomixin(self):
         """Test that blacklist is applied even if the target model doesn't inherit
         from mail.thread.blacklist."""
@@ -563,7 +563,7 @@ class TestMassMailing(TestMassMailCommon):
         self.assertEqual(mailing_no_blacklist.canceled, 0)
 
     @users('user_marketing')
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_mailing_w_opt_out(self):
         mailing = self.env['mailing.mailing'].browse(self.mailing_bl.ids)
         recipients = self._create_mailing_test_records(model='mailing.test.optout', count=5)
@@ -669,7 +669,7 @@ class TestMassMailing(TestMassMailCommon):
         self.assertEqual(len(self._mails), 7, 'Mailing: seen list should contain 3 existing traces')
 
     @users('user_marketing')
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_mailing_mailing_list_optout(self):
         """ Test mailing list model specific optout behavior """
         # as duplication checks body and subject, we create 2 exact copies to make sure only 1 is sent

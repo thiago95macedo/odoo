@@ -3,7 +3,7 @@
 
 from collections import defaultdict
 
-from odoo import models, api, fields, _
+from weth import models, api, fields, _
 
 
 class Data_RecycleRecord(models.Model):

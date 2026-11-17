@@ -1,6 +1,6 @@
 import { FrequentEmojiPlugin } from "@web/core/emoji_picker/frequent_emoji_plugin";
 import { Action } from "@mail/core/common/action";
-import { Component, signal, t, useListener, usePlugin, useProps } from "@odoo/owl";
+import { Component, signal, t, useListener, usePlugin, useProps } from "@weth/owl";
 import { Dropdown } from "@web/core/dropdown/dropdown";
 import { useDropdownState } from "@web/core/dropdown/dropdown_hooks";
 import { emojiLoader, useLoadEmoji } from "@web/core/emoji_picker/emoji_loader";

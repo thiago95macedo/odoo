@@ -1,8 +1,8 @@
 /** @ts-check */
 
-import * as spreadsheet from "@odoo/o-spreadsheet";
+import * as spreadsheet from "@weth/o-spreadsheet";
 import { waitForDataLoaded } from "@spreadsheet/helpers/model";
-import { animationFrame } from "@odoo/hoot-mock";
+import { animationFrame } from "@weth/hoot-mock";
 
 const { toCartesian, toZone, lettersToNumber, deepCopy, UuidGenerator } = spreadsheet.helpers;
 
@@ -10,7 +10,7 @@ const { toCartesian, toZone, lettersToNumber, deepCopy, UuidGenerator } = spread
  * @typedef {import("@spreadsheet").GlobalFilter} GlobalFilter
  * @typedef {import("@spreadsheet").CmdGlobalFilter} CmdGlobalFilter
  * @typedef {import("@spreadsheet").OdooSpreadsheetModel} OdooSpreadsheetModel
- * @typedef {import("@odoo/o-spreadsheet").UID} UID
+ * @typedef {import("@weth/o-spreadsheet").UID} UID
  */
 
 /**

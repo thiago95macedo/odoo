@@ -1,10 +1,10 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.fields import Command
-from odoo.tests.common import tagged
+from weth.fields import Command
+from weth.tests.common import tagged
 
-from odoo.addons.mail.tests.common import mail_new_test_user
-from odoo.addons.sale.tests.product_configurator_common import TestProductConfiguratorCommon
+from weth.addons.mail.tests.common import mail_new_test_user
+from weth.addons.sale.tests.product_configurator_common import TestProductConfiguratorCommon
 
 
 @tagged('post_install', '-at_install')

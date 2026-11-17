@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<odoo>
+<weth>
     <data>
 
         <!-- Alias Form View -->
@@ -133,4 +133,4 @@
         </record>
 
     </data>
-</odoo>
+</weth>

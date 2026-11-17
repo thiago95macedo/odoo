@@ -1,4 +1,4 @@
-import { Component, markup, proxy, t, useProps } from "@odoo/owl";
+import { Component, markup, proxy, t, useProps } from "@weth/owl";
 import { DocCopyablePre } from "@api_doc/components/doc_copyable_pre";
 import { DocRequest } from "@api_doc/components/doc_request";
 import { DocTable, TABLE_TYPES } from "@api_doc/components/doc_table";

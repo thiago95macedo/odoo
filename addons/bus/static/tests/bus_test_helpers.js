@@ -1,4 +1,4 @@
-import { after, expect, registerDebugInfo } from "@odoo/hoot";
+import { after, expect, registerDebugInfo } from "@weth/hoot";
 import {
     defineModels,
     getMockEnv,
@@ -13,11 +13,11 @@ import { getWebSocketWorker, onWebsocketEvent } from "./mock_websocket";
 
 import { BusPlugin } from "@bus/services/bus_plugin";
 import { WEBSOCKET_CLOSE_CODES } from "@bus/workers/websocket_worker";
-import { runAllTimers, waitUntil } from "@odoo/hoot-dom";
+import { runAllTimers, waitUntil } from "@weth/hoot-dom";
 import { registry } from "@web/core/registry";
 import { deepEqual } from "@web/core/utils/objects";
 import { patch } from "@web/core/utils/patch";
-import { useListener } from "@odoo/owl";
+import { useListener } from "@weth/owl";
 
 /**
  * @typedef {[
@@ -81,8 +81,7 @@ const expectNotification = ([env, type, payload, options], crashOnFail) => {
         (n) => n.type === type && (!hasPayload || matchPayload(n.payload, payload))
     );
     const message = (pass) =>
-        `Notification of type ${type} ${payload ? `with payload ${payload} ` : ""}${
-            pass && shouldHaveReceived ? "" : "not "
+        `Notification of type ${type} ${payload ? `with payload ${payload} ` : ""}${pass && shouldHaveReceived ? "" : "not "
         }received.`;
     if (found) {
         envNotifications.splice(envNotifications.indexOf(found), 1);
@@ -257,9 +256,8 @@ export async function waitForChannels(channels, { operation = "add" } = {}) {
         const message = (pass) =>
             pass
                 ? `Channel(s) ${channels} ${operation === "add" ? `added` : `deleted`}`
-                : `Waited ${TIMEOUT}ms for ${channels} to be ${
-                      operation === "add" ? `added` : `deleted`
-                  }`;
+                : `Waited ${TIMEOUT}ms for ${channels} to be ${operation === "add" ? `added` : `deleted`
+                }`;
         expect(success).toBe(true, { message });
         if (success) {
             resolveChannelUpdate();

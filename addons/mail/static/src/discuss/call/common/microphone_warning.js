@@ -1,4 +1,4 @@
-import { Component, useProps, types as t } from "@odoo/owl";
+import { Component, useProps, types as t } from "@weth/owl";
 import { useService } from "@web/core/utils/hooks";
 
 export class MicrophoneWarning extends Component {

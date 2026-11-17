@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.website_forum.models.forum_forum import MOST_USED_TAGS_COUNT
-from odoo.addons.website_forum.tests.common import KARMA, TestForumCommon
-from odoo.tests import tagged, users
+from weth.addons.website_forum.models.forum_forum import MOST_USED_TAGS_COUNT
+from weth.addons.website_forum.tests.common import KARMA, TestForumCommon
+from weth.tests import tagged, users
 
 
 @tagged('forum_internals')

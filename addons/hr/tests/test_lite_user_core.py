@@ -1,6 +1,6 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
-from odoo.exceptions import ValidationError
-from odoo.tests import TransactionCase, tagged
+from weth.exceptions import ValidationError
+from weth.tests import TransactionCase, tagged
 
 
 @tagged('-at_install', 'post_install', 'lite_user_core')

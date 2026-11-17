@@ -1,4 +1,4 @@
-import { EventBus } from "@odoo/owl";
+import { EventBus } from "@weth/owl";
 import { browser } from "../browser/browser";
 import { omit } from "../utils/objects";
 
@@ -48,7 +48,7 @@ export class ConnectionLostError extends Error {
     }
 }
 
-export class ConnectionAbortedError extends Error {}
+export class ConnectionAbortedError extends Error { }
 
 export class RequestEntityTooLargeError extends Error {
     constructor() {

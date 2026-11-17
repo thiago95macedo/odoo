@@ -1,11 +1,11 @@
 
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-import odoo.tests
-from odoo.tests.common import HttpCase
+import weth.tests
+from weth.tests.common import HttpCase
 
 
-@odoo.tests.tagged('-at_install', 'post_install')
+@weth.tests.tagged('-at_install', 'post_install')
 class TestHtmlBuilderAssetsBundle(HttpCase):
 
     @classmethod

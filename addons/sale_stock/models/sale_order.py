@@ -5,9 +5,9 @@ import logging
 
 from datetime import timedelta
 
-from odoo import api, fields, models, _
-from odoo.fields import Command
-from odoo.exceptions import UserError
+from weth import api, fields, models, _
+from weth.fields import Command
+from weth.exceptions import UserError
 
 
 _logger = logging.getLogger(__name__)

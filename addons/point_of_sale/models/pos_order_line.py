@@ -4,10 +4,10 @@ from uuid import uuid4
 
 from markupsafe import Markup
 
-from odoo import _, api, fields, models
-from odoo.exceptions import UserError, ValidationError
-from odoo.fields import Command
-from odoo.tools import float_is_zero
+from weth import _, api, fields, models
+from weth.exceptions import UserError, ValidationError
+from weth.fields import Command
+from weth.tools import float_is_zero
 
 
 class PosOrderLine(models.Model):

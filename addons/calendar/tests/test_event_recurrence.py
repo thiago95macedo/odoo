@@ -4,9 +4,9 @@ from datetime import datetime, date, UTC
 from zoneinfo import ZoneInfo
 
 from dateutil.relativedelta import relativedelta
-from odoo.exceptions import UserError
+from weth.exceptions import UserError
 
-from odoo.tests import tagged, Form, TransactionCase
+from weth.tests import tagged, Form, TransactionCase
 from freezegun import freeze_time
 
 

@@ -4,9 +4,9 @@
 from datetime import datetime, timedelta, time
 from unittest.mock import patch
 
-from odoo import Command, fields
+from weth import Command, fields
 from .common import PurchaseTestCommon
-from odoo.tests import tagged, Form, freeze_time
+from weth.tests import tagged, Form, freeze_time
 
 
 @tagged('at_install', '-post_install')  # LEGACY at_install
@@ -355,7 +355,7 @@ class TestPurchaseLeadTime(PurchaseTestCommon):
 
     def test_reordering_days_to_purchase(self):
         self.company.horizon_days = 0
-        self.patcher = patch('odoo.addons.stock.models.stock_orderpoint.fields.Date', wraps=fields.Date)
+        self.patcher = patch('weth.addons.stock.models.stock_orderpoint.fields.Date', wraps=fields.Date)
         self.mock_date = self.startPatcher(self.patcher)
 
         vendor = self.env['res.partner'].create({

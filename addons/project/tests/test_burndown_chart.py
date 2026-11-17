@@ -4,9 +4,9 @@ from collections import defaultdict
 from datetime import datetime
 from freezegun import freeze_time
 
-from odoo.fields import Command, Domain
-from odoo.tests.common import tagged, HttpCase
-from odoo.addons.mail.tests.common import MailCase
+from weth.fields import Command, Domain
+from weth.tests.common import tagged, HttpCase
+from weth.addons.mail.tests.common import MailCase
 
 from .test_project_base import TestProjectCommon
 

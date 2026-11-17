@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import http
-from odoo.tools import consteq
-from odoo.addons.pos_self_order.controllers.orders import PosSelfOrderController
+from weth import http
+from weth.tools import consteq
+from weth.addons.pos_self_order.controllers.orders import PosSelfOrderController
 from werkzeug.exceptions import NotFound, Unauthorized
 
 

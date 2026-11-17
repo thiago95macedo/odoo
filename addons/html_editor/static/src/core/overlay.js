@@ -8,7 +8,7 @@ import {
     useListener,
     useOnChange,
     xml,
-} from "@odoo/owl";
+} from "@weth/owl";
 import { OVERLAY_SYMBOL } from "@web/core/overlay/overlay_container";
 import { usePosition } from "@web/core/position/position_hook";
 import { getIFrame } from "@web/core/position/utils";

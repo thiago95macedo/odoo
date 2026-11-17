@@ -1,10 +1,10 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import Command
-from odoo.tests import tagged
-from odoo.tests.common import JsonRpcException
+from weth import Command
+from weth.tests import tagged
+from weth.tests.common import JsonRpcException
 
-from odoo.addons.pos_event.tests.test_frontend import TestUi
+from weth.addons.pos_event.tests.test_frontend import TestUi
 
 
 @tagged("post_install", "-at_install")

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' ?>
-<odoo>
+<weth>
 
     <record id="view_evaluation_report_graph" model="ir.ui.view">
         <field name="name">hr.holidays.graph</field>
@@ -1019,4 +1019,4 @@
         <field name="view_id" eval="False"/>
         <field name="act_window_id" ref="hr_leave_action_action_approve_department"/>
     </record>
-</odoo>
+</weth>

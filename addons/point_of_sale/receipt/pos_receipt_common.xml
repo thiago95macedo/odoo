@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<odoo>
+<weth>
     <data>
         <template id="point_of_sale.company_info_receipt">
             <table class="w-100 text-small mt-2">
@@ -134,4 +134,4 @@
             </style>
         </template>
     </data>
-</odoo>
+</weth>

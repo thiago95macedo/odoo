@@ -10,10 +10,10 @@ from cryptography.hazmat.primitives.asymmetric import ec, padding, rsa
 from cryptography.hazmat.primitives.asymmetric.utils import encode_dss_signature
 from cryptography.hazmat.primitives.hashes import SHA256
 
-from odoo.http import request
+from weth.http import request
 
-from odoo.addons.pos_bancontact_pay import const
-from odoo.addons.pos_bancontact_pay.errors.exceptions import (
+from weth.addons.pos_bancontact_pay import const
+from weth.addons.pos_bancontact_pay.errors.exceptions import (
     BancontactSignatureValidationError,
 )
 

@@ -8,9 +8,9 @@ import {
     startServer,
 } from "@mail/../tests/mail_test_helpers";
 import { UseForwardRefsToParent } from "@mail/utils/common/hooks";
-import { describe, test } from "@odoo/hoot";
-import { advanceTime, tick, waitFor } from "@odoo/hoot-dom";
-import { disableAnimations } from "@odoo/hoot-mock";
+import { describe, test } from "@weth/hoot";
+import { advanceTime, tick, waitFor } from "@weth/hoot-dom";
+import { disableAnimations } from "@weth/hoot-mock";
 import { router, routerBus } from "@web/core/browser/router";
 import { range } from "@web/core/utils/numbers";
 import { mountWebClient, patchWithCleanup } from "@web/../tests/web_test_helpers";
@@ -151,7 +151,7 @@ test("Chatter jumps when navigating to a specific message link", async () => {
     router.pushState(
         router.urlToState(
             new URL(
-                `${window.location.origin}/odoo/res.partner/${partnerId}?highlight_message_id=${messageIds[0]}`
+                `${window.location.origin}/weth/res.partner/${partnerId}?highlight_message_id=${messageIds[0]}`
             )
         ),
         { sync: true }

@@ -4,16 +4,16 @@
 from datetime import datetime
 from freezegun import freeze_time
 
-from odoo.addons.base.tests.test_ir_cron import CronMixinCase
-from odoo.addons.mass_mailing.tests.common import MassMailCommon
-from odoo.tests import tagged, users, Form
-from odoo.tools import mute_logger
+from weth.addons.base.tests.test_ir_cron import CronMixinCase
+from weth.addons.mass_mailing.tests.common import MassMailCommon
+from weth.tests import tagged, users, Form
+from weth.tools import mute_logger
 
 
 @tagged('at_install', '-post_install')  # LEGACY at_install
 class TestMailingScheduleDateWizard(MassMailCommon, CronMixinCase):
 
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     @users('user_marketing')
     def test_mailing_next_departure(self):
         # test if mailing.mailing.next_departure is correctly set taking into account

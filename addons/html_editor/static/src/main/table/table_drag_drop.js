@@ -5,7 +5,7 @@ import {
 } from "@html_editor/utils/dom_info";
 import { closestElement } from "@html_editor/utils/dom_traversal";
 import { getColumnIndex, getRowIndex } from "@html_editor/utils/table";
-import { Component, onMounted, onWillUnmount, signal, t, useProps, useScope } from "@odoo/owl";
+import { Component, onMounted, onWillUnmount, signal, t, useProps, useScope } from "@weth/owl";
 
 const OVERLAY_CLAMP_OFFSET = 5;
 

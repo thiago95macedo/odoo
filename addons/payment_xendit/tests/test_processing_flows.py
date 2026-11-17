@@ -4,34 +4,34 @@ from unittest.mock import patch
 
 from werkzeug.urls import url_encode
 
-from odoo.exceptions import ValidationError
-from odoo.tests import tagged
-from odoo.tools import mute_logger
+from weth.exceptions import ValidationError
+from weth.tests import tagged
+from weth.tools import mute_logger
 
-from odoo.addons.payment import utils as payment_utils
-from odoo.addons.payment.tests.http_common import PaymentHttpCommon
-from odoo.addons.payment_xendit.controllers.main import XenditController
-from odoo.addons.payment_xendit.tests.common import XenditCommon
+from weth.addons.payment import utils as payment_utils
+from weth.addons.payment.tests.http_common import PaymentHttpCommon
+from weth.addons.payment_xendit.controllers.main import XenditController
+from weth.addons.payment_xendit.tests.common import XenditCommon
 
 
 @tagged("post_install", "-at_install")
 class TestProcessingFlows(XenditCommon, PaymentHttpCommon):
-    @mute_logger("odoo.addons.payment_xendit.controllers.main")
+    @mute_logger("weth.addons.payment_xendit.controllers.main")
     def test_webhook_notification_triggers_processing(self):
         """Test that receiving a valid webhook notification and signature verified triggers the
         processing of the payment data."""
         self._create_transaction("redirect")
         url = self._build_url(XenditController._webhook_url)
         with (
-            patch("odoo.addons.payment.utils.verify_signature"),
+            patch("weth.addons.payment.utils.verify_signature"),
             patch(
-                "odoo.addons.payment.models.payment_transaction.PaymentTransaction._record"
+                "weth.addons.payment.models.payment_transaction.PaymentTransaction._record"
             ) as record_mock,
         ):
             self._make_json_request(url, data=self.webhook_notification_data)
         self.assertEqual(record_mock.call_count, 1)
 
-    @mute_logger("odoo.addons.payment_xendit.controllers.main")
+    @mute_logger("weth.addons.payment_xendit.controllers.main")
     def test_webhook_notification_unwraps_envelope(self):
         """Test that webhook notifications wrapped in an `event` envelope are unwrapped before
         being recorded for processing."""
@@ -39,16 +39,16 @@ class TestProcessingFlows(XenditCommon, PaymentHttpCommon):
         url = self._build_url(XenditController._webhook_url)
         envelope = {"event": "payment_session.completed", "data": self.webhook_notification_data}
         with (
-            patch("odoo.addons.payment.utils.verify_signature"),
+            patch("weth.addons.payment.utils.verify_signature"),
             patch(
-                "odoo.addons.payment.models.payment_transaction.PaymentTransaction._record"
+                "weth.addons.payment.models.payment_transaction.PaymentTransaction._record"
             ) as record_mock,
         ):
             self._make_json_request(url, data=envelope)
         self.assertEqual(record_mock.call_count, 1)
         self.assertEqual(record_mock.call_args.args[0], self.webhook_notification_data)
 
-    @mute_logger("odoo.addons.payment_xendit.controllers.main")
+    @mute_logger("weth.addons.payment_xendit.controllers.main")
     def test_webhook_notification_tokenizes_on_activation_event(self):
         """Test that a `payment_token.activation` webhook notification tokenizes the
         transaction directly, bypassing the generic payment data processing."""
@@ -60,9 +60,9 @@ class TestProcessingFlows(XenditCommon, PaymentHttpCommon):
             "data": self.token_activation_notification_data,
         }
         with (
-            patch("odoo.addons.payment.utils.verify_signature"),
+            patch("weth.addons.payment.utils.verify_signature"),
             patch(
-                "odoo.addons.payment.models.payment_transaction.PaymentTransaction._tokenize"
+                "weth.addons.payment.models.payment_transaction.PaymentTransaction._tokenize"
             ) as tokenize_mock,
         ):
             self._make_json_request(url, data=envelope)
@@ -72,7 +72,7 @@ class TestProcessingFlows(XenditCommon, PaymentHttpCommon):
         self.assertEqual(tx.state, "draft", "The token status shouldn't update the tx state")
         self.assertFalse(tx.payment_data_ids, "The activation event should have been processed")
 
-    @mute_logger("odoo.addons.payment_xendit.controllers.main")
+    @mute_logger("weth.addons.payment_xendit.controllers.main")
     def test_webhook_notification_skips_activation_event_without_tokenize(self):
         """Test that a `payment_token.activation` webhook notification is ignored for a
         transaction that doesn't request tokenization."""
@@ -84,9 +84,9 @@ class TestProcessingFlows(XenditCommon, PaymentHttpCommon):
             "data": self.token_activation_notification_data,
         }
         with (
-            patch("odoo.addons.payment.utils.verify_signature"),
+            patch("weth.addons.payment.utils.verify_signature"),
             patch(
-                "odoo.addons.payment.models.payment_transaction.PaymentTransaction._tokenize"
+                "weth.addons.payment.models.payment_transaction.PaymentTransaction._tokenize"
             ) as tokenize_mock,
         ):
             self._make_json_request(url, data=envelope)
@@ -94,12 +94,12 @@ class TestProcessingFlows(XenditCommon, PaymentHttpCommon):
         self.assertEqual(tokenize_mock.call_count, 0)
         self.assertEqual(tx.state, "draft")
 
-    @mute_logger("odoo.addons.payment_xendit.controllers.main")
+    @mute_logger("weth.addons.payment_xendit.controllers.main")
     def test_webhook_notification_triggers_signature_check(self):
         """Test that receiving a webhook notification triggers a signature check."""
         self._create_transaction("redirect")
         url = self._build_url(XenditController._webhook_url)
-        with patch("odoo.addons.payment.utils.verify_signature") as signature_check_mock:
+        with patch("weth.addons.payment.utils.verify_signature") as signature_check_mock:
             self.opener.headers["x-callback-token"] = self.provider.xendit_webhook_token
             self._make_json_request(url, data=self.webhook_notification_data)
             self.opener.headers.pop("x-callback-token")
@@ -150,7 +150,7 @@ class TestProcessingFlows(XenditCommon, PaymentHttpCommon):
             url = self._build_url(f"{XenditController._return_url}?{url_params}")
 
             with patch(
-                "odoo.addons.payment.models.payment_transaction.PaymentTransaction"
+                "weth.addons.payment.models.payment_transaction.PaymentTransaction"
                 "._send_api_request",
                 return_value=self.webhook_notification_data,
             ) as make_request_mock:
@@ -162,7 +162,7 @@ class TestProcessingFlows(XenditCommon, PaymentHttpCommon):
             tx.state, "done", "A completed session status should confirm the transaction directly"
         )
 
-    @mute_logger("odoo.addons.payment_xendit.models.payment_transaction")
+    @mute_logger("weth.addons.payment_xendit.models.payment_transaction")
     def test_return_falls_back_to_pending_when_sync_fails(self):
         """Test that a successful return still sets the transaction to pending if the status
         check with Xendit fails, instead of leaving it stuck in draft."""
@@ -180,7 +180,7 @@ class TestProcessingFlows(XenditCommon, PaymentHttpCommon):
             url = self._build_url(f"{XenditController._return_url}?{url_params}")
 
             with patch(
-                "odoo.addons.payment.models.payment_transaction.PaymentTransaction"
+                "weth.addons.payment.models.payment_transaction.PaymentTransaction"
                 "._send_api_request",
                 side_effect=ValidationError("Xendit: nope"),
             ):
@@ -209,7 +209,7 @@ class TestProcessingFlows(XenditCommon, PaymentHttpCommon):
             url = self._build_url(f"{XenditController._return_url}?{url_params}")
 
             with patch(
-                "odoo.addons.payment.models.payment_transaction.PaymentTransaction"
+                "weth.addons.payment.models.payment_transaction.PaymentTransaction"
                 "._send_api_request",
                 return_value=self.payment_request_notification_data,
             ) as make_request_mock:

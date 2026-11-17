@@ -1,7 +1,7 @@
 import { setupInteractionWhiteList, startInteractions } from "@web/../tests/public/helpers";
 
-import { describe, expect, test } from "@odoo/hoot";
-import { click, microTick, queryOne } from "@odoo/hoot-dom";
+import { describe, expect, test } from "@weth/hoot";
+import { click, microTick, queryOne } from "@weth/hoot-dom";
 
 import { onRpc } from "@web/../tests/web_test_helpers";
 

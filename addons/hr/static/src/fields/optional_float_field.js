@@ -1,4 +1,4 @@
-import { useProps, t } from "@odoo/owl";
+import { useProps, t } from "@weth/owl";
 import { registry } from "@web/core/registry";
 import { floatField, FloatField, floatFieldProps } from "@web/views/fields/float/float_field";
 

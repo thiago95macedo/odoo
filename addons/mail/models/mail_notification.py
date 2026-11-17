@@ -2,11 +2,11 @@
 
 from dateutil.relativedelta import relativedelta
 
-from odoo import api, fields, models
-from odoo.exceptions import AccessError
-from odoo.tools.constants import GC_UNLINK_LIMIT
-from odoo.tools.translate import _
-from odoo.addons.mail.tools.discuss import Store
+from weth import api, fields, models
+from weth.exceptions import AccessError
+from weth.tools.constants import GC_UNLINK_LIMIT
+from weth.tools.translate import _
+from weth.addons.mail.tools.discuss import Store
 
 
 class MailNotification(models.Model):

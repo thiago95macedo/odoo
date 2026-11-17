@@ -1,6 +1,6 @@
-import { expect, test, describe } from "@odoo/hoot";
-import { click, queryAll, queryAllTexts } from "@odoo/hoot-dom";
-import { animationFrame } from "@odoo/hoot-mock";
+import { expect, test, describe } from "@weth/hoot";
+import { click, queryAll, queryAllTexts } from "@weth/hoot-dom";
+import { animationFrame } from "@weth/hoot-mock";
 
 import { mountView } from "@web/../tests/web_test_helpers";
 

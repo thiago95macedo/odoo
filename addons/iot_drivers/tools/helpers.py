@@ -20,10 +20,10 @@ import sentry_sdk
 import urllib3.util
 from werkzeug.exceptions import Locked
 
-from odoo import service
+from weth import service
 
-from odoo.addons.iot_drivers.tools import system
-from odoo.addons.iot_drivers.tools.system import (
+from weth.addons.iot_drivers.tools import system
+from weth.addons.iot_drivers.tools.system import (
     IOT_IDENTIFIER,
     IOT_RPI_CHAR,
     IOT_WINDOWS_CHAR,
@@ -93,7 +93,7 @@ def require_db(function):
 
 def save_conf_server(url, token, db_uuid, enterprise_code, db_name=None):
     """
-    Save server configurations in odoo.conf
+    Save server configurations in weth.conf
     :param url: The URL of the server
     :param token: The token to authenticate the server
     :param db_uuid: The database UUID
@@ -173,7 +173,7 @@ def download_iot_handlers(server_url=None):
 
 
 def compute_iot_handlers_addon_name(handler_kind, handler_file_name):
-    return "odoo.addons.iot_drivers.iot_handlers.{handler_kind}.{handler_name}".\
+    return "weth.addons.iot_drivers.iot_handlers.{handler_kind}.{handler_name}".\
         format(handler_kind=handler_kind, handler_name=handler_file_name.removesuffix('.py'))
 
 

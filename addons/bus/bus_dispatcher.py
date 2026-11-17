@@ -21,9 +21,9 @@ import psycopg2
 from psycopg2 import InterfaceError
 from psycopg2.pool import PoolError
 
-import odoo
-from odoo.service.server import CommonServer
-from odoo.tools import config
+import weth
+from weth.service.server import CommonServer
+from weth.tools import config
 
 from .session_helpers import check_sessions
 from .tools import orjson
@@ -286,7 +286,7 @@ class BusDispatcher(threading.Thread):
                 if self.is_alive():
                     return
                 self.start()
-                if not odoo.evented:
+                if not weth.evented:
                     pool_size = self.THREADED_POOL_SIZE
                 else:
                     available_cursors = config["db_maxconn_gevent"] or config["db_maxconn"]
@@ -317,7 +317,7 @@ class BusDispatcher(threading.Thread):
         db_system = config["db_system"]
         _logger.info("Bus._listener_loop listen imbus on db %s", db_system)
         with (
-            odoo.sql_db.db_connect(db_system).cursor() as cr,
+            weth.sql_db.db_connect(db_system).cursor() as cr,
             selectors.DefaultSelector() as sel,
         ):
             cr.execute("listen imbus")

@@ -1,4 +1,4 @@
-from odoo import Command, api, models
+from weth import Command, api, models
 
 
 class PosOrder(models.Model):

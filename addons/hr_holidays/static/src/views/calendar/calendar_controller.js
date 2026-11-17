@@ -7,7 +7,7 @@ import { CalendarController } from "@web/views/calendar/calendar_controller";
 
 import { serializeDate } from "@web/core/l10n/dates";
 
-import { onWillStart, usePlugin, providePlugins } from "@odoo/owl";
+import { onWillStart, usePlugin, providePlugins } from "@weth/owl";
 import { useLeaveCancelWizard, useNewAllocationRequest } from "../hooks";
 import { TimeOffPlugin } from "../time_off_plugin";
 import { TimeOffFormViewDialog } from "../view_dialog/form_view_dialog";
@@ -85,8 +85,8 @@ export class TimeOffCalendarController extends CalendarController {
                 this.model.load();
                 this.timeOffPlugin.updateDashboard();
             },
-            onRecordDeleted: (record) => {},
-            onLeaveCancelled: (record) => {},
+            onRecordDeleted: (record) => { },
+            onLeaveCancelled: (record) => { },
             size: "md",
             context: context,
         });
@@ -123,7 +123,7 @@ export class TimeOffCalendarController extends CalendarController {
                     await this.model.unlinkRecord(resId);
                     this.timeOffPlugin.updateDashboard();
                 },
-                cancel: () => {},
+                cancel: () => { },
             });
         } else {
             this.leaveCancelWizard(resId, () => {

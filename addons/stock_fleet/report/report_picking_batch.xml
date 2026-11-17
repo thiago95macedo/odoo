@@ -1,4 +1,4 @@
-<odoo>
+<weth>
     <template id="report_picking_batch_inherit" inherit_id="stock.report_picking_batch">
         <xpath expr="//div[hasclass('page')]/div[2]" position="after">
             <div t-if="o.dock_id">
@@ -31,4 +31,4 @@
             </t>
         </t>
     </template>
-</odoo>
+</weth>

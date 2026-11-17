@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import fields, models, api
-from odoo.fields import Domain
+from weth import fields, models, api
+from weth.fields import Domain
 
 
 class IrAttachment(models.Model):

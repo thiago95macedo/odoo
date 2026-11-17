@@ -1,6 +1,6 @@
 import { parseVersion } from "@mail/utils/common/misc";
 
-import { markup, proxy } from "@odoo/owl";
+import { markup, proxy } from "@weth/owl";
 
 import { browser } from "@web/core/browser/browser";
 import { registry } from "@web/core/registry";

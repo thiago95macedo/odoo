@@ -2,16 +2,16 @@
 
 from unittest.mock import patch
 
-from odoo import Command
-from odoo.exceptions import ValidationError
-from odoo.tests import tagged
-from odoo.tools import mute_logger
+from weth import Command
+from weth.exceptions import ValidationError
+from weth.tests import tagged
+from weth.tools import mute_logger
 
-from odoo.addons.payment.tests.http_common import PaymentHttpCommon
-from odoo.addons.payment_paypal import const
-from odoo.addons.payment_paypal import utils as paypal_utils
-from odoo.addons.payment_paypal.controllers.main import PaypalController
-from odoo.addons.payment_paypal.tests.common import PaypalCommon
+from weth.addons.payment.tests.http_common import PaymentHttpCommon
+from weth.addons.payment_paypal import const
+from weth.addons.payment_paypal import utils as paypal_utils
+from weth.addons.payment_paypal.controllers.main import PaypalController
+from weth.addons.payment_paypal.tests.common import PaypalCommon
 
 
 @tagged("post_install", "-at_install")
@@ -20,11 +20,11 @@ class PaypalTest(PaypalCommon, PaymentHttpCommon):
         tx = self._create_transaction(flow="direct")
         with (
             patch(
-                "odoo.addons.payment.models.payment_provider.PaymentProvider._send_api_request",
+                "weth.addons.payment.models.payment_provider.PaymentProvider._send_api_request",
                 return_value={"id": self.order_id},
             ),
             patch(
-                "odoo.addons.payment.utils.generate_access_token",
+                "weth.addons.payment.utils.generate_access_token",
                 new=self._generate_test_access_token,
             ),
         ):
@@ -37,11 +37,11 @@ class PaypalTest(PaypalCommon, PaymentHttpCommon):
         tx = self._create_transaction(flow="redirect", payment_method_id=bancontact_pm)
         with (
             patch(
-                "odoo.addons.payment.models.payment_provider.PaymentProvider._send_api_request",
+                "weth.addons.payment.models.payment_provider.PaymentProvider._send_api_request",
                 return_value=self.apm_order_data,
             ),
             patch(
-                "odoo.addons.payment.utils.generate_access_token",
+                "weth.addons.payment.utils.generate_access_token",
                 new=self._generate_test_access_token,
             ),
         ):
@@ -59,14 +59,14 @@ class PaypalTest(PaypalCommon, PaymentHttpCommon):
             flow="direct", partner_id=self.public_user.partner_id.id, payment_method_id=paypal_pm
         )
         with patch(
-            "odoo.addons.payment.utils.generate_access_token", new=self._generate_test_access_token
+            "weth.addons.payment.utils.generate_access_token", new=self._generate_test_access_token
         ):
             payload = tx._paypal_prepare_order_payload()
         customer_payload = payload["payment_source"]["paypal"]
         self.assertTrue("email_address" not in customer_payload)
         self.assertEqual(customer_payload["address"]["country_code"], self.company.country_id.code)
 
-    @mute_logger("odoo.addons.payment_paypal.controllers.main")
+    @mute_logger("weth.addons.payment_paypal.controllers.main")
     def test_complete_order_confirms_transaction(self):
         """Test the processing of a webhook notification."""
         self._disable_process_patcher()
@@ -101,28 +101,28 @@ class PaypalTest(PaypalCommon, PaymentHttpCommon):
         self.assertEqual(tx.state, "pending")
         self.assertEqual(tx.state_message, payload["pending_reason"])
 
-    @mute_logger("odoo.addons.payment_paypal.controllers.main")
+    @mute_logger("weth.addons.payment_paypal.controllers.main")
     def test_webhook_notification_confirms_transaction(self):
         """Test the processing of a webhook notification."""
         self._disable_process_patcher()
         tx = self._create_transaction("direct")
         url = self._build_url(const.WEBHOOK_ROUTE)
         with patch(
-            "odoo.addons.payment_paypal.controllers.main.PaypalController"
+            "weth.addons.payment_paypal.controllers.main.PaypalController"
             "._verify_notification_origin"
         ):
             self._make_json_request(url, data=self.payment_data)
         self._run_processing()
         self.assertEqual(tx.state, "done")
 
-    @mute_logger("odoo.addons.payment_paypal.controllers.main")
+    @mute_logger("weth.addons.payment_paypal.controllers.main")
     def test_order_declined_webhook_errors_transaction(self):
         """Test that a `CHECKOUT.ORDER.DECLINED` webhook notification errors the transaction."""
         self._disable_process_patcher()
         tx = self._create_transaction("redirect")
         url = self._build_url(const.WEBHOOK_ROUTE)
         with patch(
-            "odoo.addons.payment_paypal.controllers.main.PaypalController"
+            "weth.addons.payment_paypal.controllers.main.PaypalController"
             "._verify_notification_origin"
         ):
             self._make_json_request(url, data=self.declined_notification)
@@ -130,7 +130,7 @@ class PaypalTest(PaypalCommon, PaymentHttpCommon):
         self.assertEqual(tx.state, "error")
         self.assertEqual(tx.state_message, "The provided payment source cannot be used.")
 
-    @mute_logger("odoo.addons.payment_paypal.controllers.main")
+    @mute_logger("weth.addons.payment_paypal.controllers.main")
     def test_capture_denied_webhook_updates_tx_error_status(self):
         """Test that a `PAYMENT.CAPTURE.DENIED` webhook notification cancels the transaction.
 
@@ -151,26 +151,26 @@ class PaypalTest(PaypalCommon, PaymentHttpCommon):
         }
         url = self._build_url(const.WEBHOOK_ROUTE)
         with patch(
-            "odoo.addons.payment_paypal.controllers.main.PaypalController"
+            "weth.addons.payment_paypal.controllers.main.PaypalController"
             "._verify_notification_origin"
         ):
             self._make_json_request(url, data=denied_notification)
         self._run_processing()
         self.assertEqual(tx.state, "error")
 
-    @mute_logger("odoo.addons.payment_paypal.controllers.main")
+    @mute_logger("weth.addons.payment_paypal.controllers.main")
     def test_webhook_notification_triggers_origin_check(self):
         """Test that receiving a webhook notification triggers an origin check."""
         self._create_transaction("direct")
         url = self._build_url(const.WEBHOOK_ROUTE)
         with patch(
-            "odoo.addons.payment_paypal.controllers.main.PaypalController"
+            "weth.addons.payment_paypal.controllers.main.PaypalController"
             "._verify_notification_origin"
         ) as origin_check_mock:
             self._make_json_request(url, data=self.payment_data)
             self.assertEqual(origin_check_mock.call_count, 1)
 
-    @mute_logger("odoo.addons.payment_paypal.controllers.main", "odoo.http")
+    @mute_logger("weth.addons.payment_paypal.controllers.main", "weth.http")
     def test_webhook_notification_skips_processing_for_errored_txs(self):
         self._create_transaction("direct")
         PaymentTransaction = self.env.registry["payment.transaction"]
@@ -185,7 +185,7 @@ class PaypalTest(PaypalCommon, PaymentHttpCommon):
             self._make_json_request(url, data=self.payment_data)
             self.assertEqual(record_mock.call_count, 0)
 
-    @mute_logger("odoo.addons.payment_paypal.controllers.main")
+    @mute_logger("weth.addons.payment_paypal.controllers.main")
     def test_deferred_vaulting_creates_token_from_webhook(self):
         """A wallet vaulted asynchronously (vault.status APPROVED, no vault id) is tokenized from
         the VAULT.PAYMENT-TOKEN.CREATED webhook, correlated through the order id."""
@@ -215,7 +215,7 @@ class PaypalTest(PaypalCommon, PaymentHttpCommon):
         }
         url = self._build_url(PaypalController._webhook_url)
         with patch(
-            "odoo.addons.payment_paypal.controllers.main.PaypalController"
+            "weth.addons.payment_paypal.controllers.main.PaypalController"
             "._verify_notification_origin"
         ):
             self._make_json_request(url, data=notification)
@@ -226,7 +226,7 @@ class PaypalTest(PaypalCommon, PaymentHttpCommon):
         self.assertEqual(tx.token_id.payment_details, "buyer@example.com")
         self.assertFalse(tx.tokenize)
 
-    @mute_logger("odoo.addons.payment_paypal.controllers.main")
+    @mute_logger("weth.addons.payment_paypal.controllers.main")
     def test_paypal_token_payment(self):
         """A customer-present token payment is charged through `_send_payment_request` and recorded
         without any payer action."""
@@ -261,11 +261,11 @@ class PaypalTest(PaypalCommon, PaymentHttpCommon):
         }
         with (
             patch(
-                "odoo.addons.payment.models.payment_provider.PaymentProvider._send_api_request",
+                "weth.addons.payment.models.payment_provider.PaymentProvider._send_api_request",
                 return_value=completed_order,
             ),
             patch(
-                "odoo.addons.payment.utils.generate_access_token",
+                "weth.addons.payment.utils.generate_access_token",
                 new=self._generate_test_access_token,
             ),
         ):
@@ -282,7 +282,7 @@ class PaypalTest(PaypalCommon, PaymentHttpCommon):
         self.assertEqual(tx.state, "done")
         self.assertEqual(tx.provider_reference, capture_id)
         with patch(
-            "odoo.addons.payment.utils.generate_access_token", new=self._generate_test_access_token
+            "weth.addons.payment.utils.generate_access_token", new=self._generate_test_access_token
         ):
             payment_source = tx._paypal_prepare_order_payload()["payment_source"]["paypal"]
         self.assertNotIn("stored_credential", payment_source)
@@ -301,7 +301,7 @@ class PaypalTest(PaypalCommon, PaymentHttpCommon):
             flow="direct", sale_order_ids=[Command.set(order.ids)], payment_method_id=paypal_pm
         )
         with patch(
-            "odoo.addons.payment.utils.generate_access_token", new=self._generate_test_access_token
+            "weth.addons.payment.utils.generate_access_token", new=self._generate_test_access_token
         ):
             payload = tx._paypal_prepare_order_payload()
         self.assertEqual(
@@ -323,7 +323,7 @@ class PaypalTest(PaypalCommon, PaymentHttpCommon):
         # Set country to one where state is required
         self.partner.country_id = self.env.ref("base.us")
         with patch(
-            "odoo.addons.payment.utils.generate_access_token", new=self._generate_test_access_token
+            "weth.addons.payment.utils.generate_access_token", new=self._generate_test_access_token
         ):
             payload = tx._paypal_prepare_order_payload()
         self.assertEqual(
@@ -346,7 +346,7 @@ class PaypalTest(PaypalCommon, PaymentHttpCommon):
         ]
         shipping_partner = tx.sale_order_ids.partner_shipping_id = self.partner.child_ids
         with patch(
-            "odoo.addons.payment.utils.generate_access_token", new=self._generate_test_access_token
+            "weth.addons.payment.utils.generate_access_token", new=self._generate_test_access_token
         ):
             payload = tx._paypal_prepare_order_payload()
         self.assertEqual(

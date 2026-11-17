@@ -1,4 +1,4 @@
-<odoo>
+<weth>
     <data>
         <record id="uom_uom_view_form" model="ir.ui.view">
             <field name="name">uom.uom.view.form.inherit.account</field>
@@ -11,4 +11,4 @@
             </field>
         </record>
     </data>
-</odoo>
+</weth>

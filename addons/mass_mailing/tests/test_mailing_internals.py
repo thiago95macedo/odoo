@@ -11,14 +11,14 @@ from freezegun import freeze_time
 from psycopg2 import IntegrityError
 from unittest.mock import patch
 
-from odoo import Command
-from odoo.addons.base.tests.test_ir_cron import CronMixinCase
-from odoo.addons.mass_mailing.tests.common import MassMailCommon
-from odoo.exceptions import ValidationError, UserError
-from odoo.fields import Domain
-from odoo.sql_db import Cursor
-from odoo.tests import Form, HttpCase, users, tagged
-from odoo.tools import mute_logger
+from weth import Command
+from weth.addons.base.tests.test_ir_cron import CronMixinCase
+from weth.addons.mass_mailing.tests.common import MassMailCommon
+from weth.exceptions import ValidationError, UserError
+from weth.fields import Domain
+from weth.sql_db import Cursor
+from weth.tests import Form, HttpCase, users, tagged
+from weth.tools import mute_logger
 
 BASE_64_STRING = 'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII='
 
@@ -54,9 +54,9 @@ class TestMassMailValues(MassMailCommon):
                 return urls
             else:
                 return []
-        with patch("odoo.addons.mass_mailing.models.mailing.MailingMailing._get_image_by_url",
+        with patch("weth.addons.mass_mailing.models.mailing.MailingMailing._get_image_by_url",
                    new=patched_get_image), \
-             patch("odoo.addons.mass_mailing.models.mailing.MailingMailing._create_attachments_from_inline_images",
+             patch("weth.addons.mass_mailing.models.mailing.MailingMailing._create_attachments_from_inline_images",
                    new=patched_images_to_urls):
             mailing = self.env['mailing.mailing'].create({
                 'subject': 'Test',
@@ -96,7 +96,7 @@ class TestMassMailValues(MassMailCommon):
                     'token': attachment_token,
                 })
             return urls
-        with patch("odoo.addons.mass_mailing.models.mailing.MailingMailing._create_attachments_from_inline_images",
+        with patch("weth.addons.mass_mailing.models.mailing.MailingMailing._create_attachments_from_inline_images",
                    new=patched_images_to_urls):
             mailing = self.env['mailing.mailing'].create({
                     'subject': 'Test',
@@ -416,7 +416,7 @@ class TestMassMailValues(MassMailCommon):
             "The composer doesn't use the provided subject"
         )
 
-    @mute_logger('odoo.sql_db')
+    @mute_logger('weth.sql_db')
     @users('user_marketing')
     def test_mailing_trace_values(self):
         recipient = self.partner_employee
@@ -505,7 +505,7 @@ class TestMassMailValues(MassMailCommon):
         self.assertSetEqual(set(mail_thread_attachments.ids), {png_duplicate_of_svg_attachment.id, original_png_attachment.id})
 
     @users('user_marketing')
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_process_mailing_queue_without_html_body(self):
         """ Test mailing with past schedule date and without any html body """
         mailing = self.env['mailing.mailing'].create({
@@ -619,7 +619,7 @@ class TestMassMailFeatures(MassMailCommon, CronMixinCase):
         cls._create_mailing_list()
 
     @users('user_marketing')
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_mailing_cron_trigger(self):
         """ Technical test to ensure the cron is triggered at the correct
         time """
@@ -653,7 +653,7 @@ class TestMassMailFeatures(MassMailCommon, CronMixinCase):
                     self.assertLessEqual(capt.records.call_at, truth)
 
     @users('user_marketing')
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_mailing_deletion(self):
         """ Test deletion in various use case, depending on reply-to """
         # 1- Keep archives and reply-to set to 'answer = new thread'
@@ -726,7 +726,7 @@ class TestMassMailFeatures(MassMailCommon, CronMixinCase):
         self.assertEqual(len(self.mailing_list_1.contact_ids.message_ids), 3)
 
     @users('user_marketing')
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_mailing_on_res_partner(self):
         """ Test mailing on res.partner model: ensure default recipients are
         correctly computed """
@@ -762,16 +762,16 @@ class TestMassMailFeatures(MassMailCommon, CronMixinCase):
         )
 
     @users('user_marketing')
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_mailing_shortener(self):
         mailing = self.env['mailing.mailing'].create({
             'subject': 'TestShortener',
             'body_html': """<div>
 Hi,
 <t t-set="url" t-value="'www.weth.com.br'"/>
-<t t-set="httpurl" t-value="'https://www.odoo.eu'"/>
-Website0: <a id="url0" t-attf-href="https://www.odoo.tz/my/{{object.name}}">https://www.odoo.tz/my/<t t-out="object.name"/></a>
-Website1: <a id="url1" href="https://www.odoo.be">https://www.odoo.be</a>
+<t t-set="httpurl" t-value="'https://www.weth.eu'"/>
+Website0: <a id="url0" t-attf-href="https://www.weth.tz/my/{{object.name}}">https://www.weth.tz/my/<t t-out="object.name"/></a>
+Website1: <a id="url1" href="https://www.weth.be">https://www.weth.be</a>
 Website2: <a id="url2" t-attf-href="https://{{url}}">https://<t t-out="url"/></a>
 Website3: <a id="url3" t-att-href="httpurl"><t t-out="httpurl"/></a>
 External1: <a id="url4" href="https://www.example.com/foo/bar?baz=qux">Youpie</a>
@@ -800,10 +800,10 @@ Email: <a id="url5" href="mailto:test@weth.com.br">test@weth.com.br</a></div>"""
 
         for contact in self.mailing_list_1.contact_ids:
             new_mail = self._find_mail_mail_wrecord(contact)
-            for link_info in [('url0', 'https://www.odoo.tz/my/%s' % contact.name, True),
-                              ('url1', 'https://www.odoo.be', True),
+            for link_info in [('url0', 'https://www.weth.tz/my/%s' % contact.name, True),
+                              ('url1', 'https://www.weth.be', True),
                               ('url2', 'https://www.weth.com.br', True),
-                              ('url3', 'https://www.odoo.eu', True),
+                              ('url3', 'https://www.weth.eu', True),
                               ('url4', 'https://www.example.com/foo/bar?baz=qux', True),
                               ('url5', 'mailto:test@weth.com.br', False)]:
                 # TDE FIXME: why going to mail message id ? mail.body_html seems to fail, check
@@ -889,7 +889,7 @@ class TestMailingHeaders(MassMailCommon, HttpCase):
 @tagged('at_install', '-post_install')  # LEGACY at_install
 class TestMailingScheduleDateWizard(MassMailCommon):
 
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     @users('user_marketing')
     def test_mailing_schedule_date(self):
         mailing = self.env['mailing.mailing'].create({

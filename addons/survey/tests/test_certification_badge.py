@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.survey.tests import common
+from weth.addons.survey.tests import common
 from psycopg2 import IntegrityError
-from odoo.exceptions import AccessError
-from odoo.tests import tagged
+from weth.exceptions import AccessError
+from weth.tests import tagged
 
-from odoo.tools import mute_logger
+from weth.tools import mute_logger
 
 
 @tagged('at_install', '-post_install')  # LEGACY at_install
@@ -72,7 +72,7 @@ class TestCertificationBadge(common.TestSurveyCommon):
             'certification_badge_id': self.certification_badge.id
         })
         # set the same badge on another survey should fail:
-        with mute_logger('odoo.sql_db'):
+        with mute_logger('weth.sql_db'):
             with self.assertRaises(IntegrityError):
                 self.certification_survey_2.write({
                     'certification_give_badge': True,

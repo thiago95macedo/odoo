@@ -50,6 +50,6 @@ registerWebsitePreviewTour("blog_sidebar_with_date_and_tag", {}, () => [
     },
     {
         content: "Verify that 'Add some' button has the correct URL for navigating to the backend.",
-        trigger: ":iframe #edit-in-backend[href*='/odoo/website/blog.post/']",
+        trigger: ":iframe #edit-in-backend[href*='/weth/website/blog.post/']",
     },
 ]);

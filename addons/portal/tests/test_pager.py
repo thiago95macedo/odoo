@@ -1,6 +1,6 @@
-from odoo.tests.common import tagged, TransactionCase
+from weth.tests.common import tagged, TransactionCase
 
-from odoo.addons.portal.controllers.portal import pager
+from weth.addons.portal.controllers.portal import pager
 
 
 @tagged('at_install', '-post_install')  # LEGACY at_install

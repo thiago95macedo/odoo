@@ -1,4 +1,4 @@
-import { computed, useConfig, onWillStart, Plugin, Resource, signal, types } from "@odoo/owl";
+import { computed, useConfig, onWillStart, Plugin, Resource, signal, types } from "@weth/owl";
 import { _t } from "@web/core/l10n/translation";
 import { rpc } from "@web/core/network/rpc";
 import { user } from "@web/core/user";
@@ -217,9 +217,9 @@ export class TranslateModel extends Plugin {
         return change && !change.description
             ? change
             : this.termsMap()[lang] ||
-                  (this.fallbackLang() && lang !== this.fallbackLang()
-                      ? this.getValue(this.fallbackLang())
-                      : false);
+            (this.fallbackLang() && lang !== this.fallbackLang()
+                ? this.getValue(this.fallbackLang())
+                : false);
     }
 
     setValue(lang, value) {
@@ -280,7 +280,7 @@ export class TranslateModel extends Plugin {
         langStorage.set(lang);
     }
 
-    getTitle() {}
+    getTitle() { }
 
     getLangMenuItems(lang) {
         const term = this.termsByLang()[lang];

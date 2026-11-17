@@ -1,10 +1,10 @@
 import zipfile
 from io import BytesIO
 
-from odoo import models, fields, api, _
-from odoo.exceptions import ValidationError
-from odoo.fields import Domain
-from odoo.tools.misc import split_every
+from weth import models, fields, api, _
+from weth.exceptions import ValidationError
+from weth.fields import Domain
+from weth.tools.misc import split_every
 from werkzeug.urls import url_unquote
 
 

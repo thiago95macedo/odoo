@@ -1,5 +1,5 @@
 import { Avatar } from "@mail/views/web/fields/avatar/avatar";
-import { Component, useProps } from "@odoo/owl";
+import { Component, useProps } from "@weth/owl";
 import { registry } from "@web/core/registry";
 import { computeM2OProps, Many2One } from "@web/views/fields/many2one/many2one";
 import {

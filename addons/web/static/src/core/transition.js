@@ -8,7 +8,7 @@ import {
     useProps,
     useScope,
     xml,
-} from "@odoo/owl";
+} from "@weth/owl";
 
 // Allows to disable transitions globally, useful for testing (and maybe for
 // a reduced motion setting in the future?)
@@ -41,7 +41,7 @@ export function useTransition({
     initialVisibility = true,
     immediate = false,
     leaveDuration = 500,
-    onLeave = () => {},
+    onLeave = () => { },
 }) {
     const scope = useScope();
 

@@ -1,5 +1,5 @@
-import { describe, expect, test } from "@odoo/hoot";
-import { animationFrame, mockDate } from "@odoo/hoot-mock";
+import { describe, expect, test } from "@weth/hoot";
+import { animationFrame, mockDate } from "@weth/hoot-mock";
 import {
     defineSpreadsheetActions,
     defineSpreadsheetModels,
@@ -37,9 +37,9 @@ import { CommandResult } from "@spreadsheet/o_spreadsheet/cancelled_reason";
 import { localization } from "@web/core/l10n/localization";
 import { user } from "@web/core/user";
 
-import { Model } from "@odoo/o-spreadsheet";
+import { Model } from "@weth/o-spreadsheet";
 
-import * as spreadsheet from "@odoo/o-spreadsheet";
+import * as spreadsheet from "@weth/o-spreadsheet";
 import { waitForDataLoaded } from "@spreadsheet/helpers/model";
 import { Partner, Product } from "../../helpers/data";
 import { createSheet, deleteSheet } from "../../helpers/commands";
@@ -2435,11 +2435,11 @@ test("Can change display type of a measure", async function () {
     });
     // prettier-ignore
     expect(getFormattedValueGrid(model, "A1:D5")).toEqual({
-        A1: "Partner Pivot",      B1: "xphone",       C1: "xpad",         D1: "Total",
-        A2: "",                   B2: "Probability",  C2: "Probability",  D2: "Probability",
-        A3: "No",                 B3: "",             C3: "15.00",        D3: "15.00",
-        A4: "Yes",                B4: "10.00",        C4: "106.00",       D4: "116.00",
-        A5: "Total",              B5: "10.00",        C5: "121.00",       D5: "131.00",
+        A1: "Partner Pivot", B1: "xphone", C1: "xpad", D1: "Total",
+        A2: "", B2: "Probability", C2: "Probability", D2: "Probability",
+        A3: "No", B3: "", C3: "15.00", D3: "15.00",
+        A4: "Yes", B4: "10.00", C4: "106.00", D4: "116.00",
+        A5: "Total", B5: "10.00", C5: "121.00", D5: "131.00",
     });
 
     const pivotId = model.getters.getPivotIds()[0];
@@ -2448,11 +2448,11 @@ test("Can change display type of a measure", async function () {
 
     // prettier-ignore
     expect(getFormattedValueGrid(model, "A1:D5")).toEqual({
-        A1: "Partner Pivot",      B1: "xphone",       C1: "xpad",         D1: "Total",
-        A2: "",                   B2: "Probability",  C2: "Probability",  D2: "Probability",
-        A3: "No",                 B3: "0.00%",        C3: "11.45%",       D3: "11.45%",
-        A4: "Yes",                B4: "7.63%",        C4: "80.92%",       D4: "88.55%",
-        A5: "Total",              B5: "7.63%",        C5: "92.37%",       D5: "100.00%",
+        A1: "Partner Pivot", B1: "xphone", C1: "xpad", D1: "Total",
+        A2: "", B2: "Probability", C2: "Probability", D2: "Probability",
+        A3: "No", B3: "0.00%", C3: "11.45%", D3: "11.45%",
+        A4: "Yes", B4: "7.63%", C4: "80.92%", D4: "88.55%",
+        A5: "Total", B5: "7.63%", C5: "92.37%", D5: "100.00%",
     });
 
     updatePivotMeasureDisplay(model, pivotId, "probability:avg", {
@@ -2464,11 +2464,11 @@ test("Can change display type of a measure", async function () {
 
     // prettier-ignore
     expect(getFormattedValueGrid(model, "A1:D5")).toEqual({
-        A1: "Partner Pivot",      B1: "xphone",       C1: "xpad",         D1: "Total",
-        A2: "",                   B2: "Probability",  C2: "Probability",  D2: "Probability",
-        A3: "No",                 B3: "",             C3: "100.00%",      D3: "100.00%",
-        A4: "Yes",                B4: "",             C4: "706.67%",      D4: "773.33%",
-        A5: "Total",              B5: "",             C5: "",             D5: "",
+        A1: "Partner Pivot", B1: "xphone", C1: "xpad", D1: "Total",
+        A2: "", B2: "Probability", C2: "Probability", D2: "Probability",
+        A3: "No", B3: "", C3: "100.00%", D3: "100.00%",
+        A4: "Yes", B4: "", C4: "706.67%", D4: "773.33%",
+        A5: "Total", B5: "", C5: "", D5: "",
     });
 });
 
@@ -2571,11 +2571,11 @@ test("date are between two years are correctly grouped by weeks", async () => {
 
     // prettier-ignore
     expect(getFormattedValueGrid(model, "B1:D4")).toEqual({
-            B1: "2024",     C1: "",         D1: "2025",
-            B2: "W1 2024",  C2: "W1 2025",  D2: "W1 2025",
-            B3: "Foo",      C3: "Foo",      D3: "Foo",
-            B4: "11",       C4: "25",       D4: "14",
-        });
+        B1: "2024", C1: "", D1: "2025",
+        B2: "W1 2024", C2: "W1 2025", D2: "W1 2025",
+        B3: "Foo", C3: "Foo", D3: "Foo",
+        B4: "11", C4: "25", D4: "14",
+    });
 });
 
 test("date are between two years are correctly grouped by weeks and days", async () => {
@@ -2627,12 +2627,12 @@ test("date are between two years are correctly grouped by weeks and days", async
 
     // prettier-ignore
     expect(getFormattedValueGrid(model, "B1:E5")).toEqual({
-            B1: "2024",         C1: "",             D1: "",            E1: "2025",
-            B2: "W1 2024",      C2: "W1 2025",      D2: "",            E2: "W1 2025",
-            B3: "03 Jan 2024",  C3: "30 Dec 2024",  D3: "31 Dec 2024", E3: "01 Jan 2025",
-            B4: "Foo",          C4: "Foo",          D4: "Foo",         E4: "Foo",
-            B5: "11",           C5: "12",           D5: "13",          E5: "14",
-        })
+        B1: "2024", C1: "", D1: "", E1: "2025",
+        B2: "W1 2024", C2: "W1 2025", D2: "", E2: "W1 2025",
+        B3: "03 Jan 2024", C3: "30 Dec 2024", D3: "31 Dec 2024", E3: "01 Jan 2025",
+        B4: "Foo", C4: "Foo", D4: "Foo", E4: "Foo",
+        B5: "11", C5: "12", D5: "13", E5: "14",
+    })
 });
 
 test("Pivot headers day of week are still correct after updating the locale's week start day", async function () {

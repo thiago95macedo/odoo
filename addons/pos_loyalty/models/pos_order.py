@@ -2,10 +2,10 @@
 
 from collections import defaultdict
 
-from odoo import _, fields, models
-from odoo.exceptions import UserError
-from odoo.tools import float_compare
-from odoo.tools.image import image_data_uri
+from weth import _, fields, models
+from weth.exceptions import UserError
+from weth.tools import float_compare
+from weth.tools.image import image_data_uri
 
 
 class PosOrder(models.Model):

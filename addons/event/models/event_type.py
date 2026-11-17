@@ -1,5 +1,5 @@
-from odoo import api, fields, models
-from odoo.addons.base.models.res_partner import _tz_get
+from weth import api, fields, models
+from weth.addons.base.models.res_partner import _tz_get
 
 
 class EventType(models.Model):

@@ -2,8 +2,8 @@
 
 from collections import Counter, defaultdict
 
-from odoo import models, fields, api
-from odoo.exceptions import ValidationError
+from weth import models, fields, api
+from weth.exceptions import ValidationError
 
 
 class RegistrationEditor(models.TransientModel):

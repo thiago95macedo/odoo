@@ -1,4 +1,4 @@
-import { Component, usePlugin } from "@odoo/owl";
+import { Component, usePlugin } from "@weth/owl";
 import { DropdownItem } from "@web/core/dropdown/dropdown_item";
 import { registry } from "@web/core/registry";
 import { useService } from "@web/core/utils/hooks";

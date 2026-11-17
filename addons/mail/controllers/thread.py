@@ -5,12 +5,12 @@ from datetime import datetime
 from markupsafe import Markup
 from werkzeug.exceptions import NotFound
 
-from odoo.exceptions import UserError
-from odoo.http import request
-from odoo.tools.misc import verify_limited_field_access_token
+from weth.exceptions import UserError
+from weth.http import request
+from weth.tools.misc import verify_limited_field_access_token
 
-from odoo.addons.mail.controllers.store import StoreController
-from odoo.addons.mail.tools.discuss import Store, mail_route
+from weth.addons.mail.controllers.store import StoreController
+from weth.addons.mail.tools.discuss import Store, mail_route
 
 
 class ThreadController(StoreController):

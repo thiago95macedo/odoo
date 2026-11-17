@@ -1,4 +1,4 @@
-import { usePlugin } from "@odoo/owl";
+import { usePlugin } from "@weth/owl";
 import { Interaction } from "@web/public/interaction";
 import { registry } from "@web/core/registry";
 
@@ -67,9 +67,9 @@ export class GallerySlider extends Interaction {
             this.nbPerPage =
                 Math.floor(
                     indicatorWidth /
-                        (this.liEls.length > 0
-                            ? this.liEls[0].getBoundingClientRect().width
-                            : undefined)
+                    (this.liEls.length > 0
+                        ? this.liEls[0].getBoundingClientRect().width
+                        : undefined)
                 ) - 3; // - navigator - 1 to leave some space
             this.realNbPerPage = this.nbPerPage || 1;
             this.nbPages = Math.ceil(this.liEls.length / this.realNbPerPage);

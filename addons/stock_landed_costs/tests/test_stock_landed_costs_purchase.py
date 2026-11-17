@@ -1,12 +1,12 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 import unittest
 
-from odoo.addons.stock_landed_costs.tests.common import TestStockLandedCostsCommon
-from odoo.addons.stock_landed_costs.tests.test_stockvaluationlayer import TestStockValuationLCCommon
+from weth.addons.stock_landed_costs.tests.common import TestStockLandedCostsCommon
+from weth.addons.stock_landed_costs.tests.test_stockvaluationlayer import TestStockValuationLCCommon
 
-from odoo import fields
-from odoo.fields import Command, Date
-from odoo.tests import tagged, Form
+from weth import fields
+from weth.fields import Command, Date
+from weth.tests import tagged, Form
 
 
 @tagged('post_install', '-at_install')

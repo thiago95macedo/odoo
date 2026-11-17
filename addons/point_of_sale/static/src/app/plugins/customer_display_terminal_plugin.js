@@ -1,4 +1,4 @@
-import { Plugin, signal, usePlugin } from "@odoo/owl";
+import { Plugin, signal, usePlugin } from "@weth/owl";
 import { ORM } from "@web/core/orm_plugin";
 import { rpc } from "@web/core/network/rpc";
 import { formatCurrency } from "@web/core/currency";
@@ -141,7 +141,7 @@ export class CustomerDisplayTerminalPlugin extends Plugin {
         const payloadStr = JSON.stringify(payload);
         try {
             await this.orm.call("pos.config", "update_customer_display", [
-                [odoo.pos_config_id],
+                [weth.pos_config_id],
                 payloadStr,
                 this.context.identifier,
             ]);

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo noupdate="1">
+<weth noupdate="1">
     <record id="payment_methods_portal_entry" model="portal.entry">
         <field name="name">Payment Methods</field>
         <field name="description">Manage your payment methods</field>
@@ -9,4 +9,4 @@
         <field name="is_config_card" eval="True"/>
         <field name="sequence" eval="20"/>
     </record>
-</odoo>
+</weth>

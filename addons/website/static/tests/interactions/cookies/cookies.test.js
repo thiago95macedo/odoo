@@ -1,8 +1,8 @@
 import { startInteractions, setupInteractionWhiteList } from "@web/../tests/public/helpers";
 
-import { describe, expect, test } from "@odoo/hoot";
-import { click, queryOne, waitFor } from "@odoo/hoot-dom";
-import { advanceTime } from "@odoo/hoot-mock";
+import { describe, expect, test } from "@weth/hoot";
+import { click, queryOne, waitFor } from "@weth/hoot-dom";
+import { advanceTime } from "@weth/hoot-mock";
 
 import { cookie } from "@web/core/browser/cookie";
 
@@ -18,11 +18,10 @@ describe.current.tags("interaction_dev");
 function getCookiesBarTemplate(withToggleButton = false) {
     return `
         <div>
-            ${
-                withToggleButton
-                    ? '<a href="#" class="o_cookies_bar_toggle">Update Cookies Preferences</a>'
-                    : ""
-            }
+            ${withToggleButton
+            ? '<a href="#" class="o_cookies_bar_toggle">Update Cookies Preferences</a>'
+            : ""
+        }
             <div id="website_cookies_bar" class="s_popup o_snippet_invisible" data-name="Cookies Bar" data-vcss="001" data-invisible="1">
                 <div class="modal s_popup_bottom s_popup_no_backdrop o_cookies_discrete modal_shown"
                         style="display: none;"

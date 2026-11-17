@@ -1,4 +1,4 @@
-import { animationFrame, waitFor, queryFirst } from "@odoo/hoot-dom";
+import { animationFrame, waitFor, queryFirst } from "@weth/hoot-dom";
 import { contains } from "@web/../tests/web_test_helpers";
 import { clickBtn } from "./common";
 import { setupAttribute, setupAttributeNew } from "./product_page_util";

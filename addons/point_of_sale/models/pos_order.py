@@ -11,10 +11,10 @@ from dateutil.relativedelta import relativedelta
 from markupsafe import Markup
 from psycopg2.errors import UniqueViolation
 
-from odoo import _, api, fields, models
-from odoo.exceptions import ConcurrencyError, UserError, ValidationError
-from odoo.fields import Command, Domain
-from odoo.tools import (
+from weth import _, api, fields, models
+from weth.exceptions import ConcurrencyError, UserError, ValidationError
+from weth.fields import Command, Domain
+from weth.tools import (
     SQL,
     float_compare,
     float_is_zero,

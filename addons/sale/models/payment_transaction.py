@@ -4,7 +4,7 @@ from datetime import datetime
 
 from dateutil import relativedelta
 
-from odoo import SUPERUSER_ID, Command, api, fields, models
+from weth import SUPERUSER_ID, Command, api, fields, models
 
 
 class PaymentTransaction(models.Model):

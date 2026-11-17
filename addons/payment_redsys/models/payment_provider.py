@@ -15,10 +15,10 @@ except ImportError:
     # cryptography 42.0.8 and below
     from cryptography.hazmat.primitives.ciphers.algorithms import TripleDES
 
-from odoo import fields, models
-from odoo.tools.urls import urljoin
+from weth import fields, models
+from weth.tools.urls import urljoin
 
-from odoo.addons.payment_redsys import const
+from weth.addons.payment_redsys import const
 
 
 class PaymentProvider(models.Model):

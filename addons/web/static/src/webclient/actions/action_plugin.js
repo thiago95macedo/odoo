@@ -41,7 +41,7 @@ import {
     useProps,
     xml,
     useScope,
-} from "@odoo/owl";
+} from "@weth/owl";
 import { downloadReport, getReportUrl } from "./reports/utils";
 import { zip } from "@web/core/utils/arrays";
 import { isHtmlEmpty } from "@web/core/utils/html";
@@ -129,9 +129,9 @@ const DIALOG_SIZES = {
 // Errors
 // -----------------------------------------------------------------------------
 
-export class ControllerNotFoundError extends Error {}
+export class ControllerNotFoundError extends Error { }
 
-export class InvalidButtonParamsError extends Error {}
+export class InvalidButtonParamsError extends Error { }
 
 // -----------------------------------------------------------------------------
 // ActionManager
@@ -230,8 +230,8 @@ export function useActionManager(router = _router) {
                     )
                         ? [actionState.action, actionRegistry.get(actionState.action)]
                         : actionRegistry
-                              .getEntries()
-                              .find((a) => a[1].path === actionState.action) ?? [];
+                            .getEntries()
+                            .find((a) => a[1].path === actionState.action) ?? [];
                     if (actionRequestKey && clientAction) {
                         if (state.actionStack[index + 1]?.action === actionState.action) {
                             // client actions don't have multi-record views, so we can't go further to the next controller
@@ -376,7 +376,7 @@ export function useActionManager(router = _router) {
                 } catch (error) {
                     if (
                         error.exceptionName ===
-                        "odoo.addons.web.controllers.action.MissingActionError"
+                        "weth.addons.web.controllers.action.MissingActionError"
                     ) {
                         action = null;
                     } else {
@@ -721,19 +721,19 @@ export function useActionManager(router = _router) {
             target === "new"
                 ? []
                 : views
-                      .filter((v) => v.multiRecord === view.multiRecord)
-                      .map((v) => {
-                          const viewSwitcherEntry = {
-                              icon: v.icon,
-                              name: v.display_name,
-                              type: v.type,
-                              multiRecord: v.multiRecord,
-                          };
-                          if (view.type === v.type) {
-                              viewSwitcherEntry.active = true;
-                          }
-                          return viewSwitcherEntry;
-                      });
+                    .filter((v) => v.multiRecord === view.multiRecord)
+                    .map((v) => {
+                        const viewSwitcherEntry = {
+                            icon: v.icon,
+                            name: v.display_name,
+                            type: v.type,
+                            multiRecord: v.multiRecord,
+                        };
+                        if (view.type === v.type) {
+                            viewSwitcherEntry.active = true;
+                        }
+                        return viewSwitcherEntry;
+                    });
         const context = action.context || {};
         let groupBy = context.group_by || [];
         if (typeof groupBy === "string") {
@@ -1023,7 +1023,7 @@ export function useActionManager(router = _router) {
                         id: ++id,
                         Component: BlankComponent,
                         componentProps: {
-                            onMounted: () => {},
+                            onMounted: () => { },
                             withControlPanel: action.type === "ir.actions.act_window",
                         },
                     });
@@ -1293,8 +1293,7 @@ export function useActionManager(router = _router) {
         }
         if (unknown.length) {
             throw new Error(
-                `View types not defined ${unknown.join(", ")} found in act_window action ${
-                    action.id
+                `View types not defined ${unknown.join(", ")} found in act_window action ${action.id
                 }`
             );
         }
@@ -1886,7 +1885,7 @@ export function useActionManager(router = _router) {
                 await doAction(actionRequest, options);
             } catch (error) {
                 if (
-                    error.exceptionName === "odoo.addons.web.controllers.action.MissingActionError"
+                    error.exceptionName === "weth.addons.web.controllers.action.MissingActionError"
                 ) {
                     if (state.actionStack.length > 1) {
                         const newState = {

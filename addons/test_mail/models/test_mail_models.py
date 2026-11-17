@@ -1,4 +1,4 @@
-from odoo import api, fields, models, _
+from weth import api, fields, models, _
 
 
 class MailTestSimple(models.Model):

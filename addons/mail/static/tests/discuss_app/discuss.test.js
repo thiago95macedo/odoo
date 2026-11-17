@@ -29,7 +29,7 @@ import {
 import { htmlInsertText } from "@mail/../tests/mail_test_helpers_html";
 import { Store } from "@mail/../tests/mock_server/store";
 
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@weth/hoot";
 import {
     animationFrame,
     press,
@@ -39,8 +39,8 @@ import {
     tick,
     waitFor,
     waitForNone,
-} from "@odoo/hoot-dom";
-import { mockDate } from "@odoo/hoot-mock";
+} from "@weth/hoot-dom";
+import { mockDate } from "@weth/hoot-mock";
 
 import { browser } from "@web/core/browser/browser";
 import { rpc } from "@web/core/network/rpc";

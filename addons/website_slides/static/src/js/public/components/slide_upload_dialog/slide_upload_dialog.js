@@ -1,4 +1,4 @@
-import { Component, onMounted, proxy, t, useProps } from "@odoo/owl";
+import { Component, onMounted, proxy, t, useProps } from "@weth/owl";
 import { Dialog } from "@web/core/dialog/dialog";
 import { DropdownItem } from "@web/core/dropdown/dropdown_item";
 import { redirect } from "@web/core/utils/urls";

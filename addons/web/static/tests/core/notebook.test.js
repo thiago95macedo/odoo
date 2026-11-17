@@ -1,8 +1,8 @@
 import { render } from "@web/owl2/utils";
-import { expect, test } from "@odoo/hoot";
-import { click, queryFirst } from "@odoo/hoot-dom";
-import { animationFrame } from "@odoo/hoot-mock";
-import { Component, t, useProps, xml } from "@odoo/owl";
+import { expect, test } from "@weth/hoot";
+import { click, queryFirst } from "@weth/hoot-dom";
+import { animationFrame } from "@weth/hoot-mock";
+import { Component, t, useProps, xml } from "@weth/owl";
 import { mountWithCleanup } from "@web/../tests/web_test_helpers";
 
 import { Notebook } from "@web/core/notebook/notebook";

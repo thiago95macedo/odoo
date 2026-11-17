@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.base.tests.common import HttpCaseWithUserDemo
-from odoo.addons.mass_mailing.tests.common import MassMailCommon
-from odoo.tests import tagged
+from weth.addons.base.tests.common import HttpCaseWithUserDemo
+from weth.addons.mass_mailing.tests.common import MassMailCommon
+from weth.tests import tagged
 
 
 @tagged('-at_install', 'post_install')

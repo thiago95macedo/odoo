@@ -2,13 +2,13 @@
 
 from unittest.mock import patch
 
-from odoo import fields
-from odoo.exceptions import UserError
-from odoo.fields import Command
-from odoo.tests import tagged
-from odoo.tools import format_date
-from odoo.addons.payment.tests.common import PaymentCommon
-from odoo.addons.point_of_sale.tests.test_frontend import TestPointOfSaleHttpCommon
+from weth import fields
+from weth.exceptions import UserError
+from weth.fields import Command
+from weth.tests import tagged
+from weth.tools import format_date
+from weth.addons.payment.tests.common import PaymentCommon
+from weth.addons.point_of_sale.tests.test_frontend import TestPointOfSaleHttpCommon
 import uuid
 
 
@@ -1533,7 +1533,7 @@ class TestPoSSalePayment(PoSSaleSyncCommon, TestPointOfSaleHttpCommon, PaymentCo
         self._disable_post_process_patcher()
         self.startPatcher(
             patch(
-                "odoo.addons.account_payment.models.payment_transaction.PaymentTransaction"
+                "weth.addons.account_payment.models.payment_transaction.PaymentTransaction"
                 "._post_process",
                 autospec=True,
             )

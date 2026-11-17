@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
     <record id="uom_uom_view_list" model="ir.ui.view">
         <field name="name">uom.uom.view.list.inherit.stock</field>
         <field name="model">uom.uom</field>
@@ -34,4 +34,4 @@
             </div>
         </field>
     </record>
-</odoo>
+</weth>

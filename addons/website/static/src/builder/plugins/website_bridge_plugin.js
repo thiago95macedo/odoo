@@ -23,7 +23,7 @@ export class WebsiteBridgePlugin extends Plugin {
     ];
     ensureModuleLoader() {
         if (!this.moduleLoader) {
-            this.moduleLoader = this.window.odoo.loader;
+            this.moduleLoader = this.window.weth.loader;
         }
     }
     getModule(moduleName) {

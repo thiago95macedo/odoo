@@ -4,8 +4,8 @@
 from ast import literal_eval
 import random
 
-from odoo import api, fields, models, _
-from odoo.exceptions import ValidationError, UserError
+from weth import api, fields, models, _
+from weth.exceptions import ValidationError, UserError
 
 
 class PosCategory(models.Model):

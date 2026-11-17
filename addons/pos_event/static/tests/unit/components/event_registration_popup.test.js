@@ -1,4 +1,4 @@
-import { expect, test } from "@odoo/hoot";
+import { expect, test } from "@weth/hoot";
 import { EventRegistrationPopup } from "@pos_event/app/components/popup/event_registration_popup/event_registration_popup";
 import { mountPosDialog, setupPosEnv } from "@point_of_sale/../tests/unit/utils";
 import { definePosModels } from "@point_of_sale/../tests/unit/data/generate_model_definitions";
@@ -26,7 +26,7 @@ async function mountPopup({ onPayload } = {}) {
             payload = data;
             onPayload?.(data);
         },
-        close: () => {},
+        close: () => { },
     });
 
     return { comp, event, tickets, payloadRef: () => payload };
@@ -120,8 +120,8 @@ test("autofill first ticket with customer data", async () => {
     const comp = await mountPosDialog(EventRegistrationPopup, {
         event,
         data,
-        getPayload: () => {},
-        close: () => {},
+        getPayload: () => { },
+        close: () => { },
     });
 
     const [first, second] = comp.state.byRegistration.map((r) => r.questions);

@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import fields, models
-from odoo.addons.mail.tools.discuss import Store
+from weth import fields, models
+from weth.addons.mail.tools.discuss import Store
 
 
 class MessageMailLinkPreview(models.Model):

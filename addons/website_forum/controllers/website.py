@@ -1,6 +1,6 @@
-from odoo import http
+from weth import http
 
-from odoo.addons.website.controllers.main import Website
+from weth.addons.website.controllers.main import Website
 
 
 class ForumWebsite(Website):

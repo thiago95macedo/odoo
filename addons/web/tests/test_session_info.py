@@ -3,8 +3,8 @@
 import json
 from uuid import uuid4
 
-from odoo import Command
-from odoo.tests import tagged, common
+from weth import Command
+from weth.tests import tagged, common
 
 
 @tagged('at_install', '-post_install')  # LEGACY at_install

@@ -4,14 +4,14 @@ from datetime import datetime, timedelta
 
 from lxml import html
 
-from odoo import Command, fields
-from odoo.tests import HttpCase, tagged
-from odoo.tools import SQL
+from weth import Command, fields
+from weth.tests import HttpCase, tagged
+from weth.tools import SQL
 
-from odoo.addons.product.tests.test_product_attribute_value_config import (
+from weth.addons.product.tests.test_product_attribute_value_config import (
     TestProductAttributeValueCommon,
 )
-from odoo.addons.website_sale.tests.common import WebsiteSaleCommon
+from weth.addons.website_sale.tests.common import WebsiteSaleCommon
 
 
 @tagged("post_install", "-at_install")
@@ -140,7 +140,7 @@ class TestWebsiteSaleProductFilters(WebsiteSaleCommon, TestProductAttributeValue
 
         # A visitor / public user must not be able to guess the cost price of sold products through
         # the search domain
-        with self.assertLogs("odoo.http", "WARNING") as logs:
+        with self.assertLogs("weth.http", "WARNING") as logs:
             result = self.url_open(
                 "/website/snippet/filters",
                 json={

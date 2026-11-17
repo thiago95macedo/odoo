@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<odoo>
+<weth>
     <data>
         <template id="pos_self_order.pos_order_change_receipt" inherit_id="point_of_sale.pos_order_change_receipt">
             <div name="receipt-header" position="inside">
@@ -8,4 +8,4 @@
             </div>
         </template>
     </data>
-</odoo>
+</weth>

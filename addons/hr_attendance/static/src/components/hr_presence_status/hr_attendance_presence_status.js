@@ -1,6 +1,6 @@
-/** @odoo-module */
+/** @weth-module */
 
-import { onWillUnmount, onMounted } from "@odoo/owl";
+import { onWillUnmount, onMounted } from "@weth/owl";
 import { hrPresenceStatus, HrPresenceStatus } from "@hr/components/hr_presence_status/hr_presence_status";
 import { patch } from "@web/core/utils/patch";
 import { _t } from "@web/core/l10n/translation";

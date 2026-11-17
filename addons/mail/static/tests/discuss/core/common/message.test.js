@@ -7,7 +7,7 @@ import {
     startServer,
 } from "@mail/../tests/mail_test_helpers";
 
-import { describe, test } from "@odoo/hoot";
+import { describe, test } from "@weth/hoot";
 import { getOrigin } from "@web/core/utils/urls";
 
 describe.current.tags("desktop");

@@ -2,11 +2,11 @@
 
 from datetime import timedelta
 
-from odoo import api, fields, models
-from odoo.exceptions import UserError
-from odoo.tools.sql import escape_like_value
+from weth import api, fields, models
+from weth.exceptions import UserError
+from weth.tools.sql import escape_like_value
 
-from odoo.addons.base.models.ir_qweb_fields import nl2br_enclose
+from weth.addons.base.models.ir_qweb_fields import nl2br_enclose
 
 
 class WithdrawalRequest(models.Model):

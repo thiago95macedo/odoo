@@ -2,9 +2,9 @@ import { setupEditor } from "@html_editor/../tests/_helpers/editor";
 import { getContent } from "@html_editor/../tests/_helpers/selection";
 import { unformat } from "@html_editor/../tests/_helpers/format";
 import { insertText } from "@html_editor/../tests/_helpers/user_actions";
-import { describe, expect, test } from "@odoo/hoot";
-import { manuallyDispatchProgrammaticEvent, press, queryOne } from "@odoo/hoot-dom";
-import { animationFrame } from "@odoo/hoot-mock";
+import { describe, expect, test } from "@weth/hoot";
+import { manuallyDispatchProgrammaticEvent, press, queryOne } from "@weth/hoot-dom";
+import { animationFrame } from "@weth/hoot-mock";
 import { contains, defineModels, fields, models } from "@web/../tests/web_test_helpers";
 
 import { DYNAMIC_FIELD_PLUGINS } from "@html_editor/backend/dynamic_field/dynamic_field_plugin";
@@ -152,8 +152,8 @@ test("select all fields", async () => {
     await contains(":iframe t[t-out]").click();
     expect(getContent(el)).toBe(
         `<p data-selection-placeholder=""><br></p>` +
-            `<div>a[<t t-out="object.field" data-oe-expression-readable="human > expr" data-oe-t-inline="true" data-oe-protected="true" contenteditable="false">human > expr</t>]</div>` +
-            `<p data-selection-placeholder=""><br></p>`
+        `<div>a[<t t-out="object.field" data-oe-expression-readable="human > expr" data-oe-t-inline="true" data-oe-protected="true" contenteditable="false">human > expr</t>]</div>` +
+        `<p data-selection-placeholder=""><br></p>`
     );
 });
 
@@ -180,11 +180,11 @@ test("copy field", async () => {
     expect(getContent(el)).toBe(
         unformat(
             `<p data-selection-placeholder=""><br></p>` +
-                `<div>` +
-                `<t t-out="object.field" data-oe-expression-readable="human ... expr" data-oe-protected="true" contenteditable="false" data-oe-t-inline="true">human ... expr</t>[]a` +
-                `<t t-out="object.field" data-oe-expression-readable="human ... expr" data-oe-t-inline="true" data-oe-protected="true" contenteditable="false">human ... expr</t>` +
-                `</div>` +
-                `<p data-selection-placeholder=""><br></p>`
+            `<div>` +
+            `<t t-out="object.field" data-oe-expression-readable="human ... expr" data-oe-protected="true" contenteditable="false" data-oe-t-inline="true">human ... expr</t>[]a` +
+            `<t t-out="object.field" data-oe-expression-readable="human ... expr" data-oe-t-inline="true" data-oe-protected="true" contenteditable="false">human ... expr</t>` +
+            `</div>` +
+            `<p data-selection-placeholder=""><br></p>`
         )
     );
 });
@@ -227,8 +227,8 @@ test("edit fields and back", async () => {
     await animationFrame();
     expect(getContent(el)).toBe(
         `<p data-selection-placeholder=""><br></p>` +
-            `<div>[]a<t t-out="object.field" data-oe-expression-readable="human > expr" data-oe-demo="demo brol" data-oe-t-inline="true" data-oe-protected="true" contenteditable="false">demo brol</t></div>` +
-            `<p data-selection-placeholder=""><br></p>`
+        `<div>[]a<t t-out="object.field" data-oe-expression-readable="human > expr" data-oe-demo="demo brol" data-oe-t-inline="true" data-oe-protected="true" contenteditable="false">demo brol</t></div>` +
+        `<p data-selection-placeholder=""><br></p>`
     );
 });
 

@@ -3,13 +3,13 @@
 from freezegun import freeze_time
 from markupsafe import Markup
 
-from odoo import Command, fields
-from odoo.exceptions import AccessError
-from odoo.tests.common import users
-from odoo.addons.bus.tests.common import BusResult
-from odoo.addons.mail.tests.common import MailCommon
-from odoo.addons.mail.tools.discuss import Store
-from odoo.addons.im_livechat.tests.chatbot_common import ChatbotCase
+from weth import Command, fields
+from weth.exceptions import AccessError
+from weth.tests.common import users
+from weth.addons.bus.tests.common import BusResult
+from weth.addons.mail.tests.common import MailCommon
+from weth.addons.mail.tools.discuss import Store
+from weth.addons.im_livechat.tests.chatbot_common import ChatbotCase
 
 
 class TestImLivechatMessage(ChatbotCase, MailCommon):

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
 
 <template id="website.4xx_hide_error" inherit_id="http_routing.4xx" active="False">
     <t t-call="http_routing.http_error_container" position="replace">
@@ -41,4 +41,4 @@
     </t>
 </template>
 
-</odoo>
+</weth>

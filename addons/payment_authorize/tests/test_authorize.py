@@ -4,13 +4,13 @@ from unittest.mock import patch
 
 import requests
 
-from odoo.exceptions import ValidationError
-from odoo.tests import tagged
-from odoo.tools import mute_logger
+from weth.exceptions import ValidationError
+from weth.tests import tagged
+from weth.tools import mute_logger
 
-from odoo.addons.payment import utils as payment_utils
-from odoo.addons.payment_authorize.models.authorize_request import AuthorizeAPI
-from odoo.addons.payment_authorize.tests.common import AuthorizeCommon
+from weth.addons.payment import utils as payment_utils
+from weth.addons.payment_authorize.models.authorize_request import AuthorizeAPI
+from weth.addons.payment_authorize.tests.common import AuthorizeCommon
 
 
 @tagged("post_install", "-at_install")
@@ -31,16 +31,16 @@ class AuthorizeTest(AuthorizeCommon):
         """Test custom 'access_token' processing_values for authorize provider."""
         tx = self._create_transaction(flow="direct")
         with (
-            mute_logger("odoo.addons.payment.models.payment_transaction"),
+            mute_logger("weth.addons.payment.models.payment_transaction"),
             patch(
-                "odoo.addons.payment.utils.generate_access_token",
+                "weth.addons.payment.utils.generate_access_token",
                 new=self._generate_test_access_token,
             ),
         ):
             processing_values = tx._get_processing_values()
 
         with patch(
-            "odoo.addons.payment.utils.generate_access_token", new=self._generate_test_access_token
+            "weth.addons.payment.utils.generate_access_token", new=self._generate_test_access_token
         ):
             self.assertTrue(
                 payment_utils.check_access_token(
@@ -57,7 +57,7 @@ class AuthorizeTest(AuthorizeCommon):
         """Test that the amount validation is skipped when the API returns with an error."""
         tx = self._create_transaction("direct")
         with patch(
-            "odoo.addons.payment_authorize.models.authorize_request.AuthorizeAPI"
+            "weth.addons.payment_authorize.models.authorize_request.AuthorizeAPI"
             ".get_transaction_details",
             return_value={"err_code": "E00040", "err_msg": "The record cannot be found."},
         ):
@@ -69,12 +69,12 @@ class AuthorizeTest(AuthorizeCommon):
             })
         self.assertEqual(amount_data, None)  # Amount validation is skipped.
 
-    @mute_logger('odoo.addons.payment_authorize.models.authorize_request')
+    @mute_logger('weth.addons.payment_authorize.models.authorize_request')
     def test_get_transaction_details_raises_on_timeout(self):
         """Transport failures fetching details should raise ValidationError."""
         authorize_api = AuthorizeAPI(self.authorize)
         with patch(
-            'odoo.addons.payment_authorize.models.authorize_request.requests.post',
+            'weth.addons.payment_authorize.models.authorize_request.requests.post',
             side_effect=requests.exceptions.Timeout(),
         ):
             with self.assertRaises(ValidationError):
@@ -84,7 +84,7 @@ class AuthorizeTest(AuthorizeCommon):
         """Test that a ValidationError fetching details skips amount validation."""
         tx = self._create_transaction('direct')
         with patch(
-            'odoo.addons.payment_authorize.models.authorize_request.AuthorizeAPI'
+            'weth.addons.payment_authorize.models.authorize_request.AuthorizeAPI'
             '.get_transaction_details',
             side_effect=ValidationError(''),
         ):
@@ -100,7 +100,7 @@ class AuthorizeTest(AuthorizeCommon):
         """Test that voiding a transaction cancels it even if it's already confirmed."""
         source_tx = self._create_transaction("direct", state="done")
         with patch(
-            "odoo.addons.payment_authorize.models.authorize_request.AuthorizeAPI"
+            "weth.addons.payment_authorize.models.authorize_request.AuthorizeAPI"
             ".get_transaction_details",
             return_value={"transaction": {"authAmount": self.amount}},
         ):
@@ -109,7 +109,7 @@ class AuthorizeTest(AuthorizeCommon):
             })
         self.assertEqual(source_tx.state, "cancel")
 
-    @mute_logger("odoo.addons.payment_authorize.models.payment_transaction")
+    @mute_logger("weth.addons.payment_authorize.models.payment_transaction")
     def test_extract_token_values_maps_fields_correctly(self):
         tx = self._create_transaction("direct")
         payment_data = {
@@ -118,7 +118,7 @@ class AuthorizeTest(AuthorizeCommon):
             "profile_id": "987654321",
         }
         with patch(
-            "odoo.addons.payment_authorize.models.authorize_request.AuthorizeAPI"
+            "weth.addons.payment_authorize.models.authorize_request.AuthorizeAPI"
             ".create_customer_profile",
             return_value=payment_data,
         ):
@@ -150,11 +150,11 @@ class AuthorizeTest(AuthorizeCommon):
 
         with (
             patch(
-                "odoo.addons.payment.models.payment_transaction.PaymentTransaction._tokenize",
+                "weth.addons.payment.models.payment_transaction.PaymentTransaction._tokenize",
                 side_effect=tokenize,
             ),
             patch(
-                "odoo.addons.payment.models.payment_transaction.PaymentTransaction._void",
+                "weth.addons.payment.models.payment_transaction.PaymentTransaction._void",
                 side_effect=void,
             ),
         ):

@@ -29,5 +29,5 @@ def __getattr__(attr):
         return main
 
     # can't use relative import as that triggers a getattr first
-    import odoo.addons.web.controllers.main as main  # noqa: PLC0415
+    import weth.addons.web.controllers.main as main  # noqa: PLC0415
     return main

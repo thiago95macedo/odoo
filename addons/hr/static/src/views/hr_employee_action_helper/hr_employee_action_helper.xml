@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<odoo>
+<weth>
     <t t-name="hr.EmployeeActionHelper" t-inherit="web.ActionHelper" t-inherit-mode="primary">
         <xpath expr="//t[@t-if='this.showDefaultHelper']" position="after">
             <t t-elif="this.showOnboardingHelper">
@@ -56,4 +56,4 @@
             </t>
         </xpath>
     </t>
-</odoo>
+</weth>

@@ -2,8 +2,8 @@
 
 from markupsafe import Markup
 
-from odoo import api, fields, models, _
-from odoo.fields import Domain
+from weth import api, fields, models, _
+from weth.fields import Domain
 
 
 class SlideChannelPartner(models.Model):

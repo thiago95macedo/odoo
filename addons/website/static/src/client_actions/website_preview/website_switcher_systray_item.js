@@ -4,7 +4,7 @@ import { useService } from "@web/core/utils/hooks";
 import { Dropdown } from "@web/core/dropdown/dropdown";
 import { DropdownItem } from "@web/core/dropdown/dropdown_item";
 import { session } from "@web/session";
-import { Component, useProps } from "@odoo/owl";
+import { Component, useProps } from "@weth/owl";
 import { isHTTPSorNakedDomainRedirection } from "./utils";
 
 export class WebsiteSwitcherSystrayItem extends Component {
@@ -32,9 +32,9 @@ export class WebsiteSwitcherSystrayItem extends Component {
                 website.domain
                     ? {}
                     : {
-                          "data-tooltip": _t("This website does not have a domain configured."),
-                          "data-tooltip-position": "left",
-                      }
+                        "data-tooltip": _t("This website does not have a domain configured."),
+                        "data-tooltip-position": "left",
+                    }
             ),
             callback: () => {
                 if (

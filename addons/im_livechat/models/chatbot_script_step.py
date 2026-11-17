@@ -1,11 +1,11 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import _, api, models, fields
-from odoo.exceptions import UserError, ValidationError
-from odoo.fields import Command, Domain
-from odoo.tools import html2plaintext, email_normalize
-from odoo.addons.mail.tools.discuss import Store
-from odoo.addons.phone_validation.tools import phone_validation
+from weth import _, api, models, fields
+from weth.exceptions import UserError, ValidationError
+from weth.fields import Command, Domain
+from weth.tools import html2plaintext, email_normalize
+from weth.addons.mail.tools.discuss import Store
+from weth.addons.phone_validation.tools import phone_validation
 
 from collections import defaultdict
 from markupsafe import Markup

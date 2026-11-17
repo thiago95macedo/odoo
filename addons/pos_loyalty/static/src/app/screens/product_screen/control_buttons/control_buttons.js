@@ -1,4 +1,4 @@
-import { computed, usePlugin } from "@odoo/owl";
+import { computed, usePlugin } from "@weth/owl";
 import { ControlButtons } from "@point_of_sale/app/screens/product_screen/control_buttons/control_buttons";
 import { AlertDialog } from "@web/core/confirmation_dialog/confirmation_dialog";
 import { TextInputPopup } from "@point_of_sale/app/components/popups/text_input_popup/text_input_popup";

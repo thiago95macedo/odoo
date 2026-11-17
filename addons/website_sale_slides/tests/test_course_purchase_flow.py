@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.website_slides.tests import common
-from odoo.tests.common import tagged, users
+from weth.addons.website_slides.tests import common
+from weth.tests.common import tagged, users
 
 
 class TestCoursePurchaseFlow(common.SlidesCase):

@@ -1,10 +1,10 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 # ruff: noqa: PLW0642
 
-from odoo import SUPERUSER_ID, api, fields, models
-from odoo.exceptions import UserError
-from odoo.fields import Command
-from odoo.tools import formatLang
+from weth import SUPERUSER_ID, api, fields, models
+from weth.exceptions import UserError
+from weth.fields import Command
+from weth.tools import formatLang
 
 
 class SaleAdvancePaymentInv(models.TransientModel):

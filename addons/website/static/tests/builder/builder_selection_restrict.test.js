@@ -1,7 +1,7 @@
-import { expect, test } from "@odoo/hoot";
+import { expect, test } from "@weth/hoot";
 import { defineWebsiteModels, setupWebsiteBuilder } from "./website_helpers";
 import { getContent, setSelection } from "@html_editor/../tests/_helpers/selection";
-import { manuallyDispatchProgrammaticEvent, animationFrame } from "@odoo/hoot-dom";
+import { manuallyDispatchProgrammaticEvent, animationFrame } from "@weth/hoot-dom";
 import { unformat } from "@html_editor/../tests/_helpers/format";
 
 defineWebsiteModels();

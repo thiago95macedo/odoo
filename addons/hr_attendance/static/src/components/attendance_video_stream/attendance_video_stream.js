@@ -1,4 +1,4 @@
-import { Component, onMounted, onWillStart, onWillUnmount, signal, t, useProps } from "@odoo/owl";
+import { Component, onMounted, onWillStart, onWillUnmount, signal, t, useProps } from "@weth/owl";
 import { useCamera } from "@hr_attendance/components/hooks/use_camera";
 
 export class AttendanceVideoStream extends Component {

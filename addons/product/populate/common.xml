@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
     <record id="fake_products" model="populate.blueprint">
         <field name="name">Common - Products</field>
         <field name="definition_xml" type="xml">
@@ -16,4 +16,4 @@
             </create>
         </field>
     </record>
-</odoo>
+</weth>

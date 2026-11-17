@@ -1,6 +1,6 @@
 import { useLayoutEffect } from "@web/owl2/utils";
 import { Location } from '@website_sale_stock/js/location_selector/location/location';
-import { Component, onMounted, t, useProps } from '@odoo/owl';
+import { Component, onMounted, t, useProps } from '@weth/owl';
 
 export class LocationList extends Component {
     static components = { Location };

@@ -8,14 +8,14 @@ import psycopg2
 from dateutil import relativedelta
 from markupsafe import Markup
 
-from odoo import api, fields, models
-from odoo.exceptions import LockError, UserError, ValidationError
-from odoo.fields import Domain
-from odoo.tools import email_normalize_all, float_round
+from weth import api, fields, models
+from weth.exceptions import LockError, UserError, ValidationError
+from weth.fields import Domain
+from weth.tools import email_normalize_all, float_round
 
-from odoo.addons.payment import utils as payment_utils
-from odoo.addons.payment.const import CURRENCY_MINOR_UNITS, SENSITIVE_KEYS
-from odoo.addons.payment.logging import get_payment_logger
+from weth.addons.payment import utils as payment_utils
+from weth.addons.payment.const import CURRENCY_MINOR_UNITS, SENSITIVE_KEYS
+from weth.addons.payment.logging import get_payment_logger
 
 _logger = get_payment_logger(__name__, sensitive_keys=SENSITIVE_KEYS)
 
@@ -1381,7 +1381,7 @@ class PaymentTransaction(models.Model):
         This method serves as a helper to:
 
         1. Pass the transaction reference to the provider's
-           :meth:`~odoo.addons.payment.models.payment_provider.PaymentProvider._send_api_request`
+           :meth:`~weth.addons.payment.models.payment_provider.PaymentProvider._send_api_request`
            method.
         2. Set the transaction's state to `error` if the request fails, with the exception's message
            as the `state_message`.

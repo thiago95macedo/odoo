@@ -7,7 +7,7 @@ from datetime import datetime, UTC
 
 from dateutil.relativedelta import relativedelta
 
-from odoo.tests import tagged, TransactionCase, warmup
+from weth.tests import tagged, TransactionCase, warmup
 
 _logger = logging.getLogger(__name__)
 

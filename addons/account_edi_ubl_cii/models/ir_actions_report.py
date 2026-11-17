@@ -1,6 +1,6 @@
 import io
 
-from odoo import models
+from weth import models
 
 
 class IrActionsReport(models.Model):

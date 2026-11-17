@@ -1,6 +1,6 @@
-import { describe, expect, test } from "@odoo/hoot";
-import { animationFrame } from "@odoo/hoot-dom";
-import { Model, components, stores } from "@odoo/o-spreadsheet";
+import { describe, expect, test } from "@weth/hoot";
+import { animationFrame } from "@weth/hoot-dom";
+import { Model, components, stores } from "@weth/o-spreadsheet";
 import { createBasicChart } from "@spreadsheet/../tests/helpers/commands";
 import { makeSpreadsheetMockEnv } from "@spreadsheet/../tests/helpers/model";
 import { OdooDataProvider } from "@spreadsheet/data_sources/odoo_data_provider";

@@ -1,7 +1,7 @@
 import { Domain } from '@web/core/domain';
 import { rpc } from "@web/core/network/rpc";
 import { SearchModel } from '@web/search/search_model';
-import { onWillStart, proxy } from "@odoo/owl";
+import { onWillStart, proxy } from "@weth/owl";
 const { DateTime } = luxon;
 
 export class LunchSearchModel extends SearchModel {
@@ -52,7 +52,7 @@ export class LunchSearchModel extends SearchModel {
         this.lunchState.date = date;
         const weekday = this.lunchState.date.toJSDate().getDay();
         const domain_key = ['available_on_sun', 'available_on_mon', 'available_on_tue', 'available_on_wed',
-        'available_on_thu', 'available_on_fri', 'available_on_sat'][weekday];
+            'available_on_thu', 'available_on_fri', 'available_on_sat'][weekday];
         const filter = Object.values(this.searchItems).find(o => o['name'] === domain_key);
         this.deactivateGroup(filter.groupId)
         this.toggleSearchItem(filter.id);

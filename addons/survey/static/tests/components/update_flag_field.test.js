@@ -1,6 +1,6 @@
 import { defineMailModels } from "@mail/../tests/mail_test_helpers";
-import { expect, test } from "@odoo/hoot";
-import { animationFrame, manuallyDispatchProgrammaticEvent, queryOne } from "@odoo/hoot-dom";
+import { expect, test } from "@weth/hoot";
+import { animationFrame, manuallyDispatchProgrammaticEvent, queryOne } from "@weth/hoot-dom";
 import {
     contains,
     defineModels,
@@ -12,10 +12,10 @@ import {
 
 class Survey extends models.Model {
     question_and_page_ids = fields.One2many({ relation: "survey_question" });
-    session_speed_rating = fields.Boolean({ string: "Speed Reward", onChange: () => {} });
+    session_speed_rating = fields.Boolean({ string: "Speed Reward", onChange: () => { } });
     session_speed_rating_time_limit = fields.Integer({
         string: "Speed Reward Time (s)",
-        onChange: () => {},
+        onChange: () => { },
     });
 
     _records = [

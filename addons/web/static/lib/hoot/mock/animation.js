@@ -1,6 +1,6 @@
-/** @odoo-module */
+/** @weth-module */
 
-import { on } from "@odoo/hoot-dom";
+import { on } from "@weth/hoot-dom";
 import { MockEventTarget } from "../hoot_utils";
 import { ensureTest } from "../main_runner";
 
@@ -61,23 +61,23 @@ export class MockAnimation extends MockEventTarget {
         this.dispatchEvent(new AnimationPlaybackEvent("cancel"));
     }
 
-    commitStyles() {}
+    commitStyles() { }
 
     finish() {
         this.dispatchEvent(new AnimationPlaybackEvent("finish"));
     }
 
-    pause() {}
+    pause() { }
 
-    persist() {}
+    persist() { }
 
     play() {
         this.dispatchEvent(new AnimationPlaybackEvent("finish"));
     }
 
-    reverse() {}
+    reverse() { }
 
-    updatePlaybackRate() {}
+    updatePlaybackRate() { }
 }
 
 export function cleanupAnimations() {

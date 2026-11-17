@@ -2,7 +2,7 @@ import { useService, useAutofocus } from "@web/core/utils/hooks";
 import { useNestedSortable } from "@web/core/utils/nested_sortable";
 import wUtils from "@website/js/utils";
 import { WebsiteDialog } from "./dialog";
-import { Component, onWillStart, proxy, signal, useApp, useEffect, useProps, t } from "@odoo/owl";
+import { Component, onWillStart, proxy, signal, useApp, useEffect, useProps, t } from "@weth/owl";
 import { rpc } from "@web/core/network/rpc";
 import { isEmail } from "@web/core/utils/strings";
 import { AddPageDialog } from "@website/components/dialog/add_page_dialog";

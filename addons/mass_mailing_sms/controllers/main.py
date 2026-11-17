@@ -4,9 +4,9 @@
 import werkzeug
 from werkzeug.exceptions import NotFound
 
-from odoo import http, _
-from odoo.addons.phone_validation.tools import phone_validation
-from odoo.http import request
+from weth import http, _
+from weth.addons.phone_validation.tools import phone_validation
+from weth.http import request
 
 
 class MailingSMSController(http.Controller):
@@ -34,7 +34,7 @@ class MailingSMSController(http.Controller):
         check_res = self._check_trace(mailing_id, trace_code)
         found_traces = check_res.get('trace')
         if not found_traces:
-            return request.redirect('/odoo')
+            return request.redirect('/weth')
 
         valid_trace = request.env['mailing.trace'].sudo()
         sanitized_number = False
@@ -85,7 +85,7 @@ class MailingSMSController(http.Controller):
         """ Effectively opt-out or enter number in block list. """
         check_res = self._check_trace(mailing_id, trace_code)
         if not check_res.get('trace'):
-            return request.redirect('/odoo')
+            return request.redirect('/weth')
         # parse and validate number
         sms_number = post.get('sms_number', '').strip(' ')
         tocheck_number = sms_number

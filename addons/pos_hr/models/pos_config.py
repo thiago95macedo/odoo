@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import models, fields, api
-from odoo.fields import Domain
+from weth import models, fields, api
+from weth.fields import Domain
 
 _POS_ROLE_FIELDS = (
     'supervised_employee_ids',

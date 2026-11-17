@@ -3,8 +3,8 @@
 
 import re
 
-from odoo.release import ALPHA, url, version, version_info
-from odoo.tests import HttpCase, tagged
+from weth.release import ALPHA, url, version, version_info
+from weth.tests import HttpCase, tagged
 
 
 @tagged('-standard', 'external', 'post_install', '-at_install') # nightly is not a real tag

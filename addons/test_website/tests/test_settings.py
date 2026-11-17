@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-import odoo
-import odoo.tests
+import weth
+import weth.tests
 
 
-@odoo.tests.tagged('-at_install', 'post_install')
-class TestWebsiteSettings(odoo.tests.HttpCase):
+@weth.tests.tagged('-at_install', 'post_install')
+class TestWebsiteSettings(weth.tests.HttpCase):
 
     def test_01_multi_website_settings(self):
         self.env['website'].create({'name': "Website Test Settings", 'specific_user_account': True})

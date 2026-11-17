@@ -1,6 +1,6 @@
 /** @ts-check */
-import { describe, expect, test, beforeEach } from "@odoo/hoot";
-import { mockDate } from "@odoo/hoot-mock";
+import { describe, expect, test, beforeEach } from "@weth/hoot";
+import { mockDate } from "@weth/hoot-mock";
 import {
     getDateDomain,
     getDateRange,

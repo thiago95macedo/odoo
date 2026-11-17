@@ -2,17 +2,17 @@
 
 from unittest.mock import patch
 
-from odoo.exceptions import UserError
-from odoo.fields import Command
-from odoo.tests import JsonRpcException, tagged
-from odoo.tools import mute_logger
+from weth.exceptions import UserError
+from weth.fields import Command
+from weth.tests import JsonRpcException, tagged
+from weth.tools import mute_logger
 
-from odoo.addons.account_payment.tests.common import AccountPaymentCommon
-from odoo.addons.http_routing.tests.common import MockRequest
-from odoo.addons.mail.tests.common import MailCase
-from odoo.addons.payment.tests.http_common import PaymentHttpCommon
-from odoo.addons.sale.controllers.portal import CustomerPortal
-from odoo.addons.sale.tests.common import SaleCommon
+from weth.addons.account_payment.tests.common import AccountPaymentCommon
+from weth.addons.http_routing.tests.common import MockRequest
+from weth.addons.mail.tests.common import MailCase
+from weth.addons.payment.tests.http_common import PaymentHttpCommon
+from weth.addons.sale.controllers.portal import CustomerPortal
+from weth.addons.sale.tests.common import SaleCommon
 
 
 @tagged("-at_install", "post_install")
@@ -33,7 +33,7 @@ class TestSalePayment(AccountPaymentCommon, MailCase, PaymentHttpCommon, SaleCom
 
         cls.sale_order.prepayment_percent = 1.0
 
-    @mute_logger("odoo.http", "werkzeug")
+    @mute_logger("weth.http", "werkzeug")
     def test_payment_amount_must_not_be_less_than_prepayment_amount(self):
         """Test that accessing the portal page with a payment amount below prepayment amount raises
         an error."""
@@ -179,7 +179,7 @@ class TestSalePayment(AccountPaymentCommon, MailCase, PaymentHttpCommon, SaleCom
         tx = self._create_transaction(
             flow="redirect", sale_order_ids=[self.sale_order.id], state="done"
         )
-        with mute_logger("odoo.addons.sale.models.payment_transaction"), self.mock_mail_gateway():
+        with mute_logger("weth.addons.sale.models.payment_transaction"), self.mock_mail_gateway():
             self._run_post_processing()
 
         self.assertEqual(self.sale_order.state, "sale")
@@ -217,7 +217,7 @@ class TestSalePayment(AccountPaymentCommon, MailCase, PaymentHttpCommon, SaleCom
         tx = self._create_transaction(
             flow="redirect", sale_order_ids=[self.sale_order.id], state="done"
         )
-        with mute_logger("odoo.addons.sale.models.payment_transaction"), self.mock_mail_gateway():
+        with mute_logger("weth.addons.sale.models.payment_transaction"), self.mock_mail_gateway():
             self._run_post_processing()
 
         self.assertEqual(self.sale_order.state, "sale")
@@ -258,7 +258,7 @@ class TestSalePayment(AccountPaymentCommon, MailCase, PaymentHttpCommon, SaleCom
         tx = self._create_transaction(
             flow="redirect", sale_order_ids=[self.sale_order.id], state="done"
         )
-        with mute_logger("odoo.addons.sale.models.payment_transaction"), self.mock_mail_gateway():
+        with mute_logger("weth.addons.sale.models.payment_transaction"), self.mock_mail_gateway():
             self._run_post_processing()
 
         self.assertEqual(self.sale_order.state, "sale")
@@ -278,7 +278,7 @@ class TestSalePayment(AccountPaymentCommon, MailCase, PaymentHttpCommon, SaleCom
             state="done",
             reference="First partial payment",
         )
-        with mute_logger("odoo.addons.sale.models.payment_transaction"):
+        with mute_logger("weth.addons.sale.models.payment_transaction"):
             self._run_post_processing()
         self.assertEqual(first_tx.invoice_ids.amount_total, 200.0)
 
@@ -289,7 +289,7 @@ class TestSalePayment(AccountPaymentCommon, MailCase, PaymentHttpCommon, SaleCom
             state="done",
             reference="Second partial payment",
         )
-        with mute_logger("odoo.addons.sale.models.payment_transaction"):
+        with mute_logger("weth.addons.sale.models.payment_transaction"):
             self._run_post_processing()
         self.assertEqual(second_tx.invoice_ids.amount_total, 300.0)
 
@@ -300,7 +300,7 @@ class TestSalePayment(AccountPaymentCommon, MailCase, PaymentHttpCommon, SaleCom
             state="done",
             reference="Third partial payment",
         )
-        with mute_logger("odoo.addons.sale.models.payment_transaction"):
+        with mute_logger("weth.addons.sale.models.payment_transaction"):
             self._run_post_processing()
         self.assertEqual(third_tx.invoice_ids.amount_total, 225.0)
 
@@ -317,7 +317,7 @@ class TestSalePayment(AccountPaymentCommon, MailCase, PaymentHttpCommon, SaleCom
         tx = self._create_transaction(
             flow="redirect", sale_order_ids=[self.sale_order.id], state="done"
         )
-        with mute_logger("odoo.addons.sale.models.payment_transaction"):
+        with mute_logger("weth.addons.sale.models.payment_transaction"):
             self._run_post_processing()
 
         self.assertEqual(self.sale_order.state, "sale")
@@ -335,7 +335,7 @@ class TestSalePayment(AccountPaymentCommon, MailCase, PaymentHttpCommon, SaleCom
         tx = self._create_transaction(
             flow="redirect", sale_order_ids=[self.sale_order.id], state="done"
         )
-        with mute_logger("odoo.addons.sale.models.payment_transaction"):
+        with mute_logger("weth.addons.sale.models.payment_transaction"):
             self._run_post_processing()
 
         self.assertEqual(self.sale_order.state, "draft")
@@ -349,14 +349,14 @@ class TestSalePayment(AccountPaymentCommon, MailCase, PaymentHttpCommon, SaleCom
         self._create_transaction(
             flow="direct", sale_order_ids=[self.sale_order.id], state="done", reference="Split 1"
         )
-        with mute_logger("odoo.addons.sale.models.payment_transaction"):
+        with mute_logger("weth.addons.sale.models.payment_transaction"):
             self._run_post_processing()
         self.assertEqual(self.sale_order.state, "draft")
 
         self._create_transaction(
             flow="direct", sale_order_ids=[self.sale_order.id], state="done", reference="Split 2"
         )
-        with mute_logger("odoo.addons.sale.models.payment_transaction"):
+        with mute_logger("weth.addons.sale.models.payment_transaction"):
             self._run_post_processing()
         self.assertEqual(self.sale_order.state, "sale")
 
@@ -386,9 +386,9 @@ class TestSalePayment(AccountPaymentCommon, MailCase, PaymentHttpCommon, SaleCom
         self.amount = self.sale_order.amount_total
         self._create_transaction(flow="redirect", sale_order_ids=[self.sale_order.id], state="done")
         with (
-            mute_logger("odoo.addons.sale.models.payment_transaction"),
+            mute_logger("weth.addons.sale.models.payment_transaction"),
             patch(
-                "odoo.addons.sale.models.sale_order.SaleOrder._create_invoices",
+                "weth.addons.sale.models.sale_order.SaleOrder._create_invoices",
                 return_value=self.env["account.move"],
             ) as create_invoices_mock,
         ):
@@ -407,7 +407,7 @@ class TestSalePayment(AccountPaymentCommon, MailCase, PaymentHttpCommon, SaleCom
             state="done",
             reference="partial_tx_done",
         )
-        with mute_logger("odoo.addons.sale.models.payment_transaction"):
+        with mute_logger("weth.addons.sale.models.payment_transaction"):
             self._run_post_processing()
         partial_tx_pending = self._create_transaction(
             flow="direct",
@@ -471,7 +471,7 @@ class TestSalePayment(AccountPaymentCommon, MailCase, PaymentHttpCommon, SaleCom
         tx = self._create_transaction(
             flow="redirect", sale_order_ids=[self.sale_order.id], state="done"
         )
-        with mute_logger("odoo.addons.sale.models.payment_transaction"):
+        with mute_logger("weth.addons.sale.models.payment_transaction"):
             self._run_post_processing()
         payment = tx.payment_id
 
@@ -510,7 +510,7 @@ class TestSalePayment(AccountPaymentCommon, MailCase, PaymentHttpCommon, SaleCom
             sale_order_ids=[self.sale_order.id],
             state="done",
         )
-        with mute_logger("odoo.addons.sale.models.payment_transaction"):
+        with mute_logger("weth.addons.sale.models.payment_transaction"):
             self._run_post_processing()
 
         self.assertTrue(self.sale_order.state == "sale")
@@ -530,21 +530,21 @@ class TestSalePayment(AccountPaymentCommon, MailCase, PaymentHttpCommon, SaleCom
             state="done",
         )
 
-        with mute_logger("odoo.addons.sale.models.payment_transaction"):
+        with mute_logger("weth.addons.sale.models.payment_transaction"):
             self._run_post_processing()
 
         invoice = self.sale_order.invoice_ids
         self.assertTrue(len(invoice) == 1)
         self.assertTrue(invoice.line_ids[0].is_downpayment)
 
-    @mute_logger("odoo.http")
+    @mute_logger("weth.http")
     def test_transaction_route_rejects_unexpected_kwarg(self):
         url = self._build_url(f"/my/orders/{self.sale_order.id}/transaction")
         route_kwargs = {
             "access_token": self.sale_order._portal_ensure_token(),
             "partner_id": self.partner.id,  # This should be rejected.
         }
-        with self.assertRaises(JsonRpcException, msg="odoo.exceptions.ValidationError"):
+        with self.assertRaises(JsonRpcException, msg="weth.exceptions.ValidationError"):
             self.make_jsonrpc_request(url, route_kwargs)
 
     def test_partial_payment_confirm_order(self):
@@ -555,7 +555,7 @@ class TestSalePayment(AccountPaymentCommon, MailCase, PaymentHttpCommon, SaleCom
         self.amount = self.sale_order.amount_total / 2
 
         with patch(
-            "odoo.addons.sale.models.sale_order.SaleOrder._send_order_notification_mail"
+            "weth.addons.sale.models.sale_order.SaleOrder._send_order_notification_mail"
         ) as notification_mail_mock:
             tx_pending = self._create_transaction(
                 flow="direct",
@@ -636,7 +636,7 @@ class TestSalePayment(AccountPaymentCommon, MailCase, PaymentHttpCommon, SaleCom
         self.amount = sale_order.amount_total
         tx = self._create_transaction(flow="redirect", sale_order_ids=[sale_order.id], state="done")
 
-        with mute_logger("odoo.addons.sale.models.payment_transaction"):
+        with mute_logger("weth.addons.sale.models.payment_transaction"):
             tx.with_user(portal_user).sudo().with_context(payment_safe_write=True)._post_process()
 
         # Verify invoice was created and sent successfully
@@ -786,7 +786,7 @@ class TestSalePayment(AccountPaymentCommon, MailCase, PaymentHttpCommon, SaleCom
         tx = self._create_transaction(
             flow="redirect", sale_order_ids=[self.sale_order.id], state="done"
         )
-        with mute_logger("odoo.addons.sale.models.payment_transaction"):
+        with mute_logger("weth.addons.sale.models.payment_transaction"):
             self._run_post_processing()
 
         self.assertEqual(self.sale_order.state, "sale")

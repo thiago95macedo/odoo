@@ -6,13 +6,13 @@ import logging
 from ast import literal_eval
 from dateutil.relativedelta import relativedelta
 
-from odoo import api, fields, models, _
-from odoo.exceptions import AccessError, UserError
-from odoo.fields import Domain
-from odoo.tools.translate import LazyTranslate
+from weth import api, fields, models, _
+from weth.exceptions import AccessError, UserError
+from weth.fields import Domain
+from weth.tools.translate import LazyTranslate
 
-from odoo.addons.base.models.ir_mail_server import MailDeliveryException
-from odoo.addons.auth_signup.models.res_partner import SignupError
+from weth.addons.base.models.ir_mail_server import MailDeliveryException
+from weth.addons.auth_signup.models.res_partner import SignupError
 
 _logger = logging.getLogger(__name__)
 _lt = LazyTranslate(__name__)

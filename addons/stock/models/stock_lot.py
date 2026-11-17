@@ -5,9 +5,9 @@ from collections.abc import Iterable
 from re import findall as regex_findall, split as regex_split
 from collections import defaultdict
 
-from odoo import _, api, fields, models
-from odoo.exceptions import UserError, ValidationError
-from odoo.fields import Domain
+from weth import _, api, fields, models
+from weth.exceptions import UserError, ValidationError
+from weth.fields import Domain
 
 PY_OPERATORS = {
     '<': py_operator.lt,

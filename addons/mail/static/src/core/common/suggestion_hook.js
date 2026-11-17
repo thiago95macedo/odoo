@@ -6,7 +6,7 @@ import {
     generateSpecialMentionElement,
 } from "@mail/utils/common/format";
 import { useSearch } from "@mail/utils/common/hooks";
-import { proxy, t, useProps, useScope } from "@odoo/owl";
+import { proxy, t, useProps, useScope } from "@weth/owl";
 import { emojiType } from "@web/core/emoji_picker/emoji_loader";
 import { ConnectionAbortedError } from "@web/core/network/rpc";
 import { useService } from "@web/core/utils/hooks";
@@ -44,7 +44,7 @@ export const optionType = (store) =>
         unselectable: t.boolean().optional(),
     });
 
-/** @typedef {import("@odoo/owl").StripType<ReturnType<typeof optionType>>} Option */
+/** @typedef {import("@weth/owl").StripType<ReturnType<typeof optionType>>} Option */
 
 /**
  * @typedef {import("models").ResPartner
@@ -62,7 +62,7 @@ export class UseSuggestion {
 
     /**
      * @param {import("@web/env").OdooEnv} env
-     * @param {import("@odoo/owl").ReactiveValue<import("@html_editor/editor").Editor>} editor
+     * @param {import("@weth/owl").ReactiveValue<import("@html_editor/editor").Editor>} editor
      */
     constructor(env, editor) {
         this.env = env;

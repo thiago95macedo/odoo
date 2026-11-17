@@ -1,5 +1,5 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
-from odoo.tools.sql import SQL
+from weth.tools.sql import SQL
 
 from . import controllers, models, report
 

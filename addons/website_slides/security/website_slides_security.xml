@@ -1,4 +1,4 @@
-<odoo>
+<weth>
         <record model="res.groups.privilege" id="res_groups_privilege_elearning">
             <field name="name">eLearning</field>
             <field name="sequence">21</field>
@@ -20,4 +20,4 @@
             <field name="user_ids" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
         </record>
 
-        </odoo>
+        </weth>

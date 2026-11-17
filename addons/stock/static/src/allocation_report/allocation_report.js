@@ -1,4 +1,4 @@
-import { Component, computed, onWillStart, signal, useProps } from "@odoo/owl";
+import { Component, computed, onWillStart, signal, useProps } from "@weth/owl";
 import { CheckBox } from "@web/core/checkbox/checkbox";
 import { registry } from "@web/core/registry";
 import { Mutex } from "@web/core/utils/concurrency";

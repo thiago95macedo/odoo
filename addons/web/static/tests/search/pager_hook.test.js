@@ -1,5 +1,5 @@
-import { expect, test } from "@odoo/hoot";
-import { Component, proxy, xml } from "@odoo/owl";
+import { expect, test } from "@weth/hoot";
+import { Component, proxy, xml } from "@weth/owl";
 import {
     defineModels,
     getPagerLimit,
@@ -11,9 +11,9 @@ import {
 
 import { ControlPanel } from "@web/search/control_panel/control_panel";
 import { usePager } from "@web/search/pager_hook";
-import { animationFrame } from "@odoo/hoot-mock";
+import { animationFrame } from "@weth/hoot-mock";
 
-class Foo extends models.Model {}
+class Foo extends models.Model { }
 
 defineModels([Foo]);
 
@@ -26,7 +26,7 @@ test("pager is correctly displayed", async () => {
                 offset: 0,
                 limit: 10,
                 total: 50,
-                onUpdate: () => {},
+                onUpdate: () => { },
             }));
         }
     }
@@ -50,7 +50,7 @@ test("pager is correctly displayed on desktop", async () => {
                 offset: 0,
                 limit: 10,
                 total: 50,
-                onUpdate: () => {},
+                onUpdate: () => { },
             }));
         }
     }

@@ -1,4 +1,4 @@
-import { signal, Plugin, usePlugin, markRaw, proxy, onWillStart, useListener } from "@odoo/owl";
+import { signal, Plugin, usePlugin, markRaw, proxy, onWillStart, useListener } from "@weth/owl";
 import { BusPlugin } from "@bus/services/bus_plugin";
 import { ORM } from "@web/core/orm_plugin";
 import { Mutex } from "@web/core/utils/concurrency";
@@ -189,7 +189,7 @@ export class PosDataPlugin extends Plugin {
     }
 
     initializeWebsocket() {
-        this.onNotified = getOnNotified(this.bus, odoo.access_token);
+        this.onNotified = getOnNotified(this.bus, weth.access_token);
     }
 
     reconnectWebSocket() {
@@ -206,7 +206,7 @@ export class PosDataPlugin extends Plugin {
     }
 
     get databaseName() {
-        return `point-of-sale-${odoo.pos_config_id}-${odoo.info?.db}`;
+        return `point-of-sale-${weth.pos_config_id}-${weth.info?.db}`;
     }
 
     async resetIndexedDB() {
@@ -506,7 +506,7 @@ export class PosDataPlugin extends Plugin {
 
         let params = {};
 
-        if (odoo.debug === "assets") {
+        if (weth.debug === "assets") {
             window.performance.mark("pos_data_service_init");
         }
 
@@ -514,7 +514,7 @@ export class PosDataPlugin extends Plugin {
         let recordsWriteDate = {};
         let data;
 
-        const key = `pos_data_params_${odoo.pos_config_id}`;
+        const key = `pos_data_params_${weth.pos_config_id}`;
         params = JSON.parse(localStorage.getItem(key));
         if (params) {
             await this.initIndexedDB(params);
@@ -534,7 +534,7 @@ export class PosDataPlugin extends Plugin {
                     search_params: {},
                 };
                 data = await this.orm.call("pos.session", "load_data", [
-                    odoo.pos_session_id,
+                    weth.pos_session_id,
                     testLocalData,
                 ]);
                 params = this.getFieldsAndRelations(data);
@@ -1038,7 +1038,7 @@ export class PosDataPlugin extends Plugin {
             await this.callRelated(
                 "pos.session",
                 "load_data",
-                [odoo.pos_session_id, data],
+                [weth.pos_session_id, data],
                 {},
                 true,
                 false
@@ -1081,7 +1081,7 @@ export class PosDataPlugin extends Plugin {
         return await this.callRelated(
             "pos.session",
             "load_data",
-            [odoo.pos_session_id, loadDataParams],
+            [weth.pos_session_id, loadDataParams],
             {
                 context,
             },
@@ -1123,8 +1123,8 @@ export class PosDataPlugin extends Plugin {
             false,
             true
         );
-        const config = this.models["pos.config"].get(odoo.pos_config_id);
-        const session = this.models["pos.session"].get(odoo.pos_session_id);
+        const config = this.models["pos.config"].get(weth.pos_config_id);
+        const session = this.models["pos.session"].get(weth.pos_session_id);
         const orders = result["pos.order"] || [];
         for (const order of orders) {
             // A read started before the payment was committed must not reopen the order

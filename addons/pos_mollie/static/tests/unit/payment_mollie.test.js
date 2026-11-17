@@ -1,4 +1,4 @@
-import { waitUntil, expect, test, beforeEach } from "@odoo/hoot";
+import { waitUntil, expect, test, beforeEach } from "@weth/hoot";
 import { getFilledOrder, setupPosEnv } from "@point_of_sale/../tests/unit/utils";
 import { definePosModels } from "@point_of_sale/../tests/unit/data/generate_model_definitions";
 import { onRpc, patchWithCleanup } from "../../../../web/static/tests/web_test_helpers";

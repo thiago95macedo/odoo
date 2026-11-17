@@ -3,13 +3,13 @@
 from collections import defaultdict
 import contextlib
 
-from odoo import _, api, Command, fields, models, modules, tools
-from odoo.exceptions import UserError
-from odoo.http import request
-from odoo.tools import email_normalize, split_every
-from odoo.tools.misc import limited_field_access_token
-from odoo.addons.base.models.res_users import NO_GROUP_CHANGE_LOG
-from odoo.addons.mail.tools.discuss import Store
+from weth import _, api, Command, fields, models, modules, tools
+from weth.exceptions import UserError
+from weth.http import request
+from weth.tools import email_normalize, split_every
+from weth.tools.misc import limited_field_access_token
+from weth.addons.base.models.res_users import NO_GROUP_CHANGE_LOG
+from weth.addons.mail.tools.discuss import Store
 
 
 class ResUsers(models.Model):

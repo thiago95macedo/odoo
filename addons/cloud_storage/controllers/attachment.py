@@ -1,9 +1,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import _
-from odoo.http import request
-from odoo.addons.mail.controllers.attachment import AttachmentController
-from odoo.addons.mail.tools.discuss import mail_route
+from weth import _
+from weth.http import request
+from weth.addons.mail.controllers.attachment import AttachmentController
+from weth.addons.mail.tools.discuss import mail_route
 
 
 class CloudAttachmentController(AttachmentController):

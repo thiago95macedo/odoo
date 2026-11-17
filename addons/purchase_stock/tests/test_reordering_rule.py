@@ -5,13 +5,13 @@ from datetime import datetime as dt
 from datetime import timedelta as td
 from json import loads
 
-from odoo import SUPERUSER_ID, Command
-from odoo.fields import Date
-from odoo.tests import Form, tagged, freeze_time
-from odoo.tests.common import TransactionCase
-from odoo.tools import format_date
-from odoo.tools.date_utils import add
-from odoo.exceptions import UserError, ValidationError
+from weth import SUPERUSER_ID, Command
+from weth.fields import Date
+from weth.tests import Form, tagged, freeze_time
+from weth.tests.common import TransactionCase
+from weth.tools import format_date
+from weth.tools.date_utils import add
+from weth.exceptions import UserError, ValidationError
 
 
 @tagged('post_install', '-at_install')

@@ -1,12 +1,12 @@
 import { useSpreadsheetNotificationStore } from "@spreadsheet/hooks";
-import { Spreadsheet, Model, stores } from "@odoo/o-spreadsheet";
-import { Component, t, useProps } from "@odoo/owl";
+import { Spreadsheet, Model, stores } from "@weth/o-spreadsheet";
+import { Component, t, useProps } from "@weth/owl";
 
 const { useStoreProvider, useStore, ViewportsStore, ModelStore } = stores;
 
 /**
  * Component wrapping the <Spreadsheet> component from o-spreadsheet
- * to add user interactions extensions from odoo such as notifications,
+ * to add user interactions extensions from weth such as notifications,
  * error dialogs, etc.
  */
 export class SpreadsheetComponent extends Component {

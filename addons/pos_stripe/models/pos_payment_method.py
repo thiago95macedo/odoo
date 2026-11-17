@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 import werkzeug
 
-from odoo import fields, models, api, _
-from odoo.exceptions import ValidationError, UserError, AccessError
+from weth import fields, models, api, _
+from weth.exceptions import ValidationError, UserError, AccessError
 
 
 class PosPaymentMethod(models.Model):

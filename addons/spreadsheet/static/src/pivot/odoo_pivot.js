@@ -4,7 +4,7 @@ import { Domain } from "@web/core/domain";
 import { _t } from "@web/core/l10n/translation";
 import { user } from "@web/core/user";
 import { NO_RECORD_AT_THIS_POSITION, OdooPivotModel } from "./pivot_model";
-import { EvaluationError, PivotRuntimeDefinition, registries, helpers } from "@odoo/o-spreadsheet";
+import { EvaluationError, PivotRuntimeDefinition, registries, helpers } from "@weth/o-spreadsheet";
 import { LOADING_ERROR } from "@spreadsheet/data_sources/data_source";
 import { omit } from "@web/core/utils/objects";
 import { OdooPivotLoader } from "./odoo_pivot_loader";
@@ -22,11 +22,11 @@ const {
 } = helpers;
 
 /**
- * @typedef {import("@odoo/o-spreadsheet").FunctionResultObject} FunctionResultObject
- * @typedef {import("@odoo/o-spreadsheet").PivotMeasure} PivotMeasure
- * @typedef {import("@odoo/o-spreadsheet").PivotDomain} PivotDomain
- * @typedef {import("@odoo/o-spreadsheet").PivotDimension} PivotDimension
- * @typedef {import("@odoo/o-spreadsheet").PivotCoreMeasure} PivotCoreMeasure
+ * @typedef {import("@weth/o-spreadsheet").FunctionResultObject} FunctionResultObject
+ * @typedef {import("@weth/o-spreadsheet").PivotMeasure} PivotMeasure
+ * @typedef {import("@weth/o-spreadsheet").PivotDomain} PivotDomain
+ * @typedef {import("@weth/o-spreadsheet").PivotDimension} PivotDimension
+ * @typedef {import("@weth/o-spreadsheet").PivotCoreMeasure} PivotCoreMeasure
  * @typedef {import("@spreadsheet").WebPivotModelParams} WebPivotModelParams
  * @typedef {import("@spreadsheet").OdooPivot<OdooPivotRuntimeDefinition>} IPivot
  * @typedef {import("@spreadsheet").OdooFields} OdooFields
@@ -247,7 +247,7 @@ export class OdooPivot {
     }
 
     /**
-     * @param {import("@odoo/o-spreadsheet").Maybe<FunctionResultObject>[]} args
+     * @param {import("@weth/o-spreadsheet").Maybe<FunctionResultObject>[]} args
      *
      * @returns {PivotDomain}
      */
@@ -294,7 +294,7 @@ export class OdooPivot {
     }
 
     /**
-     * @param {import("@odoo/o-spreadsheet").Maybe<FunctionResultObject>[]} args
+     * @param {import("@weth/o-spreadsheet").Maybe<FunctionResultObject>[]} args
      * @returns {boolean}
      */
     areDomainArgsFieldsValid(args) {
@@ -693,7 +693,7 @@ pivotRegistry.add("ODOO", {
     ui: OdooPivot,
     definition: OdooPivotRuntimeDefinition,
     externalData: true,
-    onIterationEndEvaluation: () => {},
+    onIterationEndEvaluation: () => { },
     dateGranularities: [...granularities],
     datetimeGranularities: [...granularities, "hour_number", "minute_number", "second_number"],
     isMeasureCandidate: (field) =>

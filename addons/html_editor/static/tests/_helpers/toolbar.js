@@ -1,4 +1,4 @@
-import { waitFor } from "@odoo/hoot-dom";
+import { waitFor } from "@weth/hoot-dom";
 import { contains } from "@web/../tests/web_test_helpers";
 
 export async function expandToolbar() {

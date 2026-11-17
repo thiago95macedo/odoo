@@ -1,9 +1,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import http
-from odoo.fields import Domain
+from weth import http
+from weth.fields import Domain
 
-from odoo.addons.website_event_track.controllers.event_track import EventTrackController
+from weth.addons.website_event_track.controllers.event_track import EventTrackController
 
 
 class EventTrackLiveController(EventTrackController):

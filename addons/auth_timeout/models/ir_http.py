@@ -1,8 +1,8 @@
 import time
 
-from odoo import api, models
-from odoo.http import request
-from odoo.http.session import session_store
+from weth import api, models
+from weth.http import request
+from weth.http.session import session_store
 
 
 class IrHttp(models.AbstractModel):

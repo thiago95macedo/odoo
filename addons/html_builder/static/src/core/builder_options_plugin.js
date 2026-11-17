@@ -1,4 +1,4 @@
-import { proxy } from "@odoo/owl";
+import { proxy } from "@weth/owl";
 import { Plugin } from "@html_editor/plugin";
 import { uniqueId } from "@web/core/utils/functions";
 import { isRemovable } from "./remove_plugin";
@@ -16,7 +16,7 @@ import { renderToElement } from "@web/core/utils/render";
 import { omit } from "@web/core/utils/objects";
 
 /** @typedef {import("@html_builder/core/base_option_component").BaseOptionComponent} BaseOptionComponent */
-/** @typedef {import("@odoo/owl").Component} Component */
+/** @typedef {import("@weth/owl").Component} Component */
 /** @typedef {import("plugins").CSSSelector} CSSSelector */
 /** @typedef {import("plugins").LazyTranslatedString} LazyTranslatedString */
 /**
@@ -714,7 +714,7 @@ export class BuilderOptionsPlugin extends Plugin {
             .split("_")
             .map((s) => s[0].toUpperCase() + s.slice(1))
             .join("");
-        const OptionClass = { [optionName]: class extends extendedClass {} }[optionName];
+        const OptionClass = { [optionName]: class extends extendedClass { } }[optionName];
         const defaultComponents = { BorderConfigurator, ShadowOption };
         return Object.assign(OptionClass, optionAttributes, {
             components: { ...defaultComponents, ...(OptionClass.components || {}) },

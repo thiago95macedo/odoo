@@ -6,10 +6,10 @@ from collections import deque
 from werkzeug.datastructures import FileStorage
 from werkzeug.exceptions import UnprocessableEntity
 
-from odoo import _, http
-from odoo.http import request
-from odoo.http.stream import content_disposition
-from odoo.tools import osutil
+from weth import _, http
+from weth.http import request
+from weth.http.stream import content_disposition
+from weth.tools import osutil
 
 
 class TableExporter(http.Controller):

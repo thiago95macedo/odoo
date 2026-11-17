@@ -1,4 +1,4 @@
-import { Component, t, useProps } from "@odoo/owl";
+import { Component, t, useProps } from "@weth/owl";
 import { registry } from "@web/core/registry";
 import { render } from "@web/owl2/utils";
 import { ListRenderer } from "@web/views/list/list_renderer";

@@ -1,4 +1,4 @@
-import { useListener } from "@odoo/owl";
+import { useListener } from "@weth/owl";
 
 /**
  * Hook to add an external listener to the provided target (document or window),

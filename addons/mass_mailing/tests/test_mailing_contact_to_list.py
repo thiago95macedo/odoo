@@ -1,8 +1,8 @@
 from datetime import datetime
 
-from odoo import Command, exceptions
-from odoo.addons.mass_mailing.tests.common import MailingContactToListCommon
-from odoo.tests import Form, RecordCapturer, tagged, users, warmup
+from weth import Command, exceptions
+from weth.addons.mass_mailing.tests.common import MailingContactToListCommon
+from weth.tests import Form, RecordCapturer, tagged, users, warmup
 
 
 @tagged('mailing_list')

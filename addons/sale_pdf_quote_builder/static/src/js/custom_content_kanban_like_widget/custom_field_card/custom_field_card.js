@@ -1,4 +1,4 @@
-import { Component, useProps, signal, t, useEffect } from "@odoo/owl";
+import { Component, useProps, signal, t, useEffect } from "@weth/owl";
 import { _t } from "@web/core/l10n/translation";
 import { useAutoresize } from "@web/core/utils/autoresize";
 

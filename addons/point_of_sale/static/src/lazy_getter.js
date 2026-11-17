@@ -1,4 +1,4 @@
-import { computed } from "@odoo/owl";
+import { computed } from "@weth/owl";
 
 const mapObjectToKeyToDerived = new Map();
 /**

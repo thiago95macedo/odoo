@@ -7,12 +7,12 @@ from contextlib import contextmanager
 from datetime import timedelta
 from unittest.mock import patch
 
-from odoo.addons.crm.models.crm_lead import PARTNER_ADDRESS_FIELDS_TO_SYNC
-from odoo.addons.mail.tests.common import MailCase, mail_new_test_user
-from odoo.addons.phone_validation.tools import phone_validation
-from odoo.addons.sales_team.tests.common import TestSalesCommon
-from odoo.fields import Datetime
-from odoo import models, tools
+from weth.addons.crm.models.crm_lead import PARTNER_ADDRESS_FIELDS_TO_SYNC
+from weth.addons.mail.tests.common import MailCase, mail_new_test_user
+from weth.addons.phone_validation.tools import phone_validation
+from weth.addons.sales_team.tests.common import TestSalesCommon
+from weth.fields import Datetime
+from weth import models, tools
 
 INCOMING_EMAIL = """Return-Path: {return_path}
 X-Original-To: {to}
@@ -583,7 +583,7 @@ class TestLeadConvertCommon(TestCrmCommon):
 
         cls.lead_1.write({'date_open': Datetime.from_string('2020-01-15 11:30:00')})
 
-        cls.crm_lead_dt_patcher = patch('odoo.addons.crm.models.crm_lead.fields.Datetime', wraps=Datetime)
+        cls.crm_lead_dt_patcher = patch('weth.addons.crm.models.crm_lead.fields.Datetime', wraps=Datetime)
         cls.crm_lead_dt_mock = cls.startClassPatcher(cls.crm_lead_dt_patcher)
 
     @classmethod

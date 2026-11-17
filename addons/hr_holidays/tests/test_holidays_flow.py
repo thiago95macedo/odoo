@@ -7,15 +7,15 @@ from dateutil.relativedelta import relativedelta
 from freezegun import freeze_time
 from psycopg2 import IntegrityError
 
-from odoo.tests import reports as test_reports
-from odoo.tools import date_utils, mute_logger
+from weth.tests import reports as test_reports
+from weth.tools import date_utils, mute_logger
 
-from odoo.addons.hr_holidays.tests.common import TestHrHolidaysCommon
+from weth.addons.hr_holidays.tests.common import TestHrHolidaysCommon
 
 
 class TestHolidaysFlow(TestHrHolidaysCommon):
 
-    @mute_logger('odoo.addons.base.models.ir_access', 'odoo.models')
+    @mute_logger('weth.addons.base.models.ir_access', 'weth.models')
     def test_00_leave_request_flow_unlimited(self):
         """ Testing leave request flow: unlimited type of leave request """
         Requests = self.env['hr.leave']
@@ -83,7 +83,7 @@ class TestHolidaysFlow(TestHrHolidaysCommon):
         hol12_manager_group.action_approve()
         self.assertEqual(hol1_user_group.state, 'validate', 'hr_holidays: validates leave request should be in validate state')
 
-    @mute_logger('odoo.addons.base.models.ir_access', 'odoo.models')
+    @mute_logger('weth.addons.base.models.ir_access', 'weth.models')
     def test_01_leave_request_flow_limited(self):
         """ Testing leave request flow: limited type of leave request """
         with freeze_time('2022-01-15'):
@@ -310,7 +310,7 @@ class TestHolidaysFlow(TestHrHolidaysCommon):
             'request_date_to': date.today() + relativedelta(day=10),
             'employee_id': self.admin_employee.id,
         }
-        with mute_logger('odoo.sql_db'), self.assertRaises(IntegrityError):
+        with mute_logger('weth.sql_db'), self.assertRaises(IntegrityError):
             self.env['hr.leave'].create(leave_vals)
 
         leave_vals = {
@@ -322,7 +322,7 @@ class TestHolidaysFlow(TestHrHolidaysCommon):
         }
         leave = self.env['hr.leave'].create(leave_vals)
 
-        with mute_logger('odoo.sql_db'), self.assertRaises(IntegrityError):
+        with mute_logger('weth.sql_db'), self.assertRaises(IntegrityError):
             leave.write({
                 'request_date_from': date.today() + relativedelta(day=11),
                 'request_date_to': date.today() + relativedelta(day=10),

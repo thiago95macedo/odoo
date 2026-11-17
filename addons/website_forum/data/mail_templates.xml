@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo><data noupdate="1">
+<weth><data noupdate="1">
     <template id="forum_post_template_new_answer">
         <p>A new answer on <i t-out="object.forum_id.name"/> has been posted. Click here to access the question:</p>
         <t t-call="website_forum.forum_post_link" label.translate="See answer"/>
@@ -38,4 +38,4 @@
             </a>
         </p>
     </template>
-</data></odoo>
+</data></weth>

@@ -2,12 +2,12 @@
 
 from unittest.mock import patch
 
-from odoo.tests import tagged
+from weth.tests import tagged
 
-from odoo.addons.account_payment.controllers.portal import PortalAccount as AccountPaymentPortal
-from odoo.addons.account_payment_custom.controllers.portal import Portal
-from odoo.addons.account_payment_custom.tests.common import AccountPaymentCustomCommon
-from odoo.addons.http_routing.tests.common import MockRequest
+from weth.addons.account_payment.controllers.portal import PortalAccount as AccountPaymentPortal
+from weth.addons.account_payment_custom.controllers.portal import Portal
+from weth.addons.account_payment_custom.tests.common import AccountPaymentCustomCommon
+from weth.addons.http_routing.tests.common import MockRequest
 
 
 @tagged("-at_install", "post_install")

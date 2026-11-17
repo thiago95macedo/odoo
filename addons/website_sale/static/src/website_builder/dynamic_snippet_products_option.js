@@ -1,7 +1,7 @@
 import { BaseOptionComponent } from "@html_builder/core/base_option_component";
 import { useDomState } from "@html_builder/core/utils";
 import { useDynamicSnippetOption } from "@website/builder/plugins/options/dynamic_snippet_hook";
-import { onWillStart, proxy } from "@odoo/owl";
+import { onWillStart, proxy } from "@weth/owl";
 import { registry } from "@web/core/registry";
 
 export class DynamicSnippetProductsOption extends BaseOptionComponent {

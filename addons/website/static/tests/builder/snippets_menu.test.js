@@ -1,8 +1,8 @@
 import { WebsiteBuilderClientAction } from "@website/client_actions/website_preview/website_builder_action";
 import { setContent } from "@html_editor/../tests/_helpers/selection";
 import { insertText } from "@html_editor/../tests/_helpers/user_actions";
-import { expect, test } from "@odoo/hoot";
-import { animationFrame, click, press, queryAllTexts, queryOne, waitFor } from "@odoo/hoot-dom";
+import { expect, test } from "@weth/hoot";
+import { animationFrame, click, press, queryAllTexts, queryOne, waitFor } from "@weth/hoot-dom";
 import { contains, onRpc, patchWithCleanup } from "@web/../tests/web_test_helpers";
 import {
     defineWebsiteModels,

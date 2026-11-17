@@ -4,10 +4,10 @@ from cryptography.hazmat.primitives.asymmetric import ec, ed25519, rsa
 from cryptography.hazmat.primitives.serialization import pkcs12
 from datetime import datetime, timedelta, timezone
 
-from odoo.addons.certificate.tools import CertificateAdapter
-from odoo.exceptions import UserError
-from odoo.tests import TransactionCase, tagged
-from odoo.tools import BinaryBytes
+from weth.addons.certificate.tools import CertificateAdapter
+from weth.exceptions import UserError
+from weth.tests import TransactionCase, tagged
+from weth.tools import BinaryBytes
 
 
 @tagged('post_install', '-at_install')

@@ -9,15 +9,15 @@ from zoneinfo import ZoneInfo
 from dateutil.relativedelta import relativedelta
 from psycopg2 import IntegrityError
 
-from odoo import fields, exceptions, tests
-from odoo.addons.bus.tests.common import BusResult
-from odoo.addons.mail.tests.common import mail_new_test_user
-from odoo.addons.mail.tests.common_activity import ActivityScheduleCase
-from odoo.addons.test_mail.models.test_mail_models import MailTestActivity
-from odoo.tests import tagged, Form, HttpCase, users
-from odoo.fields import Domain
-from odoo.tests.common import freeze_time
-from odoo.tools import mute_logger
+from weth import fields, exceptions, tests
+from weth.addons.bus.tests.common import BusResult
+from weth.addons.mail.tests.common import mail_new_test_user
+from weth.addons.mail.tests.common_activity import ActivityScheduleCase
+from weth.addons.test_mail.models.test_mail_models import MailTestActivity
+from weth.tests import tagged, Form, HttpCase, users
+from weth.fields import Domain
+from weth.tests.common import freeze_time
+from weth.tools import mute_logger
 
 
 class TestActivityCommon(ActivityScheduleCase):
@@ -102,7 +102,7 @@ class TestActivityRights(TestActivityCommon):
             self.assertEqual(action['res_model'], 'mail.activity')
             self.assertEqual(action['res_id'], test_activity.id)
 
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_activity_security_user_access(self):
         """ Internal user can modify assigned or created or if write on document """
         def _employee_crash(records, operation):
@@ -190,7 +190,7 @@ class TestActivityRights(TestActivityCommon):
         found = self.env['mail.activity'].with_user(self.user_employee).search([('res_model', '=', 'mail.test.access.custo')])
         self.assertEqual(found, admin_activities[:2] + emp_new_1 + emp_new_2, 'Should respect _ge_mail_get_operation_for_mail_message_operationt_mail_message_access, reading non locked records')
 
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_activity_security_user_noaccess_automated(self):
         def _employee_crash(records, operation):
             """ If employee is test employee, consider they have no access on document """
@@ -342,7 +342,7 @@ class TestActivityFlow(TestActivityCommon):
             self.assertEqual(test_record.activity_ids, self.env['mail.activity'])
             self.assertEqual(test_record.message_ids[0].subtype_id, self.env.ref('mail.mt_activities'))
 
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_activity_notify_other_user(self):
         self.user_admin.notification_type = 'email'
         rec = self.test_record.with_user(self.user_employee)
@@ -365,7 +365,7 @@ class TestActivityFlow(TestActivityCommon):
         self.assertEqual(activity.create_uid, self.user_employee)
         self.assertEqual(activity.user_id, self.user_employee)
 
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('weth.addons.mail.models.mail_mail')
     def test_activity_dont_notify_no_user_change(self):
         self.user_employee.notification_type = 'email'
         activity = self.test_record.activity_schedule('test_mail.mail_act_test_todo', user_id=self.user_employee.id)
@@ -438,7 +438,7 @@ class TestActivityFlow(TestActivityCommon):
         with self.assertRaises(exceptions.UserError):
             self.env.ref('mail.mail_activity_data_todo').unlink()
 
-    @mute_logger('odoo.sql_db')
+    @mute_logger('weth.sql_db')
     def test_activity_values(self):
         """ Test activities are created with right model / res_id values linking
         to records without void values. 0 as res_id especially is not wanted. """

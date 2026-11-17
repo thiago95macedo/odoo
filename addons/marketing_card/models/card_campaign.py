@@ -1,8 +1,8 @@
 from datetime import date, datetime, UTC
 from zoneinfo import ZoneInfo
 
-from odoo import _, api, exceptions, fields, models, modules
-from odoo.tools import BinaryBytes, SQL
+from weth import _, api, exceptions, fields, models, modules
+from weth.tools import BinaryBytes, SQL
 
 from .card_template import TEMPLATE_DIMENSIONS
 

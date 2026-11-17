@@ -1,5 +1,5 @@
 import { CustomColorPicker } from "@html_editor/components/color_picker/custom_color_picker/custom_color_picker";
-import { Component, useProps, proxy, signal, t, useListener } from "@odoo/owl";
+import { Component, useProps, proxy, signal, t, useListener } from "@weth/owl";
 import { cookie } from "@web/core/browser/cookie";
 import { isMobileOS } from "@web/core/browser/feature_detection";
 import { Dropdown } from "@web/core/dropdown/dropdown";
@@ -50,10 +50,10 @@ export class ColorPicker extends Component {
         }),
         getUsedCustomColors: t.function().optional(() => () => []),
         applyColor: t.function(),
-        applyColorPreview: t.function().optional(() => () => {}),
-        applyColorResetPreview: t.function().optional(() => () => {}),
+        applyColorPreview: t.function().optional(() => () => { }),
+        applyColorResetPreview: t.function().optional(() => () => { }),
         editColorCombination: t.function().optional(),
-        setOnCloseCallback: t.function().optional(() => () => {}),
+        setOnCloseCallback: t.function().optional(() => () => { }),
         setOperationCallbacks: t.function().optional(),
         enabledTabs: t.array().optional(["solid", "custom"]),
         colorPrefix: t.string().optional(""),
@@ -61,10 +61,10 @@ export class ColorPicker extends Component {
         defaultOpacity: t.number().optional(100),
         grayscales: t.object().optional(),
         noTransparency: t.boolean().optional(),
-        close: t.function().optional(() => () => {}),
+        close: t.function().optional(() => () => { }),
         className: t.string().optional(),
         useDefaultThemeColors: t.boolean().optional(true),
-        onEscape: t.function().optional(() => () => {}),
+        onEscape: t.function().optional(() => () => { }),
     });
     rootRef = signal.ref();
 
@@ -84,9 +84,9 @@ export class ColorPicker extends Component {
         });
         this.defaultColor = this.props.state.selectedColor;
         this.focusedBtn = null;
-        this.onApplyCallback = () => {};
-        this.onPreviewRevertCallback = () => {};
-        this.getPreviewColor = () => {};
+        this.onApplyCallback = () => { };
+        this.onPreviewRevertCallback = () => { };
+        this.getPreviewColor = () => { };
         this.isMobileOS = isMobileOS();
 
         this.state = proxy({
@@ -140,7 +140,7 @@ export class ColorPicker extends Component {
     setTab(tab) {
         this.state.activeTab = tab;
         // Reset the preview revert callback, as it is tab-specific.
-        this.setOperationCallbacks({ onPreviewRevertCallback: () => {} });
+        this.setOperationCallbacks({ onPreviewRevertCallback: () => { } });
         this.applyColorResetPreview();
     }
 
@@ -304,7 +304,7 @@ export class ColorPicker extends Component {
             );
             targetBtn =
                 target.parentElement.children[
-                    buttonIndex + (key === "ArrowUp" ? -1 : 1) * nbColumns
+                buttonIndex + (key === "ArrowUp" ? -1 : 1) * nbColumns
                 ];
             if (!targetBtn) {
                 const row =
@@ -365,7 +365,7 @@ export class ColorPicker extends Component {
  */
 export function useColorPicker(ref, props, options = {}) {
     // Callback to be overridden by child components (e.g. custom color picker).
-    let onCloseCallback = () => {};
+    let onCloseCallback = () => { };
     const setOnCloseCallback = (cb) => {
         onCloseCallback = cb;
     };
@@ -374,7 +374,7 @@ export function useColorPicker(ref, props, options = {}) {
         const onClose = options.onClose;
         options.onClose = () => {
             const res = onCloseCallback();
-            onCloseCallback = () => {};
+            onCloseCallback = () => { };
             onClose(res);
         };
     }

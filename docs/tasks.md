@@ -29,7 +29,7 @@ Este arquivo mantém o histórico e o status das atividades de infraestrutura e 
   - Configuração do `Dockerfile` (`weth/odoo:20.0`) com Ubuntu 24.04, Python 3.12 e venv.
   - Configuração do PostgreSQL 17 Alpine (`odoo-db`) na rede privada `odoo_backend_net`.
   - Integração do proxy reverso Caddy com a rede `weth_proxy_net` e emissão TLS para `https://odoo.test`.
-  - Persistência dos dados em `/home/arcanus/Workspace/dados/odoo/` (banco e filestore).
+  - Persistência dos dados em `/home/arcanus/Workspace/dados/weth/` (banco e filestore).
   - Inicialização estritamente manual (`restart: "no"`) e zero portas de banco expostas no host.
   - Registro e validação no inventário canônico WETH (`infraestrutura/inventory/projects.yaml`).
   - Testes de conectividade HTTPS via Caddy com resposta HTTP 200/303 no domínio `https://odoo.test`.

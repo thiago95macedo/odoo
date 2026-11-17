@@ -3,9 +3,9 @@
 from freezegun import freeze_time
 import time
 
-from odoo.exceptions import ValidationError
-from odoo.tests.common import tagged, TransactionCase
-from odoo.tools import format_datetime
+from weth.exceptions import ValidationError
+from weth.tests.common import tagged, TransactionCase
+from weth.tools import format_datetime
 
 
 @tagged('jesaispas')

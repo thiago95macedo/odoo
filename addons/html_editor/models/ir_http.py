@@ -1,5 +1,5 @@
-from odoo import models
-from odoo.http import request
+from weth import models
+from weth.http import request
 
 CONTEXT_KEYS = ['editable', 'edit_translations', 'translatable']
 

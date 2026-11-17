@@ -1,5 +1,5 @@
-from odoo import models
-from odoo.fields import Domain
+from weth import models
+from weth.fields import Domain
 
 
 class HrEmployeeDeparture(models.Model):

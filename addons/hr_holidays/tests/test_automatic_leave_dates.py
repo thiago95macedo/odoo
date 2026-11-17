@@ -1,9 +1,9 @@
 from datetime import date, datetime, timedelta
 
-from odoo.fields import Command
-from odoo.tests import tagged, Form
+from weth.fields import Command
+from weth.tests import tagged, Form
 
-from odoo.addons.hr_holidays.tests.common import TestHrHolidaysCommon
+from weth.addons.hr_holidays.tests.common import TestHrHolidaysCommon
 
 
 class TestAutomaticLeaveDates(TestHrHolidaysCommon):

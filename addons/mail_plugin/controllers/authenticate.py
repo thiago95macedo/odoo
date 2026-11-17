@@ -6,11 +6,11 @@ import datetime
 import hmac
 import json
 import logging
-import odoo
+import weth
 import werkzeug
 
-from odoo import _, http
-from odoo.http import request
+from weth import _, http
+from weth.http import request
 from werkzeug.exceptions import NotFound
 
 _logger = logging.getLogger(__name__)
@@ -80,7 +80,7 @@ class Authenticate(http.Controller):
         if auth_message.get('scope') != 'outlook':
             return {"error": "Invalid scope"}
         request.update_env(user=auth_message['uid'])
-        scope = 'odoo.plugin.' + auth_message.get('scope', '')
+        scope = 'weth.plugin.' + auth_message.get('scope', '')
         expiration_days = request.env['ir.config_parameter'].sudo().get_int(
             'mail_plugin.access_token_expiration_days', 30)
         if expiration_days <= 0:
@@ -97,7 +97,7 @@ class Authenticate(http.Controller):
         data, auth_code_signature = auth_code.split('.')
         data = base64.b64decode(data)
         auth_code_signature = base64.b64decode(auth_code_signature)
-        signature = odoo.tools.misc.hmac(request.env(su=True), 'mail_plugin', data).encode()
+        signature = weth.tools.misc.hmac(request.env(su=True), 'mail_plugin', data).encode()
         if not hmac.compare_digest(auth_code_signature, signature):
             return None
 
@@ -122,7 +122,7 @@ class Authenticate(http.Controller):
             'uid': request.env.uid,
         }
         auth_message = json.dumps(auth_dict, sort_keys=True).encode()
-        signature = odoo.tools.misc.hmac(request.env(su=True), 'mail_plugin', auth_message).encode()
+        signature = weth.tools.misc.hmac(request.env(su=True), 'mail_plugin', auth_message).encode()
         auth_code = "%s.%s" % (base64.b64encode(auth_message).decode(), base64.b64encode(signature).decode())
         _logger.info('Auth code created - user %s, scope %s', request.env.user, scope)
         return auth_code

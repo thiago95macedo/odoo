@@ -4,7 +4,7 @@ import {
     buildM2OFieldDescription,
     many2OneFieldProps,
 } from "@web/views/fields/many2one/many2one_field";
-import { Component, onWillStart, useProps } from "@odoo/owl";
+import { Component, onWillStart, useProps } from "@weth/owl";
 
 export class TaskWithHours extends Component {
     static template = "hr_timesheet.TaskWithHours";

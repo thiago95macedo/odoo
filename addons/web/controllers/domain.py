@@ -1,9 +1,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import http, _
-from odoo.fields import Domain
-from odoo.http import Controller, request
-from odoo.exceptions import ValidationError
+from weth import http, _
+from weth.fields import Domain
+from weth.http import Controller, request
+from weth.exceptions import ValidationError
 
 
 class DomainController(Controller):

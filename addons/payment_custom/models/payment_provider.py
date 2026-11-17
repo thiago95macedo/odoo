@@ -1,9 +1,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, fields, models
-from odoo.fields import Domain
+from weth import api, fields, models
+from weth.fields import Domain
 
-from odoo.addons.payment_custom import const
+from weth.addons.payment_custom import const
 
 
 class PaymentProvider(models.Model):

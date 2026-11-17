@@ -1,6 +1,6 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.tests.common import new_test_user, HttpCase, JsonRpcException
+from weth.tests.common import new_test_user, HttpCase, JsonRpcException
 
 
 class TestCall(HttpCase):

@@ -3,9 +3,9 @@
 
 from werkzeug.exceptions import Forbidden, NotFound
 
-from odoo import _
-from odoo.http import Controller, request, Response, route
-from odoo.tools import consteq
+from weth import _
+from weth.http import Controller, request, Response, route
+from weth.tools import consteq
 
 
 class DigestController(Controller):
@@ -69,5 +69,5 @@ class DigestController(Controller):
         digest = request.env['digest.digest'].browse(digest_id).exists()
         digest.action_set_periodicity(periodicity)
 
-        url = f"/odoo/{digest._name}/{digest.id}"
+        url = f"/weth/{digest._name}/{digest.id}"
         return request.redirect(url)

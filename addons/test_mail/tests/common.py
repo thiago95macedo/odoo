@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.tests.common import TransactionCase
+from weth.tests.common import TransactionCase
 
 
 class TestRecipients(TransactionCase):

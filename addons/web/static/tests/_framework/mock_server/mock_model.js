@@ -1,4 +1,4 @@
-import { after, createJobScopedGetter } from "@odoo/hoot";
+import { after, createJobScopedGetter } from "@weth/hoot";
 import { Domain } from "@web/core/domain";
 import {
     deserializeDate,
@@ -769,8 +769,7 @@ function orderByField(model, orderBy, records) {
         } else {
             if (!["boolean", "number", "string"].includes(typeof v1) || typeof v1 !== typeof v2) {
                 throw new MockServerError(
-                    `Cannot order by field "${fieldNameSpec}" in model "${
-                        model._name
+                    `Cannot order by field "${fieldNameSpec}" in model "${model._name
                     }": values must be of the same primitive type (got ${typeof v1} and ${typeof v2})`
                 );
             }
@@ -2218,7 +2217,7 @@ export class Model extends Array {
      */
     name_search(name, domain, operator, limit) {
         const kwargs = getKwArgs(arguments, "name", "domain", "operator", "limit");
-        ({ name = "", domain = [], operator = "ilike", limit = 100 } = kwargs);
+        ({ name = "", domain =[], operator = "ilike", limit = 100 } = kwargs);
 
         const actualDomain = new Domain(domain);
         /** @type {[number, string][]} */
@@ -2427,8 +2426,7 @@ export class Model extends Array {
         const supportedTypes = ["many2one", "selection", "many2many"];
         if (!supportedTypes.includes(field.type)) {
             throw new MockServerError(
-                `Only category types ${formatList("and", supportedTypes)} are supported, got "${
-                    field.type
+                `Only category types ${formatList("and", supportedTypes)} are supported, got "${field.type
                 }"`
             );
         }
@@ -2800,7 +2798,7 @@ export class Model extends Array {
      */
     web_name_search(name, specification, domain, operator, limit) {
         const kwargs = getKwArgs(arguments, "name", "specification", "args", "operator", "limit");
-        ({ name, specification, domain = [], operator = "ilike", limit = 100 } = kwargs);
+        ({ name, specification, domain =[], operator = "ilike", limit = 100 } = kwargs);
 
         const idNamePairs = this.name_search(name, domain, operator, limit, kwargs);
         if (Object.keys(specification).length === 1 && "display_name" in specification) {
@@ -3770,8 +3768,7 @@ export class Model extends Array {
                         throw new MockServerError(
                             `Command "${safeStringify(
                                 value
-                            )}" is not supported by the MockServer on field "${fieldName}" in model "${
-                                this._name
+                            )}" is not supported by the MockServer on field "${fieldName}" in model "${this._name
                             }"`
                         );
                     }

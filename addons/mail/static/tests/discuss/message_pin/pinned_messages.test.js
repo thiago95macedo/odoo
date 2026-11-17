@@ -8,8 +8,8 @@ import {
     start,
     startServer,
 } from "@mail/../tests/mail_test_helpers";
-import { describe, test, expect } from "@odoo/hoot";
-import { disableAnimations } from "@odoo/hoot-mock";
+import { describe, test, expect } from "@weth/hoot";
+import { disableAnimations } from "@weth/hoot-mock";
 
 describe.current.tags("desktop");
 defineMailModels();

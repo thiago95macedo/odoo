@@ -5,11 +5,11 @@ from dateutil.relativedelta import relativedelta
 
 from freezegun import freeze_time
 
-from odoo import fields
-from odoo.addons.base.tests.common import TransactionCaseWithUserDemo
-from odoo.tests.common import tagged, users, warmup
-from odoo.addons.hr_holidays.tests.common import TestHrHolidaysCommon
-from odoo.addons.mail.tools.discuss import Store
+from weth import fields
+from weth.addons.base.tests.common import TransactionCaseWithUserDemo
+from weth.tests.common import tagged, users, warmup
+from weth.addons.hr_holidays.tests.common import TestHrHolidaysCommon
+from weth.addons.mail.tools.discuss import Store
 
 
 @tagged("post_install", "-at_install", "out_of_office")

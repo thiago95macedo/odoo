@@ -3,7 +3,7 @@ function initialize_map() {
     "use strict";
 
     // MAP CONFIG AND LOADING
-    var map = new google.maps.Map(document.getElementById("odoo-google-map"), {
+    var map = new google.maps.Map(document.getElementById("weth-google-map"), {
         zoom: 1,
         center: { lat: 0.0, lng: 0.0 },
         mapTypeId: google.maps.MapTypeId.ROADMAP,
@@ -90,13 +90,13 @@ function initialize_map() {
     };
 
     /* eslint-disable no-undef */
-    async function initializeMarkers(odooPartnerData) {
+    async function initializeMarkers(wethPartnerData) {
         // Create the markers and cluster them on the map
-        if (odooPartnerData) {
-            /* odoo_partner_data special variable should have been defined in google_map.xml */
+        if (wethPartnerData) {
+            /* weth_partner_data special variable should have been defined in google_map.xml */
             const markerPromises = [];
-            for (var i = 0; i < odoo_partner_data.counter; i++) {
-                const prom = set_marker(odoo_partner_data.partners[i]).catch((error) =>
+            for (var i = 0; i < weth_partner_data.counter; i++) {
+                const prom = set_marker(weth_partner_data.partners[i]).catch((error) =>
                     console.error(error)
                 );
                 markerPromises.push(prom);
@@ -114,7 +114,7 @@ function initialize_map() {
     }
 
     // Call the function to initialize markers
-    initializeMarkers(odoo_partner_data);
+    initializeMarkers(weth_partner_data);
     /* eslint-enable no-undef */
 }
 

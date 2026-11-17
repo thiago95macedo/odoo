@@ -4,7 +4,7 @@ from datetime import date
 
 from freezegun import freeze_time
 
-from odoo.addons.hr_holidays.tests.common import TestHolidayContract
+from weth.addons.hr_holidays.tests.common import TestHolidayContract
 
 
 class TestDeparture(TestHolidayContract):

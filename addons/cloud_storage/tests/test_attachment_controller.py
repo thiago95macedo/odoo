@@ -7,8 +7,8 @@ from urllib.parse import urlsplit
 
 import requests
 
-from odoo.addons.base.tests.common import HttpCaseWithUserDemo
-from odoo.tests import tagged
+from weth.addons.base.tests.common import HttpCaseWithUserDemo
+from weth.tests import tagged
 
 
 @tagged("-at_install", "post_install", "mail_controller")
@@ -43,7 +43,7 @@ class TestCloudStorageAttachmentController(HttpCaseWithUserDemo):
             response._content = contents[parsed.path.rsplit('/', 1)[-1]]
             return response
 
-        with patch('odoo.addons.cloud_storage.models.ir_attachment.requests.get', side_effect=download_cloud_file):
+        with patch('weth.addons.cloud_storage.models.ir_attachment.requests.get', side_effect=download_cloud_file):
             response = self.url_open('/mail/attachment/zip', data={
                 'file_ids': ','.join(map(str, attachments.ids)),
                 'zip_name': 'attachments.zip',

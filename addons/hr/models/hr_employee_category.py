@@ -3,7 +3,7 @@
 
 from random import randint
 
-from odoo import fields, models
+from weth import fields, models
 
 
 class HrEmployeeCategory(models.Model):

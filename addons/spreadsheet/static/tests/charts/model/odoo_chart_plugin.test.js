@@ -1,5 +1,5 @@
-import { animationFrame } from "@odoo/hoot-mock";
-import { describe, expect, test } from "@odoo/hoot";
+import { animationFrame } from "@weth/hoot-mock";
+import { describe, expect, test } from "@weth/hoot";
 
 import { ChartDataSource } from "@spreadsheet/chart/data_source/chart_data_source";
 
@@ -18,7 +18,7 @@ import {
     onRpc,
     patchWithCleanup,
 } from "@web/../tests/web_test_helpers";
-import * as spreadsheet from "@odoo/o-spreadsheet";
+import * as spreadsheet from "@weth/o-spreadsheet";
 import { makeStoreWithModel } from "@spreadsheet/../tests/helpers/stores";
 import { user } from "@web/core/user";
 import {

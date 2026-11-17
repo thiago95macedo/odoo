@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, Command, fields, models, _
-from odoo.exceptions import AccessError
-from odoo.tools import float_is_zero
+from weth import api, Command, fields, models, _
+from weth.exceptions import AccessError
+from weth.tools import float_is_zero
 
 
 class SaleOrderLine(models.Model):

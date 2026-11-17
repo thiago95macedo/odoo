@@ -1,5 +1,5 @@
-import { expect, test } from "@odoo/hoot";
-import { animationFrame, press } from "@odoo/hoot-dom";
+import { expect, test } from "@weth/hoot";
+import { animationFrame, press } from "@weth/hoot-dom";
 import {
     contains,
     getMockEnv,
@@ -132,8 +132,8 @@ test("BarcodeVideoScanner onReady props", async () => {
             props: {
                 facingMode: "environment",
                 onReady: () => resolve(true),
-                onResult: () => {},
-                onError: () => {},
+                onResult: () => { },
+                onError: () => { },
             },
         });
     });

@@ -1,4 +1,4 @@
-<odoo>
+<weth>
     <data noupdate="1">
         <record id="mail.demo_call_channel" model="discuss.channel">
             <field name="name">Demo Call Channel</field>
@@ -92,4 +92,4 @@
             <field name="res_id" ref="mail.artifact_disjoined_s3"/>
         </record>
 </data>
-</odoo>
+</weth>

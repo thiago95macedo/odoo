@@ -5,9 +5,9 @@ import requests
 
 from werkzeug.urls import url_parse
 
-from odoo import api, models
-from odoo.tools import BinaryBytes, file_open
-from odoo.addons.base.models.assetsbundle import EXTENSIONS
+from weth import api, models
+from weth.tools import BinaryBytes, file_open
+from weth.addons.base.models.assetsbundle import EXTENSIONS
 
 _match_asset_file_url_regex = re.compile(r"^(/_custom/([^/]+))?/(\w+)/([/\w]+\.\w+)$")
 

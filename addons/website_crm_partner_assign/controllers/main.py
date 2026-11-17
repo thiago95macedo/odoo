@@ -5,16 +5,16 @@ import werkzeug.urls
 
 from werkzeug.exceptions import NotFound
 
-from odoo import fields
-from odoo import http
-from odoo.http import request
-from odoo.addons.portal.controllers.portal import CustomerPortal
-from odoo.addons.website.controllers.main import QueryURL
-from odoo.addons.website_google_map.controllers.main import GoogleMap
-from odoo.addons.website_partnership.controllers.main import WebsitePartnership
-from odoo.fields import Domain
+from weth import fields
+from weth import http
+from weth.http import request
+from weth.addons.portal.controllers.portal import CustomerPortal
+from weth.addons.website.controllers.main import QueryURL
+from weth.addons.website_google_map.controllers.main import GoogleMap
+from weth.addons.website_partnership.controllers.main import WebsitePartnership
+from weth.fields import Domain
 
-from odoo.tools.translate import _, LazyTranslate
+from weth.tools.translate import _, LazyTranslate
 
 _lt = LazyTranslate(__name__)
 

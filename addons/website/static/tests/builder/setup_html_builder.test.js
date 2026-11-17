@@ -1,6 +1,6 @@
 import { defineWebsiteModels, setupWebsiteBuilder } from "./website_helpers";
-import { describe, expect, test, beforeEach } from "@odoo/hoot";
-import { animationFrame, waitFor, click } from "@odoo/hoot-dom";
+import { describe, expect, test, beforeEach } from "@weth/hoot";
+import { animationFrame, waitFor, click } from "@weth/hoot-dom";
 import { patchWithCleanup, contains } from "@web/../tests/web_test_helpers";
 import { WebsiteBuilder } from "@website/builder/website_builder";
 import { modifyText, exampleContent } from "@html_builder/../tests/helpers";

@@ -8,7 +8,7 @@ export class DonationOption extends BaseOptionComponent {
     static id = "donation_option";
     static template = "website_sale.DonationOption";
 
-    // TODO AGAU: remove when merging https://github.com/odoo-dev/odoo/pull/4240
+    // TODO AGAU: remove when merging https://github.com/odoo-dev/weth/pull/4240
     static cleanForSave(editingElement) {
         delete editingElement.dataset.prefilledOptionsList;
     }
@@ -41,7 +41,7 @@ export class BaseDonationAction extends BuilderAction {
     getPrefilledOptionsList({ editingElement }) {
         const savedOptions = editingElement.dataset.prefilledOptionsList;
 
-        // TODO AGAU: remove when merging https://github.com/odoo-dev/odoo/pull/4240
+        // TODO AGAU: remove when merging https://github.com/odoo-dev/weth/pull/4240
         {
             if (savedOptions) {
                 return savedOptions;
@@ -67,7 +67,7 @@ export class BaseDonationAction extends BuilderAction {
             }
         }
 
-        // TODO AGAU: uncomment when merging https://github.com/odoo-dev/odoo/pull/4240
+        // TODO AGAU: uncomment when merging https://github.com/odoo-dev/weth/pull/4240
         // return savedOptions || "[]";
     }
 
@@ -76,7 +76,7 @@ export class BaseDonationAction extends BuilderAction {
             options = this.getPrefilledOptionsList({ editingElement });
         }
 
-        // TODO AGAU: remove when merging https://github.com/odoo-dev/odoo/pull/4240
+        // TODO AGAU: remove when merging https://github.com/odoo-dev/weth/pull/4240
         editingElement.dataset.prefilledOptionsList = options;
 
         options = JSON.parse(options);
@@ -122,7 +122,7 @@ export class BaseDonationAction extends BuilderAction {
         // Displayed prefilled options
         editingElement.querySelector(".s_donation_prefilled_buttons")?.remove();
         if (displayOptions) {
-            // TODO AGAU: remove when merging https://github.com/odoo-dev/odoo/pull/4240
+            // TODO AGAU: remove when merging https://github.com/odoo-dev/weth/pull/4240
             {
                 if (!showDescriptions) {
                     options = options.map((option) => option.value);
@@ -240,7 +240,7 @@ export class SetPrefilledOptionsAction extends BaseDonationAction {
     }
 
     apply({ editingElement, value }) {
-        // TODO AGAU: remove when merging https://github.com/odoo-dev/odoo/pull/4240
+        // TODO AGAU: remove when merging https://github.com/odoo-dev/weth/pull/4240
         {
             const options = JSON.parse(value);
             const amounts = options.map((option) => option.value);

@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, fields, models
-from odoo.tools import get_lang, SQL
-from odoo.models import TableSQL
+from weth import api, fields, models
+from weth.tools import get_lang, SQL
+from weth.models import TableSQL
 
 
 class Im_LivechatReportChannel(models.Model):

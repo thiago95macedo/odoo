@@ -3,7 +3,7 @@
  * ⚠️ {@link DependencyInManifest}
  */
 
-import { markup } from "@odoo/owl";
+import { markup } from "@weth/owl";
 
 import { createDocumentFragmentFromContent, htmlJoin } from "@web/core/utils/html";
 

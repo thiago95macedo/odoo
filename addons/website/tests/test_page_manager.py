@@ -2,11 +2,11 @@
 
 import json
 
-import odoo.tests
+import weth.tests
 
 
-@odoo.tests.common.tagged('post_install', '-at_install')
-class TestWebsitePageManager(odoo.tests.HttpCase):
+@weth.tests.common.tagged('post_install', '-at_install')
+class TestWebsitePageManager(weth.tests.HttpCase):
 
     def test_01_page_manager(self):
         website = self.env['website'].create({
@@ -21,7 +21,7 @@ class TestWebsitePageManager(odoo.tests.HttpCase):
         })
 
         website.domain = self.base_url()
-        self.start_tour('/odoo/action-website.action_website_pages_list', 'website_page_manager_direct_access', login='admin')
+        self.start_tour('/weth/action-website.action_website_pages_list', 'website_page_manager_direct_access', login='admin')
 
     def test_generic_page_diverged_not_shown(self):
         Page = self.env['website.page']

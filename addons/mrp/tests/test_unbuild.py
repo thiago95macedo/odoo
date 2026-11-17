@@ -1,9 +1,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import Command
-from odoo.tests import Form
-from odoo.addons.mrp.tests.common import TestMrpCommon
-from odoo.exceptions import UserError
+from weth import Command
+from weth.tests import Form
+from weth.addons.mrp.tests.common import TestMrpCommon
+from weth.exceptions import UserError
 
 
 class TestUnbuild(TestMrpCommon):

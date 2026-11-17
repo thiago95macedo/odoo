@@ -6,8 +6,8 @@ import {
 import { BuilderOptionsPlugin } from "@html_builder/core/builder_options_plugin";
 import { BuilderSelectionRestrictionPlugin } from "@html_builder/core/builder_selection_restriction_plugin";
 import { Operation } from "@html_builder/core/operation";
-import { describe, expect, test } from "@odoo/hoot";
-import { animationFrame, click, queryAll, queryAllTexts, queryOne, waitFor } from "@odoo/hoot-dom";
+import { describe, expect, test } from "@weth/hoot";
+import { animationFrame, click, queryAll, queryAllTexts, queryOne, waitFor } from "@weth/hoot-dom";
 import { contains, patchWithCleanup } from "@web/../tests/web_test_helpers";
 import { loadBundle } from "@web/core/assets";
 

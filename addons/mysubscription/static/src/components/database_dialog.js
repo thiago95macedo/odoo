@@ -1,4 +1,4 @@
-import { Component, computed, signal, useProps, t } from "@odoo/owl";
+import { Component, computed, signal, useProps, t } from "@weth/owl";
 import { Dialog } from "@web/core/dialog/dialog";
 import { useService } from "@web/core/utils/hooks";
 import { _t } from "@web/core/l10n/translation";

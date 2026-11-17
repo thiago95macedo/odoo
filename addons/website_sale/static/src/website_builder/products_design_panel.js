@@ -1,5 +1,5 @@
 import { BaseOptionComponent } from "@html_builder/core/base_option_component";
-import { onMounted, onWillDestroy, useProps, t } from "@odoo/owl";
+import { onMounted, onWillDestroy, useProps, t } from "@weth/owl";
 
 export class ProductsDesignPanel extends BaseOptionComponent {
     static template = "website_sale.ProductsDesignPanel";

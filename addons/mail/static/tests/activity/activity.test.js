@@ -1,4 +1,4 @@
-import { describe, expect, runAllTimers, test } from "@odoo/hoot";
+import { describe, expect, runAllTimers, test } from "@weth/hoot";
 
 import {
     click,
@@ -12,8 +12,8 @@ import {
     startServer,
     triggerHotkey,
 } from "@mail/../tests/mail_test_helpers";
-import { hover } from "@odoo/hoot-dom";
-import { advanceTime, mockDate } from "@odoo/hoot-mock";
+import { hover } from "@weth/hoot-dom";
+import { advanceTime, mockDate } from "@weth/hoot-mock";
 import { mockService, onRpc, patchWithCleanup, serverState } from "@web/../tests/web_test_helpers";
 import { browser } from "@web/core/browser/browser";
 import { deserializeDateTime, serializeDate, today } from "@web/core/l10n/dates";
@@ -638,8 +638,7 @@ test("Activity avatar should have a unique timestamp", async () => {
     await openFormView("res.partner", partnerId);
     await contains(".o-mail-Activity");
     await contains(
-        `.o-mail-Activity-sidebar img[data-src="${getOrigin()}/web/image/res.partner/${
-            serverState.partnerId
+        `.o-mail-Activity-sidebar img[data-src="${getOrigin()}/web/image/res.partner/${serverState.partnerId
         }/avatar_128?unique=${deserializeDateTime(partner.write_date).ts}`
     );
 });

@@ -1,4 +1,4 @@
-import { Component, useProps, t, usePlugin } from "@odoo/owl";
+import { Component, useProps, t, usePlugin } from "@weth/owl";
 import { PosNumberBufferPlugin } from "@point_of_sale/app/plugins/pos_number_buffer_plugin";
 import { localization } from "@web/core/l10n/localization";
 

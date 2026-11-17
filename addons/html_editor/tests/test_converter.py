@@ -5,9 +5,9 @@ import textwrap
 from lxml import etree, html
 from lxml.builder import E
 
-from odoo.tests import tagged, common
-from odoo.tests.common import BaseCase
-from odoo.addons.html_editor.models.ir_qweb_fields import html_to_text
+from weth.tests import tagged, common
+from weth.tests.common import BaseCase
+from weth.addons.html_editor.models.ir_qweb_fields import html_to_text
 
 
 @tagged('at_install', '-post_install')  # LEGACY at_install

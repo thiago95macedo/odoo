@@ -1,18 +1,18 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import fields
-from odoo.tests import freeze_time, tagged, users
-from odoo.tools import mute_logger
+from weth import fields
+from weth.tests import freeze_time, tagged, users
+from weth.tools import mute_logger
 
-from odoo.addons.test_mail.tests.test_mail_composer import TestMailComposer
-from odoo.addons.test_mass_mailing.tests import common
+from weth.addons.test_mail.tests.test_mail_composer import TestMailComposer
+from weth.addons.test_mass_mailing.tests import common
 
 
 @tagged('mail_composer')
 class TestMailComposerMassMailing(TestMailComposer, common.TestMassMailCommon):
 
     @users('user_marketing')
-    @mute_logger('odoo.addons.mass_mailing.models.mailing')
+    @mute_logger('weth.addons.mass_mailing.models.mailing')
     @freeze_time('2025-08-06 15:02:00')
     def test_mail_composer_mailing_creation(self):
         """Check mailing configuration created through the mail composer."""

@@ -1,7 +1,7 @@
 from freezegun import freeze_time
 
-from odoo.addons.test_event_full.tests.common import TestEventFullCommon
-from odoo.tests.common import tagged
+from weth.addons.test_event_full.tests.common import TestEventFullCommon
+from weth.tests.common import tagged
 
 
 @tagged('event_online', 'post_install', '-at_install')

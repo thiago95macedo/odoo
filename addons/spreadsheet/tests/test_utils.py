@@ -1,14 +1,14 @@
 import datetime
 
-from odoo.exceptions import UserError
-from odoo.tests.common import tagged, TransactionCase
+from weth.exceptions import UserError
+from weth.tests.common import tagged, TransactionCase
 
-from odoo.addons.spreadsheet.utils.formatting import (
+from weth.addons.spreadsheet.utils.formatting import (
     date_to_spreadsheet_date_number,
     datetime_to_spreadsheet_date_number,
 )
-from odoo.addons.spreadsheet.utils.json import extend_serialized_json
-from odoo.addons.spreadsheet.utils.helpers import (
+from weth.addons.spreadsheet.utils.json import extend_serialized_json
+from weth.addons.spreadsheet.utils.helpers import (
     index_to_column_letter,
     to_cell_reference,
     spreadsheet_safe_batch

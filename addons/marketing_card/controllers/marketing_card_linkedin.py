@@ -2,11 +2,11 @@ import logging
 from urllib.parse import urlencode
 from werkzeug.exceptions import NotFound, Unauthorized
 
-from odoo.exceptions import UserError
-from odoo.http import Controller, request, route
-from odoo.tools.urls import urljoin
+from weth.exceptions import UserError
+from weth.http import Controller, request, route
+from weth.tools.urls import urljoin
 
-from odoo.addons.marketing_card.utils.linkedin_api import LinkedInAPI
+from weth.addons.marketing_card.utils.linkedin_api import LinkedInAPI
 
 _logger = logging.getLogger(__name__)
 

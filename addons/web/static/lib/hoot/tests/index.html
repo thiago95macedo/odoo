@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>HOOT internal tests</title>
 
-        <!-- Source map -->
-        <script type="importmap">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HOOT internal tests</title>
+
+    <!-- Source map -->
+    <script type="importmap">
             {
                 "imports": {
-                    "@odoo/hoot-dom": "/web/static/lib/hoot-dom/hoot-dom.js",
-                    "@odoo/hoot": "/web/static/lib/hoot/hoot.js",
-                    "@odoo/owl": "/web/static/lib/hoot/tests/hoot-owl-module.js",
+                    "@weth/hoot-dom": "/web/static/lib/hoot-dom/hoot-dom.js",
+                    "@weth/hoot": "/web/static/lib/hoot/hoot.js",
+                    "@weth/owl": "/web/static/lib/hoot/tests/hoot-owl-module.js",
                     "@web/../lib/hoot-dom/helpers/dom": "/web/static/lib/hoot-dom/helpers/dom.js",
                     "@web/../lib/hoot-dom/helpers/events": "/web/static/lib/hoot-dom/helpers/events.js",
                     "@web/../lib/hoot-dom/helpers/time": "/web/static/lib/hoot-dom/helpers/time.js",
@@ -72,23 +73,25 @@
             }
         </script>
 
-        <style>
-            html,
-            body {
-                height: 100%;
-                margin: 0;
-                position: relative;
-                width: 100%;
-            }
-        </style>
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            position: relative;
+            width: 100%;
+        }
+    </style>
 
-        <!-- Test assets -->
-        <script src="/web/static/lib/owl/owl.js"></script>
-        <link rel="stylesheet" href="/web/static/lib/hoot/ui/hoot_style.css" />
-        <link rel="stylesheet" href="/web/static/src/libs/materialsymbols/material_symbols_outlined.css" />
+    <!-- Test assets -->
+    <script src="/web/static/lib/owl/owl.js"></script>
+    <link rel="stylesheet" href="/web/static/lib/hoot/ui/hoot_style.css" />
+    <link rel="stylesheet" href="/web/static/src/libs/materialsymbols/material_symbols_outlined.css" />
 
-        <!-- Test suites -->
-        <script src="./index.js" type="module" defer></script>
-    </head>
-    <body></body>
+    <!-- Test suites -->
+    <script src="./index.js" type="module" defer></script>
+</head>
+
+<body></body>
+
 </html>

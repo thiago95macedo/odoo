@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
     <template id="hr_attendance.public_kiosk_mode" name="Attendance Kiosk">
         <t t-set="head">
             <title>Attendance Kiosk</title>
@@ -12,7 +12,7 @@
             <t t-call="web.conditional_assets_tests" ignore_missing_deps="True"/>
 
             <script type="text/javascript">
-                odoo.define("hr_attendance.public_kiosk_app", ["@hr_attendance/public_kiosk/public_kiosk_app"], function (require) {
+                weth.define("hr_attendance.public_kiosk_app", ["@hr_attendance/public_kiosk/public_kiosk_app"], function (require) {
                 var { createPublicKioskAttendance } = require("@hr_attendance/public_kiosk/public_kiosk_app");
                 createPublicKioskAttendance(document, <t t-out="json.dumps(kiosk_backend_info)"/>);
                 });
@@ -25,4 +25,4 @@
             </body>
         </t>
     </template>
-</odoo>
+</weth>

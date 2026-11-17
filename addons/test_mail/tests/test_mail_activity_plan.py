@@ -5,11 +5,11 @@ import re
 from datetime import datetime, timedelta
 from dateutil.relativedelta import relativedelta
 
-from odoo import fields, tools
-from odoo.addons.mail.tests.common import mail_new_test_user
-from odoo.addons.mail.tests.common_activity import ActivityScheduleCase
-from odoo.exceptions import UserError, ValidationError
-from odoo.tests import Form, RecordCapturer, tagged, users
+from weth import fields, tools
+from weth.addons.mail.tests.common import mail_new_test_user
+from weth.addons.mail.tests.common_activity import ActivityScheduleCase
+from weth.exceptions import UserError, ValidationError
+from weth.tests import Form, RecordCapturer, tagged, users
 
 
 @tagged('mail_activity', 'mail_activity_plan')

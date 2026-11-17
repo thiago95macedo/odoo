@@ -1,11 +1,11 @@
 from psycopg2 import IntegrityError
 
-from odoo import fields
-from odoo.exceptions import AccessError, ValidationError
-from odoo.tests.common import tagged
-from odoo.tools.misc import mute_logger
+from weth import fields
+from weth.exceptions import AccessError, ValidationError
+from weth.tests.common import tagged
+from weth.tools.misc import mute_logger
 
-from odoo.addons.mail.tests.common import MailCommon
+from weth.addons.mail.tests.common import MailCommon
 
 
 @tagged("call_artifacts")
@@ -82,7 +82,7 @@ class TestMailCallArtifact(MailCommon):
         with self.assertRaises(ValidationError):
             self.env["mail.call.artifact"].create({"discuss_call_history_id": self.call.id, "start_ms": 2500, "end_ms": 3500})
 
-    @mute_logger("odoo.sql_db", "odoo.models")
+    @mute_logger("weth.sql_db", "weth.models")
     def test_artifact_must_have_possessor(self):
         """Ensure that an artifact is linked to a call record"""
         with self.assertRaises(IntegrityError):

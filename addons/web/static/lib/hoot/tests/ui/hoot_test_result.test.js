@@ -1,10 +1,10 @@
-/** @odoo-module */
+/** @weth-module */
 
-import { describe, expect, makeExpect, test } from "@odoo/hoot";
+import { describe, expect, makeExpect, test } from "@weth/hoot";
 import { makeTestRunner, mountForTest, parseUrl } from "../local_helpers";
 
-import { animationFrame, click } from "@odoo/hoot-dom";
-import { Component, xml } from "@odoo/owl";
+import { animationFrame, click } from "@weth/hoot-dom";
+import { Component, xml } from "@weth/owl";
 import { Test } from "../../core/test";
 import { HootTestResult } from "../../ui/hoot_test_result";
 

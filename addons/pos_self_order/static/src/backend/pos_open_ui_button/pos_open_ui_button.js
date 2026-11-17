@@ -1,4 +1,4 @@
-import { asyncComputed, onWillStart } from "@odoo/owl";
+import { asyncComputed, onWillStart } from "@weth/owl";
 import { patch } from "@web/core/utils/patch";
 import { PosOpenUIButton } from "@point_of_sale/backend/pos_open_ui_button/pos_open_ui_button";
 

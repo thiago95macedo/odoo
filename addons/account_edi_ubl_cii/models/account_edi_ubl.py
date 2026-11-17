@@ -4,29 +4,29 @@ from collections import defaultdict
 
 from lxml import etree
 
-from odoo import Command, _, api, fields, models
-from odoo.fields import Domain
-from odoo.tools import formatLang, frozendict, html2plaintext, html_escape, unique
-from odoo.tools.float_utils import float_compare
-from odoo.tools.partner_identifiers import get_tin_metadata_of_country
+from weth import Command, _, api, fields, models
+from weth.fields import Domain
+from weth.tools import formatLang, frozendict, html2plaintext, html_escape, unique
+from weth.tools.float_utils import float_compare
+from weth.tools.partner_identifiers import get_tin_metadata_of_country
 
-from odoo.addons.account.tools import dict_to_xml
-from odoo.addons.account_edi_ubl_cii.models.account_edi_common import (
+from weth.addons.account.tools import dict_to_xml
+from weth.addons.account_edi_ubl_cii.models.account_edi_common import (
     GST_COUNTRY_CODES,
     FloatFmt,
 )
-from odoo.addons.account_edi_ubl_cii.tools import CreditNote, DebitNote, Invoice
-from odoo.addons.account_edi_ubl_cii.tools.partner_identifiers import (
+from weth.addons.account_edi_ubl_cii.tools import CreditNote, DebitNote, Invoice
+from weth.addons.account_edi_ubl_cii.tools.partner_identifiers import (
     ISO_6523_ICD_CODELIST,
     normalize_vat_for_ubl,
 )
-from odoo.addons.account_edi_ubl_cii.tools.ubl_20_optional_fields import (
+from weth.addons.account_edi_ubl_cii.tools.ubl_20_optional_fields import (
     PEPPOL_CREDIT_NOTE_OPTIONAL_FIELDS,
     PEPPOL_CREDIT_NOTE_OPTIONAL_LINE_FIELDS,
     PEPPOL_INVOICE_OPTIONAL_FIELDS,
     PEPPOL_INVOICE_OPTIONAL_LINE_FIELDS,
 )
-from odoo.addons.base.models.res_partner_bank import sanitize_account_number
+from weth.addons.base.models.res_partner_bank import sanitize_account_number
 
 _logger = logging.getLogger(__name__)
 

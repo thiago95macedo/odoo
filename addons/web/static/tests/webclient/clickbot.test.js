@@ -1,5 +1,5 @@
-import { beforeEach, describe, expect, test } from "@odoo/hoot";
-import { animationFrame, mockDate, runAllTimers, tick } from "@odoo/hoot-mock";
+import { beforeEach, describe, expect, test } from "@weth/hoot";
+import { animationFrame, mockDate, runAllTimers, tick } from "@weth/hoot-mock";
 import {
     defineActions,
     defineMenus,
@@ -12,7 +12,7 @@ import {
     patchWithCleanup,
 } from "@web/../tests/web_test_helpers";
 
-import { onWillStart, onWillUpdateProps } from "@odoo/owl";
+import { onWillStart, onWillUpdateProps } from "@weth/owl";
 
 import { ListRenderer } from "@web/views/list/list_renderer";
 import { ClickbotLauncher, FAILURE_SIGNAL, SUCCESS_SIGNAL } from "@web/webclient/clickbot/clickbot";
@@ -555,13 +555,13 @@ test("clickbot show rpc error when an error dialog is detected", async () => {
             type: "server",
             code: 0,
             data: {
-                name: "odoo.exceptions.Programming error",
+                name: "weth.exceptions.Programming error",
                 debug: "traceback",
                 arguments: [],
                 context: {},
                 message: "This is a server Error, it should be displayed in an error dialog",
             },
-            exceptionName: "odoo.exceptions.Programming error",
+            exceptionName: "weth.exceptions.Programming error",
             subType: "server",
             message: "This is a server Error, it should be displayed in an error dialog",
             model: "foo",

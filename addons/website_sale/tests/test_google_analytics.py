@@ -1,5 +1,5 @@
-from odoo.fields import Command
-from odoo.tests import HttpCase, tagged
+from weth.fields import Command
+from weth.tests import HttpCase, tagged
 
 
 @tagged("post_install", "-at_install")

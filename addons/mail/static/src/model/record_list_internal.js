@@ -1,6 +1,6 @@
 import { isRecord, untrackFunctions } from "./misc";
 
-import { markRaw, signal } from "@odoo/owl";
+import { markRaw, signal } from "@weth/owl";
 
 /** @typedef {import("./record").Record} Record */
 /** @typedef {import("./record_list").RecordList} RecordList */
@@ -11,7 +11,7 @@ export class RecordListInternal {
      * Replace it when removing, reordering or replacing records so callbacks and synchronous
      * observers cannot change an ongoing traversal. Appending in place is safe for these reads.
      *
-     * @type {import("@odoo/owl").Signal<Record[]>}
+     * @type {import("@weth/owl").Signal<Record[]>}
      */
     data = signal.Array();
     /** @type {string} */
@@ -167,8 +167,7 @@ export class RecordListInternal {
         if (typeof val !== "object") {
             if (Array.isArray(recordList._store[targetModel].id)) {
                 throw new Error(
-                    `Cannot insert "${val}" on relational field "${this.owner.Model.getName()}/${
-                        this.name
+                    `Cannot insert "${val}" on relational field "${this.owner.Model.getName()}/${this.name
                     }": target model "${targetModel}" doesn't support single-id data!`
                 );
             }

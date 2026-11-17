@@ -1,4 +1,4 @@
-import { expect, test } from "@odoo/hoot";
+import { expect, test } from "@weth/hoot";
 import { FeedbackScreen } from "@point_of_sale/app/screens/feedback_screen/feedback_screen";
 import { mountWithCleanup } from "@web/../tests/web_test_helpers";
 import { definePosModels } from "../data/generate_model_definitions";

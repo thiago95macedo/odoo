@@ -1,4 +1,4 @@
-import { Component, signal, toRaw, useEffect, usePlugin, useProps } from "@odoo/owl";
+import { Component, signal, toRaw, useEffect, usePlugin, useProps } from "@weth/owl";
 import { DebugModePlugin } from "@web/core/debug_mode_plugin";
 import { _t } from "@web/core/l10n/translation";
 import { localeCompare } from "@web/core/l10n/utils";
@@ -215,15 +215,15 @@ class ResUserGroupIdsField extends Component {
             <group string="${this.extraCategory.name}" class="o_extra_rights_group">
                 <group>
                     ${this.extraCategory.privileges
-                        .filter((cat, index) => index % 2 === 0)
-                        .map((privilege) => this.getPrivilegeArch(privilege))
-                        .join("")}
+                .filter((cat, index) => index % 2 === 0)
+                .map((privilege) => this.getPrivilegeArch(privilege))
+                .join("")}
                 </group>
                 <group>
                     ${this.extraCategory.privileges
-                        .filter((cat, index) => index % 2 === 1)
-                        .map((privilege) => this.getPrivilegeArch(privilege))
-                        .join("")}
+                .filter((cat, index) => index % 2 === 1)
+                .map((privilege) => this.getPrivilegeArch(privilege))
+                .join("")}
                 </group>
             </group>`;
     }

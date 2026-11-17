@@ -2,12 +2,12 @@
 
 from unittest.mock import patch
 
-from odoo.tests import tagged
-from odoo.tools import mute_logger
+from weth.tests import tagged
+from weth.tools import mute_logger
 
-from odoo.addons.payment.tests.http_common import PaymentHttpCommon
-from odoo.addons.payment_buckaroo.controllers.main import BuckarooController
-from odoo.addons.payment_buckaroo.tests.common import BuckarooCommon
+from weth.addons.payment.tests.http_common import PaymentHttpCommon
+from weth.addons.payment_buckaroo.controllers.main import BuckarooController
+from weth.addons.payment_buckaroo.tests.common import BuckarooCommon
 
 
 @tagged("post_install", "-at_install")
@@ -31,7 +31,7 @@ class BuckarooTest(BuckarooCommon, PaymentHttpCommon):
         }
 
         tx_sudo = self._create_transaction(flow="redirect")
-        with mute_logger("odoo.addons.payment.models.payment_transaction"):
+        with mute_logger("weth.addons.payment.models.payment_transaction"):
             processing_values = tx_sudo._get_processing_values()
         form_info = self._extract_values_from_html_form(processing_values["redirect_form_html"])
 
@@ -42,7 +42,7 @@ class BuckarooTest(BuckarooCommon, PaymentHttpCommon):
             "Buckaroo: invalid inputs specified in the redirect form.",
         )
 
-    @mute_logger("odoo.addons.payment_buckaroo.models.payment_transaction")
+    @mute_logger("weth.addons.payment_buckaroo.models.payment_transaction")
     def test_feedback_processing(self):
         self._disable_process_patcher()
         payment_data = BuckarooController._normalize_data_keys(self.sync_payment_data)
@@ -67,13 +67,13 @@ class BuckarooTest(BuckarooCommon, PaymentHttpCommon):
         tx.with_context(payment_safe_write=True)._process(payment_data)
         self.assertEqual(tx.state, "error")
 
-    @mute_logger("odoo.addons.payment_buckaroo.controllers.main")
+    @mute_logger("weth.addons.payment_buckaroo.controllers.main")
     def test_webhook_notification_confirms_transaction(self):
         """Test the processing of a webhook notification."""
         self._disable_process_patcher()
         tx = self._create_transaction("redirect")
         url = self._build_url(BuckarooController._webhook_url)
-        with patch("odoo.addons.payment.utils.verify_signature"):
+        with patch("weth.addons.payment.utils.verify_signature"):
             self._make_http_post_request(url, data=self.async_payment_data)
         self._run_processing()
         self.assertEqual(tx.state, "done")

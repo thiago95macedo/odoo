@@ -1,5 +1,5 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
-from odoo.tests.common import HttpCase, tagged
+from weth.tests.common import HttpCase, tagged
 
 
 @tagged('post_install', '-at_install')

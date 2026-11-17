@@ -3,11 +3,11 @@ import json
 
 from collections import defaultdict
 
-from odoo import api, fields, models, _
-from odoo.exceptions import AccessError, UserError, ValidationError
-from odoo.fields import Command, Domain
-from odoo.tools import float_compare
-from odoo.tools.misc import clean_context
+from weth import api, fields, models, _
+from weth.exceptions import AccessError, UserError, ValidationError
+from weth.fields import Command, Domain
+from weth.tools import float_compare
+from weth.tools.misc import clean_context
 
 
 class MrpBom(models.Model):

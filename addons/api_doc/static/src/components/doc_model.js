@@ -1,4 +1,4 @@
-import { Component, onPatched, markup, useEffect, proxy, t, useProps } from "@odoo/owl";
+import { Component, onPatched, markup, useEffect, proxy, t, useProps } from "@weth/owl";
 import { DocTable, TABLE_TYPES } from "@api_doc/components/doc_table";
 import { getCrudMethodsExamples } from "@api_doc/utils/doc_model_utils";
 import { DocCopyablePre } from "@api_doc/components/doc_copyable_pre";
@@ -62,7 +62,7 @@ export class DocModel extends Component {
             model: undefined,
             crudMethods: [],
             methods: [],
-            fields: { data: { items: [] }},
+            fields: { data: { items: [] } },
             modules: [],
             activeModules: {
                 core: true,

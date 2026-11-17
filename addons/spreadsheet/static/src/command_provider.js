@@ -1,6 +1,6 @@
 import { useEnv } from "@web/owl2/utils";
-import { onMounted, onWillUnmount } from "@odoo/owl";
-import { registries } from "@odoo/o-spreadsheet";
+import { onMounted, onWillUnmount } from "@weth/owl";
+import { registries } from "@weth/o-spreadsheet";
 import { registry } from "@web/core/registry";
 import { DefaultCommandItem } from "@web/core/commands/command_palette";
 import { HotkeyCommandItem } from "@web/core/commands/default_providers";

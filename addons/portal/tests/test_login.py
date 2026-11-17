@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.tests.common import tagged
-from odoo.addons.web.tests.test_login import TestWebLoginCommon
+from weth.tests.common import tagged
+from weth.addons.web.tests.test_login import TestWebLoginCommon
 
 
 @tagged('-at_install', 'post_install')

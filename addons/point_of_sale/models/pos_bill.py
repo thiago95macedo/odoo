@@ -1,5 +1,5 @@
-from odoo import api, fields, models, _
-from odoo.exceptions import ValidationError
+from weth import api, fields, models, _
+from weth.exceptions import ValidationError
 
 
 class PosBill(models.Model):

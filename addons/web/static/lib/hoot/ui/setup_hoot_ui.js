@@ -1,6 +1,6 @@
-/** @odoo-module */
+/** @weth-module */
 
-import { mount } from "@odoo/owl";
+import { mount } from "@weth/owl";
 import { HootFixtureElement } from "../core/fixture";
 import { waitForDocument } from "../hoot_utils";
 import { patchWindow } from "../mock/window";

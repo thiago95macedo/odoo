@@ -3,8 +3,8 @@
 from collections import defaultdict
 from datetime import UTC
 
-from odoo import api, fields, models
-from odoo.tools.date_utils import localized
+from weth import api, fields, models
+from weth.tools.date_utils import localized
 
 
 class ResourceMixin(models.AbstractModel):

@@ -1,7 +1,7 @@
 import { SearchPanel } from "@web/search/search_panel/search_panel";
 import { DateTimeInput } from "@web/core/datetime/datetime_input";
 import { serializeDateTime } from "@web/core/l10n/dates";
-import { proxy } from "@odoo/owl";
+import { proxy } from "@weth/owl";
 
 export class StockReportSearchPanel extends SearchPanel {
     static template = "stock.StockReportSearchPanel";

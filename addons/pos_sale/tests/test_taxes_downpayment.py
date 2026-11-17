@@ -1,8 +1,8 @@
-from odoo import Command
-from odoo.addons.account.tests.test_taxes_downpayment import TestTaxesDownPayment
-from odoo.addons.point_of_sale.tests.test_frontend import TestTaxCommonPOS
-from odoo.addons.sale.tests.common import TestTaxCommonSale
-from odoo.tests import tagged
+from weth import Command
+from weth.addons.account.tests.test_taxes_downpayment import TestTaxesDownPayment
+from weth.addons.point_of_sale.tests.test_frontend import TestTaxCommonPOS
+from weth.addons.sale.tests.common import TestTaxCommonSale
+from weth.tests import tagged
 
 
 @tagged('post_install', '-at_install')

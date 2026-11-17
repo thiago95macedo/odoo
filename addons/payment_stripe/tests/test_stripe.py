@@ -5,15 +5,15 @@ from unittest.mock import patch
 import requests
 from werkzeug.urls import url_encode
 
-from odoo.tests import tagged
-from odoo.tools import mute_logger
-from odoo.tools.urls import urljoin as url_join
+from weth.tests import tagged
+from weth.tools import mute_logger
+from weth.tools.urls import urljoin as url_join
 
-from odoo.addons.payment.const import SENSITIVE_KEYS as PAYMENT_SENSITIVE_KEYS
-from odoo.addons.payment.tests.http_common import PaymentHttpCommon
-from odoo.addons.payment_stripe import const
-from odoo.addons.payment_stripe.controllers.main import StripeController
-from odoo.addons.payment_stripe.tests.common import StripeCommon
+from weth.addons.payment.const import SENSITIVE_KEYS as PAYMENT_SENSITIVE_KEYS
+from weth.addons.payment.tests.http_common import PaymentHttpCommon
+from weth.addons.payment_stripe import const
+from weth.addons.payment_stripe.controllers.main import StripeController
+from weth.addons.payment_stripe.tests.common import StripeCommon
 
 
 @tagged("post_install", "-at_install")
@@ -28,7 +28,7 @@ class StripeTest(StripeCommon, PaymentHttpCommon):
                 "_stripe_create_intent",
                 return_value={"client_secret": dummy_client_secret},
             ),
-            mute_logger("odoo.addons.payment.models.payment_transaction"),
+            mute_logger("weth.addons.payment.models.payment_transaction"),
         ):
             processing_values = tx._get_processing_values()
 
@@ -40,7 +40,7 @@ class StripeTest(StripeCommon, PaymentHttpCommon):
         )
         self.assertEqual(processing_values["return_url"], return_url)
 
-    @mute_logger("odoo.addons.payment_stripe.models.payment_transaction")
+    @mute_logger("weth.addons.payment_stripe.models.payment_transaction")
     def test_tx_state_after_send_capture_request(self):
         self._disable_process_patcher()
         self.provider.payment_method_ids.active = False  # TODO VCHU: remove in master
@@ -48,7 +48,7 @@ class StripeTest(StripeCommon, PaymentHttpCommon):
         tx = self._create_transaction("direct", state="authorized")
 
         with patch(
-            "odoo.addons.payment.models.payment_provider.PaymentProvider._send_api_request",
+            "weth.addons.payment.models.payment_provider.PaymentProvider._send_api_request",
             return_value={
                 "id": "pi_3KTk9zAlCFm536g81Wy7RCPH",
                 "status": "succeeded",
@@ -61,7 +61,7 @@ class StripeTest(StripeCommon, PaymentHttpCommon):
             tx.state, "done", msg="The state should be 'done' after a successful capture."
         )
 
-    @mute_logger("odoo.addons.payment_stripe.models.payment_transaction")
+    @mute_logger("weth.addons.payment_stripe.models.payment_transaction")
     def test_tx_state_after_send_void_request(self):
         self._disable_process_patcher()
         self.provider.payment_method_ids.active = False  # TODO VCHU: remove in master
@@ -69,7 +69,7 @@ class StripeTest(StripeCommon, PaymentHttpCommon):
         tx = self._create_transaction("redirect", state="authorized")
 
         with patch(
-            "odoo.addons.payment.models.payment_provider.PaymentProvider._send_api_request",
+            "weth.addons.payment.models.payment_provider.PaymentProvider._send_api_request",
             return_value={
                 "id": "pi_3KTk9zAlCFm536g81Wy7RCPH",
                 "status": "canceled",
@@ -84,14 +84,14 @@ class StripeTest(StripeCommon, PaymentHttpCommon):
             msg="The state should be 'cancel' after voiding the transaction.",
         )
 
-    @mute_logger("odoo.addons.payment_stripe.controllers.main")
+    @mute_logger("weth.addons.payment_stripe.controllers.main")
     def test_webhook_notification_confirms_transaction(self):
         """Test the processing of a webhook notification."""
         self._disable_process_patcher()
         tx = self._create_transaction("redirect")
         url = self._build_url(StripeController._webhook_url)
         with patch(
-            "odoo.addons.payment_stripe.controllers.main.StripeController._verify_signature"
+            "weth.addons.payment_stripe.controllers.main.StripeController._verify_signature"
         ):
             self._make_json_request(url, data=self.payment_data)
         self._run_processing()
@@ -109,7 +109,7 @@ class StripeTest(StripeCommon, PaymentHttpCommon):
             )
             data = self.payment_data["data"]
             with patch(
-                "odoo.addons.payment_stripe.models.payment_transaction.PaymentTransaction"
+                "weth.addons.payment_stripe.models.payment_transaction.PaymentTransaction"
                 "._stripe_create_customer",
                 return_value={"id": "cus_1234567890ABCDE"},
             ):
@@ -139,7 +139,7 @@ class StripeTest(StripeCommon, PaymentHttpCommon):
             },
         )
 
-    @mute_logger("odoo.addons.payment_stripe.controllers.main")
+    @mute_logger("weth.addons.payment_stripe.controllers.main")
     def test_webhook_notification_tokenizes_payment_method(self):
         """Test the processing of a webhook notification."""
         self._disable_process_patcher()
@@ -149,13 +149,13 @@ class StripeTest(StripeCommon, PaymentHttpCommon):
         data = self.payment_data["data"]
         payment_method_response = data["object"] = self._mock_setup_intent_request()
         with (
-            patch("odoo.addons.payment_stripe.controllers.main.StripeController._verify_signature"),
+            patch("weth.addons.payment_stripe.controllers.main.StripeController._verify_signature"),
             patch(
-                "odoo.addons.payment.models.payment_provider.PaymentProvider._send_api_request",
+                "weth.addons.payment.models.payment_provider.PaymentProvider._send_api_request",
                 return_value=payment_method_response,
             ),
             patch(
-                "odoo.addons.payment.models.payment_transaction.PaymentTransaction._tokenize"
+                "weth.addons.payment.models.payment_transaction.PaymentTransaction._tokenize"
             ) as tokenize_check_mock,
         ):
             self._make_json_request(
@@ -164,7 +164,7 @@ class StripeTest(StripeCommon, PaymentHttpCommon):
             self._run_processing()
         self.assertEqual(tokenize_check_mock.call_count, 1)
 
-    @mute_logger("odoo.addons.payment_stripe.controllers.main")
+    @mute_logger("weth.addons.payment_stripe.controllers.main")
     def test_return_from_tokenization_request(self):
         tx = self._create_transaction("direct", amount=0, operation="validation", tokenize=True)
         url = self._build_url(StripeController._return_url)
@@ -254,7 +254,7 @@ class StripeTest(StripeCommon, PaymentHttpCommon):
         response._content = json.dumps(sensitive_values).encode()
 
         with self.assertLogs(
-            'odoo.addons.payment.models.payment_provider', level='INFO'
+            'weth.addons.payment.models.payment_provider', level='INFO'
         ) as log_catcher:
             self.stripe._log_request('POST', 'https://dummy.url', sensitive_values)
             self.stripe._log_response(response)

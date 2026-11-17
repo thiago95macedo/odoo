@@ -1,5 +1,5 @@
 import { onWillRender } from "@web/owl2/utils";
-import { Component, onMounted, Portal, signal, t, useProps } from "@odoo/owl";
+import { Component, onMounted, Portal, signal, t, useProps } from "@weth/owl";
 import { formatFloat, formatMonetary } from "@web/views/fields/formatters";
 
 export class ProductCatalogOrderLine extends Component {

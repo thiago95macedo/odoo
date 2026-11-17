@@ -163,7 +163,7 @@ the attacker's reading:
   ignores it and renders nothing, a bug to flag, though not an XSS.)
 - JS: the sinks are `el.innerHTML = ...`, `insertAdjacentHTML`, and owl
   `markup()` on a non-literal; never feed them user/low-privilege strings.
-  Escape with `htmlEscape` (`@odoo/owl`) or use the tagged-template form
+  Escape with `htmlEscape` (`@weth/owl`) or use the tagged-template form
   ``markup`<td>${name}</td>` `` (placeholders auto-escape; plain
   `markup(str)` marks raw HTML), use the `@web/core/utils/html` helpers
   (`setInnerHtml`, `htmlJoin`), or render through OWL `t-out`.

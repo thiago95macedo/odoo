@@ -1,7 +1,7 @@
 import { Dialog } from "@web/core/dialog/dialog";
 import { DateTimeInput } from "@web/core/datetime/datetime_input";
 import { _t } from "@web/core/l10n/translation";
-import { Component, onMounted, useProps, proxy, t } from "@odoo/owl";
+import { Component, onMounted, useProps, proxy, t } from "@weth/owl";
 import { useService } from "@web/core/utils/hooks";
 import { AlertDialog } from "@web/core/confirmation_dialog/confirmation_dialog";
 const { DateTime } = luxon;

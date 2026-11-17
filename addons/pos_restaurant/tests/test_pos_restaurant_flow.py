@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import fields
-from odoo.exceptions import UserError
-from odoo.tests import tagged
-from odoo.addons.pos_restaurant.tests.test_frontend import TestFrontendCommon
+from weth import fields
+from weth.exceptions import UserError
+from weth.tests import tagged
+from weth.addons.pos_restaurant.tests.test_frontend import TestFrontendCommon
 
 @tagged('post_install', '-at_install')
 class TestPosRestaurantFlow(TestFrontendCommon):

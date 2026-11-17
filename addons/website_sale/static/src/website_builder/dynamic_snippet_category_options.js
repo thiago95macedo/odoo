@@ -1,5 +1,5 @@
 import { useDomState } from '@html_builder/core/utils';
-import { onWillStart } from '@odoo/owl';
+import { onWillStart } from '@weth/owl';
 import { useService } from '@web/core/utils/hooks';
 import { DynamicSnippetOption } from '@website/builder/plugins/options/dynamic_snippet_option';
 import { registry } from '@web/core/registry';

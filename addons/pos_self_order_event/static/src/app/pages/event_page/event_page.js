@@ -1,4 +1,4 @@
-import { Component, proxy, useProps, t, signal } from "@odoo/owl";
+import { Component, proxy, useProps, t, signal } from "@weth/owl";
 import { Stepper } from "@pos_self_order/app/components/combo_stepper/combo_stepper";
 import { useSelfOrder } from "@pos_self_order/app/services/self_order_service";
 import { useScrollShadow } from "@pos_self_order/app/utils/scroll_shadow_hook";
@@ -200,7 +200,7 @@ export class EventPage extends Component {
             const slotTicketAvailable = this.state.slotTicketAvailabilities?.[ticket.id]?.[slotId];
             const slotRemaining =
                 this.state.slotTicketAvailabilities?.[
-                    Object.keys(this.state.slotTicketAvailabilities)[0]
+                Object.keys(this.state.slotTicketAvailabilities)[0]
                 ]?.[slotId];
             const totalSelectedOther = Object.entries(this.state.ticketQuantities).reduce(
                 (sum, [id, qty]) => sum + (Number(id) === ticket.id ? 0 : qty),
@@ -248,9 +248,9 @@ export class EventPage extends Component {
         )
             ? Number.MAX_SAFE_INTEGER
             : event.event_ticket_ids.reduce(
-                  (sum, ticket) => sum + (ticket.seats_available || 0),
-                  0
-              );
+                (sum, ticket) => sum + (ticket.seats_available || 0),
+                0
+            );
     }
 
     notifyLimit(limit, type) {

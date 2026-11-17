@@ -5,11 +5,11 @@ import uuid
 from unittest.mock import patch
 from urllib.parse import urlencode
 
-from odoo.tests import tagged
-from odoo.tools import mute_logger
+from weth.tests import tagged
+from weth.tools import mute_logger
 
-from odoo.addons.point_of_sale.tests.test_frontend import TestPointOfSaleHttpCommon
-from odoo.addons.pos_mercado_pago.models.pos_payment_method import PosPaymentMethod
+from weth.addons.point_of_sale.tests.test_frontend import TestPointOfSaleHttpCommon
+from weth.addons.pos_mercado_pago.models.pos_payment_method import PosPaymentMethod
 
 
 @tagged('post_install', '-at_install')
@@ -96,7 +96,7 @@ class TestMercadoPagoWebhook(TestPointOfSaleHttpCommon):
         }, query={'data.id': query_data_id, 'data.external_reference': ext_ref, 'type': 'order'})
         self.assertEqual(resp.status_code, 200)
 
-    @mute_logger('odoo.addons.pos_mercado_pago.controllers.main')
+    @mute_logger('weth.addons.pos_mercado_pago.controllers.main')
     def test_bad_signature_returns_401(self):
         ext_ref = self._ext_ref()
         body = {'type': 'order', 'action': 'order.action_required',
@@ -107,7 +107,7 @@ class TestMercadoPagoWebhook(TestPointOfSaleHttpCommon):
         }, query={'data.id': 'ORD01TEST', 'data.external_reference': ext_ref, 'type': 'order'})
         self.assertEqual(resp.status_code, 401)
 
-    @mute_logger('odoo.addons.pos_mercado_pago.controllers.main')
+    @mute_logger('weth.addons.pos_mercado_pago.controllers.main')
     def test_missing_external_reference_returns_400(self):
         body = {'type': 'order', 'data': {'id': 'ORD01TEST'}}
         ts = '1700000000'
@@ -118,14 +118,14 @@ class TestMercadoPagoWebhook(TestPointOfSaleHttpCommon):
         })
         self.assertEqual(resp.status_code, 400)
 
-    @mute_logger('odoo.addons.pos_mercado_pago.controllers.main')
+    @mute_logger('weth.addons.pos_mercado_pago.controllers.main')
     def test_missing_signature_returns_400(self):
         body = {'type': 'order', 'data': {'id': 'ORD01TEST',
                                           'external_reference': self._ext_ref()}}
         resp = self._post(body, {'X-Request-Id': 'req-1'})
         self.assertEqual(resp.status_code, 400)
 
-    @mute_logger('odoo.addons.pos_mercado_pago.controllers.main')
+    @mute_logger('weth.addons.pos_mercado_pago.controllers.main')
     def test_unsupported_type_returns_400(self):
         body = {'type': 'payment', 'data': {'id': '12345'}}
         ts = '1700000000'

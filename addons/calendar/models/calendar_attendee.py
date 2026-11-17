@@ -2,11 +2,11 @@
 import uuid
 import logging
 
-from odoo import api, fields, models, _
-from odoo.addons.base.models.res_partner import _tz_get
-from odoo.exceptions import UserError
-from odoo.tools.misc import clean_context
-from odoo.tools import split_every
+from weth import api, fields, models, _
+from weth.addons.base.models.res_partner import _tz_get
+from weth.exceptions import UserError
+from weth.tools.misc import clean_context
+from weth.tools import split_every
 
 _logger = logging.getLogger(__name__)
 

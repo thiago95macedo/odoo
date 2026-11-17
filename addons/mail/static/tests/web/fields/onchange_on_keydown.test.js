@@ -8,15 +8,15 @@ import {
     startServer,
 } from "@mail/../tests/mail_test_helpers";
 import { DiscussChannel } from "@mail/../tests/mock_server/mock_models/discuss_channel";
-import { describe, expect, test } from "@odoo/hoot";
-import { keyDown, runAllTimers } from "@odoo/hoot-dom";
+import { describe, expect, test } from "@weth/hoot";
+import { keyDown, runAllTimers } from "@weth/hoot-dom";
 import { onRpc } from "@web/../tests/web_test_helpers";
 
 defineMailModels();
 describe.current.tags("desktop");
 
 test("onchange_on_keydown option triggers onchange properly", async () => {
-    DiscussChannel._onChanges.description = () => {};
+    DiscussChannel._onChanges.description = () => { };
     const pyEnv = await startServer();
     const channelId = pyEnv["discuss.channel"].create({ name: "General" });
     await start();
@@ -32,7 +32,7 @@ test("onchange_on_keydown option triggers onchange properly", async () => {
 });
 
 test("editing a text field with the onchange_on_keydown option disappearing shouldn't trigger a crash", async () => {
-    DiscussChannel._onChanges.description = () => {};
+    DiscussChannel._onChanges.description = () => { };
     const pyEnv = await startServer();
     const channelId = pyEnv["discuss.channel"].create({ name: "General" });
     onRpc("discuss.channel", "onchange", () => expect.step("onchange"));

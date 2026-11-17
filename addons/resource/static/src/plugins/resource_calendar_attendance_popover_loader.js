@@ -1,4 +1,4 @@
-import { Plugin, types as t, useConfig, whenReady } from "@odoo/owl";
+import { Plugin, types as t, useConfig, whenReady } from "@weth/owl";
 import { ResourceCalendarAttendancePopover } from "@resource/components/resource_calendar_attendance_popover/resource_calendar_attendance_popover";
 import { parseXML } from "@web/core/utils/xml";
 import { addFieldDependencies, extractFieldsFromArchInfo } from "@web/model/relational_model/utils";

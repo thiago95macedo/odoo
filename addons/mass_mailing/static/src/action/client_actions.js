@@ -1,4 +1,4 @@
-import { markup } from "@odoo/owl";
+import { markup } from "@weth/owl";
 import { registry } from "@web/core/registry";
 import { useService } from "@web/core/utils/hooks";
 import { htmlSprintf } from "@web/core/utils/html";

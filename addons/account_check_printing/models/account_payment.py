@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import models, fields, api, _
-from odoo.exceptions import UserError, ValidationError, RedirectWarning
-from odoo.tools.misc import formatLang, format_date
+from weth import models, fields, api, _
+from weth.exceptions import UserError, ValidationError, RedirectWarning
+from weth.tools.misc import formatLang, format_date
 
 INV_LINES_PER_STUB = 9
 

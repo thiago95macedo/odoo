@@ -19,8 +19,8 @@ export function sendRequest(route, params) {
         form.setAttribute("target", "_top");
     }
 
-    if (odoo.csrf_token) {
-        _addInput(form, "csrf_token", odoo.csrf_token);
+    if (weth.csrf_token) {
+        _addInput(form, "csrf_token", weth.csrf_token);
     }
 
     for (const key in params) {

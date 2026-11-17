@@ -1,5 +1,5 @@
-from odoo.exceptions import ValidationError
-from odoo.tests import TransactionCase
+from weth.exceptions import ValidationError
+from weth.tests import TransactionCase
 
 
 class TestBlueprintInheritance(TransactionCase):

@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import models
-from odoo.addons.base.models.res_lang import LangDataDict
+from weth import models
+from weth.addons.base.models.res_lang import LangDataDict
 
 
 class ResLang(models.Model):

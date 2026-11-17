@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
 import datetime
-from odoo.tests.common import TransactionCase
-from odoo import fields
+from weth.tests.common import TransactionCase
+from weth import fields
 
 
 class TestActivitySystrayCounter(TransactionCase):

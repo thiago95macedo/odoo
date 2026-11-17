@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 from datetime import datetime, date, time
 
-from odoo.tests.common import TransactionCase
-from odoo.tests import tagged
+from weth.tests.common import TransactionCase
+from weth.tests import tagged
 
 
 @tagged('post_install', '-at_install', 'time_rule_pipeline')

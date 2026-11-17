@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
 
     <template id="sale_order_portal_optional_product_quantity" name="Order Quantity">
         <div class="d-inline-flex align-items-center gap-1">
@@ -63,4 +63,4 @@
         </xpath>
     </template>
 
-</odoo>
+</weth>

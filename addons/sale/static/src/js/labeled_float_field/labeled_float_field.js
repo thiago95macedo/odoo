@@ -1,7 +1,7 @@
 import { registry } from "@web/core/registry";
 import { getShortLabel } from "../labeled_field_short_labels";
 import { FloatField, floatField, floatFieldProps } from "@web/views/fields/float/float_field";
-import { t, useProps } from "@odoo/owl";
+import { t, useProps } from "@weth/owl";
 
 export class LabeledFloatField extends FloatField {
     static template = "sale.LabeledFloatField";

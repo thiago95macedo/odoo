@@ -1,6 +1,6 @@
 import { defineMailModels } from "@mail/../tests/mail_test_helpers";
 import { IrUiView, ResCompany } from "@mass_mailing/../tests/mass_mailing_test_helpers";
-import { animationFrame, beforeEach, click, describe, expect, test, waitFor } from "@odoo/hoot";
+import { animationFrame, beforeEach, click, describe, expect, test, waitFor } from "@weth/hoot";
 import {
     clickSave,
     contains,
@@ -217,19 +217,19 @@ describe("field HTML", () => {
             loadIframeAssets() {
                 return {
                     "mass_mailing.assets_iframe_style": {
-                        toggle: () => {},
+                        toggle: () => { },
                     },
                     "mass_mailing.assets_inside_basic_editor_iframe": {
-                        toggle: () => {},
+                        toggle: () => { },
                     },
                     "mass_mailing.assets_inside_builder_iframe": {
-                        toggle: () => {},
+                        toggle: () => { },
                     },
                 };
             },
         });
         patch(ThemeSelectorIframe.prototype, {
-            async loadIframeAssets() {},
+            async loadIframeAssets() { },
         });
     });
     test("save arch and html", async () => {

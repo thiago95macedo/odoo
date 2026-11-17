@@ -1,12 +1,12 @@
 from contextlib import contextmanager
 from unittest.mock import patch
 
-from odoo import exceptions, tools
-from odoo.addons.mail.tests.common import MailCommon
-from odoo.addons.phone_validation.tools import phone_validation
-from odoo.addons.sms.models.sms_sms import SmsSms
-from odoo.addons.sms.tools.sms_api import SmsApiBase
-from odoo.tests import common
+from weth import exceptions, tools
+from weth.addons.mail.tests.common import MailCommon
+from weth.addons.phone_validation.tools import phone_validation
+from weth.addons.sms.models.sms_sms import SmsSms
+from weth.addons.sms.tools.sms_api import SmsApiBase
+from weth.tests import common
 
 
 class MockSMS(common.HttpCase):
@@ -270,7 +270,7 @@ class SMSCase(MockSMS):
         if messages is not None:
             sanitize_tags = {**tools.mail.SANITIZE_TAGS}
             sanitize_tags['remove_tags'] = [*sanitize_tags['remove_tags'] + ['a']]
-            with patch('odoo.tools.mail.SANITIZE_TAGS', sanitize_tags):
+            with patch('weth.tools.mail.SANITIZE_TAGS', sanitize_tags):
                 for message in messages:
                     self.assertEqual(content, tools.html2plaintext(tools.html_sanitize(message.body)).rstrip('\n'))
 

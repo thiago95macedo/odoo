@@ -8,7 +8,7 @@ import json
 import requests
 from werkzeug import urls
 
-from odoo import api, fields, models, _
+from weth import api, fields, models, _
 
 _logger = logging.getLogger(__name__)
 

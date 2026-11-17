@@ -3,7 +3,7 @@
 
 from datetime import datetime
 
-from odoo import api, models
+from weth import api, models
 
 
 class WebsiteMenu(models.Model):

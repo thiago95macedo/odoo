@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import Command, fields
-from odoo.exceptions import UserError
-from odoo.tests import tagged, common, Form, HttpCase
-from odoo.tools import float_compare, float_is_zero
+from weth import Command, fields
+from weth.exceptions import UserError
+from weth.tests import tagged, common, Form, HttpCase
+from weth.tools import float_compare, float_is_zero
 
 
 class TestRepairCommon(common.TransactionCase):
@@ -1126,5 +1126,5 @@ class TestRepairHttp(HttpCase):
             })],
         })
 
-        self.start_tour(f"/odoo/repairs/{repair.id}", "test_repair_without_product_in_parts", login='admin')
+        self.start_tour(f"/weth/repairs/{repair.id}", "test_repair_without_product_in_parts", login='admin')
         self.assertTrue(repair.has_uncomplete_moves)

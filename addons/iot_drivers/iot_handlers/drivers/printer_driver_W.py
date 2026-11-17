@@ -7,10 +7,10 @@ import subprocess
 import win32print
 import pywintypes
 
-from odoo.addons.iot_drivers.iot_handlers.drivers.printer_driver_base import PrinterDriverBase
-from odoo.addons.iot_drivers.tools import system
-from odoo.tools.mimetypes import guess_mimetype
-from odoo.addons.iot_drivers.iot_handlers.interfaces.printer_interface_W import win32print_lock, PrinterInterface
+from weth.addons.iot_drivers.iot_handlers.drivers.printer_driver_base import PrinterDriverBase
+from weth.addons.iot_drivers.tools import system
+from weth.tools.mimetypes import guess_mimetype
+from weth.addons.iot_drivers.iot_handlers.interfaces.printer_interface_W import win32print_lock, PrinterInterface
 
 _logger = logging.getLogger(__name__)
 

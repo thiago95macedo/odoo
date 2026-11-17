@@ -4,10 +4,10 @@ from datetime import timedelta
 
 from markupsafe import Markup
 
-from odoo import Command, _, api, fields, models
-from odoo.fields import Domain
-from odoo.exceptions import AccessError, UserError, ValidationError
-from odoo.tools import float_is_zero, format_datetime, plaintext2html
+from weth import Command, _, api, fields, models
+from weth.fields import Domain
+from weth.exceptions import AccessError, UserError, ValidationError
+from weth.tools import float_is_zero, format_datetime, plaintext2html
 
 _logger = logging.getLogger(__name__)
 

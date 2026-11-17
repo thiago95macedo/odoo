@@ -6,18 +6,18 @@ from unittest.mock import patch
 
 from freezegun import freeze_time
 
-from odoo.http.session import session_store
-from odoo.tests import HttpCase, mute_logger, new_test_user
-from odoo.tools import SQL
-from odoo.tools.lru import LRU
+from weth.http.session import session_store
+from weth.tests import HttpCase, mute_logger, new_test_user
+from weth.tools import SQL
+from weth.tools.lru import LRU
 
-from odoo.addons.bus.session_helpers import (
+from weth.addons.bus.session_helpers import (
     _get_session_token_query_params,
     _query_params_by_dbname,
     check_sessions,
 )
-from odoo.addons.bus.tests.common import WebsocketCase
-from odoo.addons.bus.websocket import CloseCode, WebsocketConnectionHandler
+from weth.addons.bus.tests.common import WebsocketCase
+from weth.addons.bus.websocket import CloseCode, WebsocketConnectionHandler
 
 
 class TestWebsocketCheckSession(WebsocketCase, HttpCase):
@@ -62,7 +62,7 @@ class TestWebsocketCheckSession(WebsocketCase, HttpCase):
         store.save(john_session)
         self.assertEqual(set(check_sessions(self.env.cr, sessions)), {jane_session.sid})
 
-    @patch("odoo.addons.bus.session_helpers._stat_by_sid", new_callable=lambda: LRU(4096))
+    @patch("weth.addons.bus.session_helpers._stat_by_sid", new_callable=lambda: LRU(4096))
     def test_check_session_cache_hit_skips_session_creation(self, stat_by_sid):
         bob = new_test_user(self.env, "bob", groups="base.group_user")
         self.authenticate(bob.login, bob.password)
@@ -79,7 +79,7 @@ class TestWebsocketCheckSession(WebsocketCase, HttpCase):
         self.update_session(deletion_time=time.time() - 3600)
         self.assertNotIn(self.session.sid, check_sessions(self.env.cr, [self.session]))
 
-    @patch("odoo.addons.bus.session_helpers._stat_by_sid", new_callable=lambda: LRU(4096))
+    @patch("weth.addons.bus.session_helpers._stat_by_sid", new_callable=lambda: LRU(4096))
     def test_check_session_mtime_collision(self, stat_by_sid):
         bob = new_test_user(self.env, "bob", groups="base.group_user")
         self.authenticate(bob.login, bob.password)
@@ -92,7 +92,7 @@ class TestWebsocketCheckSession(WebsocketCase, HttpCase):
                 self.st_ino = st.st_ino
 
         with patch(
-            "odoo.addons.bus.session_helpers.os.fstat",
+            "weth.addons.bus.session_helpers.os.fstat",
             side_effect=lambda fd: _FrozenStat(real_fstat(fd)),
         ):
             self.update_session(deletion_time=time.time() - 3600)
@@ -206,7 +206,7 @@ class TestWebsocketCheckSession(WebsocketCase, HttpCase):
                 '_serve_forever',
                 side_effect=serve_forever,
             ) as mock,
-            mute_logger('odoo.addons.bus.websocket'),
+            mute_logger('weth.addons.bus.websocket'),
         ):
             ws = self.websocket_connect(
                 cookie=f'session_id={user_session.sid};',

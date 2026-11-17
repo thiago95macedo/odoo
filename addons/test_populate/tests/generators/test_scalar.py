@@ -1,6 +1,6 @@
-from odoo.tests import TransactionCase
+from weth.tests import TransactionCase
 
-from odoo.addons.populate.generators import (
+from weth.addons.populate.generators import (
     Boolean,
     Float,
     Integer,

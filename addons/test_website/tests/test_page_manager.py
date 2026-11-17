@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-import odoo.tests
-from odoo.addons.website.tests.common import HttpCaseWithWebsiteUser
+import weth.tests
+from weth.addons.website.tests.common import HttpCaseWithWebsiteUser
 
 
-@odoo.tests.common.tagged('post_install', '-at_install')
+@weth.tests.common.tagged('post_install', '-at_install')
 class TestWebsitePageManager(HttpCaseWithWebsiteUser):
     def test_page_manager_test_model(self):
         if self.env['website'].search_count([]) == 1:
@@ -22,8 +22,8 @@ class TestWebsitePageManager(HttpCaseWithWebsiteUser):
             "There should at least be one record without website_id and one for 2 different websites",
         )
         self.assertNotIn('website_id', self.env['test.model']._fields)
-        self.start_tour('/odoo/action-test_website.action_test_model_multi_website', 'test_website_page_manager', login="website_user")
+        self.start_tour('/weth/action-test_website.action_test_model_multi_website', 'test_website_page_manager', login="website_user")
         # This second test is about ensuring that you can switch from a list
         # view which has no `website_pages_list` js_class to its kanban view
-        self.start_tour('/odoo/action-test_website.action_test_model_multi_website_js_class_bug', 'test_website_page_manager_js_class_bug', login="website_user")
-        self.start_tour('/odoo/action-test_website.action_test_model', 'test_website_page_manager_no_website_id', login="website_user")
+        self.start_tour('/weth/action-test_website.action_test_model_multi_website_js_class_bug', 'test_website_page_manager_js_class_bug', login="website_user")
+        self.start_tour('/weth/action-test_website.action_test_model', 'test_website_page_manager_no_website_id', login="website_user")

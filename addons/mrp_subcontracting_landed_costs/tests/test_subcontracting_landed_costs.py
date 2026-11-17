@@ -1,8 +1,8 @@
-from odoo.exceptions import ValidationError
-from odoo.tests import Form, tagged
-from odoo import Command
+from weth.exceptions import ValidationError
+from weth.tests import Form, tagged
+from weth import Command
 
-from odoo.addons.mrp_subcontracting.tests.common import TestMrpSubcontractingCommon
+from weth.addons.mrp_subcontracting.tests.common import TestMrpSubcontractingCommon
 
 
 @tagged('post_install', '-at_install')

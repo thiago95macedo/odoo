@@ -1,7 +1,7 @@
-import { describe, expect, test } from "@odoo/hoot";
-import { isInViewPort, press, queryFirst, queryOne } from "@odoo/hoot-dom";
-import { animationFrame, tick } from "@odoo/hoot-mock";
-import { Component, signal, xml } from "@odoo/owl";
+import { describe, expect, test } from "@weth/hoot";
+import { isInViewPort, press, queryFirst, queryOne } from "@weth/hoot-dom";
+import { animationFrame, tick } from "@weth/hoot-mock";
+import { Component, signal, xml } from "@weth/owl";
 import {
     defineModels,
     fields,
@@ -81,8 +81,8 @@ test("selection on triple click should be contained in the paragraph", async () 
     await tripleClick(el.querySelector("p:not([data-selection-placeholder])"));
     expect(getContent(el)).toBe(
         '<p data-selection-placeholder=""><br></p>' +
-            "<div><p>[abc]</p><br><br><h2>def</h2></div>" +
-            '<p data-selection-placeholder=""><br></p>'
+        "<div><p>[abc]</p><br><br><h2>def</h2></div>" +
+        '<p data-selection-placeholder=""><br></p>'
     );
 });
 
@@ -271,8 +271,8 @@ test("press 'ctrl+a' in 'oe_structure' child should only select his content", as
     await press(["ctrl", "a"]);
     expect(getContent(el)).toBe(
         '<p data-selection-placeholder=""><br></p>' +
-            `<div class="oe_structure"><p>[ab]</p><p>cd</p></div>` +
-            '<p data-selection-placeholder=""><br></p>'
+        `<div class="oe_structure"><p>[ab]</p><p>cd</p></div>` +
+        '<p data-selection-placeholder=""><br></p>'
     );
 });
 

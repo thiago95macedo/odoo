@@ -1,10 +1,10 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import models, fields, api
-from odoo.exceptions import ValidationError
-from odoo.tools import format_time
-from odoo.tools.date_utils import float_to_time
-from odoo.tools.misc import format_duration
+from weth import models, fields, api
+from weth.exceptions import ValidationError
+from weth.tools import format_time
+from weth.tools.date_utils import float_to_time
+from weth.tools.misc import format_duration
 
 
 class ResourceCalendarAttendance(models.Model):

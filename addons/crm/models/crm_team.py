@@ -8,10 +8,10 @@ from ast import literal_eval
 from collections import defaultdict
 from markupsafe import Markup
 
-from odoo import api, exceptions, fields, models, modules, _
-from odoo.addons.crm.models.crm_team_member import MEMBER_MAX_LEAD_ASSIGNMENT_QUOTA
-from odoo.fields import Domain
-from odoo.tools import float_compare, float_round
+from weth import api, exceptions, fields, models, modules, _
+from weth.addons.crm.models.crm_team_member import MEMBER_MAX_LEAD_ASSIGNMENT_QUOTA
+from weth.fields import Domain
+from weth.tools import float_compare, float_round
 
 _logger = logging.getLogger(__name__)
 

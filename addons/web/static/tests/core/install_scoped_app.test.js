@@ -1,5 +1,5 @@
-import { animationFrame, expect, getFixture, test } from "@odoo/hoot";
-import { Component, xml } from "@odoo/owl";
+import { animationFrame, expect, getFixture, test } from "@weth/hoot";
+import { Component, xml } from "@weth/owl";
 import { contains, makeTestApp, mountWithCleanup, onRpc } from "@web/../tests/web_test_helpers";
 
 import { location } from "@web/core/browser/browser";

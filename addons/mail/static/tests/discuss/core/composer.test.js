@@ -16,8 +16,8 @@ import {
 import { htmlInsertText } from "@mail/../tests/mail_test_helpers_html";
 import { Composer } from "@mail/core/common/composer";
 import { Thread } from "@mail/core/common/thread_model";
-import { beforeEach, describe, expect, test } from "@odoo/hoot";
-import { animationFrame } from "@odoo/hoot-mock";
+import { beforeEach, describe, expect, test } from "@weth/hoot";
+import { animationFrame } from "@weth/hoot-mock";
 import { getService, patchWithCleanup, serverState } from "@web/../tests/web_test_helpers";
 import { deserializeDateTime } from "@web/core/l10n/dates";
 import { getOrigin } from "@web/core/utils/urls";
@@ -137,8 +137,7 @@ test("Show self-avatar in composer of Discuss App", async () => {
     await contains(".o-mail-Composer-avatar");
     const [partner] = pyEnv["res.partner"].read(serverState.partnerId);
     await contains(
-        `img.o-mail-Composer-avatar[data-src='${getOrigin()}/web/image/res.partner/${
-            serverState.partnerId
+        `img.o-mail-Composer-avatar[data-src='${getOrigin()}/web/image/res.partner/${serverState.partnerId
         }/avatar_128?unique=${deserializeDateTime(partner.write_date).ts}']`
     );
     // but not in chat window

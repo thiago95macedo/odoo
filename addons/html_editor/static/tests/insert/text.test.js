@@ -1,9 +1,9 @@
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@weth/hoot";
 import { setupEditor, testEditor } from "../_helpers/editor";
 import { deleteBackward, insertSpace, insertText } from "../_helpers/user_actions";
 import { getContent } from "../_helpers/selection";
 import { execCommand } from "../_helpers/userCommands";
-import { press } from "@odoo/hoot-dom";
+import { press } from "@weth/hoot-dom";
 import { unformat } from "../_helpers/format";
 
 describe("collapsed selection", () => {

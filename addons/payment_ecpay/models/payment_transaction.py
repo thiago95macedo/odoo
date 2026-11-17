@@ -2,11 +2,11 @@
 
 from zoneinfo import ZoneInfo
 
-from odoo import api, models
-from odoo.tools.urls import urljoin
+from weth import api, models
+from weth.tools.urls import urljoin
 
-from odoo.addons.payment import utils as payment_utils
-from odoo.addons.payment_ecpay import const
+from weth.addons.payment import utils as payment_utils
+from weth.addons.payment_ecpay import const
 
 
 class PaymentTransaction(models.Model):

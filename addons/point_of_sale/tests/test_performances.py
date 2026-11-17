@@ -2,11 +2,11 @@
 
 import logging
 
-from odoo.addons.point_of_sale.tests.test_frontend import TestPointOfSaleHttpCommon
+from weth.addons.point_of_sale.tests.test_frontend import TestPointOfSaleHttpCommon
 
-from odoo.cli.duplicate import Duplicate
-from odoo.tests.common import tagged
-from odoo.tools import mute_logger
+from weth.cli.duplicate import Duplicate
+from weth.tests.common import tagged
+from weth.tools import mute_logger
 
 _logger = logging.getLogger(__name__)
 
@@ -34,7 +34,7 @@ class TestPosPerformance(TestPointOfSaleHttpCommon):
         _logger.info("\n\nBefore %s Count: %s\nAfter %s Count: %s\n\n", model_name, before_count, model_name, after_count)
         return True
 
-    @mute_logger('odoo.models.unlink', 'odoo.cli.populate', 'odoo.tools.populate', 'odoo.tests.common', 'werkzeug')
+    @mute_logger('weth.models.unlink', 'weth.cli.populate', 'weth.tools.populate', 'weth.tests.common', 'werkzeug')
     def test_pos_session_open_product_performance(self):
         self.env['ir.config_parameter'].sudo().set_int('point_of_sale.limited_product_count', 20000)
         if not self.__populate_model('product.template', 20000):

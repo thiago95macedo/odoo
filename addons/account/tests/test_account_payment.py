@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 from contextlib import contextmanager
 
-from odoo import Command, fields
-from odoo.addons.account.tests.common import AccountTestInvoicingWithBanksCommon
-from odoo.exceptions import UserError
-from odoo.addons.mail.tests.common import MailCommon
-from odoo.tests import Form, tagged
+from weth import Command, fields
+from weth.addons.account.tests.common import AccountTestInvoicingWithBanksCommon
+from weth.exceptions import UserError
+from weth.addons.mail.tests.common import MailCommon
+from weth.tests import Form, tagged
 from unittest.mock import patch
 
 

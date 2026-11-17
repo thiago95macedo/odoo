@@ -1,4 +1,4 @@
-import { onPatched, useProps, proxy, signal, t } from "@odoo/owl";
+import { onPatched, useProps, proxy, signal, t } from "@weth/owl";
 import { useAutofocus } from "@web/core/utils/hooks";
 import { debounce } from "@web/core/utils/timing";
 import { TModelInput } from "@point_of_sale/app/components/inputs/t_model_input";

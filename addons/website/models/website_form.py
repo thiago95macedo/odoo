@@ -4,10 +4,10 @@ from ast import literal_eval
 from collections import defaultdict
 from lxml import html
 
-from odoo import SUPERUSER_ID, api, fields, models
-from odoo.exceptions import ValidationError
-from odoo.fields import Domain
-from odoo.http import request
+from weth import SUPERUSER_ID, api, fields, models
+from weth.exceptions import ValidationError
+from weth.fields import Domain
+from weth.http import request
 
 
 class Website(models.Model):

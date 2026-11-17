@@ -1,6 +1,6 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import fields, models, SUPERUSER_ID
+from weth import fields, models, SUPERUSER_ID
 
 
 class IrCron(models.AbstractModel):

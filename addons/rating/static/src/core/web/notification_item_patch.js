@@ -1,6 +1,6 @@
 import { NotificationItem } from "@mail/core/public_web/notification_item";
 
-import { useProps, t } from "@odoo/owl";
+import { useProps, t } from "@weth/owl";
 
 import { patch } from "@web/core/utils/patch";
 

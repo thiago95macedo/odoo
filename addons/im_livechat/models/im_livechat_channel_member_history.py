@@ -1,7 +1,7 @@
-from odoo import api, models, fields
-from odoo.exceptions import ValidationError
-from odoo.addons.mail.tools.discuss import Store
-from odoo.tools.sql import SQL
+from weth import api, models, fields
+from weth.exceptions import ValidationError
+from weth.addons.mail.tools.discuss import Store
+from weth.tools.sql import SQL
 
 
 class ImLivechatChannelMemberHistory(models.Model):

@@ -1,6 +1,6 @@
-from odoo.http import route
+from weth.http import route
 
-from odoo.addons.mail.controllers.google_translate import GoogleTranslateController
+from weth.addons.mail.controllers.google_translate import GoogleTranslateController
 
 
 class GoogleTranslateCorsController(GoogleTranslateController):

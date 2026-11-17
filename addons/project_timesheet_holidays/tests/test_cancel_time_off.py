@@ -2,7 +2,7 @@
 
 from freezegun import freeze_time
 
-from odoo.tests import TransactionCase, tagged, new_test_user
+from weth.tests import TransactionCase, tagged, new_test_user
 
 
 @tagged('post_install', '-at_install')

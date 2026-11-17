@@ -1,6 +1,6 @@
-import { describe, expect, test } from "@odoo/hoot";
-import { click, edit } from "@odoo/hoot-dom";
-import { animationFrame } from "@odoo/hoot-mock";
+import { describe, expect, test } from "@weth/hoot";
+import { click, edit } from "@weth/hoot-dom";
+import { animationFrame } from "@weth/hoot-mock";
 import { mountView } from "@web/../tests/web_test_helpers";
 
 import { HRTimesheet, defineTimesheetModels } from "./hr_timesheet_models";

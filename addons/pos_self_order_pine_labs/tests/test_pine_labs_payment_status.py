@@ -4,9 +4,9 @@ import json
 from itertools import count
 from unittest.mock import patch
 
-from odoo import Command, fields
-from odoo.addons.point_of_sale.tests.test_frontend import TestPointOfSaleHttpCommon
-from odoo.tests.common import tagged
+from weth import Command, fields
+from weth.addons.point_of_sale.tests.test_frontend import TestPointOfSaleHttpCommon
+from weth.tests.common import tagged
 
 
 @tagged("post_install_l10n", "post_install", "-at_install")
@@ -61,7 +61,7 @@ class TestPineLabsPaymentStatus(TestPointOfSaleHttpCommon):
                 }
             raise NotImplementedError(endpoint)
 
-        patcher = patch("odoo.addons.pos_pine_labs.models.pos_payment_method.call_pine_labs", fake_call_pine_labs)
+        patcher = patch("weth.addons.pos_pine_labs.models.pos_payment_method.call_pine_labs", fake_call_pine_labs)
         patcher.start()
         self.addCleanup(patcher.stop)
 

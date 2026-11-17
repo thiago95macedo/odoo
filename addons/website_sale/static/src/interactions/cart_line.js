@@ -1,4 +1,4 @@
-import { markup } from '@odoo/owl';
+import { markup } from '@weth/owl';
 import { Interaction } from '@web/public/interaction';
 import { browser } from '@web/core/browser/browser';
 import { registry } from '@web/core/registry';
@@ -64,7 +64,7 @@ export class CartLine extends Interaction {
         })).catch(error => {
             this.services.cart.showWarning(error.data.message);
         });
-        if (!data) {return;}
+        if (!data) { return; }
 
         data['website_sale.cart_lines'] = markup(data['website_sale.cart_lines']);
 

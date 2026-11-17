@@ -4,8 +4,8 @@
 import logging
 from datetime import date
 
-from odoo import api, fields, models, _, exceptions
-from odoo.tools import SQL
+from weth import api, fields, models, _, exceptions
+from weth.tools import SQL
 
 
 _logger = logging.getLogger(__name__)

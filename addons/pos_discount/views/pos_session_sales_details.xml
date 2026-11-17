@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
     <template id="pos_discount.pos_session_sales_details" inherit_id="point_of_sale.pos_session_sales_details">
         <xpath expr="//div[@id='discounts']" position="inside">
             <t t-if="global_discount_number">
@@ -16,4 +16,4 @@
             </t>
         </xpath>
     </template>
-</odoo>
+</weth>

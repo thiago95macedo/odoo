@@ -1,4 +1,4 @@
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@weth/hoot";
 import { PaymentInterface } from "@point_of_sale/app/utils/payment/payment_interface";
 import { setupPosEnv } from "../utils";
 import { definePosModels } from "../data/generate_model_definitions";
@@ -10,7 +10,7 @@ describe("connectWebsocket", () => {
         const store = await setupPosEnv();
         const paymentInterface = new PaymentInterface(store);
 
-        paymentInterface.connectWebSocket("testChannel", () => {});
+        paymentInterface.connectWebSocket("testChannel", () => { });
 
         const subscribedChannels = store.data.channels.map((channelInfo) => channelInfo.channel);
         expect(subscribedChannels).toInclude("testChannel");
@@ -20,8 +20,8 @@ describe("connectWebsocket", () => {
         const store = await setupPosEnv();
         const paymentInterface = new PaymentInterface(store);
 
-        paymentInterface.connectWebSocket("testChannel", () => {});
-        paymentInterface.connectWebSocket("testChannel2", () => {});
+        paymentInterface.connectWebSocket("testChannel", () => { });
+        paymentInterface.connectWebSocket("testChannel2", () => { });
 
         const subscribedChannels = store.data.channels.map((channelInfo) => channelInfo.channel);
         expect(subscribedChannels).toInclude("testChannel");
@@ -32,8 +32,8 @@ describe("connectWebsocket", () => {
         const store = await setupPosEnv();
         const paymentInterface = new PaymentInterface(store);
 
-        paymentInterface.connectWebSocket("testChannel", () => {});
-        paymentInterface.connectWebSocket("testChannel", () => {});
+        paymentInterface.connectWebSocket("testChannel", () => { });
+        paymentInterface.connectWebSocket("testChannel", () => { });
 
         const subscribedTestChannels = store.data.channels
             .map((channelInfo) => channelInfo.channel)

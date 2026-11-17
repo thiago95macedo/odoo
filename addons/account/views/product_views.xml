@@ -1,4 +1,4 @@
-<odoo>
+<weth>
 
      <record id="product_product_view_form_normalized_account" model="ir.ui.view">
          <field name="name">product.product.view.form.normalized.account.inherit</field>
@@ -17,4 +17,4 @@
          </field>
      </record>
 
-</odoo>
+</weth>

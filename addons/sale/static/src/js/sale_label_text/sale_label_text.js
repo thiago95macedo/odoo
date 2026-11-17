@@ -2,7 +2,7 @@ import {
     AccountLabelTextField,
     listAccountLabelText,
 } from "@account/components/account_label_text/account_label_text";
-import { Component, useProps, t } from "@odoo/owl";
+import { Component, useProps, t } from "@weth/owl";
 import { registry } from "@web/core/registry";
 import { omit } from "@web/core/utils/objects";
 import { patch } from "@web/core/utils/patch";
@@ -63,8 +63,8 @@ export class SaleLabelTextField extends AccountLabelTextField {
     get isConfigurableTemplate() {
         return false;
     }
-    _onProductTemplateUpdate() {}
-    onEditConfiguration() {}
+    _onProductTemplateUpdate() { }
+    onEditConfiguration() { }
 }
 
 // for enabling configurators and combos

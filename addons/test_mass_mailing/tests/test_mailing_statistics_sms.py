@@ -3,11 +3,11 @@
 
 from lxml import html
 
-from odoo.addons.mail.tests.common import mail_new_test_user
-from odoo.addons.test_mass_mailing.tests.common import TestMassSMSCommon
-from odoo.tests.common import users
-from odoo.tests import tagged
-from odoo.tools import mute_logger
+from weth.addons.mail.tests.common import mail_new_test_user
+from weth.addons.test_mass_mailing.tests.common import TestMassSMSCommon
+from weth.tests.common import users
+from weth.tests import tagged
+from weth.tools import mute_logger
 
 @tagged('digest', 'mass_mailing', 'mass_mailing_sms')
 class TestMailingStatistics(TestMassSMSCommon):
@@ -28,7 +28,7 @@ class TestMailingStatistics(TestMassSMSCommon):
         cls.records = cls._reset_mail_context(cls.records)
 
     @users('user_marketing')
-    @mute_logger('odoo.addons.mass_mailing_sms.models.mailing_mailing', 'odoo.addons.mail.models.mail_mail', 'odoo.addons.mail.models.mail_thread')
+    @mute_logger('weth.addons.mass_mailing_sms.models.mailing_mailing', 'weth.addons.mail.models.mail_mail', 'weth.addons.mail.models.mail_thread')
     def test_mailing_statistics_sms(self):
         mailing = self.env['mailing.mailing'].browse(self.mailing_sms.ids)
         target_records = self.env['mail.test.sms'].browse(self.records.ids)
@@ -87,7 +87,7 @@ class TestMailingStatistics(TestMassSMSCommon):
         self.assertEqual(first_link_value, mailing.clicked)
 
     @users('user_marketing')
-    @mute_logger('odoo.addons.mass_mailing_sms.models.mailing_mailing', 'odoo.addons.mail.models.mail_mail', 'odoo.addons.mail.models.mail_thread')
+    @mute_logger('weth.addons.mass_mailing_sms.models.mailing_mailing', 'weth.addons.mail.models.mail_mail', 'weth.addons.mail.models.mail_thread')
     def test_sent_delivered_sms(self):
         """ Test that if we get delivered trace status first instead of sent from
             providers for some reasons, the statistics for sent SMS will be correct. """

@@ -1,6 +1,6 @@
 import { _t } from "@web/core/l10n/translation";
 import { Dialog } from "@web/core/dialog/dialog";
-import { Component, t, useProps } from "@odoo/owl";
+import { Component, t, useProps } from "@weth/owl";
 
 export class AskRecurrenceUpdatePolicyDialog extends Component {
     static template = "calendar.AskRecurrenceUpdatePolicyDialog";

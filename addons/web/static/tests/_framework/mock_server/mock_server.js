@@ -8,7 +8,7 @@ import {
     mockLocation,
     mockWebSocket,
     registerDebugInfo,
-} from "@odoo/hoot";
+} from "@weth/hoot";
 import { makeErrorFromResponse, rpc, RPCError } from "@web/core/network/rpc";
 import { RPCCache } from "@web/core/network/rpc_cache";
 import { ensureArray, isIterable } from "@web/core/utils/arrays";
@@ -94,7 +94,7 @@ const { DateTime } = luxon;
  *  translations?: Record<string, string>;
  * }} ServerParams
  *
- * @typedef {import("@odoo/hoot").ServerWebSocket} ServerWebSocket
+ * @typedef {import("@weth/hoot").ServerWebSocket} ServerWebSocket
  *
  * @typedef {string | Iterable<string> | RegExp} StringMatcher
  *
@@ -635,7 +635,7 @@ export class MockServer {
         });
         if (!actions.length) {
             throw makeServerError({
-                errorName: "odoo.addons.web.controllers.action.MissingActionError",
+                errorName: "weth.addons.web.controllers.action.MissingActionError",
                 message: `The action ${JSON.stringify(id)} does not exist`,
             });
         }
@@ -1432,7 +1432,7 @@ export class MockServer {
                 return result;
             }
         }
-        return new Promise(() => {});
+        return new Promise(() => { });
     }
 
     /**

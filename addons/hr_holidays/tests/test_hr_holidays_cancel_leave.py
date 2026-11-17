@@ -4,9 +4,9 @@ from datetime import date
 from dateutil.relativedelta import relativedelta
 from freezegun import freeze_time
 
-from odoo.exceptions import ValidationError, UserError
+from weth.exceptions import ValidationError, UserError
 
-from odoo.tests import tagged
+from weth.tests import tagged
 
 from .common import TestHrHolidaysCommon
 

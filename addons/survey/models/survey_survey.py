@@ -6,12 +6,12 @@ from collections import defaultdict
 
 import werkzeug
 
-from odoo import api, exceptions, fields, models, _
-from odoo.exceptions import AccessError, UserError, ValidationError
-from odoo.fields import Domain
-from odoo.tools import is_html_empty
-from odoo.tools.translate import mark_as_copy
-from odoo.tools.urls import urljoin as url_join
+from weth import api, exceptions, fields, models, _
+from weth.exceptions import AccessError, UserError, ValidationError
+from weth.fields import Domain
+from weth.tools import is_html_empty
+from weth.tools.translate import mark_as_copy
+from weth.tools.urls import urljoin as url_join
 
 SURVEY_LEADERBOARD_MAX_PARTICIPANTS = 250
 

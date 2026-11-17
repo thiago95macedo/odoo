@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import http
-from odoo.http import request
+from weth import http
+from weth.http import request
 
 
 class OnboardingController(http.Controller):
@@ -21,7 +21,7 @@ class OnboardingController(http.Controller):
                             `ir.ui.menu` id
         """
         url = (
-            f"/odoo/action-payment_stripe.action_payment_provider_onboarding/{provider_id}"
+            f"/weth/action-payment_stripe.action_payment_provider_onboarding/{provider_id}"
             f"?menu_id={menu_id}"
         )
         return request.redirect(url)

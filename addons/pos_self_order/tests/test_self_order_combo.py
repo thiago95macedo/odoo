@@ -3,14 +3,14 @@
 import json
 from uuid import uuid4
 
-import odoo.tests
-from odoo.addons.pos_self_order.tests.self_order_common_test import SelfOrderCommonTest
-from odoo.addons.point_of_sale.tests.common_setup_methods import setup_product_combo_items
-from odoo.fields import Command
-from odoo.tools import mute_logger
+import weth.tests
+from weth.addons.pos_self_order.tests.self_order_common_test import SelfOrderCommonTest
+from weth.addons.point_of_sale.tests.common_setup_methods import setup_product_combo_items
+from weth.fields import Command
+from weth.tools import mute_logger
 
 
-@odoo.tests.tagged("post_install", "-at_install")
+@weth.tests.tagged("post_install", "-at_install")
 class TestSelfOrderCombo(SelfOrderCommonTest):
     def test_self_order_combo(self):
         setup_product_combo_items(self)
@@ -701,7 +701,7 @@ class TestSelfOrderCombo(SelfOrderCommonTest):
         })
         return expensive_product, combo, combo_product
 
-    @mute_logger('odoo.http')
+    @mute_logger('weth.http')
     def test_combo_parent_from_another_order_is_refused(self):
         """
         A combo child is priced from its parent line. If the parent belongs to another order it
@@ -731,7 +731,7 @@ class TestSelfOrderCombo(SelfOrderCommonTest):
         self.assertFalse(first_order.lines.combo_line_ids,
             msg="No combo relation must be created towards the line of another order")
 
-    @mute_logger('odoo.http')
+    @mute_logger('weth.http')
     def test_forged_combo_composition_is_refused(self):
         """
         A single order made of a cheap non-combo parent and a child selling an expensive product
@@ -787,7 +787,7 @@ class TestSelfOrderCombo(SelfOrderCommonTest):
         child_line = order.lines.filtered(lambda line: line.combo_parent_id)
         return order, child_uuid, child_line
 
-    @mute_logger('odoo.http')
+    @mute_logger('weth.http')
     def test_foreign_negative_attribute_on_combo_child_is_refused(self):
         """
         Attribute extras are summed into the combo child price server-side. An attribute that
@@ -834,7 +834,7 @@ class TestSelfOrderCombo(SelfOrderCommonTest):
         self.assertFalse(self.env['pos.order'].search([('uuid', '=', order_uuid)]),
             msg="The refused order must not be created")
 
-    @mute_logger('odoo.http')
+    @mute_logger('weth.http')
     def test_negative_combo_parent_quantity_is_refused(self):
         """A negative (or non-finite) quantity on the combo parent zeroes the combo total and
         must be refused: public self-order quantities have to be finite and strictly positive."""
@@ -858,7 +858,7 @@ class TestSelfOrderCombo(SelfOrderCommonTest):
         self.assertFalse(self.env['pos.order'].search([('uuid', '=', order_uuid)]),
             msg="The refused order must not be created")
 
-    @mute_logger('odoo.http')
+    @mute_logger('weth.http')
     def test_zero_and_fractional_quantities_are_refused(self):
         """Zero, and non-finite quantities must be rejected on the public route."""
         self._setup_kiosk_session()
@@ -872,7 +872,7 @@ class TestSelfOrderCombo(SelfOrderCommonTest):
                 self.assertFalse(self.env['pos.order'].search([('uuid', '=', order_uuid)]),
                     msg="The refused order must not be created")
 
-    @mute_logger('odoo.http')
+    @mute_logger('weth.http')
     def test_external_child_stolen_through_relations_uuid_mapping_is_refused(self):
         """
         relations_uuid_mapping is applied generically under sudo() by the base sync_from_ui. A
@@ -906,7 +906,7 @@ class TestSelfOrderCombo(SelfOrderCommonTest):
         self.assertEqual(external_child.order_id, first_order,
             msg="The external combo child must stay on its original order")
 
-    @mute_logger('odoo.http')
+    @mute_logger('weth.http')
     def test_external_child_stolen_through_combo_line_ids_is_refused(self):
         """
         A raw integer combo_line_ids referencing an existing child line of another order puts

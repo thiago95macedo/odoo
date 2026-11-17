@@ -1,9 +1,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.fields import Command
-from odoo.tests import tagged, Form
+from weth.fields import Command
+from weth.tests import tagged, Form
 
-from odoo.addons.mrp_subcontracting.tests.common import TestMrpSubcontractingCommon
+from weth.addons.mrp_subcontracting.tests.common import TestMrpSubcontractingCommon
 
 
 class TestSaleDropshippingFlows(TestMrpSubcontractingCommon):

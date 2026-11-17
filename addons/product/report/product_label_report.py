@@ -1,5 +1,5 @@
-from odoo import models
-from odoo.tools import html_sanitize
+from weth import models
+from weth.tools import html_sanitize
 
 
 # Encode ZPL control and QWeb-sensitive characters as sequences decoded by ^FH.

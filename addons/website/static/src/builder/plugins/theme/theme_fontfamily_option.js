@@ -5,7 +5,7 @@ import { BuilderButton } from "@html_builder/core/building_blocks/builder_button
 import { getCSSVariableValue } from "@html_editor/utils/formatting";
 import { CustomizeWebsiteVariableAction } from "../customize_website_plugin";
 import { FONT_VARIABLES_TO_RESET } from "../font/font_plugin";
-import { useProps, t } from "@odoo/owl";
+import { useProps, t } from "@weth/owl";
 
 export class ThemeFontFamilyOption extends BaseOptionComponent {
     static template = "website.ThemeFontFamilyOption";

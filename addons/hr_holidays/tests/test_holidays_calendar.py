@@ -2,13 +2,13 @@
 
 from datetime import date, timedelta
 
-from odoo.addons.base.tests.common import HttpCase
-from odoo.tests.common import tagged
-from odoo.tests.common import users
-from odoo.exceptions import ValidationError
+from weth.addons.base.tests.common import HttpCase
+from weth.tests.common import tagged
+from weth.tests.common import users
+from weth.exceptions import ValidationError
 
 
-from odoo.addons.hr_holidays.tests.common import TestHrHolidaysCommon
+from weth.addons.hr_holidays.tests.common import TestHrHolidaysCommon
 
 
 @tagged('post_install', '-at_install', 'holiday_calendar')

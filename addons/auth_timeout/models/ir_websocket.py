@@ -1,8 +1,8 @@
-from odoo import models
-from odoo.http import request
-from odoo.http.session import session_store
+from weth import models
+from weth.http import request
+from weth.http.session import session_store
 
-from odoo.addons.bus.websocket import wsrequest
+from weth.addons.bus.websocket import wsrequest
 
 
 class IrWebsocket(models.AbstractModel):

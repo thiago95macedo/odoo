@@ -3,8 +3,8 @@
 
 from collections import defaultdict
 
-from odoo import api, models, fields, SUPERUSER_ID
-from odoo.fields import Command
+from weth import api, models, fields, SUPERUSER_ID
+from weth.fields import Command
 
 
 class PurchaseOrder(models.Model):

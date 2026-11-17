@@ -1,4 +1,4 @@
-import { Component, markup, t, useProps } from "@odoo/owl";
+import { Component, markup, t, useProps } from "@weth/owl";
 import { isBrowserSafari } from "@web/core/browser/feature_detection";
 
 import { _t } from "@web/core/l10n/translation";

@@ -1,7 +1,7 @@
 import { isRecord, untrackFunctions } from "./misc";
 import { RecordListInternal } from "./record_list_internal";
 
-import { markRaw } from "@odoo/owl";
+import { markRaw } from "@weth/owl";
 
 /** @typedef {import("./record").Record} Record */
 

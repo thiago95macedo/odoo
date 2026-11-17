@@ -3,12 +3,12 @@ from concurrent.futures import ThreadPoolExecutor
 
 from psycopg2 import OperationalError
 
-from odoo import SUPERUSER_ID, api
-from odoo.fields import Command
-from odoo.modules.registry import Registry
-from odoo.tests import tagged
-from odoo.tests.common import BaseCase, get_db_name
-from odoo.tools import SQL, mute_logger
+from weth import SUPERUSER_ID, api
+from weth.fields import Command
+from weth.modules.registry import Registry
+from weth.tests import tagged
+from weth.tests.common import BaseCase, get_db_name
+from weth.tools import SQL, mute_logger
 
 
 @tagged("-standard", "-at_install", "post_install", "database_breaking")
@@ -103,7 +103,7 @@ class TestConcurrencyPromoCode(BaseCase):
 
         cls.addClassCleanup(reset)
 
-    @mute_logger("odoo.sql_db")
+    @mute_logger("weth.sql_db")
     def test_lock_concurrent_promo_code(self):
         """Test that two cursors cannot lock the same row simultaneously."""
         # A simple barrier to make sure threads start roughly at the same time.

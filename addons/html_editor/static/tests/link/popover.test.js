@@ -1,7 +1,7 @@
-import { describe, expect, test } from "@odoo/hoot";
-import { click, fill, press, queryFirst, queryOne, waitFor, waitForNone } from "@odoo/hoot-dom";
-import { animationFrame, tick } from "@odoo/hoot-mock";
-import { markup } from "@odoo/owl";
+import { describe, expect, test } from "@weth/hoot";
+import { click, fill, press, queryFirst, queryOne, waitFor, waitForNone } from "@weth/hoot-dom";
+import { animationFrame, tick } from "@weth/hoot-mock";
+import { markup } from "@weth/owl";
 import { contains, dataURItoBlob, onRpc, patchWithCleanup } from "@web/../tests/web_test_helpers";
 import { setupEditor } from "../_helpers/editor";
 import { cleanLinkArtifacts, unformat } from "../_helpers/format";
@@ -368,7 +368,7 @@ describe("popover should show link preview", () => {
             description: markup("Test description"),
             link_preview_name: "Task name | Project name",
         }));
-        onRpc("/odoo/project/1/tasks/8", () => "");
+        onRpc("/weth/project/1/tasks/8", () => "");
         const { editor, el } = await setupEditor(`<p>[]<br></p>`, {
             config: {
                 allowStripDomain: false,
@@ -378,7 +378,7 @@ describe("popover should show link preview", () => {
         await animationFrame();
         await click(".o-we-command-name:first");
         await contains(".o-we-linkpopover input.o_we_href_input_link").fill(
-            window.location.origin + "/odoo/project/1/tasks/8"
+            window.location.origin + "/weth/project/1/tasks/8"
         );
         await animationFrame();
         expect(".o_we_replace_title_btn").toHaveCount(1);
@@ -447,13 +447,13 @@ describe("popover should show link preview", () => {
                 link_preview_name: "Task name | Project name",
             };
         });
-        onRpc("/odoo/cachetest/8", () => "");
+        onRpc("/weth/cachetest/8", () => "");
         const { editor } = await setupEditor(`<p>abc[]</p>`);
         await insertText(editor, "/link");
         await animationFrame();
         await click(".o-we-command-name:first");
         await contains(".o-we-linkpopover input.o_we_href_input_link").fill(
-            window.location.origin + "/odoo/cachetest/8"
+            window.location.origin + "/weth/cachetest/8"
         );
         await animationFrame();
         expect.verifySteps(["/html_editor/link_preview_internal"]);
@@ -488,7 +488,7 @@ describe("popover should show link preview", () => {
         });
 
         const currentProtocol = window.location.protocol;
-        onRpc("/odoo/cachetest/8", (request) => {
+        onRpc("/weth/cachetest/8", (request) => {
             const urlProtocol = new URL(request.url).protocol;
             expect(urlProtocol).toBe(currentProtocol);
             return "";
@@ -504,7 +504,7 @@ describe("popover should show link preview", () => {
         await click(".o-we-command-name:first");
 
         const wrongProtocol = currentProtocol === "https:" ? "http:" : "https:";
-        const testUrl = `${wrongProtocol}//${window.location.host}/odoo/cachetest/8`;
+        const testUrl = `${wrongProtocol}//${window.location.host}/weth/cachetest/8`;
 
         await contains(".o-we-linkpopover input.o_we_href_input_link").fill(testUrl);
         await animationFrame();
@@ -650,7 +650,7 @@ describe("popover should show link preview", () => {
             description: markup("Test description"),
             link_preview_name: "Task name | Project name",
         }));
-        onRpc("/odoo/project/1/tasks/8", () => "");
+        onRpc("/weth/project/1/tasks/8", () => "");
         const { editor } = await setupEditor(`<p>[]</p>`, {
             config: {
                 allowStripDomain: false,
@@ -660,7 +660,7 @@ describe("popover should show link preview", () => {
         await animationFrame();
         await click(".o-we-command-name:first");
         await contains(".o-we-linkpopover input.o_we_href_input_link").fill(
-            window.location.origin + "/odoo/project/1/tasks/8"
+            window.location.origin + "/weth/project/1/tasks/8"
         );
         await animationFrame();
         expect(".o_we_replace_title_btn").toHaveCount(1);

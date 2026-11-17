@@ -3,10 +3,10 @@
 from datetime import datetime, time, timedelta
 from collections import defaultdict
 
-from odoo import api, fields, models, _
-from odoo.fields import Domain
-from odoo.tools import float_compare, float_is_zero
-from odoo.exceptions import UserError
+from weth import api, fields, models, _
+from weth.fields import Domain
+from weth.tools import float_compare, float_is_zero
+from weth.exceptions import UserError
 
 
 class SaleOrderLine(models.Model):

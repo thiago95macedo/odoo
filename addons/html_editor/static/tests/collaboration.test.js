@@ -22,8 +22,8 @@ import {
     expect,
     manuallyDispatchProgrammaticEvent,
     test,
-} from "@odoo/hoot";
-import { onMounted, onWillDestroy, xml } from "@odoo/owl";
+} from "@weth/hoot";
+import { onMounted, onWillDestroy, xml } from "@weth/owl";
 import { patchWithCleanup } from "@web/../tests/web_test_helpers";
 import {
     applyConcurrentActions,
@@ -274,13 +274,13 @@ test("wrapInlinesInBlocks should not create impossible mutations in a collaborat
     mergePeersCommits(peerInfos);
     expect(getContent(e1.editable, { sortAttrs: true })).toBe(
         '<p data-selection-placeholder=""><br></p>' +
-            '<div class="oe_unbreakable"><p>myNode[]</p></div>' +
-            '<p data-selection-placeholder=""><br></p>'
+        '<div class="oe_unbreakable"><p>myNode[]</p></div>' +
+        '<p data-selection-placeholder=""><br></p>'
     );
     expect(getContent(e2.editable, { sortAttrs: true })).toBe(
         '<p data-selection-placeholder=""><br></p>' +
-            '<div class="oe_unbreakable"><p>myNode[]</p></div>' +
-            '<p data-selection-placeholder=""><br></p>'
+        '<div class="oe_unbreakable"><p>myNode[]</p></div>' +
+        '<p data-selection-placeholder=""><br></p>'
     );
 });
 test("should reset from snapshot", async () => {
@@ -439,7 +439,7 @@ describe("sanitize", () => {
         // Prevent console.warn from making the test fail due to inexistent node
         // to remove. The script node is non existent in the collaborator's DOM
         // (c2) because of sanitization of serialized nodes.
-        patchWithCleanup(console, { warn: () => {} });
+        patchWithCleanup(console, { warn: () => { } });
         await testMultiEditor({
             peerIds: ["c1", "c2"],
             contentBefore: "<p>a</p>",

@@ -4,12 +4,12 @@ import re
 from markupsafe import Markup
 from collections import defaultdict
 
-from odoo import api, fields, models, tools
-from odoo.exceptions import UserError, ValidationError
-from odoo.fields import Domain
-from odoo.tools import SQL, clean_context
-from odoo.tools.misc import unquote
-from odoo.tools.translate import _
+from weth import api, fields, models, tools
+from weth.exceptions import UserError, ValidationError
+from weth.fields import Domain
+from weth.tools import SQL, clean_context
+from weth.tools.misc import unquote
+from weth.tools.translate import _
 
 
 AVAILABLE_PRIORITIES = [

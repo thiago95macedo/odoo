@@ -13,9 +13,9 @@ import { deserializeDateTime } from "@web/core/l10n/dates";
 import { getOrigin } from "@web/core/utils/urls";
 import { MailComposerAttachmentSelector } from "@mail/core/web/mail_composer_attachment_selector";
 
-import { beforeEach, describe, expect, test } from "@odoo/hoot";
-import { advanceTime, mockDate } from "@odoo/hoot-mock";
-import { manuallyDispatchProgrammaticEvent, queryAll } from "@odoo/hoot-dom";
+import { beforeEach, describe, expect, test } from "@weth/hoot";
+import { advanceTime, mockDate } from "@weth/hoot-mock";
+import { manuallyDispatchProgrammaticEvent, queryAll } from "@weth/hoot-dom";
 
 beforeEach(() => mockDate("2024-10-20 10:00:00"));
 describe.current.tags("desktop");
@@ -39,8 +39,7 @@ test("Scheduled messages basic layout", async () => {
     await contains(".o-mail-Message-author:text('Mitchell Admin')");
     const partner = pyEnv["res.partner"].search_read([["id", "=", partnerId]])[0];
     await contains(
-        `.o-mail-Message-avatarContainer img.cursor-pointer[data-src='${getOrigin()}/web/image/res.partner/${partnerId}/avatar_128?unique=${
-            deserializeDateTime(partner.write_date).ts
+        `.o-mail-Message-avatarContainer img.cursor-pointer[data-src='${getOrigin()}/web/image/res.partner/${partnerId}/avatar_128?unique=${deserializeDateTime(partner.write_date).ts
         }']`
     );
     await contains(
@@ -167,8 +166,8 @@ test("Read more of a scheduled message", async () => {
     await click(".o-mail-Message-body button:text('Read More')");
     await contains(
         ".o-mail-Message-body p:text('" +
-            "a".repeat(SCHEDULED_MESSAGE_TRUNCATE_THRESHOLD + 1) +
-            "')"
+        "a".repeat(SCHEDULED_MESSAGE_TRUNCATE_THRESHOLD + 1) +
+        "')"
     );
     await click(".o-mail-Message-body button:text('Read Less')");
     await contains(

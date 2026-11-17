@@ -1,4 +1,4 @@
-import { registries, constants } from "@odoo/o-spreadsheet";
+import { registries, constants } from "@weth/o-spreadsheet";
 import { CommandResult } from "../../o_spreadsheet/cancelled_reason";
 import {
     onGeoOdooChartItemClick,

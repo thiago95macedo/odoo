@@ -1,11 +1,11 @@
 from unittest.mock import patch
 
-import odoo.tests
-from odoo.addons.mail.tests.common import MailCase
-from odoo.addons.pos_self_order.tests.test_self_order_preset import TestSelfOrderPreset
+import weth.tests
+from weth.addons.mail.tests.common import MailCase
+from weth.addons.pos_self_order.tests.test_self_order_preset import TestSelfOrderPreset
 
 
-@odoo.tests.tagged('post_install', '-at_install')
+@weth.tests.tagged('post_install', '-at_install')
 class TestTakeawayMail(MailCase, TestSelfOrderPreset):
 
     def test_preset_takeaway_email_tour(self):

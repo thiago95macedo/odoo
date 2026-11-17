@@ -1,9 +1,9 @@
-import odoo
-from odoo.addons.point_of_sale.tests.test_pos_margin import TestPosMargin
-from odoo.addons.pos_stock.tests.common import TestPosStockCommon
+import weth
+from weth.addons.point_of_sale.tests.test_pos_margin import TestPosMargin
+from weth.addons.pos_stock.tests.common import TestPosStockCommon
 
 
-@odoo.tests.tagged('post_install', '-at_install')
+@weth.tests.tagged('post_install', '-at_install')
 class TestPosStockMargin(TestPosMargin, TestPosStockCommon):
     """
     Test the margin computation on orders with basic configuration

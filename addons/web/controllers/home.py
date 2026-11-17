@@ -6,14 +6,14 @@ from urllib.parse import urlsplit
 
 import psycopg2
 
-import odoo.exceptions
-from odoo.exceptions import AccessError
-from odoo.http import Controller, request, route
-from odoo.http.router import db_list
-from odoo.http.session import authenticate, check, touch, update_session_token
-from odoo.tools import LazyTranslate, _, config, hmac
-from odoo.tools.cloc import Cloc
-from odoo.tools.urls import urljoin
+import weth.exceptions
+from weth.exceptions import AccessError
+from weth.http import Controller, request, route
+from weth.http.router import db_list
+from weth.http.session import authenticate, check, touch, update_session_token
+from weth.tools import LazyTranslate, _, config, hmac
+from weth.tools.cloc import Cloc
+from weth.tools.urls import urljoin
 
 from .utils import (
     _get_login_redirect_url,
@@ -40,13 +40,13 @@ class Home(Controller):
     def index(self, s_action=None, db=None, **kw):
         if request.db and request.session.uid and not is_user_internal(request.session.uid):
             return request.redirect_query('/web/login_successful', query=request.params)
-        return request.redirect_query('/odoo', query=request.params)
+        return request.redirect_query('/weth', query=request.params)
 
     def _web_client_readonly(self, rule, args):
         return False
 
     # ideally, this route should be `auth="user"` but that don't work in non-monodb mode.
-    @route(['/web', '/odoo', '/odoo/<path:subpath>', '/scoped_app/<path:subpath>'], type='http', auth="none", readonly=_web_client_readonly)
+    @route(['/web', '/weth', '/weth/<path:subpath>', '/scoped_app/<path:subpath>'], type='http', auth="none", readonly=_web_client_readonly)
     def web_client(self, s_action=None, **kw):
 
         # Ensure we have both a database and a user
@@ -127,7 +127,7 @@ class Home(Controller):
         values = {k: v for k, v in request.params.items() if k in SIGN_UP_REQUEST_PARAMS}
         try:
             values['databases'] = db_list()
-        except odoo.exceptions.AccessDenied:
+        except weth.exceptions.AccessDenied:
             values['databases'] = None
 
         if request.httprequest.method == 'POST':
@@ -139,8 +139,8 @@ class Home(Controller):
                 auth_info = authenticate(request.session, request.env, credential)
                 request.params['login_success'] = True
                 return request.redirect(self._login_redirect(auth_info['uid'], redirect=redirect))
-            except odoo.exceptions.AccessDenied as e:
-                if e.args == odoo.exceptions.AccessDenied().args:
+            except weth.exceptions.AccessDenied as e:
+                if e.args == weth.exceptions.AccessDenied().args:
                     values['error'] = _("Wrong login/password")
                 else:
                     values['error'] = e.args[0]
@@ -151,11 +151,11 @@ class Home(Controller):
         if 'login' not in values and request.session.get('auth_login'):
             values['login'] = request.session.get('auth_login')
 
-        if not odoo.tools.config['list_db']:
+        if not weth.tools.config['list_db']:
             values['disable_database_manager'] = True
 
         safe_redirect = redirect if (redirect and redirect.startswith('/') and not redirect.startswith('//')) else None
-        values['disable_opengraph'] = bool(safe_redirect and safe_redirect.startswith('/odoo'))
+        values['disable_opengraph'] = bool(safe_redirect and safe_redirect.startswith('/weth'))
         if values['disable_opengraph']:
             url_root = request.httprequest.url_root
             try:
@@ -182,7 +182,7 @@ class Home(Controller):
     def switch_to_admin(self):
         uid = request.env.user.id
         if request.env.user._is_system():
-            uid = request.session.uid = odoo.SUPERUSER_ID
+            uid = request.session.uid = weth.SUPERUSER_ID
             # invalidate session token cache as we've changed the uid
             request.env.transaction.invalidate_ormcache()
             update_session_token(request.session, request.env)
@@ -203,7 +203,7 @@ class Home(Controller):
         status = 200
         if db_server_status:
             try:
-                odoo.sql_db.db_connect(config['db_system']).cursor().close()
+                weth.sql_db.db_connect(config['db_system']).cursor().close()
                 health_info['db_server_status'] = True
             except psycopg2.Error:
                 health_info['db_server_status'] = False

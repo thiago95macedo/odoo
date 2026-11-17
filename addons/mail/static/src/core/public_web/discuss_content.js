@@ -1,4 +1,4 @@
-import { Component, computed, proxy, signal, types, useOnChange, useProps } from "@odoo/owl";
+import { Component, computed, proxy, signal, types, useOnChange, useProps } from "@weth/owl";
 
 import { useThreadActions } from "@mail/core/common/thread_actions";
 import { AutoresizeInput } from "@mail/core/common/autoresize_input";

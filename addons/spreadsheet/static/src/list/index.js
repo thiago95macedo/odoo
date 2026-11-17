@@ -1,6 +1,6 @@
 import { _t } from "@web/core/l10n/translation";
 
-import * as spreadsheet from "@odoo/o-spreadsheet";
+import * as spreadsheet from "@weth/o-spreadsheet";
 
 import "./list_functions";
 
@@ -48,7 +48,7 @@ invalidateEvaluationCommands.add("REMOVE_ODOO_LIST");
 
 cellMenuRegistry.add(
     "list_see_record",
-    /** @type {import("@odoo/o-spreadsheet").ActionSpec}*/ ({
+    /** @type {import("@weth/o-spreadsheet").ActionSpec}*/({
         name: _t("See record"),
         sequence: 200,
         execute: async (env, isMiddleClick) => {

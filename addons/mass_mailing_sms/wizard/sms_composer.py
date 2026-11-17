@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import _, api, Command, fields, models, tools
+from weth import _, api, Command, fields, models, tools
 
 
 class SmsComposer(models.TransientModel):

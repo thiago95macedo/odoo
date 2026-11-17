@@ -8,13 +8,13 @@ import re
 from collections import defaultdict
 from urllib.parse import urlsplit, parse_qs
 
-from odoo import api, fields, models, _, tools
-from odoo.exceptions import ValidationError, MissingError
-from odoo.tools import BinaryBytes
+from weth import api, fields, models, _, tools
+from weth.exceptions import ValidationError, MissingError
+from weth.tools import BinaryBytes
 
-from odoo.addons.spreadsheet.utils.helpers import spreadsheet_safe_batch
-from odoo.addons.spreadsheet.utils.validate_data import fields_in_spreadsheet, menus_xml_ids_in_spreadsheet
-from odoo.addons.spreadsheet.utils.helpers import DEFAULT_SHEET_ID
+from weth.addons.spreadsheet.utils.helpers import spreadsheet_safe_batch
+from weth.addons.spreadsheet.utils.validate_data import fields_in_spreadsheet, menus_xml_ids_in_spreadsheet
+from weth.addons.spreadsheet.utils.helpers import DEFAULT_SHEET_ID
 
 
 class SpreadsheetMixin(models.AbstractModel):

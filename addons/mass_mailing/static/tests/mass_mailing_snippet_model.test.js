@@ -1,5 +1,5 @@
-import { beforeEach, describe, expect, test } from "@odoo/hoot";
-import { Component, onWillStart, xml } from "@odoo/owl";
+import { beforeEach, describe, expect, test } from "@weth/hoot";
+import { Component, onWillStart, xml } from "@weth/owl";
 import { useSnippets } from "@html_builder/snippets/snippet_service";
 import { defineMailModels } from "@mail/../tests/mail_test_helpers";
 import { defineModels, mountWithCleanup, patchWithCleanup } from "@web/../tests/web_test_helpers";

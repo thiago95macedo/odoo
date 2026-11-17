@@ -1,4 +1,4 @@
-import { test, expect } from "@odoo/hoot";
+import { test, expect } from "@weth/hoot";
 import { mountWithCleanup, patchWithCleanup } from "@web/../tests/web_test_helpers";
 import { ProductCard } from "@pos_self_order/app/components/product_card/product_card";
 import { setupSelfPosEnv } from "@pos_self_order/../tests/unit/utils";

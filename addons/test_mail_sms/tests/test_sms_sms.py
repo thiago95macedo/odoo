@@ -6,11 +6,11 @@ from dateutil.relativedelta import relativedelta
 from unittest.mock import patch
 from unittest.mock import DEFAULT
 
-from odoo import exceptions
-from odoo.addons.link_tracker.tests.common import MockLinkTracker
-from odoo.addons.sms.models.sms_sms import SmsSms as SmsModel
-from odoo.addons.sms.tests.common import SMSCommon
-from odoo.tests import tagged
+from weth import exceptions
+from weth.addons.link_tracker.tests.common import MockLinkTracker
+from weth.addons.sms.models.sms_sms import SmsSms as SmsModel
+from weth.addons.sms.tests.common import SMSCommon
+from weth.tests import tagged
 
 
 @tagged('link_tracker')

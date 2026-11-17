@@ -6,11 +6,11 @@ from markupsafe import Markup
 from unittest.mock import patch
 from uuid import uuid4
 
-from odoo import tools
-from odoo.addons.base.models.res_partner import ResPartner
-from odoo.addons.mail.tests.common import MailCommon, mail_new_test_user
-from odoo.tests import Form, tagged, users
-from odoo.tools import mute_logger
+from weth import tools
+from weth.addons.base.models.res_partner import ResPartner
+from weth.addons.mail.tests.common import MailCommon, mail_new_test_user
+from weth.tests import Form, tagged, users
+from weth.tools import mute_logger
 
 
 @tagged('res_partner', 'mail_tools', 'mail_thread_api')
@@ -578,7 +578,7 @@ class TestPartner(MailCommon):
                 self.assertEqual(partner.email, expected_email)
 
     @users('admin')
-    @mute_logger('odoo.addons.base.partner.merge', 'odoo.tests')
+    @mute_logger('weth.addons.base.partner.merge', 'weth.tests')
     def test_partner_merge_wizards(self):
         Partner = self.env['res.partner']
 

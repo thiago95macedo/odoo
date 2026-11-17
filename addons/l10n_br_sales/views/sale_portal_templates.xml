@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<weth>
     <template id="sale_order_portal_content_brazil" inherit_id="sale.sale_order_portal_content" primary="True">
         <!-- hide the taxes -->
         <t t-set="hide_taxes_details" position="attributes">
@@ -13,4 +13,4 @@
             </table>
         </xpath>
     </template>
-</odoo>
+</weth>

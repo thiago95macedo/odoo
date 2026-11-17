@@ -2,7 +2,7 @@ import { BaseOptionComponent } from "@html_builder/core/base_option_component";
 import { useGetItemValue } from "@html_builder/core/utils";
 import { WebsiteBackgroundOption } from "@website/builder/plugins/options/background_option";
 import { CardImageOption } from "./card_image_option";
-import { useProps, t } from "@odoo/owl";
+import { useProps, t } from "@weth/owl";
 import { registry } from "@web/core/registry";
 
 export class CardOption extends BaseOptionComponent {

@@ -1,6 +1,6 @@
 import { setupHTMLBuilder } from "@html_builder/../tests/helpers";
-import { expect, test, describe, animationFrame } from "@odoo/hoot";
-import { click, manuallyDispatchProgrammaticEvent, queryOne } from "@odoo/hoot-dom";
+import { expect, test, describe, animationFrame } from "@weth/hoot";
+import { click, manuallyDispatchProgrammaticEvent, queryOne } from "@weth/hoot-dom";
 import {
     pasteText,
     deleteBackward,

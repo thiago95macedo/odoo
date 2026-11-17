@@ -1,10 +1,10 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details
 
-from odoo import Command, http
-from odoo.tests import tagged
+from weth import Command, http
+from weth.tests import tagged
 
-from odoo.addons.website_sale.tests.common import WebsiteSaleCommon
-from odoo.addons.website_sale_loyalty.controllers.main import WebsiteSale
+from weth.addons.website_sale.tests.common import WebsiteSaleCommon
+from weth.addons.website_sale_loyalty.controllers.main import WebsiteSale
 
 
 @tagged("post_install", "-at_install")

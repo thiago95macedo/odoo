@@ -1,8 +1,8 @@
 import random
 
-from odoo import _, api, fields, models
-from odoo.exceptions import UserError
-from odoo.fields import Domain
+from weth import _, api, fields, models
+from weth.exceptions import UserError
+from weth.fields import Domain
 
 
 class CrmTeam(models.Model):

@@ -1,4 +1,4 @@
-import { test, expect, describe } from "@odoo/hoot";
+import { test, expect, describe } from "@weth/hoot";
 import { mountWithCleanup } from "@web/../tests/web_test_helpers";
 import { definePosSelfModels } from "../../../data/generate_model_definitions";
 import { setupPoSEnvForSelfOrder } from "../../../utils";
@@ -12,7 +12,7 @@ describe("order_details_dialog.js", () => {
         const table = store.models["restaurant.table"].getFirst();
         const order = store.addNewOrder({ table_id: table });
         const orderDetailsDialog = await mountWithCleanup(OrderDetailsDialog, {
-            props: { order, close: () => {}, editPayment: () => {} },
+            props: { order, close: () => { }, editPayment: () => { } },
         });
 
         expect(orderDetailsDialog.getTableInfo()?.id).toBe(table.id);
@@ -23,7 +23,7 @@ describe("order_details_dialog.js", () => {
         const table = store.models["restaurant.table"].getFirst();
         const order = store.addNewOrder({ self_ordering_table_id: table, table_id: false });
         const orderDetailsDialog = await mountWithCleanup(OrderDetailsDialog, {
-            props: { order, close: () => {}, editPayment: () => {} },
+            props: { order, close: () => { }, editPayment: () => { } },
         });
 
         expect(orderDetailsDialog.getTableInfo()?.id).toBe(table.id);
@@ -33,7 +33,7 @@ describe("order_details_dialog.js", () => {
         const store = await setupPoSEnvForSelfOrder();
         const order = store.addNewOrder({ table_id: false, self_ordering_table_id: false });
         const orderDetailsDialog = await mountWithCleanup(OrderDetailsDialog, {
-            props: { order, close: () => {}, editPayment: () => {} },
+            props: { order, close: () => { }, editPayment: () => { } },
         });
 
         expect(orderDetailsDialog.getTableInfo()?.id).toBe(undefined);

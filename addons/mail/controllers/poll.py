@@ -1,9 +1,9 @@
 from datetime import timedelta
 
-from odoo import fields
-from odoo.addons.mail.controllers.thread import ThreadController
-from odoo.addons.mail.tools.discuss import mail_route, Store
-from odoo.fields import Command, Domain
+from weth import fields
+from weth.addons.mail.controllers.thread import ThreadController
+from weth.addons.mail.tools.discuss import mail_route, Store
+from weth.fields import Command, Domain
 
 
 class PollController(ThreadController):

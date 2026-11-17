@@ -3,7 +3,7 @@ import re
 
 from stdnum.eu.vat import check_vies
 
-from odoo import api, models, _
+from weth import api, models, _
 
 _logger = logging.getLogger(__name__)
 

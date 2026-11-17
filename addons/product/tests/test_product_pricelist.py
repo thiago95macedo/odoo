@@ -3,11 +3,11 @@
 
 from datetime import datetime
 
-from odoo.exceptions import ValidationError
-from odoo.fields import Command, Date
-from odoo.tests import tagged, Form
-from odoo.tools import float_compare
-from odoo.addons.product.tests.common import ProductCommon
+from weth.exceptions import ValidationError
+from weth.fields import Command, Date
+from weth.tests import tagged, Form
+from weth.tools import float_compare
+from weth.addons.product.tests.common import ProductCommon
 
 
 @tagged('at_install', '-post_install')  # LEGACY at_install

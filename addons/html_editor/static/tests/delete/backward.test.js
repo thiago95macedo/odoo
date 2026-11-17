@@ -9,7 +9,7 @@ import {
     press,
     test,
     tick,
-} from "@odoo/hoot";
+} from "@weth/hoot";
 import { base64Img, setupEditor, testEditor } from "../_helpers/editor";
 import { unformat } from "../_helpers/format";
 import { getContent, setSelection } from "../_helpers/selection";

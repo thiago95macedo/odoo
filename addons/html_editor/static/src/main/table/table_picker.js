@@ -1,4 +1,4 @@
-import { Component, proxy, t, useListener, useProps } from "@odoo/owl";
+import { Component, proxy, t, useListener, useProps } from "@weth/owl";
 
 export class TablePicker extends Component {
     static template = "html_editor.TablePicker";

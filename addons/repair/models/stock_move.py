@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, Command, fields, models
-from odoo.exceptions import UserError
+from weth import api, Command, fields, models
+from weth.exceptions import UserError
 
 
 MAP_REPAIR_LINE_TYPE_TO_MOVE_LOCATIONS_FROM_REPAIR = {

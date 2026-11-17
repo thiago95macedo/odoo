@@ -1,4 +1,4 @@
-import { expect, test } from "@odoo/hoot";
+import { expect, test } from "@weth/hoot";
 import {
     defineModels,
     fields,
@@ -12,7 +12,7 @@ import { htmlEditorVersions } from "@html_editor/html_migrations/html_migrations
 import { PropertyValue } from "@web/views/fields/properties/property_value";
 import { setSelection } from "@html_editor/../tests/_helpers/selection";
 import { insertText } from "@html_editor/../tests/_helpers/user_actions";
-import { queryOne } from "@odoo/hoot-dom";
+import { queryOne } from "@weth/hoot-dom";
 
 const VERSIONS = htmlEditorVersions();
 const CURRENT_VERSION = VERSIONS.at(-1);

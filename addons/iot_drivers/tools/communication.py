@@ -2,9 +2,9 @@ import logging
 import time
 import werkzeug
 
-from odoo.addons.iot_drivers import main
-from odoo.addons.iot_drivers.tools import helpers, system
-from odoo.addons.iot_drivers.tools.system import IS_WINDOWS, IOT_IDENTIFIER
+from weth.addons.iot_drivers import main
+from weth.addons.iot_drivers.tools import helpers, system
+from weth.addons.iot_drivers.tools.system import IS_WINDOWS, IOT_IDENTIFIER
 
 _logger = logging.getLogger(__name__)
 

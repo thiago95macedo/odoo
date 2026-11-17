@@ -1,4 +1,4 @@
-import { Component, onMounted, onWillUnmount, proxy, t, useProps } from '@odoo/owl';
+import { Component, onMounted, onWillUnmount, proxy, t, useProps } from '@weth/owl';
 import { useService } from "@web/core/utils/hooks";
 import { ItemAddedNotification } from '@website_sale/js/cart_notification/item_added_notification/item_added_notification';
 import { WarningNotification } from '@website_sale/js/cart_notification/warning_notification/warning_notification';

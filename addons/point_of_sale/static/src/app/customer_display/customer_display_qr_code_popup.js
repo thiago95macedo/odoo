@@ -1,4 +1,4 @@
-import { Component, xml, useProps, t } from "@odoo/owl";
+import { Component, xml, useProps, t } from "@weth/owl";
 import { Dialog } from "@web/core/dialog/dialog";
 import { generateQRCodeDataUrl } from "@point_of_sale/utils";
 import { CopyButton } from "@web/core/copy_button/copy_button";

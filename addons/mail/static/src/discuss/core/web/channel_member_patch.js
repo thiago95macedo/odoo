@@ -1,7 +1,7 @@
 import { ChannelMember } from "@mail/discuss/core/common/channel_member";
 import { AvatarCard } from "@mail/core/web/avatar_card/avatar_card";
 
-import { signal } from "@odoo/owl";
+import { signal } from "@weth/owl";
 
 import { usePopover } from "@web/core/popover/popover_hook";
 import { patch } from "@web/core/utils/patch";

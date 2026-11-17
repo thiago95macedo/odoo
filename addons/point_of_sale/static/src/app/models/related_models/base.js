@@ -1,6 +1,6 @@
 import { WithLazyGetterTrap } from "@point_of_sale/lazy_getter";
 import { deepImmutable, RAW_SYMBOL } from "./utils";
-import { toRaw } from "@odoo/owl";
+import { toRaw } from "@weth/owl";
 import { formatDate, formatDateTime } from "@web/core/l10n/dates";
 import { getTimeUtil } from "@point_of_sale/utils";
 
@@ -50,7 +50,7 @@ export class Base extends WithLazyGetterTrap {
     /**
      *  This method is invoked only during instance creation to preserve the state across updates.
      */
-    initState() {}
+    initState() { }
 
     /**
      *  Restore state serialized from indexedDB

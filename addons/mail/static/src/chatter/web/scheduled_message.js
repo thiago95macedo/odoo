@@ -4,7 +4,7 @@ import { AvatarCard } from "@mail/core/web/avatar_card/avatar_card";
 import { groupAttachments } from "@mail/utils/common/attachments";
 import { toggleFn } from "@mail/utils/common/signal";
 
-import { Component, signal, types, useProps } from "@odoo/owl";
+import { Component, signal, types, useProps } from "@weth/owl";
 
 import { ConfirmationDialog } from "@web/core/confirmation_dialog/confirmation_dialog";
 import { _t } from "@web/core/l10n/translation";
@@ -87,7 +87,7 @@ export class ScheduledMessage extends Component {
     onClickCancel() {
         this.dialogService.add(ConfirmationDialog, {
             body: _t("Are you sure you want to cancel the scheduled message?"),
-            cancel: () => {},
+            cancel: () => { },
             cancelLabel: _t("Close"),
             confirm: this.cancel.bind(this),
             confirmLabel: _t("Cancel Message"),

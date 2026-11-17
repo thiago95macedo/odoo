@@ -3,15 +3,15 @@
 from unittest.mock import patch, ANY, call
 from datetime import timedelta
 
-from odoo import fields
+from weth import fields
 
-from odoo.exceptions import UserError
-from odoo.addons.microsoft_calendar.utils.microsoft_calendar import MicrosoftCalendarService
-from odoo.addons.microsoft_calendar.utils.microsoft_event import MicrosoftEvent
-from odoo.addons.microsoft_calendar.models.res_users import ResUsers
-from odoo.tests import tagged
+from weth.exceptions import UserError
+from weth.addons.microsoft_calendar.utils.microsoft_calendar import MicrosoftCalendarService
+from weth.addons.microsoft_calendar.utils.microsoft_event import MicrosoftEvent
+from weth.addons.microsoft_calendar.models.res_users import ResUsers
+from weth.tests import tagged
 
-from odoo.addons.microsoft_calendar.tests.common import (
+from weth.addons.microsoft_calendar.tests.common import (
     TestCommon,
     mock_get_token,
     _modified_date_in_the_future,

@@ -8,10 +8,10 @@ from zoneinfo import ZoneInfo
 from dateutil.parser import parse
 from dateutil.relativedelta import relativedelta
 
-from odoo import api, fields, models, _
-from odoo.exceptions import UserError, ValidationError
-from odoo.fields import Domain
-from odoo.tools import email_normalize
+from weth import api, fields, models, _
+from weth.exceptions import UserError, ValidationError
+from weth.fields import Domain
+from weth.tools import email_normalize
 
 ATTENDEE_CONVERTER_O2M = {
     'needsAction': 'notresponded',

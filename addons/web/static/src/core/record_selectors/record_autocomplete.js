@@ -1,4 +1,4 @@
-import { Component, t, useProps } from "@odoo/owl";
+import { Component, t, useProps } from "@weth/owl";
 import { AutoComplete } from "@web/core/autocomplete/autocomplete";
 import { _t } from "@web/core/l10n/translation";
 import { Domain } from "@web/core/domain";
@@ -104,11 +104,11 @@ export class RecordAutocomplete extends Component {
         }
         const dynamicFilters = ids.length
             ? [
-                  {
-                      description: _t("Quick search: %s", name),
-                      domain: [["id", operator, ids]],
-                  },
-              ]
+                {
+                    description: _t("Quick search: %s", name),
+                    domain: [["id", operator, ids]],
+                },
+            ]
             : undefined;
         // fine for now but we don't like this kind of dependence of core to views
         const SelectCreateDialog = registry.category("dialogs").get("select_create");

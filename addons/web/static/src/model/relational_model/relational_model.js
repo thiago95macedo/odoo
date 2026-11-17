@@ -1,6 +1,6 @@
 // @ts-check
 
-import { EventBus, markRaw, usePlugin, toRaw } from "@odoo/owl";
+import { EventBus, markRaw, usePlugin, toRaw } from "@weth/owl";
 import { makeContext } from "@web/core/context";
 import { Domain } from "@web/core/domain";
 import { WarningDialog } from "@web/core/errors/error_dialogs";
@@ -89,27 +89,27 @@ import { OfflinePlugin } from "@web/core/offline/offline_plugin";
 
 const DEFAULT_HOOKS = {
     /** @type {(config: RelationalModelConfig) => any} */
-    onWillLoadRoot: () => {},
+    onWillLoadRoot: () => { },
     /** @type {(root: DataPoint) => any} */
-    onRootLoaded: () => {},
+    onRootLoaded: () => { },
     /** @type {(root: DataPoint) => any} */
-    onRootUpdated: () => {},
+    onRootUpdated: () => { },
     /** @type {(record: RelationalRecord) => any} */
-    onWillSaveRecord: () => {},
+    onWillSaveRecord: () => { },
     /** @type {(record: RelationalRecord) => any} */
-    onRecordSaved: () => {},
+    onRecordSaved: () => { },
     /** @type {(record: RelationalRecord, changes: Object) => any} */
-    onWillSaveMulti: () => {},
+    onWillSaveMulti: () => { },
     /** @type {(records: RelationalRecord[]) => any} */
-    onSavedMulti: () => {},
+    onSavedMulti: () => { },
     /** @type {(record: RelationalRecord, fieldName: string) => any} */
-    onWillSetInvalidField: () => {},
+    onWillSetInvalidField: () => { },
     /** @type {(record: RelationalRecord) => any} */
-    onRecordChanged: () => {},
+    onRecordChanged: () => { },
     /** @type {(record: RelationalRecord) => any} */
-    onRecordDiscarded: () => {},
+    onRecordDiscarded: () => { },
     /** @type {(warning: Object) => any} */
-    onWillDisplayOnchangeWarning: () => {},
+    onWillDisplayOnchangeWarning: () => { },
     /** @type {(changes: Object, validRecords: RelationalRecord[]) => any} */
     onAskMultiSaveConfirmation: () => true,
 };
@@ -618,7 +618,7 @@ export class RelationalModel extends Model {
                                 nextLevelGroupBy.length === 0
                                     ? this.initialLimit
                                     : this.initialGroupsLimit ||
-                                      this.constructor.DEFAULT_GROUP_LIMIT,
+                                    this.constructor.DEFAULT_GROUP_LIMIT,
                         },
                     };
                 }

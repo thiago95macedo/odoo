@@ -1,4 +1,4 @@
-import { useProps, signal, t } from "@odoo/owl";
+import { useProps, signal, t } from "@weth/owl";
 import { registry } from "@web/core/registry";
 import { _t } from "@web/core/l10n/translation";
 import { CharField, charField, charFieldProps } from "@web/views/fields/char/char_field";
@@ -145,7 +145,7 @@ export const addressAutoComplete = {
             return {
                 label: data.label,
                 placeholder: fname,
-                type : "field",
+                type: "field",
                 name: fname,
                 availableTypes: data.type,
             }

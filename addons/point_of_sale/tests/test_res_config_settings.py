@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-import odoo
+import weth
 
-from odoo import Command
-from odoo.tests import Form
-from odoo.addons.point_of_sale.tests.common import TestPoSCommon
+from weth import Command
+from weth.tests import Form
+from weth.addons.point_of_sale.tests.common import TestPoSCommon
 
 
-@odoo.tests.tagged('post_install', '-at_install')
+@weth.tests.tagged('post_install', '-at_install')
 class TestConfigureShops(TestPoSCommon):
     """ Shops are now configured from the general settings.
         This test suite ensures that changes made in the general settings

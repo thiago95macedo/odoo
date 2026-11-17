@@ -1,9 +1,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import Command
-from odoo.addons.hr_expense.tests.common import TestExpenseCommon
-from odoo.addons.sale.tests.common import TestSaleCommon
-from odoo.tests import tagged
+from weth import Command
+from weth.addons.hr_expense.tests.common import TestExpenseCommon
+from weth.addons.sale.tests.common import TestSaleCommon
+from weth.tests import tagged
 
 
 @tagged('-at_install', 'post_install')

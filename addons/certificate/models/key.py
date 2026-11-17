@@ -5,9 +5,9 @@ from cryptography.hazmat.primitives import hashes, serialization
 from cryptography.hazmat.primitives.asymmetric import ec, ed25519, padding, rsa
 from cryptography.hazmat.primitives.serialization import Encoding
 
-from odoo import _, api, fields, models
-from odoo.exceptions import UserError, ValidationError
-from odoo.tools import BinaryBytes
+from weth import _, api, fields, models
+from weth.exceptions import UserError, ValidationError
+from weth.tools import BinaryBytes
 
 
 STR_TO_HASH = {

@@ -1,4 +1,4 @@
-from odoo.addons.pos_online_payment.controllers.payment_status import PosPaymentStatus
+from weth.addons.pos_online_payment.controllers.payment_status import PosPaymentStatus
 
 
 class PosPaymentStatusSelfOrder(PosPaymentStatus):

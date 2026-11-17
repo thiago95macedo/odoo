@@ -1,6 +1,6 @@
 import { ActivityCompiler } from "@mail/views/web/activity/activity_compiler";
 
-import { Component, types, useProps } from "@odoo/owl";
+import { Component, types, useProps } from "@weth/owl";
 
 import { evaluateBooleanExpr } from "@web/core/py_js/py";
 import { user } from "@web/core/user";

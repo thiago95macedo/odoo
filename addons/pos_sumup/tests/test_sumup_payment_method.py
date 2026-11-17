@@ -4,12 +4,12 @@ from unittest.mock import patch
 import requests
 from requests import Response
 
-from odoo import Command
-from odoo.exceptions import UserError, ValidationError
-from odoo.tests.common import tagged
-from odoo.tools import hash_sign
+from weth import Command
+from weth.exceptions import UserError, ValidationError
+from weth.tests.common import tagged
+from weth.tools import hash_sign
 
-from odoo.addons.point_of_sale.tests.test_frontend import TestPointOfSaleHttpCommon
+from weth.addons.point_of_sale.tests.test_frontend import TestPointOfSaleHttpCommon
 
 
 def _response(status_code=200, json_data=None):
@@ -86,7 +86,7 @@ class TestSumupPaymentMethod(TestPointOfSaleHttpCommon):
 
     def test_sumup_pay_sends_correct_request(self):
         with patch(
-            "odoo.addons.pos_sumup.models.pos_payment_method.requests.post",
+            "weth.addons.pos_sumup.models.pos_payment_method.requests.post",
         ) as mock_post:
             mock_post.return_value = _response(
                 200,
@@ -110,7 +110,7 @@ class TestSumupPaymentMethod(TestPointOfSaleHttpCommon):
 
     def test_sumup_pay_network_error(self):
         with patch(
-            "odoo.addons.pos_sumup.models.pos_payment_method.requests.post",
+            "weth.addons.pos_sumup.models.pos_payment_method.requests.post",
             side_effect=requests.exceptions.ConnectionError(),
         ):
             result = self.sumup_pm.sumup_pay(10)
@@ -130,10 +130,10 @@ class TestSumupPaymentMethod(TestPointOfSaleHttpCommon):
 
         with (
             patch(
-                "odoo.addons.pos_sumup.models.pos_payment_method.requests.get",
+                "weth.addons.pos_sumup.models.pos_payment_method.requests.get",
             ) as mock_get,
             patch(
-                "odoo.addons.pos_sumup.models.pos_payment_method.requests.post",
+                "weth.addons.pos_sumup.models.pos_payment_method.requests.post",
             ) as mock_post,
         ):
             mock_get.return_value = _response(200, {"id": "real_txn_1"})
@@ -159,7 +159,7 @@ class TestSumupPaymentMethod(TestPointOfSaleHttpCommon):
         self._make_sumup_payment(transaction_id="ctid1")
 
         with patch(
-            "odoo.addons.pos_sumup.models.pos_payment_method.requests.get",
+            "weth.addons.pos_sumup.models.pos_payment_method.requests.get",
         ) as mock_get:
             mock_get.return_value = _response(200, {})
 
@@ -168,7 +168,7 @@ class TestSumupPaymentMethod(TestPointOfSaleHttpCommon):
 
     def test_sumup_cancel_sends_correct_request(self):
         with patch(
-            "odoo.addons.pos_sumup.models.pos_payment_method.requests.post",
+            "weth.addons.pos_sumup.models.pos_payment_method.requests.post",
         ) as mock_post:
             mock_post.return_value = _response(200, {})
             self.sumup_pm.sumup_cancel()
@@ -178,7 +178,7 @@ class TestSumupPaymentMethod(TestPointOfSaleHttpCommon):
 
     def test_sumup_get_checkout_status(self):
         with patch(
-            "odoo.addons.pos_sumup.models.pos_payment_method.requests.get",
+            "weth.addons.pos_sumup.models.pos_payment_method.requests.get",
         ) as mock_get:
             mock_get.return_value = _response(200, {"status": "successful"})
             result = self.sumup_pm.sumup_get_checkout_status("chk1")
@@ -197,7 +197,7 @@ class TestSumupPaymentMethod(TestPointOfSaleHttpCommon):
         payload = {"client_transaction_id": "ctid1", "status": "successful"}
 
         with patch(
-            "odoo.addons.point_of_sale.models.pos_bus_mixin.PosBusMixin._notify",
+            "weth.addons.point_of_sale.models.pos_bus_mixin.PosBusMixin._notify",
         ) as mock_notify:
             response = self.url_open(
                 f"/pos_sumup/notification?token={token}",
@@ -215,11 +215,11 @@ class TestSumupPaymentMethod(TestPointOfSaleHttpCommon):
 
         with (
             self.assertLogs(
-                "odoo.addons.pos_sumup.controllers.webhook",
+                "weth.addons.pos_sumup.controllers.webhook",
                 level="WARNING",
             ),
             patch(
-                "odoo.addons.point_of_sale.models.pos_bus_mixin.PosBusMixin._notify",
+                "weth.addons.point_of_sale.models.pos_bus_mixin.PosBusMixin._notify",
             ) as mock_notify,
         ):
             self.url_open(

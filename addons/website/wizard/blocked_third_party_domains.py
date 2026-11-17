@@ -1,8 +1,8 @@
 from urllib3.util import parse_url
 from urllib3.exceptions import LocationParseError
 
-from odoo import fields, models, _
-from odoo.exceptions import ValidationError
+from weth import fields, models, _
+from weth.exceptions import ValidationError
 
 
 class WebsiteCustom_Blocked_Third_Party_Domains(models.TransientModel):

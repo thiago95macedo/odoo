@@ -7,9 +7,9 @@ import { BuilderAction } from "@html_builder/core/builder_action";
 import { BaseOptionComponent } from "@html_builder/core/base_option_component";
 import { useDomState } from "@html_builder/core/utils";
 import { undo } from "@html_editor/../tests/_helpers/user_actions";
-import { before, describe, expect, getFixture, test } from "@odoo/hoot";
-import { animationFrame, click, hover, runAllTimers } from "@odoo/hoot-dom";
-import { xml } from "@odoo/owl";
+import { before, describe, expect, getFixture, test } from "@weth/hoot";
+import { animationFrame, click, hover, runAllTimers } from "@weth/hoot-dom";
+import { xml } from "@weth/owl";
 import { contains, onRpc } from "@web/../tests/web_test_helpers";
 
 describe.current.tags("desktop");

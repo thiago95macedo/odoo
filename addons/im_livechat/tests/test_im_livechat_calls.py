@@ -3,10 +3,10 @@
 from functools import wraps
 from unittest.mock import patch
 
-from odoo.http import request
+from weth.http import request
 
-from odoo.addons.im_livechat.controllers.main import LivechatController
-from odoo.addons.im_livechat.tests.common import TestImLivechatCommon
+from weth.addons.im_livechat.controllers.main import LivechatController
+from weth.addons.im_livechat.tests.common import TestImLivechatCommon
 
 
 class TestImLivechatCalls(TestImLivechatCommon):

@@ -1,6 +1,6 @@
 import { HistoryDialog } from "@html_editor/components/history_dialog/history_dialog";
-import { expect, test } from "@odoo/hoot";
-import { waitFor } from "@odoo/hoot-dom";
+import { expect, test } from "@weth/hoot";
+import { waitFor } from "@weth/hoot-dom";
 import { getService, mountWithCleanup, onRpc } from "@web/../tests/web_test_helpers";
 import { MainComponentsContainer } from "@web/core/main_components_container";
 

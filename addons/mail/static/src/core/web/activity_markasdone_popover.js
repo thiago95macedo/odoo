@@ -1,4 +1,4 @@
-import { Component, onMounted, signal, t, useListener, useProps } from "@odoo/owl";
+import { Component, onMounted, signal, t, useListener, useProps } from "@weth/owl";
 
 import { propSignal } from "@mail/utils/common/hooks";
 import { useService } from "@web/core/utils/hooks";

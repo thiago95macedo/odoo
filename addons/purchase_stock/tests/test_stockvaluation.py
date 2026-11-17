@@ -5,9 +5,9 @@ from datetime import datetime, timedelta
 
 from freezegun import freeze_time
 
-from odoo import fields, Command
-from odoo.tests import Form, tagged
-from odoo.tools import DEFAULT_SERVER_DATETIME_FORMAT, mute_logger
+from weth import fields, Command
+from weth.tests import Form, tagged
+from weth.tools import DEFAULT_SERVER_DATETIME_FORMAT, mute_logger
 
 from .common import PurchaseTestCommon
 
@@ -57,7 +57,7 @@ class TestStockValuationWithCOA(PurchaseTestCommon):
         # Create an invoice with a different price and a discount
         invoice_form = Form(self.env['account.move'].with_context(default_move_type='in_invoice'))
         invoice_form.invoice_date = invoice_form.date
-        with mute_logger('odoo.tests.form.onchange'):  # Mute "x PO lines added to the bill" notification
+        with mute_logger('weth.tests.form.onchange'):  # Mute "x PO lines added to the bill" notification
             invoice_form.purchase_vendor_bill_id = self.env['purchase.bill.union'].browse(-order.id)
         with invoice_form.invoice_line_ids.edit(0) as line_form:
             line_form.price_unit = 100.0
@@ -97,7 +97,7 @@ class TestStockValuationWithCOA(PurchaseTestCommon):
         # Create an invoice with a different price and a discount
         invoice_form = Form(self.env['account.move'].with_context(default_move_type='in_invoice'))
         invoice_form.invoice_date = invoice_form.date
-        with mute_logger('odoo.tests.form.onchange'):  # Mute "x PO lines added to the bill" notification
+        with mute_logger('weth.tests.form.onchange'):  # Mute "x PO lines added to the bill" notification
             invoice_form.purchase_vendor_bill_id = self.env['purchase.bill.union'].browse(-order.id)
         with invoice_form.invoice_line_ids.edit(0) as line_form:
             line_form.tax_ids.clear()
@@ -137,7 +137,7 @@ class TestStockValuationWithCOA(PurchaseTestCommon):
         # Create an invoice with a different price and a discount
         invoice_form = Form(self.env['account.move'].with_context(default_move_type='in_invoice'))
         invoice_form.invoice_date = invoice_form.date
-        with mute_logger('odoo.tests.form.onchange'):  # Mute "x PO lines added to the bill" notification
+        with mute_logger('weth.tests.form.onchange'):  # Mute "x PO lines added to the bill" notification
             invoice_form.purchase_vendor_bill_id = self.env['purchase.bill.union'].browse(-order.id)
         with invoice_form.invoice_line_ids.edit(0) as line_form:
             line_form.price_unit = 100.0

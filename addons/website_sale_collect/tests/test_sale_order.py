@@ -3,11 +3,11 @@
 import json
 from unittest import skip
 
-from odoo.fields import Command
-from odoo.tests import tagged
+from weth.fields import Command
+from weth.tests import tagged
 
-from odoo.addons.website_sale.controllers.delivery import Delivery
-from odoo.addons.website_sale_collect.tests.common import ClickAndCollectCommon
+from weth.addons.website_sale.controllers.delivery import Delivery
+from weth.addons.website_sale_collect.tests.common import ClickAndCollectCommon
 
 
 @tagged("post_install", "-at_install")

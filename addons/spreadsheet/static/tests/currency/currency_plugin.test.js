@@ -1,5 +1,5 @@
-import { describe, expect, test } from "@odoo/hoot";
-import { animationFrame } from "@odoo/hoot-mock";
+import { describe, expect, test } from "@weth/hoot";
+import { animationFrame } from "@weth/hoot-mock";
 import { createModelWithDataSource } from "@spreadsheet/../tests/helpers/model";
 import { defineSpreadsheetModels } from "../helpers/data";
 import { LoadingDataError } from "@spreadsheet/o_spreadsheet/errors";

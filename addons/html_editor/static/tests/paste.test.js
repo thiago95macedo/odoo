@@ -1,12 +1,12 @@
 import { CLIPBOARD_WHITELISTS } from "@html_editor/core/clipboard_plugin";
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@weth/hoot";
 import {
     manuallyDispatchProgrammaticEvent as dispatch,
     press,
     waitFor,
     waitForNone,
-} from "@odoo/hoot-dom";
-import { animationFrame, tick } from "@odoo/hoot-mock";
+} from "@weth/hoot-dom";
+import { animationFrame, tick } from "@weth/hoot-mock";
 import { dataURItoBlob, patchWithCleanup } from "@web/../tests/web_test_helpers";
 import { setupEditor, testEditor } from "./_helpers/editor";
 import { cleanLinkArtifacts, unformat } from "./_helpers/format";
@@ -2740,7 +2740,7 @@ describe("Special cases", () => {
             });
         });
 
-        test("should paste a deeply nested list copied outside from odoo", async () => {
+        test("should paste a deeply nested list copied outside from weth", async () => {
             await testEditor({
                 contentBefore: "<ul><li>[]<br></li></ul>",
                 stepFunction: async (editor) => {

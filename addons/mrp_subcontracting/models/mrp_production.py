@@ -3,9 +3,9 @@
 
 from datetime import timedelta
 from collections import defaultdict
-from odoo import fields, models, _, api
-from odoo.exceptions import UserError, ValidationError, AccessError
-from odoo.tools.float_utils import float_compare, float_is_zero
+from weth import fields, models, _, api
+from weth.exceptions import UserError, ValidationError, AccessError
+from weth.tools.float_utils import float_compare, float_is_zero
 
 
 class MrpProduction(models.Model):

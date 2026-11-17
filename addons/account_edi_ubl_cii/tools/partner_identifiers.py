@@ -1,7 +1,7 @@
 import re
 
-from odoo.tools.partner_identifier_validation import validate_email
-from odoo.tools.translate import LazyTranslate
+from weth.tools.partner_identifier_validation import validate_email
+from weth.tools.translate import LazyTranslate
 
 _lt = LazyTranslate(__name__)
 

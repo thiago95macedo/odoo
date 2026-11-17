@@ -1,5 +1,5 @@
 import { _t } from "@web/core/l10n/translation";
-import { Component, useProps, signal, t } from "@odoo/owl";
+import { Component, useProps, signal, t } from "@weth/owl";
 import { useBus, useService } from "@web/core/utils/hooks";
 
 export class UploadButton extends Component {

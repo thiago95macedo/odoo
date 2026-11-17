@@ -2,8 +2,8 @@
 
 from werkzeug.exceptions import BadRequest, NotFound
 
-from odoo.http import Controller, route
-from odoo.tools import email_normalize, single_email_re
+from weth.http import Controller, route
+from weth.tools import email_normalize, single_email_re
 
 
 class GiftCard(Controller):

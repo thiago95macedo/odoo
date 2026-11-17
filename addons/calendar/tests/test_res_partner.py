@@ -1,7 +1,7 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.tests.common import new_test_user, tagged, TransactionCase
-from odoo.addons.mail.tests.common import mail_new_test_user
+from weth.tests.common import new_test_user, tagged, TransactionCase
+from weth.addons.mail.tests.common import mail_new_test_user
 
 
 @tagged('at_install', '-post_install')  # LEGACY at_install

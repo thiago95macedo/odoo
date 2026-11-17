@@ -5,8 +5,8 @@ import hashlib
 from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
 from cryptography.hazmat.primitives import padding
 
-from odoo import _, fields, models, api
-from odoo.exceptions import UserError, AccessDenied
+from weth import _, fields, models, api
+from weth.exceptions import UserError, AccessDenied
 
 
 class PosPaymentMethod(models.Model):

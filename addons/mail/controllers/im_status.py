@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import _, http
+from weth import _, http
 
-from odoo.addons.mail.tools.discuss import mail_route, Store
+from weth.addons.mail.tools.discuss import mail_route, Store
 
 
 class ImStatusController(http.Controller):

@@ -1,6 +1,6 @@
-from odoo.tests import TransactionCase
+from weth.tests import TransactionCase
 
-from odoo.addons.populate.utils.seed import MASK_INT32, derive_seed_from
+from weth.addons.populate.utils.seed import MASK_INT32, derive_seed_from
 
 
 class TestSeedDerivation(TransactionCase):

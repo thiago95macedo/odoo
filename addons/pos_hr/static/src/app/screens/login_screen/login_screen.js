@@ -3,7 +3,7 @@ import { LoginScreen } from "@point_of_sale/app/screens/login_screen/login_scree
 import { patch } from "@web/core/utils/patch";
 import { useAutofocus } from "@web/core/utils/hooks";
 import { useBarcodeReader } from "@point_of_sale/app/hooks/barcode_reader_hook";
-import { onWillUnmount, proxy, signal, useListener } from "@odoo/owl";
+import { onWillUnmount, proxy, signal, useListener } from "@weth/owl";
 
 patch(LoginScreen.prototype, {
     setup() {

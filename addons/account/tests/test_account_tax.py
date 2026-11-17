@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 import re
 
-from odoo import Command
-from odoo.addons.account.tests.common import AccountTestInvoicingCommon
-from odoo.addons.mail.tests.common import MailCase
-from odoo.tests import tagged
-from odoo.exceptions import UserError, ValidationError
+from weth import Command
+from weth.addons.account.tests.common import AccountTestInvoicingCommon
+from weth.addons.mail.tests.common import MailCase
+from weth.tests import tagged
+from weth.exceptions import UserError, ValidationError
 
 
 @tagged('post_install', '-at_install', 'mail_track')

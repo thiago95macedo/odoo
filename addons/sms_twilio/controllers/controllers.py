@@ -2,8 +2,8 @@ import hmac
 import logging
 import re
 
-from odoo.addons.sms_twilio.tools.sms_twilio import generate_twilio_sms_callback_signature
-from odoo.http import Controller, request, route
+from weth.addons.sms_twilio.tools.sms_twilio import generate_twilio_sms_callback_signature
+from weth.http import Controller, request, route
 
 
 TWILIO_CODE_TO_FAILURE_TYPE = {

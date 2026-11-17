@@ -3,9 +3,9 @@ import copy
 
 from datetime import datetime
 
-from odoo import Command, exceptions
-from odoo.addons.mass_mailing.tests.common import MassMailCommon
-from odoo.tests import Form, tagged, users
+from weth import Command, exceptions
+from weth.addons.mass_mailing.tests.common import MassMailCommon
+from weth.tests import Form, tagged, users
 
 
 @tagged('mailing_list')

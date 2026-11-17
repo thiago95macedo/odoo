@@ -1,5 +1,5 @@
-import { after, describe, expect, test } from "@odoo/hoot";
-import { animationFrame, delay, press, queryFirst, tick } from "@odoo/hoot-dom";
+import { after, describe, expect, test } from "@weth/hoot";
+import { animationFrame, delay, press, queryFirst, tick } from "@weth/hoot-dom";
 import { Command, patchWithCleanup, serverState, withUser } from "@web/../tests/web_test_helpers";
 
 import {

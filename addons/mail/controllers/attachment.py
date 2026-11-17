@@ -8,17 +8,17 @@ import zipfile
 import psycopg2
 from werkzeug.exceptions import BadRequest, NotFound, UnsupportedMediaType
 
-from odoo import _, http
-from odoo.exceptions import AccessError, MissingError, UserError
-from odoo.http import request
-from odoo.http.stream import content_disposition, STATIC_CACHE_LONG
-from odoo.tools import BinaryBytes, file_open, str2bool
-from odoo.tools.mail import html_remove_links, html_sanitize
-from odoo.tools.misc import replace_exceptions
-from odoo.tools.pdf import DependencyError, PdfReadError, extract_page
+from weth import _, http
+from weth.exceptions import AccessError, MissingError, UserError
+from weth.http import request
+from weth.http.stream import content_disposition, STATIC_CACHE_LONG
+from weth.tools import BinaryBytes, file_open, str2bool
+from weth.tools.mail import html_remove_links, html_sanitize
+from weth.tools.misc import replace_exceptions
+from weth.tools.pdf import DependencyError, PdfReadError, extract_page
 
-from odoo.addons.mail.controllers.thread import ThreadController
-from odoo.addons.mail.tools.discuss import Store, add_guest_to_context, mail_route
+from weth.addons.mail.controllers.thread import ThreadController
+from weth.addons.mail.tools.discuss import Store, add_guest_to_context, mail_route
 
 logger = logging.getLogger(__name__)
 

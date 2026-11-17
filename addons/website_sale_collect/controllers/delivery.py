@@ -1,9 +1,9 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo.http import request, route
+from weth.http import request, route
 
-from odoo.addons.website_sale_collect.models.website import CLICK_AND_COLLECT_SESSION_CACHE_KEY
-from odoo.addons.website_sale_stock.controllers.location_selector import LocationSelector
+from weth.addons.website_sale_collect.models.website import CLICK_AND_COLLECT_SESSION_CACHE_KEY
+from weth.addons.website_sale_stock.controllers.location_selector import LocationSelector
 
 
 class InStoreDelivery(LocationSelector):

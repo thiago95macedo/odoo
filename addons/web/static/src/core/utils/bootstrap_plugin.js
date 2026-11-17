@@ -1,4 +1,4 @@
-import { Plugin } from "@odoo/owl";
+import { Plugin } from "@weth/owl";
 import { services } from "@web/core/services";
 
 /**

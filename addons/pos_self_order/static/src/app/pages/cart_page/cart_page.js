@@ -1,5 +1,5 @@
 import { useLayoutEffect } from "@web/owl2/utils";
-import { Component, proxy, signal } from "@odoo/owl";
+import { Component, proxy, signal } from "@weth/owl";
 import { useService } from "@web/core/utils/hooks";
 import { useSelfOrder } from "@pos_self_order/app/services/self_order_service";
 import { OrderWidget } from "@pos_self_order/app/components/order_widget/order_widget";
@@ -167,7 +167,7 @@ export class CartPage extends Component {
             tax:
                 count > 0
                     ? tax +
-                      (tipPrice?.taxes_data.reduce((sum, tax) => sum + tax.tax_amount, 0) ?? 0)
+                    (tipPrice?.taxes_data.reduce((sum, tax) => sum + tax.tax_amount, 0) ?? 0)
                     : amountTaxes,
         };
     }
@@ -263,8 +263,8 @@ export class CartPage extends Component {
 
         const preselectedCombos = comboToApply.combinations[0]
             ? this.selfOrder.comboSuggestion.getComboValuesFromCombination(
-                  comboToApply.combinations[0]
-              )
+                comboToApply.combinations[0]
+            )
             : [];
         const { show, selectedCombos } = comboToApply.product.showComboSelectionPage();
         if (show) {

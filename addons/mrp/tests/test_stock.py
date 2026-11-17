@@ -1,8 +1,8 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
 from . import common
-from odoo import Command
-from odoo.tests import Form
+from weth import Command
+from weth.tests import Form
 
 
 class TestWarehouseMrp(common.TestMrpCommon):

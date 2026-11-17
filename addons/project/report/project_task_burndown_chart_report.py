@@ -1,10 +1,10 @@
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import _, api, fields, models
-from odoo.exceptions import UserError
-from odoo.tools import SQL
+from weth import _, api, fields, models
+from weth.exceptions import UserError
+from weth.tools import SQL
 
-from odoo.addons.resource.models.utils import filter_map_domain
+from weth.addons.resource.models.utils import filter_map_domain
 
 
 class ProjectTaskBurndownChartReport(models.AbstractModel):

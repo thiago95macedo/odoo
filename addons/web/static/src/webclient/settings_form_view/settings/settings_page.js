@@ -1,4 +1,4 @@
-import { Component, computed, proxy, signal, t, useProps } from "@odoo/owl";
+import { Component, computed, proxy, signal, t, useProps } from "@weth/owl";
 import { location } from "@web/core/browser/browser";
 import { Dropdown } from "@web/core/dropdown/dropdown";
 import { DropdownItem } from "@web/core/dropdown/dropdown_item";

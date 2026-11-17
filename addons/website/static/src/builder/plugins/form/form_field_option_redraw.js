@@ -1,6 +1,6 @@
 import { BaseOptionComponent } from "@html_builder/core/base_option_component";
 import { useDomState } from "@html_builder/core/utils";
-import { useProps } from "@odoo/owl";
+import { useProps } from "@weth/owl";
 import { registry } from "@web/core/registry";
 import { FormFieldOption, formFieldOptionProps } from "./form_field_option";
 

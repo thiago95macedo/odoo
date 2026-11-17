@@ -1,10 +1,10 @@
 // ! WARNING: this module cannot depend on modules not ending with ".hoot" (except libs) !
 
-import { after, before, beforeEach, createJobScopedGetter } from "@odoo/hoot";
-import { types as t, validateType } from "@odoo/owl";
+import { after, before, beforeEach, createJobScopedGetter } from "@weth/hoot";
+import { types as t, validateType } from "@weth/owl";
 
-const { view_info } = odoo.__session_info__ || {};
-delete odoo.__session_info__;
+const { view_info } = weth.__session_info__ || {};
+delete weth.__session_info__;
 
 const { Settings } = luxon;
 

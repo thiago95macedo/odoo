@@ -1,5 +1,5 @@
-from odoo.tests import HttpCase
-from odoo.fields import Command
+from weth.tests import HttpCase
+from weth.fields import Command
 
 
 class TestReportBom(HttpCase):

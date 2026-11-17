@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # Part of WETH. See LICENSE file for full copyright and licensing details.
 
-from odoo import models, api, _
-from odoo.exceptions import ValidationError
+from weth import models, api, _
+from weth.exceptions import ValidationError
 
 
 class PosConfig(models.Model):

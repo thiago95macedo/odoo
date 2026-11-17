@@ -1,9 +1,9 @@
 from werkzeug.exceptions import NotFound
 
-from odoo.http import request
+from weth.http import request
 
-from odoo.addons.mail.controllers.discuss import public_page
-from odoo.addons.mail.tools.discuss import Store, mail_route
+from weth.addons.mail.controllers.discuss import public_page
+from weth.addons.mail.tools.discuss import Store, mail_route
 
 
 class PublicPageController(public_page.PublicPageController):
